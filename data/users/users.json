@@ -1,0 +1,16 @@
+{
+  "users": [
+    {
+      "id": "usr_hq_001",
+      "role": "hq",
+      "name": "Morne Botha",
+      "email": "hq@edugolfkids.com",
+      "title": "Owner / CEO",
+      "organisation": "EduGolfKids LLC",
+      "active": true,
+      "created": "2026-04-22",
+      "last_login": null,
+      "permissions": ["all"]
+    }
+  ]
+}

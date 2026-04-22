@@ -1,0 +1,96 @@
+{
+  "platform": {
+    "name": "EduGolfKids Platform",
+    "version": "1.0.0",
+    "hq": {
+      "name": "EduGolfKids LLC",
+      "sosid": "3063545",
+      "address": "130 Landings Dr, Apt.211, Mooresville, 28117, N.C. USA",
+      "state": "North Carolina",
+      "email": "hq@edugolfkids.com"
+    }
+  },
+  "business_rules": {
+    "territory": {
+      "max_schools_per_territory": 20,
+      "license_setup_fee": 15000,
+      "monthly_license_fee": 500,
+      "territory_transfer_fee_percent": 10
+    },
+    "tdp": {
+      "setup_commission_percent": 20,
+      "setup_commission_amount": 3000,
+      "monthly_support_fee": 150,
+      "commission_payment_window_days": 30,
+      "year1_target_licensees": 3,
+      "year2_target_licensees": 6,
+      "year3_target_licensees": 10
+    },
+    "coach_pay": {
+      "minimum_per_session": 20,
+      "per_student_rate": 5,
+      "per_student_threshold": 4,
+      "note": "Min $20 for 1-4 students. Above 4 students: $5 x total student count"
+    },
+    "class": {
+      "max_students_per_class": 7,
+      "coach_ratio": "1:7",
+      "days_available": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],
+      "earliest_slot": "07:00",
+      "latest_slot": "18:00",
+      "slot_duration_minutes": 60
+    },
+    "curriculum": {
+      "lessons_per_term": 10,
+      "age_tracks": [4,5,6,7,8,9,10],
+      "min_completion_good_standing": 8,
+      "min_completion_at_risk": 7,
+      "min_completion_critical": 5,
+      "certification_pass_threshold": 85
+    },
+    "financials": {
+      "standard_lesson_fee_per_student": 20,
+      "coach_cost_benchmark_max_percent": 35,
+      "overhead_benchmark_max_percent": 20,
+      "net_profit_target_min_percent": 45,
+      "net_profit_target_max_percent": 55
+    },
+    "insurance": {
+      "gl_per_occurrence_minimum": 1000000,
+      "gl_aggregate_minimum": 2000000,
+      "sam_per_occurrence_minimum": 1000000,
+      "sam_aggregate_minimum": 1000000,
+      "sam_grace_period_days": 0,
+      "gl_grace_period_days": 14,
+      "workers_comp_grace_period_days": 14,
+      "additional_insured_required": "EduGolfKids LLC"
+    },
+    "compliance": {
+      "full_access_threshold": 85,
+      "warning_threshold": 70,
+      "expiry_alert_days_amber": 90,
+      "expiry_alert_days_red": 30,
+      "certification_renewal_months": 12,
+      "refresher_questions": 10,
+      "refresher_pass_threshold": 85
+    },
+    "performance_milestones": {
+      "month_12": { "schools": 3, "students": 15 },
+      "month_24": { "schools": 6, "students": 30 },
+      "territory_expansion_threshold": { "schools": 10, "students": 50 }
+    },
+    "invoicing": {
+      "overdue_reminder_days": [7, 14, 21],
+      "payment_due_days_before_term": 5
+    }
+  },
+  "email": {
+    "provider": "resend",
+    "from_name": "EduGolfKids",
+    "from_email": "noreply@edugolfkids.com",
+    "free_tier_monthly_limit": 3000
+  },
+  "roles": ["hq","tdp","licensee","coach"],
+  "created": "2026-04-22",
+  "last_updated": "2026-04-22"
+}
