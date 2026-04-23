@@ -1,1 +1,16 @@
-{ "licensees": [] }
+{
+  "licensees": [
+    {
+      "id": "lic_1776967795493",
+      "name": "Mari-Lize Botha",
+      "email": "marilize@edugolfkids.com",
+      "phone": "+17046771528",
+      "territory_id": "",
+      "fee_status": "waived",
+      "tdp_ref": "",
+      "status": "active",
+      "created": "2026-04-23",
+      "monthly_fee": 500
+    }
+  ]
+}
