@@ -1,3 +1,16 @@
 {
-  "territories": []
+  "territories": [
+    {
+      "id": "ter_1776967872100",
+      "name": "Lake Norman",
+      "state": "North Carolina",
+      "region": "Mooresville",
+      "type": "standard",
+      "status": "active",
+      "boundaries": "Around the Lake. Lake Norman",
+      "max_schools": 20,
+      "created": "2026-04-23",
+      "licensee_ids": []
+    }
+  ]
 }
