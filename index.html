@@ -3409,6 +3409,7 @@ async function loadPlatformData() {
     { key: 'classes', path: 'data/classes/classes.json', field: 'classes' },
     { key: 'students', path: 'data/students/students.json', field: 'students' },
     { key: 'coaches', path: 'data/coaches/coaches.json', field: 'coaches' },
+    { key: 'sessions', path: 'data/sessions/sessions.json', field: 'sessions' },
   ];
 
   for (const f of files) {
@@ -3559,6 +3560,13 @@ function showPage(pageId) {
   const nav = document.querySelector(`.nav-item[data-page="${pageId}"]`);
   if (nav) nav.classList.add('active');
   if (pageId === 'page-school-crm') renderSchoolPipeline();
+  if (pageId === 'page-territories') renderTerritoriesTable();
+  if (pageId === 'page-students') renderStudentsTable();
+  if (pageId === 'page-scheduling') renderSchedulingPage();
+  if (pageId === 'page-tdp') renderTDPPage();
+  if (pageId === 'page-coach-portal') renderCoachPortal();
+  if (pageId === 'page-coach-education') renderCertPage();
+  if (pageId === 'page-hq-dashboard') updateDashboardStats();
   if (pageId === 'page-attendance') { renderAllClassesForAttendance(); setTodayBadge(); }
   if (pageId === 'page-registration-form') populateRegFormSchools();
   if (pageId === 'page-valuation') calculateValuation();
@@ -3617,6 +3625,52 @@ function updateDashboardStats() {
 
   // Refresh BI alerts whenever stats update
   if (typeof renderBIAlerts === 'function') renderBIAlerts();
+}
+
+function renderTerritoriesTable() {
+  const territories = state.data.territories || [];
+  const licensees = state.data.licensees || [];
+  const container = document.getElementById('territories-table-container');
+  if (!container) return;
+
+  safeSet('territory-count-badge', `${territories.length} territories`);
+
+  if (territories.length === 0) {
+    container.innerHTML = `<div class="empty-state">
+      <div class="empty-icon">🗺️</div>
+      <h3>No territories yet</h3>
+      <p>Create your first territory to begin onboarding licensees</p>
+      <button class="btn btn-primary btn-sm" onclick="openModal('modal-add-territory')">Add First Territory</button>
+    </div>`;
+    return;
+  }
+
+  const rows = territories.map(t => {
+    const tLicensees = licensees.filter(l => l.territory_id === t.id);
+    const statusBadge = t.status === 'active'
+      ? `<span class="badge badge-green">Active</span>`
+      : `<span class="badge badge-gray">${t.status}</span>`;
+    return `<tr>
+      <td><strong>${t.name}</strong><br><small style="color:var(--gray-400)">${t.region || ''}, ${t.state || ''}</small></td>
+      <td>${statusBadge}</td>
+      <td>${tLicensees.length} / 1</td>
+      <td>${t.max_schools || 20} max schools</td>
+      <td>${t.boundaries || '—'}</td>
+      <td>${t.created || '—'}</td>
+    </tr>`;
+  }).join('');
+
+  container.innerHTML = `<table class="data-table">
+    <thead><tr>
+      <th>Territory</th>
+      <th>Status</th>
+      <th>Licensees</th>
+      <th>Capacity</th>
+      <th>Coverage</th>
+      <th>Created</th>
+    </tr></thead>
+    <tbody>${rows}</tbody>
+  </table>`;
 }
 
 function safeSet(id, val) {
@@ -3703,6 +3757,7 @@ async function saveTerritory() {
     );
     closeModal('modal-add-territory');
     updateDashboardStats();
+    renderTerritoriesTable();
     alert(`✅ Territory "${name}" created successfully!`);
   } catch(e) {
     alert('Error saving to GitHub: ' + e.message);
@@ -6674,6 +6729,133 @@ function mktCopyFromPreview() {
   const key = document.getElementById('mkt-preview-body').dataset.key;
   closeModal('modal-mkt-preview');
   copyMktContent(key);
+}
+
+// ══════════════════════════════════════════
+//  MISSING PAGE RENDER FUNCTIONS
+// ══════════════════════════════════════════
+
+function renderStudentsTable() {
+  const students = state.data.students || [];
+  const schools = state.data.schools || [];
+  const badge = document.getElementById('student-count-badge');
+  if (badge) badge.textContent = `${students.length} enrolled`;
+  const container = document.getElementById('students-table');
+  if (!container) return;
+  if (students.length === 0) {
+    container.innerHTML = `<div class="empty-state"><div class="empty-icon">👧</div><h3>No students enrolled yet</h3><p>Add students from the Student Enrollment page or via the registration form.</p></div>`;
+    return;
+  }
+  const rows = students.map(s => {
+    const school = schools.find(sc => sc.id === s.school_id);
+    return `<tr>
+      <td><strong>${s.full_name || s.first_name + ' ' + s.last_name}</strong></td>
+      <td>${s.age || '—'}</td>
+      <td>${school ? school.name : '—'}</td>
+      <td>${s.parent_name || '—'}</td>
+      <td>${s.parent_email || '—'}</td>
+      <td><span class="badge badge-green">Active</span></td>
+    </tr>`;
+  }).join('');
+  container.innerHTML = `<table class="data-table">
+    <thead><tr><th>Name</th><th>Age</th><th>School</th><th>Parent</th><th>Email</th><th>Status</th></tr></thead>
+    <tbody>${rows}</tbody>
+  </table>`;
+}
+
+function renderSchedulingPage() {
+  const classes = state.data.classes || [];
+  const container = document.getElementById('weekly-schedule');
+  if (!container) return;
+  if (classes.length === 0) {
+    container.innerHTML = `<div class="empty-state"><div class="empty-icon">📅</div><h3>No classes scheduled yet</h3><p>Create a class to build your weekly schedule.</p><button class="btn btn-primary btn-sm" onclick="openModal('modal-create-class')">Create First Class</button></div>`;
+    return;
+  }
+  const days = ['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+  let html = '';
+  for (const day of days) {
+    const dayCls = classes.filter(c => c.day === day);
+    if (dayCls.length === 0) continue;
+    html += `<div class="schedule-day"><div class="schedule-day-label">${day}</div>`;
+    for (const c of dayCls) {
+      const enrolled = (state.data.students || []).filter(s => s.class_id === c.id).length;
+      html += `<div class="class-slot">
+        <div class="time-badge">${c.start_time || '—'}</div>
+        <div class="class-info">
+          <div class="class-name">${c.name}</div>
+          <div class="class-meta">Age ${c.age_group || '?'} · ${c.school_name || ''}</div>
+        </div>
+        <div class="enrollment-badge">${enrolled}/${c.max_students || 7}</div>
+      </div>`;
+    }
+    html += `</div>`;
+  }
+  container.innerHTML = html || `<div class="empty-state"><div class="empty-icon">📅</div><h3>No classes on any day yet</h3></div>`;
+}
+
+function renderTDPPage() {
+  const licensees = state.data.licensees || [];
+  const tdps = licensees.filter(l => l.is_tdp);
+  safeSet('tdp-count', tdps.length);
+  const monthlyPayout = tdps.reduce((sum, t) => {
+    const supported = licensees.filter(l => l.tdp_id === t.id && l.status === 'active').length;
+    return sum + (supported * 150);
+  }, 0);
+  safeSet('tdp-monthly-payout', '$' + monthlyPayout.toLocaleString());
+  const container = document.getElementById('tdp-list');
+  if (!container) return;
+  if (tdps.length === 0) {
+    container.innerHTML = `<div class="empty-state"><div class="empty-icon">🤝</div><h3>No TDPs appointed yet</h3><p>Appoint a Territory Development Partner from your active licensees</p></div>`;
+    return;
+  }
+  const rows = tdps.map(t => {
+    const supported = licensees.filter(l => l.tdp_id === t.id && l.status === 'active').length;
+    const monthly = supported * 150;
+    return `<tr>
+      <td><strong>${t.first_name} ${t.last_name}</strong></td>
+      <td>${t.email || '—'}</td>
+      <td>${t.territory_name || '—'}</td>
+      <td>${supported} licensees</td>
+      <td>$${monthly.toLocaleString()}/month</td>
+      <td><span class="badge badge-green">Active TDP</span></td>
+    </tr>`;
+  }).join('');
+  container.innerHTML = `<table class="data-table">
+    <thead><tr><th>Name</th><th>Email</th><th>Territory</th><th>Licensees Supported</th><th>Monthly Payout</th><th>Status</th></tr></thead>
+    <tbody>${rows}</tbody>
+  </table>`;
+}
+
+function renderCoachPortal() {
+  const coaches = state.data.coaches || [];
+  const classes = state.data.classes || [];
+  safeSet('coach-name-display', state.user?.name || 'Coach');
+  const container = document.getElementById('coach-schedule');
+  if (!container) return;
+  if (classes.length === 0) {
+    container.innerHTML = `<div class="empty-state"><div class="empty-icon">📅</div><h3>No classes assigned yet</h3><p>Your licensee will assign classes to you once you are onboarded.</p></div>`;
+    return;
+  }
+  const days = ['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+  let html = '';
+  for (const day of days) {
+    const dayCls = classes.filter(c => c.day === day);
+    if (dayCls.length === 0) continue;
+    html += `<div class="schedule-day"><div class="schedule-day-label">${day}</div>`;
+    for (const c of dayCls) {
+      const enrolled = (state.data.students || []).filter(s => s.class_id === c.id).length;
+      html += `<div class="class-slot">
+        <div class="time-badge">${c.start_time || '—'}</div>
+        <div class="class-info">
+          <div class="class-name">${c.name}</div>
+          <div class="class-meta">Age ${c.age_group || '?'} · ${enrolled} students</div>
+        </div>
+        <div class="enrollment-badge">${enrolled}/${c.max_students || 7}</div>
+      </div>`;
+    }
+    html += `</div>`;
+  }
+  container.innerHTML = html || `<div class="empty-state"><div class="empty-icon">📅</div><h3>No classes scheduled</h3></div>`;
 }
 
 // ══════════════════════════════════════════
