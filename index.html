@@ -5087,9 +5087,9 @@ function renderAttendanceStudents(cls) {
 function markAttendance(studentId, present) {
   attendanceData[studentId].present = present;
   
-  const presentBtn = document.getElementById(\`btn-present-\${studentId}\`);
-  const absentBtn = document.getElementById(\`btn-absent-\${studentId}\`);
-  const row = document.getElementById(\`att-row-\${studentId}\`);
+  const presentBtn = document.getElementById(`btn-present-\${studentId}`);
+  const absentBtn = document.getElementById(`btn-absent-\${studentId}`);
+  const row = document.getElementById(`att-row-\${studentId}`);
 
   if (present) {
     presentBtn.style.background = 'var(--success)';
@@ -5230,7 +5230,7 @@ function setPerf(studentId, rating) {
   const colors = { needs_work: 'var(--red)', progressing: 'var(--amber)', excellent: 'var(--success)' };
   const labels = { needs_work: 'Needs Work', progressing: 'Progressing ✓', excellent: 'Excellent ⭐' };
   ratings.forEach(r => {
-    const btn = document.getElementById(\`perf-${r.replace('_','-')}-\${studentId}\`);
+    const btn = document.getElementById(`perf-${r.replace('_','-')}-\${studentId}`);
     if (btn) {
       btn.style.background = r === rating ? colors[r] : 'var(--gray-200)';
       btn.style.color = r === rating ? 'white' : 'var(--gray-600)';
@@ -5243,7 +5243,7 @@ function toggleSkill(studentId, skill) {
   if (!attendanceData[studentId].skills) attendanceData[studentId].skills = {};
   const current = attendanceData[studentId].skills[skill];
   attendanceData[studentId].skills[skill] = !current;
-  const btn = document.getElementById(\`skill-\${studentId}-\${skill}\`);
+  const btn = document.getElementById(`skill-\${studentId}-\${skill}`);
   if (btn) {
     btn.style.background = !current ? 'var(--green)' : 'var(--gray-100)';
     btn.style.color = !current ? 'white' : 'var(--gray-600)';
@@ -5252,13 +5252,13 @@ function toggleSkill(studentId, skill) {
 
 function toggleHighlight(studentId) {
   if (!attendanceData[studentId]) return;
-  attendanceData[studentId].highlight = document.getElementById(\`highlight-\${studentId}\`).checked;
+  attendanceData[studentId].highlight = document.getElementById(`highlight-\${studentId}`).checked;
 }
 
 function saveNote(studentId, value) {
   if (!attendanceData[studentId]) return;
   attendanceData[studentId].notes = value;
-  const counter = document.getElementById(\`note-count-\${studentId}\`);
+  const counter = document.getElementById(`note-count-\${studentId}`);
   if (counter) counter.textContent = value.length + '/200';
 }
 
@@ -5302,7 +5302,7 @@ async function submitAttendance() {
     await githubPut('data/sessions/sessions.json',
       { sessions },
       sha,
-      \`Attendance: \${currentAttendanceClass.name} — \${today}\`
+      `Attendance: \${currentAttendanceClass.name} — \${today}`
     );
 
     // Update student lesson progress
@@ -5315,7 +5315,7 @@ async function submitAttendance() {
       btn.disabled = false;
     }, 1500);
 
-    alert(\`✅ Attendance submitted!\n\nPresent: \${presentCount} students\nCoach pay: $\${coachPay}\nLesson \${lessonNum} recorded.\`);
+    alert(`✅ Attendance submitted!\n\nPresent: \${presentCount} students\nCoach pay: $\${coachPay}\nLesson \${lessonNum} recorded.`);
 
   } catch(e) {
     btn.innerHTML = '✅ Submit Attendance & Notes';
@@ -5334,7 +5334,7 @@ async function updateStudentProgress(sessionRecord) {
     if (!student.lesson_progress) student.lesson_progress = {};
     
     if (data.present) {
-      student.lesson_progress[\`lesson_\${sessionRecord.lesson_number}\`] = {
+      student.lesson_progress[`lesson_\${sessionRecord.lesson_number}`] = {
         status: 'completed',
         date: sessionRecord.date,
         performance: data.performance,
@@ -5343,8 +5343,8 @@ async function updateStudentProgress(sessionRecord) {
         highlight: data.highlight
       };
     } else {
-      if (!student.lesson_progress[\`lesson_\${sessionRecord.lesson_number}\`]) {
-        student.lesson_progress[\`lesson_\${sessionRecord.lesson_number}\`] = {
+      if (!student.lesson_progress[`lesson_\${sessionRecord.lesson_number}`]) {
+        student.lesson_progress[`lesson_\${sessionRecord.lesson_number}`] = {
           status: 'missed',
           date: sessionRecord.date,
           makeup_required: true,
@@ -5360,7 +5360,7 @@ async function updateStudentProgress(sessionRecord) {
       await githubPut('data/students/students.json',
         { students },
         state.data.students_sha,
-        \`Update lesson progress: \${sessionRecord.class_id}\`
+        `Update lesson progress: \${sessionRecord.class_id}`
       );
       state.data.students = students;
     } catch(e) { console.warn('Could not update student progress:', e); }
@@ -5389,7 +5389,7 @@ function renderAllClassesForAttendance() {
     const school = getSchoolName(cls.school_id);
     const students = (state.data.students || []).filter(s => s.class_id === cls.id);
     const lessonNum = getCurrentLesson(cls);
-    return \`
+    return `
       <div class="class-slot" onclick="openAttendanceSession('\${cls.id}')">
         <div class="time-badge">\${cls.start_time || '—'}</div>
         <div class="class-info">
@@ -5398,7 +5398,7 @@ function renderAllClassesForAttendance() {
         </div>
         <div class="enrollment-badge">\${students.length}/\${cls.max_students || 7}</div>
         <button class="btn btn-primary btn-sm">Take Attendance →</button>
-      </div>\`;
+      </div>`;
   }).join('');
 }
 
@@ -5420,7 +5420,7 @@ function calcRegAge() {
   if (!dob) return;
   const age = calculateAge(dob);
   const display = document.getElementById('rf-age-display');
-  if (display) display.value = \`\${age} years old — Age \${age} track\`;
+  if (display) display.value = `\${age} years old — Age \${age} track`;
 }
 
 function populateRegFormSchools() {
@@ -5428,7 +5428,7 @@ function populateRegFormSchools() {
   if (!sel) return;
   const activeSchools = (state.data.schools || []).filter(s => s.pipeline_stage === 'signed');
   sel.innerHTML = '<option value="">Select school...</option>' + 
-    activeSchools.map(s => \`<option value="\${s.id}">\${s.name} — \${s.city}</option>\`).join('');
+    activeSchools.map(s => `<option value="\${s.id}">\${s.name} — \${s.city}</option>`).join('');
   sel.onchange = () => populateRegFormClasses(sel.value);
 }
 
@@ -5441,8 +5441,8 @@ function populateRegFormClasses(schoolId) {
     classes.map(c => {
       const count = enrolled.filter(s => s.class_id === c.id).length;
       const spots = (c.max_students || 7) - count;
-      const status = spots > 0 ? \`\${spots} spots left\` : 'FULL — waitlist';
-      return \`<option value="\${c.id}" \${spots === 0 ? 'style=color:red' : ''}>\${c.name} · \${c.day} \${c.start_time} (\${status})</option>\`;
+      const status = spots > 0 ? `\${spots} spots left` : 'FULL — waitlist';
+      return `<option value="\${c.id}" \${spots === 0 ? 'style=color:red' : ''}>\${c.name} · \${c.day} \${c.start_time} (\${status})</option>`;
     }).join('');
 }
 
@@ -5485,7 +5485,7 @@ async function submitRegistrationForm() {
     id: 'stu_' + Date.now(),
     first_name: firstName,
     last_name: lastName,
-    full_name: \`\${firstName} \${lastName}\`,
+    full_name: `\${firstName} \${lastName}`,
     dob, age,
     age_track: age,
     gender: document.getElementById('rf-gender').value,
@@ -5519,13 +5519,13 @@ async function submitRegistrationForm() {
     await githubPut('data/students/students.json',
       { students: state.data.students },
       state.data.students_sha,
-      \`New enrollment via form: \${student.full_name}\`
+      `New enrollment via form: \${student.full_name}`
     );
 
     document.getElementById('reg-form-container').style.display = 'none';
     document.getElementById('reg-form-success').style.display = 'block';
     document.getElementById('reg-success-name').textContent = 
-      \`\${firstName} has been enrolled in EduGolfKids! Welcome to the program.\`;
+      `\${firstName} has been enrolled in EduGolfKids! Welcome to the program.`;
     
     updateDashboardStats();
   } catch(e) {
@@ -7282,13 +7282,6 @@ async function saveComplianceDoc() {
     alert('Error saving compliance record: ' + e.message);
   }
 }
-    closeModal('modal-upload-doc');
-    renderMyCompliance();
-    alert(`✅ "${document.getElementById('upload-doc-label').textContent}" recorded successfully.`);
-  } catch(e) {
-    alert('Error saving compliance record: ' + e.message);
-  }
-}
 
 // ══════════════════════════════════════════
 //  CERTIFICATION ENGINE
@@ -7609,6 +7602,11 @@ function renderHQEducationStats() {
   const coaches = state.data.coaches || [];
   safeSet('cert-network-count', coaches.length);
 }
+
+// ══════════════════════════════════════════
+//  STARTUP
+// ══════════════════════════════════════════
+window.addEventListener('DOMContentLoaded', () => {
   checkExistingSession();
   // Set default invoice due date
   const dueDate = document.getElementById('invoice-due');
