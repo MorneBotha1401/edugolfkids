@@ -10,7 +10,18 @@
       "active": true,
       "created": "2026-04-22",
       "last_login": null,
-      "permissions": ["all"]
+      "permissions": [
+        "all"
+      ]
+    },
+    {
+      "name": "Morne Botha",
+      "certifications": {
+        "M0_ACK": {
+          "ack": true,
+          "date": "2026-04-24"
+        }
+      }
     }
   ]
 }
