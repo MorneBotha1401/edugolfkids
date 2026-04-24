@@ -61,7 +61,12 @@ async function saveM0Ack() {
 // ══════════════════════════════════════════
 
 const EDU_MODULES = {
-M0:[{  id:"M0",  title:"Compliance &amp; Safeguarding",  icon:"\ud83d\udee1\ufe0f",  sections:[    {h:`Compliance &amp; Safeguarding`,b:`<p style="margin:0 0 10px;line-height:1.85;">MODEL 0<em></em></p>
+M0:[{
+  id:"M0",
+  title:"Compliance &amp; Safeguarding",
+  icon:"\ud83d\udee1\ufe0f",
+  sections:[
+    {h:`Compliance &amp; Safeguarding`,b:`<p style="margin:0 0 10px;line-height:1.85;">MODEL 0<em></em></p>
 <p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Foundational Compliance &amp; Safeguarding Certification</strong></p>
 <p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong><em>(Pre-Course Mandatory Requirement – Revised Operational Version)</strong></em></p>
 <p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>1. Duty of Care Framework</strong></p>
@@ -230,7 +235,8 @@ M0:[{  id:"M0",  title:"Compliance &amp; Safeguarding",  icon:"\ud83d\udee1\ufe0
 <p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>• Coaches must arrive at the school a minimum of 15 minutes prior to scheduled lesson start time.</strong></p>
 <p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>• Upon arrival, coaches must notify designated school personnel of their presence.</strong></p>
 <p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>• All equipment and stations must be fully set up before children arrive.</strong></p>
-<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Under no circumstances may:</strong></p>`},    {h:`Compliance &amp; Safeguarding (continued)`,b:`<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>• Equipment setup occur while children are present.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Under no circumstances may:</strong></p>`},
+    {h:`Compliance &amp; Safeguarding (continued)`,b:`<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>• Equipment setup occur while children are present.</strong></p>
 <p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>• Breakdown or packing up occur while children are present.</strong></p>
 <p style="margin:0 0 10px;line-height:1.85;"><strong>Children must never be present in an environment where equipment is being assembled, adjusted, or removed.</strong></p>
 <p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>This prevents:</strong></p>
@@ -331,8 +337,17 @@ M0:[{  id:"M0",  title:"Compliance &amp; Safeguarding",  icon:"\ud83d\udee1\ufe0
     <span style="font-size:14px;"><strong>I have read and understood all Model 0 compliance requirements.</strong> I acknowledge and agree to comply with all standards as a condition of certification.</span>
   </label>
   <div id="m0-ack-status" style="margin-top:8px;font-size:13px;color:var(--gray-400);"></div>
-</div>`},  ]},],
-L1:[{  id:"L1_M1",  title:"Module 1 \u2014 EduGolfKids System Standards",  icon:"\ud83d\udccb",  sections:[    {h:`Non-Negotiable 60-Minute Session Architecture`,b:`<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>SECTION 1</strong></p>
+</div>`},
+  ]
+}],
+
+L1:[
+{
+  id:"L1_M1",
+  title:"Module 1 \u2014 EduGolfKids System Standards",
+  icon:"\ud83d\udccb",
+  sections:[
+    {h:`Non-Negotiable 60-Minute Session Architecture`,b:`<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>SECTION 1</strong></p>
 <p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Non-Negotiable 60-Minute Session Architecture</strong></p>
 <p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Policy: Mandatory Structure</strong></p>
 <p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>All sessions MUST follow:</strong></p>
@@ -438,7 +453,8 @@ L1:[{  id:"L1_M1",  title:"Module 1 \u2014 EduGolfKids System Standards",  icon:
   <li style="margin-bottom:5px;"><strong>Uneven progress</strong></li>
   <li style="margin-bottom:5px;"><strong>Brand dilution</strong></li>
 </ul>
-<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Structure protects both the child and EduGolfKids.</strong></p>`},    {h:`Approved vs Prohibited Drills (Expanded)`,b:`<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>SECTION 2</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Structure protects both the child and EduGolfKids.</strong></p>`},
+    {h:`Approved vs Prohibited Drills (Expanded)`,b:`<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>SECTION 2</strong></p>
 <p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Approved vs Prohibited Drills (Expanded)</strong></p>
 <p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>APPROVED DRILLS MUST:</strong></p>
 <ul style="margin:6px 0 12px 22px;line-height:1.85;">
@@ -505,7 +521,8 @@ L1:[{  id:"L1_M1",  title:"Module 1 \u2014 EduGolfKids System Standards",  icon:
   <li style="margin-bottom:5px;"><strong>“Brush the grass”</strong></li>
   <li style="margin-bottom:5px;"><strong>“Hit the rocket”</strong></li>
   <li style="margin-bottom:5px;"><strong>“Make the ball fly to the red cone”</strong></li>
-</ul>`},    {h:`Equipment &Spacing Governance (Expanded)`,b:`<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>SECTION 3</strong></p>
+</ul>`},
+    {h:`Equipment &Spacing Governance (Expanded)`,b:`<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>SECTION 3</strong></p>
 <p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Equipment &amp; Spacing Governance (Expanded)</strong></p>
 <p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Lateral Spacing: Minimum 6 Feet</strong></p>
 <p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>This accounts for:</strong></p>
@@ -539,7 +556,8 @@ L1:[{  id:"L1_M1",  title:"Module 1 \u2014 EduGolfKids System Standards",  icon:
   <li style="margin-bottom:5px;"><strong>No adult equipment</strong></li>
   <li style="margin-bottom:5px;"><strong>Cones to define zones</strong></li>
 </ul>
-<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Safety is engineered — not reactive.</strong></p>`},    {h:`No Improvisation Policy (Deep Governance)`,b:`<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>SECTION 4</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Safety is engineered — not reactive.</strong></p>`},
+    {h:`No Improvisation Policy (Deep Governance)`,b:`<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>SECTION 4</strong></p>
 <p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>No Improvisation Policy (Deep Governance)</strong></p>
 <p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>This protects:</strong></p>
 <ul style="margin:6px 0 12px 22px;line-height:1.85;">
@@ -646,14 +664,23 @@ L1:[{  id:"L1_M1",  title:"Module 1 \u2014 EduGolfKids System Standards",  icon:
 </ul>
 <p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>You are not “teaching golf.”</strong></p>
 <p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>You are engineering developmental environments.</strong></p>
-<p style="margin:0 0 10px;line-height:1.85;">##</p>`},  ]},{  id:"L1_M2",  title:"Module 2 \u2014 Child Development (Ages 4\u201310)",  icon:"\ud83e\udde0",  sections:[    {h:`Developmental Foundations`,b:`<div class="doc-section-divider"></div>
+<p style="margin:0 0 10px;line-height:1.85;">##</p>`},
+  ]
+},
+{
+  id:"L1_M2",
+  title:"Module 2 \u2014 Child Development (Ages 4\u201310)",
+  icon:"\ud83e\udde0",
+  sections:[
+    {h:`Developmental Foundations`,b:`<div class="doc-section-divider"></div>
 <p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Developmental Foundations</p>
 <p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Child development occurs across four domains:</p>
 <p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Cognitive (thinking capacity)</p>
 <p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Motor (movement control)</p>
 <p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Emotional (self-regulation)</p>
 <p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Social (peer interaction)</p>
-<p style="margin:0 0 10px;line-height:1.85;">Coaching must align with all four — not just skill instruction.</p>`},    {h:`Age Group Breakdown`,b:`<div class="doc-section-divider"></div>
+<p style="margin:0 0 10px;line-height:1.85;">Coaching must align with all four — not just skill instruction.</p>`},
+    {h:`Age Group Breakdown`,b:`<div class="doc-section-divider"></div>
 <p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Age Group Breakdown</p>
 <h3 style="color:var(--green-dark);border-bottom:2px solid var(--green-light);padding-bottom:8px;margin:24px 0 12px;font-size:16px;">AGE 4–6: Early Fundamentals Stage</h3>
 <h3 style="color:var(--green-dark);border-bottom:2px solid var(--green-light);padding-bottom:8px;margin:24px 0 12px;font-size:16px;">Neurological Characteristics</h3>
@@ -755,7 +782,8 @@ L1:[{  id:"L1_M1",  title:"Module 1 \u2014 EduGolfKids System Standards",  icon:
 <p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">This age can begin to understand:</p>
 <p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Cause and effect</p>
 <p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Adjustment reasoning</p>
-<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Simple self-reflection</p>`},    {h:`Frustration Recognition & Task Adjustment`,b:`<div class="doc-section-divider"></div>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Simple self-reflection</p>`},
+    {h:`Frustration Recognition & Task Adjustment`,b:`<div class="doc-section-divider"></div>
 <p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Frustration Recognition &amp; Task Adjustment</p>
 <p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Core Rule:</p>
 <p style="margin:0 0 10px;line-height:1.85;">When frustration rises, task difficulty must adjust immediately.</p>
@@ -770,7 +798,8 @@ L1:[{  id:"L1_M1",  title:"Module 1 \u2014 EduGolfKids System Standards",  icon:
 <p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Change scoring rules</p>
 <p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Modify equipment</p>
 <p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Simplify task goal</p>
-<p style="margin:0 0 10px;line-height:1.85;">Developmentally aligned coaching is adaptive.</p>`},    {h:`Language Framework by Age`,b:`<div class="doc-section-divider"></div>
+<p style="margin:0 0 10px;line-height:1.85;">Developmentally aligned coaching is adaptive.</p>`},
+    {h:`Language Framework by Age`,b:`<div class="doc-section-divider"></div>
 <p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Language Framework by Age</p>
 <p style="margin:0 0 10px;line-height:1.85;">| Category | Age 4–6 | Age 6–9 |</p>
 <p style="margin:0 0 10px;line-height:1.85;">| --- | --- | --- |</p>
@@ -779,7 +808,8 @@ L1:[{  id:"L1_M1",  title:"Module 1 \u2014 EduGolfKids System Standards",  icon:
 <p style="margin:0 0 10px;line-height:1.85;">| Correction Style | Demonstrate | Ask-guided correction |</p>
 <p style="margin:0 0 10px;line-height:1.85;">| Competition | Cooperative games | Structured competition |</p>
 <p style="margin:0 0 10px;line-height:1.85;">| Feedback | Immediate praise | Specific performance feedback |</p>
-<p style="margin:0 0 10px;line-height:1.85;">| Reflection | “Did it go far?” | “What changed that shot?” |</p>`},    {h:`Practical Coaching Translation`,b:`<div class="doc-section-divider"></div>
+<p style="margin:0 0 10px;line-height:1.85;">| Reflection | “Did it go far?” | “What changed that shot?” |</p>`},
+    {h:`Practical Coaching Translation`,b:`<div class="doc-section-divider"></div>
 <p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Practical Coaching Translation</p>
 <p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Same Drill Example:</p>
 <p style="margin:0 0 10px;line-height:1.85;">Target Hitting Game</p>
@@ -797,7 +827,8 @@ L1:[{  id:"L1_M1",  title:"Module 1 \u2014 EduGolfKids System Standards",  icon:
 <p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Encourage self-evaluation:</p>
 <p style="margin:0 0 10px;line-height:1.85;">“What adjustment helped?”</p>
 <p style="margin:0 0 10px;line-height:1.85;">Allow peer challenge.</p>
-<p style="margin:0 0 10px;line-height:1.85;">Introduce light competitive pressure.</p>`},    {h:`Why Developmental Matching Matters`,b:`<div class="doc-section-divider"></div>
+<p style="margin:0 0 10px;line-height:1.85;">Introduce light competitive pressure.</p>`},
+    {h:`Why Developmental Matching Matters`,b:`<div class="doc-section-divider"></div>
 <p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Why Developmental Matching Matters</p>
 <p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">When instruction exceeds development:</p>
 <p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Anxiety increases</p>
@@ -866,7 +897,15 @@ L1:[{  id:"L1_M1",  title:"Module 1 \u2014 EduGolfKids System Standards",  icon:
 <p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Movement literacy foundations</p>
 <p style="margin:0 0 10px;line-height:1.85;">Development dictates instruction.</p>
 <p style="margin:0 0 10px;line-height:1.85;">Not the other way around.</p>
-<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><em></em></p>`},  ]},{  id:"L1_M3",  title:"Module 3 \u2014 Motor Learning &amp; Constraints",  icon:"\u2699\ufe0f",  sections:[    {h:`What Is Motor Learning?`,b:`<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>SECTION 1</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><em></em></p>`},
+  ]
+},
+{
+  id:"L1_M3",
+  title:"Module 3 \u2014 Motor Learning &amp; Constraints",
+  icon:"\u2699\ufe0f",
+  sections:[
+    {h:`What Is Motor Learning?`,b:`<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>SECTION 1</strong></p>
 <p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>What Is Motor Learning?</strong></p>
 <p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Motor learning is:</strong></p>
 <p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>A relatively permanent change in movement capability produced by practice.</strong></p>
@@ -880,7 +919,8 @@ L1:[{  id:"L1_M1",  title:"Module 1 \u2014 EduGolfKids System Standards",  icon:
 <p style="margin:0 0 10px;line-height:1.85;">| <strong>Block repetition</strong> | <strong>Variable problem-solving</strong> |</p>
 <p style="margin:0 0 10px;line-height:1.85;">| <strong>Heavy correction</strong> | <strong>Exploration-based</strong> |</p>
 <p style="margin:0 0 10px;line-height:1.85;">| <strong>Immediate improvement</strong> | <strong>Delayed improvement but stronger</strong> |</p>
-<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>EduGolfKids coaches train for learning, not appearance.</strong></p>`},    {h:`How Children Acquire Movement Skills`,b:`<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>SECTION 2</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>EduGolfKids coaches train for learning, not appearance.</strong></p>`},
+    {h:`How Children Acquire Movement Skills`,b:`<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>SECTION 2</strong></p>
 <p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>How Children Acquire Movement Skills</strong></p>
 <p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Motor learning occurs through:</strong></p>
 <ul style="margin:6px 0 12px 22px;line-height:1.85;">
@@ -902,7 +942,8 @@ L1:[{  id:"L1_M1",  title:"Module 1 \u2014 EduGolfKids System Standards",  icon:
   <li style="margin-bottom:5px;"><strong>Being corrected every swing</strong></li>
   <li style="margin-bottom:5px;"><strong>Copying adult biomechanics</strong></li>
   <li style="margin-bottom:5px;"><strong>Standing in lines</strong></li>
-</ul>`},    {h:`Blocked vs Variable Practice`,b:`<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>SECTION 3</strong></p>
+</ul>`},
+    {h:`Blocked vs Variable Practice`,b:`<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>SECTION 3</strong></p>
 <p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Blocked vs Variable Practice</strong></p>
 <p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Blocked Practice</strong></p>
 <p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Example:</strong></p>
@@ -924,7 +965,8 @@ L1:[{  id:"L1_M1",  title:"Module 1 \u2014 EduGolfKids System Standards",  icon:
 <p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Messier.</strong></p>
 <p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Long-term result:</strong></p>
 <p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Stronger retention.</strong></p>
-<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>EduGolfKids prioritizes variable practice.</strong></p>`},    {h:`The Constraints-Led Approach (CLA)`,b:`<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>SECTION 4</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>EduGolfKids prioritizes variable practice.</strong></p>`},
+    {h:`The Constraints-Led Approach (CLA)`,b:`<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>SECTION 4</strong></p>
 <p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>The Constraints-Led Approach (CLA)</strong></p>
 <p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>(Newell, 1986; Renshaw et al., 2010)</strong></p>
 <p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Instead of telling children how to move, coaches manipulate:</strong></p>
@@ -949,7 +991,8 @@ L1:[{  id:"L1_M1",  title:"Module 1 \u2014 EduGolfKids System Standards",  icon:
   <li style="margin-bottom:5px;"><strong>Coordination level</strong></li>
   <li style="margin-bottom:5px;"><strong>Emotional state</strong></li>
 </ul>
-<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Movement emerges naturally when constraints are designed properly.</strong></p>`},    {h:`Why Traditional Technical Instruction Fails in Children`,b:`<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>SECTION 5</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Movement emerges naturally when constraints are designed properly.</strong></p>`},
+    {h:`Why Traditional Technical Instruction Fails in Children`,b:`<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>SECTION 5</strong></p>
 <p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Why Traditional Technical Instruction Fails in Children</strong></p>
 <p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>When coaches say:</strong></p>
 <p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>“Keep your left arm straight.”</strong></p>
@@ -966,7 +1009,8 @@ L1:[{  id:"L1_M1",  title:"Module 1 \u2014 EduGolfKids System Standards",  icon:
 <p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Example:</strong></p>
 <p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Instead of “Rotate your hips,” say:</strong></p>
 <p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>“Make your belly button face the target.”</strong></p>
-<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>External focus improves motor efficiency (Wulf, 2013).</strong></p>`},    {h:`Guided Discovery vs Direct Correction`,b:`<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>SECTION 6</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>External focus improves motor efficiency (Wulf, 2013).</strong></p>`},
+    {h:`Guided Discovery vs Direct Correction`,b:`<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>SECTION 6</strong></p>
 <p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Guided Discovery vs Direct Correction</strong></p>
 <p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Direct Correction:</strong></p>
 <p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>“You lifted your head.”</strong></p>
@@ -986,7 +1030,8 @@ L1:[{  id:"L1_M1",  title:"Module 1 \u2014 EduGolfKids System Standards",  icon:
   <li style="margin-bottom:5px;"><strong>Ask reflective question</strong></li>
   <li style="margin-bottom:5px;"><strong>Demonstrate</strong></li>
   <li style="margin-bottom:5px;"><strong>Direct correction (last resort)</strong></li>
-</ul>`},    {h:`Error Is Necessary`,b:`<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>SECTION 7</strong></p>
+</ul>`},
+    {h:`Error Is Necessary`,b:`<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>SECTION 7</strong></p>
 <p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Error Is Necessary</strong></p>
 <p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Children must make errors.</strong></p>
 <p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Error allows:</strong></p>
@@ -1002,7 +1047,8 @@ L1:[{  id:"L1_M1",  title:"Module 1 \u2014 EduGolfKids System Standards",  icon:
   <li style="margin-bottom:5px;"><strong>Motor rigidity</strong></li>
   <li style="margin-bottom:5px;"><strong>Coach dependency</strong></li>
 </ul>
-<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>EduGolfKids embraces intelligent error.</strong></p>`},    {h:`Designing a Motor-Learning-Optimized Session`,b:`<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>SECTION 8</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>EduGolfKids embraces intelligent error.</strong></p>`},
+    {h:`Designing a Motor-Learning-Optimized Session`,b:`<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>SECTION 8</strong></p>
 <p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Designing a Motor-Learning-Optimized Session</strong></p>
 <p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Within 20-Minute Skill Block:</strong></p>
 <p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Instead of:</strong></p>
@@ -1018,7 +1064,8 @@ L1:[{  id:"L1_M1",  title:"Module 1 \u2014 EduGolfKids System Standards",  icon:
 <p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Score 3 in a row.</strong></p>
 <p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Challenge 4:</strong></p>
 <p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Time pressure round.</strong></p>
-<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Movement variability increases learning strength.</strong></p>`},    {h:`Cognitive Load in Children`,b:`<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>SECTION 9</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Movement variability increases learning strength.</strong></p>`},
+    {h:`Cognitive Load in Children`,b:`<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>SECTION 9</strong></p>
 <p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Cognitive Load in Children</strong></p>
 <p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Children 4–10 have:</strong></p>
 <ul style="margin:6px 0 12px 22px;line-height:1.85;">
@@ -1033,7 +1080,8 @@ L1:[{  id:"L1_M1",  title:"Module 1 \u2014 EduGolfKids System Standards",  icon:
   <li style="margin-bottom:5px;"><strong>Avoid multi-step breakdowns.</strong></li>
   <li style="margin-bottom:5px;"><strong>Demonstrate visually.</strong></li>
 </ul>
-<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Cognitive overload reduces motor execution.</strong></p>`},    {h:`Application to Golf-Specific Skills`,b:`<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>SECTION 10</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Cognitive overload reduces motor execution.</strong></p>`},
+    {h:`Application to Golf-Specific Skills`,b:`<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>SECTION 10</strong></p>
 <p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Application to Golf-Specific Skills</strong></p>
 <p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Putting</strong></p>
 <p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Wrong Approach:</strong></p>
@@ -1065,7 +1113,8 @@ L1:[{  id:"L1_M1",  title:"Module 1 \u2014 EduGolfKids System Standards",  icon:
   <li style="margin-bottom:5px;"><strong>Modify scoring constraint</strong></li>
   <li style="margin-bottom:5px;"><strong>Encourage rhythm cue</strong></li>
 </ul>
-<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Movement self-organizes under constraints.</strong></p>`},    {h:`Coach Decision-Making Model`,b:`<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>SECTION 11</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Movement self-organizes under constraints.</strong></p>`},
+    {h:`Coach Decision-Making Model`,b:`<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>SECTION 11</strong></p>
 <p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Coach Decision-Making Model</strong></p>
 <p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>When child struggles:</strong></p>
 <p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Ask:</strong></p>
@@ -1100,7 +1149,8 @@ L1:[{  id:"L1_M1",  title:"Module 1 \u2014 EduGolfKids System Standards",  icon:
   <li style="margin-bottom:5px;"><strong>Reduction of verbal overload</strong></li>
   <li style="margin-bottom:5px;"><strong>Proper constraint manipulation</strong></li>
   <li style="margin-bottom:5px;"><strong>Child engagement response</strong></li>
-</ul>`},    {h:`Certification Assessment`,b:`<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>SECTION 12</strong></p>
+</ul>`},
+    {h:`Certification Assessment`,b:`<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>SECTION 12</strong></p>
 <p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Certification Assessment</strong></p>
 <p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Written (30%)</strong></p>
 <p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Questions may include:</strong></p>
@@ -1151,7 +1201,15 @@ L1:[{  id:"L1_M1",  title:"Module 1 \u2014 EduGolfKids System Standards",  icon:
 <p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Constraints guide behavior.</strong></p>
 <p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Structure protects development.</strong></p>
 <p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Error builds intelligence.</strong></p>
-<p style="margin:0 0 10px;line-height:1.85;">##</p>`},  ]},{  id:"L1_M4",  title:"Module 4 \u2014 Long-Term Athlete Development",  icon:"\ud83d\udcc8",  sections:[    {h:`What is LTAD?`,b:`<div class="doc-section-divider"></div>
+<p style="margin:0 0 10px;line-height:1.85;">##</p>`},
+  ]
+},
+{
+  id:"L1_M4",
+  title:"Module 4 \u2014 Long-Term Athlete Development",
+  icon:"\ud83d\udcc8",
+  sections:[
+    {h:`What is LTAD?`,b:`<div class="doc-section-divider"></div>
 <p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">What is LTAD?</p>
 <p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Long-Term Athlete Development (LTAD) is a science-based framework that organizes skill progression according to:</p>
 <p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Biological development</p>
@@ -1168,7 +1226,8 @@ L1:[{  id:"L1_M1",  title:"Module 1 \u2014 EduGolfKids System Standards",  icon:
 <p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">LTAD asks:</p>
 <p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">“What is developmentally appropriate at this stage?”</p>
 <p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Not:</p>
-<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">“How fast can we make them good?”</p>`},    {h:`Active Start Stage (Ages 4–6)`,b:`<div class="doc-section-divider"></div>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">“How fast can we make them good?”</p>`},
+    {h:`Active Start Stage (Ages 4–6)`,b:`<div class="doc-section-divider"></div>
 <p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Active Start Stage (Ages 4–6)</p>
 <p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Primary Goal:</p>
 <p style="margin:0 0 10px;line-height:1.85;">Build movement literacy.</p>
@@ -1203,7 +1262,8 @@ L1:[{  id:"L1_M1",  title:"Module 1 \u2014 EduGolfKids System Standards",  icon:
 <p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Early rigid technical instruction reduces:</p>
 <p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Creativity</p>
 <p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Natural movement exploration</p>
-<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Adaptive learning</p>`},    {h:`FUNdamentals Stage (Ages 6–9)`,b:`<div class="doc-section-divider"></div>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Adaptive learning</p>`},
+    {h:`FUNdamentals Stage (Ages 6–9)`,b:`<div class="doc-section-divider"></div>
 <p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">FUNdamentals Stage (Ages 6–9)</p>
 <p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Primary Goal:</p>
 <p style="margin:0 0 10px;line-height:1.85;">Build athletic foundation + basic golf control.</p>
@@ -1223,7 +1283,8 @@ L1:[{  id:"L1_M1",  title:"Module 1 \u2014 EduGolfKids System Standards",  icon:
 <p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Swing reconstruction</p>
 <p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Biomechanical perfectionism</p>
 <p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">High repetition blocked practice</p>
-<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Adult tournament pressure</p>`},    {h:`The Dangers of Early Technical Overload`,b:`<div class="doc-section-divider"></div>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Adult tournament pressure</p>`},
+    {h:`The Dangers of Early Technical Overload`,b:`<div class="doc-section-divider"></div>
 <p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">The Dangers of Early Technical Overload</p>
 <p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Early technical overload occurs when:</p>
 <p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Coaches focus excessively on mechanics</p>
@@ -1259,7 +1320,8 @@ L1:[{  id:"L1_M1",  title:"Module 1 \u2014 EduGolfKids System Standards",  icon:
 <p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Early performance spike</p>
 <p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Mid-adolescence stagnation</p>
 <p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Difficulty adapting later</p>
-<p style="margin:0 0 10px;line-height:1.85;">LTAD prevents early plateau.</p>`},    {h:`Development vs Correction Priority`,b:`<div class="doc-section-divider"></div>
+<p style="margin:0 0 10px;line-height:1.85;">LTAD prevents early plateau.</p>`},
+    {h:`Development vs Correction Priority`,b:`<div class="doc-section-divider"></div>
 <p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Development vs Correction Priority</p>
 <p style="margin:0 0 10px;line-height:1.85;">This is critical for certification.</p>
 <p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">When observing a child swing, ask:</p>
@@ -1284,12 +1346,14 @@ L1:[{  id:"L1_M1",  title:"Module 1 \u2014 EduGolfKids System Standards",  icon:
 <p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Instead:</p>
 <p style="margin:0 0 10px;line-height:1.85;">Adjust target constraints.</p>
 <p style="margin:0 0 10px;line-height:1.85;">Encourage exploration.</p>
-<p style="margin:0 0 10px;line-height:1.85;">Let natural refinement occur over time.</p>`},    {h:`Stage-Appropriate Coaching Behavior`,b:`<div class="doc-section-divider"></div>
+<p style="margin:0 0 10px;line-height:1.85;">Let natural refinement occur over time.</p>`},
+    {h:`Stage-Appropriate Coaching Behavior`,b:`<div class="doc-section-divider"></div>
 <p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Stage-Appropriate Coaching Behavior</p>
 <p style="margin:0 0 10px;line-height:1.85;">| Stage | Coach Role | Technical Emphasis | Emotional Emphasis |</p>
 <p style="margin:0 0 10px;line-height:1.85;">| --- | --- | --- | --- |</p>
 <p style="margin:0 0 10px;line-height:1.85;">| 4–6 | Movement guide | Minimal | Fun + safety |</p>
-<p style="margin:0 0 10px;line-height:1.85;">| 6–9 | Skill architect | Moderate external cues | Challenge + confidence |</p>`},    {h:`Practical Coaching Translation`,b:`<div class="doc-section-divider"></div>
+<p style="margin:0 0 10px;line-height:1.85;">| 6–9 | Skill architect | Moderate external cues | Challenge + confidence |</p>`},
+    {h:`Practical Coaching Translation`,b:`<div class="doc-section-divider"></div>
 <p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Practical Coaching Translation</p>
 <p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Same Drill: Target Accuracy Game</p>
 <p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Coaching 5-Year-Old (Active Start)</p>
@@ -1307,7 +1371,8 @@ L1:[{  id:"L1_M1",  title:"Module 1 \u2014 EduGolfKids System Standards",  icon:
 <p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Scoring</p>
 <p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Language:</p>
 <p style="margin:0 0 10px;line-height:1.85;">“What changed when that one went straighter?”</p>
-<p style="margin:0 0 10px;line-height:1.85;">Encourage reflection, not mechanical lecture.</p>`},    {h:`The LTAD Protection Rule`,b:`<div class="doc-section-divider"></div>
+<p style="margin:0 0 10px;line-height:1.85;">Encourage reflection, not mechanical lecture.</p>`},
+    {h:`The LTAD Protection Rule`,b:`<div class="doc-section-divider"></div>
 <p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">The LTAD Protection Rule</p>
 <p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">EduGolfKids Coaches must never:</p>
 <p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Promise performance outcomes</p>
@@ -1338,7 +1403,8 @@ L1:[{  id:"L1_M1",  title:"Module 1 \u2014 EduGolfKids System Standards",  icon:
 <p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Constraint adjustment:</p>
 <p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Narrower stance challenge</p>
 <p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Closer target</p>
-<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Larger landing zone</p>`},    {h:`Certification Assessment`,b:`<div class="doc-section-divider"></div>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Larger landing zone</p>`},
+    {h:`Certification Assessment`,b:`<div class="doc-section-divider"></div>
 <p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Certification Assessment</p>
 <p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Written (30%)</p>
 <p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Questions may include:</p>
@@ -1377,7 +1443,15 @@ L1:[{  id:"L1_M1",  title:"Module 1 \u2014 EduGolfKids System Standards",  icon:
 <p style="margin:0 0 10px;line-height:1.85;">Progressive skill layering.</p>
 <p style="margin:0 0 10px;line-height:1.85;">Short-term technical obsession destroys long-term potential.</p>
 <p style="margin:0 0 10px;line-height:1.85;">EduGolfKids coaches are long-term architects.</p>
-<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><em></em></p>`},  ]},{  id:"L1_M5",  title:"Module 5 \u2014 21st Century Learning",  icon:"\ud83d\udd2c",  sections:[    {h:`What Are 21st Century Learning Skills?`,b:`<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>SECTION 1</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><em></em></p>`},
+  ]
+},
+{
+  id:"L1_M5",
+  title:"Module 5 \u2014 21st Century Learning",
+  icon:"\ud83d\udd2c",
+  sections:[
+    {h:`What Are 21st Century Learning Skills?`,b:`<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>SECTION 1</strong></p>
 <p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>What Are 21st Century Learning Skills?</strong></p>
 <p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Modern education emphasizes four core competencies:</strong></p>
 <p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>1️⃣ Critical Thinking</strong></p>
@@ -1385,7 +1459,8 @@ L1:[{  id:"L1_M1",  title:"Module 1 \u2014 EduGolfKids System Standards",  icon:
 <p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>3️⃣ Collaboration</strong></p>
 <p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>4️⃣ Creativity</strong></p>
 <p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Often called the “4 C’s.”</strong></p>
-<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>EduGolfKids embeds these inside golf activities.</strong></p>`},    {h:`Critical Thinking in Golf Sessions`,b:`<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>SECTION 2</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>EduGolfKids embeds these inside golf activities.</strong></p>`},
+    {h:`Critical Thinking in Golf Sessions`,b:`<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>SECTION 2</strong></p>
 <p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Critical Thinking in Golf Sessions</strong></p>
 <p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Critical thinking is:</strong></p>
 <p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>The ability to analyze, adjust, and solve problems.</strong></p>
@@ -1402,7 +1477,8 @@ L1:[{  id:"L1_M1",  title:"Module 1 \u2014 EduGolfKids System Standards",  icon:
   <li style="margin-bottom:5px;"><strong>Tactical awareness</strong></li>
   <li style="margin-bottom:5px;"><strong>Cognitive flexibility</strong></li>
 </ul>
-<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Children who think about movement retain it better.</strong></p>`},    {h:`Communication Development`,b:`<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>SECTION 3</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Children who think about movement retain it better.</strong></p>`},
+    {h:`Communication Development`,b:`<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>SECTION 3</strong></p>
 <p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Communication Development</strong></p>
 <p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Communication is developed when children:</strong></p>
 <ul style="margin:6px 0 12px 22px;line-height:1.85;">
@@ -1423,7 +1499,8 @@ L1:[{  id:"L1_M1",  title:"Module 1 \u2014 EduGolfKids System Standards",  icon:
   <li style="margin-bottom:5px;"><strong>Over-talking</strong></li>
   <li style="margin-bottom:5px;"><strong>Lecture style delivery</strong></li>
   <li style="margin-bottom:5px;"><strong>One-direction communication</strong></li>
-</ul>`},    {h:`Collaboration Through Structured Games`,b:`<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>SECTION 4</strong></p>
+</ul>`},
+    {h:`Collaboration Through Structured Games`,b:`<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>SECTION 4</strong></p>
 <p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Collaboration Through Structured Games</strong></p>
 <p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Collaboration teaches:</strong></p>
 <ul style="margin:6px 0 12px 22px;line-height:1.85;">
@@ -1444,7 +1521,8 @@ L1:[{  id:"L1_M1",  title:"Module 1 \u2014 EduGolfKids System Standards",  icon:
   <li style="margin-bottom:5px;"><strong>Prevent dominance behavior</strong></li>
   <li style="margin-bottom:5px;"><strong>Encourage inclusion</strong></li>
 </ul>
-<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Collaboration increases social learning and enjoyment.</strong></p>`},    {h:`Creativity Through Constraint Variation`,b:`<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>SECTION 5</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Collaboration increases social learning and enjoyment.</strong></p>`},
+    {h:`Creativity Through Constraint Variation`,b:`<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>SECTION 5</strong></p>
 <p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Creativity Through Constraint Variation</strong></p>
 <p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Creativity emerges when:</strong></p>
 <ul style="margin:6px 0 12px 22px;line-height:1.85;">
@@ -1462,7 +1540,8 @@ L1:[{  id:"L1_M1",  title:"Module 1 \u2014 EduGolfKids System Standards",  icon:
   <li style="margin-bottom:5px;"><strong>Change speed</strong></li>
   <li style="margin-bottom:5px;"><strong>Alter club angle</strong></li>
 </ul>
-<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Creative exploration builds adaptive skill.</strong></p>`},    {h:`Growth Mindset Integration`,b:`<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>SECTION 6</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Creative exploration builds adaptive skill.</strong></p>`},
+    {h:`Growth Mindset Integration`,b:`<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>SECTION 6</strong></p>
 <p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Growth Mindset Integration</strong></p>
 <p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>(Growth mindset principles inspired by Dweck)</strong></p>
 <p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Children must learn:</strong></p>
@@ -1477,7 +1556,8 @@ L1:[{  id:"L1_M1",  title:"Module 1 \u2014 EduGolfKids System Standards",  icon:
 <p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>“You’re a natural.”</strong></p>
 <p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Say:</strong></p>
 <p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>“That adjustment worked because you kept trying.”</strong></p>
-<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Reinforce effort, not talent.</strong></p>`},    {h:`Self-Regulation &Emotional Intelligence`,b:`<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>SECTION 7</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Reinforce effort, not talent.</strong></p>`},
+    {h:`Self-Regulation &Emotional Intelligence`,b:`<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>SECTION 7</strong></p>
 <p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Self-Regulation &amp; Emotional Intelligence</strong></p>
 <p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>21st-century learning includes:</strong></p>
 <ul style="margin:6px 0 12px 22px;line-height:1.85;">
@@ -1492,7 +1572,8 @@ L1:[{  id:"L1_M1",  title:"Module 1 \u2014 EduGolfKids System Standards",  icon:
   <li style="margin-bottom:5px;"><strong>It requires control</strong></li>
   <li style="margin-bottom:5px;"><strong>It requires focus</strong></li>
 </ul>
-<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Coaches must model calm tone, structured routine, and positive correction.</strong></p>`},    {h:`Attention &Engagement in Modern Children`,b:`<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>SECTION 8</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Coaches must model calm tone, structured routine, and positive correction.</strong></p>`},
+    {h:`Attention &Engagement in Modern Children`,b:`<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>SECTION 8</strong></p>
 <p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Attention &amp; Engagement in Modern Children</strong></p>
 <p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Today’s children are exposed to:</strong></p>
 <ul style="margin:6px 0 12px 22px;line-height:1.85;">
@@ -1507,7 +1588,8 @@ L1:[{  id:"L1_M1",  title:"Module 1 \u2014 EduGolfKids System Standards",  icon:
   <li style="margin-bottom:5px;"><strong>Immediate participation</strong></li>
   <li style="margin-bottom:5px;"><strong>Minimal idle time</strong></li>
 </ul>
-<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Engagement is engineered.</strong></p>`},    {h:`Reflection &Metacognition`,b:`<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>SECTION 9</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Engagement is engineered.</strong></p>`},
+    {h:`Reflection &Metacognition`,b:`<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>SECTION 9</strong></p>
 <p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Reflection &amp; Metacognition</strong></p>
 <p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Metacognition = Thinking about thinking.</strong></p>
 <p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>In wrap-up phase, ask:</strong></p>
@@ -1522,7 +1604,8 @@ L1:[{  id:"L1_M1",  title:"Module 1 \u2014 EduGolfKids System Standards",  icon:
   <li style="margin-bottom:5px;"><strong>Long-term retention</strong></li>
   <li style="margin-bottom:5px;"><strong>Confidence</strong></li>
   <li style="margin-bottom:5px;"><strong>Autonomy</strong></li>
-</ul>`},    {h:`The Modern Coach Role`,b:`<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>SECTION 10</strong></p>
+</ul>`},
+    {h:`The Modern Coach Role`,b:`<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>SECTION 10</strong></p>
 <p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>The Modern Coach Role</strong></p>
 <p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Old Model Coach:</strong></p>
 <ul style="margin:6px 0 12px 22px;line-height:1.85;">
@@ -1540,7 +1623,8 @@ L1:[{  id:"L1_M1",  title:"Module 1 \u2014 EduGolfKids System Standards",  icon:
   <li style="margin-bottom:5px;"><strong>Structure enforcer</strong></li>
 </ul>
 <p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>You are not a lecturer.</strong></p>
-<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>You are a guided learning architect.</strong></p>`},    {h:`Practical Session Integration`,b:`<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>SECTION 11</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>You are a guided learning architect.</strong></p>`},
+    {h:`Practical Session Integration`,b:`<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>SECTION 11</strong></p>
 <p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Practical Session Integration</strong></p>
 <p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Example – Target Game</strong></p>
 <p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Instead of:</strong></p>
@@ -1554,7 +1638,8 @@ L1:[{  id:"L1_M1",  title:"Module 1 \u2014 EduGolfKids System Standards",  icon:
   <li style="margin-bottom:5px;"><strong>Critical thinking</strong></li>
   <li style="margin-bottom:5px;"><strong>Peer interaction</strong></li>
 </ul>
-<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Same drill. Higher learning value.</strong></p>`},    {h:`Parent Communication Alignment`,b:`<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>SECTION 12</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Same drill. Higher learning value.</strong></p>`},
+    {h:`Parent Communication Alignment`,b:`<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>SECTION 12</strong></p>
 <p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Parent Communication Alignment</strong></p>
 <p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Parents today expect:</strong></p>
 <ul style="margin:6px 0 12px 22px;line-height:1.85;">
@@ -1640,7 +1725,15 @@ L1:[{  id:"L1_M1",  title:"Module 1 \u2014 EduGolfKids System Standards",  icon:
 <p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Social skill building</strong></p>
 <p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Confidence architecture</strong></p>
 <p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>In a structured, scalable system.</strong></p>
-<p style="margin:0 0 10px;line-height:1.85;">##</p>`},  ]},{  id:"L1_M6",  title:"Module 6 \u2014 Growth Mindset &amp; Language",  icon:"\ud83d\udcac",  sections:[    {h:`What Is Growth Mindset?`,b:`<div class="doc-section-divider"></div>
+<p style="margin:0 0 10px;line-height:1.85;">##</p>`},
+  ]
+},
+{
+  id:"L1_M6",
+  title:"Module 6 \u2014 Growth Mindset &amp; Language",
+  icon:"\ud83d\udcac",
+  sections:[
+    {h:`What Is Growth Mindset?`,b:`<div class="doc-section-divider"></div>
 <p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">What Is Growth Mindset?</p>
 <p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Growth mindset is the belief that:</p>
 <p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Ability improves with effort</p>
@@ -1651,7 +1744,8 @@ L1:[{  id:"L1_M1",  title:"Module 1 \u2014 EduGolfKids System Standards",  icon:
 <p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Talent is permanent</p>
 <p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Failure defines identity</p>
 <p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Mistakes equal inability</p>
-<p style="margin:0 0 10px;line-height:1.85;">EduGolfKids coaches must reinforce growth identity at all times.</p>`},    {h:`Why Language Matters in Ages 4–10`,b:`<div class="doc-section-divider"></div>
+<p style="margin:0 0 10px;line-height:1.85;">EduGolfKids coaches must reinforce growth identity at all times.</p>`},
+    {h:`Why Language Matters in Ages 4–10`,b:`<div class="doc-section-divider"></div>
 <p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Why Language Matters in Ages 4–10</p>
 <p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Children 4–10:</p>
 <p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Form early self-concept</p>
@@ -1664,7 +1758,8 @@ L1:[{  id:"L1_M1",  title:"Module 1 \u2014 EduGolfKids System Standards",  icon:
 <p style="margin:0 0 10px;line-height:1.85;">“You’re not focusing.”</p>
 <p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Child hears:</p>
 <p style="margin:0 0 10px;line-height:1.85;">“I’m bad at this.”</p>
-<p style="margin:0 0 10px;line-height:1.85;">Repeated language shapes long-term confidence.</p>`},    {h:`The EduGolfKids Language Code`,b:`<div class="doc-section-divider"></div>
+<p style="margin:0 0 10px;line-height:1.85;">Repeated language shapes long-term confidence.</p>`},
+    {h:`The EduGolfKids Language Code`,b:`<div class="doc-section-divider"></div>
 <p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">The EduGolfKids Language Code</p>
 <p style="margin:0 0 10px;line-height:1.85;">All certified coaches must follow the Language Code.</p>
 <p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">APPROVED LANGUAGE</p>
@@ -1703,7 +1798,8 @@ L1:[{  id:"L1_M1",  title:"Module 1 \u2014 EduGolfKids System Standards",  icon:
 <p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Triggers anxiety</p>
 <p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Reduces effort</p>
 <p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Encourages withdrawal</p>
-<p style="margin:0 0 10px;line-height:1.85;">Violation of Language Code results in reassessment.</p>`},    {h:`Correction Without Damage`,b:`<div class="doc-section-divider"></div>
+<p style="margin:0 0 10px;line-height:1.85;">Violation of Language Code results in reassessment.</p>`},
+    {h:`Correction Without Damage`,b:`<div class="doc-section-divider"></div>
 <p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Correction Without Damage</p>
 <p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">When a child misses:</p>
 <p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Instead of:</p>
@@ -1719,7 +1815,8 @@ L1:[{  id:"L1_M1",  title:"Module 1 \u2014 EduGolfKids System Standards",  icon:
 <p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Encourage reflection</p>
 <p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Guide adjustment</p>
 <p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Reinforce effort</p>
-<p style="margin:0 0 10px;line-height:1.85;">Language must be neutral, not emotional.</p>`},    {h:`Handling Frustration in Real Time`,b:`<div class="doc-section-divider"></div>
+<p style="margin:0 0 10px;line-height:1.85;">Language must be neutral, not emotional.</p>`},
+    {h:`Handling Frustration in Real Time`,b:`<div class="doc-section-divider"></div>
 <p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Handling Frustration in Real Time</p>
 <p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Frustration signs:</p>
 <p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Equipment drop</p>
@@ -1737,7 +1834,8 @@ L1:[{  id:"L1_M1",  title:"Module 1 \u2014 EduGolfKids System Standards",  icon:
 <p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Child says:</p>
 <p style="margin:0 0 10px;line-height:1.85;">“I’m bad at this.”</p>
 <p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Coach:</p>
-<p style="margin:0 0 10px;line-height:1.85;">“You’re learning this. That’s different. Let’s make it easier and try again.”</p>`},    {h:`Effort vs Outcome Praise`,b:`<div class="doc-section-divider"></div>
+<p style="margin:0 0 10px;line-height:1.85;">“You’re learning this. That’s different. Let’s make it easier and try again.”</p>`},
+    {h:`Effort vs Outcome Praise`,b:`<div class="doc-section-divider"></div>
 <p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Effort vs Outcome Praise</p>
 <p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Outcome Praise:</p>
 <p style="margin:0 0 10px;line-height:1.85;">“Great shot!”</p>
@@ -1750,7 +1848,8 @@ L1:[{  id:"L1_M1",  title:"Module 1 \u2014 EduGolfKids System Standards",  icon:
 <p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Outcome praise builds:</p>
 <p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Performance dependency</p>
 <p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Fear of failure</p>
-<p style="margin:0 0 10px;line-height:1.85;">Balance is critical.</p>`},    {h:`Public vs Private Correction`,b:`<div class="doc-section-divider"></div>
+<p style="margin:0 0 10px;line-height:1.85;">Balance is critical.</p>`},
+    {h:`Public vs Private Correction`,b:`<div class="doc-section-divider"></div>
 <p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Public vs Private Correction</p>
 <p style="margin:0 0 10px;line-height:1.85;">Never publicly shame.</p>
 <p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">If correction needed:</p>
@@ -1759,7 +1858,8 @@ L1:[{  id:"L1_M1",  title:"Module 1 \u2014 EduGolfKids System Standards",  icon:
 <p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Keep tone calm</p>
 <p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Avoid dramatic gestures</p>
 <p style="margin:0 0 10px;line-height:1.85;">Children are highly peer-sensitive in 6–9 stage.</p>
-<p style="margin:0 0 10px;line-height:1.85;">Public embarrassment can reduce long-term participation.</p>`},    {h:`The 3-Step Language Reset Rule`,b:`<div class="doc-section-divider"></div>
+<p style="margin:0 0 10px;line-height:1.85;">Public embarrassment can reduce long-term participation.</p>`},
+    {h:`The 3-Step Language Reset Rule`,b:`<div class="doc-section-divider"></div>
 <p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">The 3-Step Language Reset Rule</p>
 <p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">If a coach accidentally uses harsh language:</p>
 <p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">1️⃣ Rephrase immediately</p>
@@ -1770,14 +1870,16 @@ L1:[{  id:"L1_M1",  title:"Module 1 \u2014 EduGolfKids System Standards",  icon:
 <p style="margin:0 0 10px;line-height:1.85;">“No, that’s wrong.”</p>
 <p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Immediately follows with:</p>
 <p style="margin:0 0 10px;line-height:1.85;">“Let me rephrase — that one went left. Let’s adjust together.”</p>
-<p style="margin:0 0 10px;line-height:1.85;">Accountability protects culture.</p>`},    {h:`Parent Interaction Language`,b:`<div class="doc-section-divider"></div>
+<p style="margin:0 0 10px;line-height:1.85;">Accountability protects culture.</p>`},
+    {h:`Parent Interaction Language`,b:`<div class="doc-section-divider"></div>
 <p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Parent Interaction Language</p>
 <p style="margin:0 0 10px;line-height:1.85;">Coaches must model growth mindset to parents.</p>
 <p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Instead of:</p>
 <p style="margin:0 0 10px;line-height:1.85;">“He struggles with distance.”</p>
 <p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Say:</p>
 <p style="margin:0 0 10px;line-height:1.85;">“He’s building distance control and improving weekly.”</p>
-<p style="margin:0 0 10px;line-height:1.85;">Never label a child in front of parent.</p>`},    {h:`Building Inner Voice Strength`,b:`<div class="doc-section-divider"></div>
+<p style="margin:0 0 10px;line-height:1.85;">Never label a child in front of parent.</p>`},
+    {h:`Building Inner Voice Strength`,b:`<div class="doc-section-divider"></div>
 <p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Building Inner Voice Strength</p>
 <p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Children should leave sessions thinking:</p>
 <p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">“I can improve.”</p>
@@ -1842,7 +1944,15 @@ L1:[{  id:"L1_M1",  title:"Module 1 \u2014 EduGolfKids System Standards",  icon:
 <p style="margin:0 0 10px;line-height:1.85;">Your language becomes their internal coach.</p>
 <p style="margin:0 0 10px;line-height:1.85;">EduGolfKids coaches build confidence before performance.</p>
 <p style="margin:0 0 10px;line-height:1.85;">Growth mindset is not optional — it is cultural law.</p>
-<p style="margin:0 0 10px;line-height:1.85;">##</p>`},  ]},{  id:"L1_M7",  title:"Module 7 \u2014 60-Minute Session Architecture",  icon:"\ud83c\udfd7\ufe0f",  sections:[    {h:`Module 7 — 60-Minute Session Architecture`,b:`<p style="margin:0 0 10px;line-height:1.85;">MODULE 7</p>
+<p style="margin:0 0 10px;line-height:1.85;">##</p>`},
+  ]
+},
+{
+  id:"L1_M7",
+  title:"Module 7 \u2014 60-Minute Session Architecture",
+  icon:"\ud83c\udfd7\ufe0f",
+  sections:[
+    {h:`Module Overview &amp; Philosophy`,b:`<p style="margin:0 0 10px;line-height:1.85;">MODULE 7</p>
 <p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">60-Minute Session Architecture (Integrated Model)</p>
 <p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Certification Study Manual – Coach Level 1</p>
 <h3 style="color:var(--green-dark);border-bottom:2px solid var(--green-light);padding-bottom:8px;margin:24px 0 12px;font-size:16px;">MODULE PURPOSE</h3>
@@ -1871,7 +1981,8 @@ L1:[{  id:"L1_M1",  title:"Module 1 \u2014 EduGolfKids System Standards",  icon:
 <p style="margin:0 0 10px;line-height:1.85;">30–50: Game Reinforcement</p>
 <p style="margin:0 0 10px;line-height:1.85;">50–60: Wrap-Up &amp; Reset</p>
 <p style="margin:0 0 10px;line-height:1.85;">Deviation requires HQ approval.</p>
-<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">INTEGRATED SESSION BREAKDOWN</p>
+<p style="margin:0 0 10px;line-height:1.85;">##</p>`},
+    {h:`Warm-Up Game (0–10 Minutes)`,b:`<p style="margin:0 0 10px;line-height:1.85;">INTEGRATED SESSION BREAKDOWN</p>
 <p style="margin:0 0 10px;line-height:1.85;">Below shows exactly where each training module is practiced inside the session.</p>
 <p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">0–10 Minutes</p>
 <p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">WARM-UP GAME</p>
@@ -1907,7 +2018,8 @@ L1:[{  id:"L1_M1",  title:"Module 1 \u2014 EduGolfKids System Standards",  icon:
 <p style="margin:0 0 10px;line-height:1.85;">Behavior expectation</p>
 <p style="margin:0 0 10px;line-height:1.85;">Safety expectation</p>
 <p style="margin:0 0 10px;line-height:1.85;">If Warm-Up is weak, entire session declines.</p>
-<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">10–30 Minutes</p>
+<p style="margin:0 0 10px;line-height:1.85;">##</p>`},
+    {h:`Skill Block (10–30 Minutes)`,b:`<p style="margin:0 0 10px;line-height:1.85;">10–30 Minutes</p>
 <p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">SKILL BLOCK</p>
 <p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Primary Goal:</p>
 <p style="margin:0 0 10px;line-height:1.85;">Introduce or refine skill through constraint variation.</p>
@@ -1939,7 +2051,8 @@ L1:[{  id:"L1_M1",  title:"Module 1 \u2014 EduGolfKids System Standards",  icon:
 <p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Immediate reset commands</p>
 <p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">This is where coaches prove:</p>
 <p style="margin:0 0 10px;line-height:1.85;">They understand learning — not just drills.</p>
-<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">30–50 Minutes</p>
+<p style="margin:0 0 10px;line-height:1.85;">##</p>`},
+    {h:`Game Reinforcement (30–50 Minutes)`,b:`<p style="margin:0 0 10px;line-height:1.85;">30–50 Minutes</p>
 <p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">GAME REINFORCEMENT</p>
 <p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Primary Goal:</p>
 <p style="margin:0 0 10px;line-height:1.85;">Transfer skill into contextual play.</p>
@@ -1974,7 +2087,8 @@ L1:[{  id:"L1_M1",  title:"Module 1 \u2014 EduGolfKids System Standards",  icon:
 <p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Retention strengthens</p>
 <p style="margin:0 0 10px;line-height:1.85;">Confidence grows</p>
 <p style="margin:0 0 10px;line-height:1.85;">Autonomy develops</p>
-<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">50–60 Minutes</p>
+<p style="margin:0 0 10px;line-height:1.85;">##</p>`},
+    {h:`Wrap-Up &amp; Reset (50–60 Minutes)`,b:`<p style="margin:0 0 10px;line-height:1.85;">50–60 Minutes</p>
 <p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">WRAP-UP &amp; RESET</p>
 <p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Primary Goal:</p>
 <p style="margin:0 0 10px;line-height:1.85;">Consolidate learning + emotional closure.</p>
@@ -2000,7 +2114,8 @@ L1:[{  id:"L1_M1",  title:"Module 1 \u2014 EduGolfKids System Standards",  icon:
 <p style="margin:0 0 10px;line-height:1.85;">Regulated</p>
 <p style="margin:0 0 10px;line-height:1.85;">Successful</p>
 <p style="margin:0 0 10px;line-height:1.85;">Motivated</p>
-<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">FULL INTEGRATION MAP</p>
+<p style="margin:0 0 10px;line-height:1.85;">##</p>`},
+    {h:`Full Integration Map &amp; Assessment`,b:`<p style="margin:0 0 10px;line-height:1.85;">FULL INTEGRATION MAP</p>
 <p style="margin:0 0 10px;line-height:1.85;">| Segment | M2 Dev | M3 Motor | M4 LTAD | M5 Learning | M7 Language | Safety |</p>
 <p style="margin:0 0 10px;line-height:1.85;">| --- | --- | --- | --- | --- | --- | --- |</p>
 <p style="margin:0 0 10px;line-height:1.85;">| Warm-Up | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ |</p>
@@ -2071,7 +2186,15 @@ L1:[{  id:"L1_M1",  title:"Module 1 \u2014 EduGolfKids System Standards",  icon:
 <p style="margin:0 0 10px;line-height:1.85;">Brand consistency</p>
 <p style="margin:0 0 10px;line-height:1.85;">EduGolfKids is not a collection of modules.</p>
 <p style="margin:0 0 10px;line-height:1.85;">It is a unified system delivered every session.</p>
-<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><em></em></p>`},  ]},{  id:"L1_M8",  title:"Module 8 \u2014 Parent &amp; School Communication",  icon:"\ud83e\udd1d",  sections:[    {h:`The Two Audiences: Schools and Parents`,b:`<div class="doc-section-divider"></div>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><em></em></p>`},
+  ]
+},
+{
+  id:"L1_M8",
+  title:"Module 8 \u2014 Parent &amp; School Communication",
+  icon:"\ud83e\udd1d",
+  sections:[
+    {h:`The Two Audiences: Schools and Parents`,b:`<div class="doc-section-divider"></div>
 <p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">The Two Audiences: Schools and Parents</p>
 <p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>EduGolfKids coaches operate within two distinct adult relationships simultaneously:</strong></p>
 <p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>1. The School Relationship</strong></p>
@@ -2094,7 +2217,8 @@ L1:[{  id:"L1_M1",  title:"Module 1 \u2014 EduGolfKids System Standards",  icon:
   <li style="margin-bottom:5px;"><strong>To receive honest, positive progress communication</strong></li>
   <li style="margin-bottom:5px;"><strong>To be heard when they have concerns</strong></li>
   <li style="margin-bottom:5px;"><strong>To trust the program with their child</strong></li>
-</ul>`},    {h:`School Communication Standards`,b:`<div class="doc-section-divider"></div>
+</ul>`},
+    {h:`School Communication Standards`,b:`<div class="doc-section-divider"></div>
 <p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">School Communication Standards</p>
 <p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Pre-Program Requirements</strong></p>
 <p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Before the first session at any school, coaches must:</strong></p>
@@ -2126,7 +2250,8 @@ L1:[{  id:"L1_M1",  title:"Module 1 \u2014 EduGolfKids System Standards",  icon:
   <li style="margin-bottom:5px;"><strong>Go around the school coordinator to speak directly with a teacher about a concern</strong></li>
   <li style="margin-bottom:5px;"><strong>Make verbal agreements that bypass the official program structure</strong></li>
   <li style="margin-bottom:5px;"><strong>Discuss student behavioral issues in hallways or public spaces</strong></li>
-</ul>`},    {h:`Parent Communication: Program Launch`,b:`<div class="doc-section-divider"></div>
+</ul>`},
+    {h:`Parent Communication: Program Launch`,b:`<div class="doc-section-divider"></div>
 <p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Parent Communication: Program Launch</p>
 <p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Before the first session, parents must receive:</strong></p>
 <ul style="margin:6px 0 12px 22px;line-height:1.85;">
@@ -2138,7 +2263,8 @@ L1:[{  id:"L1_M1",  title:"Module 1 \u2014 EduGolfKids System Standards",  icon:
   <li style="margin-bottom:5px;"><strong>Safeguarding and photo/video consent confirmation</strong></li>
 </ul>
 <p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Welcome Communication Language Example:</strong></p>
-<p style="margin:0 0 10px;line-height:1.85;"><strong>"Welcome to EduGolfKids! Your child is about to begin a structured developmental program that builds movement skills, confidence, and critical thinking through golf. Our certified coaches follow an evidence-based curriculum designed specifically for ages 4-10. Sessions are 60 minutes and follow a consistent structure every week. If you have any questions, please reach out through [approved channel]."</strong></p>`},    {h:`Progress Communication Standards`,b:`<div class="doc-section-divider"></div>
+<p style="margin:0 0 10px;line-height:1.85;"><strong>"Welcome to EduGolfKids! Your child is about to begin a structured developmental program that builds movement skills, confidence, and critical thinking through golf. Our certified coaches follow an evidence-based curriculum designed specifically for ages 4-10. Sessions are 60 minutes and follow a consistent structure every week. If you have any questions, please reach out through [approved channel]."</strong></p>`},
+    {h:`Progress Communication Standards`,b:`<div class="doc-section-divider"></div>
 <p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Progress Communication Standards</p>
 <p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Parents want to know their child is progressing.</strong></p>
 <p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Coaches must provide regular, positive, developmentally framed updates.</strong></p>
@@ -2160,7 +2286,8 @@ L1:[{  id:"L1_M1",  title:"Module 1 \u2014 EduGolfKids System Standards",  icon:
 <p style="margin:0 0 10px;line-height:1.85;"><strong>Say: "She is developing her putting feel and is showing good focus. We are working on a great constraint challenge that will accelerate this."</strong></p>
 <p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Instead of: "He has trouble listening."</strong></p>
 <p style="margin:0 0 10px;line-height:1.85;"><strong>Say: "He brings lots of energy — we channel that well. He is responding really well to the game-based activities."</strong></p>
-<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Language must be honest, positive, and development-framed at all times.</strong></p>`},    {h:`Handling Difficult Parent Conversations`,b:`<div class="doc-section-divider"></div>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Language must be honest, positive, and development-framed at all times.</strong></p>`},
+    {h:`Handling Difficult Parent Conversations`,b:`<div class="doc-section-divider"></div>
 <p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Handling Difficult Parent Conversations</p>
 <p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>EduGolfKids coaches will inevitably encounter parents with concerns, complaints, or disagreements.</strong></p>
 <p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>How you handle these moments defines your professionalism and protects the program.</strong></p>
@@ -2190,7 +2317,8 @@ L1:[{  id:"L1_M1",  title:"Module 1 \u2014 EduGolfKids System Standards",  icon:
   <li style="margin-bottom:5px;"><strong>Demands for refunds or program exits</strong></li>
   <li style="margin-bottom:5px;"><strong>Threats or aggressive behavior</strong></li>
   <li style="margin-bottom:5px;"><strong>Safeguarding concerns about another adult</strong></li>
-</ul>`},    {h:`Social Media and Digital Communication Policy`,b:`<div class="doc-section-divider"></div>
+</ul>`},
+    {h:`Social Media and Digital Communication Policy`,b:`<div class="doc-section-divider"></div>
 <p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Social Media and Digital Communication Policy</p>
 <p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Coaches must:</strong></p>
 <ul style="margin:6px 0 12px 22px;line-height:1.85;">
@@ -2244,7 +2372,15 @@ L1:[{  id:"L1_M1",  title:"Module 1 \u2014 EduGolfKids System Standards",  icon:
 <p style="margin:0 0 10px;line-height:1.85;"><strong>Every communication you have — before, during, and after sessions — either builds or erodes that trust.</strong></p>
 <p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Professional communication is non-negotiable.</strong></p>
 <p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>It is part of your certification.</strong></p>
-<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><em></em></p>`},  ]},{  id:"L1_M9",  title:"Module 9 \u2014 Group Management",  icon:"\ud83d\udc65",  sections:[    {h:`Why Group Management Matters`,b:`<div class="doc-section-divider"></div>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><em></em></p>`},
+  ]
+},
+{
+  id:"L1_M9",
+  title:"Module 9 \u2014 Group Management",
+  icon:"\ud83d\udc65",
+  sections:[
+    {h:`Why Group Management Matters`,b:`<div class="doc-section-divider"></div>
 <p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Why Group Management Matters</p>
 <p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>In a school-based program, coaches are not just instructors — they are temporary classroom managers.</strong></p>
 <p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Children arrive from classrooms with existing energy levels, social dynamics, and behavioral patterns.</strong></p>
@@ -2263,7 +2399,8 @@ L1:[{  id:"L1_M1",  title:"Module 1 \u2014 EduGolfKids System Standards",  icon:
   <li style="margin-bottom:5px;"><strong>Reduced behavioral disruption</strong></li>
   <li style="margin-bottom:5px;"><strong>Consistent skill development</strong></li>
   <li style="margin-bottom:5px;"><strong>Positive session culture</strong></li>
-</ul>`},    {h:`Establishing Authority Through Structure`,b:`<div class="doc-section-divider"></div>
+</ul>`},
+    {h:`Establishing Authority Through Structure`,b:`<div class="doc-section-divider"></div>
 <p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Establishing Authority Through Structure</p>
 <p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Authority is not established through volume or dominance.</strong></p>
 <p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>It is established through consistency, clarity, and calm confidence.</strong></p>
@@ -2293,7 +2430,8 @@ L1:[{  id:"L1_M1",  title:"Module 1 \u2014 EduGolfKids System Standards",  icon:
 <p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Never assume children from different schools have been trained on the same commands.</strong></p>
 <p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>3. Consistent Consequences</strong></p>
 <p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Children must understand that rules apply equally to everyone, every time.</strong></p>
-<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Inconsistent enforcement is the fastest way to lose group control.</strong></p>`},    {h:`The Behavior Management Ladder`,b:`<div class="doc-section-divider"></div>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Inconsistent enforcement is the fastest way to lose group control.</strong></p>`},
+    {h:`The Behavior Management Ladder`,b:`<div class="doc-section-divider"></div>
 <p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">The Behavior Management Ladder</p>
 <p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>EduGolfKids uses a 5-step escalation model. Always begin at Step 1.</strong></p>
 <p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Step 1: Environmental Adjustment</strong></p>
@@ -2328,7 +2466,8 @@ L1:[{  id:"L1_M1",  title:"Module 1 \u2014 EduGolfKids System Standards",  icon:
   <li style="margin-bottom:5px;"><strong>Contact parent via approved channel after the session</strong></li>
 </ul>
 <p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Physical restraint is NEVER permitted under any circumstance.</strong></p>
-<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>If a child poses immediate physical danger, activate the school Emergency Action Plan immediately.</strong></p>`},    {h:`Managing Common Group Scenarios`,b:`<div class="doc-section-divider"></div>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>If a child poses immediate physical danger, activate the school Emergency Action Plan immediately.</strong></p>`},
+    {h:`Managing Common Group Scenarios`,b:`<div class="doc-section-divider"></div>
 <p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Managing Common Group Scenarios</p>
 <p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Scenario 1: Children arrive chaotic and over-energized</strong></p>
 <p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Solution: Do NOT try to calm with instructions. Channel the energy.</strong></p>
@@ -2371,7 +2510,8 @@ L1:[{  id:"L1_M1",  title:"Module 1 \u2014 EduGolfKids System Standards",  icon:
   <li style="margin-bottom:5px;"><strong>Do not call attention from the group</strong></li>
   <li style="margin-bottom:5px;"><strong>Allow child to re-enter when ready — never pressure re-entry</strong></li>
   <li style="margin-bottom:5px;"><strong>If distress is prolonged or concerning, notify school staff</strong></li>
-</ul>`},    {h:`Transitions: The Highest Risk Moments`,b:`<div class="doc-section-divider"></div>
+</ul>`},
+    {h:`Transitions: The Highest Risk Moments`,b:`<div class="doc-section-divider"></div>
 <p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Transitions: The Highest Risk Moments</p>
 <p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Behavioral problems most commonly occur during transitions:</strong></p>
 <ul style="margin:6px 0 12px 22px;line-height:1.85;">
@@ -2388,7 +2528,8 @@ L1:[{  id:"L1_M1",  title:"Module 1 \u2014 EduGolfKids System Standards",  icon:
   <li style="margin-bottom:5px;"><strong>Walk — never allow running during transitions</strong></li>
   <li style="margin-bottom:5px;"><strong>Verify all children have arrived at new station before resuming</strong></li>
 </ul>
-<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Sloppy transitions cost 5-10 minutes of session time and elevate injury risk significantly.</strong></p>`},    {h:`Attention Management Techniques`,b:`<div class="doc-section-divider"></div>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Sloppy transitions cost 5-10 minutes of session time and elevate injury risk significantly.</strong></p>`},
+    {h:`Attention Management Techniques`,b:`<div class="doc-section-divider"></div>
 <p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Attention Management Techniques</p>
 <p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>EduGolfKids coaches must maintain group attention without relying on shouting.</strong></p>
 <p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Proven Techniques:</strong></p>
@@ -2404,7 +2545,8 @@ L1:[{  id:"L1_M1",  title:"Module 1 \u2014 EduGolfKids System Standards",  icon:
 <p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Children instinctively quiet to hear. Effective and models emotional regulation.</strong></p>
 <p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>The Pause</strong></p>
 <p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Stop all instruction. Stand still. Make eye contact. Wait.</strong></p>
-<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Silence draws attention faster than volume.</strong></p>`},    {h:`Bathroom and Water Break Protocol`,b:`<div class="doc-section-divider"></div>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Silence draws attention faster than volume.</strong></p>`},
+    {h:`Bathroom and Water Break Protocol`,b:`<div class="doc-section-divider"></div>
 <p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Bathroom and Water Break Protocol</p>
 <p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>These are high-vulnerability moments for supervision lapses.</strong></p>
 <p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Water Breaks:</strong></p>
@@ -2463,7 +2605,15 @@ L1:[{  id:"L1_M1",  title:"Module 1 \u2014 EduGolfKids System Standards",  icon:
 <p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>When children know what to expect, they behave accordingly.</strong></p>
 <p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Build the environment. Train the commands. Hold the structure.</strong></p>
 <p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Group management is not control — it is engineering conditions for learning.</strong></p>
-<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><em></em></p>`},  ]},{  id:"L1_M10",  title:"Module 10 \u2014 Medical, Special Needs &amp; Inclusion",  icon:"\u2764\ufe0f",  sections:[    {h:`Legal Framework (United States)`,b:`<div class="doc-section-divider"></div>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><em></em></p>`},
+  ]
+},
+{
+  id:"L1_M10",
+  title:"Module 10 \u2014 Medical, Special Needs &amp; Inclusion",
+  icon:"\u2764\ufe0f",
+  sections:[
+    {h:`Legal Framework (United States)`,b:`<div class="doc-section-divider"></div>
 <p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Legal Framework (United States)</p>
 <p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>EduGolfKids programs operating within school environments are subject to federal law.</strong></p>
 <p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Coaches must understand the following frameworks:</strong></p>
@@ -2482,7 +2632,8 @@ L1:[{  id:"L1_M1",  title:"Module 1 \u2014 EduGolfKids System Standards",  icon:
 <p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Some children in your sessions may have an IEP (Individualized Education Program).</strong></p>
 <p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Coaches are not IEP implementers but must be aware of documented behavioral and learning supports.</strong></p>
 <p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Consult with school staff before the program begins if IEP-enrolled children are participating.</strong></p>
-<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>When in doubt about legal obligations, contact EduGolfKids HQ before the program launches.</strong></p>`},    {h:`Pre-Program Medical & Needs Screening`,b:`<div class="doc-section-divider"></div>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>When in doubt about legal obligations, contact EduGolfKids HQ before the program launches.</strong></p>`},
+    {h:`Pre-Program Medical & Needs Screening`,b:`<div class="doc-section-divider"></div>
 <p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Pre-Program Medical &amp; Needs Screening</p>
 <p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Before the first session, coaches must review registration information for:</strong></p>
 <ul style="margin:6px 0 12px 22px;line-height:1.85;">
@@ -2500,7 +2651,8 @@ L1:[{  id:"L1_M1",  title:"Module 1 \u2014 EduGolfKids System Standards",  icon:
   <li style="margin-bottom:5px;"><strong>Ensure this information is in the coach's EAP card</strong></li>
 </ul>
 <p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Coaches do not diagnose or assess medical conditions.</strong></p>
-<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Coaches prepare and respond — they do not diagnose.</strong></p>`},    {h:`Common Medical Situations and Response Protocol`,b:`<div class="doc-section-divider"></div>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Coaches prepare and respond — they do not diagnose.</strong></p>`},
+    {h:`Common Medical Situations and Response Protocol`,b:`<div class="doc-section-divider"></div>
 <p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Common Medical Situations and Response Protocol</p>
 <p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Asthma Attack</strong></p>
 <p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Signs: Wheezing, shortness of breath, chest tightness, coughing, inability to speak full sentences.</strong></p>
@@ -2561,7 +2713,8 @@ L1:[{  id:"L1_M1",  title:"Module 1 \u2014 EduGolfKids System Standards",  icon:
   <li style="margin-bottom:5px;"><strong>Provide water — small, frequent sips</strong></li>
   <li style="margin-bottom:5px;"><strong>Call nurse if symptoms persist beyond 5 minutes</strong></li>
   <li style="margin-bottom:5px;"><strong>Modify or end outdoor session if heat index exceeds safe threshold</strong></li>
-</ul>`},    {h:`Coaching Children with ADHD`,b:`<div class="doc-section-divider"></div>
+</ul>`},
+    {h:`Coaching Children with ADHD`,b:`<div class="doc-section-divider"></div>
 <p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Coaching Children with ADHD</p>
 <p style="margin:0 0 10px;line-height:1.85;"><strong>ADHD (Attention Deficit Hyperactivity Disorder) is the most commonly encountered neurodevelopmental condition in youth sport settings.</strong></p>
 <p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>What to expect:</strong></p>
@@ -2588,7 +2741,8 @@ L1:[{  id:"L1_M1",  title:"Module 1 \u2014 EduGolfKids System Standards",  icon:
   <li style="margin-bottom:5px;"><strong>Acknowledge even small compliance immediately: "Great — clubs down. Thank you."</strong></li>
   <li style="margin-bottom:5px;"><strong>Do not single out or reprimand publicly</strong></li>
 </ul>
-<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>ADHD behavior is neurological — not defiance. Coach response must reflect this understanding.</strong></p>`},    {h:`Coaching Children on the Autism Spectrum`,b:`<div class="doc-section-divider"></div>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>ADHD behavior is neurological — not defiance. Coach response must reflect this understanding.</strong></p>`},
+    {h:`Coaching Children on the Autism Spectrum`,b:`<div class="doc-section-divider"></div>
 <p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Coaching Children on the Autism Spectrum</p>
 <p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Autism Spectrum Disorder (ASD) presents differently in every child.</strong></p>
 <p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Coaches should not make assumptions based on label alone.</strong></p>
@@ -2611,7 +2765,8 @@ L1:[{  id:"L1_M1",  title:"Module 1 \u2014 EduGolfKids System Standards",  icon:
   <li style="margin-bottom:5px;"><strong>Never force physical contact — follow the child's lead completely</strong></li>
 </ul>
 <p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Many children on the spectrum thrive in structured, movement-based environments.</strong></p>
-<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>EduGolfKids sessions — with their predictable architecture — are naturally well-suited.</strong></p>`},    {h:`Coaching Children with Physical Limitations`,b:`<div class="doc-section-divider"></div>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>EduGolfKids sessions — with their predictable architecture — are naturally well-suited.</strong></p>`},
+    {h:`Coaching Children with Physical Limitations`,b:`<div class="doc-section-divider"></div>
 <p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Coaching Children with Physical Limitations</p>
 <p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>EduGolfKids is committed to meaningful participation for all children.</strong></p>
 <p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>The Constraints-Led Approach makes EduGolfKids naturally adaptable.</strong></p>
@@ -2629,7 +2784,8 @@ L1:[{  id:"L1_M1",  title:"Module 1 \u2014 EduGolfKids System Standards",  icon:
 <p style="margin:0 0 10px;line-height:1.85;"><strong>Create scoring systems where all participation produces positive outcomes regardless of physical output.</strong></p>
 <p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>4. Never exclude.</strong></p>
 <p style="margin:0 0 10px;line-height:1.85;"><strong>If an activity cannot be safely modified for a child's limitation, find a meaningful adjacent role — scorekeeper, target placer, team captain.</strong></p>
-<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Full exclusion from any activity is a last resort and must be documented.</strong></p>`},    {h:`Anxiety and Emotional Sensitivity`,b:`<div class="doc-section-divider"></div>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Full exclusion from any activity is a last resort and must be documented.</strong></p>`},
+    {h:`Anxiety and Emotional Sensitivity`,b:`<div class="doc-section-divider"></div>
 <p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Anxiety and Emotional Sensitivity</p>
 <p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Many children experience performance anxiety, social anxiety, or generalized worry.</strong></p>
 <p style="margin:0 0 10px;line-height:1.85;"><strong>Youth sport environments can trigger anxiety in children who fear failure, judgment, or public mistakes.</strong></p>
@@ -2655,7 +2811,8 @@ L1:[{  id:"L1_M1",  title:"Module 1 \u2014 EduGolfKids System Standards",  icon:
   <li style="margin-bottom:5px;"><strong>Check in one-on-one during transition moments: "How's it going? You're doing well."</strong></li>
 </ul>
 <p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>If anxiety appears severe, persistent, or escalating, notify the parent and school counselor.</strong></p>
-<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Do not attempt to diagnose or treat anxiety. Coach, observe, communicate.</strong></p>`},    {h:`Communicating with Parents about Special Needs`,b:`<div class="doc-section-divider"></div>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Do not attempt to diagnose or treat anxiety. Coach, observe, communicate.</strong></p>`},
+    {h:`Communicating with Parents about Special Needs`,b:`<div class="doc-section-divider"></div>
 <p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Communicating with Parents about Special Needs</p>
 <p style="margin:0 0 10px;line-height:1.85;"><strong>Parents of children with special needs often have heightened concerns about how their child will be treated.</strong></p>
 <p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>First contact with these parents is critical.</strong></p>
@@ -2726,7 +2883,15 @@ L1:[{  id:"L1_M1",  title:"Module 1 \u2014 EduGolfKids System Standards",  icon:
 <p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Your preparation gives you the confidence.</strong></p>
 <p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>There is no child who cannot participate in a well-designed EduGolfKids session.</strong></p>
 <p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Design the environment. Know your children. Coach every one of them.</strong></p>
-<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><em></em></p>`},  ]},{  id:"L1_M11",  title:"Module 11 \u2014 Field Safety",  icon:"\u26c8\ufe0f",  sections:[    {h:`Module 11 — Field Safety`,b:`<p style="margin:0 0 10px;line-height:1.85;">MODULE 11<em></em></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><em></em></p>`},
+  ]
+},
+{
+  id:"L1_M11",
+  title:"Module 11 \u2014 Field Safety",
+  icon:"\u26c8\ufe0f",
+  sections:[
+    {h:`Module 11 — Field Safety`,b:`<p style="margin:0 0 10px;line-height:1.85;">MODULE 11<em></em></p>
 <p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>OPERATIONAL FIELD SAFETY — WEATHER, ENVIRONMENT &amp; EMERGENCY RESPONSE</strong></p>
 <p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Certification Study Manual — Coach Level 1</strong></p>
 <p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>MODULE PURPOSE</strong></p>
@@ -2871,7 +3036,8 @@ L1:[{  id:"L1_M1",  title:"Module 1 \u2014 EduGolfKids System Standards",  icon:
   <li style="margin-bottom:5px;">Watch for: headache, confusion, dizziness, nausea, sensitivity to light</li>
   <li style="margin-bottom:5px;">Notify school nurse immediately</li>
   <li style="margin-bottom:5px;">Notify parent — child must be collected and assessed by a medical professional before returning</li>
-</ul>`},    {h:`Module 11 — Field Safety (continued)`,b:`<p style="margin:0 0 10px;line-height:1.85;"><strong>RULE: If in doubt, sit them out. A child with a suspected concussion never returns to the session that day under any circumstance.</strong></p>
+</ul>`},
+    {h:`Module 11 — Field Safety (continued)`,b:`<p style="margin:0 0 10px;line-height:1.85;"><strong>RULE: If in doubt, sit them out. A child with a suspected concussion never returns to the session that day under any circumstance.</strong></p>
 <p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Scenario 3 — Anaphylaxis / Allergic Reaction:</strong></p>
 <ul style="margin:6px 0 12px 22px;line-height:1.85;">
   <li style="margin-bottom:5px;">Check your pre-session register for any child with a known allergy and EpiPen</li>
@@ -2935,85 +3101,2707 @@ L1:[{  id:"L1_M1",  title:"Module 1 \u2014 EduGolfKids System Standards",  icon:
 </ul>
 <p style="margin:0 0 10px;line-height:1.85;"><strong>⚠  AUTOMATIC FAIL: Any coach who demonstrates uncertainty about the lightning evacuation protocol or who cannot complete the pre-session safety checklist correctly will not pass this module and must resit.</strong></p>
 <p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Safety is not a module. It is a mindset.</strong></p>
-<p style="margin:0 0 10px;line-height:1.85;"><em>Every child in your session is someone's entire world. Protect them like it.</em></p>`},  ]},],
+<p style="margin:0 0 10px;line-height:1.85;"><em>Every child in your session is someone's entire world. Protect them like it.</em></p>`},
+  ]
+},
+],
 
 L2:[
-{id:'L2_M1',title:'Module 1 — Putting',icon:'⛳',sections:[
-{h:'Why Putting Comes First',b:`Putting is developmentally optimal: club speed is near-zero (minimal injury/fear risk), feedback is immediate and binary (ball goes in or it doesn't), short distances make success achievable at every level, and the pendulum motion trains the fundamental rhythm that transfers to all other skills. US Kids Golf research: children who begin with putting show faster full-game skill acquisition than those who begin with full swing instruction.`},
-{h:'4 Functional Putting Principles',b:`<strong>Principle 1: Pendulum Motion</strong> — shoulders rock, arms swing as a unit, wrists quiet. Teach with pool noodle under both arms. <strong>Principle 2: Face Awareness</strong> — putter face must be square at contact. Teach with gate drill: two tees 6 inches apart. <strong>Principle 3: Consistent Setup</strong> — same position every time. Use foot markers and face-line sticker as constraints. <strong>Principle 4: Smooth Acceleration</strong> — no deceleration. Teach with backstroke length limiter (pool noodle behind putter).`},
-{h:'Age 4–6 Progression',b:`Equipment: putter below chin, target min 6 inches, foam ball, distance 2–4 feet. <strong>Stage 1 (Sessions 1–2):</strong> Free exploration — celebrate any contact. Do NOT correct grip or stance. <strong>Stage 2 (Sessions 3–4):</strong> Target as a game: "Can you make the ball go inside the yellow circle?" Begin FREEZE/RETRIEVE commands. <strong>Stage 3 (Sessions 5–6):</strong> Move target slightly farther, introduce cooperative pair scoring. <strong>Stage 4 (Sessions 7+):</strong> Simple points game — team vs team only (no individual winner). Skills Passport criteria: strikes a stationary ball toward a target from 3 feet, 3 out of 5 attempts.`},
-{h:'Age 6–9 Progression &amp; Error Responses',b:`Equipment: fitted putter, tee gate (two tees 5–6 inches apart), low-compression ball, 3–12 feet. Stage 1: Gate Challenge — narrow gate gradually. Stage 2: Distance Ladder (3, 5, 8, 10 feet). Stage 3: Pressure Rounds. Stage 4: 3-hole Putting Course. <strong>Error responses:</strong> Ball goes left → narrow gate from left side only. Ball stops short → move target closer, build confidence first. Inconsistent direction → foot markers + face-line sticker. Child rushes → 3-count ritual: "Look at target. Look at ball. Go."`},
-]},
-{id:'L2_M2',title:'Module 2 — Chipping',icon:'🏌️',sections:[
-{h:'Chipping-Putting Connection',b:`EduGolfKids connects chipping to putting (not taught as a separate skill). Chipping shares: pendulum motion, downward strike, target-focused attention, consistent face awareness. Key additions: ball position moves back in stance, weight favours lead side slightly, loft creates airtime and bounce, landing zone thinking replaces hole thinking. Motor learning (Wulf 2013): skill transfer is maximized when new movements are anchored to existing neural patterns. Children who have mastered the putting pendulum learn chipping 40% faster.`},
-{h:'4 Functional Chipping Principles',b:`<strong>Principle 1: Downward Strike.</strong> Teach with a tee 2 inches behind ball — child must not hit the tee. Age 4–6: "Hit the ball, then brush the grass." Age 6–9: "Ball first — like a hammer hitting a nail." <strong>Principle 2: Landing Zone Awareness.</strong> Use hula hoop or carpet tile as landing target. Score for landing IN the zone — not the finish. Age 6–9: "Where do you need to land it to make it roll to the cone?" <strong>Principle 3: Shaft Lean.</strong> For 4–6, the tee constraint achieves this automatically. <strong>Principle 4: Loft Selection (6–9 only).</strong> Give both a 7-iron and sand wedge — let them discover the difference.`},
-{h:'Progressions &amp; Errors',b:`<strong>Ages 4–6:</strong> Stage 1 — Contact first (no target). Stage 2 — Landing target (hula hoop, 5 feet). Stage 3 — Two zones, child chooses. Stage 4 — Mini chipping game, station rotation. <strong>Ages 6–9:</strong> Stage 1 — Precision landing + air gate (two cones, ball must fly through). Stage 2 — Club discovery, both clubs, no instruction. Stage 3 — Variable distance (4 zones). Stage 4 — 3-station chipping course. <strong>Error responses:</strong> Topping → lower tee height or shrink ball. Fat shot → tee behind ball + tape marker. Scooping → raise the landing target (shelf/box). No trajectory → introduce air gate (two cones 12 inches high).`},
-]},
-{id:'L2_M3',title:'Module 3 — Pitching',icon:'🎯',sections:[
-{h:'Why Pitching Is a 6–9 Skill Only',b:`Pitching requires simultaneous integration of hip/shoulder rotation, weight transfer, and trajectory management. These require FUNdamentals stage neurological readiness. <strong>LTAD protection rule: pitching is not introduced until a child demonstrates consistent chipping competency.</strong> Never introduce pitching to the 4–6 age group. Pitching is the bridge skill — it must be earned, not rushed.`},
-{h:'Teaching Through Constraints',b:`<strong>Age 6–9 progression:</strong> Stage 1 — Carry Challenge: target 15 feet, must land within 5 feet. Stage 2 — Distance Zones: landing zones at 15, 20, 25, 30 feet; child selects zone, executes, self-scores. Stage 3 — Trajectory Game: air gate set high (24 inches), must carry through and land in target zone. Stage 4 — Pitching + Putting Course: pitch to within putting distance, then putt out — first integration of two skills. <strong>Never:</strong> reconstruct hip rotation or weight transfer through direct instruction. Let the distance constraint develop the movement naturally.`},
-]},
-{id:'L2_M4',title:'Module 4 — Full Swing',icon:'💥',sections:[
-{h:'Full Swing: Movement-Led Development',b:`The full swing is introduced last in the EduGolfKids progression — not first. By this stage, children have: pendulum rhythm (putting), downward strike (chipping), weight transfer and rotation (pitching). The full swing is an extension of everything already built. LTAD protection: full swing is for ages 7+ with consistent pitching competency. For 4–6, full swing movements are explored through free play only — never structured instruction. Goal: a functional, safe, confident striking motion — not a perfect swing.`},
-{h:'Constraint-Based Full Swing Teaching',b:`<strong>Never say:</strong> "Fix your backswing." "Rotate your hips." "Keep your left arm straight." — These create motor rigidity and coach dependency. <strong>Use instead:</strong> Rhythm cue: "Make a big brushing motion — back and through." Feet-together drill: forces balanced rotation naturally. Target distance constraint: closer target → shorter swing → more control. Time challenge: swing to a beat or rhythm. <strong>Common scenarios:</strong> Over-swings and loses balance → feet-together drill. Inconsistent contact → shorten target distance significantly. No power → move target farther (natural swing extension). Driver requests → foam balls only, adequate space, consistent 7-iron competency required first.`},
-]},
-{id:'L2_M5',title:'Module 5 — Rules &amp; Etiquette',icon:'📖',sections:[
-{h:'Age-Appropriate Rules Introduction',b:`Rules are introduced progressively — never as a front-loaded lecture. <strong>Age 4–6:</strong> One rule only — "Clubs stay on the ground until I say go." Everything else is caught through session structure. <strong>Age 6–9:</strong> 3–5 core concepts across the term, introduced only when the situation arises in a game. Core concepts: (1) Safety command compliance. (2) Clubs on ground when not hitting. (3) Ball played from where it stops — no repositioning. (4) Wait for others to finish before retrieving. (5) Take turns, no rushing. Method: pause briefly when situation occurs, explain one rule, continue playing. Children learn rules through experience, not instruction.`},
-{h:'Etiquette as Culture',b:`EduGolfKids builds golf etiquette culture through every session — not as a separate topic. The behavior coaches model and reinforce IS golf etiquette: waiting patiently, encouraging peers, congratulating good shots regardless of competition outcome, respecting equipment, following commands promptly. <strong>End-of-session etiquette ritual (2 minutes):</strong> children stack equipment correctly, group applause for the best effort of the session (coach nominates), say a positive word to the person next to them. This builds club culture and prepares children for on-course golf. Never enforce etiquette harshly — model it, acknowledge it, celebrate it.`},
-]},
-{id:'L2_M6',title:'Module 6 — Skills Passport',icon:'📔',sections:[
-{h:'What the Skills Passport Is',b:`The EduGolfKids Skills Passport is a term-by-term developmental record for every enrolled child. It documents skill competency against defined criteria, creates tangible progression records parents can understand, motivates children through visible achievement milestones, creates coach accountability, and protects the EduGolfKids brand through consistent documented standards. The Passport belongs to the child. <strong>Completion is mandatory: 100% of enrolled children must receive a Passport entry at the end of every term.</strong> No exceptions.`},
-{h:'Assessment Protocol',b:`Passport assessment is conducted in the final session of each term — embedded within the normal session structure, not as a separate test. Assessment moments are embedded in games: the putting game IS the assessment. <strong>Criteria are specific and observable</strong> — coaches observe against defined standards, not personal opinion. A child either meets the standard or has not yet met it. No half-marks. No "almost." Growth Mindset language applies to all assessment feedback. Recording: log in the EduGolfKids platform immediately after the session. Share with parents within 24 hours via approved communication channel.`},
-]},
-{id:'L2_M7',title:'Module 7 — Video Analysis',icon:'📱',sections:[
-{h:'CoachNow in EduGolfKids',b:`Video analysis is a Level 2 tool — not used until basic skill competency is established. <strong>When to use:</strong> Ages 6–9 only. After consistent contact and basic skill pattern are established. For self-discovery questions only — never to show a child "what they're doing wrong." <strong>Protocol:</strong> Record one clip (max 10 seconds). Show immediately after the attempt. Ask: "What did you notice?" before making any observation yourself. Guided discovery applies to video exactly as it applies to live coaching.`},
-{h:'Parent Reporting',b:`At the end of each term, every child receives a CoachNow report via the parent's registered email: one short video clip (best effort), written Skills Passport summary, three specific positive observations (effort-based), and next term's focus area. <strong>Report language rules:</strong> Never compare to other children. Never use negative ability labels. Use growth language throughout. Example: "This term Maya developed consistent face awareness in her putting, landing 3 from 4 gate challenges in her final session. She brings outstanding focus to every constraint challenge. Next term we will build on this foundation through our chipping progression."`},
-]},
-{id:'L2_M8',title:'Module 8 — Skills Session Safety',icon:'⚠️',sections:[
-{h:'Safety in Skills Sessions',b:`Chipping and full swing sessions require heightened safety protocols beyond putting. <strong>Minimum spacing for full swing: 10 feet lateral</strong> (vs 6 feet for putting). Forward swing arc must be completely clear. Children behind the hitting line at all times during active swings. <strong>Indoor sessions:</strong> Foam balls ONLY — no hard balls indoors under any circumstance. Hitting zones reduced to 3 metres depth. Ceiling height must be assessed — full swing may not be appropriate in low-ceiling environments. Wall buffer minimum 2 metres behind target. Wind above 25mph — equipment becomes projectiles, children must not swing.`},
-{h:'Correcting Unsafe Behavior in Skills Sessions',b:`<strong>Three-Step Correction:</strong> STEP 1 — FREEZE the session: one whistle blast — all activity stops. Never correct an individual while the rest of the group is still active. STEP 2 — Correct calmly and clearly: address the group, not the individual by name in front of peers. "We have a safety rule in EduGolfKids — clubs stay on the ground until I say hit. Let's all reset." Never shame or raise your voice. STEP 3 — Reinforce and resume: confirm understanding before resuming, acknowledge the group when they comply. A child who repeatedly endangers others is removed from the hitting zone for that activity and seated with the coach. Do not return them until they demonstrate the safety behavior.`},
-]},
+{
+  id:"L2_M1",
+  title:"Module 1 \u2014 Putting: Foundations to Progression",
+  icon:"\u26f3",
+  sections:[
+    {h:`Why Putting Comes First — The Science`,b:`<div class="doc-section-divider"></div>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Why Putting Comes First — The Science</p>
+<p style="margin:0 0 10px;line-height:1.85;"><strong>Research from motor learning science (Schmidt and Lee, 2011) shows that foundational movement patterns established early create neural templates that all future skill layers are built upon.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Putting is developmentally optimal as a starting skill because:</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>Club speed is minimal — injury and fear risk are near zero</strong></li>
+  <li style="margin-bottom:5px;"><strong>Feedback loop is immediate and binary — ball goes in or it does not</strong></li>
+  <li style="margin-bottom:5px;"><strong>Short distances mean success is achievable at every ability level</strong></li>
+  <li style="margin-bottom:5px;"><strong>The pendulum motion trains the fundamental rhythm that transfers to chipping and full swing</strong></li>
+  <li style="margin-bottom:5px;"><strong>Club face awareness developed here directly accelerates all other skill areas</strong></li>
+</ul>
+<p style="margin:0 0 10px;line-height:1.85;"><strong>US Kids Golf research shows children who begin with putting show faster full-game skill acquisition than children who begin with full swing instruction.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>PGA Junior League data supports structured putting-first sequencing for all ages under 10.</strong></p>
+<p style="margin:0 0 10px;line-height:1.85;"><strong>EduGolfKids adopts and extends this with a full constraints-based progression not available in standard programs.</strong></p>`},
+    {h:`The 4 Functional Putting Principles`,b:`<div class="doc-section-divider"></div>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">The 4 Functional Putting Principles</p>
+<p style="margin:0 0 10px;line-height:1.85;"><strong>EduGolfKids does not teach a rigid putting technique. We teach 4 functional principles that allow natural variation while producing consistent results.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>These principles are taught through environment design — not verbal instruction.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Principle 1: Face Awareness</strong></p>
+<p style="margin:0 0 10px;line-height:1.85;"><strong>The club face direction at contact determines ball direction. This is the single most important outcome variable in putting.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Not grip. Not stance. Not posture. Face.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>How to teach it without saying it:</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>Design gate challenges — two tees wide enough for the ball. Gate forces face awareness naturally.</strong></li>
+  <li style="margin-bottom:5px;"><strong>Use target circles drawn on the ground — child must land ball inside. Natural feedback.</strong></li>
+  <li style="margin-bottom:5px;"><strong>Paint or mark the face of the putter with a bright line — child aligns line to target instinctively.</strong></li>
+</ul>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Age 4-6 cue: "Make the flat part face the hole."</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Age 6-9 cue: "Where the face looks, the ball goes. Aim your face."</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Principle 2: Pendulum Motion</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Shoulders rock. Arms hang. Wrists stay quiet. The putter swings like a clock pendulum.</strong></p>
+<p style="margin:0 0 10px;line-height:1.85;"><strong>LTAD note: Do NOT correct wrist action in 4-6 group. Wrist-driven putting is developmentally normal at this stage and self-regulates as coordination matures. Forced correction at this age creates motor rigidity (Schmidt and Lee, 2011).</strong></p>
+<p style="margin:0 0 10px;line-height:1.85;"><strong>For ages 6-9: introduce quiet hands only if wrist flip causes persistent off-line ball flight that the child cannot self-correct with constraint manipulation.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>How to teach it without saying it:</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>Place a small ball under each armpit. If balls drop, arms have disconnected from body. No verbal correction needed — the task provides the feedback.</strong></li>
+  <li style="margin-bottom:5px;"><strong>Metronome challenge: hit putts in time with a beat. Rhythm naturally produces pendulum motion.</strong></li>
+</ul>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Age 4-6 cue: "Tick-tock like a clock."</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Age 6-9 cue: "Back and through the same distance. Like a pendulum."</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Principle 3: Consistent Setup</strong></p>
+<p style="margin:0 0 10px;line-height:1.85;"><strong>Ball position consistent relative to stance. Eyes approximately over ball. Comfortable, repeatable address.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Do not enforce a specific stance. Enforce a repeatable one.</strong></p>
+<p style="margin:0 0 10px;line-height:1.85;"><strong>Children naturally find their own setup if given enough exploration time. Constrain rather than prescribe.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>How to teach it:</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>Place foot markers (small strips of tape) for the child to return to each time. Consistency is the goal, not perfect position.</strong></li>
+  <li style="margin-bottom:5px;"><strong>Use a chalk circle on the ground — child stands inside the circle. Simple, effective, self-policing.</strong></li>
+</ul>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Principle 4: Distance Control</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Backstroke length controls distance. Not effort. Not acceleration. Stroke length.</strong></p>
+<p style="margin:0 0 10px;line-height:1.85;"><strong>This is a 6-9 concept only. The 4-6 brain cannot consistently process cause-and-effect at this level of abstraction.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Introduce it through constraint design, never explanation.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>How to teach it:</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>Place a pool noodle or cone behind the child as a backstroke limiter. Short putt = noodle close. Long putt = noodle farther back. Child experiences the relationship physically.</strong></li>
+  <li style="margin-bottom:5px;"><strong>Distance ladder challenge: targets at 3, 5, 8, 10 feet. Child must stop ball within 12 inches of each.</strong></li>
+</ul>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Age 6-9 cue: "Small putt, small swing. Long putt, longer swing. The ball listens to your swing size."</strong></p>`},
+    {h:`Age-Specific Putting Progressions`,b:`<div class="doc-section-divider"></div>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Age-Specific Putting Progressions</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>AGES 4-6: Active Start Putting</strong></p>
+<p style="margin:0 0 10px;line-height:1.85;"><strong>Primary Goal: Ball strikes target using any functional motion. Confidence and enjoyment are the primary metrics.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>LTAD stage: Active Start. Movement literacy comes before technique. Exploration before instruction.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Equipment Setup:</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>Putter length: below chin when standing upright — never adult length</strong></li>
+  <li style="margin-bottom:5px;"><strong>Target: large cup or circle minimum 6 inches in diameter</strong></li>
+  <li style="margin-bottom:5px;"><strong>Ball: foam or low-compression only</strong></li>
+  <li style="margin-bottom:5px;"><strong>Distance: 2 to 4 feet maximum</strong></li>
+  <li style="margin-bottom:5px;"><strong>Surface: flat carpet or smooth gym floor</strong></li>
+</ul>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Stage 1 — Free Exploration (Sessions 1-2)</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Place ball near hole. Let child attempt without instruction. Observe natural motion.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Coach role: Celebrate any contact, any ball movement toward target.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Do NOT correct grip, stance, or technique at this stage.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Growth Mindset language: "You hit it! Did you see that? Let's go again."</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Stage 2 — Target Awareness (Sessions 3-4)</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Introduce the target as a game: "Can you make the ball go inside the yellow circle?"</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Add a second target option. Let child choose which to aim at.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Begin using FREEZE and RETRIEVE commands within the putting game — building command fluency.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Growth Mindset: "You chose the far one! Great challenge."</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Stage 3 — Distance Exploration (Sessions 5-6)</strong></p>
+<p style="margin:0 0 10px;line-height:1.85;"><strong>Move the target slightly farther. Frame as an unlock: "You've been so good — you get the long hole now!"</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Introduce cooperative scoring: pairs earn points together.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Coach begins using face awareness cue naturally within encouragement — not as a correction.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Stage 4 — Mini Competition (Sessions 7+)</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Simple points game: 1 point per ball inside the circle.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Team vs team. No individual winner — group score only at this age.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Introduce the concept of trying again: "That one was close. What will you try differently?"</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Skills Passport Assessment Criteria — Ages 4-6 Putting:</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>Can strike a stationary ball with the putter toward a target from 3 feet — 3 out of 5 attempts</strong></li>
+  <li style="margin-bottom:5px;"><strong>Demonstrates awareness of target direction before striking</strong></li>
+  <li style="margin-bottom:5px;"><strong>Returns club to ground on FREEZE command consistently</strong></li>
+  <li style="margin-bottom:5px;"><strong>Participates with effort and positive engagement for full putting segment</strong></li>
+</ul>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>AGES 6-9: FUNdamentals Putting</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Primary Goal: Consistent face control, basic distance management, emerging self-correction ability.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>LTAD stage: FUNdamentals. Building basic golf control within athletic foundation. Not specialization.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Equipment Setup:</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>Fitted putter: below chin, above navel</strong></li>
+  <li style="margin-bottom:5px;"><strong>Target: standard hole or tee gate (two tees 5-6 inches apart)</strong></li>
+  <li style="margin-bottom:5px;"><strong>Ball: low-compression</strong></li>
+  <li style="margin-bottom:5px;"><strong>Distance range: 3 to 12 feet</strong></li>
+</ul>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Stage 1 — Gate Challenge</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Set two tees as a gate 6 inches apart. Child putts through from 4 feet.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Narrow the gate gradually over sessions. No mechanical instruction — the gate gives the feedback.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>This is pure CLA: the environment corrects, not the coach.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Growth Mindset: "You made it through! What did you do differently on that one?"</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Stage 2 — Distance Ladder</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Targets at 3, 5, 8, 10 feet. Child must stop ball within 12 inches of target before advancing.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Introduce backstroke length concept using pool noodle limiter.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Self-scoring: child tracks their own personal best distance.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Stage 3 — Pressure Rounds</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>5-ball scoring rounds. Points for distance zones hit.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Introduce light peer competition — paired challenges, not class rankings.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Coach introduces guided discovery: "What changed when you made that long one?"</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Stage 4 — Course Simulation</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Design a 3-hole putting course using cones and targets around the gym.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Children play in pairs. Score is kept cooperatively first, then individually.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Rules introduction: ball played from where it stops. No picking up and repositioning.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Skills Passport Assessment Criteria — Ages 6-9 Putting:</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>Holes 3 out of 5 putts from 4 feet through a 6-inch gate</strong></li>
+  <li style="margin-bottom:5px;"><strong>Demonstrates distance control — stops ball within 18 inches of target from 8 feet (3 out of 5)</strong></li>
+  <li style="margin-bottom:5px;"><strong>Can identify and self-correct a missed putt direction using guided discovery question</strong></li>
+  <li style="margin-bottom:5px;"><strong>Completes 3-hole putting course with consistent setup and safety protocol compliance</strong></li>
+  <li style="margin-bottom:5px;"><strong>Uses effort-based self-reflection at end of segment without coach prompt</strong></li>
+</ul>`},
+    {h:`Common Putting Errors and Constraint-Based Responses`,b:`<div class="doc-section-divider"></div>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Common Putting Errors and Constraint-Based Responses</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Error 1: Ball consistently goes left of target</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Root cause: Club face open at contact (for right-handed player).</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Traditional response: "You're leaving the face open — rotate your hands."</strong></p>
+<p style="margin:0 0 10px;line-height:1.85;"><strong>EduGolfKids response: Narrow the gate from the left side only. Child must solve face angle to get through.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Growth Mindset cue: "That one went left. The gate will help you feel what needs to change."</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Error 2: Ball always stops short</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Root cause: Deceleration through impact — fear of hitting too hard.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Traditional response: "Accelerate through the ball."</strong></p>
+<p style="margin:0 0 10px;line-height:1.85;"><strong>EduGolfKids response: Move target closer by half. Build confidence of reaching. Slowly increase distance.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Growth Mindset cue: "What size swing did that need? Let's find out together."</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Error 3: Inconsistent direction — ball sprays randomly</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Root cause: Setup inconsistency — face angle and stance vary every attempt.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Traditional response: Technical setup instruction.</strong></p>
+<p style="margin:0 0 10px;line-height:1.85;"><strong>EduGolfKids response: Place foot markers and a face line sticker. Address position is now repeatable without instruction.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Error 4: Child rushes — no setup routine</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Root cause: High excitement, low patience — normal at ages 4-8.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Traditional response: "Slow down and set up properly."</strong></p>
+<p style="margin:0 0 10px;line-height:1.85;"><strong>EduGolfKids response: Introduce a 3-count ritual. "Look at target. Look at ball. Go." Child loves the ritual. Pace regulates naturally.</strong></p>
+<h3 style="color:var(--green-dark);border-bottom:2px solid var(--green-light);padding-bottom:8px;margin:24px 0 12px;font-size:16px;">CERTIFICATION ASSESSMENT — MODULE 1</h3>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Written (30%)</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>Explain why putting is taught before chipping or full swing using LTAD reasoning.</strong></li>
+  <li style="margin-bottom:5px;"><strong>Describe the 4 Functional Putting Principles and how each is taught through constraints rather than instruction.</strong></li>
+  <li style="margin-bottom:5px;"><strong>List the Skills Passport assessment criteria for both age groups.</strong></li>
+  <li style="margin-bottom:5px;"><strong>Provide a constraint-based solution for a child whose putts consistently go right.</strong></li>
+</ul>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Scenario-Based (30%)</strong></p>
+<p style="margin:0 0 10px;line-height:1.85;"><strong>Coach is given a 6-year-old scenario: child can make putts from 2 feet but misses everything beyond 4 feet.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Must design a constraint progression to develop distance feel without technical instruction.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Live Demonstration (40%)</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Coach must deliver a 15-minute putting segment to a simulated mixed-age group showing:</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>Age-differentiated instruction simultaneously</strong></li>
+  <li style="margin-bottom:5px;"><strong>At least 3 different constraint challenges</strong></li>
+  <li style="margin-bottom:5px;"><strong>Growth Mindset language throughout</strong></li>
+  <li style="margin-bottom:5px;"><strong>Correct use of guided discovery questions</strong></li>
+  <li style="margin-bottom:5px;"><strong>Skills Passport assessment conducted at close of segment</strong></li>
+</ul>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Automatic reassessment if:</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>Technical swing instruction used instead of constraint manipulation</strong></li>
+  <li style="margin-bottom:5px;"><strong>Child corrected publicly with negative language</strong></li>
+  <li style="margin-bottom:5px;"><strong>Assessment conducted without reference to Skills Passport criteria</strong></li>
+</ul>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>MINIMUM PASS: 85%</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><em></em></p>`},
+  ]
+},
+{
+  id:"L2_M2",
+  title:"Module 2 \u2014 Chipping: Control and Creativity",
+  icon:"\ud83c\udfcc\ufe0f",
+  sections:[
+    {h:`The Chipping-Putting Connection`,b:`<div class="doc-section-divider"></div>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">The Chipping-Putting Connection</p>
+<p style="margin:0 0 10px;line-height:1.85;"><strong>Most traditional junior programs introduce chipping as a completely separate skill with new grip, stance, weight distribution, and shaft lean instruction.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>EduGolfKids takes a different evidence-based approach.</strong></p>
+<p style="margin:0 0 10px;line-height:1.85;"><strong>Motor learning research (Wulf, 2013) shows that skill transfer is maximised when new movements are anchored to existing neural patterns.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Chipping shares the foundational movement of putting:</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>Pendulum motion — shoulders rock, wrists relatively quiet</strong></li>
+  <li style="margin-bottom:5px;"><strong>Downward strike — ball first, then ground</strong></li>
+  <li style="margin-bottom:5px;"><strong>Target-focused external attention</strong></li>
+  <li style="margin-bottom:5px;"><strong>Consistent setup and face awareness</strong></li>
+</ul>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>The key addition in chipping is:</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>Ball position moves back in stance (generates downward strike)</strong></li>
+  <li style="margin-bottom:5px;"><strong>Weight favours lead side slightly</strong></li>
+  <li style="margin-bottom:5px;"><strong>Loft of club creates airtime and bounce</strong></li>
+  <li style="margin-bottom:5px;"><strong>Landing zone thinking replaces hole thinking</strong></li>
+</ul>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>By connecting chipping to putting, coaches reduce cognitive load and accelerate skill acquisition.</strong></p>
+<p style="margin:0 0 10px;line-height:1.85;"><strong>Children who have mastered the putting pendulum learn chipping 40% faster than those taught from scratch (US Kids Golf internal coaching data).</strong></p>`},
+    {h:`Chipping Fundamentals: What Coaches Must Know`,b:`<div class="doc-section-divider"></div>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Chipping Fundamentals: What Coaches Must Know</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>The 4 Functional Chipping Principles:</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Principle 1: Downward Strike</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>The club must strike the ball with a descending blow — ball before ground.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>This is the most important mechanical element of chipping.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Without it: thin shots, fat shots, inconsistent contact.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>How to teach it without saying it:</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>Place a tee 2 inches behind the ball. Child must not hit the tee. The tee gives feedback — no verbal correction needed.</strong></li>
+  <li style="margin-bottom:5px;"><strong>Use a small rubber disc under the ball. Contact must be clean to move the disc forward. If fat, disc stays put.</strong></li>
+</ul>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Age 4-6 cue: "Hit the ball, then brush the grass." (sequence matters — do not say "ground first")</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Age 6-9 cue: "Ball first. Like a hammer hitting a nail — not the wood around it."</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Principle 2: Landing Zone Awareness</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>In chipping, children must learn to think about WHERE the ball lands — not where it finishes.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>This is the key cognitive shift from putting.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Why it matters:</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>Ball rolls after landing — trajectory and landing zone together determine finish</strong></li>
+  <li style="margin-bottom:5px;"><strong>Different clubs land the ball at different distances — this is the beginning of club selection thinking</strong></li>
+  <li style="margin-bottom:5px;"><strong>Landing zone thinking develops spatial intelligence that transfers to all golf shots</strong></li>
+</ul>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>How to teach it:</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>Place a hula hoop or carpet tile as the landing zone target — NOT a hole at the end</strong></li>
+  <li style="margin-bottom:5px;"><strong>Children score points for landing IN the zone, regardless of where ball finishes</strong></li>
+  <li style="margin-bottom:5px;"><strong>Gradually shrink the landing zone over sessions as accuracy improves</strong></li>
+</ul>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Age 4-6 cue: "Land it on the mat!" (simple target, no trajectory discussion)</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Age 6-9 cue: "Where do you need to land it to make it roll to the cone?"</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Principle 3: Shaft Lean and Ball Position</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Hands slightly ahead of ball at address and impact. Ball position centre to back of stance.</strong></p>
+<p style="margin:0 0 10px;line-height:1.85;"><strong>LTAD note: Do NOT explain shaft lean to 4-6 group. The tee-behind-ball constraint achieves this automatically.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>For ages 6-9: introduce ball position back as a setup point only — not a mechanical explanation.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>How to teach it:</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>Mark ball position on the ground with a small piece of tape for the child to return to each attempt</strong></li>
+  <li style="margin-bottom:5px;"><strong>Use the handle-points-to-belt-buckle feel cue for ages 6-9: "Make sure your hands are in front of the ball."</strong></li>
+</ul>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Principle 4: Consistent Loft Selection (Ages 6-9 Only)</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Different clubs produce different trajectories and roll ratios.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Children 6-9 can begin to understand and experiment with this concept through discovery.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Do NOT teach: "This is a 7-iron and it has X degrees of loft and rolls Y."</strong></p>
+<p style="margin:0 0 10px;line-height:1.85;"><strong>DO teach: Give the child a 7-iron and a sand wedge. Ask them to try both and discover which lands closer to the target.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Club selection thinking emerges through exploration — not lecture.</strong></p>`},
+    {h:`Age-Specific Chipping Progressions`,b:`<div class="doc-section-divider"></div>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Age-Specific Chipping Progressions</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>AGES 4-6: Active Start Chipping</strong></p>
+<p style="margin:0 0 10px;line-height:1.85;"><strong>Primary Goal: Clean contact with the ball using a downward motion. Landing zone awareness is secondary.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>LTAD: Movement quality first. Accuracy is a bonus — never a requirement.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Equipment Setup:</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>Short iron or hybrid — never a full-length adult club</strong></li>
+  <li style="margin-bottom:5px;"><strong>Foam ball or large low-compression ball</strong></li>
+  <li style="margin-bottom:5px;"><strong>Large landing target: hula hoop or 3-foot carpet square</strong></li>
+  <li style="margin-bottom:5px;"><strong>Distance: 5 to 10 feet from landing zone</strong></li>
+  <li style="margin-bottom:5px;"><strong>Tee behind ball: placed 2 inches back as downward strike guide</strong></li>
+</ul>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Stage 1 — Contact First (Sessions 1-2)</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>No target. Just strike. "Can you make the ball fly?"</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Celebrate any clean contact, any airtime at all.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Coach observes natural motion — do not correct.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Safety: spacing protocol enforced strictly — chipping requires MORE space than putting.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Stage 2 — Landing Target (Sessions 3-4)</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Introduce the hula hoop as landing zone. "Can you make it land on the big circle?"</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Distance close — 5 feet to land zone.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>No scoring pressure. Exploration and discovery.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Stage 3 — Varying Targets (Sessions 5-6)</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Two landing zones at different distances. Child chooses which to aim for.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Begin cooperative scoring. Pairs collect points for team.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Growth Mindset: "You picked the far one! That was brave."</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Stage 4 — Mini Chipping Game (Sessions 7+)</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Set up simple 2-3 chipping stations around the gym with different landing zones.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Children rotate every 4 minutes. Different target per station.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>LTAD protection: No correction of swing mechanics unless safety concern exists.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Skills Passport Assessment Criteria — Ages 4-6 Chipping:</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>Achieves clean ball contact (ball travels through the air) from 3 out of 5 attempts</strong></li>
+  <li style="margin-bottom:5px;"><strong>Ball lands within 3 feet of landing zone target from 2 out of 5 attempts</strong></li>
+  <li style="margin-bottom:5px;"><strong>Complies with spacing and FREEZE protocol throughout segment</strong></li>
+  <li style="margin-bottom:5px;"><strong>Engages with effort and positive attitude for full chipping segment</strong></li>
+</ul>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>AGES 6-9: FUNdamentals Chipping</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Primary Goal: Consistent downward contact, landing zone targeting, emerging club awareness.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>LTAD stage: Building basic golf control. Club selection is exploratory — not prescriptive.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Equipment Setup:</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>Two clubs available: a 7-iron and a pitching wedge (or equivalent loft difference)</strong></li>
+  <li style="margin-bottom:5px;"><strong>Low-compression ball</strong></li>
+  <li style="margin-bottom:5px;"><strong>Multiple landing zones at 5, 8, 12, 15 feet</strong></li>
+  <li style="margin-bottom:5px;"><strong>Tee behind ball available as optional guide — child chooses to use or not</strong></li>
+</ul>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Stage 1 — Precision Landing Challenge</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>One landing zone (hula hoop). Child must land ball inside from 8 feet.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Gate challenge added: ball must fly through two cones set as an air gate before landing.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>This forces trajectory awareness — the gate is the constraint, not the coach.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Stage 2 — Club Discovery</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Child given both clubs. No instruction. "Try both and tell me what you notice."</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>After exploration: guided discovery — "Which one landed closer? Which rolled further?"</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>This is the birth of club selection intelligence — built through experience, not theory.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Stage 3 — Variable Distance Chipping</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Four landing zones at different distances. Child must chip to all four in sequence.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Self-scoring: child tracks how many zones they hit in 10 shots.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Personal best tracking — compare to own score, not peers.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Stage 4 — Chipping Course</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Design a 3-station chipping course: rough lie, flat lie, uphill lie (use mats at angles).</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Children play through in pairs. Score cooperatively first, then individual round.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Rules: ball played from where it lands. No improving lie. First introduction to etiquette concepts.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Skills Passport Assessment Criteria — Ages 6-9 Chipping:</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>Achieves clean ball contact landing within 2 feet of target zone from 4 out of 5 attempts at 8 feet</strong></li>
+  <li style="margin-bottom:5px;"><strong>Demonstrates basic landing zone vs finish zone understanding when asked</strong></li>
+  <li style="margin-bottom:5px;"><strong>Can describe difference between two club options after exploration — in own words</strong></li>
+  <li style="margin-bottom:5px;"><strong>Self-corrects at least one shot during assessment using guided discovery without coach prompt</strong></li>
+  <li style="margin-bottom:5px;"><strong>Maintains safe spacing and equipment protocol throughout</strong></li>
+</ul>`},
+    {h:`Common Chipping Errors and Constraint-Based Responses`,b:`<div class="doc-section-divider"></div>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Common Chipping Errors and Constraint-Based Responses</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Error 1: Topping the ball — club hits top of ball, ball rolls along ground</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Traditional response: "Keep your head down. You're looking up."</strong></p>
+<p style="margin:0 0 10px;line-height:1.85;"><strong>EduGolfKids response: Lower the tee height so ball sits closer to ground. Shrink ball size. Both force more precise contact naturally.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Growth Mindset: "That one stayed low — the ball is going to teach you. Try again."</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Error 2: Fat shot — club hits ground first, ball moves only inches</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Traditional response: "Hit ball first. Weight forward."</strong></p>
+<p style="margin:0 0 10px;line-height:1.85;"><strong>EduGolfKids response: Use tee behind ball constraint. Move ball slightly back in stance using tape marker.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Growth Mindset: "That one dug in — interesting. The tee will help you feel what changes."</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Error 3: Child scoops — tries to lift ball by flipping wrists at impact</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Traditional response: "Don't scoop. Shaft lean. Hands forward."</strong></p>
+<p style="margin:0 0 10px;line-height:1.85;"><strong>EduGolfKids response: Raise the target. Child aims for a higher landing zone (shelf, box). Upward target naturally discourages scooping instinct.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Error 4: No trajectory — ball runs along ground like a putt</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Traditional response: "Open the club face. Take more loft."</strong></p>
+<p style="margin:0 0 10px;line-height:1.85;"><strong>EduGolfKids response: Introduce the air gate — two cones set 12 inches high. Ball must fly through the air to score. Gate creates loft requirement without explanation.</strong></p>
+<h3 style="color:var(--green-dark);border-bottom:2px solid var(--green-light);padding-bottom:8px;margin:24px 0 12px;font-size:16px;">CERTIFICATION ASSESSMENT — MODULE 2</h3>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Written (30%)</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>Explain the chipping-putting connection and why this reduces cognitive load in skill acquisition.</strong></li>
+  <li style="margin-bottom:5px;"><strong>Describe how you would teach landing zone awareness to a 5-year-old vs a 9-year-old.</strong></li>
+  <li style="margin-bottom:5px;"><strong>Design a constraint response for a child who consistently tops the ball.</strong></li>
+  <li style="margin-bottom:5px;"><strong>List the Skills Passport criteria for both age groups.</strong></li>
+</ul>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Scenario-Based (30%)</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Coach is given a group of 8 children aged 6-9. Half are topping, half are hitting fat.</strong></p>
+<p style="margin:0 0 10px;line-height:1.85;"><strong>Must design a single session structure that addresses both errors simultaneously using constraint design — without splitting the group or giving individual technical instruction.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Live Demonstration (40%)</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Coach must deliver a 15-minute chipping segment showing:</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>Clear connection of chipping motion to putting foundation</strong></li>
+  <li style="margin-bottom:5px;"><strong>Age-appropriate constraint challenges with visible learning outcomes</strong></li>
+  <li style="margin-bottom:5px;"><strong>Growth Mindset language used at every correction moment</strong></li>
+  <li style="margin-bottom:5px;"><strong>Skills Passport assessment conducted at close of segment</strong></li>
+</ul>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>MINIMUM PASS: 85%</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><em></em></p>`},
+  ]
+},
+{
+  id:"L2_M3",
+  title:"Module 3 \u2014 Pitching: Distance and Landing",
+  icon:"\ud83c\udfaf",
+  sections:[
+    {h:`Why Pitching Is a 6-9 Skill — The Developmental Reasoning`,b:`<div class="doc-section-divider"></div>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Why Pitching Is a 6-9 Skill — The Developmental Reasoning</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Pitching requires simultaneous integration of:</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>Hip and shoulder rotation (more complex than chip or putt)</strong></li>
+  <li style="margin-bottom:5px;"><strong>Weight transfer to lead side through impact</strong></li>
+  <li style="margin-bottom:5px;"><strong>Arm swing that generates carry distance</strong></li>
+  <li style="margin-bottom:5px;"><strong>Trajectory management — understanding how to produce height</strong></li>
+  <li style="margin-bottom:5px;"><strong>Deceleration control — the follow-through must be managed</strong></li>
+</ul>
+<p style="margin:0 0 10px;line-height:1.85;"><strong>Children under 6 have insufficient bilateral coordination, limited rotation control, and underdeveloped balance for this movement pattern.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Forcing pitching before readiness creates:</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>Compensations that ingrain poor movement patterns</strong></li>
+  <li style="margin-bottom:5px;"><strong>Increased injury risk from uncontrolled swing speed</strong></li>
+  <li style="margin-bottom:5px;"><strong>Frustration that damages confidence built in putting and chipping</strong></li>
+</ul>
+<p style="margin:0 0 10px;line-height:1.85;"><strong>US Kids Golf data and PGA Junior coaching research both identify 6-7 as the minimum appropriate introduction age for pitching.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>EduGolfKids adds a prerequisite: chipping competency demonstrated at Skills Passport level first.</strong></p>`},
+    {h:`Pitching Fundamentals: What Coaches Must Know`,b:`<div class="doc-section-divider"></div>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Pitching Fundamentals: What Coaches Must Know</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>The 4 Functional Pitching Principles:</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Principle 1: Rotation Through the Ball</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>The body turns through impact — hips and chest face the target in the finish.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>This is the primary motor pattern that differentiates pitching from chipping.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>How to teach it without saying it:</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>Finish line challenge: place a strip of tape as a "finish line" to the left of the child (right-handed). Child must step over the finish line with their belt buckle after every swing. No explanation needed — the finish line constraint drives rotation.</strong></li>
+  <li style="margin-bottom:5px;"><strong>Watch the target challenge: "After you swing, your eyes must be looking at the target." This forces head and body through rotation.</strong></li>
+</ul>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Age 6-9 cue: "Turn your belly button to face the target when you finish."</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Principle 2: Width and Arm Swing</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Pitching requires a longer, wider arm swing than chipping — this generates carry distance.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>The swing arc is wider because the arms swing away from the body further on the backswing.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>How to teach it:</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>Big arm swing vs small arm swing game: can you make the ball carry to the green target? Can you drop it on the short target? Child discovers that arm swing width controls carry.</strong></li>
+  <li style="margin-bottom:5px;"><strong>Club length constraint: use a longer club for pitch shots. The natural weight and length encourages wider swing.</strong></li>
+</ul>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Age 6-9 cue: "Big swing for far. Small swing for close. You control it."</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Principle 3: Weight Transfer to Lead Side</strong></p>
+<p style="margin:0 0 10px;line-height:1.85;"><strong>At impact, 70-80% of weight on lead foot. This creates the descending strike necessary for clean contact.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>How to teach it without saying it:</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>Lead foot balance challenge: after every pitch shot, lift the trail foot off the ground and hold for 3 seconds. If the child falls over, weight did not transfer. The challenge provides the feedback.</strong></li>
+  <li style="margin-bottom:5px;"><strong>Step-through drill: child steps toward target with lead foot as they swing. Exaggerated movement builds transfer instinct.</strong></li>
+</ul>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Age 6-9 cue: "Finish standing tall on your front foot."</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Principle 4: Trajectory Awareness</strong></p>
+<p style="margin:0 0 10px;line-height:1.85;"><strong>Understanding that the loft of the club, combined with swing speed and contact point, produces different ball flights.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>This is purely a discovery concept for ages 6-9 — not a technical explanation.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>How to teach it:</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>High shot vs low shot challenge: can you make the ball fly over the orange cone? Can you keep it under the blue rope? Child experiments with feel. Club face and swing speed adjust naturally.</strong></li>
+  <li style="margin-bottom:5px;"><strong>Balloon challenge: hang a balloon between two cones at 4 feet high. Ball must clear the balloon to score. Child discovers trajectory through play.</strong></li>
+</ul>`},
+    {h:`Pitching Progressions — Ages 6-9 Only`,b:`<div class="doc-section-divider"></div>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Pitching Progressions — Ages 6-9 Only</p>
+<p style="margin:0 0 10px;line-height:1.85;"><strong>Primary Goal: Consistent carry distance with basic trajectory control. Rotation through impact. Soft landing awareness.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Equipment Setup:</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>Pitching wedge or sand wedge — age-appropriate length</strong></li>
+  <li style="margin-bottom:5px;"><strong>Low-compression ball</strong></li>
+  <li style="margin-bottom:5px;"><strong>Multiple distance targets: 15, 25, 35, 45 feet</strong></li>
+  <li style="margin-bottom:5px;"><strong>Balloon or rope barrier for trajectory challenges</strong></li>
+  <li style="margin-bottom:5px;"><strong>Landing zone circles (hula hoops) at each target</strong></li>
+</ul>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Stage 1 — Carry Distance Discovery (Sessions 1-2)</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Single target 20 feet away. "Can you carry the ball all the way to the hoop?"</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>No technique instruction. Observe swing pattern emerging from chipping foundation.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Celebrate carry — even if short. Any airtime toward the target is progress.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Growth Mindset: "You got it in the air! What did that swing feel like?"</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Stage 2 — Distance Zone Challenge (Sessions 3-4)</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Three target zones at 15, 25, 35 feet. Child calls their target before swinging.</strong></p>
+<p style="margin:0 0 10px;line-height:1.85;"><strong>This is critical: calling the target before swinging builds pre-shot commitment and intentional practice.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Score points for hitting chosen zone. Self-tracking.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Stage 3 — Obstacle Pitching (Sessions 5-6)</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Place a barrier (rope, pool noodle at knee height) between the child and the target.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Ball must carry over the barrier to score. Ball landing short of barrier scores 0.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>This constraint naturally develops trajectory height without discussion of loft or angle.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Stage 4 — Soft Landing Challenge (Sessions 7+)</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Land the ball in a hula hoop and keep it there. Ball that rolls out scores half points.</strong></p>
+<p style="margin:0 0 10px;line-height:1.85;"><strong>Child must discover that a higher, softer pitch stops sooner. No instruction — the scoring system teaches it.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Introduction of "check" concept: "Can you land it softly so it checks?"</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Stage 5 — Course Integration</strong></p>
+<p style="margin:0 0 10px;line-height:1.85;"><strong>Design a 3-hole mixed course: one hole requiring a chip, one requiring a pitch over obstacle, one requiring a putt.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Children experience all three short game shots in sequence.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Introduce basic etiquette: take turns, no walking in front of another player's shot.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Skills Passport Assessment Criteria — Ages 6-9 Pitching:</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>Carries ball a minimum of 20 feet in the air from 3 out of 5 attempts</strong></li>
+  <li style="margin-bottom:5px;"><strong>Lands ball within hula hoop target from 25 feet on 2 out of 5 attempts</strong></li>
+  <li style="margin-bottom:5px;"><strong>Demonstrates weight transfer — holds lead foot balance for 2 seconds after impact on 3 out of 5 swings</strong></li>
+  <li style="margin-bottom:5px;"><strong>Successfully carries ball over knee-height barrier from 3 out of 5 attempts</strong></li>
+  <li style="margin-bottom:5px;"><strong>Can select target zone before swing and attempt execution with intention</strong></li>
+</ul>`},
+    {h:`Common Pitching Errors and Constraint-Based Responses`,b:`<div class="doc-section-divider"></div>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Common Pitching Errors and Constraint-Based Responses</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Error 1: Ball stays low — skims ground or rolls</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Traditional response: "Open your club face. Hit up on the ball."</strong></p>
+<p style="margin:0 0 10px;line-height:1.85;"><strong>EduGolfKids response: Introduce the barrier constraint — rope at 18 inches. Child must clear it. The barrier forces them to find loft naturally.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Error 2: Thin contact — ball flies fast and low with no control</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Traditional response: "Your swing bottom is too far forward."</strong></p>
+<p style="margin:0 0 10px;line-height:1.85;"><strong>EduGolfKids response: Place a small piece of foam 2 inches behind the ball. Clean contact removes the foam. Thin contact slides over it. Foam provides feedback.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Error 3: No rotation — child arms-only the shot with no body turn</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Traditional response: "Turn your hips. Rotate through."</strong></p>
+<p style="margin:0 0 10px;line-height:1.85;"><strong>EduGolfKids response: Use the finish line constraint. Add the belt buckle target point. Two concurrent constraints build rotation without a word of mechanics.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Error 4: Deceleration — child slows down before impact, loses distance and contact</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Traditional response: "Accelerate through the ball."</strong></p>
+<p style="margin:0 0 10px;line-height:1.85;"><strong>EduGolfKids response: Move target closer by 30%. Rebuild confidence of reaching. Reintroduce distance gradually as child commits to impact.</strong></p>
+<h3 style="color:var(--green-dark);border-bottom:2px solid var(--green-light);padding-bottom:8px;margin:24px 0 12px;font-size:16px;">CERTIFICATION ASSESSMENT — MODULE 3</h3>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Written (30%)</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>Explain using LTAD reasoning why pitching is not introduced to the 4-6 age group.</strong></li>
+  <li style="margin-bottom:5px;"><strong>Describe the prerequisite chipping competency required before pitching is introduced.</strong></li>
+  <li style="margin-bottom:5px;"><strong>Design a constraint-based drill that teaches weight transfer without instruction.</strong></li>
+  <li style="margin-bottom:5px;"><strong>List Skills Passport criteria for pitching.</strong></li>
+</ul>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Scenario-Based (30%)</strong></p>
+<p style="margin:0 0 10px;line-height:1.85;"><strong>A 7-year-old can chip well but pitches with zero rotation — arms only. Design a 3-stage constraint progression to develop rotation over 3 sessions without technical instruction.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Live Demonstration (40%)</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Coach must deliver a 15-minute pitching segment showing:</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>At least 3 constraint challenges building on each other</strong></li>
+  <li style="margin-bottom:5px;"><strong>LTAD stage awareness — no 4-6 children receiving pitching instruction</strong></li>
+  <li style="margin-bottom:5px;"><strong>Growth Mindset cues at every correction moment</strong></li>
+  <li style="margin-bottom:5px;"><strong>Skills Passport assessment at close of segment</strong></li>
+</ul>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>MINIMUM PASS: 85%</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><em></em></p>`},
+  ]
+},
+{
+  id:"L2_M4",
+  title:"Module 4 \u2014 Full Swing Development",
+  icon:"\ud83d\udca5",
+  sections:[
+    {h:`Why Full Swing Instruction Is Last — The Science`,b:`<div class="doc-section-divider"></div>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Why Full Swing Instruction Is Last — The Science</p>
+<p style="margin:0 0 10px;line-height:1.85;"><strong>Almost every traditional youth golf program starts with full swing instruction. This is developmentally incorrect.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>The EduGolfKids sequence — putting, chipping, pitching, then full swing — is supported by:</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>LTAD: FUNdamentals stage priorities are coordination, balance, and basic control — not power or distance</strong></li>
+  <li style="margin-bottom:5px;"><strong>Motor learning: Short-game skills transfer to the full swing more effectively than the reverse (Smith et al., 2012)</strong></li>
+  <li style="margin-bottom:5px;"><strong>Injury prevention: Full swing mechanics practiced before coordination is mature increase repetitive stress injury risk</strong></li>
+  <li style="margin-bottom:5px;"><strong>Confidence: Children experience success earlier in putting and chipping, building the emotional confidence to attempt the more challenging full swing</strong></li>
+</ul>
+<p style="margin:0 0 10px;line-height:1.85;"><strong>PGA research on junior engagement shows: children who are introduced to full swing before short game mastery show 35% higher dropout rates in the first 12 months.</strong></p>
+<p style="margin:0 0 10px;line-height:1.85;"><strong>US Kids Golf foundation data confirms: short-game-first programs produce longer-term participation and better overall skill development.</strong></p>
+<p style="margin:0 0 10px;line-height:1.85;"><strong>EduGolfKids adopts this evidence as the foundation of our skill sequence and guards it through the Skills Passport prerequisite gate system.</strong></p>`},
+    {h:`Full Swing Fundamentals: What Coaches Must Know`,b:`<div class="doc-section-divider"></div>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Full Swing Fundamentals: What Coaches Must Know</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>EduGolfKids teaches 5 Functional Full Swing Principles. Not positions. Not angles. Principles.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Principle 1: Athletic Posture</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Knees slightly bent. Hip hinge forward. Arms hang naturally. Weight balanced and centred.</strong></p>
+<p style="margin:0 0 10px;line-height:1.85;"><strong>This is not a technical position — it is an athletic ready stance that all children already understand.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>How to teach it:</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>Football ready position: "Get in your ready position like a defender." Then: "That's your golf stance." Children know athletic ready. You are simply naming it.</strong></li>
+  <li style="margin-bottom:5px;"><strong>Knock the ball off the tee challenge: from a balanced stance, child attempts to strike the ball. Imbalanced posture causes misses — the ball gives the feedback.</strong></li>
+</ul>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Age 4-6 cue: "Bend your knees a little. Like you're sneaking up on something."</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Age 6-9 cue: "Athletic ready. Like a shortstop. Now we play golf."</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Principle 2: Grip and Connection</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Both hands work together as a unit. The club is held in the fingers — not the palm.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>EduGolfKids does not prescribe overlap, interlock, or 10-finger grip.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>We teach: both hands on the club, comfortable, repeatable, and connected.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>How to teach it:</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>Velcro glove challenge: both hands must stay connected to the club through the swing. If one hand releases, they hear the velcro separate. Tactile feedback.</strong></li>
+  <li style="margin-bottom:5px;"><strong>Shake hands with the club: "Your bottom hand shakes hands with the handle. Now put the other hand on top as a team."</strong></li>
+</ul>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Age 4-6 cue: "Hold it like a baby bird — not too tight, not too loose."</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Age 6-9 cue: "Both hands as a team. Fingers, not palms. Comfortable and connected."</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Principle 3: Rotation and Rhythm</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>The body turns back and through in a rhythmic, athletic motion.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Rhythm is the most powerful teaching tool in junior full swing development.</strong></p>
+<p style="margin:0 0 10px;line-height:1.85;"><strong>A swing with great rhythm and poor mechanics will produce more consistent results than a technically correct swing with poor rhythm (Hogan principle; validated in motor learning research by Schmidt and Lee, 2011).</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>How to teach it:</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>Metronome or clapping beat: "Back on ONE, through on TWO." Child swings in time. Rhythm naturally produces rotation and tempo.</strong></li>
+  <li style="margin-bottom:5px;"><strong>Whoosh drill: child holds club upside down, swings to produce the loudest whoosh at the bottom. Whoosh location reveals where club speed peaks.</strong></li>
+  <li style="margin-bottom:5px;"><strong>Tee whoosh: whoosh should happen AT the tee. If before or after, child self-corrects through sound feedback.</strong></li>
+</ul>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Age 4-6 cue: "Swoooosh! Make the biggest sound right here." (point to impact zone)</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Age 6-9 cue: "Back... and THROUGH. Swing in time. Rhythm beats mechanics every time."</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Principle 4: External Focus Target</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>The child's mental attention must be on the target — not the swing.</strong></p>
+<p style="margin:0 0 10px;line-height:1.85;"><strong>Wulf (2013) research: external focus consistently produces better motor outcomes than internal focus, across all ages.</strong></p>
+<p style="margin:0 0 10px;line-height:1.85;"><strong>Traditional instruction forces internal focus: "keep your elbow in," "rotate your hips," "keep your head still."</strong></p>
+<p style="margin:0 0 10px;line-height:1.85;"><strong>EduGolfKids forces external focus: "make the ball land on the yellow cone," "fly it past the blue line."</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>This is one of the most important and most violated principles in youth golf coaching.</strong></p>
+<p style="margin:0 0 10px;line-height:1.85;"><strong>Every time a coach says "fix your swing" during a full swing activity, they move the child's focus internal and immediately reduce motor performance.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Principle 5: Balanced Finish</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Weight fully on lead foot. Balanced. Held for 3 seconds.</strong></p>
+<p style="margin:0 0 10px;line-height:1.85;"><strong>The finish position is the single most powerful visual and physical feedback tool available to the coach.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>A balanced finish indicates: rotation occurred, weight transferred, swing speed was controlled.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>An unbalanced finish indicates: one or more of the above was absent.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>How to teach it:</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>Freeze finish challenge: every swing must end in a posed, held finish like a statue. If the child falls, the swing was off balance.</strong></li>
+  <li style="margin-bottom:5px;"><strong>Golf statue game: after swinging, hold finish while coach walks around and checks. Gamified and children love it.</strong></li>
+</ul>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Age 4-6 cue: "Make your statue after every swing!"</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Age 6-9 cue: "Finish tall. Balance. Hold it. That tells you everything about the swing."</strong></p>`},
+    {h:`Age-Specific Full Swing Progressions`,b:`<div class="doc-section-divider"></div>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Age-Specific Full Swing Progressions</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>AGES 4-6: Active Start Full Swing</strong></p>
+<p style="margin:0 0 10px;line-height:1.85;"><strong>Primary Goal: Rhythmic strike of a teed ball with any functional motion. Safety compliance. Joy of striking.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>LTAD protection: No technical instruction. No position correction. Movement exploration only.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Equipment Setup:</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>High tee — ball at waist height for initial sessions. Lower as confidence builds.</strong></li>
+  <li style="margin-bottom:5px;"><strong>Foam or large low-compression ball</strong></li>
+  <li style="margin-bottom:5px;"><strong>Short iron or hybrid — age-appropriate length only</strong></li>
+  <li style="margin-bottom:5px;"><strong>Minimum 8-foot lateral spacing — full swing requires more space than short game</strong></li>
+  <li style="margin-bottom:5px;"><strong>All children behind safety line during any swing</strong></li>
+</ul>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Stage 1 — Strike the Teed Ball (Sessions 1-3)</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>High tee. Foam ball. "Can you hit it off the tee?" That is the entire instruction.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Celebrate every contact, every ball movement, every attempt.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Safety: FREEZE and RETRIEVE commands practiced every session.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Do NOT correct grip, stance, backswing, or follow-through.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Stage 2 — Direction Awareness (Sessions 4-5)</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Place a large target zone (cones or rope) 15-20 feet in front.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong> "Can you hit it toward the yellow zone?" Simple target. No distance pressure.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Growth Mindset: "You hit it! Did it go toward the zone? What will you try this time?"</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Stage 3 — Rhythm Games (Sessions 6-7)</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Introduce whoosh drill and statue finish. Frame both as games.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Whoosh competition: "Who can make the loudest whoosh?" Rhythm and effort reward.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Statue competition: pairs watch each other's finish and award points for balance.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Stage 4 — Mini Target Course (Sessions 8+)</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Simple 2-station full swing course with large targets.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Team scoring. No individual results compared.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Introduce waiting turn and safety protocol as part of the game rules.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Skills Passport Assessment Criteria — Ages 4-6 Full Swing:</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>Strikes ball off high tee with any functional motion from 3 out of 5 attempts</strong></li>
+  <li style="margin-bottom:5px;"><strong>Ball travels minimum 10 feet in the air from 2 out of 5 attempts</strong></li>
+  <li style="margin-bottom:5px;"><strong>Holds a recognizable finish position for 2 seconds after impact on 3 out of 5 swings</strong></li>
+  <li style="margin-bottom:5px;"><strong>Complies with FREEZE, RETRIEVE, and spacing protocol throughout entire segment</strong></li>
+  <li style="margin-bottom:5px;"><strong>Engages with positive effort and safe behavior throughout</strong></li>
+</ul>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>AGES 6-9: FUNdamentals Full Swing</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Primary Goal: Consistent contact, target direction, balanced finish, basic rhythm and tempo.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>LTAD stage: Building athletic foundation. Distance is irrelevant. Quality of movement matters.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Equipment Setup:</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>Low tee — ball at normal address height</strong></li>
+  <li style="margin-bottom:5px;"><strong>Low-compression ball</strong></li>
+  <li style="margin-bottom:5px;"><strong>Full set of age-appropriate clubs available for exploration</strong></li>
+  <li style="margin-bottom:5px;"><strong>Target zones at 20, 35, 50, 70 feet</strong></li>
+  <li style="margin-bottom:5px;"><strong>Minimum 8-foot lateral spacing strictly enforced</strong></li>
+</ul>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Stage 1 — Rhythm and Contact</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Metronome or beat counting. "Back on ONE, through on TWO."</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Target: large zone at 30 feet. Focus is rhythm, not distance.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Whoosh drill every 3rd session to reinforce impact timing.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Stage 2 — Distance Zone Targeting</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Four target zones at different distances. Child calls zone before swinging.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Pre-shot commitment builds focus and intentional practice habits.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Self-scoring. Personal best only — no comparison to peers.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Stage 3 — Club Selection Discovery</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Child given three clubs: short iron, mid iron, driver or hybrid.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>No instruction: "Try all three. Which one goes furthest? Which is easiest to control?"</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Guided discovery: "Which club did you like most? Why?"</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>This is the beginning of equipment awareness — built through experience.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Stage 4 — Shot Shape Challenge (Advanced 6-9)</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>For higher-readiness children only.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>"Can you make it go left of the cone? Right of the cone?" No instruction — pure exploration.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Children discover face-path relationship through play. This is advanced motor problem solving.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Growth Mindset: "You changed direction! What did you do differently? Can you do it again?"</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Skills Passport Assessment Criteria — Ages 6-9 Full Swing:</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>Strikes ball off low tee producing minimum 20-foot carry from 4 out of 5 attempts</strong></li>
+  <li style="margin-bottom:5px;"><strong>Lands ball within 15-foot wide target zone from 40 feet on 3 out of 5 attempts</strong></li>
+  <li style="margin-bottom:5px;"><strong>Demonstrates balanced finish held for 3 seconds on 4 out of 5 swings</strong></li>
+  <li style="margin-bottom:5px;"><strong>Uses correct spacing and safety protocol without reminders for full segment</strong></li>
+  <li style="margin-bottom:5px;"><strong>Can describe one self-identified adjustment after a mis-hit using guided discovery</strong></li>
+  <li style="margin-bottom:5px;"><strong>Completes a rhythm-based swing (counts back and through) on 3 out of 5 attempts</strong></li>
+</ul>`},
+    {h:`Full Swing Safety — Non-Negotiable Standards`,b:`<div class="doc-section-divider"></div>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Full Swing Safety — Non-Negotiable Standards</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>The full swing is the highest-risk activity in EduGolfKids.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>All safety standards from Level 1 are elevated in full swing sessions.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Spacing Requirements:</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>Minimum 8 feet lateral between each child — measured and marked with cones before children arrive</strong></li>
+  <li style="margin-bottom:5px;"><strong>Minimum 15 feet behind each child — no child behind another swinger</strong></li>
+  <li style="margin-bottom:5px;"><strong>All ball retrieval only on RETRIEVE command — never independently</strong></li>
+</ul>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Equipment Requirements:</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>Age-appropriate clubs only — adult clubs create leverage and control problems that elevate injury risk</strong></li>
+  <li style="margin-bottom:5px;"><strong>Tee must be used in all early full swing sessions — off-turf shots without a tee are a Stage 3+ activity</strong></li>
+  <li style="margin-bottom:5px;"><strong>Foam or low-compression balls for all indoor sessions and first 3 outdoor sessions</strong></li>
+</ul>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Coach Position:</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>Coach stands at 45-degree angle ahead and to the side — never directly in front or directly behind</strong></li>
+  <li style="margin-bottom:5px;"><strong>Coach must have line of sight to all children simultaneously at all times</strong></li>
+  <li style="margin-bottom:5px;"><strong>If line of sight is broken — stop the session and reorganize before continuing</strong></li>
+</ul>
+<h3 style="color:var(--green-dark);border-bottom:2px solid var(--green-light);padding-bottom:8px;margin:24px 0 12px;font-size:16px;">CERTIFICATION ASSESSMENT — MODULE 4</h3>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Written (30%)</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>Using LTAD evidence, explain why full swing is taught last in the EduGolfKids sequence.</strong></li>
+  <li style="margin-bottom:5px;"><strong>Describe the 5 Functional Full Swing Principles and how each is taught through constraints.</strong></li>
+  <li style="margin-bottom:5px;"><strong>Explain Wulf's external focus principle and provide 3 examples of external focus cues for full swing.</strong></li>
+  <li style="margin-bottom:5px;"><strong>List the full swing safety spacing requirements and explain the rationale for each.</strong></li>
+</ul>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Scenario-Based (30%)</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>A group of 8-year-olds all have beautiful rhythm but no rotation — they arm-swing without body turn.</strong></p>
+<p style="margin:0 0 10px;line-height:1.85;"><strong>Design a 3-constraint progression that develops body rotation across one session without any mechanical instruction.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Live Demonstration (40%)</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Coach must deliver a 20-minute full swing segment showing:</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>Complete safety setup before children arrive</strong></li>
+  <li style="margin-bottom:5px;"><strong>Age-differentiated instruction for at least two ability levels</strong></li>
+  <li style="margin-bottom:5px;"><strong>External focus cues only — zero internal mechanics language</strong></li>
+  <li style="margin-bottom:5px;"><strong>Rhythm-based teaching integrated throughout</strong></li>
+  <li style="margin-bottom:5px;"><strong>Skills Passport assessment conducted at close</strong></li>
+</ul>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Automatic reassessment if:</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>Internal focus mechanical instruction given ("fix your elbow, rotate your hips")</strong></li>
+  <li style="margin-bottom:5px;"><strong>Spacing violation occurs and is not immediately corrected</strong></li>
+  <li style="margin-bottom:5px;"><strong>Children retrieve balls without RETRIEVE command</strong></li>
+  <li style="margin-bottom:5px;"><strong>Adult-length clubs used with children under 10</strong></li>
+</ul>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>MINIMUM PASS: 85%</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><em></em></p>`},
+  ]
+},
+{
+  id:"L2_M5",
+  title:"Module 5 \u2014 Rules &amp; Etiquette",
+  icon:"\ud83d\udcd6",
+  sections:[
+    {h:`Why Golf Rules and Etiquette Matter for Young Children`,b:`<div class="doc-section-divider"></div>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Why Golf Rules and Etiquette Matter for Young Children</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Golf is one of the only sports in the world where players call penalties on themselves.</strong></p>
+<p style="margin:0 0 10px;line-height:1.85;"><strong>This unique culture of self-governance and honesty is one of the most powerful life skill lessons golf can teach.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Research from character development in youth sport (Shields and Bredemeier, 1995) shows:</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>Children who learn sport-based ethical frameworks before age 10 demonstrate significantly higher honesty and self-regulation scores in early adolescence</strong></li>
+  <li style="margin-bottom:5px;"><strong>Rule-following behavior in sport transfers to classroom and social settings when taught through internalization rather than enforcement</strong></li>
+  <li style="margin-bottom:5px;"><strong>Cultural identity ("I am a golfer — golfers do this") produces more consistent ethical behavior than rule enforcement</strong></li>
+</ul>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>EduGolfKids frames rules and etiquette as golf culture identity — not a compliance list.</strong></p>`},
+    {h:`What to Teach by Age Group`,b:`<div class="doc-section-divider"></div>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">What to Teach by Age Group</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>AGES 4-6: Etiquette Habits (Not Rules)</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Children aged 4-6 cannot process abstract rules or consequences.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>They CAN learn rituals, habits, and cultural behaviors through modeling and repetition.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>The 5 Golf Habits for Ages 4-6:</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Habit 1: Be Still When Others Hit</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Cultural frame: "Golfers are quiet and still when a friend is swinging."</strong></p>
+<p style="margin:0 0 10px;line-height:1.85;"><strong>How to teach it: Practice freeze ritual before any swing begins. Entire group freezes and goes quiet. Child swings. Group unfreezes. Make it ceremonial and special.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Growth Mindset connection: "You showed so much respect for your friend. That's what golfers do."</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Habit 2: Never Walk in Front of a Swinger</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Cultural frame: "Golfers always walk behind — never in front."</strong></p>
+<p style="margin:0 0 10px;line-height:1.85;"><strong>How to teach it: Place a rope or cone line as the "safe zone." Walking in front of the line is out of bounds. Visual boundary creates the habit without correction.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Habit 3: Take Turns and Wait Your Turn</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Cultural frame: "Every golfer gets their turn. Great golfers wait and cheer for their team."</strong></p>
+<p style="margin:0 0 10px;line-height:1.85;"><strong>How to teach it: Rotating games where waiting role has an active job — scorekeeper, cheerleader, cone monitor. No one just waits.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Habit 4: Pick Up Your Rubbish</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Cultural frame: "Golfers leave the course better than they found it."</strong></p>
+<p style="margin:0 0 10px;line-height:1.85;"><strong>How to teach it: End-of-session tidy-up as a team challenge. Points for fastest and most complete cleanup. Builds pride of place and responsibility.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Habit 5: Shake Hands After the Game</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Cultural frame: "Golfers always say well done at the end."</strong></p>
+<p style="margin:0 0 10px;line-height:1.85;"><strong>How to teach it: End every session with a team handshake or fist bump circle. Becomes ritual. Children ask for it if you forget.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>AGES 6-9: Simplified Golf Rules</strong></p>
+<p style="margin:0 0 10px;line-height:1.85;"><strong>Children aged 6-9 have the cognitive capacity to understand cause-and-effect rules and begin applying them in game situations.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>EduGolfKids Simplified Rules Set — The 8 Golfer's Rules:</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Rule 1: Play the Ball Where It Lies</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Definition: After a shot, play the ball from exactly where it stopped. Do not move it.</strong></p>
+<p style="margin:0 0 10px;line-height:1.85;"><strong>Exception (taught as a game rule): If the ball is in a dangerous place or unplayable, drop it at shoulder height nearby and play from there.</strong></p>
+<p style="margin:0 0 10px;line-height:1.85;"><strong>How to teach it: Award double points for playing ball where it lies. This reinforces the rule as a badge of honor.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Rule 2: Count Every Stroke</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Definition: Every time you try to hit the ball — hit or miss — counts as one stroke.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Why it matters: "Golfers are honest about their score — even when no one is watching."</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>How to teach it: Use simple tally cards. Child marks their own score. Reinforce honesty over result.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Growth Mindset: "Your score doesn't define you. Your honesty does."</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Rule 3: The Tee Box Rule</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Definition: Every hole starts from the tee box. Ball must be placed on or behind the tee markers.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>How to teach it: Mark the tee area with cones. Ball placed inside cones. Simple and visual.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Rule 4: Out of Bounds</strong></p>
+<p style="margin:0 0 10px;line-height:1.85;"><strong>Definition: If the ball goes outside the playing area (marked with cones or rope), add one stroke and drop near where it went out.</strong></p>
+<p style="margin:0 0 10px;line-height:1.85;"><strong>How to teach it: Mark boundaries clearly. When a ball goes OB, announce it positively: "Boundary ball! Add one, drop and go."</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Rule 5: The Putting Green Rule</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Definition: On the putting green, the ball must be putted — not chipped or pitched.</strong></p>
+<p style="margin:0 0 10px;line-height:1.85;"><strong>How to teach it: Frame the putting green as a special zone. "This is the green zone — only putters here."</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Rule 6: Do Not Touch Another Player's Ball</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Definition: Only the player whose ball it is may touch, move, or play that ball.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>How to teach it: "That's [name's] ball. Only [name] can touch it. We respect each other's game."</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Rule 7: Repair Your Pitch Marks</strong></p>
+<p style="margin:0 0 10px;line-height:1.85;"><strong>Definition: When a ball lands on the green and makes a dent, the player repairs it using a tee or repair tool.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>How to teach it: Introduce repair tool. Make it a responsibility — "You hit it, you fix it."</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Cultural frame: "Great golfers always leave the course better."</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Rule 8: The Honour System</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Definition: The player with the lowest score on the previous hole tees off first on the next hole.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Why it matters: "Golf rewards good play with the honor of going first. It's a privilege."</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>How to teach it: Name it the "honor moment." Children look forward to earning it.</strong></p>`},
+    {h:`Golf Etiquette Beyond Rules — The EduGolfKids Character Code`,b:`<div class="doc-section-divider"></div>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Golf Etiquette Beyond Rules — The EduGolfKids Character Code</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>EduGolfKids teaches 6 character values through golf etiquette:</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>1. Respect</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>For fellow players, for the course, for the game.</strong></p>
+<p style="margin:0 0 10px;line-height:1.85;"><strong>Coaching language: "Every golfer deserves a fair chance. How you treat others on the course is who you are."</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>2. Integrity</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Count every stroke. Call your own penalties. Be honest when no one is watching.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Coaching language: "The best golfers are honest. Your score means nothing if you didn't count right."</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>3. Patience</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Wait your turn. Let others play. Control emotions after a bad shot.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Coaching language: "Golf teaches us to breathe, reset, and go again. That skill works everywhere."</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>4. Care for the Course</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Fix divots, repair pitch marks, rake bunkers, replace flags.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Coaching language: "Golfers look after their course like it's their home."</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>5. Resilience</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Bad shots happen to everyone — in every round, at every level.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Coaching language: "Tiger Woods has hit bad shots. It's what you do next that matters."</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>6. Graciousness</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Congratulate others genuinely. Accept results with dignity. Win and lose with the same character.</strong></p>
+<p style="margin:0 0 10px;line-height:1.85;"><strong>Coaching language: "Tell your friend that was a great shot — even if you're losing. That's what golfers do."</strong></p>`},
+    {h:`Teaching Rules Through Game Design`,b:`<div class="doc-section-divider"></div>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Teaching Rules Through Game Design</p>
+<p style="margin:0 0 10px;line-height:1.85;"><strong>The most effective way to teach rules is to build them into games so children experience the consequence and benefit of the rule naturally.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Game Design Examples:</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Integrity Scoring Game:</strong></p>
+<p style="margin:0 0 10px;line-height:1.85;"><strong>Children mark their own score on tally cards. At the end, pairs compare. If scores match exactly — bonus team point awarded.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>This rewards honesty, builds self-scoring confidence, and makes integrity a team value.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Boundary Challenge:</strong></p>
+<p style="margin:0 0 10px;line-height:1.85;"><strong>Course has clearly marked out of bounds zones. OB ball costs one extra stroke and a drop. Children calculate their own penalty.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Over sessions, children learn to manage risk — do not go for the big shot near the boundary.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>This is tactical golf thinking emerging naturally through game design.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Etiquette Points System:</strong></p>
+<p style="margin:0 0 10px;line-height:1.85;"><strong>Separate to stroke score: children earn etiquette points for freeze during others' swings, repairing pitch marks, picking up rubbish.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Two scoreboards: golf score and character score.</strong></p>
+<p style="margin:0 0 10px;line-height:1.85;"><strong>Some sessions: character score worth more than golf score. Reinforces that how you play matters as much as what you score.</strong></p>
+<h3 style="color:var(--green-dark);border-bottom:2px solid var(--green-light);padding-bottom:8px;margin:24px 0 12px;font-size:16px;">CERTIFICATION ASSESSMENT — MODULE 5</h3>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Written (30%)</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>Explain the developmental rationale for teaching etiquette habits to 4-6 and rules to 6-9.</strong></li>
+  <li style="margin-bottom:5px;"><strong>List and explain the 5 Golf Habits for Ages 4-6.</strong></li>
+  <li style="margin-bottom:5px;"><strong>List and explain the 8 Golfer's Rules for Ages 6-9.</strong></li>
+  <li style="margin-bottom:5px;"><strong>Describe how you would use game design to teach the integrity scoring concept.</strong></li>
+</ul>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Scenario-Based (30%)</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>A 7-year-old is clearly not counting all their strokes and is deflated when peers score better.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Design a response strategy that reinforces honest scoring without shaming or direct confrontation.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Live Demonstration (40%)</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Coach must integrate rules and etiquette into a 15-minute game-based session showing:</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>At least 2 rules embedded naturally into game design</strong></li>
+  <li style="margin-bottom:5px;"><strong>Growth Mindset language used to frame all rules and character values</strong></li>
+  <li style="margin-bottom:5px;"><strong>Etiquette habits practiced as ritual — not enforced as compliance</strong></li>
+  <li style="margin-bottom:5px;"><strong>Cultural identity language used throughout</strong></li>
+</ul>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>MINIMUM PASS: 85%</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><em></em></p>`},
+  ]
+},
+{
+  id:"L2_M6",
+  title:"Module 6 \u2014 Skills Passport",
+  icon:"\ud83d\udcd4",
+  sections:[
+    {h:`What Is the EduGolfKids Skills Passport?`,b:`<div class="doc-section-divider"></div>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">What Is the EduGolfKids Skills Passport?</p>
+<p style="margin:0 0 10px;line-height:1.85;"><strong>The Skills Passport is a personal, child-held record of golf skill development across the EduGolfKids program.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>It serves 4 functions:</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>1. Developmental Milestone Tracking</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Each skill area has defined criteria for each LTAD stage (Active Start and FUNdamentals).</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Children progress through milestone levels within each skill area across multiple terms.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Progress is non-linear and non-competitive — every child moves at their own developmental pace.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>2. Coach Accountability Tool</strong></p>
+<p style="margin:0 0 10px;line-height:1.85;"><strong>The Skills Passport requires coaches to formally assess skill levels at the end of each term or program block.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>This ensures every child receives individualized attention and documented progress.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>It prevents coaching that favours more advanced children and ignores developing ones.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>3. Parent Communication Bridge</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Parents receive a tangible, meaningful summary of what their child achieved.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Framed in developmental language — not golf scores or rankings.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>The Passport makes the value of the program visible to parents who may not understand golf.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>4. Program Integrity Standard</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Passport records create an audit trail that demonstrates EduGolfKids program quality.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Licensees are accountable for Passport completion rates and outcome consistency.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>HQ can identify coaches or locations where development is inconsistent.</strong></p>`},
+    {h:`Skills Passport Structure — The 5 Skill Areas`,b:`<div class="doc-section-divider"></div>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Skills Passport Structure — The 5 Skill Areas</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Every child's Passport covers 5 skill areas, each with two LTAD-stage levels:</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Skill Area 1: Putting</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Active Start Level (Ages 4-6):</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>Strikes ball toward target from 3 feet — 3 of 5 attempts</strong></li>
+  <li style="margin-bottom:5px;"><strong>Demonstrates target direction awareness before striking</strong></li>
+  <li style="margin-bottom:5px;"><strong>Returns club to ground on FREEZE command</strong></li>
+</ul>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>FUNdamentals Level (Ages 6-9):</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>Holes 3 of 5 putts from 4 feet through 6-inch gate</strong></li>
+  <li style="margin-bottom:5px;"><strong>Stops ball within 18 inches of target from 8 feet — 3 of 5</strong></li>
+  <li style="margin-bottom:5px;"><strong>Self-corrects direction using guided discovery without coach prompt</strong></li>
+</ul>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Skill Area 2: Chipping</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Active Start Level (Ages 4-6):</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>Achieves clean airborne contact — 3 of 5 attempts</strong></li>
+  <li style="margin-bottom:5px;"><strong>Ball lands within 3 feet of landing zone — 2 of 5 attempts</strong></li>
+  <li style="margin-bottom:5px;"><strong>Safe spacing and protocol compliance throughout</strong></li>
+</ul>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>FUNdamentals Level (Ages 6-9):</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>Lands ball within 2 feet of target zone from 8 feet — 4 of 5</strong></li>
+  <li style="margin-bottom:5px;"><strong>Demonstrates landing zone vs finish zone understanding</strong></li>
+  <li style="margin-bottom:5px;"><strong>Describes difference between two club options in own words after exploration</strong></li>
+</ul>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Skill Area 3: Pitching (FUNdamentals only — Ages 6-9)</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>Carries ball minimum 20 feet in air — 3 of 5 attempts</strong></li>
+  <li style="margin-bottom:5px;"><strong>Lands ball within hula hoop target from 25 feet — 2 of 5</strong></li>
+  <li style="margin-bottom:5px;"><strong>Demonstrates weight transfer — holds lead foot balance for 2 seconds after impact — 3 of 5</strong></li>
+  <li style="margin-bottom:5px;"><strong>Carries ball over knee-height barrier — 3 of 5 attempts</strong></li>
+</ul>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Skill Area 4: Full Swing</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Active Start Level (Ages 4-6):</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>Strikes teed ball with functional motion — 3 of 5 attempts</strong></li>
+  <li style="margin-bottom:5px;"><strong>Ball carries minimum 10 feet — 2 of 5 attempts</strong></li>
+  <li style="margin-bottom:5px;"><strong>Holds recognisable finish position for 2 seconds — 3 of 5</strong></li>
+</ul>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>FUNdamentals Level (Ages 6-9):</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>Strikes teed ball — minimum 20 feet carry — 4 of 5</strong></li>
+  <li style="margin-bottom:5px;"><strong>Lands ball within 15-foot zone from 40 feet — 3 of 5</strong></li>
+  <li style="margin-bottom:5px;"><strong>Demonstrates balanced finish held 3 seconds — 4 of 5</strong></li>
+  <li style="margin-bottom:5px;"><strong>Completes rhythm-based swing — counts back and through — 3 of 5</strong></li>
+</ul>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Skill Area 5: Golf Culture and Etiquette</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Active Start Level (Ages 4-6):</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>Freezes and remains quiet during other players' swings — consistently</strong></li>
+  <li style="margin-bottom:5px;"><strong>Participates in end-of-session equipment tidy-up without prompting</strong></li>
+  <li style="margin-bottom:5px;"><strong>Participates in handshake or fist bump closing ritual</strong></li>
+</ul>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>FUNdamentals Level (Ages 6-9):</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>Counts and records own score honestly during game play</strong></li>
+  <li style="margin-bottom:5px;"><strong>Applies out of bounds rule correctly and self-penalises when ball goes OB</strong></li>
+  <li style="margin-bottom:5px;"><strong>Demonstrates at least 2 of the 6 character values (respect, integrity, patience, care, resilience, graciousness) in observed game play</strong></li>
+</ul>`},
+    {h:`Assessment Process — How to Conduct a Skills Passport Assessment`,b:`<div class="doc-section-divider"></div>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Assessment Process — How to Conduct a Skills Passport Assessment</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Assessment occurs at the end of each program term or block — not during sessions.</strong></p>
+<p style="margin:0 0 10px;line-height:1.85;"><strong>A term is typically 6-8 sessions. Assessment is a dedicated final session or the final 20 minutes of the last session.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>The 5-Step Assessment Protocol:</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Step 1: Preparation</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>Review each child's previous Passport entries before assessment day</strong></li>
+  <li style="margin-bottom:5px;"><strong>Set up assessment stations — one per skill area</strong></li>
+  <li style="margin-bottom:5px;"><strong>Prepare score sheets for every child</strong></li>
+  <li style="margin-bottom:5px;"><strong>Brief assistant coach or parent helper on observation role if available</strong></li>
+</ul>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Step 2: Set the Tone</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Before assessment begins, address the group:</strong></p>
+<p style="margin:0 0 10px;line-height:1.85;"><strong>"Today is Passport day. This is not a test. It is a chance to show what you have been building. Every single one of you has improved this term. We are going to prove it."</strong></p>
+<p style="margin:0 0 10px;line-height:1.85;"><strong>Growth Mindset framing is mandatory. Assessment anxiety in children is real and must be proactively managed.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Step 3: Rotate Through Stations</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>Children rotate through skill stations in groups of 2-3</strong></li>
+  <li style="margin-bottom:5px;"><strong>Each station: 5 attempts per relevant criterion</strong></li>
+  <li style="margin-bottom:5px;"><strong>Coach observes and records — does not instruct during assessment</strong></li>
+  <li style="margin-bottom:5px;"><strong>Maintain natural, game-like atmosphere — avoid clinical examination feel</strong></li>
+</ul>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Step 4: Record Results</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>Mark each criterion as: Achieved, Developing, or Not Yet</strong></li>
+  <li style="margin-bottom:5px;"><strong>Achieved: meets or exceeds the stated criterion</strong></li>
+  <li style="margin-bottom:5px;"><strong>Developing: shows progress toward criterion but not yet consistent</strong></li>
+  <li style="margin-bottom:5px;"><strong>Not Yet: criterion not demonstrated — further development needed</strong></li>
+</ul>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Never record a result as a failure. "Not Yet" communicates that the journey continues.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Step 5: Complete and Communicate the Passport</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>Complete each child's Passport entry within 48 hours of assessment day</strong></li>
+  <li style="margin-bottom:5px;"><strong>Write one personalised sentence per child — a specific observation, not a generic comment</strong></li>
+  <li style="margin-bottom:5px;"><strong>Example: "James showed great distance control this term — his 8-foot putts were the most consistent we have seen."</strong></li>
+  <li style="margin-bottom:5px;"><strong>Communicate Passport results to parents via approved EduGolfKids channel</strong></li>
+</ul>`},
+    {h:`Passport Integrity Standards`,b:`<div class="doc-section-divider"></div>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Passport Integrity Standards</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>The Skills Passport only has value if every coach applies it consistently.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Prohibited Practices:</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>Marking a child as "Achieved" out of sympathy or to avoid a difficult parent conversation</strong></li>
+  <li style="margin-bottom:5px;"><strong>Conducting assessment as a rushed afterthought in the final 5 minutes of a session</strong></li>
+  <li style="margin-bottom:5px;"><strong>Recording results from memory days after assessment without contemporaneous notes</strong></li>
+  <li style="margin-bottom:5px;"><strong>Comparing one child's Passport to another's in any communication</strong></li>
+  <li style="margin-bottom:5px;"><strong>Using Passport results to rank children or create tiered groups within a session</strong></li>
+</ul>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Required Practices:</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>Every child receives a Passport entry at the end of every term — no exceptions</strong></li>
+  <li style="margin-bottom:5px;"><strong>Assessment is conducted using the stated criteria — no deviation or improvisation</strong></li>
+  <li style="margin-bottom:5px;"><strong>Results are communicated to parents with growth language and specific observations</strong></li>
+  <li style="margin-bottom:5px;"><strong>Coach signs and dates each Passport entry</strong></li>
+  <li style="margin-bottom:5px;"><strong>Passport records are retained by EduGolfKids HQ via the operating system</strong></li>
+</ul>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Disputes and Escalations:</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>If a parent disagrees with a Passport assessment outcome:</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>Do not argue or defend defensively</strong></li>
+  <li style="margin-bottom:5px;"><strong>Acknowledge their concern: "I understand you feel [child] is further along. Let me walk you through what we assessed."</strong></li>
+  <li style="margin-bottom:5px;"><strong>Show the specific criteria and what was observed</strong></li>
+  <li style="margin-bottom:5px;"><strong>Offer a reassessment opportunity in the following session if warranted</strong></li>
+  <li style="margin-bottom:5px;"><strong>Escalate to HQ if dispute remains unresolved</strong></li>
+</ul>`},
+    {h:`Using the Passport as a Motivation Tool`,b:`<div class="doc-section-divider"></div>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Using the Passport as a Motivation Tool</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>The Skills Passport is most powerful when children feel ownership of it.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Strategies to build child engagement with the Passport:</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>Give children their own Passport card or digital record they can see between terms</strong></li>
+  <li style="margin-bottom:5px;"><strong>Frame each term's work as "working toward your next Passport entry"</strong></li>
+  <li style="margin-bottom:5px;"><strong>Celebrate Passport achievements publicly within the group — not rankings, but progress</strong></li>
+  <li style="margin-bottom:5px;"><strong>Create a "Passport wall" — children's names and skills achieved visible in the session space</strong></li>
+  <li style="margin-bottom:5px;"><strong>Introduce the concept of the Passport journey: "You are building something great. Session by session."</strong></li>
+</ul>
+<p style="margin:0 0 10px;line-height:1.85;"><strong>Children who understand their own progress trajectory are more motivated, more resilient, and more engaged than those who receive only adult-reported outcomes.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>(Dweck, 2006; Deci and Ryan Self-Determination Theory, 2000)</strong></p>
+<h3 style="color:var(--green-dark);border-bottom:2px solid var(--green-light);padding-bottom:8px;margin:24px 0 12px;font-size:16px;">CERTIFICATION ASSESSMENT — MODULE 6</h3>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Written (30%)</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>Describe the 4 functions of the Skills Passport.</strong></li>
+  <li style="margin-bottom:5px;"><strong>Explain the difference between Achieved, Developing, and Not Yet — and why "failure" language is prohibited.</strong></li>
+  <li style="margin-bottom:5px;"><strong>List all 5 Skill Areas and their criteria for both LTAD stages.</strong></li>
+  <li style="margin-bottom:5px;"><strong>Describe what a coach must do if a parent disputes a Passport outcome.</strong></li>
+</ul>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Practical Exercise (40%)</strong></p>
+<p style="margin:0 0 10px;line-height:1.85;"><strong>Coach must conduct a full Skills Passport assessment of a simulated group of 6 children across all 5 skill areas, demonstrating:</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>Correct station setup and rotation management</strong></li>
+  <li style="margin-bottom:5px;"><strong>Growth Mindset tone throughout assessment</strong></li>
+  <li style="margin-bottom:5px;"><strong>Accurate use of Achieved / Developing / Not Yet criteria</strong></li>
+  <li style="margin-bottom:5px;"><strong>Completion of all Passport entries with personalised observations</strong></li>
+</ul>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Scenario-Based (30%)</strong></p>
+<p style="margin:0 0 10px;line-height:1.85;"><strong>A parent of a 7-year-old is unhappy that their child received "Developing" in full swing while a peer received "Achieved." Design the conversation response using the 4-step parent communication protocol from Level 1 Module 8.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>MINIMUM PASS: 85%</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><em></em></p>`},
+  ]
+},
+{
+  id:"L2_M7",
+  title:"Module 7 \u2014 Video Analysis (CoachNow)",
+  icon:"\ud83d\udcf1",
+  sections:[
+    {h:`Why Video Analysis Matters in Youth Golf Coaching`,b:`<div class="doc-section-divider"></div>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Why Video Analysis Matters in Youth Golf Coaching</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Traditional golf coaching relied on the coach's eye and verbal feedback.</strong></p>
+<p style="margin:0 0 10px;line-height:1.85;"><strong>Research in motor learning shows that movement happens too fast for the human eye to capture accurately — even for experienced coaches.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Video provides:</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>Objective, frame-by-frame movement data unavailable to the naked eye</strong></li>
+  <li style="margin-bottom:5px;"><strong>A shared reference between coach and child — "look what WE see"</strong></li>
+  <li style="margin-bottom:5px;"><strong>Tangible progress evidence that parents can see across terms</strong></li>
+  <li style="margin-bottom:5px;"><strong>An accountability tool for the coach — patterns of error become visible over time</strong></li>
+</ul>
+<p style="margin:0 0 10px;line-height:1.85;"><strong>CoachNow is the industry-leading mobile coaching platform used by PGA professionals, IMG Academy coaches, and junior development programs globally.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>EduGolfKids has adopted CoachNow as its standard video analysis tool because:</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>Annotation tools are powerful and intuitive — drawing lines, angles, and slow-motion are all built in</strong></li>
+  <li style="margin-bottom:5px;"><strong>Secure client portal allows parents to see only their own child's videos</strong></li>
+  <li style="margin-bottom:5px;"><strong>Progress timelines allow coach and parent to compare swings across multiple terms</strong></li>
+  <li style="margin-bottom:5px;"><strong>Professional parent reports can be generated directly from the app</strong></li>
+  <li style="margin-bottom:5px;"><strong>HIPAA-compatible privacy settings protect child data</strong></li>
+</ul>`},
+    {h:`CoachNow Setup and Consent Requirements`,b:`<div class="doc-section-divider"></div>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">CoachNow Setup and Consent Requirements</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Before using video analysis with any child:</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Step 1: Obtain Written Consent</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>Parent or guardian must sign the EduGolfKids Video Consent Form before any video is captured</strong></li>
+  <li style="margin-bottom:5px;"><strong>Consent must specify: video will be used for coaching analysis and shared securely with parents only</strong></li>
+  <li style="margin-bottom:5px;"><strong>No video of a child may be shared publicly, on social media, or used for marketing without separate explicit written consent</strong></li>
+  <li style="margin-bottom:5px;"><strong>Consent forms are stored in the EduGolfKids operating system (Airtable)</strong></li>
+</ul>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Step 2: Set Up Parent Portal on CoachNow</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>Create a CoachNow profile for each child upon program enrollment</strong></li>
+  <li style="margin-bottom:5px;"><strong>Connect parent email to child's profile — parent receives secure access to their child's portal only</strong></li>
+  <li style="margin-bottom:5px;"><strong>Brief parents: "You will receive a link to your child's CoachNow portal. You will see their swing videos and my coaching notes there."</strong></li>
+</ul>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Step 3: Filming Protocol</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>Always film from the same angles: face-on and down-the-line</strong></li>
+  <li style="margin-bottom:5px;"><strong>Face-on: camera positioned level with child's hands, directly in front at 90 degrees</strong></li>
+  <li style="margin-bottom:5px;"><strong>Down-the-line: camera positioned level with child's hands, directly behind the ball-target line</strong></li>
+  <li style="margin-bottom:5px;"><strong>Use slow-motion capture (minimum 120fps) whenever available on device</strong></li>
+  <li style="margin-bottom:5px;"><strong>Film 3-5 consecutive swings per session — not just one</strong></li>
+  <li style="margin-bottom:5px;"><strong>Label every clip: child name, date, skill area, session number</strong></li>
+</ul>`},
+    {h:`Common Swing Faults in Children Ages 4-10 and Constraint Responses`,b:`<div class="doc-section-divider"></div>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Common Swing Faults in Children Ages 4-10 and Constraint Responses</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>FAULT IDENTIFICATION SYSTEM</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>EduGolfKids coaches use a 3-step analysis process for every video review:</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Step 1 — Identify: What is the movement pattern?</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Step 2 — Classify: Is this a developmental stage pattern or a correctable movement inefficiency?</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Step 3 — Respond: What constraint drill addresses this without mechanical instruction?</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>FAULT 1: Reverse Pivot — Weight moves to lead side on backswing, trail side on downswing</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>What it looks like on video:</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>Body leans toward target on backswing</strong></li>
+  <li style="margin-bottom:5px;"><strong>Body leans away from target on downswing</strong></li>
+  <li style="margin-bottom:5px;"><strong>Unbalanced finish leaning back</strong></li>
+</ul>
+<p style="margin:0 0 10px;line-height:1.85;"><strong>Developmental note: Extremely common in 4-7 age group. Often self-corrects with physical maturity. Do not over-correct.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Constraint Response:</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>Trail foot back drill: place trail foot slightly further back than normal stance. This naturally promotes backswing weight shift.</strong></li>
+  <li style="margin-bottom:5px;"><strong>Step-through drill: child steps toward target with lead foot as they swing. Exaggerated but effective.</strong></li>
+  <li style="margin-bottom:5px;"><strong>Balloon behind trail hip: child must push hip into balloon on backswing. Tactile feedback.</strong></li>
+</ul>
+<p style="margin:0 0 10px;line-height:1.85;"><strong>Video annotation: Draw a vertical line through child's spine at address. Show spine angle maintaining vs tilting on replay.</strong></p>
+<p style="margin:0 0 10px;line-height:1.85;"><strong>Parent report language: "We noticed [child's] weight is exploring different patterns. We are using a fun step-through challenge to help them find a more powerful sequence. Great progress this term."</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>FAULT 2: Early Extension — Hips thrust toward ball through impact, posture rises</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>What it looks like on video:</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>Hips move toward the ball as club approaches impact</strong></li>
+  <li style="margin-bottom:5px;"><strong>Upper body rises — standing up through impact</strong></li>
+  <li style="margin-bottom:5px;"><strong>Arms pushed away from body — chicken wing follow-through common result</strong></li>
+</ul>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Developmental note: Common in 7-10 age group. Often caused by club being too long or too heavy.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Constraint Response:</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>Chair behind hips drill: place a chair or foam block directly behind the child's hips. Child must not touch chair through impact. Hip extension eliminated by constraint.</strong></li>
+  <li style="margin-bottom:5px;"><strong>Club length check: first response to early extension in children is always to check club fit. A club 2 inches too long creates this pattern reliably.</strong></li>
+  <li style="margin-bottom:5px;"><strong>Squat finish challenge: child must finish with slight knee flex maintained. Scoring: 1 point for any swing that maintains knee flex at finish.</strong></li>
+</ul>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Video annotation: Draw a hip angle line at address. Show hip position at impact vs address.</strong></p>
+<p style="margin:0 0 10px;line-height:1.85;"><strong>Parent report language: "[Child] is developing a powerful impact position. We are using some fun challenges to help them maintain their athletic posture through the swing. Strong progress."</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>FAULT 3: Over-the-Top — Club path moves outside-in, causing pulls and slices</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>What it looks like on video:</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>Club moves steeply downward from outside the target line</strong></li>
+  <li style="margin-bottom:5px;"><strong>Ball starts left then curves further left (pull) or starts left then curves right (slice) for right-handed player</strong></li>
+  <li style="margin-bottom:5px;"><strong>Body opens to target very early in downswing</strong></li>
+</ul>
+<p style="margin:0 0 10px;line-height:1.85;"><strong>Developmental note: One of the most common faults in children 7-10. Often caused by trying too hard to hit the ball far.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Constraint Response:</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>Head cover outside drill: place a head cover or small cone just outside the ball, 6 inches away. Child must swing without hitting the head cover. Constraint forces inside-out path.</strong></li>
+  <li style="margin-bottom:5px;"><strong>Reduce distance pressure: over-the-top often increases when child tries to hit far. Move target closer. Remove distance as the goal. Path corrects when effort reduces.</strong></li>
+  <li style="margin-bottom:5px;"><strong>Right-field target: ask child to aim at a target 20 degrees to the right (right-handed). Path naturally adjusts to match new target.</strong></li>
+</ul>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Video annotation: Draw the target line. Draw the club path at impact. Show the angle difference.</strong></p>
+<p style="margin:0 0 10px;line-height:1.85;"><strong>Parent report language: "[Child] is developing their swing path and we are seeing great improvement in ball flight direction. We are using some creative target challenges that are really helping."</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>FAULT 4: Casting — Club releases too early, losing lag and power</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>What it looks like on video:</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>Club head passes hands well before impact</strong></li>
+  <li style="margin-bottom:5px;"><strong>Wrists fully release at the start of downswing — not at impact</strong></li>
+  <li style="margin-bottom:5px;"><strong>"Throwing" motion visible — like throwing a ball underhand</strong></li>
+</ul>
+<p style="margin:0 0 10px;line-height:1.85;"><strong>Developmental note: Extremely common in 6-9 group. Often a natural product of trying to hit the ball up into the air. Do not over-treat in younger children — partially self-corrects with instruction.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Constraint Response:</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>Towel drill: tuck a small towel under trail arm at address. If towel drops before impact, casting occurred. Towel gives tactile feedback.</strong></li>
+  <li style="margin-bottom:5px;"><strong>Whoosh drill with reversed club: child swings club upside down. Loudest whoosh should be at ball position — not before. Child self-identifies where release is happening.</strong></li>
+  <li style="margin-bottom:5px;"><strong>Lag leader challenge: coach demonstrates exaggerated lag. Child copies. Exaggeration builds awareness.</strong></li>
+</ul>
+<p style="margin:0 0 10px;line-height:1.85;"><strong>Video annotation: Draw the angle between lead arm and club shaft at the start of downswing. Show where this angle releases.</strong></p>
+<p style="margin:0 0 10px;line-height:1.85;"><strong>Parent report language: "[Child] is building excellent swing timing. We are working on some fun challenges that will develop their power generation over the coming sessions."</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>FAULT 5: Sway — Lateral movement of the body instead of rotation</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>What it looks like on video:</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>Head and body move laterally away from target on backswing</strong></li>
+  <li style="margin-bottom:5px;"><strong>No visible rotation — just a side-to-side shift</strong></li>
+  <li style="margin-bottom:5px;"><strong>Inconsistent contact and direction result</strong></li>
+</ul>
+<p style="margin:0 0 10px;line-height:1.85;"><strong>Developmental note: Very common in 4-8 group. Related to developing rotational coordination. Partial self-correction expected with maturity.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Constraint Response:</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>Wall or chair constraint: place a foam block or chair to the outside of trail foot. Child must not touch it on backswing. Sway eliminated by physical boundary.</strong></li>
+  <li style="margin-bottom:5px;"><strong>Rotation ribbon: tie a light ribbon or band around child's waist. Show them how it twists when they rotate. They can see rotation happening in real time.</strong></li>
+  <li style="margin-bottom:5px;"><strong>Football turn drill: "Pretend you're turning to throw a football behind you." Children understand rotation from other sports. Transfer the pattern.</strong></li>
+</ul>`},
+    {h:`Building a CoachNow Parent Report`,b:`<div class="doc-section-divider"></div>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Building a CoachNow Parent Report</p>
+<p style="margin:0 0 10px;line-height:1.85;"><strong>A CoachNow parent report is the most powerful parent communication tool available to an EduGolfKids coach.</strong></p>
+<p style="margin:0 0 10px;line-height:1.85;"><strong>A video-backed report showing a child's swing at the start of the term vs the end of the term is worth more than any verbal update.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Standard Report Structure:</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>1. Progress Highlight Video</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Side-by-side comparison: session 1 swing vs final session swing.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Annotated to show one positive development. No fault identification in parent-facing reports.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Example annotation: "Look at how much more balanced the finish is here compared to week 1."</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>2. Skill Highlight Summary</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>3-4 sentences describing what the child worked on this term and what progress was observed.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Growth language throughout. Specific, not generic.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>3. Skills Passport Summary</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>State which Passport criteria were achieved, developing, or not yet.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Frame "Developing" and "Not Yet" positively: "We are continuing to build on..."</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>4. Next Term Preview</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>One sentence on what the focus will be next term.</strong></p>
+<p style="margin:0 0 10px;line-height:1.85;"><strong>"Next term we are going to work on [skill] — and based on this term's progress, [child] is going to love it."</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Report Delivery:</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>Send via CoachNow portal — not email, not social media, not text</strong></li>
+  <li style="margin-bottom:5px;"><strong>Within 5 days of last session of term</strong></li>
+  <li style="margin-bottom:5px;"><strong>Every child receives a report — no exceptions</strong></li>
+</ul>`},
+    {h:`Video Analysis in Session — With Children Present`,b:`<div class="doc-section-divider"></div>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Video Analysis in Session — With Children Present</p>
+<p style="margin:0 0 10px;line-height:1.85;"><strong>Using video during a session — not just for analysis afterward — is one of the most powerful engagement tools available.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Guidelines for in-session video use:</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>Always get verbal agreement from the child before filming: "Can I take a video so we can look at it together?"</strong></li>
+  <li style="margin-bottom:5px;"><strong>Show video to child within 60 seconds of capture — the connection to the feeling is strongest immediately</strong></li>
+  <li style="margin-bottom:5px;"><strong>Use guided discovery when showing video: "What do you notice? What looks good? What might you change?"</strong></li>
+  <li style="margin-bottom:5px;"><strong>Never show a video and immediately give correction — show first, ask, then guide</strong></li>
+  <li style="margin-bottom:5px;"><strong>Celebrate visible progress: "Look at that finish — that is so much better than last week."</strong></li>
+</ul>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Growth Mindset framing for video review:</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>"Video doesn't lie — and look what it's showing us. That's YOUR swing getting better."</strong></p>
+<h3 style="color:var(--green-dark);border-bottom:2px solid var(--green-light);padding-bottom:8px;margin:24px 0 12px;font-size:16px;">CERTIFICATION ASSESSMENT — MODULE 7</h3>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Written (30%)</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>List the 5 common swing faults and their constraint-based drill responses.</strong></li>
+  <li style="margin-bottom:5px;"><strong>Explain the consent requirements before any video is captured.</strong></li>
+  <li style="margin-bottom:5px;"><strong>Describe the structure of a CoachNow parent report.</strong></li>
+  <li style="margin-bottom:5px;"><strong>Explain why parent-facing reports must never include fault identification language.</strong></li>
+</ul>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Practical Assessment (40%)</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Coach must film, annotate, and present a video analysis of a simulated swing, demonstrating:</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>Correct filming angles and slow-motion capture</strong></li>
+  <li style="margin-bottom:5px;"><strong>Accurate fault identification using the 3-step analysis process</strong></li>
+  <li style="margin-bottom:5px;"><strong>Constraint drill prescription — not mechanical correction</strong></li>
+  <li style="margin-bottom:5px;"><strong>Growth-framed video annotation</strong></li>
+  <li style="margin-bottom:5px;"><strong>Completed parent report submitted via CoachNow within the assessment window</strong></li>
+</ul>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Scenario-Based (30%)</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Coach is given video footage of a child with an over-the-top swing path.</strong></p>
+<p style="margin:0 0 10px;line-height:1.85;"><strong>Must: identify the fault, explain the developmental context, prescribe 2 constraint drills, and write the parent report summary.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Automatic reassessment if:</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>Video shared without consent verification</strong></li>
+  <li style="margin-bottom:5px;"><strong>Parent report contains fault identification or negative language</strong></li>
+  <li style="margin-bottom:5px;"><strong>Mechanical correction prescribed instead of constraint response</strong></li>
+  <li style="margin-bottom:5px;"><strong>Child shown video and immediately given correction without guided discovery question</strong></li>
+</ul>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>MINIMUM PASS: 85%</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Final Reinforcement — Level 2 Complete</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>You now hold the full EduGolfKids coaching system.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Level 1 gave you the foundations:</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>How children develop. How they learn. How they feel. How to protect them.</strong></li>
+</ul>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Level 2 gives you the craft:</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>How to teach putting, chipping, pitching, and full swing with evidence and precision</strong></li>
+  <li style="margin-bottom:5px;"><strong>How to assess with integrity and communicate with parents powerfully</strong></li>
+  <li style="margin-bottom:5px;"><strong>How to use technology to make progress visible and coaching accountable</strong></li>
+</ul>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Together they make you something rare:</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>A coach who understands both the science of development and the art of teaching golf.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>EduGolfKids does not produce average coaches.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>It produces the best coaches in youth golf.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>You are now one of them.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><em></em></p>`},
+  ]
+},
+{
+  id:"L2_M8",
+  title:"Module 8 \u2014 Skills Session Safety",
+  icon:"\u26a0\ufe0f",
+  sections:[
+    {h:`Module Overview`,b:`<p style="margin:0 0 10px;line-height:1.85;">MODULE 8<em></em></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>FIELD SAFETY IN SKILLS SESSIONS — WEATHER, EQUIPMENT ZONES &amp; OUTDOOR PROTOCOLS</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Certification Study Manual — Coach Level 2</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>MODULE PURPOSE</strong></p>
+<p style="margin:0 0 10px;line-height:1.85;">This module builds on the safety foundations established in Level 1 Module 11, with specific application to skills-based sessions involving putting, chipping, pitching, and full swing.</p>
+<p style="margin:0 0 10px;line-height:1.85;">As sessions progress to full swing, the safety stakes increase. This module trains coaches to:</p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;">Apply the Weather Decision Framework specifically to skills sessions with clubs and balls</li>
+  <li style="margin-bottom:5px;">Enforce elevated spacing and zone standards for chipping, pitching, and full swing</li>
+  <li style="margin-bottom:5px;">Manage lightning evacuation when children are actively holding clubs</li>
+  <li style="margin-bottom:5px;">Adapt safety protocols for indoor skills sessions</li>
+  <li style="margin-bottom:5px;">Identify and correct unsafe behaviour in real time without disrupting session flow</li>
+</ul>
+<p style="margin:0 0 10px;line-height:1.85;"><strong>⚠  Full swing sessions involve children swinging metal and graphite clubs at speed. The margin for error is zero. Safety compliance in this module is non-negotiable.</strong></p>`},
+    {h:`SKILLS SESSION WEATHER DECISION FRAMEWORK`,b:`<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>SECTION 1 — SKILLS SESSION WEATHER DECISION FRAMEWORK</strong></p>
+<p style="margin:0 0 10px;line-height:1.85;">Apply the Level 1 Weather Decision Framework, with the following additional considerations for skills sessions:</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Additional Weather Considerations for Skills Sessions:</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;">Wind above 20mph / 32km/h: foam balls acceptable for chipping and pitching — do NOT use range balls outdoors in high wind</li>
+  <li style="margin-bottom:5px;">Wet grass: chipping and pitching from wet lies increases slip risk — consider moving to synthetic mat alternatives or indoor session</li>
+  <li style="margin-bottom:5px;">Bright sun glare: if children cannot see the target clearly — adjust orientation of hitting zones or move session</li>
+  <li style="margin-bottom:5px;">Lightning protocol is identical to Level 1 — 30/30 Rule applies in all skills sessions</li>
+</ul>
+<p style="margin:0 0 10px;line-height:1.85;"><strong>RULE: In any skills session with full swing, the first sign of lightning ends the outdoor session immediately. No exceptions. No "let's finish this round."</strong></p>`},
+    {h:`EQUIPMENT ZONE SAFETY BY SKILL`,b:`<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>SECTION 2 — EQUIPMENT ZONE SAFETY BY SKILL</strong></p>
+<p style="margin:0 0 10px;line-height:1.85;">Each skill has specific spacing requirements. These are non-negotiable minimums — they may be increased but never reduced.</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Putting:</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;">Minimum 3 feet / 1 metre between each child</li>
+  <li style="margin-bottom:5px;">No child walks across another child's putting line during activity</li>
+  <li style="margin-bottom:5px;">RETRIEVE command — all children stop and wait before collecting balls</li>
+</ul>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Chipping:</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;">Minimum 5 feet / 1.5 metres between each child in the hitting zone</li>
+  <li style="margin-bottom:5px;">All children must be behind the designated hitting line before any child chips</li>
+  <li style="margin-bottom:5px;">No ball retrieval until all children in the zone have completed their chip</li>
+  <li style="margin-bottom:5px;">Coach stands at the side of the hitting zone — never in front</li>
+</ul>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Pitching:</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;">Minimum 8 feet / 2.5 metres between each child in the hitting zone</li>
+  <li style="margin-bottom:5px;">All children behind the hitting line before any pitch is made</li>
+  <li style="margin-bottom:5px;">Pitching range: clear a minimum 30 metres in front — ensure no children, adults, or objects are in range</li>
+  <li style="margin-bottom:5px;">Coach must visually confirm the landing zone is clear before signaling to pitch</li>
+</ul>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Full Swing:</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;">Minimum 10 feet / 3 metres between each child</li>
+  <li style="margin-bottom:5px;">No child moves forward until RETRIEVE command is given by coach</li>
+  <li style="margin-bottom:5px;">Coach stands behind and to the side of the hitting line — never forward of the hitting zone</li>
+  <li style="margin-bottom:5px;">All children sit or kneel on the safety line during another child's swing if space is limited</li>
+</ul>
+<p style="margin:0 0 10px;line-height:1.85;"><strong>⚠  Children underestimate how far a golf club extends during a swing. Physical demonstration of the swing arc safety zone is required at the start of every full swing session.</strong></p>`},
+    {h:`LIGHTNING EVACUATION WITH CLUBS IN HAND`,b:`<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>SECTION 3 — LIGHTNING EVACUATION WITH CLUBS IN HAND</strong></p>
+<p style="margin:0 0 10px;line-height:1.85;">In a skills session, children may be mid-swing or holding clubs when lightning is observed. This creates an additional evacuation step.</p>
+<p style="margin:0 0 10px;line-height:1.85;">Modified Lightning Evacuation — Skills Session:</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>STEP 1 — FREEZE SIGNAL</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;">Three whistle blasts — all children freeze immediately</li>
+</ul>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>STEP 2 — GROUND ALL CLUBS</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;">"Clubs on the ground NOW." — use a calm, firm command</li>
+  <li style="margin-bottom:5px;">Do not move until every club is on the ground</li>
+  <li style="margin-bottom:5px;">Coach confirms visually — no child is holding a club</li>
+</ul>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>STEP 3 — MOVE TO SHELTER</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;">Direct children to shelter as per Level 1 protocol</li>
+  <li style="margin-bottom:5px;">Leave all clubs and equipment on the field — do not collect</li>
+</ul>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>STEP 4 — ACCOUNT AND NOTIFY</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;">Full headcount inside shelter</li>
+  <li style="margin-bottom:5px;">Notify school contact and parents as required</li>
+</ul>
+<p style="margin:0 0 10px;line-height:1.85;"><strong>RULE: Never allow a child to carry a golf club during a lightning evacuation. Metal and graphite clubs are lightning conductors. Ground first, move second.</strong></p>`},
+    {h:`INDOOR SKILLS SESSION SAFETY ADAPTATIONS`,b:`<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>SECTION 4 — INDOOR SKILLS SESSION SAFETY ADAPTATIONS</strong></p>
+<p style="margin:0 0 10px;line-height:1.85;">When weather requires moving indoors, the following adaptations apply:</p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;">Foam balls only — no hard balls indoors under any circumstance</li>
+  <li style="margin-bottom:5px;">Hitting zones reduced to 3 metres depth — adjust cone placement accordingly</li>
+  <li style="margin-bottom:5px;">Ceiling height must be assessed — full swing may not be appropriate in low-ceiling environments</li>
+  <li style="margin-bottom:5px;">Wall buffer minimum 2 metres behind the target — reduce if necessary with foam targets</li>
+  <li style="margin-bottom:5px;">Ensure no glass, fragile items, or other children are within the hitting arc</li>
+  <li style="margin-bottom:5px;">Reduced swing length appropriate for space — half swing or chip-length swing indoors</li>
+</ul>
+<p style="margin:0 0 10px;line-height:1.85;"><strong>⚠  Never attempt a full driver or fairway wood swing indoors. Shortened iron or chip swings only in gym or multipurpose room environments.</strong></p>`},
+    {h:`CORRECTING UNSAFE BEHAVIOUR IN REAL TIME`,b:`<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>SECTION 5 — CORRECTING UNSAFE BEHAVIOUR IN REAL TIME</strong></p>
+<p style="margin:0 0 10px;line-height:1.85;">In skills sessions, unsafe behaviour must be corrected immediately and calmly. The following framework applies:</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>The Three-Step Correction:</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>STEP 1 — FREEZE THE SESSION</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;">One whistle blast — all activity stops</li>
+  <li style="margin-bottom:5px;">Never try to correct an individual while the rest of the group is still active</li>
+</ul>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>STEP 2 — CORRECT CALMLY AND CLEARLY</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;">Address the group — not the individual by name in front of peers</li>
+  <li style="margin-bottom:5px;">"We have a safety rule in EduGolfKids — clubs stay on the ground until I say hit. Let's all reset."</li>
+  <li style="margin-bottom:5px;">Never shame or raise your voice — it creates anxiety, not compliance</li>
+</ul>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>STEP 3 — REINFORCE AND RESUME</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;">Confirm everyone understands before resuming</li>
+  <li style="margin-bottom:5px;">Acknowledge the group when they comply: "That is exactly right. Well done."</li>
+</ul>
+<p style="margin:0 0 10px;line-height:1.85;"><strong>RULE: A child who repeatedly endangers others must be removed from the hitting zone for that activity. Seat them with you at the side. Do not return them until they can demonstrate the safety behaviour.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>CERTIFICATION ASSESSMENT — MODULE 8</strong></p>
+<p style="margin:0 0 10px;line-height:1.85;">Written Assessment (minimum pass: 85%):</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>1.  </strong>What is the minimum spacing requirement for a full swing session and why?</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>2.  </strong>A child is in the middle of a pitch shot when you see lightning. What do you do?</p>
+<p style="margin:0 0 10px;line-height:1.85;"><strong>3.  </strong>Wind is 30mph during your scheduled outdoor chipping session. No indoor space is confirmed. What are your options?</p>
+<p style="margin:0 0 10px;line-height:1.85;"><strong>4.  </strong>A child repeatedly walks forward to retrieve their ball before the RETRIEVE command. How do you handle it?</p>
+<p style="margin:0 0 10px;line-height:1.85;">Practical Assessment:</p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;">Coach must set up a compliant full swing hitting zone — correct spacing, cone placement, safety line — within 5 minutes.</li>
+  <li style="margin-bottom:5px;">Coach must demonstrate a compliant mid-session lightning evacuation from a skills session including equipment grounding.</li>
+</ul>`},
+  ]
+},
 ],
 
 L3:[
-{id:'L3_M1',title:'Module 1 — Finding &amp; Securing Schools',icon:'🏫',sections:[
-{h:'School Tiering System',b:`Target in this order: <strong>Tier 1: Private and Independent Schools — start here, always.</strong> Faster decision-making (principal has authority), parents actively seek enrichment, families have disposable income for $20/lesson, one great partnership generates warm referrals. <strong>Tier 2: Charter and Magnet Schools</strong> — more autonomy than public, faster decisions, strong mission alignment. Approach after first 1–2 private school partnerships are running. <strong>Tier 3: Public Elementary Schools</strong> — largest market but longest sales cycle. Requires district approval. Your private school track record does most of the selling. <strong>Tier 4: After-School Operators and YMCAs</strong> — not schools but high-enrollment and fast-moving. Run parallel to school outreach.`},
-{h:'First Contact &amp; Follow-Up',b:`Find the principal's direct email via the school website, Google, LinkedIn, district website, or by calling the front desk. <strong>Email before calling — always.</strong> Build a target list of minimum 20 schools before starting outreach. <strong>Email structure:</strong> Subject: "Golf program for [School Name] students — enrichment opportunity." Body: your name and territory, what EduGolfKids is, certified background-checked coaches, evidence-based curriculum, zero cost to school, request a 20-minute meeting. <strong>Follow-up call (3 business days after email):</strong> "Hi, this is [Name] from EduGolfKids. I sent [Principal Name] an email a few days ago... I'd like to make sure it arrived and see if there's a time I could come in for a brief meeting." Follow up every 3–4 business days until yes or definitive no. 60–70% of meetings are secured within 2–3 contact attempts.`},
-{h:'The School Meeting &amp; Agreement',b:`<strong>Bring:</strong> EduGolfKids program one-pager, coach certifications, background check documentation, insurance certificate, reference from another school, sample session plan, Skills Passport sample, parent information letter template. <strong>Meeting structure (20 min):</strong> 1–3: build rapport — ask about their school. 3–10: present EduGolfKids — safe certified coaches, zero cost to school, curriculum-aligned, full insurance. 10–15: address common questions (space, scheduling, injuries, admin). 15–20: close — never leave without a next step: "Based on what we've discussed, is there anything that would prevent you from moving forward?" <strong>Every school partnership must be documented in a signed agreement</strong> — verbal agreements are insufficient. Use only the EduGolfKids HQ template.`},
-]},
-{id:'L3_M2',title:'Module 2 — Recruiting &amp; Hiring Coaches',icon:'👤',sections:[
-{h:'The Ideal Coach Profile',b:`Your coaches are your product. <strong>Non-negotiable qualities:</strong> genuine enjoyment of working with children (not tolerance — genuine enjoyment), energy and enthusiasm for 60 straight minutes, reliability and punctuality, warm professional communication, coachability — willingness to follow the EduGolfKids system exactly. <strong>Red flags — do not hire regardless of golf ability:</strong> no prior experience with children in any form, impatience or short temper visible at any stage, resistance to structure ("I like to do things my own way"), unreliable communication during hiring, condescending tone toward children even casually. Golf ability is assessed last. A patient energetic former teacher with a 20 handicap will outperform an impatient scratch golfer every time in this role.`},
-{h:'Recruitment Channels &amp; Screening',b:`<strong>Channel 1 — Indeed (Primary):</strong> Title: "Youth Golf Coach — EduGolfKids (Part-Time / Flexible Hours)." Lead with passion for children and "full training and certification provided." Target age 20–35. Boost the post ($50–100 increases visibility significantly). <strong>Channel 2 — School Teachers:</strong> Post in Facebook teacher groups, ask school partners to share with staff. <strong>Channel 3 — University Sport Science/PE Programs:</strong> Final-year students are an excellent pipeline. <strong>Channel 4 — Referrals:</strong> Highest-quality source — consider a referral bonus. <strong>Screening:</strong> Phone screen (10–15 min) → in-person interview (30 min) → practical assessment (watch them with children for 10 minutes). Natural warmth with children cannot be trained. Everything else can.`},
-{h:'Onboarding &amp; Retention',b:`<strong>Onboarding:</strong> Background check (non-negotiable before any offer). Employment structure (consult local attorney — contractor vs employee). Enroll in EduGolfKids certification — Level 1 within 4 weeks. Shadow 2 sessions → co-deliver 2 sessions → first independent session with licensee present. <strong>Retention:</strong> Losing a great coach costs 3–4 weeks recruitment + 4–6 weeks training + their school relationships. What retains coaches: feeling valued (acknowledge great work specifically and regularly), clear progression pathway, schedule flexibility, pay increases tied to performance, team culture. A brief monthly message costs nothing and builds loyalty: "You did a great job at [school] this month. [Specific observation]. Really appreciate you."`},
-]},
-{id:'L3_M3',title:'Module 3 — Marketing &amp; Enrollment',icon:'📢',sections:[
-{h:'Marketing Hierarchy',b:`You do not need to spend money on paid advertising to fill an EduGolfKids program. Prioritize in this order: <strong>Tier 1: Demo Days and Parent Information Sessions</strong> — highest conversion. A parent who sees their child smile in a 10-minute demo will enroll 60%+ of the time. <strong>Tier 2: School Newsletters and Direct-to-Parent Communication</strong> — zero cost, reaches every parent. <strong>Tier 3: Free Trial Vouchers and Referral Programs</strong> — lowers enrollment barrier to zero, turns enrolled families into a sales force. <strong>Tier 4: Social Media</strong> — credibility tool, not direct enrollment. Document what you do. <strong>Tier 5: School Bag Flyers</strong> — effective through school bags. <strong>Tier 6: Paid Digital Advertising</strong> — lowest priority. Only if Tiers 1–5 are maximized.`},
-{h:'Demo Days &amp; Parent Info Sessions',b:`<strong>Demo Day (30–45 min):</strong> 5 min energetic welcome game. 15 min putting and chipping challenges — high success rate, immediate fun. 5 min team scoring game with prizes. 5 min parent Q&amp;A and enrollment opportunity. Bring enrollment forms, Skills Passport sample, pricing, and early bird offer for enrollment on the day. Your energy IS your marketing. <strong>Operator benchmark: well-run demo day converts 40–70% of attendees.</strong> Follow up within 48 hours with families who didn't enroll: "It was wonderful to meet [child's name] yesterday. We still have [X] spots available." <strong>Parent Information Session (20–30 min):</strong> developmental philosophy in accessible language → session structure walkthrough → Skills Passport demo → safety/qualifications → pricing with enrollment incentive.`},
-{h:'Retention Marketing',b:`<strong>Player of the Week:</strong> every week, one child recognized for effort/improvement/attitude — not best golf. Announce at session end, give a small card, send parent a personal message. Parents share it — every child wants to earn it. <strong>Birthday Phone Call:</strong> 2-minute voice message on the student's birthday. The family remembers it for years. Log all birthdays in your operating system. <strong>End-of-term ritual:</strong> Skills Passport ceremony, group recognition, next term preview, re-enrollment on the day with early bird incentive. <strong>Communication cadence:</strong> Week 1 welcome → mid-term positive observation per child → end-of-term Passport report → re-enrollment reminder.`},
-]},
-{id:'L3_M4',title:'Module 4 — Pricing &amp; Financial Management',icon:'💰',sections:[
-{h:'The Pricing Model',b:`<strong>$20 per child per lesson. Maximum 7 children per coach. 4 sessions per month minimum.</strong> Revenue per class per month: $20 × 7 × 4 = $560. <strong>School facility fees:</strong> pass directly to parents — add the per-child cost on top of $20. Example: school charges 10% revenue share → $20 + $2 = $22. Never absorb school fees into your margin — this erodes profitability rapidly at scale. <strong>Healthy benchmarks:</strong> Coach costs max 30–35% of gross revenue. Overhead max 15–20%. Net profit target 45–55%. A partially filled class of 5 vs 7 costs $40 per session in lost revenue.`},
-{h:'Revenue Model',b:`<strong>Layer 1:</strong> 1 class, 1 coach — $560/month gross. <strong>Layer 2:</strong> 2 classes, 1 coach (morning + afternoon) — $1,120/month from one school. <strong>Layer 3:</strong> 3 coaches simultaneously — 21 children/session, $1,680/month gross. Coach costs: 3 × 4 × $35 = $420/month. Net ~$1,260/month before other costs. <strong>At scale:</strong> 5 full schools = $8,400 gross/month. 10 full schools = $16,800 gross/month. Net at 45–55% margin: $7,000–$10,000/month at 10 full schools. Fill before you expand.`},
-{h:'Revenue Protection &amp; Invoicing',b:`<strong>4-Lessons-Per-Month Rule:</strong> one missed session at full capacity = $140 lost per class. Any session missed (weather, school event) must be rescheduled within the same billing month. Communicate cancellation + make-up date within 24 hours. Rain is not a cancellation reason — "We moved inside and had a great session" is your standard. <strong>Monthly invoicing:</strong> invoice line items: 4 × $20 = $80 per child/month. Payment due 5 days before session month starts. Send via email with one-click payment link (Stripe or Square). Non-payment: 7 days — polite reminder. 14 days — personal phone call. 21 days — child's spot is at risk. Never allow more than one month unpaid.`},
-]},
-{id:'L3_M5',title:'Module 5 — Multi-School Operations',icon:'⚙️',sections:[
-{h:'The Operating System',b:`A business that depends on the licensee being everywhere at once cannot scale. The EduGolfKids Airtable operating system manages: schools (contact, agreement status, schedule, capacity, fee structure), coaches (certification status, assigned schools, session history), students (enrollment, Skills Passport records, birthdays), sessions (scheduled, completed, cancelled, make-up), invoices (billing, outstanding payments), incidents (documentation and resolution). A licensee running 3+ schools from memory is one unexpected absence away from operational collapse.`},
-{h:'Coach Management Framework',b:`<strong>5 elements:</strong> (1) Clear Role Expectations — written summary of assigned schools, responsibilities before/during/after sessions, post-session logging requirements. (2) Session Confirmation Protocol — confirm 24 hours in advance; notify minimum 3 hours before if unable. Always have a cover coach on call. (3) Post-Session Logging — 3 minutes after every session: completion, number of children, incidents, parent concerns, equipment status. (4) Quarterly Observation — session architecture compliance, safety standards, Language Code, engagement, Skills Passport tracking. Frame as development: "I'm coming to see what's working and support your development." (5) Monthly Team Meeting — 30–45 min: wins, challenges, upcoming dates, Skills Passport updates, 10-minute training moment.`},
-{h:'Quality Control at Scale',b:`<strong>Tools:</strong> (1) Session Audit — random unannounced observation of one session per month. Every school observed minimum once per quarter. (2) Parent Feedback — end-of-term survey: "How would you rate your child's experience?" / "What did your child enjoy most?" / "Is there anything we could improve?" Act on patterns. (3) Skills Passport Completion Rate — 100% is the target. Below 100% requires immediate attention. (4) Incident Rate Monitoring — zero serious incidents is the target. Patterns suggest a spacing or management issue. <strong>School communication calendar:</strong> start of term (program confirmed), mid-term (enrollment update), end of term (summary + zero incidents + thank you), off-term (one monthly touch).`},
-]},
-{id:'L3_M6',title:'Module 6 — Territory Growth',icon:'📊',sections:[
-{h:'The Fill-First Growth Model',b:`<em>"The ideal business is to get as many schools fully occupied with coaches and students before trying to grow further."</em> A school is "fully occupied" only when ALL five conditions are met: (1) Every class has 7 enrolled children. (2) Sessions running consistently — 4/month, no chronic cancellations. (3) School relationship strong — principal happy, no open issues. (4) Coach stable, certified, performing well. (5) Parent retention above 70%. Only when existing schools are fully occupied should you prioritize adding a new school. Spreading attention across partially-filled schools means none become excellent.`},
-{h:'4 Growth Stage Gates',b:`<strong>Stage 1 — Launch:</strong> 1 school, 1 coach, 1 class. Learn the system. Success criteria before Stage 2: class full for 2 consecutive terms, coach L1/L2 certified, 100% Passport completion, parent retention above 70%. <strong>Stage 2 — First Expansion:</strong> 1–2 schools, 2–3 classes. Add second class at School 1, begin approaching School 2. <strong>Stage 3 — Multi-School:</strong> 3–5 schools. Systemize operations, build the team, operating system fully active. <strong>Stage 4 — Territory Optimization:</strong> 5–10 schools. All schools to full capacity. Transition from operator to manager. Lead Coach identified. Revenue predictable and growing.`},
-{h:'Revenue Milestones &amp; Business Value',b:`<strong>Revenue milestones:</strong> 3 schools partial → $3,000–$4,000 gross/month. 5 schools full → $8,000–$9,000 gross/month. 10 schools full → $16,000–$18,000 gross/month. Net at 45–55% → $7,000–$10,000/month at 10 full schools. <strong>Business asset value:</strong> Service businesses with recurring revenue typically sell for 2–3x annual net profit. A territory generating $100,000 net per year has an asset value of $200,000–$300,000. This is what disciplined, quality-first growth builds. <strong>Transition to manager:</strong> Identify Lead Coach, delegate session delivery progressively, redirect time to school development, coach recruitment, marketing, and financial management.`},
-]},
-{id:'L3_M7',title:'Module 7 — Brand Compliance',icon:'🏷️',sections:[
-{h:'Why Brand Compliance Matters',b:`Every EduGolfKids territory carries the brand of every other territory. A licensee who delivers a poor experience in their market damages the brand for every other licensee globally. Brand compliance is not bureaucracy — it is protection of the asset you have invested in. <strong>Visual Brand Standards:</strong> All coaches wear approved EduGolfKids branded attire — no substitutions. All marketing materials use approved EduGolfKids templates — no homemade alternatives. Skills Passports use only the official format. <strong>Operational Standards:</strong> Session structure — the 60-minute architecture is non-negotiable. Curriculum — only approved EduGolfKids progressions. Pricing — $20/lesson base is standard; deviations require HQ approval. All coaches must hold current EduGolfKids certification before leading independently.`},
-{h:'Licensee Obligations &amp; HQ Relationship',b:`Under the EduGolfKids licensee agreement, licensees must: maintain all compliance documentation current (insurance, certifications, background checks), operate exclusively within the approved territory boundaries, report serious incidents to HQ within 24 hours, complete annual licensee review with HQ, and pay license fees on the agreed schedule. <strong>The HQ relationship:</strong> HQ provides the system, curriculum, marketing templates, operating platform, and certification framework. Licensees provide execution, local market development, and coaching team management. When there is a conflict between a licensee's preferred approach and the EduGolfKids standard, the EduGolfKids standard applies.`},
-]},
-{id:'L3_M8',title:'Module 8 — Licensee Safety Responsibilities',icon:'🦺',sections:[
-{h:'Safety at Scale',b:`As a licensee with multiple schools and coaches, you are accountable for the safety of every session delivered in your territory. <strong>Coach safety compliance:</strong> Verify every coach has completed Model 0 certification and maintains current First Aid certification. Confirm every coach has reviewed the EAP for each specific school they are assigned to. Quarterly observations include explicit safety compliance review. Any safety violation by a coach is treated as a licensee compliance issue. <strong>Site safety management:</strong> Maintain an up-to-date site file for every school including: emergency contact list, AED location, school nurse contact, confirmed indoor backup space, and weather cancellation contact protocol.`},
-{h:'Incident Management &amp; Insurance Requirements',b:`<strong>Incident management sequence:</strong> Coach notifies licensee within 1 hour. Licensee notifies HQ within 24 hours via official incident report channel. Licensee manages parent communication with the coach. Official incident report submitted. Follow up with school principal within 24 hours. <strong>Insurance requirements (non-negotiable):</strong> General Liability — minimum $1,000,000 per occurrence. Sexual Abuse and Molestation (SAM) Endorsement — this is a separate coverage, not included in standard GL. <strong>It has zero grace period on expiry.</strong> Professional Liability Insurance. All certificates of insurance must be current before any session is delivered. An expired SAM endorsement means no sessions — period.`},
-]},
+{
+  id:"L3_M1",
+  title:"Module 1 \u2014 Finding &amp; Securing Schools",
+  icon:"\ud83c\udfeb",
+  sections:[
+    {h:`Which Schools to Target First`,b:`<div class="doc-section-divider"></div>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Which Schools to Target First</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Not all schools are equal as EduGolfKids partners. Target in this order:</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Tier 1: Private and Independent Schools</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Start here. Always.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Why private schools first:</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>Decision-making is faster — the principal often has authority to approve a program without a district committee process</strong></li>
+  <li style="margin-bottom:5px;"><strong>Parents are actively seeking enrichment and extracurricular programs — demand is built in</strong></li>
+  <li style="margin-bottom:5px;"><strong>Families typically have the disposable income for a $20/lesson program without financial friction</strong></li>
+  <li style="margin-bottom:5px;"><strong>Private schools have more scheduling flexibility — they can create time for your program</strong></li>
+  <li style="margin-bottom:5px;"><strong>A successful private school partnership is the most powerful reference you can take to public schools</strong></li>
+  <li style="margin-bottom:5px;"><strong>Private school administrators talk to each other — one great partnership can generate warm referrals</strong></li>
+</ul>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Tier 2: Charter Schools and Magnet Schools</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>These schools operate with more autonomy than standard public schools.</strong></p>
+<p style="margin:0 0 10px;line-height:1.85;"><strong>Decision-making is faster. Mission alignment is often strong — many focus on holistic child development.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Approach after your first 1-2 private school partnerships are running successfully.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Tier 3: Public Elementary Schools</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>The largest market — but the longest sales cycle.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Public schools require district approval, budget cycles, and committee sign-off in many cases.</strong></p>
+<p style="margin:0 0 10px;line-height:1.85;"><strong>Approach these once you have established credibility — your private school track record does most of the selling for you.</strong></p>
+<p style="margin:0 0 10px;line-height:1.85;"><strong>Some public schools will move fast if the program is positioned as no-cost to the school and parent-funded.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Tier 4: After-School Program Operators and YMCAs</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>These are not schools — but they are high-enrollment, program-hungry, and fast-moving.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>They provide volume quickly while your school pipeline builds.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Consider these parallel to school outreach — not instead of it.</strong></p>`},
+    {h:`Finding the Right Contact`,b:`<div class="doc-section-divider"></div>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Finding the Right Contact</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Your primary contact at any school is the Principal or Head of School.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Not the PE teacher. Not the front desk. Not the district office.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>The decision-maker is the principal. Go there first and directly.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>How to find principal email addresses:</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>School website — almost always listed on the About or Staff page</strong></li>
+  <li style="margin-bottom:5px;"><strong>Google: "[School Name] principal email" — often surfaces directly</strong></li>
+  <li style="margin-bottom:5px;"><strong>LinkedIn: search the school name and filter by "Principal" or "Head of School"</strong></li>
+  <li style="margin-bottom:5px;"><strong>District website: all school contacts often listed in a staff directory</strong></li>
+  <li style="margin-bottom:5px;"><strong>Simply call the front desk and ask: "Could you give me the principal's direct email? I'd like to send them information about an enrichment program."</strong></li>
+</ul>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Build a school target list before you start outreach.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Minimum 20 schools in your territory. Research and log:</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>School name</strong></li>
+  <li style="margin-bottom:5px;"><strong>School type (private / charter / public)</strong></li>
+  <li style="margin-bottom:5px;"><strong>Approximate enrollment</strong></li>
+  <li style="margin-bottom:5px;"><strong>Principal name and email</strong></li>
+  <li style="margin-bottom:5px;"><strong>Phone number</strong></li>
+  <li style="margin-bottom:5px;"><strong>Notes: any existing enrichment programs, golf course proximity, parent demographic</strong></li>
+</ul>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>This list lives in your Airtable operating system. It is the foundation of your school pipeline.</strong></p>`},
+    {h:`The First Contact Email`,b:`<div class="doc-section-divider"></div>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">The First Contact Email</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Email before calling. Always.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>A cold call to a principal who has never heard of you is rarely effective.</strong></p>
+<p style="margin:0 0 10px;line-height:1.85;"><strong>An email creates context, establishes professionalism, and gives them something to refer to when you call.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>The First Contact Email — Structure:</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Subject line: Golf program for [School Name] students — enrichment opportunity</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Body:</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>"Dear [Principal Name],</strong></p>
+<p style="margin:0 0 10px;line-height:1.85;"><strong>My name is [Your Name] and I operate EduGolfKids in [City/Area] — a structured golf development program designed specifically for children ages 4-10.</strong></p>
+<p style="margin:0 0 10px;line-height:1.85;"><strong>We partner with schools to deliver certified, curriculum-aligned sessions during the school day or as an after-school enrichment activity. Our program:</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>Is delivered by Level 1 and Level 2 certified coaches — fully background-checked and safeguarding trained</strong></li>
+  <li style="margin-bottom:5px;"><strong>Follows an evidence-based developmental curriculum aligned with Long-Term Athlete Development principles</strong></li>
+  <li style="margin-bottom:5px;"><strong>Requires no facility investment from the school — we bring everything</strong></li>
+  <li style="margin-bottom:5px;"><strong>Has zero cost to the school — families fund participation directly</strong></li>
+</ul>
+<p style="margin:0 0 10px;line-height:1.85;"><strong>I would love 20 minutes of your time to share what we do and explore whether [School Name] would be a good fit.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Would you be available for a brief call or meeting in the next two weeks?</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Warm regards,</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>[Your Name]</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>EduGolfKids [Territory Name]</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>[Phone] | [Email]"</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Key elements of this email:</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>Named the principal specifically — not "Dear Principal"</strong></li>
+  <li style="margin-bottom:5px;"><strong>Zero cost to school stated clearly — removes the biggest objection before the meeting</strong></li>
+  <li style="margin-bottom:5px;"><strong>No long pitch — just enough to get a meeting</strong></li>
+  <li style="margin-bottom:5px;"><strong>Specific time ask — "next two weeks" creates gentle urgency without pressure</strong></li>
+</ul>`},
+    {h:`The Follow-Up Call`,b:`<div class="doc-section-divider"></div>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">The Follow-Up Call</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Send the email. Wait 3 business days. Then call.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Call script:</strong></p>
+<p style="margin:0 0 10px;line-height:1.85;"><strong>"Hi, this is [Name] from EduGolfKids. I sent [Principal Name] an email a few days ago about an enrichment program for your students. I just wanted to make sure it arrived and see if there's a time I could come in for a brief meeting."</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>If the principal is unavailable:</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>"No problem at all — could you let them know I called? I'll try again tomorrow. Thank you so much."</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Follow up every 3-4 business days until you get a yes or a definitive no.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Most licensees report that 60-70% of meetings are secured within 2-3 contact attempts.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Do not give up after one email and one call. Persistence with professionalism is the differentiator.</strong></p>`},
+    {h:`The School Meeting`,b:`<div class="doc-section-divider"></div>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">The School Meeting</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>This is the most important 20 minutes in your business.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Come prepared. Come professional. Come with everything the principal needs to say yes in that meeting.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>What to bring:</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>EduGolfKids program one-pager (branded, professional)</strong></li>
+  <li style="margin-bottom:5px;"><strong>Your coach certifications</strong></li>
+  <li style="margin-bottom:5px;"><strong>Background check documentation</strong></li>
+  <li style="margin-bottom:5px;"><strong>Insurance certificate</strong></li>
+  <li style="margin-bottom:5px;"><strong>Reference from another school if available</strong></li>
+  <li style="margin-bottom:5px;"><strong>Sample session plan</strong></li>
+  <li style="margin-bottom:5px;"><strong>Skills Passport sample</strong></li>
+  <li style="margin-bottom:5px;"><strong>Parent information letter template</strong></li>
+</ul>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Meeting structure — 20 minutes:</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Minutes 1-3: Build rapport</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Ask about the school. Show genuine interest in their students and their program.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>"Tell me a bit about your school and your students — what age groups do you have most of?"</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Principals respond to people who care about their school — not people who are selling to it.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Minutes 3-10: Present EduGolfKids</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Walk through the one-pager. Keep it simple and outcome-focused.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Lead with what matters to them:</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>Safe, certified, background-checked coaches</strong></li>
+  <li style="margin-bottom:5px;"><strong>No cost or administrative burden to the school</strong></li>
+  <li style="margin-bottom:5px;"><strong>Curriculum-aligned developmental program — not just a sport activity</strong></li>
+  <li style="margin-bottom:5px;"><strong>Parent-funded — school not responsible for fees</strong></li>
+  <li style="margin-bottom:5px;"><strong>Full insurance and liability coverage provided</strong></li>
+</ul>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Minutes 10-15: Address their questions</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Most common principal questions and your responses:</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Q: "Where would sessions take place?"</strong></p>
+<p style="margin:0 0 10px;line-height:1.85;"><strong>A: "We can use your gym, a multi-purpose room, or an outdoor space. We only need approximately 30x30 feet and a flat surface. We bring all equipment."</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Q: "How does scheduling work?"</strong></p>
+<p style="margin:0 0 10px;line-height:1.85;"><strong>A: "We work entirely around your timetable. We can run before school, during lunch enrichment, after school, or integrated into a PE slot. Completely flexible."</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Q: "What if parents complain or a child gets hurt?"</strong></p>
+<p style="margin:0 0 10px;line-height:1.85;"><strong>A: "Our coaches are safeguarding-trained and carry full liability insurance. We have a documented emergency action plan for every site. We have never had a serious incident."</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Q: "Do we need to do anything?"</strong></p>
+<p style="margin:0 0 10px;line-height:1.85;"><strong>A: "Very little. We handle enrollment, parent communication, and billing. We just need your permission to be here and a contact person on staff we can coordinate with."</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Minutes 15-20: Close</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Do not leave without a next step. Ever.</strong></p>
+<p style="margin:0 0 10px;line-height:1.85;"><strong>"Based on what we've discussed, is there anything that would prevent you from moving forward? I can have a simple agreement and all documentation to you by end of this week."</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>If they are not ready to commit:</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>"Completely understand. What would you need to see before feeling comfortable moving forward?"</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Address the specific obstacle. Then follow up within 48 hours.</strong></p>`},
+    {h:`The School Agreement`,b:`<div class="doc-section-divider"></div>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">The School Agreement</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Every school partnership must be documented in a signed agreement.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Verbal agreements are not sufficient. They create disputes, scope confusion, and liability exposure.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>The EduGolfKids School Partnership Agreement covers:</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>Program description and scope</strong></li>
+  <li style="margin-bottom:5px;"><strong>Session schedule and frequency</strong></li>
+  <li style="margin-bottom:5px;"><strong>Space requirements and access</strong></li>
+  <li style="margin-bottom:5px;"><strong>Fee structure — including any school facility fee or revenue share</strong></li>
+  <li style="margin-bottom:5px;"><strong>Insurance and liability responsibilities</strong></li>
+  <li style="margin-bottom:5px;"><strong>Safeguarding and background check confirmation</strong></li>
+  <li style="margin-bottom:5px;"><strong>Photo and video consent process</strong></li>
+  <li style="margin-bottom:5px;"><strong>Notice period for program termination by either party</strong></li>
+</ul>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Agreement template is provided by EduGolfKids HQ. Do not create your own.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Any modifications to the standard agreement require HQ approval.</strong></p>`},
+    {h:`Building Long-Term School Relationships`,b:`<div class="doc-section-divider"></div>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Building Long-Term School Relationships</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Securing a school is the beginning — not the achievement.</strong></p>
+<p style="margin:0 0 10px;line-height:1.85;"><strong>The value of a school partnership compounds over time. A school you have been in for 3 years is worth far more than a new school — because:</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>Enrollment grows as word spreads among parents</strong></li>
+  <li style="margin-bottom:5px;"><strong>Trust with the principal creates scheduling and expansion opportunities</strong></li>
+  <li style="margin-bottom:5px;"><strong>Your coaches know the space, the staff, and the students</strong></li>
+  <li style="margin-bottom:5px;"><strong>Churn is low — satisfied families re-enroll each term</strong></li>
+</ul>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Relationship-building behaviors that licensees report as most impactful:</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>Send the principal a brief end-of-term summary — 5 children assessed, Skills Passports completed, zero incidents</strong></li>
+  <li style="margin-bottom:5px;"><strong>Invite the principal to observe a session once per year — they become advocates when they see it firsthand</strong></li>
+  <li style="margin-bottom:5px;"><strong>Acknowledge school events — send a note of congratulations when the school achieves something notable</strong></li>
+  <li style="margin-bottom:5px;"><strong>Never cause administrative problems — be the easiest program the school works with</strong></li>
+  <li style="margin-bottom:5px;"><strong>When something goes wrong (and occasionally it will), address it immediately and professionally — principals remember how you handle problems</strong></li>
+</ul>
+<h3 style="color:var(--green-dark);border-bottom:2px solid var(--green-light);padding-bottom:8px;margin:24px 0 12px;font-size:16px;">CERTIFICATION ASSESSMENT — MODULE 1</h3>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Written (30%)</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>Explain the school tiering system and why private schools are approached first.</strong></li>
+  <li style="margin-bottom:5px;"><strong>Write a first-contact email for a fictional private school using the correct structure.</strong></li>
+  <li style="margin-bottom:5px;"><strong>List the 5 most common principal objections and their responses.</strong></li>
+</ul>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Practical Exercise (40%)</strong></p>
+<p style="margin:0 0 10px;line-height:1.85;"><strong>Licensee must conduct a simulated school meeting with an evaluator playing the role of a principal. Must demonstrate: rapport building, clear program presentation, objection handling, and a closed next step.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Scenario-Based (30%)</strong></p>
+<p style="margin:0 0 10px;line-height:1.85;"><strong>A principal is interested but says their PE teacher needs to approve it first. Design your response and follow-up strategy.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>MINIMUM PASS: 85%</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><em></em></p>`},
+  ]
+},
+{
+  id:"L3_M2",
+  title:"Module 2 \u2014 Recruiting &amp; Hiring Coaches",
+  icon:"\ud83d\udc64",
+  sections:[
+    {h:`The EduGolfKids Ideal Coach Profile`,b:`<div class="doc-section-divider"></div>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">The EduGolfKids Ideal Coach Profile</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Before recruiting, you must know exactly who you are looking for.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Non-negotiable qualities:</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>Genuine enjoyment of working with children — not tolerance, genuine enjoyment</strong></li>
+  <li style="margin-bottom:5px;"><strong>Energy and enthusiasm — sessions require sustained positive energy for 60 minutes</strong></li>
+  <li style="margin-bottom:5px;"><strong>Reliability and punctuality — schools have zero tolerance for coaches who are late or absent</strong></li>
+  <li style="margin-bottom:5px;"><strong>Communication skills — clear, warm, professional with both children and adults</strong></li>
+  <li style="margin-bottom:5px;"><strong>Coachability — willingness to follow the EduGolfKids system exactly as designed</strong></li>
+</ul>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Strongly preferred qualities:</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>Background in education, childcare, youth sport coaching, or teaching</strong></li>
+  <li style="margin-bottom:5px;"><strong>Some golf knowledge or interest — does not need to be a scratch golfer</strong></li>
+  <li style="margin-bottom:5px;"><strong>Experience in structured environments — classrooms, camps, sports programs</strong></li>
+  <li style="margin-bottom:5px;"><strong>Physical fitness — sessions are active and coaches are on their feet for hours</strong></li>
+</ul>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Red flags — do not hire regardless of golf ability:</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>No prior experience with children in any capacity</strong></li>
+  <li style="margin-bottom:5px;"><strong>Impatience or short temper visible in any stage of the hiring process</strong></li>
+  <li style="margin-bottom:5px;"><strong>Resistance to following a structured program — "I like to do things my own way"</strong></li>
+  <li style="margin-bottom:5px;"><strong>Unreliable communication during the hiring process — if they ghost you now, they will ghost a school</strong></li>
+  <li style="margin-bottom:5px;"><strong>Condescending tone toward children even in casual conversation</strong></li>
+</ul>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Golf ability is the last thing you assess. Character and child-focus come first.</strong></p>
+<p style="margin:0 0 10px;line-height:1.85;"><strong>A patient, energetic former teacher with a 20 handicap will outperform an impatient scratch golfer every time in this role.</strong></p>`},
+    {h:`Where to Find Coaches`,b:`<div class="doc-section-divider"></div>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Where to Find Coaches</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Channel 1: Indeed (Primary Channel)</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Indeed is the most effective paid recruitment channel for EduGolfKids coach roles.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Cost per hire is low. Candidate volume is high. Speed to interview is fast.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>The EduGolfKids Indeed Ad — Structure:</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Job Title: Youth Golf Coach — EduGolfKids (Part-Time / Flexible Hours)</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Opening paragraph:</strong></p>
+<p style="margin:0 0 10px;line-height:1.85;"><strong>"Are you passionate about working with children and helping them build confidence through sport? EduGolfKids is looking for energetic, child-focused coaches to deliver our award-winning junior golf program in schools across [territory]. No prior golf coaching experience required — full training and certification provided."</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Key responsibilities section:</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>Deliver structured 60-minute EduGolfKids sessions to children ages 4-10 in school settings</strong></li>
+  <li style="margin-bottom:5px;"><strong>Build positive, safe, and engaging learning environments</strong></li>
+  <li style="margin-bottom:5px;"><strong>Assess children's progress using the EduGolfKids Skills Passport system</strong></li>
+  <li style="margin-bottom:5px;"><strong>Communicate professionally with school staff and parents</strong></li>
+  <li style="margin-bottom:5px;"><strong>Maintain all EduGolfKids safety and safeguarding standards</strong></li>
+</ul>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Requirements section:</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>Genuine passion for working with children — this is the most important requirement</strong></li>
+  <li style="margin-bottom:5px;"><strong>Reliable, punctual, and professional</strong></li>
+  <li style="margin-bottom:5px;"><strong>Comfortable being active and energetic for extended periods</strong></li>
+  <li style="margin-bottom:5px;"><strong>Background in teaching, childcare, youth sport, or education preferred</strong></li>
+  <li style="margin-bottom:5px;"><strong>Some golf knowledge is a plus — but full coaching training is provided</strong></li>
+  <li style="margin-bottom:5px;"><strong>Must be willing to complete background screening and EduGolfKids certification</strong></li>
+</ul>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>What we offer section:</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>Flexible part-time hours — morning, afternoon, and after-school slots available</strong></li>
+  <li style="margin-bottom:5px;"><strong>Full EduGolfKids Level 1 and Level 2 coaching certification provided</strong></li>
+  <li style="margin-bottom:5px;"><strong>Competitive hourly rate</strong></li>
+  <li style="margin-bottom:5px;"><strong>Supportive team environment</strong></li>
+  <li style="margin-bottom:5px;"><strong>Opportunity to grow with the program</strong></li>
+</ul>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Indeed targeting tips:</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>Target age range: 20-35</strong></li>
+  <li style="margin-bottom:5px;"><strong>Job categories: Education, Sports and Recreation, Childcare</strong></li>
+  <li style="margin-bottom:5px;"><strong>Location: set to your territory radius</strong></li>
+  <li style="margin-bottom:5px;"><strong>Schedule: Part-time, contract</strong></li>
+  <li style="margin-bottom:5px;"><strong>Boost the post — a $50-100 boost significantly increases visibility and application volume</strong></li>
+</ul>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Channel 2: School Teachers and Education Networks</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>School teachers are one of the best coach profiles for EduGolfKids.</strong></p>
+<p style="margin:0 0 10px;line-height:1.85;"><strong>They already know how to manage groups of children, communicate with parents, and operate in school environments.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>How to reach teachers:</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>Post in Facebook groups for teachers in your area — "Teachers looking for extra income," "Educators side jobs"</strong></li>
+  <li style="margin-bottom:5px;"><strong>Ask your existing school partners to share the opportunity with their staff</strong></li>
+  <li style="margin-bottom:5px;"><strong>Connect with university education departments — student teachers looking for part-time work</strong></li>
+  <li style="margin-bottom:5px;"><strong>Post on university job boards targeting education, sport science, and kinesiology students</strong></li>
+</ul>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Channel 3: University Sport Science and Physical Education Programs</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Final-year sport science and PE students are an excellent pipeline.</strong></p>
+<p style="margin:0 0 10px;line-height:1.85;"><strong>They have theoretical knowledge of child development, they are enthusiastic, and they work for competitive rates.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Many will continue after graduation if the role fits their career path.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Channel 4: Personal Network and Referrals</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Ask your existing coaches to refer people they know.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>A referral from a trusted coach is the highest-quality candidate source available.</strong></p>
+<p style="margin:0 0 10px;line-height:1.85;"><strong>Consider a small referral bonus: "If your referral completes certification and works 3 months, you receive [bonus]."</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Channel 5: Local Golf Clubs and Driving Ranges</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Junior golf assistants, range staff, and club members who play recreationally are worth approaching.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>They have golf knowledge but may need development on child communication skills.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Only approach if the candidate shows strong people skills alongside golf interest.</strong></p>`},
+    {h:`The Screening and Interview Process`,b:`<div class="doc-section-divider"></div>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">The Screening and Interview Process</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Step 1: Application Review</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>You will receive applications that range from perfectly matched to completely unsuitable.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Screen quickly using three filters:</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>Any experience with children? If zero in any form — low priority</strong></li>
+  <li style="margin-bottom:5px;"><strong>Tone of the application — do they sound warm and enthusiastic or transactional?</strong></li>
+  <li style="margin-bottom:5px;"><strong>Reliability signals — did they follow the application instructions? Did they spell your company name correctly?</strong></li>
+</ul>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Step 2: Phone Screen (10-15 minutes)</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Before investing time in a face-to-face interview, do a brief phone screen.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>This filters out candidates who do not present well verbally — a critical requirement for this role.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Phone screen questions:</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>"Tell me about your experience working with children."</strong></li>
+  <li style="margin-bottom:5px;"><strong>"What would you do if a child became very frustrated and refused to participate?"</strong></li>
+  <li style="margin-bottom:5px;"><strong>"How would you describe your energy level in a group setting with 8 excited 6-year-olds?"</strong></li>
+  <li style="margin-bottom:5px;"><strong>"This role requires you to follow a structured curriculum. How do you feel about that?"</strong></li>
+</ul>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Look for: warmth, specific examples, enthusiasm that comes through even on the phone.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Red flag: generic answers, hesitation about working with difficult children, resistance to structure.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Step 3: In-Person or Video Interview</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Invite your top phone screen candidates for a 30-minute structured interview.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Core interview questions:</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>"Tell me about a time you had to manage a group of energetic children. What worked?"</strong></li>
+  <li style="margin-bottom:5px;"><strong>"A parent approaches you after a session and says their child was ignored. How do you respond?"</strong></li>
+  <li style="margin-bottom:5px;"><strong>"Why do you want to work with young children specifically? What do you find rewarding about it?"</strong></li>
+  <li style="margin-bottom:5px;"><strong>"EduGolfKids has a very specific way of doing things — a full curriculum and system. Some coaches find that limiting. How do you feel about it?"</strong></li>
+  <li style="margin-bottom:5px;"><strong>"What does a great session with a 5-year-old look like to you?"</strong></li>
+</ul>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Step 4: Practical Assessment</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>The single most predictive screening tool: watch them interact with children for 10 minutes.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>If possible, invite the candidate to observe a live session and assist with one activity.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>You will know within 5 minutes whether they have the instinct for this role.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Natural warmth with children cannot be trained. Everything else can.</strong></p>`},
+    {h:`Hiring, Onboarding, and Certification`,b:`<div class="doc-section-divider"></div>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Hiring, Onboarding, and Certification</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Once you have identified the right candidate:</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Step 1: Background Check</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Non-negotiable before any offer is made or accepted.</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>State-level criminal background check</strong></li>
+  <li style="margin-bottom:5px;"><strong>National sex offender registry screening</strong></li>
+  <li style="margin-bottom:5px;"><strong>Employment eligibility verification</strong></li>
+</ul>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>No coach enters a school environment without cleared background check documentation on file.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Step 2: Offer and Employment Structure</strong></p>
+<p style="margin:0 0 10px;line-height:1.85;"><strong>Most EduGolfKids coaches work as part-time employees or independent contractors depending on your territory structure.</strong></p>
+<p style="margin:0 0 10px;line-height:1.85;"><strong>Consult with a local employment attorney or HR advisor to determine the correct classification for your market.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Key compensation principles:</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>Pay per session is the most common structure — simpler to manage with variable school schedules</strong></li>
+  <li style="margin-bottom:5px;"><strong>Rate should reflect the skill and certification level required</strong></li>
+  <li style="margin-bottom:5px;"><strong>As coaches gain experience and take on more schools, their rate should increase — retention depends on it</strong></li>
+</ul>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Step 3: EduGolfKids Certification Enrollment</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>Enroll new coach in TalentLMS immediately upon hiring</strong></li>
+  <li style="margin-bottom:5px;"><strong>Set a clear certification completion deadline — Level 1 within 4 weeks of start date</strong></li>
+  <li style="margin-bottom:5px;"><strong>Coach may observe sessions before certification but may not lead sessions independently</strong></li>
+  <li style="margin-bottom:5px;"><strong>Level 2 must be completed before coach leads skills-specific curriculum</strong></li>
+</ul>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Step 4: Shadowing and Supervised Sessions</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>New coach shadows an experienced coach for minimum 2 sessions</strong></li>
+  <li style="margin-bottom:5px;"><strong>New coach co-delivers 2 sessions with experienced coach present</strong></li>
+  <li style="margin-bottom:5px;"><strong>New coach leads first independent session with licensee present</strong></li>
+  <li style="margin-bottom:5px;"><strong>Licensee debrief after first independent session — structured feedback using Growth Mindset language</strong></li>
+</ul>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Step 5: Ongoing Development</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>Monthly team check-ins — share what is working, address challenges</strong></li>
+  <li style="margin-bottom:5px;"><strong>Quarterly observation — licensee or senior coach observes each coach once per quarter</strong></li>
+  <li style="margin-bottom:5px;"><strong>Annual re-certification — coaches complete a refresher module each year</strong></li>
+</ul>`},
+    {h:`Retaining Great Coaches`,b:`<div class="doc-section-divider"></div>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Retaining Great Coaches</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Retention is cheaper than recruitment. Every time you lose a great coach you lose:</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>3-4 weeks of recruitment time</strong></li>
+  <li style="margin-bottom:5px;"><strong>4-6 weeks of training time</strong></li>
+  <li style="margin-bottom:5px;"><strong>The relationship they had built with their schools and students</strong></li>
+  <li style="margin-bottom:5px;"><strong>Continuity of the program at their schools — which risks losing the school</strong></li>
+</ul>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>What retains great coaches:</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>Feeling valued — acknowledge great work specifically and regularly</strong></li>
+  <li style="margin-bottom:5px;"><strong>Progression — clear pathway from coach to lead coach to possible territory management</strong></li>
+  <li style="margin-bottom:5px;"><strong>Flexibility — this role attracts people who need schedule flexibility. Protect it.</strong></li>
+  <li style="margin-bottom:5px;"><strong>Pay increases tied to performance and school growth</strong></li>
+  <li style="margin-bottom:5px;"><strong>A team culture — coaches who feel part of something bigger than a part-time job stay longer</strong></li>
+</ul>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Simple retention practice from EduGolfKids operators:</strong></p>
+<p style="margin:0 0 10px;line-height:1.85;"><strong>A brief monthly message to each coach: "You did a great job at [school] this month. [Specific observation]. Really appreciate you." Costs nothing. Builds loyalty.</strong></p>
+<h3 style="color:var(--green-dark);border-bottom:2px solid var(--green-light);padding-bottom:8px;margin:24px 0 12px;font-size:16px;">CERTIFICATION ASSESSMENT — MODULE 2</h3>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Written (30%)</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>Describe the EduGolfKids ideal coach profile including non-negotiables and red flags.</strong></li>
+  <li style="margin-bottom:5px;"><strong>Write a complete Indeed job advertisement for an EduGolfKids coach role.</strong></li>
+  <li style="margin-bottom:5px;"><strong>List the 5 recruitment channels and explain when each is most effective.</strong></li>
+</ul>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Practical Exercise (40%)</strong></p>
+<p style="margin:0 0 10px;line-height:1.85;"><strong>Licensee must conduct a simulated 15-minute coach interview, demonstrating: structured questioning, practical assessment design, red flag identification, and professional offer process.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Scenario-Based (30%)</strong></p>
+<p style="margin:0 0 10px;line-height:1.85;"><strong>Your best coach has been offered a full-time teaching job and is considering leaving. Design your retention conversation.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>MINIMUM PASS: 85%</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><em></em></p>`},
+  ]
+},
+{
+  id:"L3_M3",
+  title:"Module 3 \u2014 Marketing &amp; Enrollment",
+  icon:"\ud83d\udce2",
+  sections:[
+    {h:`The EduGolfKids Marketing Hierarchy`,b:`<div class="doc-section-divider"></div>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">The EduGolfKids Marketing Hierarchy</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Not all marketing activities deliver equal return. Prioritize in this order:</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Tier 1: Demo Days and Parent Information Sessions</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Highest conversion rate. Best use of your time. Nothing else comes close.</strong></p>
+<p style="margin:0 0 10px;line-height:1.85;"><strong>A parent who sees their child hit a golf ball and smile in a 10-minute demo will enroll that child on the spot more than 60% of the time.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Tier 2: School Newsletters and Direct-to-Parent Communication</strong></p>
+<p style="margin:0 0 10px;line-height:1.85;"><strong>The school already has the audience. Getting your message into school communications is the most efficient distribution available.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Cost: zero. Reach: every parent in the school.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Tier 3: Free Trial Vouchers and Referral Programs</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>A free lesson voucher lowers the enrollment barrier to zero.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>A referral program turns your enrolled families into a sales force.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Tier 4: Social Media</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Effective for visibility and credibility — not for direct enrollment conversion.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Use it to document what you do, not to advertise what you sell.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Tier 5: Physical Mailers and Flyers</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Effective when distributed through school bags — low cost, direct reach.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Less effective as general area distribution.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Tier 6: Paid Digital Advertising</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Lowest priority. Not necessary to fill a program in most markets.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Only consider if all Tier 1-5 channels are maximized and you still have open spots.</strong></p>`},
+    {h:`Demo Days — The Single Most Powerful Enrollment Tool`,b:`<div class="doc-section-divider"></div>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Demo Days — The Single Most Powerful Enrollment Tool</p>
+<p style="margin:0 0 10px;line-height:1.85;"><strong>A demo day is a 30-45 minute free taster session held at the school, open to any child who wants to participate.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Parents are invited to watch.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>At the end of the demo, enrollment forms are available and spots are offered immediately.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Why demo days work so powerfully:</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>Children experience the program firsthand — they go home asking to sign up</strong></li>
+  <li style="margin-bottom:5px;"><strong>Parents see their child engaged, safe, smiling, and learning — this removes every hesitation</strong></li>
+  <li style="margin-bottom:5px;"><strong>The coach is visible and relatable — parents enroll their children in a person, not a program</strong></li>
+  <li style="margin-bottom:5px;"><strong>Social proof is immediate — when parents see 15 children having a great time, they want their child included</strong></li>
+</ul>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>How to organize a demo day:</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Step 1: Get school approval and scheduling</strong></p>
+<p style="margin:0 0 10px;line-height:1.85;"><strong>Present the demo day to the principal as a free gift to the school — a fun experience for students with no cost or obligation.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Ask for a time when parents can be present: after-school slot or during a school event day works best.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Step 2: Prepare the session</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Design a 30-minute version of the EduGolfKids session architecture:</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>5 minutes: energetic welcome game — every child immediately active</strong></li>
+  <li style="margin-bottom:5px;"><strong>15 minutes: putting and chipping challenges — high success rate, immediate fun</strong></li>
+  <li style="margin-bottom:5px;"><strong>5 minutes: team scoring game with prizes</strong></li>
+  <li style="margin-bottom:5px;"><strong>5 minutes: parent Q and A and enrollment opportunity</strong></li>
+</ul>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Step 3: Prepare enrollment materials</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>Enrollment forms — simple, one page</strong></li>
+  <li style="margin-bottom:5px;"><strong>Program information sheet for parents</strong></li>
+  <li style="margin-bottom:5px;"><strong>Skills Passport sample to show parents what their child will receive</strong></li>
+  <li style="margin-bottom:5px;"><strong>Pricing clearly stated</strong></li>
+  <li style="margin-bottom:5px;"><strong>Early bird offer: first term discount for enrollment on the day</strong></li>
+</ul>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Step 4: Run the demo</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Your energy in this session is your marketing.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Be the most enthusiastic, warm, and professional version of yourself.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Every child who leaves that demo day smiling is a potential enrollment.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Step 5: Follow up within 48 hours</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Send a follow-up email to every family that attended but did not enroll on the day.</strong></p>
+<p style="margin:0 0 10px;line-height:1.85;"><strong>"It was wonderful to meet [child's name] yesterday. They were fantastic. We still have [X] spots available for the upcoming term — I'd love to have them join us."</strong></p>
+<p style="margin:0 0 10px;line-height:1.85;"><strong>EduGolfKids operator benchmark: a well-run demo day at a new school converts 40-70% of attendees to enrollment.</strong></p>`},
+    {h:`Parent Information Sessions`,b:`<div class="doc-section-divider"></div>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Parent Information Sessions</p>
+<p style="margin:0 0 10px;line-height:1.85;"><strong>A parent information session is a 20-30 minute evening presentation for parents — without children present.</strong></p>
+<p style="margin:0 0 10px;line-height:1.85;"><strong>It is more persuasive for skeptical parents than a demo day because it gives them space to ask questions and understand the program deeply.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Information session structure:</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Opening (3 minutes):</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Welcome. Brief background on you and EduGolfKids.</strong></p>
+<p style="margin:0 0 10px;line-height:1.85;"><strong>"Tonight I want to show you exactly what your child will experience, what they will learn, and why this program is different from anything else available for children their age."</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>The Why (5 minutes):</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Share the developmental philosophy in accessible language.</strong></p>
+<p style="margin:0 0 10px;line-height:1.85;"><strong>"Golf is the vehicle. What we are really building is confidence, focus, resilience, and movement skills that benefit your child in everything they do."</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Reference the science briefly — parents respond well to knowing there is research behind the program.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>What a session looks like (5 minutes):</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Show a short video clip of a session if available. Walk through the 60-minute structure.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Parents need to visualize their child in the program.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>The Skills Passport (3 minutes):</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Show the Passport. Explain that every child receives a documented assessment at the end of each term.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Parents love this. It makes progress tangible and visible.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Safety and qualifications (3 minutes):</strong></p>
+<p style="margin:0 0 10px;line-height:1.85;"><strong>Background checks, certifications, insurance, safeguarding. Cover it confidently. Parents need to know their child is safe.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Pricing and enrollment (3 minutes):</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Clear, simple, no surprises.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Offer an enrollment incentive for signing up tonight.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Q and A (5 minutes):</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Welcome every question. Answer with warmth and specificity.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Unanswered questions become enrollment objections.</strong></p>`},
+    {h:`School-Based Marketing Channels`,b:`<div class="doc-section-divider"></div>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">School-Based Marketing Channels</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>School Newsletter</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Every school sends a regular newsletter to parents — digital, printed, or both.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Request a standing feature or advertisement in the newsletter.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Most principals will agree if you provide clean, professional copy that requires no editing from them.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Newsletter copy template:</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>"EduGolfKids — Building Confident Young Athletes</strong></p>
+<p style="margin:0 0 10px;line-height:1.85;"><strong>Our certified golf program for ages 4-10 is now enrolling at [School Name]. Children develop movement skills, confidence, and focus through structured, play-based golf sessions delivered by certified coaches. Skills Passport tracking included. [Term dates and pricing]. Contact [email/phone] to enroll."</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>School Bag Flyer</strong></p>
+<p style="margin:0 0 10px;line-height:1.85;"><strong>A single A5 flyer placed in every child's school bag is one of the highest-reach distribution methods available.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Most schools will permit this if the flyer is professional and the program is approved.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Include a QR code linking to enrollment.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Include a free trial voucher on the flyer — this dramatically increases response rate.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Notice Board and Reception Posters</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Poster displayed in school reception and notice boards.</strong></p>
+<p style="margin:0 0 10px;line-height:1.85;"><strong>Simple design: one image of children enjoying golf, three bullet points of benefits, contact information, and QR code.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>School Social Media Pages</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Most schools have active Facebook and Instagram pages followed by their parent community.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Ask the principal or communications coordinator to share a post about your program.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Provide them with a ready-to-post caption and image — make it zero effort for them.</strong></p>`},
+    {h:`Free Trial Vouchers and the Referral System`,b:`<div class="doc-section-divider"></div>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Free Trial Vouchers and the Referral System</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Free Trial Voucher</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>A voucher offering a free first lesson removes the enrollment barrier completely.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Distribute vouchers via:</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>School bag flyers</strong></li>
+  <li style="margin-bottom:5px;"><strong>Demo day handouts</strong></li>
+  <li style="margin-bottom:5px;"><strong>School newsletter feature</strong></li>
+  <li style="margin-bottom:5px;"><strong>Social media posts</strong></li>
+</ul>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Voucher design principles:</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>Valid for a specific term start — creates urgency</strong></li>
+  <li style="margin-bottom:5px;"><strong>Redeemable for one child for one free session</strong></li>
+  <li style="margin-bottom:5px;"><strong>Family bring-a-friend: "Bring a friend and both receive a free first session"</strong></li>
+  <li style="margin-bottom:5px;"><strong>Expires after term start — do not allow indefinite open vouchers</strong></li>
+</ul>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>The Bring-a-Friend Referral System</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Your most powerful enrollment tool after demo days.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Enrolled families who refer a friend are your most trusted marketing channel.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Every parent who is satisfied with EduGolfKids knows 3-5 other parents with children the same age.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>How to activate referrals:</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>At the start of each term: "We have [X] spots remaining. If you know a family who would love this program, here is a voucher for their child's first free lesson."</strong></li>
+  <li style="margin-bottom:5px;"><strong>Referral incentive: if a referred family enrolls for a full term, the referring family receives a discount on next term</strong></li>
+  <li style="margin-bottom:5px;"><strong>End of term email: "Thank you for an amazing term. If you enjoyed the program, please share our details with a friend."</strong></li>
+</ul>`},
+    {h:`Retention Marketing — Keeping Children Enrolled`,b:`<div class="doc-section-divider"></div>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Retention Marketing — Keeping Children Enrolled</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Acquiring a new student costs more than retaining an existing one.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Your marketing does not stop at enrollment — it continues throughout the program.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Field Intelligence — EduGolfKids Operator Experience:</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>"Little things like Player of the Week and phoning a student on their birthday work really well."</strong></p>
+<p style="margin:0 0 10px;line-height:1.85;"><strong>This is one of the most underestimated insights in this manual. The emotional connection parents and children feel toward a program that recognizes their child personally is extraordinarily powerful. These moments cost almost nothing and build fierce loyalty.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Player of the Week</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Every week, one child is recognized as Player of the Week.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Not for best golf — for effort, improvement, attitude, or a specific achievement.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>How to implement:</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>Announce at the end of the session in front of the group</strong></li>
+  <li style="margin-bottom:5px;"><strong>Give the child a small card or certificate to take home</strong></li>
+  <li style="margin-bottom:5px;"><strong>Post on your social media (with consent) — tag the school</strong></li>
+  <li style="margin-bottom:5px;"><strong>Parent receives a personal message from the coach: "[Child's name] was our Player of the Week this week. Here is what we noticed..."</strong></li>
+</ul>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Impact: the parent shares it. Other parents see it. It becomes something every child wants to earn.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Birthday Phone Call</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>On a student's birthday, the coach calls or sends a personal voice message.</strong></p>
+<p style="margin:0 0 10px;line-height:1.85;"><strong>"Happy birthday [name]! We are so proud of everything you have achieved in EduGolfKids. We cannot wait to see you at your next session."</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>This takes 2 minutes. The family remembers it for years.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Log all student birthdays in your Airtable operating system. Set automated reminders.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>End-of-Term Recognition</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>At the final session of each term:</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>Skills Passport completion ceremony — each child receives their updated Passport</strong></li>
+  <li style="margin-bottom:5px;"><strong>Group recognition of achievements — effort, improvement, attitude celebrated publicly</strong></li>
+  <li style="margin-bottom:5px;"><strong>Next term preview — build excitement for what is coming</strong></li>
+  <li style="margin-bottom:5px;"><strong>Re-enrollment offered on the day with early bird incentive</strong></li>
+</ul>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Parent Communication Cadence</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Regular, positive communication keeps parents connected and reduces churn.</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>Week 1: Welcome message — "We are thrilled [child] has joined us. Here is what to expect."</strong></li>
+  <li style="margin-bottom:5px;"><strong>Mid-term: Progress update — one specific positive observation per child</strong></li>
+  <li style="margin-bottom:5px;"><strong>End of term: Skills Passport report via CoachNow — full video and written summary</strong></li>
+  <li style="margin-bottom:5px;"><strong>Between terms: Re-enrollment reminder with next term details</strong></li>
+</ul>`},
+    {h:`Social Media for EduGolfKids`,b:`<div class="doc-section-divider"></div>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Social Media for EduGolfKids</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Social media is not your primary enrollment tool. It is your credibility tool.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Parents who hear about EduGolfKids from a friend will check your social media before enrolling.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>What they find there must build confidence — not raise questions.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Platforms to use:</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>Facebook: Primary platform for parent demographics. School community groups are high-value.</strong></li>
+  <li style="margin-bottom:5px;"><strong>Instagram: Strong for visual content — session photos (with consent), Player of the Week, program moments.</strong></li>
+</ul>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Content that works:</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>Short video clips of sessions — children actively engaged, coaches enthusiastic (consent required)</strong></li>
+  <li style="margin-bottom:5px;"><strong>Player of the Week posts — recognition content gets high engagement from family networks</strong></li>
+  <li style="margin-bottom:5px;"><strong>Behind the scenes — setting up a session, Skills Passport moment, demo day preparation</strong></li>
+  <li style="margin-bottom:5px;"><strong>Education content — "Did you know? Children who play golf develop..." shares your expertise</strong></li>
+  <li style="margin-bottom:5px;"><strong>Testimonials — parent or child quotes about the program</strong></li>
+</ul>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Content that does not work:</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>Pure promotional posts — "Enroll now! $20 per session!" — people scroll past this</strong></li>
+  <li style="margin-bottom:5px;"><strong>Golf technique content aimed at adults — wrong audience</strong></li>
+  <li style="margin-bottom:5px;"><strong>Inconsistent posting — a dead social feed raises more doubt than no feed at all</strong></li>
+</ul>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Posting frequency: 3-4 times per week during active terms. 1-2 times per week during breaks.</strong></p>
+<h3 style="color:var(--green-dark);border-bottom:2px solid var(--green-light);padding-bottom:8px;margin:24px 0 12px;font-size:16px;">CERTIFICATION ASSESSMENT — MODULE 3</h3>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Written (30%)</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>List the EduGolfKids marketing hierarchy and explain why demo days rank highest.</strong></li>
+  <li style="margin-bottom:5px;"><strong>Design a complete demo day plan including session structure and parent enrollment close.</strong></li>
+  <li style="margin-bottom:5px;"><strong>Describe the Player of the Week and Birthday Call programs and explain their retention value.</strong></li>
+</ul>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Practical Exercise (40%)</strong></p>
+<p style="margin:0 0 10px;line-height:1.85;"><strong>Licensee must present a simulated 10-minute parent information session to evaluators playing the role of prospective parents. Must demonstrate: clear program value proposition, objection handling, and a confident enrollment close.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Scenario-Based (30%)</strong></p>
+<p style="margin:0 0 10px;line-height:1.85;"><strong>A school has given you permission to run a demo day but only 4 children show up instead of the 15 you expected. How do you run the session and what do you do immediately after?</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>MINIMUM PASS: 85%</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><em></em></p>`},
+  ]
+},
+{
+  id:"L3_M4",
+  title:"Module 4 \u2014 Pricing, Revenue &amp; Financial Management",
+  icon:"\ud83d\udcb0",
+  sections:[
+    {h:`The EduGolfKids Pricing Model`,b:`<div class="doc-section-divider"></div>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">The EduGolfKids Pricing Model</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Base Price: $20 per child per lesson</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Class size: Maximum 7 children per coach per session</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Sessions per month: 4 (minimum)</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Revenue per class per month: $20 x 7 x 4 = $560</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>This is the foundation. Everything else is built on it.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Why $20 per child?</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>Accessible to middle-income families — not a luxury price point</strong></li>
+  <li style="margin-bottom:5px;"><strong>Low enough to reduce enrollment hesitation</strong></li>
+  <li style="margin-bottom:5px;"><strong>High enough to generate meaningful revenue at scale</strong></li>
+  <li style="margin-bottom:5px;"><strong>Competitive against comparable youth enrichment programs (swimming, gymnastics, martial arts average $15-25 per session)</strong></li>
+</ul>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Why maximum 7 children per class?</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>Safety: the EduGolfKids spacing and supervision standards require a maximum coach-to-child ratio of 1:7</strong></li>
+  <li style="margin-bottom:5px;"><strong>Quality: individual attention, Skills Passport tracking, and engagement management are all compromised above 7</strong></li>
+  <li style="margin-bottom:5px;"><strong>Revenue: 7 x $20 = $140 per session — this is the target session revenue</strong></li>
+  <li style="margin-bottom:5px;"><strong>Never be pressured by a school or parent to exceed 7 children per coach</strong></li>
+</ul>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Why 4 sessions per month?</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>Predictable monthly invoice amount — parents know exactly what they pay</strong></li>
+  <li style="margin-bottom:5px;"><strong>4 sessions builds the learning momentum required by the EduGolfKids curriculum</strong></li>
+  <li style="margin-bottom:5px;"><strong>Monthly consistency builds habit — children and parents plan around it</strong></li>
+  <li style="margin-bottom:5px;"><strong>Revenue is protected — 4 sessions is the minimum; never allow 3-session months</strong></li>
+</ul>`},
+    {h:`School Facility Fees and Revenue Share`,b:`<div class="doc-section-divider"></div>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">School Facility Fees and Revenue Share</p>
+<p style="margin:0 0 10px;line-height:1.85;"><strong>Some schools will ask for a facility fee, a room rental charge, or a revenue share as a condition of partnership.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>This is normal and acceptable — as long as it is handled correctly.</strong></p>
+<p style="margin:0 0 10px;line-height:1.85;"><strong>Field Intelligence: "If schools charge a fee or rent, add the percentage or fee on top of your $20 a child per lesson."</strong></p>
+<p style="margin:0 0 10px;line-height:1.85;"><strong>This is the correct approach. The school fee is a cost of doing business at that location — it is passed directly to the parent through a price adjustment.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>How to calculate the adjusted price:</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Example 1: School charges a flat facility fee of $50 per month</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>$50 / (7 children x 4 sessions) = $1.79 per child per session</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Adjusted price: $20 + $1.79 = $21.79 — round up to $22 per child per session</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Example 2: School requests 10% revenue share</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>$20 base price. 10% = $2. Adjusted price: $22 per child per session.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>School receives $2 per child per session from your collections.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Always document the fee structure in the school agreement.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Never absorb school fees into your margin — this erodes profitability rapidly at scale.</strong></p>
+<p style="margin:0 0 10px;line-height:1.85;"><strong>Be transparent with parents: if the price at one school is $22 and another is $20, it is because of the school's facility structure. You do not need to apologize for this.</strong></p>`},
+    {h:`Revenue Model: From One Class to Full School Capacity`,b:`<div class="doc-section-divider"></div>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Revenue Model: From One Class to Full School Capacity</p>
+<p style="margin:0 0 10px;line-height:1.85;"><strong>The EduGolfKids scale model builds revenue in layers within each school before expanding to new schools.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Layer 1: One Class, One Coach</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>7 children. 4 sessions per month. $140 per session. $560 per month gross revenue from one class.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>This is your starting point at a new school.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Layer 2: Two Classes, One Coach</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Most schools can accommodate two consecutive sessions on the same day.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Morning class: 7 children. Afternoon class: 7 children.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Revenue: $560 x 2 = $1,120 per month gross from one school with one coach.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Coach is paid for two sessions. Your margin is the difference.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Layer 3: Three Coaches, Multiple Classes</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Field Intelligence: "Once you have a school, try to get up to 3 coaches teaching at the same time."</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>This is the target school capacity model:</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>3 coaches running simultaneously</strong></li>
+  <li style="margin-bottom:5px;"><strong>3 classes of 7 children each</strong></li>
+  <li style="margin-bottom:5px;"><strong>21 children served per session</strong></li>
+  <li style="margin-bottom:5px;"><strong>Revenue per session: 21 x $20 = $420</strong></li>
+  <li style="margin-bottom:5px;"><strong>Revenue per month: $420 x 4 = $1,680 gross from one school</strong></li>
+</ul>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>At this capacity, one school generates $1,680 gross per month.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Coach costs at a reasonable session rate: 3 coaches x 4 sessions x $35 per session = $420 per month.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Net from one fully occupied school: approximately $1,260 per month before other costs.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Layer 4: Multiple Schools at Full Capacity</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>5 schools at full capacity:</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>5 x $1,680 gross = $8,400 gross per month</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>5 x $420 coach costs = $2,100 per month</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Net before overhead: approximately $6,300 per month</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>10 schools at full capacity:</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>$16,800 gross per month</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Net before overhead: approximately $12,600 per month</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>The math is simple. The discipline is to fill each school before adding the next.</strong></p>
+<p style="margin:0 0 10px;line-height:1.85;"><strong>Field Intelligence: "The ideal business is to get as many schools fully occupied with coaches and students before trying to grow further."</strong></p>
+<p style="margin:0 0 10px;line-height:1.85;"><strong>This is one of the most important principles in this manual. Premature expansion before existing schools are optimized dilutes quality, stretches the licensee too thin, and produces schools that are mediocre rather than excellent.</strong></p>`},
+    {h:`Protecting Revenue — The 4-Lessons-Per-Month Rule`,b:`<div class="doc-section-divider"></div>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Protecting Revenue — The 4-Lessons-Per-Month Rule</p>
+<p style="margin:0 0 10px;line-height:1.85;"><strong>Field Intelligence: "Always make sure you do 4 lessons a month — even if the weather is bad or you miss a lesson, arrange make-up lessons not to lose revenue."</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>This is a critical financial protection principle. Here is why it matters:</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Revenue loss from missed sessions:</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>One missed session at full capacity = $140 lost per class</strong></li>
+  <li style="margin-bottom:5px;"><strong>3 classes missed = $420 lost in a single week</strong></li>
+  <li style="margin-bottom:5px;"><strong>If this happens twice per term, that is $840 of revenue that simply disappears</strong></li>
+</ul>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>The Make-Up Session Protocol:</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>Any session missed due to weather, school event, or unavoidable cancellation must be rescheduled within the same billing month where possible</strong></li>
+  <li style="margin-bottom:5px;"><strong>If same-month make-up is not possible, it is scheduled in the first week of the following month — and that month's invoice is adjusted to reflect 5 sessions</strong></li>
+  <li style="margin-bottom:5px;"><strong>Communicate cancellations and make-up scheduling to parents within 24 hours</strong></li>
+  <li style="margin-bottom:5px;"><strong>Never cancel without a confirmed make-up date — this is what separates a professional program from a hobby</strong></li>
+</ul>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Weather Policy:</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>Outdoor sessions: have an indoor contingency plan prepared for every outdoor session</strong></li>
+  <li style="margin-bottom:5px;"><strong>Identify an indoor space at each school that can serve as a backup location</strong></li>
+  <li style="margin-bottom:5px;"><strong>Gym-adapted sessions require only foam balls — always have this kit available</strong></li>
+  <li style="margin-bottom:5px;"><strong>Rain is not a cancellation reason. "We moved inside and had a great session" is your standard.</strong></li>
+</ul>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>School Holiday and Event Conflicts:</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>Review the school calendar at the start of each term</strong></li>
+  <li style="margin-bottom:5px;"><strong>Identify all potential conflict dates in advance</strong></li>
+  <li style="margin-bottom:5px;"><strong>Schedule make-up sessions proactively — before parents ask</strong></li>
+  <li style="margin-bottom:5px;"><strong>Build the 4-session minimum into your term calendar before sending parent invoices</strong></li>
+</ul>`},
+    {h:`Invoicing and Payment Collection`,b:`<div class="doc-section-divider"></div>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Invoicing and Payment Collection</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Field Intelligence: "Send out monthly invoices."</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Monthly invoicing is the correct model. It creates:</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>Predictable cash flow — you know what is coming in each month</strong></li>
+  <li style="margin-bottom:5px;"><strong>Simple parent experience — one payment per month per child</strong></li>
+  <li style="margin-bottom:5px;"><strong>Clean administration — 12 invoices per year per family, not 48</strong></li>
+</ul>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Invoice Structure:</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Invoice line items:</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>EduGolfKids sessions: 4 x $20 = $80 per child per month (standard)</strong></li>
+  <li style="margin-bottom:5px;"><strong>Facility fee (if applicable): amount per month</strong></li>
+  <li style="margin-bottom:5px;"><strong>Total due</strong></li>
+  <li style="margin-bottom:5px;"><strong>Payment due date: 5 days before the start of the session month</strong></li>
+</ul>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Invoice delivery:</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>Send via email using your EduGolfKids billing tool or accounting software</strong></li>
+  <li style="margin-bottom:5px;"><strong>Include a payment link — make it one click</strong></li>
+  <li style="margin-bottom:5px;"><strong>Follow up on unpaid invoices on due date with a polite reminder</strong></li>
+</ul>
+<p style="margin:0 0 10px;line-height:1.85;"><strong>Recommended accounting tools: QuickBooks, Wave (free), or FreshBooks for invoice management and payment collection.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Payment Methods to Accept:</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>Credit and debit card via online payment link (Stripe or Square)</strong></li>
+  <li style="margin-bottom:5px;"><strong>Bank transfer / ACH</strong></li>
+  <li style="margin-bottom:5px;"><strong>Check — accepted but not preferred due to processing time</strong></li>
+</ul>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Do not accept cash for regular monthly fees — it creates tracking and accounting problems.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Non-Payment Policy:</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>Invoice unpaid after 7 days: send a polite reminder</strong></li>
+  <li style="margin-bottom:5px;"><strong>Invoice unpaid after 14 days: personal phone call</strong></li>
+  <li style="margin-bottom:5px;"><strong>Invoice unpaid after 21 days: child's spot is at risk — communicate this clearly but professionally</strong></li>
+  <li style="margin-bottom:5px;"><strong>Never allow families to accumulate more than one month of unpaid invoices</strong></li>
+</ul>
+<p style="margin:0 0 10px;line-height:1.85;"><strong>A written payment policy given to every family at enrollment prevents most payment issues before they occur.</strong></p>`},
+    {h:`Understanding Your Numbers`,b:`<div class="doc-section-divider"></div>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Understanding Your Numbers</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>A licensee who does not know their numbers cannot manage their business.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Know these figures at all times:</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Gross Revenue: Total amount billed to all families before any costs</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Coach Costs: Total paid to coaches for sessions delivered</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Gross Margin: Gross Revenue minus Coach Costs</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Overhead Costs: Equipment, insurance, certification platform, marketing materials, licensing fees</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Net Profit: Gross Margin minus Overhead Costs</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Benchmarks for a healthy EduGolfKids operation:</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>Coach costs should not exceed 30-35% of gross revenue</strong></li>
+  <li style="margin-bottom:5px;"><strong>Overhead costs should not exceed 15-20% of gross revenue</strong></li>
+  <li style="margin-bottom:5px;"><strong>Net profit margin target: 45-55% of gross revenue</strong></li>
+</ul>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>If your margins are below these benchmarks, investigate:</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>Are classes full? Partially filled classes destroy margin. 5 children in a class designed for 7 costs you $40 per session in lost revenue.</strong></li>
+  <li style="margin-bottom:5px;"><strong>Are coach costs too high? Review session rates against market rates.</strong></li>
+  <li style="margin-bottom:5px;"><strong>Are you paying school fees you are not passing on to parents?</strong></li>
+  <li style="margin-bottom:5px;"><strong>Is equipment being replaced too frequently? Establish an equipment maintenance and replacement schedule.</strong></li>
+</ul>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Monthly financial review:</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Spend 30 minutes at the start of each month reviewing:</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>Revenue collected vs revenue billed</strong></li>
+  <li style="margin-bottom:5px;"><strong>Outstanding invoices</strong></li>
+  <li style="margin-bottom:5px;"><strong>Coach costs vs budget</strong></li>
+  <li style="margin-bottom:5px;"><strong>Enrollment numbers — up, down, or flat at each school</strong></li>
+  <li style="margin-bottom:5px;"><strong>Any schools at risk of losing enrollment</strong></li>
+</ul>
+<h3 style="color:var(--green-dark);border-bottom:2px solid var(--green-light);padding-bottom:8px;margin:24px 0 12px;font-size:16px;">CERTIFICATION ASSESSMENT — MODULE 4</h3>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Written (30%)</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>Calculate the gross monthly revenue for a 3-coach, 3-class school at full capacity with a $50 flat facility fee.</strong></li>
+  <li style="margin-bottom:5px;"><strong>Describe the make-up session protocol and explain why the 4-lessons-per-month rule is a revenue protection measure.</strong></li>
+  <li style="margin-bottom:5px;"><strong>List the monthly financial review items a licensee must track.</strong></li>
+</ul>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Practical Exercise (40%)</strong></p>
+<p style="margin:0 0 10px;line-height:1.85;"><strong>Licensee must build a 12-month revenue projection for a 3-school operation, starting with 1 class per school and growing to full capacity, using the EduGolfKids pricing model. Must include coach costs, school fees (one school charges 10% revenue share), and projected net margin.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Scenario-Based (30%)</strong></p>
+<p style="margin:0 0 10px;line-height:1.85;"><strong>A school cancels 2 sessions in one month due to a school event. How do you protect the revenue, communicate to parents, and schedule make-up sessions?</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>MINIMUM PASS: 85%</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><em></em></p>`},
+  ]
+},
+{
+  id:"L3_M5",
+  title:"Module 5 \u2014 Operations: Managing Multiple Schools",
+  icon:"\u2699\ufe0f",
+  sections:[
+    {h:`The EduGolfKids Operating System`,b:`<div class="doc-section-divider"></div>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">The EduGolfKids Operating System</p>
+<p style="margin:0 0 10px;line-height:1.85;"><strong>EduGolfKids uses Airtable as its central operating platform, with Softr as the front-end interface for coaches and administrators.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Every licensee has access to the EduGolfKids operating system from day one.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>What the operating system manages:</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>Schools: contact details, agreement status, session schedule, capacity, facility fee structure</strong></li>
+  <li style="margin-bottom:5px;"><strong>Coaches: certification status, assigned schools, session history, contact details</strong></li>
+  <li style="margin-bottom:5px;"><strong>Students: enrollment, age group, Skills Passport records, parent contact, birthday reminders</strong></li>
+  <li style="margin-bottom:5px;"><strong>Sessions: scheduled, completed, cancelled, and make-up sessions by school and coach</strong></li>
+  <li style="margin-bottom:5px;"><strong>Invoices: monthly billing status, outstanding payments, payment history per family</strong></li>
+  <li style="margin-bottom:5px;"><strong>Incidents: documented incidents, follow-up actions, resolution status</strong></li>
+</ul>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>The operating system is not optional. It is the backbone of a multi-school operation.</strong></p>
+<p style="margin:0 0 10px;line-height:1.85;"><strong>A licensee running 3+ schools from a notebook and a mental map is one unexpected absence away from an operational collapse.</strong></p>`},
+    {h:`Coach Management at Scale`,b:`<div class="doc-section-divider"></div>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Coach Management at Scale</p>
+<p style="margin:0 0 10px;line-height:1.85;"><strong>Managing 1 coach: simple. Managing 5-10 coaches across multiple schools: a different challenge entirely.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>The Coach Management Framework:</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>1. Clear Role Expectations</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Every coach must have a written summary of:</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>Their assigned schools and session schedule</strong></li>
+  <li style="margin-bottom:5px;"><strong>Their responsibilities before, during, and after each session</strong></li>
+  <li style="margin-bottom:5px;"><strong>Their reporting requirements — what they log in the operating system after every session</strong></li>
+  <li style="margin-bottom:5px;"><strong>Their communication expectations — how quickly they respond to the licensee</strong></li>
+</ul>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Ambiguity about expectations is the most common cause of coach performance problems.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>2. Session Confirmation Protocol</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Before every session:</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>Coach confirms attendance 24 hours in advance via operating system or agreed channel</strong></li>
+  <li style="margin-bottom:5px;"><strong>If a coach cannot attend: they notify licensee immediately — minimum 3 hours before session</strong></li>
+  <li style="margin-bottom:5px;"><strong>Licensee has a cover coach on call for every school — never leave a school without a coach</strong></li>
+</ul>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Never rely on a single point of coach failure at a school. Always have a backup.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>3. Post-Session Logging</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>After every session, coaches log in the operating system:</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>Session completed — yes or no</strong></li>
+  <li style="margin-bottom:5px;"><strong>Number of children attended</strong></li>
+  <li style="margin-bottom:5px;"><strong>Any incidents or behavioral escalations</strong></li>
+  <li style="margin-bottom:5px;"><strong>Any parent concerns raised</strong></li>
+  <li style="margin-bottom:5px;"><strong>Equipment status — anything damaged or missing</strong></li>
+</ul>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>This takes 3 minutes. It protects you legally, operationally, and financially.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>4. Quarterly Coach Observation</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Every coach must be observed at minimum once per quarter.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Observation checklist covers:</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>Session architecture compliance — correct 60-minute structure</strong></li>
+  <li style="margin-bottom:5px;"><strong>Safety and spacing standards</strong></li>
+  <li style="margin-bottom:5px;"><strong>Language Code compliance — growth mindset language used</strong></li>
+  <li style="margin-bottom:5px;"><strong>Engagement management — all children active, no long lines</strong></li>
+  <li style="margin-bottom:5px;"><strong>Skills Passport awareness — coach is tracking progress</strong></li>
+</ul>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Observation is not surveillance — it is development and quality assurance.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Frame it positively: "I am coming to see what's working well and to support your development."</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>5. Monthly Team Meeting</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>One meeting per month — 30-45 minutes. In person or video call.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Agenda:</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>Wins from the past month — specific, genuine, celebrated</strong></li>
+  <li style="margin-bottom:5px;"><strong>Challenges — what is not working and how to solve it</strong></li>
+  <li style="margin-bottom:5px;"><strong>Upcoming dates — school events, cancellations, make-up sessions</strong></li>
+  <li style="margin-bottom:5px;"><strong>Skills Passport updates — any children ready for term assessment</strong></li>
+  <li style="margin-bottom:5px;"><strong>Training moment — 10 minutes on one coaching concept or scenario</strong></li>
+</ul>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>The monthly meeting builds team culture and keeps quality high. Skip it and quality gradually drifts.</strong></p>`},
+    {h:`School Relationship Management at Scale`,b:`<div class="doc-section-divider"></div>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">School Relationship Management at Scale</p>
+<p style="margin:0 0 10px;line-height:1.85;"><strong>When you run multiple schools, your relationship management must be systematic — not dependent on memory.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>For each school, track in your operating system:</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>Last contact with principal — date and topic</strong></li>
+  <li style="margin-bottom:5px;"><strong>Any open issues or pending items</strong></li>
+  <li style="margin-bottom:5px;"><strong>Upcoming school events that affect your schedule</strong></li>
+  <li style="margin-bottom:5px;"><strong>Enrollment trend — growing, stable, or declining</strong></li>
+  <li style="margin-bottom:5px;"><strong>Renewal date for school agreement</strong></li>
+</ul>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Proactive school communication calendar:</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>Start of term: brief message to principal — program dates confirmed, coach assigned, excited to be back</strong></li>
+  <li style="margin-bottom:5px;"><strong>Mid-term: short note — enrollment numbers, any highlights worth sharing</strong></li>
+  <li style="margin-bottom:5px;"><strong>End of term: summary message — children assessed, Skills Passports completed, zero incidents, thank you for the partnership</strong></li>
+  <li style="margin-bottom:5px;"><strong>Off-term: one touch per month — a relevant article, a program update, an enrollment figure for next term</strong></li>
+</ul>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>A principal who hears from you consistently and positively will fight to keep your program.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>A principal who only hears from you when there is a problem will not.</strong></p>`},
+    {h:`Quality Control Across Multiple Locations`,b:`<div class="doc-section-divider"></div>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Quality Control Across Multiple Locations</p>
+<p style="margin:0 0 10px;line-height:1.85;"><strong>Quality is easy to maintain when you are the only coach. It becomes a management challenge when you have a team.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Quality control tools:</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>1. The Session Audit</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Random unannounced observation of one session per month across your school portfolio.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Rotate schools so every school is observed at minimum once per quarter.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Use the observation checklist from Section 2.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>2. Parent Feedback</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Brief end-of-term parent survey — 3 questions maximum:</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>"How would you rate your child's experience this term?"</strong></li>
+  <li style="margin-bottom:5px;"><strong>"What did your child enjoy most?"</strong></li>
+  <li style="margin-bottom:5px;"><strong>"Is there anything we could improve?"</strong></li>
+</ul>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Read every response. Act on patterns. Acknowledge individuals where appropriate.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>3. Skills Passport Completion Rate</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Every child must receive a Passport entry at the end of every term.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Track completion rate in the operating system.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>A coach with less than 100% completion rate has a gap that must be addressed immediately.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>4. Incident Rate Monitoring</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Zero serious incidents is the target.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Any incident beyond a minor trip or scrape must be reviewed in the monthly team meeting.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Patterns of minor incidents at one school suggest a spacing or management issue that needs attention.</strong></p>
+<h3 style="color:var(--green-dark);border-bottom:2px solid var(--green-light);padding-bottom:8px;margin:24px 0 12px;font-size:16px;">CERTIFICATION ASSESSMENT — MODULE 5</h3>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Written (30%)</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>Describe the 5 elements of the Coach Management Framework.</strong></li>
+  <li style="margin-bottom:5px;"><strong>List the data points tracked in the EduGolfKids operating system for each school.</strong></li>
+  <li style="margin-bottom:5px;"><strong>Explain how quality control is maintained across multiple schools.</strong></li>
+</ul>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Practical Exercise (40%)</strong></p>
+<p style="margin:0 0 10px;line-height:1.85;"><strong>Licensee must demonstrate use of the Airtable operating system — adding a school, assigning a coach, logging a completed session, and generating a monthly invoice summary.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Scenario-Based (30%)</strong></p>
+<p style="margin:0 0 10px;line-height:1.85;"><strong>A coach calls in sick 2 hours before a session at your busiest school. Walk through your exact response from the moment you receive the call.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>MINIMUM PASS: 85%</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><em></em></p>`},
+  ]
+},
+{
+  id:"L3_M6",
+  title:"Module 6 \u2014 Growing Your Territory",
+  icon:"\ud83d\udcca",
+  sections:[
+    {h:`The Fill-First Growth Model`,b:`<div class="doc-section-divider"></div>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">The Fill-First Growth Model</p>
+<p style="margin:0 0 10px;line-height:1.85;"><strong>Field Intelligence: "The ideal business is to get as many schools fully occupied with coaches and students before trying to grow further."</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>This principle protects quality, revenue, and reputation simultaneously.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>What "fully occupied" means:</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>Every class at the school has 7 enrolled children</strong></li>
+  <li style="margin-bottom:5px;"><strong>Sessions are running consistently — 4 per month — with no chronic cancellations</strong></li>
+  <li style="margin-bottom:5px;"><strong>The school relationship is strong — principal is happy, no open issues</strong></li>
+  <li style="margin-bottom:5px;"><strong>The coach at that school is stable, certified, and performing well</strong></li>
+  <li style="margin-bottom:5px;"><strong>Parent retention from term to term is above 70%</strong></li>
+</ul>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Only when ALL five conditions are met is a school considered fully occupied.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Only when your existing schools are fully occupied should you prioritize adding a new school.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Why this matters:</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>A half-filled school earns less than a full school. Adding a new school does not fix this — filling the existing one does.</strong></li>
+  <li style="margin-bottom:5px;"><strong>Spreading attention across too many partially-filled schools means none of them get the focus needed to become excellent.</strong></li>
+  <li style="margin-bottom:5px;"><strong>Quality problems at 3 mediocre schools damage your reputation. Quality at 1 excellent school builds it.</strong></li>
+</ul>`},
+    {h:`Growth Stage Gates`,b:`<div class="doc-section-divider"></div>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Growth Stage Gates</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>EduGolfKids growth follows defined stage gates. Progress only when the current stage is stable.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Stage 1: Launch (1 School, 1 Coach, 1 Class)</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Focus: Learn the system. Build the first great school. Prove the model works in your territory.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Success criteria before moving to Stage 2:</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>Class consistently full at 7 children for minimum 2 consecutive terms</strong></li>
+  <li style="margin-bottom:5px;"><strong>Zero school relationship issues</strong></li>
+  <li style="margin-bottom:5px;"><strong>Coach certified at Level 1 and Level 2</strong></li>
+  <li style="margin-bottom:5px;"><strong>Skills Passport completion rate 100%</strong></li>
+  <li style="margin-bottom:5px;"><strong>Parent retention above 70%</strong></li>
+</ul>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Stage 2: First Expansion (1-2 Schools, 2-3 Classes)</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Focus: Add a second class at School 1 and begin approaching School 2.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Success criteria before moving to Stage 3:</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>Both classes at School 1 consistently full</strong></li>
+  <li style="margin-bottom:5px;"><strong>Second coach hired, certified, and performing independently</strong></li>
+  <li style="margin-bottom:5px;"><strong>School 2 agreement signed and first term completed successfully</strong></li>
+</ul>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Stage 3: Multi-School (3-5 Schools, Multiple Coaches)</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Focus: Systematize operations. Build the team. Install the operating system fully.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Success criteria before moving to Stage 4:</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>Operating system fully active — all schools, coaches, and students tracked</strong></li>
+  <li style="margin-bottom:5px;"><strong>Monthly team meeting structure in place</strong></li>
+  <li style="margin-bottom:5px;"><strong>All schools at minimum 2 classes — at least one approaching full 3-coach capacity</strong></li>
+  <li style="margin-bottom:5px;"><strong>Revenue covers all operating costs and produces meaningful net income</strong></li>
+</ul>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Stage 4: Territory Optimization (5-10 Schools)</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Focus: Bring all schools to full capacity. Transition from operator to manager.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>At this stage:</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>Licensee is primarily managing coaches and school relationships — not delivering sessions</strong></li>
+  <li style="margin-bottom:5px;"><strong>A lead coach is identified and developed for operational coverage</strong></li>
+  <li style="margin-bottom:5px;"><strong>Marketing is largely word-of-mouth and referral — enrollment is self-sustaining</strong></li>
+  <li style="margin-bottom:5px;"><strong>Revenue is predictable, strong, and growing month over month</strong></li>
+</ul>`},
+    {h:`Transitioning from Coach to Manager`,b:`<div class="doc-section-divider"></div>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Transitioning from Coach to Manager</p>
+<p style="margin:0 0 10px;line-height:1.85;"><strong>The most common growth bottleneck for EduGolfKids licensees is the transition from delivering sessions to managing a team that delivers sessions.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Many licensees are great coaches. Not all are natural managers. This transition requires intention.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Signs you are ready to transition:</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>You have 4+ schools running</strong></li>
+  <li style="margin-bottom:5px;"><strong>You have at least 3 certified coaches</strong></li>
+  <li style="margin-bottom:5px;"><strong>The operating system is tracking everything</strong></li>
+  <li style="margin-bottom:5px;"><strong>You are spending more time solving operational problems than coaching children</strong></li>
+</ul>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>How to transition:</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>Identify your strongest coach as a Lead Coach — give them additional responsibility and pay</strong></li>
+  <li style="margin-bottom:5px;"><strong>Begin delegating session delivery to your team — step back from regular delivery progressively</strong></li>
+  <li style="margin-bottom:5px;"><strong>Redirect your time to school development, coach recruitment, marketing, and financial management</strong></li>
+  <li style="margin-bottom:5px;"><strong>Remain visible in sessions monthly — quality assurance and team culture</strong></li>
+</ul>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>The Lead Coach role:</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>Covers licensee in school communication when needed</strong></li>
+  <li style="margin-bottom:5px;"><strong>Mentors and supports junior coaches</strong></li>
+  <li style="margin-bottom:5px;"><strong>Conducts quarterly peer observations</strong></li>
+  <li style="margin-bottom:5px;"><strong>Assists with demo days and parent information sessions</strong></li>
+  <li style="margin-bottom:5px;"><strong>Is compensated above standard coach rate for this responsibility</strong></li>
+</ul>`},
+    {h:`Revenue Milestones and Territory Value`,b:`<div class="doc-section-divider"></div>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Revenue Milestones and Territory Value</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Building a strong EduGolfKids territory creates a business asset with genuine value.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Revenue milestones:</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>3 schools, partial capacity: $3,000-$4,000 gross per month</strong></li>
+  <li style="margin-bottom:5px;"><strong>5 schools, full capacity: $8,000-$9,000 gross per month</strong></li>
+  <li style="margin-bottom:5px;"><strong>10 schools, full capacity: $16,000-$18,000 gross per month</strong></li>
+</ul>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Net margins of 45-55% produce real income at scale: $7,000-$10,000 net per month at 10 full schools.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Territory value as a business asset:</strong></p>
+<p style="margin:0 0 10px;line-height:1.85;"><strong>A well-run EduGolfKids territory with stable school contracts, an established team, and consistent revenue is a saleable business.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Service businesses with recurring revenue typically sell for 2-3x annual net profit.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>A territory generating $100,000 net per year has an asset value of $200,000-$300,000.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>This is what disciplined, quality-first growth builds.</strong></p>
+<h3 style="color:var(--green-dark);border-bottom:2px solid var(--green-light);padding-bottom:8px;margin:24px 0 12px;font-size:16px;">CERTIFICATION ASSESSMENT — MODULE 6</h3>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Written (30%)</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>Define "fully occupied" using all 5 criteria.</strong></li>
+  <li style="margin-bottom:5px;"><strong>Describe the 4 growth stage gates and their success criteria.</strong></li>
+  <li style="margin-bottom:5px;"><strong>Explain the Lead Coach role and why it is critical to scaling beyond Stage 3.</strong></li>
+</ul>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Practical Exercise (40%)</strong></p>
+<p style="margin:0 0 10px;line-height:1.85;"><strong>Licensee must present a 12-month growth plan for their territory starting from Stage 1, using the stage gate model, with realistic enrollment projections and revenue targets at each stage.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Scenario-Based (30%)</strong></p>
+<p style="margin:0 0 10px;line-height:1.85;"><strong>A licensee at Stage 2 is being pressured by a school to add a third location immediately. They currently have one class half-filled at School 1 and a new coach still completing certification. How should they respond?</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>MINIMUM PASS: 85%</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><em></em></p>`},
+  ]
+},
+{
+  id:"L3_M7",
+  title:"Module 7 \u2014 Brand Compliance &amp; Licensee Standards",
+  icon:"\ud83c\udff7\ufe0f",
+  sections:[
+    {h:`The EduGolfKids Brand Standards`,b:`<div class="doc-section-divider"></div>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">The EduGolfKids Brand Standards</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Visual Brand Standards:</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>All coaches wear approved EduGolfKids branded attire — no substitutions</strong></li>
+  <li style="margin-bottom:5px;"><strong>All marketing materials use approved EduGolfKids templates — no homemade alternatives</strong></li>
+  <li style="margin-bottom:5px;"><strong>Social media uses EduGolfKids branding guidelines — colors, fonts, logo usage</strong></li>
+  <li style="margin-bottom:5px;"><strong>Equipment bags, session kits, and Skills Passport materials are EduGolfKids branded</strong></li>
+</ul>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Program Standards:</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>Every session follows the non-negotiable 60-minute architecture</strong></li>
+  <li style="margin-bottom:5px;"><strong>Every coach is Level 1 and Level 2 certified before leading sessions independently</strong></li>
+  <li style="margin-bottom:5px;"><strong>Every child receives a Skills Passport entry at the end of every term</strong></li>
+  <li style="margin-bottom:5px;"><strong>CoachNow parent reports are sent at the end of every term</strong></li>
+  <li style="margin-bottom:5px;"><strong>Session pricing is within the EduGolfKids approved range</strong></li>
+</ul>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Communication Standards:</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>All parent communication uses EduGolfKids Growth Mindset language standards</strong></li>
+  <li style="margin-bottom:5px;"><strong>School agreements use HQ-approved templates</strong></li>
+  <li style="margin-bottom:5px;"><strong>Social media content follows the EduGolfKids content guidelines</strong></li>
+  <li style="margin-bottom:5px;"><strong>No unauthorized modifications to the EduGolfKids curriculum</strong></li>
+</ul>`},
+    {h:`What Licensees Can and Cannot Modify`,b:`<div class="doc-section-divider"></div>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">What Licensees Can and Cannot Modify</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>The EduGolfKids system is a franchise model. Its value comes from consistency.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Licensees have latitude in some areas — and zero latitude in others.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>You CAN customize:</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>Your personal style within sessions — energy, humor, personality</strong></li>
+  <li style="margin-bottom:5px;"><strong>Local marketing language and references</strong></li>
+  <li style="margin-bottom:5px;"><strong>School relationship approaches — every school culture is different</strong></li>
+  <li style="margin-bottom:5px;"><strong>Coach compensation structures within HQ guidelines</strong></li>
+  <li style="margin-bottom:5px;"><strong>Scheduling and term dates within HQ minimum standards</strong></li>
+</ul>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>You CANNOT modify:</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>Session architecture — the 60-minute structure is fixed</strong></li>
+  <li style="margin-bottom:5px;"><strong>Coaching curriculum — modules, progressions, and assessment criteria are fixed</strong></li>
+  <li style="margin-bottom:5px;"><strong>Safety standards — spacing, equipment, safeguarding protocols are non-negotiable</strong></li>
+  <li style="margin-bottom:5px;"><strong>Pricing below the EduGolfKids minimum</strong></li>
+  <li style="margin-bottom:5px;"><strong>Certifying coaches without completing the full TalentLMS curriculum</strong></li>
+  <li style="margin-bottom:5px;"><strong>Using the EduGolfKids brand for programs not covered by the licensee agreement</strong></li>
+</ul>`},
+    {h:`Reporting and HQ Relationship`,b:`<div class="doc-section-divider"></div>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Reporting and HQ Relationship</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Licensees report to EduGolfKids HQ quarterly with:</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>Active school count and enrollment numbers</strong></li>
+  <li style="margin-bottom:5px;"><strong>Coach certification status for all team members</strong></li>
+  <li style="margin-bottom:5px;"><strong>Skills Passport completion rates</strong></li>
+  <li style="margin-bottom:5px;"><strong>Any incidents or legal matters arising during the quarter</strong></li>
+  <li style="margin-bottom:5px;"><strong>Revenue report — gross and net</strong></li>
+</ul>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>HQ supports licensees with:</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>Curriculum updates and new module releases</strong></li>
+  <li style="margin-bottom:5px;"><strong>Marketing material updates and new campaign templates</strong></li>
+  <li style="margin-bottom:5px;"><strong>Peer licensee network — shared learnings and best practices</strong></li>
+  <li style="margin-bottom:5px;"><strong>Operating system updates and new features</strong></li>
+  <li style="margin-bottom:5px;"><strong>Legal and compliance guidance when needed</strong></li>
+</ul>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>The relationship between licensee and HQ is a partnership.</strong></p>
+<p style="margin:0 0 10px;line-height:1.85;"><strong>HQ's success depends on every licensee's success. Every licensee's success depends on the strength of the HQ system and brand.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>When either party holds up their side of this, the whole system wins.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">FINAL CERTIFICATION ASSESSMENT — LEVEL 3</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Written Examination (30%)</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Covering all 7 modules. Must demonstrate:</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>School acquisition strategy and tiering</strong></li>
+  <li style="margin-bottom:5px;"><strong>Recruitment model and ideal coach profile</strong></li>
+  <li style="margin-bottom:5px;"><strong>Marketing hierarchy and enrollment conversion tools</strong></li>
+  <li style="margin-bottom:5px;"><strong>Pricing model, revenue math, and financial management</strong></li>
+  <li style="margin-bottom:5px;"><strong>Operations framework for multi-school management</strong></li>
+  <li style="margin-bottom:5px;"><strong>Growth stage gates and scale model</strong></li>
+  <li style="margin-bottom:5px;"><strong>Brand compliance obligations</strong></li>
+</ul>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Business Plan Submission (40%)</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Licensee must submit a complete 12-month territory business plan including:</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>School target list — minimum 20 schools tiered by priority</strong></li>
+  <li style="margin-bottom:5px;"><strong>Recruitment plan — how and when coaches are hired</strong></li>
+  <li style="margin-bottom:5px;"><strong>Marketing calendar — demo days, newsletter placements, social media plan</strong></li>
+  <li style="margin-bottom:5px;"><strong>Revenue model — monthly projections from launch to Stage 3</strong></li>
+  <li style="margin-bottom:5px;"><strong>Operations setup — how the Airtable system will be implemented</strong></li>
+  <li style="margin-bottom:5px;"><strong>Growth plan — stage gate milestones and timelines</strong></li>
+</ul>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Practical Simulation (30%)</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Licensee participates in a full-day practical assessment covering:</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>School meeting simulation — cold to contract</strong></li>
+  <li style="margin-bottom:5px;"><strong>Coach interview simulation</strong></li>
+  <li style="margin-bottom:5px;"><strong>Parent information session delivery</strong></li>
+  <li style="margin-bottom:5px;"><strong>Operational scenario responses — sick coach, school cancellation, parent dispute</strong></li>
+</ul>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>MINIMUM PASS: 85% across all assessment components</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Level 3 Completion — What You Have Built</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>You now hold the complete EduGolfKids licensee toolkit.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Level 1 made you a great coach.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Level 2 made you a great golf educator.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Level 3 makes you a business operator.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Together they give you something rare in youth sport:</strong></p>
+<p style="margin:0 0 10px;line-height:1.85;"><strong>A complete system — from the science of how children learn, to the craft of how to teach golf, to the business of how to build a territory that serves thousands of children and generates real income.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>EduGolfKids was built to be the golden standard of teaching young children golf.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Every licensee who holds all three levels is proof of that standard.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Now go build something great.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><em></em></p>`},
+  ]
+},
+{
+  id:"L3_M8",
+  title:"Module 8 \u2014 Licensee Safety Responsibilities",
+  icon:"\ud83e\uddba",
+  sections:[
+    {h:`Module 8 — Licensee Safety Responsibilities`,b:`<p style="margin:0 0 10px;line-height:1.85;">MODULE 8<em></em></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>LICENSEE SAFETY RESPONSIBILITIES — WEATHER, COMPLIANCE &amp; INCIDENT MANAGEMENT AT SCALE</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Certification Study Manual — Coach Level 3</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>MODULE PURPOSE</strong></p>
+<p style="margin:0 0 10px;line-height:1.85;">Levels 1 and 2 trained you as a coach to apply safety protocols personally. Level 3 trains you as a licensee — responsible for safety compliance across an entire team of coaches and multiple school sites.</p>
+<p style="margin:0 0 10px;line-height:1.85;">This module trains licensees to:</p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;">Build and maintain a safety compliance system across all schools in their territory</li>
+  <li style="margin-bottom:5px;">Ensure every coach is trained, current, and compliant with all EduGolfKids safety standards</li>
+  <li style="margin-bottom:5px;">Manage weather-related session changes across multiple sites simultaneously</li>
+  <li style="margin-bottom:5px;">Receive, document, and escalate incident reports from their coaching team</li>
+  <li style="margin-bottom:5px;">Maintain insurance compliance and safety records for HQ review</li>
+</ul>
+<p style="margin:0 0 10px;line-height:1.85;"><strong>⚠  As a licensee, you are legally responsible for the safety of every child in every session delivered by your coaching team. Your coaches' safety failures are your liability. Build the system. Enforce it. Never assume.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>SECTION 1 — BUILDING A SAFETY-COMPLIANT COACHING TEAM</strong></p>
+<p style="margin:0 0 10px;line-height:1.85;">Every coach you deploy must be safety-compliant before entering a school. This is a non-negotiable gate — not a preference.</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Pre-Deployment Safety Checklist — Every Coach:</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;">☐  Background check cleared and on file</li>
+  <li style="margin-bottom:5px;">☐  Level 1 Module 11 (Weather &amp; Emergency Safety) certified</li>
+  <li style="margin-bottom:5px;">☐  Level 2 Module 8 (Skills Session Safety) certified — before leading skills sessions</li>
+  <li style="margin-bottom:5px;">☐  Current First Aid certification on file</li>
+  <li style="margin-bottom:5px;">☐  Safeguarding and mandatory reporter training completed</li>
+  <li style="margin-bottom:5px;">☐  Site-specific Emergency Action Plan (EAP) reviewed for assigned school</li>
+  <li style="margin-bottom:5px;">☐  EAP signed and returned to licensee</li>
+  <li style="margin-bottom:5px;">☐  Added to EduGolfKids operating system with certification records</li>
+</ul>
+<p style="margin:0 0 10px;line-height:1.85;"><strong>RULE: A coach without a cleared background check and Level 1 safety certification does not enter a school. No exceptions. No "they're just observing."</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>SECTION 2 — WEATHER MANAGEMENT ACROSS MULTIPLE SITES</strong></p>
+<p style="margin:0 0 10px;line-height:1.85;">As a licensee operating multiple schools, you may have coaches at 3, 5, or 10 sites simultaneously. A weather event can affect multiple schools at once.</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Multi-Site Weather Protocol:</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>BEFORE SESSIONS — DAILY MORNING CHECK:</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;">Every session day — check the weather for every active site by 8am</li>
+  <li style="margin-bottom:5px;">If any site has a thunderstorm forecast within 4 hours of its session time — contact the coach for that site immediately</li>
+  <li style="margin-bottom:5px;">Confirm indoor backup availability for any at-risk site</li>
+  <li style="margin-bottom:5px;">If indoor backup is not available — make the postponement decision early. Do not leave it to the coach in the field.</li>
+</ul>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>REAL-TIME COMMUNICATION:</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;">All coaches must have a direct communication line to you during sessions</li>
+  <li style="margin-bottom:5px;">Coaches must be able to reach you within 5 minutes during any active session</li>
+  <li style="margin-bottom:5px;">Establish a group communication channel for all coaches — weather alerts can be shared instantly</li>
+</ul>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>MAKE-UP SESSION MANAGEMENT:</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;">Weather cancellations must be rescheduled within the same billing month where possible</li>
+  <li style="margin-bottom:5px;">Maintain a make-up session tracker in your operating system</li>
+  <li style="margin-bottom:5px;">Communicate rescheduled dates to schools and parents within 24 hours of cancellation</li>
+</ul>
+<p style="margin:0 0 10px;line-height:1.85;"><strong>RULE: A weather cancellation is a business event, not just a safety event. Handle it professionally — communicate quickly, reschedule promptly, and protect your revenue.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>SECTION 3 — INCIDENT MANAGEMENT AND ESCALATION</strong></p>
+<p style="margin:0 0 10px;line-height:1.85;">When an incident occurs at one of your schools, you are the first escalation point above the coach. Your role is to receive, assess, support, and report.</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Incident Response Framework — Licensee Level:</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>STEP 1 — RECEIVE</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;">Coach contacts you immediately following any incident</li>
+  <li style="margin-bottom:5px;">Gather the facts: what happened, who was involved, what action was taken, current status of the child</li>
+</ul>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>STEP 2 — ASSESS SEVERITY</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;">Minor (no injury, no medical involvement, no parent concern): Coach completes incident report — you review and countersign</li>
+  <li style="margin-bottom:5px;">Moderate (injury treated, parent notified, child collected): You contact the parent directly within 2 hours. You notify HQ within 24 hours.</li>
+  <li style="margin-bottom:5px;">Severe (emergency services called, hospitalization, safeguarding concern): You notify HQ immediately — call, do not email. You support the coach and school. You do not make public statements.</li>
+</ul>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>STEP 3 — DOCUMENT</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;">All incidents are logged in the EduGolfKids operating system</li>
+  <li style="margin-bottom:5px;">Incident report submitted by coach within 24 hours</li>
+  <li style="margin-bottom:5px;">Licensee review and countersignature within 48 hours</li>
+  <li style="margin-bottom:5px;">HQ notified of any moderate or severe incident</li>
+</ul>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>STEP 4 — REVIEW AND PREVENT</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;">After any incident — conduct a brief review with the coach: what happened, what could be done differently</li>
+  <li style="margin-bottom:5px;">If a pattern of safety issues emerges at a coach or site — address it immediately</li>
+  <li style="margin-bottom:5px;">Share learnings with your full coaching team where appropriate — anonymously if sensitive</li>
+</ul>
+<p style="margin:0 0 10px;line-height:1.85;"><strong>⚠  Do not cover up incidents. Do not downgrade severity to avoid HQ notification. A covered-up incident that escalates is a far greater liability than a reported one.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>SECTION 4 — INSURANCE AND COMPLIANCE RECORDS</strong></p>
+<p style="margin:0 0 10px;line-height:1.85;">As a licensee, you are required to maintain the following insurance and compliance records at all times:</p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;">Current general liability insurance — minimum coverage as specified by EduGolfKids HQ and updated annually</li>
+  <li style="margin-bottom:5px;">Certificates of insurance available for every school upon request</li>
+  <li style="margin-bottom:5px;">All coach First Aid certifications on file with expiry dates tracked</li>
+</ul>`},
+    {h:`Module 8 — Licensee Safety Responsibilities (continued)`,b:`<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;">All coach background checks on file — refreshed at the frequency required by your jurisdiction</li>
+  <li style="margin-bottom:5px;">All coach EduGolfKids certifications recorded in TalentLMS and the operating system</li>
+  <li style="margin-bottom:5px;">Emergency Action Plans signed for every active school site</li>
+</ul>
+<p style="margin:0 0 10px;line-height:1.85;"><strong>RULE: HQ may request your compliance records at any time with 48 hours notice. Your records must be complete, current, and accessible. Missing records are a breach of your license agreement.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>SECTION 5 — BUILDING A SAFETY CULTURE IN YOUR TEAM</strong></p>
+<p style="margin:0 0 10px;line-height:1.85;">A safety culture is not a checklist. It is a standard that every coach understands, believes in, and applies without being told.</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>How to Build It:</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;">Brief safety reminders in every team communication during high-risk weather seasons</li>
+  <li style="margin-bottom:5px;">Acknowledge coaches who demonstrate excellent safety practice — publicly within the team</li>
+  <li style="margin-bottom:5px;">Address safety shortcuts immediately and privately — never ignore them</li>
+  <li style="margin-bottom:5px;">Run a simulated lightning evacuation drill with new coaches before their first independent session</li>
+  <li style="margin-bottom:5px;">Make the pre-session safety checklist a non-negotiable routine — check that coaches are using it</li>
+</ul>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Red Flags — Act Immediately If You Observe:</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;">A coach who dismisses weather warnings as "overreacting"</li>
+  <li style="margin-bottom:5px;">A coach who has never completed the pre-session safety checklist</li>
+  <li style="margin-bottom:5px;">A coach who allows children to carry clubs during transitions</li>
+  <li style="margin-bottom:5px;">A coach who has not reviewed the site EAP</li>
+  <li style="margin-bottom:5px;">A coach who delays reporting an incident</li>
+</ul>
+<p style="margin:0 0 10px;line-height:1.85;"><strong>⚠  A coach who takes shortcuts with safety will eventually have an incident. Your job as licensee is to identify and correct this behaviour before that happens.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>CERTIFICATION ASSESSMENT — MODULE 8</strong></p>
+<p style="margin:0 0 10px;line-height:1.85;">Written Assessment (minimum pass: 85%):</p>
+<p style="margin:0 0 10px;line-height:1.85;"><strong>1.  </strong>You have 4 sessions running simultaneously across 3 schools on a Tuesday afternoon. A storm front moves in unexpectedly at 2pm. Two schools have indoor backup, one does not. Walk through your exact response.</p>
+<p style="margin:0 0 10px;line-height:1.85;"><strong>2.  </strong>A coach calls you after a session to tell you a child was struck lightly on the arm by another child's club. No injury is visible. The parent has not been told. What do you do?</p>
+<p style="margin:0 0 10px;line-height:1.85;"><strong>3.  </strong>Describe the pre-deployment safety checklist for a new coach. What is the consequence of skipping any step?</p>
+<p style="margin:0 0 10px;line-height:1.85;"><strong>4.  </strong>HQ requests your compliance records with 48 hours notice. What documents must you be able to produce?</p>
+<p style="margin:0 0 10px;line-height:1.85;">Practical Assessment:</p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;">Licensee must demonstrate their operating system with complete coach certification records and at least one incident report on file.</li>
+  <li style="margin-bottom:5px;">Licensee must walk through their multi-site weather management protocol for a scenario where 3 sites are affected simultaneously.</li>
+</ul>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Your coaches trust you to have the system.</strong></p>
+<p style="margin:0 0 10px;line-height:1.85;"><em>Schools trust you with their children. Build the system. Enforce it. Every time.</em></p>`},
+  ]
+},
 ],
 
 };
@@ -3023,6 +5811,14 @@ L3:[
 // ══════════════════════════════════════════
 
 const KNOWLEDGE_CHECKS = {
+M0:[
+{q:'A coach is working with a 6-year-old who is the only child enrolled due to low enrollment. Which condition MUST be met for this one-on-one session to proceed?',o:['Written consent from the parent','A second adult must be present and the space must be open and observable','The session must move outdoors where visibility is greater','No additional conditions are required'],c:1,e:'One-on-one sessions require a second adult present in the facility AND the session must take place in an open, observable space.'},
+{q:'A coach suspects a child may be experiencing abuse at home based on behavioral changes and a visible injury. What must the coach do?',o:['Contact the parent directly to discuss the concern','Wait for further evidence before taking any action','Ensure child safety, report to the designated school authority, follow state reporting law, and notify the EduGolfKids Compliance Officer','Discuss the observation with other coaches to get their perspective'],c:2,e:'Coaches are mandatory reporters. The prescribed sequence is: ensure child safety → report to designated school authority → follow state reporting law → notify EduGolfKids Compliance Officer.'},
+{q:'Under the EduGolfKids physical contact policy, a coach may adjust a child\'s grip ONLY when:',o:['The parent has provided written consent','Verbal cueing has been attempted first AND the coach explains the contact before making it','The coach deems it instructionally necessary','Any of the above conditions are met'],c:1,e:'EduGolfKids enforces Controlled & Transparent Instructional Contact. Both conditions must be met: verbal cueing attempted first, and the coach must explain the contact before making it.'},
+{q:'How early must an EduGolfKids coach arrive before a scheduled session?',o:['5 minutes','10 minutes','15 minutes minimum','At any point before the session starts'],c:2,e:'Coaches must arrive at the school a minimum of 15 minutes prior to scheduled lesson start time. All equipment must be fully set up before children arrive.'},
+{q:'A parent is 45 minutes late to collect their child after a session. What is the correct procedure?',o:['Allow the child to wait in the school building unsupervised','Remain with the child, contact the parent immediately, and maintain supervision until collected','Contact school administration and then leave the child in their care','Call emergency services after 30 minutes'],c:1,e:'The Zero-Unsupervised-Child Standard applies during late pickups. The coach must remain with the child, contact the parent immediately, and confirm pickup arrangements.'},
+{q:'Equipment breakdown after a session may only begin when:',o:['The 60-minute session time has elapsed','The coach has submitted the session log','All children have been safely handed over and the area is clear of participants','The principal has confirmed the area can be vacated'],c:2,e:'Equipment breakdown may only begin when all children have been safely handed over and the session area is fully cleared of participants. Packing up while children are present is prohibited.'},
+],
 M0_S1:[
 {q:'A coach is working with a 6-year-old who is the only child enrolled due to low enrollment. Which condition MUST be met for this one-on-one session to proceed?',o:['Written consent from the parent','A second adult must be present and the space must be open and observable','The session must move outdoors where visibility is greater','No additional conditions are required'],c:1,e:'One-on-one sessions require a second adult present in the facility AND the session must take place in an open, observable space.'},
 {q:'A coach suspects a child may be experiencing abuse at home based on behavioral changes and a visible injury. What must the coach do?',o:['Contact the parent directly to discuss the concern','Wait for further evidence before taking any action','Ensure child safety, report to the designated school authority, follow state reporting law, and notify the EduGolfKids Compliance Officer','Discuss the observation with other coaches to get their perspective'],c:2,e:'Coaches are mandatory reporters. The prescribed sequence is: ensure child safety → report to designated school authority → follow state reporting law → notify EduGolfKids Compliance Officer.'},
@@ -3057,6 +5853,9 @@ L1_M4:[
 L1_M5:[
 {q:'A coach finishes a putting game and wants to embed critical thinking before moving on. Which prompt BEST achieves this?',o:['"Good job everyone — let\'s line up for the chipping station"','"What adjustment did you make that helped you get closer to the target?"','"Remember to keep your head still on the next drill"','"Who scored the most points? Great work"'],c:1,e:'Critical thinking in golf sessions is developed through reflective questions asking children to analyze their own performance. "What adjustment did you make that helped?" is a metacognitive prompt aligned with 21st-century learning.'},
 {q:'A coach observes that children are not adjusting their approach between attempts. Which prompt BEST develops metacognition?',o:['"Remember — same setup, same result. You need to change something."','"What are you going to try differently on this next attempt, and why?"','"Watch how [name] is doing it — try to copy that approach"','"You have 10 attempts left. See if you can score higher"'],c:1,e:'"What are you going to try differently on this next attempt, and why?" is a metacognitive prompt requiring children to think about their own thinking process before acting — developing self-regulation and reflective practice.'},
+
+{q:'A coach finishes a putting game and wants to embed critical thinking. Which prompt BEST achieves this?',o:['Good job everyone let\'s line up for chipping','What adjustment did you make that helped you get closer to the target?','Remember to keep your head still on the next drill','Who scored the most points?'],c:1,e:'Critical thinking is developed through reflective questions that ask children to analyze their own performance and identify what changed.'},
+{q:'Which statement BEST describes the EduGolfKids coach role according to Module 5?',o:['Authority figure who gives instructions and corrects constantly','Learning facilitator, environment designer, question asker, confidence builder — more questions than commands','Junior golf professional who simplifies adult technique for young learners','Activity supervisor who keeps children safe and engaged'],c:1,e:'EduGolfKids coaches are guided learning architects. Target communication ratio: more questions than commands.'}
 ],
 L1_M6:[
 {q:'A coach says to a 7-year-old in front of the group: "You always rush — you never take your time." Under the EduGolfKids Language Code, this statement:',o:['Is acceptable because it is factually accurate','Violates the Language Code — it uses identity-based criticism ("always," "never") that creates shame and triggers anxiety','Is acceptable if said in a gentle tone','Is acceptable in the 6–9 age group who can handle more direct feedback'],c:1,e:'"You always..." and "you never..." are prohibited language patterns — they attack identity rather than describe behavior. The Language Code requires neutral outcome description and effort-based guidance.'},
@@ -3066,10 +5865,16 @@ L1_M6:[
 L1_M7:[
 {q:'A coach delivers an excellent and safe Skill Block but uses multiple prohibited phrases including "No, not like that" during the session. How should this session be evaluated?',o:['As a pass — the technical and safety execution was correct','As a fail — integration is mandatory, and Language Code violation is a failure criterion regardless of technical correctness','As requiring a partial reassessment on language only','As a conditional pass pending a follow-up observation'],c:1,e:'Module 7 states: "If a coach delivers a technically correct drill but violates language code → failure." Integration is mandatory — all modules must be applied simultaneously.'},
 {q:'According to the Full Integration Map, which session segment applies the MOST motor learning principles (M3)?',o:['Warm-Up','Skill Block','Game Reinforcement','Wrap-Up'],c:1,e:'The Full Integration Map shows the Skill Block as the highest concentration of motor learning application — multiple constraint challenges, external focus cues, variable practice, and guided discovery are primarily deployed here.'},
+
+{q:'A coach delivers a safe Skill Block but uses prohibited language throughout. How should this session be evaluated?',o:['Pass — the technical and safety execution was correct','Fail — integration is mandatory. Language Code violation is a failure criterion regardless of technical correctness.','Conditional pass pending follow-up observation','Partial reassessment on language only'],c:1,e:'Module 7: if a coach delivers a technically correct drill but violates the Language Code → failure. Integration is mandatory — all modules must be applied simultaneously.'},
+{q:'Which session segment has the HIGHEST concentration of Motor Learning (M3) application?',o:['Warm-Up','Skill Block','Game Reinforcement','Wrap-Up'],c:1,e:'The Full Integration Map shows the Skill Block as the highest concentration of motor learning — constraint challenges, external focus cues, variable practice, and guided discovery are primarily deployed here.'}
 ],
 L1_M8:[
 {q:'A parent messages the coach on their personal Instagram asking for a progress update. The correct response is:',o:['Respond with a brief positive update since the intent is harmless','Do not respond via personal social media — direct the parent to contact through the approved EduGolfKids communication channel','Block the parent to avoid further personal contact','Respond but advise the parent to use official channels in future'],c:1,e:'Coaches must use only approved EduGolfKids communication channels for parent contact. Personal social media connections with parents are explicitly prohibited.'},
 {q:'A coach wants to send parents a mid-term progress update about a 7-year-old struggling with distance control in putting. Which message is MOST aligned with EduGolfKids communication standards?',o:['"James is having difficulty reaching target distances in putting and needs significant improvement."','"James is building his distance control in putting — he\'s showing great focus and we\'re working through a great challenge that will accelerate this in the final sessions."','"James is below average compared to his peer group in putting distance."','"James enjoys putting but unfortunately cannot reach the target distances we need him to."'],c:1,e:'Parent communication must use growth language: describe progress positively, reference specific program activity, avoid negative ability assessments, never compare to peers.'},
+
+{q:'A parent messages the coach on personal Instagram asking for a progress update. The correct response is:',o:['Respond with a brief positive update since the intent is harmless','Do not respond via personal social media — direct the parent to contact through the approved EduGolfKids communication channel','Block the parent to avoid further contact','Respond but advise the parent to use official channels in future'],c:1,e:'Coaches must use only approved EduGolfKids communication channels for parent contact. Personal social media connections with parents are explicitly prohibited.'},
+{q:'A coach wants to share a mid-term update about a 7-year-old struggling with putting distance. Which message BEST aligns with EduGolfKids communication standards?',o:['James is having difficulty reaching target distances and needs significant improvement','James is building his distance control in putting and showing great focus — we are working through a challenge that will accelerate this','James is below average compared to his peer group in putting distance','James enjoys putting but cannot reach the target distances we need'],c:1,e:'Parent communication must use growth language: describe progress positively, reference specific program activity, avoid negative ability assessments, never compare to peers.'}
 ],
 L1_M9:[
 {q:'A coach has just started with a new school group of 8 children aged 6–9. Before beginning any activity, what is the FIRST thing the coach must do?',o:['Run an energetic warm-up game to establish the session tone','Teach the group the 5 standard commands: FREEZE, RESET, RETRIEVE, ROTATE, EYES ON ME','Conduct a skills assessment to determine the children\'s starting level','Introduce themselves and explain the full EduGolfKids program structure'],c:1,e:'The 5 standard commands are the safety foundation for every session. They must be taught to every new group before activity begins. Never assume children from different schools know the same commands.'},
@@ -3089,56 +5894,114 @@ L1_M11:[
 L2_M1:[
 {q:'A 5-year-old consistently pushes the ball right of the target when putting. The constraints-led correction is:',o:['Tell the child their putter face is open and demonstrate the correct face angle','Set up a gate drill: two tees 6 inches apart — the gate provides face-angle feedback without any verbal correction','Reduce the putting distance to 1 foot until accuracy improves','Ask the child to watch a peer who is putting accurately and copy them'],c:1,e:'CLA for putting: a gate of two tees provides immediate environmental feedback on face alignment. The child\'s nervous system self-corrects to navigate the gate. No verbal instruction about face angle is needed.'},
 {q:'A coach is assessing a 7-year-old\'s Skills Passport putting criteria. The child makes 3 out of 5 putts from 4 feet through a 6-inch gate. What is the correct assessment outcome?',o:['Not yet met — the standard requires 4 out of 5','Met — 3 out of 5 meets the stated criteria for this age group','Partially met — record as in-progress','Not assessable — the gate is too small for this age group'],c:1,e:'Skills Passport criteria for ages 6–9 putting: "3 out of 5 putts from 4 feet through a 6-inch gate." 3 out of 5 meets the standard. Assessment is observable and specific — no subjective interpretation required.'},
+
+{q:'A 5-year-old is in Stage 1 of the putting progression. What is the coach\'s primary role?',o:['Correct grip and stance to establish good habits early','Place ball near hole, let child attempt without instruction, celebrate any contact — do NOT correct technique','Set up a gate drill and teach face angle awareness','Introduce the 3-count ritual to develop a consistent setup routine'],c:1,e:'Stage 1 is Free Exploration. The child attempts without instruction and the coach celebrates any contact. No grip, stance, or technique correction at this stage.'},
+{q:'A 7-year-old\'s putts consistently stop short. The correct constraint response is:',o:['Instruct the child to swing harder through impact','Move the target closer until the child builds confidence, then gradually increase distance','Tell the child they are decelerating and need to accelerate through the ball','Switch to a longer putter to generate more distance'],c:1,e:'Ball stopping short = deceleration = fear of hitting too hard. Solution: move target closer, build confidence of reaching, slowly increase distance. Never give technical instruction about acceleration.'},
+{q:'For ages 4–6, what is the maximum putting distance used in the progression?',o:['8–10 feet','5–6 feet','2–4 feet maximum','10–15 feet'],c:2,e:'Ages 4–6 putting: maximum distance 2–4 feet. Target minimum 6 inches diameter. Putter below chin. Foam ball. These constraints ensure achievable success at the Active Start stage.'}
 ],
 L2_M2:[
 {q:'What is the PRIMARY reason EduGolfKids connects the chipping motion to the putting motion?',o:['It reduces the number of grip adjustments children need to make','Motor learning research shows skill transfer is maximized when new movements are anchored to existing neural patterns — children learn chipping 40% faster this way','It allows children to use the same club for both skills','It is consistent with LTAD stage requirements'],c:1,e:'Motor learning research (Wulf 2013): skill transfer is maximized when new movements anchor to existing neural patterns. The chipping-putting connection leverages the pendulum motion already established.'},
 {q:'A 7-year-old consistently tops the ball (ball rolls along ground). The constraints-led response is:',o:['Instruct the child to keep their head down and watch the ball throughout the swing','Lower the tee height so the ball sits closer to the ground, and/or shrink the ball size — both force more precise contact naturally','Use a different club — a shorter iron will reduce the error','Have the child practice the chip motion without a ball first'],c:1,e:'Topping error CLA response: lowering the tee height or shrinking the ball size both require more precise contact. The constraint creates the correct movement pattern through natural problem-solving.'},
+
+{q:'During Stage 2 Club Discovery for ages 6–9, what does the coach do?',o:['Explain loft differences before the child tries the clubs','Give both clubs with no instruction: "Try both and tell me what you notice"','Assign the wedge for short chips and the 7-iron for longer chips','Wait until the child asks about club selection'],c:1,e:'Club selection thinking emerges through exploration, not lecture. Give both clubs, no instruction. After exploration use guided discovery.'},
+{q:'A child\'s chip shots have no trajectory — the ball runs along the ground. The correct constraint response is:',o:['Instruct the child to open the club face and take more loft','Introduce an air gate — two cones 12 inches high. Ball must fly through to score.','Tell the child to position the ball further forward in their stance','Switch to a higher-lofted club and instruct the child to use it'],c:1,e:'No trajectory CLA: introduce the air gate. The gate creates a loft requirement without any technical explanation.'},
+{q:'What is the primary reason EduGolfKids teaches chipping as an extension of putting?',o:['It reduces the number of grip changes needed','Motor learning research shows skill transfer is maximized when new movements anchor to existing neural patterns — children learn chipping 40% faster','It allows children to use the same club for both skills','It is consistent with LTAD stage requirements'],c:1,e:'Motor learning (Wulf 2013): skill transfer maximized when new movements build on existing neural patterns. The chipping-putting connection leverages the already-established pendulum motion.'}
 ],
 L2_M3:[
 {q:'Which constraint is MOST effective for helping a 9-year-old develop pitching distance awareness WITHOUT direct instruction about swing length?',o:['Instruct the child: "Bigger swing = more distance"','Distance zones: landing targets at 15, 20, 25, 30 feet — child selects zone, executes, self-scores. Distance awareness emerges through exploration','Use different clubs at each distance to vary the trajectory','Time-pressure rounds: child must pitch to all zones within 60 seconds'],c:1,e:'Variable distance constraint: landing zones at progressive distances require the child\'s nervous system to self-regulate swing length for each target. The relationship between swing size and distance is discovered through exploration.'},
+
+{q:'Why is pitching classified as a 6–9 age skill only?',o:['Younger children do not have the attention span for pitching','Pitching requires simultaneous hip rotation, weight transfer, and trajectory management — these demand FUNdamentals stage neurological readiness','Pitching equipment is too heavy for children under 6','The injury risk from pitching is too high for Active Start stage'],c:1,e:'Pitching requires simultaneous integration of hip/shoulder rotation, weight transfer, and trajectory management. These demand FUNdamentals stage neurological readiness.'},
+{q:'Stage 4 of the pitching progression integrates two skills for the first time. What does this look like?',o:['Child uses both a 7-iron and a wedge in the same scoring game','Pitching + Putting Course: child pitches to within putting distance, then putts out — first integration of two skills','Child pitches to a landing zone and then chips to the hole','Two children compete — one pitches and one putts, earning team points'],c:1,e:'Stage 4 is a Pitching + Putting Course: pitch to within putting distance, then putt out. First time two skills are integrated in a real course-simulation context.'}
 ],
 L2_M4:[
 {q:'A 9-year-old has good contact and distance but loses balance consistently at the finish. The constraints-led response is:',o:['Instruct the child to "hold your finish position for 3 seconds after every shot"','Use the feet-together drill — this forces balanced rotation naturally through the movement challenge, no verbal instruction about balance required','Widen the child\'s stance to create a more stable base','Reduce swing speed and build up gradually'],c:1,e:'Feet-together drill: when children cannot maintain balance, their nervous system must find a balanced rotation pattern to execute the swing. Balance improves through the constraint — not through instruction about how to balance.'},
+
+{q:'Why does EduGolfKids introduce the full swing LAST in the skill progression?',o:['The full swing requires the most space so it is left until equipment can be set up properly','By this stage, children have pendulum rhythm (putting), downward strike (chipping), and weight transfer/rotation (pitching) — the full swing is an extension, not a new skill','The full swing is the most technically complex and requires the most preparation time','Full swing equipment is the most expensive so schools delay its use'],c:1,e:'The full swing is introduced last because it builds on everything already learned. It is an extension of existing foundations, not a new skill.'},
+{q:'A parent asks if their 6-year-old can start using a driver. What conditions must be met?',o:['The child must be in the 6–9 age group with good coordination','Foam balls only, adequate space, and consistent 7-iron competency must be established first. At 4–6, full swing is through free play only — never structured instruction.','Driver use requires written parent consent and must be in an outdoor setting only','The child must have completed the putting and chipping Skills Passport criteria first'],c:1,e:'Driver use requires: foam balls only, adequate space, consistent 7-iron competency first. Ages 4–6: full swing through free play only — never structured instruction.'}
 ],
 L2_M5:[
 {q:'An 8-year-old asks why they cannot pick up their ball and place it closer to the hole. The MOST appropriate rules introduction is:',o:['Explain the full rules of golf including stroke play and penalties','Address it in the moment: "In golf, we play the ball from where it stops — that\'s what makes it a great challenge. Let\'s try from there." One rule, in context','Tell the child that EduGolfKids sessions do not follow golf rules','Redirect the child without explanation to avoid a lengthy rules discussion'],c:1,e:'Rules introduction: rules are only introduced when a situation arises — never front-loaded. One rule, explained in context, connected to the game situation.'},
+
+{q:'How should a coach introduce the rule \'play the ball from where it stops\' to a group of 8-year-olds?',o:['Spend 5 minutes at the start of the session explaining all basic golf rules','Only introduce the rule when a situation naturally arises in a game — one rule in context, then continue playing immediately','Print a rules sheet and distribute it to all children at the start of term','Ask children to study the rules at home and bring questions to the next session'],c:1,e:'Rules introduction: only when a situation arises — never front-loaded. One rule, in context, connected to the game situation.'},
+{q:'What is the purpose of the end-of-session etiquette ritual?',o:['To assess whether children have met Skills Passport etiquette criteria','To build club culture — children stack equipment correctly, applaud the best effort, and say something positive to the person next to them','To provide a structured cool-down that reduces injury risk','To give coaches time to pack up while children are occupied'],c:1,e:'The 2-minute end-of-session etiquette ritual: stack equipment correctly, group applause for best effort (coach nominates), say a positive word to the person next to them.'}
 ],
 L2_M6:[
 {q:'At end of term a coach has assessed Skills Passport criteria for 6 out of 7 children. One child was absent for the final assessment session. What must the coach do?',o:['Record "Not Assessed" status for the absent child and move on','Contact the parent to schedule an assessment in the first session of next term — 100% completion is mandatory','Assess the child based on performance observations from earlier in the term','Advise the licensee and allow them to decide'],c:1,e:'100% completion rate is mandatory — every enrolled child must receive a Passport entry at end of every term. An absent child requires a scheduled assessment in the first session of next term.'},
+
+{q:'When must a coach complete Skills Passport assessment for all enrolled children?',o:['At the end of every third session','At the end of every term — 100% of enrolled children must receive a Passport entry. No exceptions.','Only for children who have shown measurable improvement','At the start of each new term as a baseline'],c:1,e:'Completion is mandatory: 100% of enrolled children must receive a Passport entry at the end of every term. No exceptions.'},
+{q:'A child makes 3 out of 5 putts from 4 feet through a 6-inch gate. What is the outcome for ages 6–9?',o:['Not yet met — standard requires 4 out of 5','Met — 3 out of 5 meets the stated criteria for this age group','Partially met — record as in-progress','Met — any attempt counts because effort is primary'],c:1,e:'Skills Passport criteria for ages 6–9 putting: 3 out of 5 putts from 4 feet through a 6-inch gate meets the standard.'}
 ],
 L2_M7:[
 {q:'After watching a video clip of their putting stroke, a 9-year-old says "My arm is bending." Before responding, the coach should:',o:['Confirm the observation and correct the arm position directly','Validate the self-observation first: "Interesting — what do you think happens to the ball when your arm bends at impact?"','Tell the child not to focus on their arm — external focus is more effective','Use the observation as a teaching moment for the full group'],c:1,e:'Video analysis guided discovery: the child has made a self-observation — a high-quality motor learning moment. The coach validates and converts it to a guided discovery question. This builds autonomy and self-correction ability.'},
+
+{q:'For which age group is CoachNow video analysis appropriate?',o:['Ages 4–6 from the first session as a motivational tool','Ages 6–9 only, after consistent contact and basic skill pattern are established — for self-discovery questions only','All ages, used as a primary teaching tool throughout','Any age when the parent requests video feedback'],c:1,e:'Video analysis is a Level 2 tool. Ages 6–9 only, after consistent contact and basic skill pattern are established, for self-discovery questions only.'},
+{q:'After showing a 9-year-old a video of their stroke, the child says \'My elbow is bending.\' What does the coach do FIRST?',o:['Confirm the observation and immediately correct the elbow position','Validate the self-observation: "Interesting — what do you think happens to the ball when your elbow bends at impact?"','Tell the child not to focus on their elbow','Use the observation as a teaching moment for the full group'],c:1,e:'Video guided discovery: validate the self-observation and convert it to a guided discovery question. Builds autonomy and self-correction ability through the child\'s own insight.'},
+{q:'What is the correct video clip length and timing in EduGolfKids sessions?',o:['30–60 seconds capturing multiple attempts','Maximum 10 seconds — shown immediately after the attempt. Ask "What did you notice?" before any observation.','2–3 minutes providing comprehensive feedback','As long as needed to capture the full swing sequence'],c:1,e:'Protocol: Record one clip (maximum 10 seconds). Show immediately after the attempt. Ask "What did you notice?" before making any observation yourself.'}
 ],
 L2_M8:[
 {q:'A coach is running a chipping session in a gym with a 9-foot ceiling. Full chipping swings are hitting the ceiling and bouncing unpredictably. What is the CORRECT response?',o:['Continue the session but ask children to reduce their swing size','Assess the ceiling height as unsafe for full chipping — transition to a putting session or modify to chip-length motion only','Move the children to one half of the gym where the ceiling appears higher','Inform parents about the ceiling issue and seek permission to continue'],c:1,e:'Indoor sessions require ceiling height assessment. If full swing is not appropriate, the coach must modify — shorter iron or chip-length swings only indoors. A ceiling being struck creates unpredictable projectile risk.'},
 {q:'During a full swing session, a child repeatedly swings before the RETRIEVE command while others are still collecting balls. Steps 1–3 of the Behavior Management Ladder have been applied with no improvement. What is the correct Step 4 action?',o:['Physically guide the child back to their starting position','"I need you to wait for the RETRIEVE command. If you swing before it is given, you will take a 2-minute break from the activity. It\'s your choice."','Remove the child from the session entirely','Reduce the child\'s equipment to a putter only for the remainder of the session'],c:1,e:'Behavior Management Step 4: choice and consequence. "I need you to [behavior]. If you continue, [consequence]. It\'s your choice." This maintains dignity and gives agency while making the consequence clear.'},
+
+{q:'What is the minimum lateral spacing for a full swing session?',o:['6 feet — same as putting','8 feet','10 feet — greater than putting standard due to increased swing arc and force','12 feet — to account for maximum swing extension'],c:2,e:'Full swing sessions require 10 feet minimum lateral spacing. Forward swing arc must be completely clear.'},
+{q:'A chipping session in a gym has full swings hitting the 9-foot ceiling. What is correct?',o:['Continue but instruct children to reduce their swing size','Stop full chipping swings — transition to putting only or modify to chip-length motion only','Move children to where the ceiling appears higher','Inform parents about the ceiling issue and seek permission to continue'],c:1,e:'Indoor sessions require ceiling height assessment. If full swing is not appropriate, the coach must modify — shorter iron or chip-length swings only indoors.'},
+{q:'A child repeatedly swings before the RETRIEVE command. Steps 1–3 applied. What is Step 4?',o:['Physically guide the child back to starting position','"I need you to wait for the RETRIEVE command. If you swing before it is given, you will take a 2-minute break. It\'s your choice."','Remove the child from the session entirely','Switch the child to putting only for the rest of the session'],c:1,e:'Behavior Management Step 4: choice and consequence. "I need you to [behavior]. If you continue, [consequence]. It\'s your choice." Maintains dignity and gives agency.'}
 ],
 L3_M1:[
 {q:'A licensee is beginning outreach in their new territory with 8 public schools, 4 private schools, and 3 charter schools. In what order should they approach these schools?',o:['Public schools first — largest enrollment, biggest market opportunity','Private schools first, then charter schools, then public schools — this is the EduGolfKids tiering system','All schools simultaneously to maximize outreach efficiency','Charter schools first — they have more autonomy and move faster'],c:1,e:'EduGolfKids school tiering: Tier 1 (Private/Independent) → Tier 2 (Charter/Magnet) → Tier 3 (Public Elementary). Private schools are approached first because decision-making is faster and parents actively seek enrichment.'},
 {q:'At a school meeting, a principal asks: "What if a child gets hurt during your program?" The most effective response is:',o:['"We have never had a serious incident in our program\'s history, so this is very unlikely."','"Our coaches are safeguarding-trained, carry full liability insurance, and have a documented Emergency Action Plan for every site. We maintain $1M general liability coverage and a SAM endorsement."','"Parents sign a liability waiver at enrollment that covers injury claims against the school."','"Injuries are covered by the school\'s own liability insurance under their enrichment program framework."'],c:1,e:'Injury objection response: lead with safeguarding training, full liability insurance, and documented EAP. These are the three elements that remove school liability concern.'},
+
+{q:'Which school tier should a licensee approach FIRST?',o:['Public elementary schools — largest enrollment','Private and independent schools — faster decisions, parents seek enrichment, no committee process needed','Charter schools — more autonomy than public','After-school operators — fastest to start'],c:1,e:'Tier 1 is always private and independent schools. Decision-making is faster (principal has authority), parents actively seek enrichment, and one great partnership generates warm referrals.'},
+{q:'What is the correct first contact sequence with a school principal?',o:['Call first, then follow up with an email','Email first, wait 3 business days, then call — follow up every 3–4 business days','Send a physical letter first, then follow up with email and phone','Arrange an in-person visit without prior contact to demonstrate commitment'],c:1,e:'Email before calling — always. Email creates context and professionalism. Then call 3 business days later. Follow up every 3–4 business days.'},
+{q:'What must a licensee bring to every school meeting?',o:['A full business plan and financial projections','EduGolfKids one-pager, coach certifications, background check documentation, insurance certificate, sample session plan, Skills Passport sample, and parent information letter template','Just the program one-pager — too many documents overwhelm principals','A tablet with video footage of EduGolfKids sessions'],c:1,e:'Come prepared with everything the principal needs to say yes in that meeting: one-pager, certifications, background checks, insurance certificate, reference from another school, sample session plan, Skills Passport sample, and parent information letter template.'}
 ],
 L3_M2:[
 {q:'A coaching candidate has a professional golf background but says "I find it hard to follow a strict curriculum — I prefer to adapt sessions using my experience." How should the licensee evaluate this candidate?',o:['Highly positively — adaptability is a key coaching quality','As a significant red flag — resistance to following the EduGolfKids system is a non-negotiable disqualifier regardless of golf ability','Conditionally — offer the role pending a probationary period','Positively — their golf expertise will benefit the program even if their style differs'],c:1,e:'"Resistance to following a structured program" is explicitly listed as a red flag — do not hire regardless of golf ability. The EduGolfKids system depends on curriculum compliance.'},
+
+{q:'A candidate says \'I prefer to adapt sessions rather than follow a fixed curriculum.\' How should the licensee evaluate this?',o:['Highly positively — adaptability is critical','As a red flag — resistance to following the EduGolfKids system is a non-negotiable disqualifier regardless of golf ability','As a conditional pass — offer a 3-month probationary period','As manageable — the candidate will adapt once they see how effective the system is'],c:1,e:'Resistance to following a structured program is explicitly listed as a red flag — do not hire regardless of golf ability.'},
+{q:'What is the MOST predictive screening tool when hiring coaches?',o:['A structured 30-minute competency-based interview','Watching the candidate interact with children for 10 minutes — you will know within 5 minutes whether they have the instinct for this role','A written test on child development principles','A reference check from previous employers'],c:1,e:'The single most predictive tool: watch them interact with children for 10 minutes. Natural warmth with children cannot be trained. Everything else can.'},
+{q:'What is the correct onboarding sequence for a newly hired coach?',o:['Background check → certification → shadowing → independent sessions','Background check → offer → L1 certification (within 4 weeks) → shadow 2 sessions → co-deliver 2 sessions → first independent session with licensee present','Certification → background check → shadowing → supervised sessions','Offer → background check → independent sessions while completing certification'],c:1,e:'Correct sequence: background check (non-negotiable before any offer) → offer → L1 certification within 4 weeks → shadow 2 sessions → co-deliver 2 sessions → first independent session with licensee present.'}
 ],
 L3_M3:[
 {q:'A licensee plans their first demo day at a new school. Only 4 children show up instead of the expected 15. Which response BEST protects the enrollment opportunity?',o:['Postpone the demo day and reschedule for a larger turnout','Deliver an outstanding session for the 4 children present — their experience IS your marketing. Follow up with every family within 48 hours','Run a shortened 15-minute demo since the group is small','Offer the 4 children a free first term to compensate'],c:1,e:'Operator benchmark: a well-run demo day converts 40–70% of attendees regardless of size. 4 children with an outstanding experience will each tell 2–3 friends. Always deliver your best session.'},
+
+{q:'Which marketing activity has the highest enrollment conversion rate?',o:['Facebook and Instagram advertising','Demo days — a parent who sees their child hit a golf ball and smile in a 10-minute demo will enroll 60%+ of the time','School newsletter features','Free trial voucher distribution through school bags'],c:1,e:'Demo days rank Tier 1. Operator benchmark: a well-run demo day converts 40–70% of attendees. Nothing else comes close.'},
+{q:'What makes the Player of the Week program an effective retention tool?',o:['It rewards the best golfer which motivates all children to improve','Recognition creates loyalty — parents share it, other parents see it, every child wants to earn it. Costs nothing. Builds fierce loyalty.','It gives coaches a weekly session planning structure','It provides licensees data on which children are progressing fastest'],c:1,e:'Player of the Week is awarded for effort, improvement, or attitude — not best golf. The recognition creates a ripple effect: parent shares it, other parents see it, every child wants to earn it.'},
+{q:'What is the recommended social media posting frequency during active school terms?',o:['Daily posts for maximum visibility','3–4 times per week during active terms, 1–2 times per week during breaks','Once per week — quality over quantity','Only post when there is enrollment news or program updates'],c:0,e:'3–4 times per week during active terms, 1–2 times during breaks. Avoid pure promotional posts.'}
 ],
 L3_M4:[
 {q:'A school charges a 10% revenue share as a condition of partnership. The licensee has 7 enrolled children paying $20/session. What is the correct adjusted price per child?',o:['$20 — absorb the school fee as a cost of doing business','$22 — add the 10% directly to the base price ($20 + $2 = $22)','$20.50 — split the cost equally between the licensee and parents','$21 — a conservative adjustment to maintain competitiveness'],c:1,e:'Revenue share: $20 × 10% = $2 per child per session. Adjusted price = $22. Never absorb school fees into margin — this erodes profitability rapidly at scale.'},
 {q:'In Month 3, a licensee has 1 class of 5 children (not full at 7) at their only school. A new school approaches them about starting a program. What should the licensee do?',o:['Start the new school immediately — more schools means more revenue','Fill the existing class to 7 before prioritizing the new school — a partially filled class of 5 vs 7 costs $40 per session in lost revenue','Accept the new school but keep the existing class size as is','Negotiate a trial with the new school while working on filling the existing class simultaneously'],c:1,e:'Fill-first growth model: the existing class of 5 vs full 7 costs $40 per session in lost revenue. Filling existing schools before expanding is the fundamental discipline.'},
+
+{q:'A school charges a 15% revenue share. What is the correct adjusted price per child?',o:['$20 — absorb the school fee to stay competitive','$23 — add the 15% on top of the base price ($20 + $3 = $23)','$21.50 — split the cost equally','$22 — a conservative adjustment'],c:1,e:'Revenue share: $20 × 15% = $3 per child per session. Adjusted price = $23. Never absorb school fees into margin.'},
+{q:'A class has 5 children instead of the maximum 7. How does this affect monthly revenue?',o:['No impact — coach costs are the same regardless','$40 per session in lost revenue (2 children × $20) = $160/month lost per class','$20 per session in lost revenue','No revenue impact as long as the coach is paid per session'],c:1,e:'5 vs 7 = 2 missing × $20 = $40/session lost. At 4 sessions/month = $160/month per class. Partially filled classes destroy margin.'},
+{q:'What are the three healthy benchmark percentages for a well-run operation?',o:['Coach costs max 20%, overhead max 10%, net profit min 70%','Coach costs max 30–35%, overhead max 15–20%, net profit target 45–55%','Coach costs max 40%, overhead max 25%, net profit target 35%','Coach costs max 50%, overhead max 20%, net profit target 30%'],c:1,e:'Healthy benchmarks: coach costs max 30–35%, overhead max 15–20%, net profit target 45–55%.'}
 ],
 L3_M5:[
 {q:'A coach calls in sick 90 minutes before a session at the licensee\'s busiest school (21 enrolled children across 3 classes). What is the licensee\'s immediate priority?',o:['Cancel the session and notify parents as quickly as possible','Contact the cover coach immediately — a cover coach must always be on call. If no cover, the licensee delivers the session personally','Contact the school to inform them of the cancellation and reschedule','Ask another active coach to split the 3 classes between 2 coaches'],c:1,e:'"Never rely on a single point of coach failure at a school. Always have a backup." A cover coach must always be on call. If unavailable, the licensee delivers the session — the school relationship and 4-lessons-per-month revenue protection both depend on it.'},
+
+{q:'What are the 5 elements of the Coach Management Framework?',o:['Recruitment, onboarding, training, assessment, termination','Clear role expectations, session confirmation protocol, post-session logging, quarterly observation, monthly team meeting','Background checks, certification, shadowing, supervision, performance review','School assignment, delivery, parent communication, incident reporting, annual review'],c:1,e:'The 5 elements: (1) Clear Role Expectations, (2) Session Confirmation Protocol, (3) Post-Session Logging, (4) Quarterly Observation, (5) Monthly Team Meeting.'},
+{q:'A coach calls in sick 2 hours before a session. What is the immediate action?',o:['Cancel the session and notify parents','Activate the cover coach immediately — always on call for every school. If unavailable, the licensee delivers the session personally.','Split the class between remaining coaches even if it exceeds 1:7 ratio','Contact the school to inform them and reschedule for next week'],c:1,e:'"Never rely on a single point of coach failure at a school. Always have a backup." If no cover, the licensee delivers the session.'},
+{q:'What is the correct Skills Passport completion rate target?',o:['80% — some children are absent at assessment time','90% — accounting for illness and scheduling conflicts','100% — every enrolled child receives a Passport entry at the end of every term. No exceptions.','70% — the minimum acceptable standard'],c:2,e:'100% completion is mandatory. A coach below 100% has a gap that must be addressed immediately.'}
 ],
 L3_M6:[
 {q:'A licensee at Stage 2 is pressured by a new school to start immediately. They have one class half-filled at School 1 and a new coach still completing certification. Which response is MOST aligned with the EduGolfKids growth model?',o:['Accept the third school — more schools is always better','Decline to proceed until Stage 2 success criteria are met: second coach certified AND second school first term complete','Accept but delay the start date by 4 weeks','Accept and deliver the third school\'s sessions personally while the coach certifies'],c:1,e:'Stage gate 2 success criteria: second coach certified and performing independently AND School 2 first term completed successfully. Neither criterion is met. Accepting a third school now risks quality at all locations.'},
+
+{q:'Which of the following is NOT one of the 5 conditions for a school to be "fully occupied"?',o:['Every class has 7 enrolled children','The school has been operating for at least 2 full terms','Parent retention from term to term is above 70%','The coach at that school is stable, certified, and performing well'],c:1,e:'The 5 conditions: every class at 7 children, 4 sessions/month consistently, school relationship strong, coach stable and certified, parent retention above 70%. Duration of operation is not a condition.'},
+{q:'What gross monthly revenue would 10 fully-occupied schools generate (3 classes, 7 children, $20/lesson, 4 sessions/month)?',o:['$8,400 gross per month','$12,600 gross per month','$16,800 gross per month','$21,000 gross per month'],c:2,e:'Calculation: 3 coaches × 7 children × $20 × 4 sessions = $1,680/month per school × 10 schools = $16,800 gross per month.'}
 ],
 L3_M7:[
 {q:'A licensee wants to create their own marketing flyers with a slightly modified EduGolfKids logo to better match their local market. What is the correct approach?',o:['Proceed — minor logo modifications are acceptable if the brand is recognizable','Request the design change through HQ — all marketing materials must use approved EduGolfKids templates and any logo modifications require HQ approval','Use the modified logo for local social media only','Have the materials reviewed by another licensee before use'],c:1,e:'Brand compliance: all marketing materials must use approved EduGolfKids templates. Logo modifications are not permitted without HQ approval. Every territory carries the brand of every other territory.'},
+
+{q:'A licensee wants to use a slightly modified EduGolfKids logo for their local market. What is correct?',o:['Proceed — minor modifications acceptable if the brand remains recognizable','Request the change through HQ — all marketing materials must use approved templates and any logo modifications require HQ approval','Use the modified logo on local social media only','Have other licensees review the materials before using'],c:1,e:'Brand compliance: all marketing materials must use approved EduGolfKids templates. Logo modifications require HQ approval.'},
+{q:'Within how many hours must a licensee report a serious incident to HQ?',o:['12 hours','24 hours via the official incident report channel','48 hours to allow time to gather complete information','72 hours once the situation is fully resolved'],c:1,e:'Serious incident: coach notifies licensee within 1 hour. Licensee notifies HQ within 24 hours via the official incident report channel.'}
 ],
 L3_M8:[
 {q:'A serious incident occurs at one of the licensee\'s schools (a child taken to hospital). The coach calls the licensee. What is the licensee\'s mandatory reporting timeline to HQ?',o:['Within 24 hours via the official incident report channel','Within 48 hours — to allow time to gather full information first','Within 1 week — once the child\'s condition is confirmed','There is no mandatory timeline — report when all information is available'],c:0,e:'Incident management: coach notifies licensee within 1 hour. Licensee notifies HQ within 24 hours via the official incident report channel. This is non-negotiable.'},
 {q:'A licensee\'s Sexual Abuse and Molestation (SAM) insurance endorsement expires next week. General Liability insurance is current for another 8 months. What sessions may the licensee run?',o:['All sessions — General Liability coverage is current and is the primary requirement','No sessions may be delivered once the SAM endorsement expires — it has zero grace period on expiry','Sessions at schools without children under 10 may continue','Sessions may continue for 30 days with a grace period during renewal'],c:1,e:'SAM endorsement has zero grace period on expiry. An expired SAM endorsement means no sessions — period. Both GL and SAM must be current.'},
+
+{q:'A licensee\'s SAM insurance expires in 3 days. GL is current for 10 months. What must happen?',o:['Sessions may continue under GL alone until SAM renewal is processed','No sessions may be delivered — SAM has zero grace period on expiry. Renew before any further sessions.','Sessions may continue for 30 days during renewal','Notify all schools and obtain written agreement to continue'],c:1,e:'SAM endorsement has zero grace period on expiry. An expired SAM means no sessions — period. Both GL and SAM must be current.'},
+{q:'What does the quarterly coach observation checklist cover?',o:['Financial performance — class fill rates and invoice compliance','Session architecture compliance, safety and spacing standards, Language Code compliance, engagement management, and Skills Passport tracking','Marketing effectiveness — parent satisfaction and referral rates','Administrative compliance — session logging, incident reporting, and attendance records'],c:1,e:'Quarterly observation: session architecture compliance, safety/spacing standards, Language Code compliance, engagement management (all children active, no long lines), Skills Passport tracking.'},
+{q:'What are the 4 steps in the licensee incident management sequence?',o:['Gather information → notify HQ → notify school → notify parents','Coach notifies licensee within 1 hour → licensee notifies HQ within 24 hours → official incident report submitted → follow up with school principal within 24 hours','Notify parents first → notify HQ within 48 hours → submit incident report → debrief coach','Notify school principal first → notify HQ within 24 hours → notify parents → submit incident report'],c:1,e:'Incident management: (1) Coach notifies licensee within 1 hour. (2) Licensee notifies HQ within 24 hours. (3) Official incident report submitted. (4) Follow up with school principal within 24 hours.'}
 ],
 };
 
@@ -3504,7 +6367,7 @@ function renderModuleReader() {
     </div>` : ''}`;
 
   // Restore M0 ack state
-  if (moduleId === 'M0_S1' && isLast) {
+  if (moduleId === 'M0' && isLast) {
     const ackBox = document.getElementById('m0-acknowledge');
     if (ackBox) ackBox.checked = !!certState.records['M0_ACK'];
     checkM0Ack();
@@ -3543,7 +6406,7 @@ function checkM0Ack() {
 
 async function markModuleRead(moduleId) {
   // M0 requires ack
-  if (moduleId === 'M0_S1') {
+  if (moduleId === 'M0') {
     const ackBox = document.getElementById('m0-acknowledge');
     if (!ackBox?.checked) { alert('Please tick the acknowledgment checkbox first.'); return; }
     await saveM0Ack();
