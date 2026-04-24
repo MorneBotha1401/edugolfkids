@@ -1284,13 +1284,32 @@
 
         <div class="card">
           <div class="card-header">
-            <h3>Recent Activity</h3>
+            <h3>Activity & Intelligence</h3>
           </div>
-          <div id="recent-activity-list">
-            <div class="empty-state">
-              <div class="empty-icon">📋</div>
-              <h3>No activity yet</h3>
-              <p>Platform activity will appear here</p>
+          <div class="tabs" style="margin:0 -20px; padding:0 20px; border-bottom:1px solid var(--gray-100);">
+            <div class="tab active" onclick="switchTab(this,'tab-hq-activity')" style="font-size:13px;">📋 Activity Feed</div>
+            <div class="tab" onclick="switchTab(this,'tab-hq-advisor')" style="font-size:13px;">💬 HQ AI Advisor</div>
+          </div>
+          <div id="tab-hq-activity" style="padding-top:12px;">
+            <div id="recent-activity-list">
+              <div class="empty-state" style="padding:24px 0;">
+                <div class="empty-icon">📋</div>
+                <h3>No activity yet</h3>
+                <p>Platform activity will appear here as licensees and coaches use the system</p>
+              </div>
+            </div>
+          </div>
+          <div id="tab-hq-advisor" style="display:none; padding-top:12px;">
+            <div class="advisor-chat">
+              <div class="chat-messages" id="hq-chat-messages">
+                <div class="chat-msg ai">
+                  <div class="bubble">Hi! I'm your EduGolfKids HQ Advisor. I have access to your full network data — territories, licensees, compliance, revenue, and more. Ask me anything about growing or managing the network.</div>
+                </div>
+              </div>
+              <div class="chat-input-bar">
+                <input type="text" id="hq-chat-input" placeholder="Ask anything about your network..." onkeydown="if(event.key==='Enter') sendHQAdvisorMessage()" />
+                <button class="btn btn-primary btn-sm" onclick="sendHQAdvisorMessage()">Send</button>
+              </div>
             </div>
           </div>
         </div>
@@ -1689,7 +1708,8 @@
           <div class="alert alert-red">⛔ Your account has restricted access due to compliance issues. <a href="#" onclick="showPage('page-my-compliance')">Resolve now →</a></div>
         </div>
 
-        <div class="stats-grid">
+        <!-- LICENSEE STATS -->
+        <div id="licensee-stats-grid" class="stats-grid">
           <div class="stat-card green">
             <div class="stat-icon">🏫</div>
             <div class="stat-value" id="lic-schools">0</div>
@@ -1722,6 +1742,39 @@
             <div class="stat-icon">🏆</div>
             <div class="stat-value" id="lic-valuation">$0</div>
             <div class="stat-label">Est. Business Value</div>
+          </div>
+        </div>
+
+        <!-- TDP STATS (shown for TDP role only) -->
+        <div id="tdp-stats-grid" class="stats-grid" style="display:none;">
+          <div class="stat-card green">
+            <div class="stat-icon">🤝</div>
+            <div class="stat-value" id="tdp-lic-count">0</div>
+            <div class="stat-label">My Licensees</div>
+            <div class="stat-sub" id="tdp-lic-sub">in my territory</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-icon">🏫</div>
+            <div class="stat-value" id="tdp-total-schools">0</div>
+            <div class="stat-label">Total Schools</div>
+            <div class="stat-sub">across my licensees</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-icon">👧</div>
+            <div class="stat-value" id="tdp-total-students">0</div>
+            <div class="stat-label">Total Students</div>
+            <div class="stat-sub">across my licensees</div>
+          </div>
+          <div class="stat-card gold">
+            <div class="stat-icon">💵</div>
+            <div class="stat-value" id="tdp-monthly-commission">$0</div>
+            <div class="stat-label">Monthly Commission</div>
+            <div class="stat-sub">$150 × active licensees</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-icon">📅</div>
+            <div class="stat-value" id="tdp-ytd-commission">$0</div>
+            <div class="stat-label">Commission YTD</div>
           </div>
         </div>
 
@@ -1768,6 +1821,80 @@
         </div>
         <div class="pipeline-board" id="school-pipeline">
           <!-- Rendered by JS -->
+        </div>
+      </div>
+
+      <!-- ══ RESOURCES: ACCOUNTING TOOLS ══ -->
+      <div id="page-resources-accounting" class="page">
+        <div class="page-header">
+          <h1>Accounting Tools</h1>
+          <p>Reference guides and templates for your EduGolfKids finances</p>
+        </div>
+        <div class="grid-3">
+          <div class="card">
+            <div style="font-size:32px; margin-bottom:12px;">📊</div>
+            <h4>Understanding Your EduGolfKids Numbers</h4>
+            <p style="font-size:13px; color:var(--gray-400); margin:8px 0;">Plain-language guide to benchmarks and what to aim for</p>
+            <div style="display:flex; gap:8px; margin-top:16px;">
+              <button class="btn btn-sm btn-primary" onclick="copyMktContent('accounting_numbers_guide')">Copy Text</button>
+              <button class="btn btn-sm btn-outline" onclick="previewMktContent('accounting_numbers_guide')">Preview</button>
+            </div>
+          </div>
+          <div class="card">
+            <div style="font-size:32px; margin-bottom:12px;">💵</div>
+            <h4>Coach Pay Formula Reference</h4>
+            <p style="font-size:13px; color:var(--gray-400); margin:8px 0;">Quick reference card for calculating coach session pay</p>
+            <div style="display:flex; gap:8px; margin-top:16px;">
+              <button class="btn btn-sm btn-primary" onclick="copyMktContent('coach_pay_formula')">Copy Text</button>
+              <button class="btn btn-sm btn-outline" onclick="previewMktContent('coach_pay_formula')">Preview</button>
+            </div>
+          </div>
+          <div class="card">
+            <div style="font-size:32px; margin-bottom:12px;">🏆</div>
+            <h4>Business Valuation Explained</h4>
+            <p style="font-size:13px; color:var(--gray-400); margin:8px 0;">How your territory value is calculated and what grows it</p>
+            <div style="display:flex; gap:8px; margin-top:16px;">
+              <button class="btn btn-sm btn-primary" onclick="copyMktContent('business_valuation_guide')">Copy Text</button>
+              <button class="btn btn-sm btn-outline" onclick="previewMktContent('business_valuation_guide')">Preview</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ══ RESOURCES: OPERATIONS ══ -->
+      <div id="page-resources-operations" class="page">
+        <div class="page-header">
+          <h1>Operations</h1>
+          <p>Job ads, onboarding checklists, and field operations guides</p>
+        </div>
+        <div class="grid-3">
+          <div class="card">
+            <div style="font-size:32px; margin-bottom:12px;">📣</div>
+            <h4>Coach Job Advertisement</h4>
+            <p style="font-size:13px; color:var(--gray-400); margin:8px 0;">Ready-to-post job ad for recruiting EduGolfKids coaches</p>
+            <div style="display:flex; gap:8px; margin-top:16px;">
+              <button class="btn btn-sm btn-primary" onclick="copyMktContent('coach_job_ad')">Copy Text</button>
+              <button class="btn btn-sm btn-outline" onclick="previewMktContent('coach_job_ad')">Preview</button>
+            </div>
+          </div>
+          <div class="card">
+            <div style="font-size:32px; margin-bottom:12px;">📋</div>
+            <h4>Coach Onboarding Checklist</h4>
+            <p style="font-size:13px; color:var(--gray-400); margin:8px 0;">Step-by-step checklist for onboarding a new coach</p>
+            <div style="display:flex; gap:8px; margin-top:16px;">
+              <button class="btn btn-sm btn-primary" onclick="copyMktContent('coach_onboarding_checklist')">Copy Text</button>
+              <button class="btn btn-sm btn-outline" onclick="previewMktContent('coach_onboarding_checklist')">Preview</button>
+            </div>
+          </div>
+          <div class="card">
+            <div style="font-size:32px; margin-bottom:12px;">🎒</div>
+            <h4>What to Bring — Session Guide</h4>
+            <p style="font-size:13px; color:var(--gray-400); margin:8px 0;">Equipment checklist for coaches heading to a school session</p>
+            <div style="display:flex; gap:8px; margin-top:16px;">
+              <button class="btn btn-sm btn-primary" onclick="copyMktContent('session_equipment_guide')">Copy Text</button>
+              <button class="btn btn-sm btn-outline" onclick="previewMktContent('session_equipment_guide')">Preview</button>
+            </div>
+          </div>
         </div>
       </div>
 
@@ -2486,27 +2613,49 @@
       <!-- ══ ATTENDANCE MODULE ══ -->
       <div id="page-attendance" class="page">
         <div class="page-header">
-          <h1>Attendance & Session Log</h1>
-          <p>Mark attendance, log performance notes and calculate coach pay</p>
+          <h1 id="att-page-title">Attendance & Session Log</h1>
+          <p id="att-page-sub">Mark attendance, log performance notes and calculate coach pay</p>
         </div>
-        <div id="attendance-class-select-view">
-          <div class="card">
-            <div class="card-header">
-              <h3>Select Class to Take Attendance</h3>
-              <span class="badge badge-green" id="today-date-badge"></span>
+
+        <!-- LICENSEE VIEW: Session Log (read-only + override) -->
+        <div id="att-licensee-view" style="display:none;">
+          <div class="tabs" style="margin-bottom:20px;">
+            <div class="tab active" onclick="switchTab(this,'att-tab-submitted')">✅ Submitted Sessions</div>
+            <div class="tab" onclick="switchTab(this,'att-tab-pending')">⏳ Pending Sessions</div>
+          </div>
+          <div id="att-tab-submitted">
+            <div id="att-submitted-list">
+              <div class="empty-state"><div class="empty-icon">📋</div><h3>No sessions submitted yet</h3><p>Coaches submit attendance after each class. It will appear here.</p></div>
             </div>
-            <div id="attendance-class-list">
-              <div class="empty-state">
-                <div class="empty-icon">📋</div>
-                <h3>No classes today</h3>
-                <p>Classes scheduled for today will appear here</p>
-              </div>
+          </div>
+          <div id="att-tab-pending" style="display:none;">
+            <div class="alert alert-amber" style="margin-bottom:16px;">⚠️ These classes have not had attendance submitted by the assigned coach. You can override and mark attendance manually.</div>
+            <div id="att-pending-list">
+              <div class="empty-state"><div class="empty-icon">✅</div><h3>All sessions up to date</h3><p>No pending attendance to review</p></div>
             </div>
-            <hr class="divider">
-            <h4 style="margin-bottom:16px;color:var(--green-dark);">All Active Classes</h4>
-            <div id="all-classes-attendance-list"></div>
           </div>
         </div>
+
+        <!-- COACH VIEW: Take Attendance (default / original) -->
+        <div id="att-coach-view">
+          <div id="attendance-class-select-view">
+            <div class="card">
+              <div class="card-header">
+                <h3>Select Class to Take Attendance</h3>
+                <span class="badge badge-green" id="today-date-badge"></span>
+              </div>
+              <div id="attendance-class-list">
+                <div class="empty-state">
+                  <div class="empty-icon">📋</div>
+                  <h3>No classes today</h3>
+                  <p>Classes scheduled for today will appear here</p>
+                </div>
+              </div>
+              <hr class="divider">
+              <h4 style="margin-bottom:16px;color:var(--green-dark);">All Active Classes</h4>
+              <div id="all-classes-attendance-list"></div>
+            </div>
+          </div>
 
         <div id="attendance-session-view" style="display:none;">
           <div style="display:flex;gap:12px;align-items:center;margin-bottom:20px;">
@@ -3485,15 +3634,15 @@ const NAV_CONFIG = {
   tdp: [
     { section: 'My Territory', items: [
       { icon: '📊', label: 'Dashboard', page: 'page-licensee-dashboard' },
-      { icon: '🏫', label: 'School Pipeline', page: 'page-school-crm' },
+      { icon: '🤝', label: 'Licensee Pipeline', page: 'page-school-crm' },
     ]},
     { section: 'Network', items: [
-      { icon: '🤝', label: 'My Licensees', page: 'page-tdp' },
-      { icon: '💰', label: 'My Commissions', page: 'page-hq-accounting' },
+      { icon: '👥', label: 'My Licensees', page: 'page-tdp' },
+      { icon: '💰', label: 'My Commissions', page: 'page-licensee-accounting' },
     ]},
     { section: 'Resources', items: [
       { icon: '🛡️', label: 'My Compliance', page: 'page-my-compliance' },
-      { icon: '🎓', label: 'My Certifications', page: 'page-coach-education' },
+      { icon: '🎓', label: 'My Training', page: 'page-coach-education' },
       { icon: '📢', label: 'Marketing Portal', page: 'page-marketing' },
     ]},
   ],
@@ -3514,6 +3663,10 @@ const NAV_CONFIG = {
       { icon: '🛡️', label: 'My Compliance', page: 'page-my-compliance' },
       { icon: '🎓', label: 'Education Hub', page: 'page-coach-education' },
       { icon: '📢', label: 'Marketing Portal', page: 'page-marketing' },
+    ]},
+    { section: 'Resources', items: [
+      { icon: '💼', label: 'Accounting Tools', page: 'page-resources-accounting' },
+      { icon: '⚙️', label: 'Operations', page: 'page-resources-operations' },
     ]},
   ],
   coach: [
@@ -3566,16 +3719,21 @@ function showPage(pageId) {
   if (pageId === 'page-tdp') renderTDPPage();
   if (pageId === 'page-coach-portal') renderCoachPortal();
   if (pageId === 'page-coach-education') renderCertPage();
-  if (pageId === 'page-hq-dashboard') updateDashboardStats();
+  if (pageId === 'page-hq-dashboard') { updateDashboardStats(); renderActivityFeed(); }
   if (pageId === 'page-attendance') { renderAllClassesForAttendance(); setTodayBadge(); }
   if (pageId === 'page-registration-form') populateRegFormSchools();
   if (pageId === 'page-valuation') calculateValuation();
   if (pageId === 'page-hq-accounting') { populateInvoiceLicenseeDropdown(); renderInvoiceTable(); updateHQAccountingStats(); }
-  if (pageId === 'page-licensee-accounting') { renderLicInvoiceTable(); updateLicAccountingStats(); populateLicInvoiceStudentDropdown(); }
+  if (pageId === 'page-licensee-accounting') {
+    if (state.role === 'tdp') { renderTDPAccountingView(); }
+    else { renderLicInvoiceTable(); updateLicAccountingStats(); populateLicInvoiceStudentDropdown(); }
+  }
   if (pageId === 'page-compliance') { renderComplianceCentre(); updateComplianceStats(); }
   if (pageId === 'page-my-compliance') { renderMyCompliance(); }
   if (pageId === 'page-licensee-dashboard') { renderBIAlerts(); }
   if (pageId === 'page-education') { renderHQEducationStats(); }
+  if (pageId === 'page-coach-education') { renderCertPage(); }
+  if (pageId === 'page-marketing') { renderMarketingPortal(); }
 }
 
 // ══════════════════════════════════════════
@@ -3623,6 +3781,30 @@ function updateDashboardStats() {
   safeSet('school-slot-counter', `${schools.length} / 20 slots used`);
   safeSet('student-count-badge', `${myStudents} enrolled`);
 
+  // Show correct stat grid based on role
+  const licGrid = document.getElementById('licensee-stats-grid');
+  const tdpGrid = document.getElementById('tdp-stats-grid');
+  if (state.role === 'tdp') {
+    if (licGrid) licGrid.style.display = 'none';
+    if (tdpGrid) tdpGrid.style.display = '';
+    // TDP stats — licensees in the same territory as this TDP
+    const myLicensees = licensees; // All licensees (TDP sees their territory)
+    const activeLic = myLicensees.filter(l => l.status === 'active').length;
+    const tdpSchools = schools.filter(s => myLicensees.some(l => l.id === s.licensee_id)).length;
+    const tdpStudents = students.filter(st => myLicensees.some(l => l.id === st.licensee_id)).length;
+    const monthlyCommission = activeLic * 150;
+    const ytdCommission = monthlyCommission * (new Date().getMonth() + 1);
+    safeSet('tdp-lic-count', myLicensees.length);
+    safeSet('tdp-lic-sub', `${activeLic} active`);
+    safeSet('tdp-total-schools', tdpSchools);
+    safeSet('tdp-total-students', tdpStudents);
+    safeSet('tdp-monthly-commission', '$' + monthlyCommission.toLocaleString());
+    safeSet('tdp-ytd-commission', '$' + ytdCommission.toLocaleString());
+  } else {
+    if (licGrid) licGrid.style.display = '';
+    if (tdpGrid) tdpGrid.style.display = 'none';
+  }
+
   // Refresh BI alerts whenever stats update
   if (typeof renderBIAlerts === 'function') renderBIAlerts();
 
@@ -3640,6 +3822,153 @@ function viewTerritoryDetail(territoryId) {
   // Full territory file view — Session 3 (Bug #7)
   // For now navigate to territories page
   showPage('page-territories');
+}
+
+// ══════════════════════════════════════════
+//  TDP ROLE-SPECIFIC RENDERS
+// ══════════════════════════════════════════
+
+function renderTDPAccountingView() {
+  // Replaces the licensee accounting page for TDP — read-only commission view
+  const page = document.getElementById('page-licensee-accounting');
+  if (!page) return;
+
+  const licensees = state.data.licensees || [];
+  const invoices = state.data.invoices || [];
+  const activeLic = licensees.filter(l => l.status === 'active');
+  const monthlyCommission = activeLic.length * 150;
+  const ytdCommission = monthlyCommission * (new Date().getMonth() + 1);
+
+  // Build paid commission history rows from invoices marked paid
+  const paidRows = invoices.filter(inv => inv.status === 'paid').slice(0, 20).map(inv => `
+    <tr>
+      <td style="padding:10px 12px;">${inv.description || 'Monthly Commission'}</td>
+      <td style="padding:10px 12px;">${inv.paid_date || inv.created_at || '—'}</td>
+      <td style="padding:10px 12px; color:var(--success); font-weight:600;">$${(inv.commission_amount || 150).toLocaleString()}</td>
+      <td style="padding:10px 12px;"><span class="badge badge-green">Paid</span></td>
+    </tr>`).join('') || `<tr><td colspan="4" style="text-align:center;padding:32px;color:var(--gray-400);">No commission payments on record yet.</td></tr>`;
+
+  page.innerHTML = `
+    <div class="page-header">
+      <h1>My Commissions</h1>
+      <p>Commission income earned from your licensee network</p>
+    </div>
+    <div class="stats-grid" style="margin-bottom:24px;">
+      <div class="stat-card green">
+        <div class="stat-icon">💵</div>
+        <div class="stat-value">$${monthlyCommission.toLocaleString()}</div>
+        <div class="stat-label">Monthly Commission</div>
+        <div class="stat-sub">${activeLic.length} active licensees × $150</div>
+      </div>
+      <div class="stat-card blue">
+        <div class="stat-icon">📅</div>
+        <div class="stat-value">$${ytdCommission.toLocaleString()}</div>
+        <div class="stat-label">Commission YTD</div>
+        <div class="stat-sub">Estimated year-to-date</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon">🤝</div>
+        <div class="stat-value">${activeLic.length}</div>
+        <div class="stat-label">Active Licensees</div>
+        <div class="stat-sub">${licensees.length} total in territory</div>
+      </div>
+    </div>
+    <div class="alert alert-blue" style="margin-bottom:20px;">
+      ℹ️ Commissions are calculated by HQ and paid monthly. $150 per active licensee per month. Contact HQ for disputes or queries.
+    </div>
+    <div class="card">
+      <div class="card-header">
+        <h3>Commission Payment History</h3>
+        <span class="badge badge-gray">${invoices.filter(i => i.status === 'paid').length} payments</span>
+      </div>
+      <table style="width:100%; border-collapse:collapse; font-size:14px;">
+        <thead>
+          <tr style="background:var(--gray-100); text-align:left;">
+            <th style="padding:10px 12px; font-size:12px; color:var(--gray-400); font-weight:600;">Description</th>
+            <th style="padding:10px 12px; font-size:12px; color:var(--gray-400); font-weight:600;">Date Paid</th>
+            <th style="padding:10px 12px; font-size:12px; color:var(--gray-400); font-weight:600;">Amount</th>
+            <th style="padding:10px 12px; font-size:12px; color:var(--gray-400); font-weight:600;">Status</th>
+          </tr>
+        </thead>
+        <tbody>${paidRows}</tbody>
+      </table>
+    </div>`;
+}
+
+// TDP-specific compliance schema (4 docs only)
+const TDP_COMPLIANCE_SCHEMA = [
+  { id: 'tdp_agreement',  label: 'Signed TDP Agreement',    section: 'Legal', critical: true,  grace_days: 0,   desc: 'Your signed Territory Development Partner Agreement with EduGolfKids HQ' },
+  { id: 'w9_form',        label: 'W-9 Form',                section: 'Tax',   critical: true,  grace_days: 0,   desc: 'IRS W-9 form for commission payments' },
+  { id: 'ein_confirmation', label: 'EIN / SSN Confirmation',section: 'Tax',   critical: false, grace_days: 0,   desc: 'Tax identification confirmation' },
+  { id: 'government_id',  label: 'Government-Issued ID',    section: 'Legal', critical: false, grace_days: 0,   desc: 'Copy of valid government photo ID' },
+];
+
+function renderMarketingPortal() {
+  const page = document.getElementById('page-marketing');
+  if (!page) return;
+
+  if (state.role !== 'tdp') return; // Licensee version is static HTML, leave it alone
+
+  // TDP-specific marketing portal
+  page.innerHTML = `
+    <div class="page-header">
+      <h1>Marketing Asset Portal</h1>
+      <p>Templates, scripts, and resources for recruiting and supporting your licensees</p>
+    </div>
+    <div class="tabs" id="tdp-mkt-tabs">
+      <div class="tab active" onclick="switchTab(this,'tdp-tab-recruitment')">Licensee Recruitment</div>
+      <div class="tab" onclick="switchTab(this,'tdp-tab-onboarding')">Onboarding Comms</div>
+      <div class="tab" onclick="switchTab(this,'tdp-tab-support')">Licensee Support</div>
+      <div class="tab" onclick="switchTab(this,'tdp-tab-brand')">Brand Assets</div>
+    </div>
+
+    <div id="tdp-tab-recruitment">
+      <div class="grid-3">
+        ${tdpMktCard('📧','First Contact — Prospect (Formal)','Professional first outreach to a prospective licensee','tdp_email_prospect_formal')}
+        ${tdpMktCard('📧','First Contact — Prospect (Warm)','Friendly outreach for warm or referred prospects','tdp_email_prospect_warm')}
+        ${tdpMktCard('📞','Cold Call Script — Licensee Introduction','Phone script for introducing the EduGolfKids opportunity','tdp_script_cold_call')}
+        ${tdpMktCard('📋','Follow-Up Email — No Response (Day 5)','Gentle follow-up if no reply after 5 days','tdp_email_followup_5d')}
+        ${tdpMktCard('🤝','Post-Meeting Thank You','Send within 24 hours of a prospect meeting','tdp_email_post_meeting')}
+        ${tdpMktCard('📖','Objection Handling Guide','Top 5 objections prospects raise and proven responses','tdp_objection_guide')}
+        ${tdpMktCard('📄','"Why EduGolfKids" One-Pager','Pitch document explaining the opportunity and income potential','tdp_why_egk')}
+      </div>
+    </div>
+
+    <div id="tdp-tab-onboarding" style="display:none;">
+      <div class="grid-3">
+        ${tdpMktCard('🎉','Welcome to the Network Email','Send immediately after a licensee signs','tdp_email_welcome')}
+        ${tdpMktCard('📋','First 30 Days Checklist Intro','Email linking to what the new licensee needs to do in month 1','tdp_email_30days')}
+        ${tdpMktCard('💻','Introduction to HQ Systems','Email explaining the platform, compliance, and support channels','tdp_email_hq_intro')}
+      </div>
+    </div>
+
+    <div id="tdp-tab-support" style="display:none;">
+      <div class="grid-3">
+        ${tdpMktCard('📅','Monthly Check-In Template','Structured monthly call/email template to keep licensees on track','tdp_monthly_checkin')}
+        ${tdpMktCard('📉','Underperforming Licensee Guide','Conversation framework for licensees not hitting targets','tdp_underperform_guide')}
+        ${tdpMktCard('🚨','Escalation to HQ — When & How','Guide on when to involve HQ and how to escalate correctly','tdp_escalation_guide')}
+      </div>
+    </div>
+
+    <div id="tdp-tab-brand" style="display:none;">
+      <div class="grid-3">
+        ${tdpMktCard('🖼️','EduGolfKids Logo Pack','Official logos in all formats and sizes','brand_logo_pack')}
+        ${tdpMktCard('🎨','Brand Colour Guide','Official hex codes, usage rules, and examples','brand_colour_guide')}
+        ${tdpMktCard('📝','Brand Voice Guidelines','Tone, language rules, and dos and don\'ts','brand_voice_guide')}
+      </div>
+    </div>`;
+}
+
+function tdpMktCard(icon, title, desc, key) {
+  return `<div class="card">
+    <div style="font-size:32px; margin-bottom:12px;">${icon}</div>
+    <h4>${title}</h4>
+    <p style="font-size:13px; color:var(--gray-400); margin:8px 0;">${desc}</p>
+    <div style="display:flex; gap:8px; margin-top:16px;">
+      <button class="btn btn-sm btn-primary" onclick="copyMktContent('${key}')">Copy Text</button>
+      <button class="btn btn-sm btn-outline" onclick="previewMktContent('${key}')">Preview</button>
+    </div>
+  </div>`;
 }
 
 function renderTerritoryHealth() {
@@ -6981,6 +7310,61 @@ function renderSchedulingPage() {
   container.innerHTML = html || `<div class="empty-state"><div class="empty-icon">📅</div><h3>No classes on any day yet</h3></div>`;
 }
 
+function renderTDPBIAlerts(container) {
+  const licensees = state.data.licensees || [];
+  const compliance = state.data.compliance_records || [];
+  const invoices = state.data.invoices || [];
+  const alerts = [];
+
+  const activeLic = licensees.filter(l => l.status === 'active');
+  const inactiveLic = licensees.filter(l => l.status !== 'active');
+
+  // Commission forecast
+  const monthlyCommission = activeLic.length * 150;
+  if (activeLic.length > 0) {
+    alerts.push({ type: 'positive', icon: '💵', msg: `Monthly commission: $${monthlyCommission.toLocaleString()} from ${activeLic.length} active licensee${activeLic.length !== 1 ? 's' : ''}.` });
+  }
+
+  // Compliance issues across licensees
+  const REQUIRED = ['license_agreement','business_registration','ein_confirmation','w9_form','gl_insurance','sam_insurance'];
+  const complianceIssues = licensees.filter(l => {
+    const docs = compliance.filter(c => c.licensee_id === l.id).map(c => c.doc_id);
+    return REQUIRED.some(d => !docs.includes(d));
+  });
+  if (complianceIssues.length > 0) {
+    alerts.push({ type: 'warning', icon: '⚠️', msg: `${complianceIssues.length} licensee${complianceIssues.length !== 1 ? 's' : ''} have compliance issues. Compliance failures may delay your commission payments.` });
+  }
+
+  // Overdue invoices for your licensees
+  const today = new Date();
+  const overdueInvoices = invoices.filter(inv => {
+    if (inv.status === 'paid') return false;
+    const due = new Date(inv.due_date);
+    return due < today;
+  });
+  if (overdueInvoices.length > 0) {
+    alerts.push({ type: 'warning', icon: '🔴', msg: `${overdueInvoices.length} unpaid invoice${overdueInvoices.length !== 1 ? 's' : ''} overdue. Overdue accounts affect your commission eligibility.` });
+  }
+
+  // Pipeline — no licensees yet
+  if (licensees.length === 0) {
+    alerts.push({ type: 'info', icon: 'ℹ️', msg: 'No licensees in your pipeline yet. Use the Licensee Pipeline to track and close new territory partners.' });
+  }
+
+  // Inactive licensees needing support
+  if (inactiveLic.length > 0) {
+    alerts.push({ type: 'amber', icon: '📋', msg: `${inactiveLic.length} licensee${inactiveLic.length !== 1 ? 's' : ''} are pending/inactive. Follow up to activate and start earning monthly commissions.` });
+  }
+
+  if (alerts.length === 0) {
+    container.innerHTML = `<div class="alert alert-blue">ℹ️ Your territory looks good. Add licensees via the Licensee Pipeline to grow your commission income.</div>`;
+    return;
+  }
+
+  const colorMap = { positive: 'alert-green', warning: 'alert-red', info: 'alert-blue', amber: 'alert-amber' };
+  container.innerHTML = alerts.map(a => `<div class="alert ${colorMap[a.type] || 'alert-blue'}">${a.icon} ${a.msg}</div>`).join('');
+}
+
 function renderTDPPage() {
   const licensees = state.data.licensees || [];
   const tdps = licensees.filter(l => l.is_tdp);
@@ -7053,6 +7437,12 @@ function renderCoachPortal() {
 function renderBIAlerts() {
   const container = document.getElementById('licensee-bi-alerts');
   if (!container) return;
+
+  // TDP gets different BI alerts
+  if (state.role === 'tdp') {
+    renderTDPBIAlerts(container);
+    return;
+  }
 
   const schools   = state.data.schools  || [];
   const students  = state.data.students || [];
@@ -7505,6 +7895,12 @@ function viewLicenseeCompliance(licenseeId) {
 
 // ── LICENSEE: MY COMPLIANCE ──
 function renderMyCompliance() {
+  // TDP gets a simplified 4-doc compliance view
+  if (state.role === 'tdp') {
+    renderTDPCompliance();
+    return;
+  }
+
   const licenseeId = state.user?.licensee_id || 'current_licensee';
   const { overall, status, sectionScores, samCritical } = calcComplianceScore(licenseeId);
   const info = complianceStatusInfo(status);
@@ -7592,6 +7988,61 @@ function renderMyCompliance() {
   if (restrictBanner) {
     restrictBanner.style.display = (status === 'restricted' || status === 'restricted_sam') ? 'block' : 'none';
   }
+}
+
+function renderTDPCompliance() {
+  const tdpId = state.user?.licensee_id || 'current_tdp';
+  const record = getComplianceRecord(tdpId);
+  const docs = record.documents || {};
+
+  let completed = 0;
+  const items = TDP_COMPLIANCE_SCHEMA.map(item => {
+    const doc = docs[item.id] || {};
+    const uploaded = !!doc.uploaded_at;
+    if (uploaded) completed++;
+    const status = uploaded ? 'valid' : 'missing';
+    const statusLabel = uploaded ? '✅ Uploaded' : item.critical ? '⛔ Required' : '⚠️ Needed';
+    const statusColor = uploaded ? 'var(--success)' : item.critical ? 'var(--red)' : 'var(--amber)';
+    return `<div class="checklist-item ${uploaded ? 'complete' : 'missing'}" style="padding:16px 0; border-bottom:1px solid var(--gray-100);">
+      <span class="check-icon">${uploaded ? '✅' : item.critical ? '⛔' : '⚠️'}</span>
+      <div style="flex:1;">
+        <strong>${item.label}</strong>${item.critical ? ' <span class="badge badge-red" style="font-size:10px;">Required</span>' : ''}
+        <br><small style="color:var(--gray-400);">${item.desc}</small>
+        ${doc.uploaded_at ? `<br><small style="color:var(--success);">Uploaded ${doc.uploaded_at}</small>` : ''}
+      </div>
+      <button class="btn btn-sm btn-outline" onclick="openUploadModal('${item.id}','${item.label}',${item.critical},'${tdpId}')">
+        ${uploaded ? '🔄 Replace' : '⬆️ Upload'}
+      </button>
+    </div>`;
+  }).join('');
+
+  const pct = Math.round((completed / TDP_COMPLIANCE_SCHEMA.length) * 100);
+  const statusText = pct === 100 ? 'Compliant ✅' : pct >= 50 ? 'In Progress ⚠️' : 'Action Required ⛔';
+
+  // Inject into the existing compliance page elements
+  const badge = document.getElementById('my-compliance-badge');
+  const bar = document.getElementById('my-compliance-bar');
+  const scoreVal = document.getElementById('my-compliance-score-value');
+  if (badge) { badge.textContent = `${pct}% — ${statusText}`; badge.className = pct === 100 ? 'badge badge-green' : pct >= 50 ? 'badge badge-amber' : 'badge badge-red'; }
+  if (bar) bar.style.width = pct + '%';
+  if (scoreVal) scoreVal.textContent = pct + '%';
+
+  // Render items into section containers
+  const container = document.getElementById('compliance-section-Legal') || document.getElementById('compliance-section-Tax');
+  if (container) {
+    // Find the parent and inject all items
+    const allSections = document.querySelectorAll('[id^="compliance-section-"]');
+    allSections.forEach(el => el.innerHTML = '');
+    if (allSections.length > 0) {
+      allSections[0].innerHTML = `<div style="padding:0 4px;">${items}</div>`;
+    }
+  }
+
+  // Hide SAM banner for TDP
+  const samBanner = document.getElementById('sam-warning-banner');
+  if (samBanner) samBanner.style.display = 'none';
+  const restrictBanner = document.getElementById('licensee-compliance-banner');
+  if (restrictBanner) restrictBanner.style.display = 'none';
 }
 
 function openUploadModal(itemId, itemLabel, isCritical, licenseeId) {
@@ -7769,6 +8220,12 @@ function hasPassed(level) { const r = certState.records[level]; return r && r.pa
 function isExpired(level) { const r = certState.records[level]; return r?.expiry && new Date(r.expiry) < new Date(); }
 
 function renderCertPage() {
+  // TDP gets TDP Orientation Guide only — not L1/L2/L3/Refresh
+  if (state.role === 'tdp') {
+    renderTDPCertPage();
+    return;
+  }
+
   const levels = ['L1', 'L2', 'L3', 'REFRESH'];
   const statusMap = {};
   for (const lvl of levels) {
@@ -7830,6 +8287,78 @@ function renderCertPage() {
         </tbody></table>`;
     } else { histCard.style.display = 'none'; }
   }
+}
+
+function renderTDPCertPage() {
+  // TDP gets a single TDP Orientation Guide card instead of L1/L2/L3
+  const page = document.getElementById('page-coach-education');
+  if (!page) return;
+
+  page.innerHTML = `
+    <div class="page-header">
+      <h1>My Training</h1>
+      <p>Territory Development Partner orientation and resources</p>
+    </div>
+
+    <div class="stats-grid" style="margin-bottom:24px;">
+      <div class="stat-card">
+        <div class="stat-icon">📖</div>
+        <div class="stat-value" id="tdp-cert-status">Not Started</div>
+        <div class="stat-label">TDP Orientation</div>
+        <div class="stat-sub">Click to begin</div>
+      </div>
+    </div>
+
+    <div class="grid-2">
+      <div class="card">
+        <div class="card-header"><h3>TDP Orientation Programme</h3></div>
+        <div style="padding:16px 0;">
+          <div class="checklist-item missing" style="padding:16px 0; border-bottom:1px solid var(--gray-100);">
+            <span class="check-icon">📋</span>
+            <div style="flex:1;">
+              <strong>TDP Orientation Guide</strong>
+              <br><small style="color:var(--gray-400);">Roles, responsibilities, commission structure, compliance requirements and support systems</small>
+            </div>
+            <a href="#" class="btn btn-sm btn-primary" onclick="alert('TDP Orientation Guide — coming soon. Please contact HQ for your orientation materials.')">Download</a>
+          </div>
+          <div class="checklist-item missing" style="padding:16px 0; border-bottom:1px solid var(--gray-100);">
+            <span class="check-icon">💼</span>
+            <div style="flex:1;">
+              <strong>Licensee Recruitment Playbook</strong>
+              <br><small style="color:var(--gray-400);">Step-by-step guide to finding, pitching and closing licensee partners in your territory</small>
+            </div>
+            <a href="#" class="btn btn-sm btn-primary" onclick="alert('Recruitment Playbook — coming soon. Contact HQ.')">Download</a>
+          </div>
+          <div class="checklist-item missing" style="padding:16px 0;">
+            <span class="check-icon">📊</span>
+            <div style="flex:1;">
+              <strong>Territory Management Handbook</strong>
+              <br><small style="color:var(--gray-400);">How to manage and grow a network of licensees — performance tracking, escalation, support</small>
+            </div>
+            <a href="#" class="btn btn-sm btn-primary" onclick="alert('Territory Handbook — coming soon. Contact HQ.')">Download</a>
+          </div>
+        </div>
+        <div class="alert alert-blue" style="margin-top:8px;">ℹ️ Full TDP orientation content is delivered by HQ. Contact your HQ representative to schedule your orientation session.</div>
+      </div>
+
+      <div class="card">
+        <div class="card-header"><h3>Quick Reference</h3></div>
+        <div style="padding:16px 0;">
+          <div style="padding:12px; background:var(--gray-50); border-radius:8px; margin-bottom:12px;">
+            <strong style="font-size:13px;">Commission Structure</strong>
+            <div style="font-size:13px; color:var(--gray-400); margin-top:4px;">$150/month per active licensee in your territory. Paid monthly by HQ on the 15th.</div>
+          </div>
+          <div style="padding:12px; background:var(--gray-50); border-radius:8px; margin-bottom:12px;">
+            <strong style="font-size:13px;">Your Compliance Requirements</strong>
+            <div style="font-size:13px; color:var(--gray-400); margin-top:4px;">Signed TDP Agreement, W-9, EIN Confirmation, Government ID. See My Compliance.</div>
+          </div>
+          <div style="padding:12px; background:var(--gray-50); border-radius:8px;">
+            <strong style="font-size:13px;">Territory Scope</strong>
+            <div style="font-size:13px; color:var(--gray-400); margin-top:4px;">Up to 20 licensees, exclusive territory. HQ may assign or reassign territory per the TDP Agreement.</div>
+          </div>
+        </div>
+      </div>
+    </div>`;
 }
 
 function startQuiz(level) {
