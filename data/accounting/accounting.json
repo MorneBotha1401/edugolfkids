@@ -1,1 +1,22 @@
-{ "invoices": [], "payouts": [], "payments": [] }
+{
+  "invoices": [
+    {
+      "id": "inv_1777039950067_lic_1776967795493",
+      "invoice_number": "INV-950067-87",
+      "licensee_id": "lic_1776967795493",
+      "invoice_type": "monthly",
+      "type_label": "Monthly License Fee",
+      "amount": 500,
+      "invoice_date": "2026-04-24",
+      "due_date": "2026-05-08",
+      "notes": "Monthly license fee — April 2026",
+      "status": "sent",
+      "created": "2026-04-24T14:12:30.067Z",
+      "paid_date": null,
+      "paid_method": null,
+      "paid_reference": null
+    }
+  ],
+  "payouts": [],
+  "payments": []
+}
