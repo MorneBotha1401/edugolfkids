@@ -61,85 +61,2881 @@ async function saveM0Ack() {
 // ══════════════════════════════════════════
 
 const EDU_MODULES = {
-
-M0:[{id:'M0_S1',title:'Compliance & Safeguarding',icon:'🛡️',sections:[
-{h:'Duty of Care',b:`EduGolfKids operates under an elevated duty-of-care standard in school environments. All coaches act <em>in loco parentis</em> — "In the place of a parent." You are a mandatory reporter where required by state law. Safety, supervision, and safeguarding take priority over instruction — always.`},
-{h:'Background Screening',b:`No coach may enter a school without clearance. Prior to school placement every coach must complete: a state-level criminal background check, national sex offender registry screening, additional district-required screenings, and identity/employment eligibility verification. Documentation must be available for district review at all times.`},
-{h:'Mandatory Reporting',b:`If there is reasonable suspicion of abuse, coaches must: <strong>(1)</strong> Ensure child safety. <strong>(2)</strong> Report to the designated school authority. <strong>(3)</strong> Follow state reporting law. <strong>(4)</strong> Notify the EduGolfKids Compliance Officer. Failure to report results in removal from certification. Coaches must complete mandatory reporter training before working independently.`},
-{h:'Supervision Standards',b:`Sessions must occur in school-approved spaces with doors unlocked and windows/visibility panels used. When direct line-of-sight is not possible, no isolated closed-room instruction is permitted. <strong>One-on-one sessions</strong> require a second adult present in the facility and the space must be open and observable.`},
-{h:'Physical Contact Policy',b:`EduGolfKids enforces <strong>Controlled &amp; Transparent Instructional Contact</strong>. Hands-on positioning is permitted only when: instructional necessity exists, verbal cueing has been attempted first, contact is brief and non-invasive, and the coach explains contact before making it — e.g. "I'm going to gently adjust your shoulders." Contact must never involve sensitive areas, be prolonged, occur without explanation, or occur in isolated settings.`},
-{h:'Equipment &amp; Zone Safety',b:`Children may only hold clubs inside designated hitting zones. Clubs must remain grounded when not actively hitting. No child may walk with a club in hand. <strong>Minimum lateral spacing: 6 feet.</strong> Ball retrieval only on coach command (RETRIEVE/RESET). Indoors: foam or low-compression balls mandatory at all times.`},
-{h:'Emergency Action Plan',b:`Each site must have: AED location identified, nurse/medical access confirmed, severe weather protocol reviewed, and an emergency contact procedure. Coaches must know the EAP before their first session, carry an EAP card at all times, report injuries same day, and complete incident documentation within 24 hours.`},
-{h:'Dress Code &amp; Phone Policy',b:`Required attire: collared golf shirt, golf shorts or pants, golf-appropriate athletic shoes. Prohibited: jeans, sweatpants, unapproved hoodies, sandals. During active sessions phones may NOT be used for personal calls, texts, or browsing. Permitted use: instructional video recording, approved photos with consent, session plans, attendance, emergency communication.`},
-{h:'Supervision Protocol',b:`Coaches must arrive <strong>minimum 15 minutes before session start.</strong> Equipment must be fully set up before children arrive — never while children are present. Zero-Unsupervised-Child Standard applies at all times — before, during, after sessions, during transitions and bathroom breaks. At session end, children transfer only to the assigned teacher, authorized staff, or verified parent/guardian. If a parent is late, the coach remains with the child.`},
-{h:'Acknowledgment',b:`Before proceeding to the Model 0 Assessment, you must sign the EduGolfKids compliance acknowledgment. <div id="m0-ack-section" style="margin-top:16px;padding:16px;background:var(--gray-100);border-radius:8px;border:2px solid var(--gray-200);"><label style="display:flex;align-items:flex-start;gap:12px;cursor:pointer;"><input type="checkbox" id="m0-acknowledge" style="margin-top:3px;width:18px;height:18px;flex-shrink:0;" onchange="checkM0Ack()"/><span style="font-size:14px;"><strong>I acknowledge and agree</strong> to comply with all EduGolfKids safeguarding, safety, operational, and legal standards as a condition of certification and school assignment.</span></label><div id="m0-ack-status" style="margin-top:8px;font-size:13px;color:var(--gray-400);"></div></div>`},
-]}],
-
-L1:[
-{id:'L1_M1',title:'Module 1 — System Standards',icon:'📋',sections:[
-{h:'EduGolfKids Philosophy',b:`EduGolfKids is grounded in five scientific pillars: <strong>(1) Child Development Science</strong> — children 4–10 learn through movement, play, exploration, immediate feedback, and emotional engagement. <strong>(2) LTAD (Balyi &amp; Hamilton 2004)</strong> — under-10s are in the FUNdamentals stage; goal is movement literacy, not specialization. <strong>(3) Motor Learning Science (Schmidt &amp; Lee 2011)</strong> — varied practice and contextual challenges produce retention; blocked repetition does not. <strong>(4) Constraints-Led Approach (Newell 1986)</strong> — manipulate environment, task, and equipment rather than telling children what to do. <strong>(5) Psychological Safety (Edmondson 2018)</strong> — children perform and persist when they feel safe, supported, and encouraged.`},
-{h:'The 60-Minute Structure',b:`Every session MUST follow this — no deviation without HQ approval: <strong>0–10 min Warm-Up Game</strong> — whole-body movement, foam balls, immediate participation. <strong>10–30 min Skill Block</strong> — 3–4 mini constraint challenges, max 5 min each, no lectures, no standing lines. <strong>30–50 min Game Reinforcement</strong> — contextual play, scoring, decision-making. <strong>50–60 min Wrap-Up &amp; Reset</strong> — reflection question, positive feedback, equipment reset. 60 minutes is neurologically optimized for this age group.`},
-{h:'Approved vs Prohibited Drills',b:`<strong>Approved drills MUST:</strong> be target-based, require decision-making, use low-compression balls, limit repetition to under 5 minutes, include movement variation, and encourage guided discovery. <strong>Prohibited: ❌</strong> Long static lines (waiting = disengagement). ❌ Blocked repetition over 5 minutes. ❌ Technical lectures over 60 seconds. ❌ Full-speed uncontrolled swings (non-negotiable safety violation). ❌ Adult terminology — use "brush the grass," not "lag angle."`},
-{h:'Equipment &amp; Spacing',b:`Minimum lateral spacing: <strong>6 feet per child,</strong> accounting for swing arc, balance loss, impulsive movement, and delayed reaction. Every child must have a defined cone box with no overlapping directions. Retrieval: clubs on ground first, step behind safety line, walk only. Foam or low-compression balls always. Safety is engineered — not reactive.`},
-{h:'No Improvisation Policy',b:`Strict no-improvisation policy protects brand integrity, Skills Passport fairness, and legal risk exposure. <strong>Allowed:</strong> your personality — energy, encouragement, humor, leadership style. <strong>Not allowed:</strong> changing structure, changing progression order, adding unsafe drills, modifying spacing rules. You are not "teaching golf." You are engineering developmental environments.`},
-]},
-{id:'L1_M2',title:'Module 2 — Child Development',icon:'🧠',sections:[
-{h:'Four Domains',b:`Coaching must address all four simultaneously: <strong>Cognitive</strong> (thinking capacity), <strong>Motor</strong> (movement control), <strong>Emotional</strong> (self-regulation), <strong>Social</strong> (peer interaction). Core principle: <em>Children are not mini adults.</em> When instruction exceeds developmental capacity, learning stops.`},
-{h:'Ages 4–6: Early Fundamentals',b:`<strong>Attention span: 5–8 minutes.</strong> They learn through demonstration, play, movement exploration, immediate feedback, external cues. They struggle with technical explanation, multi-step instructions, waiting, and delayed rewards. Motor development: poor spatial awareness, impulsive movement — heightened safety management required. Emotional: low frustration tolerance, highly approval-driven. Frustration signals (dropping club, "I can't") are developmental, not defiance. <strong>Instruct with:</strong> one-step instructions, demonstration first, simple language, external focus cues, short game cycles under 5 minutes.`},
-{h:'Ages 6–9: Late Fundamentals',b:`<strong>Attention span: 10–20 minutes.</strong> Can process 2-step instructions, beginning analytical thinking, growing competitive awareness. Motor: improving coordination, better bilateral integration — consistency still emerging. Emotional: sensitive to failure, social comparison developing. Frustration signals: blaming equipment, overtrying, withdrawal. Requires calibrated challenge — not overpressure. <strong>Instruct with:</strong> 2-step instructions, tactical challenges, scoring goals, guided discovery: "Hit three balls past the blue cone. Then try to land one inside the yellow zone."`},
-{h:'Frustration &amp; Task Adjustment',b:`Core rule: when frustration rises, <strong>task difficulty must adjust immediately.</strong> Do NOT add correction or increase detail. Adjust constraints: increase target size, reduce distance, change scoring rules, simplify the goal. Example: 5-year-old — "Let's hit the magic rocket to the red cone! Watch me first." 9-year-old — "You get 5 shots. Score 1 point for red, 2 for blue. Can you beat your score?"`},
-{h:'Language by Age',b:`<table style="width:100%;border-collapse:collapse;font-size:13px;"><thead><tr style="background:var(--gray-100);"><th style="padding:8px;text-align:left;">Category</th><th style="padding:8px;">Age 4–6</th><th style="padding:8px;">Age 6–9</th></tr></thead><tbody><tr><td style="padding:7px;border-top:1px solid var(--gray-100);">Instruction</td><td>1 step</td><td>1–2 steps</td></tr><tr><td style="padding:7px;border-top:1px solid var(--gray-100);">Cue Type</td><td>External imagery</td><td>External + reasoning</td></tr><tr><td style="padding:7px;border-top:1px solid var(--gray-100);">Correction</td><td>Demonstrate</td><td>Ask-guided</td></tr><tr><td style="padding:7px;border-top:1px solid var(--gray-100);">Competition</td><td>Cooperative games</td><td>Structured competition</td></tr><tr><td style="padding:7px;border-top:1px solid var(--gray-100);">Feedback</td><td>Immediate praise</td><td>Specific performance</td></tr></tbody></table>`},
-]},
-{id:'L1_M3',title:'Module 3 — Motor Learning',icon:'⚙️',sections:[
-{h:'Performance vs Learning',b:`Motor learning is a relatively permanent change in movement capability produced by practice. Key word: <em>permanent.</em> Performance in a session is not learning. Temporary improvement ≠ retention. <strong>Blocked practice</strong> (same drill repeated) looks good today — poor transfer long-term. <strong>Variable practice</strong> (change distance, target, rules) looks messier — significantly stronger retention. Research (Shea &amp; Morgan 1979) confirms this. EduGolfKids coaches train for learning, not appearance.`},
-{h:'Constraints-Led Approach (CLA)',b:`Based on Newell (1986). Instead of telling children how to move, manipulate: <strong>(1) Task constraints</strong> — target size, scoring rules, distance, time limits. <strong>(2) Environmental constraints</strong> — cones, boundaries, landing zones. <strong>(3) Individual constraints</strong> — height, strength, emotional state. External focus cues improve motor efficiency (Wulf 2013): instead of "Rotate your hips," say "Make your belly button face the target." Movement emerges naturally when constraints are designed properly.`},
-{h:'Guided Discovery',b:`<strong>Direct correction:</strong> "You lifted your head." <strong>Guided discovery:</strong> "What happened when that one went low?" Guided discovery builds autonomy, improves retention, develops error detection. <strong>Correction hierarchy:</strong> (1) Adjust the environment. (2) Adjust the task. (3) Ask a reflective question. (4) Demonstrate. (5) Direct correction — last resort only. Error is necessary for neural recalibration. Over-correction creates fear, motor rigidity, and coach dependency.`},
-{h:'Session Design',b:`Within the 20-minute Skill Block, use <strong>4 × 4-minute constraint challenges:</strong> Challenge 1: Hit past blue cone. Challenge 2: Land inside yellow circle. Challenge 3: Score 3 in a row. Challenge 4: Time pressure round. Keep instructions under 30 seconds. One focus cue at a time. When a child struggles, ask: Is the task too hard? Is the environment poorly designed? Is instruction overloaded? Is emotional state disrupted? Adjust constraints before correcting technique.`},
-]},
-{id:'L1_M4',title:'Module 4 — LTAD',icon:'📈',sections:[
-{h:'LTAD Framework',b:`Long-Term Athlete Development (Balyi &amp; Hamilton 2004) organizes skill progression according to biological development, neuromuscular readiness, and cognitive maturity. It prevents burnout, overuse injuries, skill plateaus, and early dropout. LTAD asks: "What is developmentally appropriate at this stage?" — not "How fast can we make them good?"`},
-{h:'Active Start (Ages 4–6)',b:`<strong>Primary goal: movement literacy — not golf mechanics.</strong> Golf exposure should be play-based, low pressure, short duration, and target-focused. Do NOT emphasize: grip precision, swing plane, hip rotation, launch angle, or technical positions. Why? Neurological development at 4–6 is highly plastic and exploration-driven. Early rigid technical instruction reduces creativity, natural movement exploration, and adaptive learning.`},
-{h:'FUNdamentals (Ages 6–9)',b:`<strong>Primary goal: athletic foundation + basic golf control — still NOT specialization.</strong> Introduce structured scoring, basic skill progression, controlled competition. Still avoid: swing reconstruction, biomechanical perfectionism, high repetition blocked practice, adult tournament pressure. <strong>Key scenario:</strong> A 7-year-old slices but consistently reaches the target zone. No safety issue, ball reaches distance, child is confident — <em>do NOT reconstruct the swing.</em> Adjust constraints and let natural refinement occur.`},
-{h:'Early Technical Overload Risks',b:`The five documented risks: <strong>(1) Motor Rigidity</strong> — overthinking, stiff movement, loss of adaptability. <strong>(2) Reduced Creativity</strong> — children stop exploring, become coach-dependent. <strong>(3) Increased Injury Risk</strong> — overuse + forced mechanics. <strong>(4) Psychological Burnout</strong> — anxiety, dropout, reduced enjoyment. <strong>(5) Plateau Effect</strong> — early performance spike, mid-adolescence stagnation. EduGolfKids coaches are long-term architects.`},
-]},
-{id:'L1_M5',title:'Module 5 — 21st Century Learning',icon:'🔬',sections:[
-{h:'The 4 Cs',b:`EduGolfKids sessions are structured learning environments aligned with modern educational science. The four core competencies: <strong>(1) Critical Thinking</strong> — analyzing, adjusting, solving problems. Ask: "What changed on that shot?" <strong>(2) Communication</strong> — children explain strategy, reflect on performance. <strong>(3) Collaboration</strong> — team target games, partner scoring. <strong>(4) Creativity</strong> — open-ended tasks: "Find a way to land it inside the yellow circle." Golf sessions are classrooms in motion.`},
-{h:'Growth Mindset &amp; Reflection',b:`Children must learn that skill improves with effort and mistakes are learning data. Coach language: instead of "You're a natural," say "That adjustment worked because you kept trying." Reinforce effort, not talent. <strong>Wrap-up metacognition:</strong> "What helped you hit farther today?" "What will you try next time?" This strengthens self-awareness, long-term retention, and autonomy. Today's children have short attention cycles — sessions must include movement rotation every 4–5 minutes and minimal idle time.`},
-{h:'The Modern Coach Role',b:`<strong>Old Model:</strong> authority figure, gives instructions, corrects constantly. <strong>EduGolfKids Coach:</strong> learning facilitator, environment designer, question asker, confidence builder, structure enforcer. Target communication ratio: more questions than commands. Parents today expect structured development, emotional safety, confidence growth, character building, and measurable progression. Be able to explain: "We are building decision-making, confidence, and motor adaptability — not just swings."`},
-]},
-{id:'L1_M6',title:'Module 6 — Growth Mindset Language',icon:'💬',sections:[
-{h:'Why Language Shapes Identity',b:`Children 4–10 form early self-concept, are highly approval-sensitive, and internalize adult feedback deeply. Negative phrasing becomes internal narrative: if a coach says "You're not focusing," the child hears "I'm bad at this." <strong>Your language becomes their inner voice.</strong> Children will forget drills. They will forget scores. They will not forget how you made them feel.`},
-{h:'The Language Code',b:`<strong>APPROVED:</strong> "I see improvement." / "Let's try again." / "What did you notice?" / "That adjustment helped." / "You kept going." / "Good effort." / "What could you change?" / "Keep exploring." — These encourage effort, reinforce autonomy, promote reflection, support emotional safety.<br><br><strong>PROHIBITED:</strong> "That's wrong." / "Why can't you?" / "You're not good at this." / "You always do that." / "That's easy." — These attack identity, create shame, trigger anxiety. <strong>Violation of the Language Code results in reassessment.</strong>`},
-{h:'Correction &amp; Frustration Response',b:`When a child misses: instead of "That's wrong" → "That one went left. What did you notice?" <strong>Frustration signals:</strong> equipment drop, crossed arms, silence, "This is stupid," aggressive swing. <strong>Coach response:</strong> (1) Lower tone. (2) Reduce task difficulty. (3) Effort-based praise. (4) Normalize struggle: "You're learning this. That's different from being bad at it. Let's make it easier and try again." <strong>Effort vs outcome:</strong> "Great shot!" builds performance dependency. "You adjusted your stance — that helped" builds process focus. Never publicly shame — crouch to child's level, speak quietly.`},
-{h:'3-Step Language Reset',b:`If a coach accidentally uses harsh language: <strong>(1)</strong> Rephrase immediately. <strong>(2)</strong> Model the growth correction. <strong>(3)</strong> Reinforce confidence. Example: Coach says "No, not like that." → Immediately follows: "Let me rephrase — that one went left. Let's adjust together." Accountability protects culture. <strong>Parent communication:</strong> instead of "She's behind the group in putting" → "She's developing her putting feel and showing great focus — we're working through a challenge that will accelerate this."`},
-]},
-{id:'L1_M7',title:'Module 7 — Session Architecture',icon:'🏗️',sections:[
-{h:'Integration: Theory into Practice',b:`Module 7 is where all prior modules become one. Every session must simultaneously apply: M2 (Child Development), M3 (Motor Learning), M4 (LTAD), M5 (21st Century Learning), M6 (Language Code), and all safety standards. A great drill alone is not enough. A positive tone alone is not enough. A safe setup alone is not enough. Only integration creates safety, retention, confidence, progression, and brand consistency.`},
-{h:'Warm-Up &amp; Skill Block',b:`<strong>Warm-Up (0–10 min):</strong> M2 — short instructions, immediate participation. M3 — target-based, constraints used. M4 — coordination/balance focus, no technical correction. M6 — effort-based praise from minute one. Safety: spacing established, foam balls only. If warm-up is weak, the entire session declines. <strong>Skill Block (10–30 min):</strong> M3 (primary focus) — 3–4 mini constraint challenges (4–6 min each), external focus cues, no technical lecture. M2 — age-appropriate instruction, frustration monitoring. M4 — development over aesthetics, no adult swing reconstruction. Safety: 6-foot spacing maintained throughout.`},
-{h:'Game Reinforcement &amp; Wrap-Up',b:`<strong>Game Reinforcement (30–50 min):</strong> Transfer skill to contextual play. Variable scoring, decision-making pressure. Do NOT overcorrect mid-game — allow natural movement adaptation. Reframe mistakes, normalize competitive loss. This is where retention strengthens and autonomy develops. <strong>Wrap-Up (50–60 min):</strong> Reflection: "What did you notice?" "What helped you improve?" Effort-based praise. Calm tone, structured closure. Equipment: clubs down before retrieval, clear dismissal. Children must leave confident, regulated, successful, and motivated.`},
-{h:'Integration Map',b:`<table style="width:100%;border-collapse:collapse;font-size:12px;"><thead><tr style="background:var(--gray-100);"><th style="padding:7px;text-align:left;">Segment</th><th style="padding:6px;text-align:center;">M2</th><th style="padding:6px;text-align:center;">M3</th><th style="padding:6px;text-align:center;">M4</th><th style="padding:6px;text-align:center;">M5</th><th style="padding:6px;text-align:center;">M6</th><th style="padding:6px;text-align:center;">Safety</th></tr></thead><tbody><tr><td style="padding:7px;border-top:1px solid var(--gray-100);">Warm-Up</td><td style="text-align:center;">✓</td><td style="text-align:center;">✓</td><td style="text-align:center;">✓</td><td style="text-align:center;">✓</td><td style="text-align:center;">✓</td><td style="text-align:center;">✓</td></tr><tr><td style="padding:7px;border-top:1px solid var(--gray-100);">Skill Block</td><td style="text-align:center;">✓</td><td style="text-align:center;">✓✓✓</td><td style="text-align:center;">✓</td><td style="text-align:center;">✓</td><td style="text-align:center;">✓</td><td style="text-align:center;">✓</td></tr><tr><td style="padding:7px;border-top:1px solid var(--gray-100);">Game</td><td style="text-align:center;">✓</td><td style="text-align:center;">✓✓</td><td style="text-align:center;">✓</td><td style="text-align:center;">✓✓</td><td style="text-align:center;">✓</td><td style="text-align:center;">✓</td></tr><tr><td style="padding:7px;border-top:1px solid var(--gray-100);">Wrap-Up</td><td style="text-align:center;">✓</td><td style="text-align:center;">—</td><td style="text-align:center;">✓</td><td style="text-align:center;">✓✓</td><td style="text-align:center;">✓✓</td><td style="text-align:center;">✓</td></tr></tbody></table>`},
-]},
-{id:'L1_M8',title:'Module 8 — Parent &amp; School Communication',icon:'🤝',sections:[
-{h:'Two Audiences',b:`<strong>Schools</strong> are institutional partners who grant access to students, facilities, and scheduling. They expect punctuality, minimal disruption, advance notice of changes, compliance with school policies, and visible safeguarding standards. <strong>Parents</strong> are the customers and advocates. They expect to understand what their child is learning, to feel their child is safe and valued, honest positive progress communication, and to be heard when they have concerns. Your communication with adults is as important as your coaching of children.`},
-{h:'School Communication Standards',b:`Before first session: introduce yourself formally, review site protocols (check-in, parking, emergency contacts), confirm lesson location, access routes, equipment storage, and pickup/drop-off procedures. During program: sign in at the front office every arrival — no exceptions. Notify school staff immediately of any incident. Respond to school communication within 24 hours. Never speak negatively about the school or its staff to parents. Never make verbal agreements that bypass the official program structure.`},
-{h:'Parent Communication &amp; Difficult Conversations',b:`Pre-program parents must receive: program overview, session schedule, drop-off/pick-up instructions, coach contact via approved channel only, and safeguarding/photo consent. Progress language: instead of "She is behind the group" → "She is developing her putting feel and showing great focus." <strong>Difficult parent 4-step protocol:</strong> (1) Listen first — no interruptions. (2) Acknowledge — "I understand your concern and I appreciate you bringing this to me." (3) Clarify and explain using developmental reasoning. (4) Escalate when appropriate. Immediate HQ escalation required for: allegations of misconduct, refund demands, threats or aggressive behavior, safeguarding concerns.`},
-]},
-{id:'L1_M9',title:'Module 9 — Group Management',icon:'👥',sections:[
-{h:'Authority Through Structure',b:`Authority is established through consistency, clarity, and calm confidence — not volume or dominance. <strong>5 Standard Commands</strong> — must be taught at the start with every new group: <em>FREEZE</em> — all movement stops, clubs on ground. <em>RESET</em> — return to starting position. <em>RETRIEVE</em> — walk to collect balls. <em>ROTATE</em> — move to next station. <em>EYES ON ME</em> — stop, look at coach. <strong>Opening routine (first 90 seconds):</strong> children behind line, coach greets by name, states session theme in one sentence, reviews one safety rule, warm-up game introduced immediately.`},
-{h:'5-Step Behavior Management Ladder',b:`Always begin at Step 1: <strong>Step 1: Environmental Adjustment</strong> — fix the environment first (wait time? task difficulty? spacing?). Most disruption disappears. <strong>Step 2: Proximity &amp; Non-Verbal Cue</strong> — move closer, calm eye contact. <strong>Step 3: Private Verbal Redirect</strong> — crouch down, speak quietly: "Hey, I need you to [specific behavior]. You can do that." <strong>Step 4: Choice &amp; Consequence</strong> — "I need you to [behavior]. If you continue, you will take a 2-minute break. It's your choice." <strong>Step 5: Removal &amp; Documentation</strong> — supervised seated area, notify school staff, document within 24 hours. <strong>Physical restraint is NEVER permitted under any circumstance.</strong>`},
-{h:'Transitions &amp; Bathroom Protocol',b:`<strong>Transitions are the highest risk moments.</strong> Protocol: FREEZE command before every transition, one clear instruction, count down out loud ("10... 5... 3... 2... 1... ROTATE"), walk only, verify all children at new station before resuming. Sloppy transitions cost 5–10 minutes and elevate injury risk significantly. <strong>Attention techniques:</strong> call-and-response ("Golf time!" → "Focus time!"), countdown method (calm — never as a threat), whisper technique (lower your voice — children quiet to hear). <strong>Bathroom:</strong> child requests to coach → coach notifies school staff → school staff member escorts. Coaches NEVER escort alone. If staff unavailable, pause session and consult EAP.`},
-]},
-{id:'L1_M10',title:'Module 10 — Medical &amp; Inclusion',icon:'❤️',sections:[
-{h:'Legal Framework &amp; Pre-Program Screening',b:`EduGolfKids operates under federal law: <strong>ADA</strong> — reasonable accommodations required; coaches may not exclude a child solely on the basis of disability. <strong>Section 504</strong> — coaches must request and review any 504 Plan. <strong>Title IX</strong> — all sessions equally accessible regardless of gender. Before the first session, review registration for: documented medical conditions, physical limitations, behavioral diagnoses (ADHD, ASD, anxiety), sensory sensitivities, and IEP/504 status. Verify emergency medication location with school nurse. Coaches prepare and respond — they do not diagnose.`},
-{h:'Medical Emergencies',b:`<strong>Asthma:</strong> Stop activity, sit child upright, retrieve inhaler (coach does NOT administer unless trained), call nurse, call 911 if worsening. <strong>Seizure:</strong> Do NOT restrain, clear space, do NOT put anything in the mouth, call 911 and nurse, time the seizure, recovery position after. <strong>Anaphylaxis:</strong> Call 911 immediately for any respiratory symptoms, locate EpiPen (school nurse administers), keep child calm and seated upright. <strong>Head Injury:</strong> Stop activity — ZERO-TOLERANCE concussion protocol. Child does NOT return that day. Notify nurse, contact parent same day, medical clearance required before return. RULE: If in doubt, sit them out. <strong>Heat above 100°F/38°C:</strong> session must move indoors or postpone.`},
-{h:'Inclusive Coaching',b:`<strong>ADHD</strong> — adjustments: position child close to coach, one-step instructions, use child's name before instructions, privately warn before transitions, acknowledge small compliance immediately. ADHD behavior is neurological — not defiance. <strong>ASD</strong> — pre-inform child of session structure at start, avoid sudden routine changes, use literal concrete language, allow extra processing time, never force physical contact. <strong>Physical limitations</strong> — modify the task, not the child. Equipment modification (shorter club, larger target, seated station). Never draw attention to the limitation. <strong>Anxiety</strong> — allow observation before participation, reduce stakes of first attempts, check in privately. Confidentiality of special needs information is an absolute standard.`},
-]},
-{id:'L1_M11',title:'Module 11 — Field Safety',icon:'⛈️',sections:[
-{h:'Weather Decision Framework',b:`Check weather minimum 2 hours before every outdoor session — no exceptions. <strong>3-Option Matrix: OPTION 1 — Proceed Outdoors:</strong> clear sky, no storm within 4 hours, manageable wind, safe temperature. <strong>OPTION 2 — Move Indoors:</strong> storm forecast within 4 hours, high wind, light rain, extreme heat. Use foam balls for modified indoor session. <strong>OPTION 3 — Postpone/Cancel:</strong> active thunderstorm, extreme weather event, no indoor space. Always reschedule — never simply cancel. A cancelled session without rescheduling is lost revenue and a broken commitment.`},
-{h:'The 30/30 Lightning Rule',b:`<strong>Memorize this:</strong> If the time between lightning flash and thunder is 30 seconds or less — evacuate immediately (storm is within 6 miles). Do not resume until 30 minutes after the last flash or thunder. <strong>Evacuation protocol:</strong> STEP 1 — Three whistle blasts, calm firm voice: "Everyone stop. Clubs on the ground. Come to me now." STEP 2 — All clubs flat on ground. No child carries a club during evacuation — ever. STEP 3 — Move to substantial building (school preferred). NOT under trees, near fences, flagpoles, in dugouts, covered bleachers, or bus stops. STEP 4 — Count every child against session register. STEP 5 — Notify school contact and parents. STEP 6 — Wait the full 30 minutes. Reset clock if lightning occurs again. NEVER resume early because "it looks clear."`},
-{h:'Heat, Wind, Rain &amp; Incidents',b:`<strong>Heat:</strong> 80–90°F — water break every 15 min. Above 90°F — consider moving indoors. Above 100°F — move indoors or postpone. <strong>Wind above 25mph</strong> — equipment becomes projectiles; no full swings outdoors. <strong>Rain:</strong> moderate to heavy → move indoors; wet surfaces → slipping risk, do not proceed outdoors. <strong>Head injury:</strong> stop activity, do NOT move child if neck/back injury suspected, call nurse. <strong>Incident documentation:</strong> every incident within 24 hours. Required fields: date, time, location, child's full name and age, nature of incident, witnesses, action taken, medical attention, parent notification time and method.`},
-]},
-],
+M0:[{  id:"M0",  title:"Compliance &amp; Safeguarding",  icon:"\ud83d\udee1\ufe0f",  sections:[    {h:`Compliance &amp; Safeguarding`,b:`<p style="margin:0 0 10px;line-height:1.85;">MODEL 0<em></em></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Foundational Compliance &amp; Safeguarding Certification</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong><em>(Pre-Course Mandatory Requirement – Revised Operational Version)</strong></em></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>1. Duty of Care Framework</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>EduGolfKids operates under an elevated duty-of-care standard within school environments.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>All coaches act:</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>• In loco parentis during sessions(“In the place of a parent.”)</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>• As mandatory reporters where required by state law</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>• In compliance with district safeguarding policies</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Safety, supervision, and safeguarding take priority over instruction.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>2. Background Screening Requirements</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Prior to school placement, each coach must complete:</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>• State-level criminal background check</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>• National sex offender registry screening</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>• Additional district-required screenings</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>• Identity and employment eligibility verification</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Documentation must be available for district review.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>No coach may enter a school environment without clearance.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>3. Mandatory Reporter Compliance</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Coaches must complete:</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>• State-required mandatory reporter training</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>• Child abuse recognition training</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>• District reporting protocol review</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>If there is reasonable suspicion of abuse, coaches must:</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>Ensure child safety</strong></li>
+  <li style="margin-bottom:5px;"><strong>Report to designated school authority</strong></li>
+  <li style="margin-bottom:5px;"><strong>Follow state reporting law</strong></li>
+  <li style="margin-bottom:5px;"><strong>Notify EduGolfKids Compliance Officer</strong></li>
+</ul>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Failure to report results in removal from certification.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>4. Supervision &amp; Visibility Standards</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>EduGolfKids requires visible and accountable instruction environments.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Standard Practice:</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>• Sessions must occur in school-approved spaces</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>• School staff must have access to session areas</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>• Doors must remain unlocked when indoors</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>• Windows or visibility panels used when available</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>When Direct Line-of-Sight Is Not Possible (e.g., gym partition):</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>• School staff must know session location</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>• Coach must remain in open, common-use area</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>• No isolated closed-room instruction permitted</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>One-on-One Lessons Policy</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>One-on-one sessions are permitted when:</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>• Low enrollment results in a single participant</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>• A second adult is present in the facility (teacher, staff, or parent)</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>• The session takes place in an open, observable space</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>One-on-one instruction is prohibited:</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>• Behind closed doors</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>• In secluded or non-monitored areas</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>• Without staff awareness</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>This maintains compliance without blocking operational flexibility.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>5. Physical Contact Policy </strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>EduGolfKids does NOT enforce a zero-contact rule.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Instead, we enforce Controlled &amp; Transparent Instructional Contact.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Hands-on positioning is permitted only when:</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>• Instructional necessity exists</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>• Verbal cueing has been attempted first</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>• Contact is brief, non-invasive, and instructional</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>• Coach explains contact before making adjustment</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Example:</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>“I’m going to gently adjust your shoulders so you can feel the correct position.”</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Contact must never:</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>• Involve sensitive areas</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>• Be prolonged</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>• Occur without explanation</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>• Occur in isolated settings</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>This aligns with SafeSport’s “appropriate instructional contact” guidelines.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>6. Equipment &amp; Hitting Zone Safety Protocol</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Strict Safety Rules:</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>• Children may only hold clubs inside designated hitting zones</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>• Clubs must remain grounded when not actively hitting</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>• No child may walk with a club in hand</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>• No club may be carried during water breaks</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>• All equipment must be placed on the ground inside hitting zones before movement</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Movement Rules:</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>• Children may not enter another child’s hitting zone</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>• Ball retrieval only upon coach command (“RESET”)</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>• Running in hitting areas prohibited</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>This reduces accidental swing contact risk significantly.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>7. Environmental &amp; Gym-Based Safety Adjustments</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>When operating indoors (gym, multipurpose room):</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>• Foam or low-compression balls mandatory</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>• Hitting lanes clearly marked with cones</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>• Wall distance minimum safe buffer enforced</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>• No overhead obstruction risk</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>If environmental safety cannot be guaranteed, session must be modified.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>8. Emergency Action Plan (EAP)</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Each site must have:</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>• Emergency contact procedure</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>• AED location identified</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>• Nurse or medical access identified</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>• Severe weather protocol reviewed</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Coaches must:</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>• Know EAP before first session</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>• Report injuries same day</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>• Complete incident documentation within 24 hours</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>Have a EAP plan/card in coaches bag at all times.</strong></li>
+</ul>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>9. Dress Code Policy </strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>All EduGolfKids coaches must wear:</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>• Golf shirt (collared or approved branded attire)</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>• Golf shorts or golf pants</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>• Golf-appropriate athletic shoes</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Prohibited attire:</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>• Jeans</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>• Sweatpants</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>• Hoodies (unless branded and approved)</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>• Sandals or open-toe shoes</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>• Non-athletic footwear</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Coaches represent a professional youth sport brand and must maintain a golf-appropriate appearance.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>10. Mobile Phone Usage Policy</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>During active sessions, coaches may NOT:</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>• Take personal calls</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>• Respond to text messages</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>• Use phones for personal browsing</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>• Be distracted by non-session activity</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Permitted phone use:</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>• Recording swing video for instructional purposes</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>• Taking approved photos (with consent)</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>• Reviewing session plans</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>• Checking attendance</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>• Emergency communication</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Phones must remain off or on silent during instruction.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Violation may result in disciplinary review.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>11. Insurance &amp; Liability Standards</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>EduGolfKids maintains:</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>• General liability insurance ($1,000,000 minimum per occurrence)</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>• Professional liability coverage</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>• Additional insured status for districts upon request</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Certificates of Insurance provided prior to launch.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>12. Inclusion &amp; Non-Discrimination</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>EduGolfKids complies with:</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>• Title IX</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>• ADA</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>• Section 504</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Reasonable accommodations will be provided when appropriate.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>No child may be excluded based on protected status.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>13. Incident Reporting Standards</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>All incidents involving:</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>• Injury</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>• Safety breach</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>• Behavioral escalation</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>• Parent concern</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Must be documented within 24 hours.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Reports must include:</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>• Date</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>• Time</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>• Location</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>• Description</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>• Action taken</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>• Witnesses</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>14. Compliance Enforcement</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Failure to comply may result in:</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>• Immediate removal from school site</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>• Suspension of certification</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>• Termination</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>• Reporting to authorities when required</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Safeguarding violations override instructional considerations.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>15. Time Management &amp; Supervision Protocol</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong><em>(Custodial Responsibility Standards)</strong></em></p>
+<p style="margin:0 0 10px;line-height:1.85;"><strong>EduGolfKids recognizes that during lesson time, coaches assume active supervisory responsibility for participating children.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Proper time management and supervision procedures are mandatory and non-negotiable.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>15.1 Coach Arrival &amp; Pre-Session Setup Requirements</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>To ensure safety and professional standards:</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>• Coaches must arrive at the school a minimum of 15 minutes prior to scheduled lesson start time.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>• Upon arrival, coaches must notify designated school personnel of their presence.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>• All equipment and stations must be fully set up before children arrive.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Under no circumstances may:</strong></p>`},    {h:`Compliance &amp; Safeguarding (continued)`,b:`<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>• Equipment setup occur while children are present.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>• Breakdown or packing up occur while children are present.</strong></p>
+<p style="margin:0 0 10px;line-height:1.85;"><strong>Children must never be present in an environment where equipment is being assembled, adjusted, or removed.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>This prevents:</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>• Equipment-related injury</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>• Distraction-based accidents</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>• Loss of supervision focus</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>15.2 Supervision During Lesson Time</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Coaches assume full supervisory responsibility during lesson time.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>At no point may:</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>• A child be left unsupervised</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>• A coach leave the coaching area unattended</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>• Equipment supervision lapse</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>• Children move freely without monitoring</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Supervision must be:</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>• Active</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>• Visible</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>• Continuous</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Supervision includes both:</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>• Physical safety</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>• Behavioral oversight</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>15.3 Student Collection &amp; Return Procedures</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Coaches must follow each school’s specific protocol for:</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>• Collecting children from classrooms</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>• Meeting at designated areas</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>• Escorting students to lesson location</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Before leaving the classroom or pickup location, coaches must:</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>• Verify attendance list</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>• Confirm number of children matches registration</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>After lesson completion, coaches must:</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>• Escort children back to the correct classroom or designated drop-off area</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>• Confirm handoff to responsible adult (teacher or authorized staff)</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Coaches must ensure 100% accountability for every child.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>No child may be dismissed independently unless explicitly authorized by school policy.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>15.4 End-of-Session Custodial Responsibility</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>At lesson conclusion:</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>• Children must be transferred only to:</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>Assigned school teacher</strong></li>
+  <li style="margin-bottom:5px;"><strong>Authorized school staff</strong></li>
+  <li style="margin-bottom:5px;"><strong>Verified parent or guardian</strong></li>
+</ul>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Coaches must ensure:</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>• No child remains unattended</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>• No child exits gated school property unsupervised</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>• No child is left in parking areas or unsafe environments</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>If a parent is late for pickup:</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>• The coach must remain with the child</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>• The parent must be contacted immediately</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>• Pickup arrangements must be confirmed</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>• The child must remain under adult supervision at all times</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Under no circumstances may a coach leave a child unattended due to late pickup.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>15.5 Drop-Off &amp; Pick-Up Communication Protocol</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Parents must be clearly informed of:</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>• Exact lesson location</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>• Start time</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>• End time</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>• Approved drop-off area</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>• Approved pickup area</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>This information must be communicated:</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>• Prior to program launch</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>• In registration confirmation</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>• In reminder communication</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Clear communication reduces liability and prevents unsafe dismissal scenarios.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>15.6 Equipment Breakdown Protocol</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Equipment breakdown may only begin when:</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>• All children have been safely handed over</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>• The session area is fully cleared of participants</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>• No child remains within equipment zone</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Packing up while children are present is prohibited.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>15.7 Zero-Unsupervised Policy</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>EduGolfKids enforces a strict:</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Zero-Unsupervised-Child Standard.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>This applies:</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>• Before session</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>• During session</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>• After session</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>• During transitions</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>• During bathroom breaks</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>• During late pickups</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>At no point may a child be left without adult supervision.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Coach Acknowledgment</strong></p>
+<p style="margin:0 0 10px;line-height:1.85;"><strong>“I acknowledge and agree to comply with all EduGolfKids safeguarding, safety, operational, and legal standards as a condition of certification and school assignment.”</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Signature: __________________________</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Printed Name: _______________________</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Date: _______________________________</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>16. Model 0 Certification Requirement</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Before entering Module 1 Certification, coaches must:</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>• Complete background clearance</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>• Complete mandatory reporter training</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>• Pass compliance knowledge check (90% minimum)</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>• Sign acknowledgment</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><em></em></p>
+<div id="m0-ack-section" style="margin-top:24px;padding:20px;background:#f0faf0;border-radius:10px;border:2px solid var(--green);">
+  <h4 style="margin:0 0 12px;color:var(--green-dark);">Coach Acknowledgment</h4>
+  <p style="margin-bottom:16px;line-height:1.7;">"I acknowledge and agree to comply with all EduGolfKids safeguarding, safety, operational, and legal standards as a condition of certification and school assignment."</p>
+  <label style="display:flex;align-items:flex-start;gap:12px;cursor:pointer;">
+    <input type="checkbox" id="m0-acknowledge" style="margin-top:3px;width:18px;height:18px;flex-shrink:0;" onchange="checkM0Ack()"/>
+    <span style="font-size:14px;"><strong>I have read and understood all Model 0 compliance requirements.</strong> I acknowledge and agree to comply with all standards as a condition of certification.</span>
+  </label>
+  <div id="m0-ack-status" style="margin-top:8px;font-size:13px;color:var(--gray-400);"></div>
+</div>`},  ]},],
+L1:[{  id:"L1_M1",  title:"Module 1 \u2014 EduGolfKids System Standards",  icon:"\ud83d\udccb",  sections:[    {h:`Non-Negotiable 60-Minute Session Architecture`,b:`<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>SECTION 1</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Non-Negotiable 60-Minute Session Architecture</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Policy: Mandatory Structure</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>All sessions MUST follow:</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>10 min – Warm-Up Game</strong></li>
+  <li style="margin-bottom:5px;"><strong>20 min – Skill Block</strong></li>
+  <li style="margin-bottom:5px;"><strong>20 min – Game Reinforcement</strong></li>
+  <li style="margin-bottom:5px;"><strong>10 min – Wrap-Up &amp; Reset</strong></li>
+</ul>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Deviation requires HQ approval.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Why 60 Minutes?</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Children 4–10 demonstrate:</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>Limited sustained attention (10–20 min)</strong></li>
+  <li style="margin-bottom:5px;"><strong>High movement need</strong></li>
+  <li style="margin-bottom:5px;"><strong>Rapid cognitive fatigue</strong></li>
+</ul>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Longer sessions reduce:</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>Quality</strong></li>
+  <li style="margin-bottom:5px;"><strong>Focus</strong></li>
+  <li style="margin-bottom:5px;"><strong>Retention</strong></li>
+</ul>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Shorter sessions reduce:</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>Skill consolidation opportunity</strong></li>
+</ul>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>60 minutes is neurologically optimized for this age group.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Segment Breakdown (Deep Detail)</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>1️⃣ Warm-Up Game (10 Minutes)</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Purpose:</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>Elevate heart rate</strong></li>
+  <li style="margin-bottom:5px;"><strong>Activate coordination</strong></li>
+  <li style="margin-bottom:5px;"><strong>Increase focus</strong></li>
+  <li style="margin-bottom:5px;"><strong>Create emotional engagement</strong></li>
+</ul>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Must Include:</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>Whole-body movement</strong></li>
+  <li style="margin-bottom:5px;"><strong>Competitive or cooperative scoring</strong></li>
+  <li style="margin-bottom:5px;"><strong>Immediate participation (no lines)</strong></li>
+  <li style="margin-bottom:5px;"><strong>Foam balls only</strong></li>
+</ul>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Why It Matters:</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Movement primes the brain for learning (Ratey, 2008).</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>2️⃣ Skill Block (20 Minutes)</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Purpose:</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>Introduce new movement concept</strong></li>
+  <li style="margin-bottom:5px;"><strong>Refine existing skill</strong></li>
+  <li style="margin-bottom:5px;"><strong>Provide guided discovery</strong></li>
+</ul>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Structure:</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>3–4 mini constraints challenges</strong></li>
+  <li style="margin-bottom:5px;"><strong><5 min per variation</strong></li>
+  <li style="margin-bottom:5px;"><strong>Immediate rotation</strong></li>
+  <li style="margin-bottom:5px;"><strong>Constant movement</strong></li>
+</ul>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>No:</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>Standing lines</strong></li>
+  <li style="margin-bottom:5px;"><strong>10-minute lecture</strong></li>
+  <li style="margin-bottom:5px;"><strong>Isolated repetitive swings</strong></li>
+</ul>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>3️⃣ Game Reinforcement (20 Minutes)</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Purpose:</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>Transfer skill to contextual play</strong></li>
+  <li style="margin-bottom:5px;"><strong>Encourage decision-making</strong></li>
+  <li style="margin-bottom:5px;"><strong>Add pressure variability</strong></li>
+</ul>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Examples:</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>Target scoring challenges</strong></li>
+  <li style="margin-bottom:5px;"><strong>Team competitions</strong></li>
+  <li style="margin-bottom:5px;"><strong>Accuracy games</strong></li>
+  <li style="margin-bottom:5px;"><strong>Time-based scoring</strong></li>
+</ul>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>This is where retention is strengthened.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>4️⃣ Wrap-Up &amp; Reset (10 Minutes)</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Purpose:</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>Reinforce learning verbally</strong></li>
+  <li style="margin-bottom:5px;"><strong>Build confidence</strong></li>
+  <li style="margin-bottom:5px;"><strong>Review safety</strong></li>
+  <li style="margin-bottom:5px;"><strong>Prepare for next session</strong></li>
+</ul>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Must Include:</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>Reflection question</strong></li>
+  <li style="margin-bottom:5px;"><strong>Positive feedback</strong></li>
+  <li style="margin-bottom:5px;"><strong>Equipment reset protocol</strong></li>
+</ul>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>What Happens Without Structure?</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>You get:</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>Chaos</strong></li>
+  <li style="margin-bottom:5px;"><strong>Inconsistent learning</strong></li>
+  <li style="margin-bottom:5px;"><strong>Increased injury risk</strong></li>
+  <li style="margin-bottom:5px;"><strong>Parent confusion</strong></li>
+  <li style="margin-bottom:5px;"><strong>Uneven progress</strong></li>
+  <li style="margin-bottom:5px;"><strong>Brand dilution</strong></li>
+</ul>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Structure protects both the child and EduGolfKids.</strong></p>`},    {h:`Approved vs Prohibited Drills (Expanded)`,b:`<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>SECTION 2</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Approved vs Prohibited Drills (Expanded)</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>APPROVED DRILLS MUST:</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>Be Target-Based</strong></li>
+</ul>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Children need external focus — not internal mechanics.</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>Require Decision-Making</strong></li>
+</ul>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>No autopilot repetition.</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>Use Low-Compression Balls</strong></li>
+</ul>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Safety + confidence.</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>Limit Repetition to <5 Minutes</strong></li>
+</ul>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>After 5 minutes engagement drops significantly.</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>Include Movement Variation</strong></li>
+</ul>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Change distance, target size, scoring rules.</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>Encourage Guided Discovery</strong></li>
+</ul>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Ask:</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>“What worked?”</strong></li>
+  <li style="margin-bottom:5px;"><strong>“What changed?”</strong></li>
+  <li style="margin-bottom:5px;"><strong>“How did you adjust?”</strong></li>
+</ul>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>PROHIBITED DRILLS (Detailed)</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>❌ Long Static Lines</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Why harmful:</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>30–45 sec waiting = disengagement</strong></li>
+  <li style="margin-bottom:5px;"><strong>Behavioral disruption increases</strong></li>
+  <li style="margin-bottom:5px;"><strong>Repetition drops</strong></li>
+  <li style="margin-bottom:5px;"><strong>Learning efficiency decreases</strong></li>
+</ul>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>❌ Blocked Repetition >5 Minutes</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Blocked practice = short-term improvement</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Variable practice = long-term retention</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>❌ Technical Lectures >60 Seconds</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Children cannot process abstract biomechanical instruction.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Instead use:</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>Analogies</strong></li>
+  <li style="margin-bottom:5px;"><strong>External cues</strong></li>
+  <li style="margin-bottom:5px;"><strong>Demonstration</strong></li>
+</ul>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>❌ Full-Speed Uncontrolled Swings</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Major injury liability.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Non-negotiable violation.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>❌ Adult Terminology</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Avoid:</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>“Lag angle”</strong></li>
+  <li style="margin-bottom:5px;"><strong>“Kinematic sequence”</strong></li>
+  <li style="margin-bottom:5px;"><strong>“Ground reaction force”</strong></li>
+</ul>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Use:</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>“Brush the grass”</strong></li>
+  <li style="margin-bottom:5px;"><strong>“Hit the rocket”</strong></li>
+  <li style="margin-bottom:5px;"><strong>“Make the ball fly to the red cone”</strong></li>
+</ul>`},    {h:`Equipment &Spacing Governance (Expanded)`,b:`<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>SECTION 3</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Equipment &amp; Spacing Governance (Expanded)</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Lateral Spacing: Minimum 6 Feet</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>This accounts for:</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>Swing arc</strong></li>
+  <li style="margin-bottom:5px;"><strong>Loss of balance</strong></li>
+  <li style="margin-bottom:5px;"><strong>Impulsive movement</strong></li>
+  <li style="margin-bottom:5px;"><strong>Delayed reaction time</strong></li>
+</ul>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Retrieval Protocol</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>When coach says “Retrieve”:</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>All clubs on ground</strong></li>
+  <li style="margin-bottom:5px;"><strong>All children step behind safety line</strong></li>
+  <li style="margin-bottom:5px;"><strong>Walk — no running</strong></li>
+  <li style="margin-bottom:5px;"><strong>No club in hand</strong></li>
+</ul>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Violation = immediate correction.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Swing Zones</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Each child must have:</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>Defined cone box</strong></li>
+  <li style="margin-bottom:5px;"><strong>Target lane</strong></li>
+  <li style="margin-bottom:5px;"><strong>No overlapping directions</strong></li>
+</ul>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>This is environmental constraint design.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Equipment Standards</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>Foam or low compression balls only</strong></li>
+  <li style="margin-bottom:5px;"><strong>Age-appropriate clubs</strong></li>
+  <li style="margin-bottom:5px;"><strong>No adult equipment</strong></li>
+  <li style="margin-bottom:5px;"><strong>Cones to define zones</strong></li>
+</ul>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Safety is engineered — not reactive.</strong></p>`},    {h:`No Improvisation Policy (Deep Governance)`,b:`<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>SECTION 4</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>No Improvisation Policy (Deep Governance)</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>This protects:</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>Brand integrity</strong></li>
+  <li style="margin-bottom:5px;"><strong>Skills Passport system</strong></li>
+  <li style="margin-bottom:5px;"><strong>Assessment fairness</strong></li>
+  <li style="margin-bottom:5px;"><strong>Legal risk exposure</strong></li>
+</ul>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Improvisation creates:</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>Inconsistent evaluation</strong></li>
+  <li style="margin-bottom:5px;"><strong>Uneven progression</strong></li>
+  <li style="margin-bottom:5px;"><strong>Increased injury probability</strong></li>
+  <li style="margin-bottom:5px;"><strong>Parental dissatisfaction</strong></li>
+</ul>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>What Is Allowed?</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Personality:</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>Energy</strong></li>
+  <li style="margin-bottom:5px;"><strong>Encouragement</strong></li>
+  <li style="margin-bottom:5px;"><strong>Humor</strong></li>
+  <li style="margin-bottom:5px;"><strong>Leadership style</strong></li>
+</ul>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Not allowed:</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>Changing structure</strong></li>
+  <li style="margin-bottom:5px;"><strong>Changing progression order</strong></li>
+  <li style="margin-bottom:5px;"><strong>Adding unsafe drills</strong></li>
+  <li style="margin-bottom:5px;"><strong>Modifying spacing rules</strong></li>
+</ul>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Creativity exists within the framework.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>COACH PRACTICAL APPLICATION (Expanded)</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Exercise 1 – Design &amp; Defend</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Coach must submit:</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>Written 60-minute plan</strong></li>
+  <li style="margin-bottom:5px;"><strong>Diagram of spacing</strong></li>
+  <li style="margin-bottom:5px;"><strong>Justification for:</strong></li>
+  <li style="margin-bottom:5px;"><strong>Warm-up design</strong></li>
+  <li style="margin-bottom:5px;"><strong>Skill progression</strong></li>
+  <li style="margin-bottom:5px;"><strong>Reinforcement game</strong></li>
+  <li style="margin-bottom:5px;"><strong>Identify motor learning principle used</strong></li>
+  <li style="margin-bottom:5px;"><strong>Identify risk mitigation considerations</strong></li>
+</ul>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Exercise 2 – Fault Analysis Scenario</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Scenario:</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>10 children in one line hitting at one net.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Coach must identify:</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Engagement flaw:</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>→ Long wait time reduces repetition.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Motor learning flaw:</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>→ Blocked practice with no contextual variation.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Safety flaw:</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>→ Overlapping swing path risk.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Structural violation:</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>→ Breaks session architecture + spacing policy.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Redesign:</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>→ 3 pods</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>→ 3 targets</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>→ Rotation every 4 minutes</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>→ Foam balls</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>→ Cones defining lanes</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>CERTIFICATION ASSESSMENT (Expanded)</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Written Test (30%)</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>Structure questions</strong></li>
+  <li style="margin-bottom:5px;"><strong>Motor learning theory</strong></li>
+  <li style="margin-bottom:5px;"><strong>Safety protocols</strong></li>
+  <li style="margin-bottom:5px;"><strong>Drill evaluation scenarios</strong></li>
+</ul>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Scenario Analysis (30%)</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Given 3 unsafe scenarios:</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>Identify violation</strong></li>
+  <li style="margin-bottom:5px;"><strong>Redesign properly</strong></li>
+  <li style="margin-bottom:5px;"><strong>Justify scientifically</strong></li>
+</ul>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Live Demonstration (40%)</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Coach must:</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>Set up correct spacing</strong></li>
+  <li style="margin-bottom:5px;"><strong>Deliver 10-minute micro session</strong></li>
+  <li style="margin-bottom:5px;"><strong>Demonstrate reset protocol</strong></li>
+  <li style="margin-bottom:5px;"><strong>Show engagement management</strong></li>
+</ul>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Automatic fail triggers:</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>Safety violation</strong></li>
+  <li style="margin-bottom:5px;"><strong>Full-speed uncontrolled swings</strong></li>
+  <li style="margin-bottom:5px;"><strong>Ignoring spacing rules</strong></li>
+</ul>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>MINIMUM PASS: 85%</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>EduGolfKids does not certify average.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Certification means system mastery.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Final Reinforcement for Coaches</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Consistency is not control for control’s sake.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Consistency is:</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>Neurological optimization</strong></li>
+  <li style="margin-bottom:5px;"><strong>Emotional regulation support</strong></li>
+  <li style="margin-bottom:5px;"><strong>Risk mitigation</strong></li>
+  <li style="margin-bottom:5px;"><strong>Brand protection</strong></li>
+  <li style="margin-bottom:5px;"><strong>Development integrity</strong></li>
+</ul>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>You are not “teaching golf.”</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>You are engineering developmental environments.</strong></p>
+<p style="margin:0 0 10px;line-height:1.85;">##</p>`},  ]},{  id:"L1_M2",  title:"Module 2 \u2014 Child Development (Ages 4\u201310)",  icon:"\ud83e\udde0",  sections:[    {h:`Developmental Foundations`,b:`<div class="doc-section-divider"></div>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Developmental Foundations</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Child development occurs across four domains:</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Cognitive (thinking capacity)</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Motor (movement control)</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Emotional (self-regulation)</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Social (peer interaction)</p>
+<p style="margin:0 0 10px;line-height:1.85;">Coaching must align with all four — not just skill instruction.</p>`},    {h:`Age Group Breakdown`,b:`<div class="doc-section-divider"></div>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Age Group Breakdown</p>
+<h3 style="color:var(--green-dark);border-bottom:2px solid var(--green-light);padding-bottom:8px;margin:24px 0 12px;font-size:16px;">AGE 4–6: Early Fundamentals Stage</h3>
+<h3 style="color:var(--green-dark);border-bottom:2px solid var(--green-light);padding-bottom:8px;margin:24px 0 12px;font-size:16px;">Neurological Characteristics</h3>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Limited working memory capacity</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Short sustained attention (5–8 minutes)</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">High sensory curiosity</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Imitation-driven learning</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Limited abstract reasoning</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">They learn best through:</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Demonstration</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Play</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Movement exploration</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Immediate feedback</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">External cues</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">They struggle with:</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Technical explanation</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Sequential instruction beyond 1 step</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Waiting in lines</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Delayed reward systems</p>
+<h3 style="color:var(--green-dark);border-bottom:2px solid var(--green-light);padding-bottom:8px;margin:24px 0 12px;font-size:16px;">Motor Development (4–6)</h3>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Developing balance</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Inconsistent coordination</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Limited bilateral control</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Poor spatial awareness</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Impulsive movement</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Coaching Implication:</p>
+<p style="margin:0 0 10px;line-height:1.85;">Safety management must be heightened.</p>
+<h3 style="color:var(--green-dark);border-bottom:2px solid var(--green-light);padding-bottom:8px;margin:24px 0 12px;font-size:16px;">Emotional Characteristics (4–6)</h3>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Rapid mood shifts</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Frustration tolerance is low</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Immediate success needed</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Highly approval-driven</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Fear of public correction</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Frustration signals may include:</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Dropping equipment</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Avoiding task</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Silence withdrawal</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Overactive behavior</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Saying “I can’t”</p>
+<p style="margin:0 0 10px;line-height:1.85;">This is developmental — not defiance.</p>
+<h3 style="color:var(--green-dark);border-bottom:2px solid var(--green-light);padding-bottom:8px;margin:24px 0 12px;font-size:16px;">Instruction Guidelines for 4–6</h3>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Use:</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">One-step instructions</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Demonstration first</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Simple language</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">External focus cues</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Short game cycles (<5 minutes)</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Avoid:</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Technical breakdown</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Multi-part corrections</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Long explanations</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Public criticism</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Example Cue:</p>
+<p style="margin:0 0 10px;line-height:1.85;">Instead of:</p>
+<p style="margin:0 0 10px;line-height:1.85;">“Shift your weight to your lead side.”</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Say:</p>
+<p style="margin:0 0 10px;line-height:1.85;">“Make the ball fly to the red rocket cone.”</p>
+<h3 style="color:var(--green-dark);border-bottom:2px solid var(--green-light);padding-bottom:8px;margin:24px 0 12px;font-size:16px;">AGE 6–9: Late Fundamentals / Early Learning Stage</h3>
+<h3 style="color:var(--green-dark);border-bottom:2px solid var(--green-light);padding-bottom:8px;margin:24px 0 12px;font-size:16px;">Neurological Characteristics</h3>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Improved working memory</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Sustained attention 10–20 minutes</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Can process 2-step instructions</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Beginning analytical thinking</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">More competitive awareness</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">They learn well through:</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Structured challenge</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Scoring systems</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Peer comparison</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Clear goals</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Feedback with reasoning</p>
+<h3 style="color:var(--green-dark);border-bottom:2px solid var(--green-light);padding-bottom:8px;margin:24px 0 12px;font-size:16px;">Motor Development (6–9)</h3>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Improving coordination</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Better bilateral integration</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">More stable balance</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Increased reaction control</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">However:</p>
+<p style="margin:0 0 10px;line-height:1.85;">Consistency is still emerging.</p>
+<p style="margin:0 0 10px;line-height:1.85;">Repetition must still be variable.</p>
+<h3 style="color:var(--green-dark);border-bottom:2px solid var(--green-light);padding-bottom:8px;margin:24px 0 12px;font-size:16px;">Emotional Characteristics (6–9)</h3>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Increased social comparison</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Sensitive to failure</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Competitive pride developing</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Can verbalize frustration</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Frustration signals may include:</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Blaming equipment</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Comparing to peers</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Overtrying</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Withdrawal from competition</p>
+<p style="margin:0 0 10px;line-height:1.85;">This stage requires calibrated challenge — not overpressure.</p>
+<h3 style="color:var(--green-dark);border-bottom:2px solid var(--green-light);padding-bottom:8px;margin:24px 0 12px;font-size:16px;">Instruction Guidelines for 6–9</h3>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Use:</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Two-step instruction</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Tactical challenges</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Scoring goals</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Guided discovery questions</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Peer competition</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Example Cue:</p>
+<p style="margin:0 0 10px;line-height:1.85;">“Hit three balls past the blue cone. Then try to land one inside the yellow zone.”</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">This age can begin to understand:</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Cause and effect</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Adjustment reasoning</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Simple self-reflection</p>`},    {h:`Frustration Recognition & Task Adjustment`,b:`<div class="doc-section-divider"></div>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Frustration Recognition &amp; Task Adjustment</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Core Rule:</p>
+<p style="margin:0 0 10px;line-height:1.85;">When frustration rises, task difficulty must adjust immediately.</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Do NOT:</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Add more correction</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Increase technical detail</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Publicly criticize</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Demand repetition without modification</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Instead adjust through constraints:</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Increase target size</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Reduce distance</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Change scoring rules</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Modify equipment</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Simplify task goal</p>
+<p style="margin:0 0 10px;line-height:1.85;">Developmentally aligned coaching is adaptive.</p>`},    {h:`Language Framework by Age`,b:`<div class="doc-section-divider"></div>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Language Framework by Age</p>
+<p style="margin:0 0 10px;line-height:1.85;">| Category | Age 4–6 | Age 6–9 |</p>
+<p style="margin:0 0 10px;line-height:1.85;">| --- | --- | --- |</p>
+<p style="margin:0 0 10px;line-height:1.85;">| Instruction Length | 1 step | 1–2 steps |</p>
+<p style="margin:0 0 10px;line-height:1.85;">| Cue Type | External imagery | External + simple reasoning |</p>
+<p style="margin:0 0 10px;line-height:1.85;">| Correction Style | Demonstrate | Ask-guided correction |</p>
+<p style="margin:0 0 10px;line-height:1.85;">| Competition | Cooperative games | Structured competition |</p>
+<p style="margin:0 0 10px;line-height:1.85;">| Feedback | Immediate praise | Specific performance feedback |</p>
+<p style="margin:0 0 10px;line-height:1.85;">| Reflection | “Did it go far?” | “What changed that shot?” |</p>`},    {h:`Practical Coaching Translation`,b:`<div class="doc-section-divider"></div>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Practical Coaching Translation</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Same Drill Example:</p>
+<p style="margin:0 0 10px;line-height:1.85;">Target Hitting Game</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Coaching a 5-Year-Old</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Language:</p>
+<p style="margin:0 0 10px;line-height:1.85;">“Let’s hit the magic rocket to the red cone! Watch me first.”</p>
+<p style="margin:0 0 10px;line-height:1.85;">Demonstrate.</p>
+<p style="margin:0 0 10px;line-height:1.85;">Short attempts.</p>
+<p style="margin:0 0 10px;line-height:1.85;">Celebrate small wins.</p>
+<p style="margin:0 0 10px;line-height:1.85;">Keep rotation fast.</p>
+<p style="margin:0 0 10px;line-height:1.85;">No scoring pressure.</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Coaching a 9-Year-Old</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Language:</p>
+<p style="margin:0 0 10px;line-height:1.85;">“You get 5 shots. Score 1 point for red, 2 for blue. Can you beat your score?”</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Encourage self-evaluation:</p>
+<p style="margin:0 0 10px;line-height:1.85;">“What adjustment helped?”</p>
+<p style="margin:0 0 10px;line-height:1.85;">Allow peer challenge.</p>
+<p style="margin:0 0 10px;line-height:1.85;">Introduce light competitive pressure.</p>`},    {h:`Why Developmental Matching Matters`,b:`<div class="doc-section-divider"></div>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Why Developmental Matching Matters</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">When instruction exceeds development:</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Anxiety increases</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Motor performance drops</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Engagement falls</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Injury risk rises</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Parent complaints increase</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">When instruction aligns:</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Confidence builds</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Skill retention improves</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Emotional regulation stabilizes</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Learning accelerates</p>
+<p style="margin:0 0 10px;line-height:1.85;">Development drives instruction — not coach ego.</p>
+<h3 style="color:var(--green-dark);border-bottom:2px solid var(--green-light);padding-bottom:8px;margin:24px 0 12px;font-size:16px;">COACH PRACTICAL APPLICATION</h3>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Exercise 1 – Role Play</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Coach must:</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Deliver 3-minute instruction to a simulated 5-year-old</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Deliver same drill to a simulated 9-year-old</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Adjust:</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Language</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Challenge</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Feedback</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Instruction complexity</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Evaluator looks for:</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Developmentally appropriate language</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Frustration awareness</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Task scaling</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Safety management</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Exercise 2 – Frustration Adjustment Drill</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Scenario:</p>
+<p style="margin:0 0 10px;line-height:1.85;">A 6-year-old misses 4 shots and says “This is stupid.”</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Coach must:</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Identify developmental cause</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Modify task immediately</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Use corrective language</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Re-engage child within 60 seconds</p>
+<h3 style="color:var(--green-dark);border-bottom:2px solid var(--green-light);padding-bottom:8px;margin:24px 0 12px;font-size:16px;">CERTIFICATION ASSESSMENT</h3>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Written (30%)</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Questions may include:</p>
+<p style="margin:0 0 10px;line-height:1.85;">Identify cognitive differences between 4–6 and 6–9.</p>
+<p style="margin:0 0 10px;line-height:1.85;">Explain why long lectures fail under age 7.</p>
+<p style="margin:0 0 10px;line-height:1.85;">List three frustration signals in early childhood.</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Scenario Analysis (30%)</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Given video or written scenario:</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Identify developmental mismatch</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Redesign instruction</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Live Demonstration (40%)</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Coach must:</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Demonstrate age-adjusted instruction</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Modify drill difficulty in real time</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Use correct language structure</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Show emotional regulation management</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Automatic reassessment if:</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Adult terminology used repeatedly</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Public shaming behavior</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Overloading multi-step instruction to 4–6 group</p>
+<h3 style="color:var(--green-dark);border-bottom:2px solid var(--green-light);padding-bottom:8px;margin:24px 0 12px;font-size:16px;">PASS REQUIREMENT</h3>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Minimum 85%</p>
+<p style="margin:0 0 10px;line-height:1.85;">A coach who does not understand development cannot safely or effectively coach children.</p>
+<h3 style="color:var(--green-dark);border-bottom:2px solid var(--green-light);padding-bottom:8px;margin:24px 0 12px;font-size:16px;">Key Reinforcement</h3>
+<p style="margin:0 0 10px;line-height:1.85;">You are not teaching golf swings.</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">You are shaping:</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Neural pathways</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Confidence patterns</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Emotional regulation habits</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Movement literacy foundations</p>
+<p style="margin:0 0 10px;line-height:1.85;">Development dictates instruction.</p>
+<p style="margin:0 0 10px;line-height:1.85;">Not the other way around.</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><em></em></p>`},  ]},{  id:"L1_M3",  title:"Module 3 \u2014 Motor Learning &amp; Constraints",  icon:"\u2699\ufe0f",  sections:[    {h:`What Is Motor Learning?`,b:`<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>SECTION 1</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>What Is Motor Learning?</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Motor learning is:</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>A relatively permanent change in movement capability produced by practice.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Key word: Permanent</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Performance in a session is not learning.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Temporary improvement ≠ retention.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Performance vs Learning</strong></p>
+<p style="margin:0 0 10px;line-height:1.85;">| <strong>Performance</strong> | <strong>Learning</strong> |</p>
+<p style="margin:0 0 10px;line-height:1.85;">| --- | --- |</p>
+<p style="margin:0 0 10px;line-height:1.85;">| <strong>Looks good today</strong> | <strong>Retained next week</strong> |</p>
+<p style="margin:0 0 10px;line-height:1.85;">| <strong>Block repetition</strong> | <strong>Variable problem-solving</strong> |</p>
+<p style="margin:0 0 10px;line-height:1.85;">| <strong>Heavy correction</strong> | <strong>Exploration-based</strong> |</p>
+<p style="margin:0 0 10px;line-height:1.85;">| <strong>Immediate improvement</strong> | <strong>Delayed improvement but stronger</strong> |</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>EduGolfKids coaches train for learning, not appearance.</strong></p>`},    {h:`How Children Acquire Movement Skills`,b:`<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>SECTION 2</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>How Children Acquire Movement Skills</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Motor learning occurs through:</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>Repetition WITH variation</strong></li>
+  <li style="margin-bottom:5px;"><strong>Environmental feedback</strong></li>
+  <li style="margin-bottom:5px;"><strong>Error detection</strong></li>
+  <li style="margin-bottom:5px;"><strong>Problem solving</strong></li>
+  <li style="margin-bottom:5px;"><strong>Emotional engagement</strong></li>
+</ul>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Children build:</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>Neural pathways</strong></li>
+  <li style="margin-bottom:5px;"><strong>Movement adaptability</strong></li>
+  <li style="margin-bottom:5px;"><strong>Sensory-motor calibration</strong></li>
+</ul>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>They do NOT build skill through:</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>Listening to lectures</strong></li>
+  <li style="margin-bottom:5px;"><strong>Being corrected every swing</strong></li>
+  <li style="margin-bottom:5px;"><strong>Copying adult biomechanics</strong></li>
+  <li style="margin-bottom:5px;"><strong>Standing in lines</strong></li>
+</ul>`},    {h:`Blocked vs Variable Practice`,b:`<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>SECTION 3</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Blocked vs Variable Practice</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Blocked Practice</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Example:</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Child hits 20 balls from same spot to same target.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Short-term result:</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Looks consistent.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Long-term result:</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Poor transfer to real performance.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Research (Shea &amp; Morgan, 1979) shows blocked practice limits retention.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Variable Practice</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Example:</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>Change distance</strong></li>
+  <li style="margin-bottom:5px;"><strong>Change target size</strong></li>
+  <li style="margin-bottom:5px;"><strong>Change scoring rules</strong></li>
+  <li style="margin-bottom:5px;"><strong>Change stance width</strong></li>
+</ul>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Short-term result:</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Messier.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Long-term result:</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Stronger retention.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>EduGolfKids prioritizes variable practice.</strong></p>`},    {h:`The Constraints-Led Approach (CLA)`,b:`<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>SECTION 4</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>The Constraints-Led Approach (CLA)</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>(Newell, 1986; Renshaw et al., 2010)</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Instead of telling children how to move, coaches manipulate:</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>1️⃣ Task Constraints</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>Target size</strong></li>
+  <li style="margin-bottom:5px;"><strong>Scoring rules</strong></li>
+  <li style="margin-bottom:5px;"><strong>Distance</strong></li>
+  <li style="margin-bottom:5px;"><strong>Time limits</strong></li>
+</ul>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>2️⃣ Environmental Constraints</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>Cones</strong></li>
+  <li style="margin-bottom:5px;"><strong>Boundaries</strong></li>
+  <li style="margin-bottom:5px;"><strong>Landing zones</strong></li>
+  <li style="margin-bottom:5px;"><strong>Obstacles</strong></li>
+</ul>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>3️⃣ Individual Constraints</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>Height</strong></li>
+  <li style="margin-bottom:5px;"><strong>Strength</strong></li>
+  <li style="margin-bottom:5px;"><strong>Coordination level</strong></li>
+  <li style="margin-bottom:5px;"><strong>Emotional state</strong></li>
+</ul>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Movement emerges naturally when constraints are designed properly.</strong></p>`},    {h:`Why Traditional Technical Instruction Fails in Children`,b:`<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>SECTION 5</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Why Traditional Technical Instruction Fails in Children</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>When coaches say:</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>“Keep your left arm straight.”</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>The child must:</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>Understand abstract concept</strong></li>
+  <li style="margin-bottom:5px;"><strong>Convert to internal movement</strong></li>
+  <li style="margin-bottom:5px;"><strong>Execute under coordination limits</strong></li>
+  <li style="margin-bottom:5px;"><strong>Retain it under variability</strong></li>
+</ul>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Most children cannot process this efficiently.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Instead use:</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>External focus cues.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Example:</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Instead of “Rotate your hips,” say:</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>“Make your belly button face the target.”</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>External focus improves motor efficiency (Wulf, 2013).</strong></p>`},    {h:`Guided Discovery vs Direct Correction`,b:`<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>SECTION 6</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Guided Discovery vs Direct Correction</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Direct Correction:</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>“You lifted your head.”</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Guided Discovery:</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>“What happened when that one went low?”</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Guided discovery:</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>Builds autonomy</strong></li>
+  <li style="margin-bottom:5px;"><strong>Improves retention</strong></li>
+  <li style="margin-bottom:5px;"><strong>Develops error detection</strong></li>
+  <li style="margin-bottom:5px;"><strong>Enhances confidence</strong></li>
+</ul>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Correction hierarchy:</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>Adjust environment</strong></li>
+  <li style="margin-bottom:5px;"><strong>Adjust task</strong></li>
+  <li style="margin-bottom:5px;"><strong>Ask reflective question</strong></li>
+  <li style="margin-bottom:5px;"><strong>Demonstrate</strong></li>
+  <li style="margin-bottom:5px;"><strong>Direct correction (last resort)</strong></li>
+</ul>`},    {h:`Error Is Necessary`,b:`<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>SECTION 7</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Error Is Necessary</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Children must make errors.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Error allows:</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>Neural recalibration</strong></li>
+  <li style="margin-bottom:5px;"><strong>Self-correction</strong></li>
+  <li style="margin-bottom:5px;"><strong>Adaptability</strong></li>
+</ul>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Over-correction creates:</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>Fear</strong></li>
+  <li style="margin-bottom:5px;"><strong>Overthinking</strong></li>
+  <li style="margin-bottom:5px;"><strong>Motor rigidity</strong></li>
+  <li style="margin-bottom:5px;"><strong>Coach dependency</strong></li>
+</ul>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>EduGolfKids embraces intelligent error.</strong></p>`},    {h:`Designing a Motor-Learning-Optimized Session`,b:`<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>SECTION 8</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Designing a Motor-Learning-Optimized Session</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Within 20-Minute Skill Block:</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Instead of:</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>20 minutes same drill.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Use:</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>4 x 4-minute constraints challenges.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Example:</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Challenge 1:</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Hit past blue cone.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Challenge 2:</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Land inside yellow circle.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Challenge 3:</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Score 3 in a row.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Challenge 4:</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Time pressure round.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Movement variability increases learning strength.</strong></p>`},    {h:`Cognitive Load in Children`,b:`<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>SECTION 9</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Cognitive Load in Children</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Children 4–10 have:</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>Limited working memory</strong></li>
+  <li style="margin-bottom:5px;"><strong>Limited processing capacity</strong></li>
+  <li style="margin-bottom:5px;"><strong>High movement need</strong></li>
+</ul>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Therefore:</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>Keep instructions under 30 seconds.</strong></li>
+  <li style="margin-bottom:5px;"><strong>One focus cue at a time.</strong></li>
+  <li style="margin-bottom:5px;"><strong>Avoid multi-step breakdowns.</strong></li>
+  <li style="margin-bottom:5px;"><strong>Demonstrate visually.</strong></li>
+</ul>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Cognitive overload reduces motor execution.</strong></p>`},    {h:`Application to Golf-Specific Skills`,b:`<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>SECTION 10</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Application to Golf-Specific Skills</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Putting</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Wrong Approach:</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>20 identical 5-foot putts.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Correct Approach:</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>Change distance each round</strong></li>
+  <li style="margin-bottom:5px;"><strong>Shrink target gradually</strong></li>
+  <li style="margin-bottom:5px;"><strong>Add scoring rule</strong></li>
+  <li style="margin-bottom:5px;"><strong>Introduce obstacle</strong></li>
+</ul>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Chipping</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Wrong:</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>10 identical chips.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Correct:</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>Vary landing zones</strong></li>
+  <li style="margin-bottom:5px;"><strong>Vary target shape</strong></li>
+  <li style="margin-bottom:5px;"><strong>Change club length</strong></li>
+  <li style="margin-bottom:5px;"><strong>Add time challenge</strong></li>
+</ul>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Full Swing</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Wrong:</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>“Fix your backswing.”</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Correct:</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>Adjust stance width</strong></li>
+  <li style="margin-bottom:5px;"><strong>Change target distance</strong></li>
+  <li style="margin-bottom:5px;"><strong>Modify scoring constraint</strong></li>
+  <li style="margin-bottom:5px;"><strong>Encourage rhythm cue</strong></li>
+</ul>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Movement self-organizes under constraints.</strong></p>`},    {h:`Coach Decision-Making Model`,b:`<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>SECTION 11</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Coach Decision-Making Model</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>When child struggles:</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Ask:</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>Is task too hard?</strong></li>
+  <li style="margin-bottom:5px;"><strong>Is environment poorly designed?</strong></li>
+  <li style="margin-bottom:5px;"><strong>Is instruction overloaded?</strong></li>
+  <li style="margin-bottom:5px;"><strong>Is emotional state disrupted?</strong></li>
+</ul>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Adjust constraints before correcting technique.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>COACH PRACTICAL APPLICATION</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Exercise 1 – Drill Redesign</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Coach is given:</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>“10 children hitting continuously toward one net.”</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Coach must:</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>Identify motor learning flaw</strong></li>
+  <li style="margin-bottom:5px;"><strong>Redesign into 3 variable stations</strong></li>
+  <li style="margin-bottom:5px;"><strong>Explain constraint used at each station</strong></li>
+  <li style="margin-bottom:5px;"><strong>Justify scientifically</strong></li>
+</ul>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Exercise 2 – Guided Discovery Role Play</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Coach must:</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>Avoid giving direct correction</strong></li>
+  <li style="margin-bottom:5px;"><strong>Ask guided question</strong></li>
+  <li style="margin-bottom:5px;"><strong>Modify task constraint</strong></li>
+  <li style="margin-bottom:5px;"><strong>Observe improvement</strong></li>
+</ul>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Evaluator measures:</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>Reduction of verbal overload</strong></li>
+  <li style="margin-bottom:5px;"><strong>Proper constraint manipulation</strong></li>
+  <li style="margin-bottom:5px;"><strong>Child engagement response</strong></li>
+</ul>`},    {h:`Certification Assessment`,b:`<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>SECTION 12</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Certification Assessment</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Written (30%)</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Questions may include:</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>Define motor learning.</strong></li>
+  <li style="margin-bottom:5px;"><strong>Explain contextual interference.</strong></li>
+  <li style="margin-bottom:5px;"><strong>List 3 differences between blocked and variable practice.</strong></li>
+  <li style="margin-bottom:5px;"><strong>Define constraints-led coaching.</strong></li>
+</ul>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Scenario-Based (30%)</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Case:</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Child inconsistent in hitting distance.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Coach must:</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>Adjust constraint</strong></li>
+  <li style="margin-bottom:5px;"><strong>Avoid technical lecture</strong></li>
+  <li style="margin-bottom:5px;"><strong>Explain reasoning</strong></li>
+</ul>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Live Demonstration (40%)</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Coach must:</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>Run 10-minute skill block</strong></li>
+  <li style="margin-bottom:5px;"><strong>Show 3 constraint variations</strong></li>
+  <li style="margin-bottom:5px;"><strong>Use external focus cue</strong></li>
+  <li style="margin-bottom:5px;"><strong>Avoid over-correction</strong></li>
+</ul>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Automatic reassessment if:</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>Coach uses continuous technical correction</strong></li>
+  <li style="margin-bottom:5px;"><strong>Runs blocked repetition >5 minutes</strong></li>
+  <li style="margin-bottom:5px;"><strong>Uses adult biomechanical language</strong></li>
+</ul>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>PASS REQUIREMENT</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Minimum 85%</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Motor learning is not optional knowledge.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>It is the engine of EduGolfKids.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Final Reinforcement</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>You are not a swing fixer.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>You are a learning designer.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>You create environments that:</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>Promote exploration</strong></li>
+  <li style="margin-bottom:5px;"><strong>Encourage autonomy</strong></li>
+  <li style="margin-bottom:5px;"><strong>Build adaptability</strong></li>
+  <li style="margin-bottom:5px;"><strong>Strengthen retention</strong></li>
+  <li style="margin-bottom:5px;"><strong>Protect confidence</strong></li>
+</ul>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Constraints guide behavior.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Structure protects development.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Error builds intelligence.</strong></p>
+<p style="margin:0 0 10px;line-height:1.85;">##</p>`},  ]},{  id:"L1_M4",  title:"Module 4 \u2014 Long-Term Athlete Development",  icon:"\ud83d\udcc8",  sections:[    {h:`What is LTAD?`,b:`<div class="doc-section-divider"></div>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">What is LTAD?</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Long-Term Athlete Development (LTAD) is a science-based framework that organizes skill progression according to:</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Biological development</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Neuromuscular readiness</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Cognitive maturity</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Emotional regulation</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Physical growth windows</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">It prevents:</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Burnout</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Overuse injuries</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Skill plateaus</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Technical rigidity</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Early dropout</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">LTAD asks:</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">“What is developmentally appropriate at this stage?”</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Not:</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">“How fast can we make them good?”</p>`},    {h:`Active Start Stage (Ages 4–6)`,b:`<div class="doc-section-divider"></div>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Active Start Stage (Ages 4–6)</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Primary Goal:</p>
+<p style="margin:0 0 10px;line-height:1.85;">Build movement literacy.</p>
+<p style="margin:0 0 10px;line-height:1.85;">Not golf mechanics.</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Physical Priorities</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Balance</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Coordination</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Running</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Jumping</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Throwing</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Catching</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Spatial awareness</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Golf exposure should be:</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Play-based</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Low pressure</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Short duration</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Target-focused</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Movement integrated</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">What NOT To Emphasize</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Grip precision</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Swing plane</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Hip rotation sequencing</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Launch angle</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Technical positions</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">At this stage:</p>
+<p style="margin:0 0 10px;line-height:1.85;">Movement quality > Swing aesthetics.</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Why?</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Neurological development at 4–6 is:</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Highly plastic</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Pattern forming</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Exploration-driven</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Early rigid technical instruction reduces:</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Creativity</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Natural movement exploration</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Adaptive learning</p>`},    {h:`FUNdamentals Stage (Ages 6–9)`,b:`<div class="doc-section-divider"></div>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">FUNdamentals Stage (Ages 6–9)</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Primary Goal:</p>
+<p style="margin:0 0 10px;line-height:1.85;">Build athletic foundation + basic golf control.</p>
+<p style="margin:0 0 10px;line-height:1.85;">Still NOT specialization.</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Physical Priorities</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Refined balance</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Controlled rotation</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Rhythm</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Basic club-face awareness</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Target accuracy</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Athletic play</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Introduce:</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Structured scoring</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Basic skill progression</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Controlled competition</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Still Avoid:</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Swing reconstruction</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Biomechanical perfectionism</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">High repetition blocked practice</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Adult tournament pressure</p>`},    {h:`The Dangers of Early Technical Overload`,b:`<div class="doc-section-divider"></div>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">The Dangers of Early Technical Overload</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Early technical overload occurs when:</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Coaches focus excessively on mechanics</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Children are corrected every swing</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Complex terminology is introduced</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Adult swing models are imposed</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Performance expectations exceed development</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Risks of Early Technical Overload</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">1️⃣ Motor Rigidity</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Children develop:</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Overthinking patterns</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Stiff movement</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Reduced fluidity</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Loss of adaptability</p>
+<p style="margin:0 0 10px;line-height:1.85;">Motor learning science shows variability builds long-term skill (Schmidt &amp; Lee, 2011).</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">2️⃣ Reduced Creativity</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Children stop:</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Exploring movement solutions</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Self-correcting</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Experimenting</p>
+<p style="margin:0 0 10px;line-height:1.85;">They become dependent on coach instruction.</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">3️⃣ Increased Injury Risk</p>
+<p style="margin:0 0 10px;line-height:1.85;">Overuse + forced mechanics + repetition = preventable injury risk.</p>
+<p style="margin:0 0 10px;line-height:1.85;">Youth sport data consistently shows early specialization increases injury rates.</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">4️⃣ Psychological Burnout</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Performance pressure before emotional readiness leads to:</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Anxiety</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Dropout</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Reduced enjoyment</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Identity stress</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">5️⃣ Plateau Effect</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Early technical perfection often results in:</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Early performance spike</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Mid-adolescence stagnation</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Difficulty adapting later</p>
+<p style="margin:0 0 10px;line-height:1.85;">LTAD prevents early plateau.</p>`},    {h:`Development vs Correction Priority`,b:`<div class="doc-section-divider"></div>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Development vs Correction Priority</p>
+<p style="margin:0 0 10px;line-height:1.85;">This is critical for certification.</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">When observing a child swing, ask:</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Is this movement age-appropriate?</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Is it safe?</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Is it functional?</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Does it allow target success?</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Is the child frustrated?</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">If yes to 2–4:</p>
+<p style="margin:0 0 10px;line-height:1.85;">Correction may not be priority.</p>
+<p style="margin:0 0 10px;line-height:1.85;">Development takes precedence over aesthetic correction.</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Example Analysis</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Scenario:</p>
+<p style="margin:0 0 10px;line-height:1.85;">7-year-old slices the ball but consistently reaches the target zone.</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Decision:</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">If:</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">No safety issue</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Ball reaches intended distance</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Child confident</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Then:</p>
+<p style="margin:0 0 10px;line-height:1.85;">Do NOT reconstruct swing.</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Instead:</p>
+<p style="margin:0 0 10px;line-height:1.85;">Adjust target constraints.</p>
+<p style="margin:0 0 10px;line-height:1.85;">Encourage exploration.</p>
+<p style="margin:0 0 10px;line-height:1.85;">Let natural refinement occur over time.</p>`},    {h:`Stage-Appropriate Coaching Behavior`,b:`<div class="doc-section-divider"></div>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Stage-Appropriate Coaching Behavior</p>
+<p style="margin:0 0 10px;line-height:1.85;">| Stage | Coach Role | Technical Emphasis | Emotional Emphasis |</p>
+<p style="margin:0 0 10px;line-height:1.85;">| --- | --- | --- | --- |</p>
+<p style="margin:0 0 10px;line-height:1.85;">| 4–6 | Movement guide | Minimal | Fun + safety |</p>
+<p style="margin:0 0 10px;line-height:1.85;">| 6–9 | Skill architect | Moderate external cues | Challenge + confidence |</p>`},    {h:`Practical Coaching Translation`,b:`<div class="doc-section-divider"></div>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Practical Coaching Translation</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Same Drill: Target Accuracy Game</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Coaching 5-Year-Old (Active Start)</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Focus:</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Hit toward target</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Celebrate effort</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Encourage movement exploration</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Language:</p>
+<p style="margin:0 0 10px;line-height:1.85;">“Make it fly past the red cone!”</p>
+<p style="margin:0 0 10px;line-height:1.85;">No mechanical correction unless safety issue.</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Coaching 8-Year-Old (FUNdamentals)</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Focus:</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Target control</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Club awareness</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Scoring</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Language:</p>
+<p style="margin:0 0 10px;line-height:1.85;">“What changed when that one went straighter?”</p>
+<p style="margin:0 0 10px;line-height:1.85;">Encourage reflection, not mechanical lecture.</p>`},    {h:`The LTAD Protection Rule`,b:`<div class="doc-section-divider"></div>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">The LTAD Protection Rule</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">EduGolfKids Coaches must never:</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Promise performance outcomes</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Push private technical training at early stage</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Over-correct natural movement</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Emphasize tournament identity</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Introduce adult swing models</p>
+<p style="margin:0 0 10px;line-height:1.85;">EduGolfKids builds foundations — not prodigies.</p>
+<h3 style="color:var(--green-dark);border-bottom:2px solid var(--green-light);padding-bottom:8px;margin:24px 0 12px;font-size:16px;">COACH PRACTICAL APPLICATION</h3>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Exercise 1 – Swing Evaluation</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Coach is shown video of:</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">A 6-year-old swinging with:</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Wide stance</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Open club face</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Off-balance finish</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Coach must determine:</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">What is developmentally normal?</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">What requires safety correction?</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">What can be left to maturation?</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">What environmental constraint could guide improvement?</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Expected Analysis:</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Developmentally normal:</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Inconsistent balance</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Face control variability</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Requires correction:</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Unsafe spacing</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Excessive overswing if balance risk</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Constraint adjustment:</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Narrower stance challenge</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Closer target</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Larger landing zone</p>`},    {h:`Certification Assessment`,b:`<div class="doc-section-divider"></div>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Certification Assessment</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Written (30%)</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Questions may include:</p>
+<p style="margin:0 0 10px;line-height:1.85;">Define Active Start stage priorities.</p>
+<p style="margin:0 0 10px;line-height:1.85;">List 3 risks of early technical overload.</p>
+<p style="margin:0 0 10px;line-height:1.85;">Explain why blocked practice is limited in early development.</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Scenario-Based (30%)</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Coach analyzes written case:</p>
+<p style="margin:0 0 10px;line-height:1.85;">Parent demands swing reconstruction for 6-year-old.</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Coach must:</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Respond professionally</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Explain LTAD reasoning</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Protect program philosophy</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Live Demonstration (40%)</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Coach must:</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Evaluate a swing in real time</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Prioritize development over correction</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Avoid adult terminology</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Use constraint-led adjustment</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Automatic reassessment if:</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Coach immediately reconstructs mechanics</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Uses technical jargon</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Prioritizes aesthetics over development</p>
+<h3 style="color:var(--green-dark);border-bottom:2px solid var(--green-light);padding-bottom:8px;margin:24px 0 12px;font-size:16px;">PASS REQUIREMENT</h3>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Minimum 85%</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">EduGolfKids certification means:</p>
+<p style="margin:0 0 10px;line-height:1.85;">You understand stages.</p>
+<p style="margin:0 0 10px;line-height:1.85;">You protect development.</p>
+<p style="margin:0 0 10px;line-height:1.85;">You think long term.</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Final Reinforcement</p>
+<p style="margin:0 0 10px;line-height:1.85;">Great golfers are not built early.</p>
+<p style="margin:0 0 10px;line-height:1.85;">They are built correctly.</p>
+<p style="margin:0 0 10px;line-height:1.85;">Movement literacy.</p>
+<p style="margin:0 0 10px;line-height:1.85;">Adaptability.</p>
+<p style="margin:0 0 10px;line-height:1.85;">Confidence.</p>
+<p style="margin:0 0 10px;line-height:1.85;">Progressive skill layering.</p>
+<p style="margin:0 0 10px;line-height:1.85;">Short-term technical obsession destroys long-term potential.</p>
+<p style="margin:0 0 10px;line-height:1.85;">EduGolfKids coaches are long-term architects.</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><em></em></p>`},  ]},{  id:"L1_M5",  title:"Module 5 \u2014 21st Century Learning",  icon:"\ud83d\udd2c",  sections:[    {h:`What Are 21st Century Learning Skills?`,b:`<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>SECTION 1</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>What Are 21st Century Learning Skills?</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Modern education emphasizes four core competencies:</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>1️⃣ Critical Thinking</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>2️⃣ Communication</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>3️⃣ Collaboration</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>4️⃣ Creativity</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Often called the “4 C’s.”</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>EduGolfKids embeds these inside golf activities.</strong></p>`},    {h:`Critical Thinking in Golf Sessions`,b:`<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>SECTION 2</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Critical Thinking in Golf Sessions</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Critical thinking is:</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>The ability to analyze, adjust, and solve problems.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Instead of telling children what to do, coaches ask:</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>“What changed on that shot?”</strong></li>
+  <li style="margin-bottom:5px;"><strong>“Why do you think it went farther?”</strong></li>
+  <li style="margin-bottom:5px;"><strong>“How can you adjust for that target?”</strong></li>
+</ul>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>This builds:</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>Decision-making</strong></li>
+  <li style="margin-bottom:5px;"><strong>Self-correction</strong></li>
+  <li style="margin-bottom:5px;"><strong>Tactical awareness</strong></li>
+  <li style="margin-bottom:5px;"><strong>Cognitive flexibility</strong></li>
+</ul>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Children who think about movement retain it better.</strong></p>`},    {h:`Communication Development`,b:`<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>SECTION 3</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Communication Development</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Communication is developed when children:</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>Explain their strategy</strong></li>
+  <li style="margin-bottom:5px;"><strong>Give peer feedback</strong></li>
+  <li style="margin-bottom:5px;"><strong>Ask questions</strong></li>
+  <li style="margin-bottom:5px;"><strong>Reflect on performance</strong></li>
+</ul>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Coaches must:</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>Encourage verbal reflection</strong></li>
+  <li style="margin-bottom:5px;"><strong>Avoid dominating conversation</strong></li>
+  <li style="margin-bottom:5px;"><strong>Model concise language</strong></li>
+  <li style="margin-bottom:5px;"><strong>Reinforce respectful interaction</strong></li>
+</ul>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Avoid:</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>Over-talking</strong></li>
+  <li style="margin-bottom:5px;"><strong>Lecture style delivery</strong></li>
+  <li style="margin-bottom:5px;"><strong>One-direction communication</strong></li>
+</ul>`},    {h:`Collaboration Through Structured Games`,b:`<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>SECTION 4</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Collaboration Through Structured Games</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Collaboration teaches:</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>Turn-taking</strong></li>
+  <li style="margin-bottom:5px;"><strong>Emotional regulation</strong></li>
+  <li style="margin-bottom:5px;"><strong>Shared success</strong></li>
+  <li style="margin-bottom:5px;"><strong>Conflict resolution</strong></li>
+</ul>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Examples:</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>Team target competitions</strong></li>
+  <li style="margin-bottom:5px;"><strong>Partner scoring challenges</strong></li>
+  <li style="margin-bottom:5px;"><strong>Cooperative distance games</strong></li>
+</ul>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Coach role:</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>Facilitate structure</strong></li>
+  <li style="margin-bottom:5px;"><strong>Prevent dominance behavior</strong></li>
+  <li style="margin-bottom:5px;"><strong>Encourage inclusion</strong></li>
+</ul>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Collaboration increases social learning and enjoyment.</strong></p>`},    {h:`Creativity Through Constraint Variation`,b:`<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>SECTION 5</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Creativity Through Constraint Variation</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Creativity emerges when:</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>Tasks are open-ended</strong></li>
+  <li style="margin-bottom:5px;"><strong>Solutions are not dictated</strong></li>
+  <li style="margin-bottom:5px;"><strong>Children experiment safely</strong></li>
+</ul>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Instead of:</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>“Use this exact swing.”</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Say:</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>“Find a way to land it inside the yellow circle.”</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Different children will:</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>Adjust stance</strong></li>
+  <li style="margin-bottom:5px;"><strong>Change speed</strong></li>
+  <li style="margin-bottom:5px;"><strong>Alter club angle</strong></li>
+</ul>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Creative exploration builds adaptive skill.</strong></p>`},    {h:`Growth Mindset Integration`,b:`<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>SECTION 6</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Growth Mindset Integration</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>(Growth mindset principles inspired by Dweck)</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Children must learn:</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>Skill improves with effort</strong></li>
+  <li style="margin-bottom:5px;"><strong>Mistakes are learning data</strong></li>
+  <li style="margin-bottom:5px;"><strong>Struggle is normal</strong></li>
+  <li style="margin-bottom:5px;"><strong>Comparison is secondary to improvement</strong></li>
+</ul>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Coach language matters:</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Instead of:</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>“You’re a natural.”</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Say:</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>“That adjustment worked because you kept trying.”</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Reinforce effort, not talent.</strong></p>`},    {h:`Self-Regulation &Emotional Intelligence`,b:`<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>SECTION 7</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Self-Regulation &amp; Emotional Intelligence</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>21st-century learning includes:</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>Managing frustration</strong></li>
+  <li style="margin-bottom:5px;"><strong>Waiting for turn</strong></li>
+  <li style="margin-bottom:5px;"><strong>Following structure</strong></li>
+  <li style="margin-bottom:5px;"><strong>Responding to challenge</strong></li>
+</ul>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Golf is ideal for this because:</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>It requires patience</strong></li>
+  <li style="margin-bottom:5px;"><strong>It requires control</strong></li>
+  <li style="margin-bottom:5px;"><strong>It requires focus</strong></li>
+</ul>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Coaches must model calm tone, structured routine, and positive correction.</strong></p>`},    {h:`Attention &Engagement in Modern Children`,b:`<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>SECTION 8</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Attention &amp; Engagement in Modern Children</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Today’s children are exposed to:</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>High screen stimulation</strong></li>
+  <li style="margin-bottom:5px;"><strong>Rapid content switching</strong></li>
+  <li style="margin-bottom:5px;"><strong>Short attention cycles</strong></li>
+</ul>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Therefore sessions must include:</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>Movement rotation every 4–5 minutes</strong></li>
+  <li style="margin-bottom:5px;"><strong>Clear scoring goals</strong></li>
+  <li style="margin-bottom:5px;"><strong>Immediate participation</strong></li>
+  <li style="margin-bottom:5px;"><strong>Minimal idle time</strong></li>
+</ul>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Engagement is engineered.</strong></p>`},    {h:`Reflection &Metacognition`,b:`<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>SECTION 9</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Reflection &amp; Metacognition</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Metacognition = Thinking about thinking.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>In wrap-up phase, ask:</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>“What helped you hit farther today?”</strong></li>
+  <li style="margin-bottom:5px;"><strong>“What did you change that worked?”</strong></li>
+  <li style="margin-bottom:5px;"><strong>“What will you try next time?”</strong></li>
+</ul>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>This strengthens:</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>Self-awareness</strong></li>
+  <li style="margin-bottom:5px;"><strong>Long-term retention</strong></li>
+  <li style="margin-bottom:5px;"><strong>Confidence</strong></li>
+  <li style="margin-bottom:5px;"><strong>Autonomy</strong></li>
+</ul>`},    {h:`The Modern Coach Role`,b:`<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>SECTION 10</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>The Modern Coach Role</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Old Model Coach:</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>Authority figure</strong></li>
+  <li style="margin-bottom:5px;"><strong>Gives instructions</strong></li>
+  <li style="margin-bottom:5px;"><strong>Controls performance</strong></li>
+  <li style="margin-bottom:5px;"><strong>Corrects constantly</strong></li>
+</ul>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>21st Century EduGolfKids Coach:</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>Learning facilitator</strong></li>
+  <li style="margin-bottom:5px;"><strong>Environment designer</strong></li>
+  <li style="margin-bottom:5px;"><strong>Question asker</strong></li>
+  <li style="margin-bottom:5px;"><strong>Confidence builder</strong></li>
+  <li style="margin-bottom:5px;"><strong>Structure enforcer</strong></li>
+</ul>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>You are not a lecturer.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>You are a guided learning architect.</strong></p>`},    {h:`Practical Session Integration`,b:`<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>SECTION 11</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Practical Session Integration</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Example – Target Game</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Instead of:</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>“Hit 10 balls to the cone.”</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Use:</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>“You get 5 attempts. After each one, tell your partner what you adjusted.”</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Adds:</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>Reflection</strong></li>
+  <li style="margin-bottom:5px;"><strong>Communication</strong></li>
+  <li style="margin-bottom:5px;"><strong>Critical thinking</strong></li>
+  <li style="margin-bottom:5px;"><strong>Peer interaction</strong></li>
+</ul>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Same drill. Higher learning value.</strong></p>`},    {h:`Parent Communication Alignment`,b:`<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>SECTION 12</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Parent Communication Alignment</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Parents today expect:</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>Structured development</strong></li>
+  <li style="margin-bottom:5px;"><strong>Emotional safety</strong></li>
+  <li style="margin-bottom:5px;"><strong>Confidence growth</strong></li>
+  <li style="margin-bottom:5px;"><strong>Character building</strong></li>
+  <li style="margin-bottom:5px;"><strong>Measurable progression</strong></li>
+</ul>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Coaches must be able to explain:</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>“We are building decision-making, confidence, and motor adaptability — not just swings.”</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>This strengthens retention and brand credibility.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>COACH PRACTICAL APPLICATION</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Exercise 1 – Drill Upgrade</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Coach is given:</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Standard hitting drill.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Coach must redesign to include:</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>Critical thinking question</strong></li>
+  <li style="margin-bottom:5px;"><strong>Collaboration element</strong></li>
+  <li style="margin-bottom:5px;"><strong>Reflection moment</strong></li>
+  <li style="margin-bottom:5px;"><strong>Growth mindset language</strong></li>
+</ul>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Exercise 2 – Language Audit</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Coach must:</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Deliver 3-minute instruction.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Evaluator counts:</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>Number of commands</strong></li>
+  <li style="margin-bottom:5px;"><strong>Number of questions</strong></li>
+  <li style="margin-bottom:5px;"><strong>Effort-based praise</strong></li>
+  <li style="margin-bottom:5px;"><strong>Reflection prompts</strong></li>
+</ul>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Target ratio:</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>More questions than commands.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>CERTIFICATION ASSESSMENT</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Written (30%)</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Possible questions:</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>Define the 4 C’s.</strong></li>
+  <li style="margin-bottom:5px;"><strong>Explain how critical thinking improves retention.</strong></li>
+  <li style="margin-bottom:5px;"><strong>Provide example of growth mindset language.</strong></li>
+  <li style="margin-bottom:5px;"><strong>Explain how collaboration improves engagement.</strong></li>
+</ul>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Scenario-Based (30%)</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Scenario:</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Child frustrated after losing competition.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Coach must:</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>Apply growth mindset language</strong></li>
+  <li style="margin-bottom:5px;"><strong>Reframe challenge</strong></li>
+  <li style="margin-bottom:5px;"><strong>Maintain emotional safety</strong></li>
+  <li style="margin-bottom:5px;"><strong>Reinforce effort</strong></li>
+</ul>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Live Demonstration (40%)</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Coach must:</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>Run short game incorporating 2 of the 4 C’s</strong></li>
+  <li style="margin-bottom:5px;"><strong>Use reflection question</strong></li>
+  <li style="margin-bottom:5px;"><strong>Demonstrate growth mindset language</strong></li>
+  <li style="margin-bottom:5px;"><strong>Maintain structure</strong></li>
+</ul>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Automatic reassessment if:</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>Coach dominates talk time</strong></li>
+  <li style="margin-bottom:5px;"><strong>Uses performance shaming</strong></li>
+  <li style="margin-bottom:5px;"><strong>Removes collaborative structure</strong></li>
+</ul>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>PASS REQUIREMENT</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Minimum 85%</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>EduGolfKids certification means:</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>You teach children how to think.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>How to adapt.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>How to regulate.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>How to grow.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Not just how to swing.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Final Reinforcement</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>EduGolfKids is not just sport.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>It is:</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Movement education</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Cognitive development</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Emotional regulation training</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Social skill building</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Confidence architecture</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>In a structured, scalable system.</strong></p>
+<p style="margin:0 0 10px;line-height:1.85;">##</p>`},  ]},{  id:"L1_M6",  title:"Module 6 \u2014 Growth Mindset &amp; Language",  icon:"\ud83d\udcac",  sections:[    {h:`What Is Growth Mindset?`,b:`<div class="doc-section-divider"></div>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">What Is Growth Mindset?</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Growth mindset is the belief that:</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Ability improves with effort</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Mistakes are part of learning</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Skill develops through practice</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Struggle is normal</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Fixed mindset believes:</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Talent is permanent</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Failure defines identity</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Mistakes equal inability</p>
+<p style="margin:0 0 10px;line-height:1.85;">EduGolfKids coaches must reinforce growth identity at all times.</p>`},    {h:`Why Language Matters in Ages 4–10`,b:`<div class="doc-section-divider"></div>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Why Language Matters in Ages 4–10</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Children 4–10:</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Form early self-concept</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Are highly approval-sensitive</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Internalize adult feedback deeply</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Attach identity to performance</p>
+<p style="margin:0 0 10px;line-height:1.85;">Negative phrasing becomes internal narrative.</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Example:</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Coach says:</p>
+<p style="margin:0 0 10px;line-height:1.85;">“You’re not focusing.”</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Child hears:</p>
+<p style="margin:0 0 10px;line-height:1.85;">“I’m bad at this.”</p>
+<p style="margin:0 0 10px;line-height:1.85;">Repeated language shapes long-term confidence.</p>`},    {h:`The EduGolfKids Language Code`,b:`<div class="doc-section-divider"></div>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">The EduGolfKids Language Code</p>
+<p style="margin:0 0 10px;line-height:1.85;">All certified coaches must follow the Language Code.</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">APPROVED LANGUAGE</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">• “I see improvement.”</p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;">“Let’s try again.”</li>
+  <li style="margin-bottom:5px;">“What did you notice?”</li>
+  <li style="margin-bottom:5px;">“That adjustment helped.”</li>
+  <li style="margin-bottom:5px;">“You kept going.”</li>
+  <li style="margin-bottom:5px;">“Good effort.”</li>
+  <li style="margin-bottom:5px;">“What could you change?”</li>
+  <li style="margin-bottom:5px;">“That was closer.”</li>
+  <li style="margin-bottom:5px;">“Keep exploring.”</li>
+  <li style="margin-bottom:5px;">“Nice adjustment.”</li>
+</ul>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Approved language:</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Encourages effort</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Reinforces autonomy</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Promotes reflection</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Supports emotional safety</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Builds resilience</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">PROHIBITED LANGUAGE</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">• “That’s wrong.”</p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;">“Why can’t you?”</li>
+  <li style="margin-bottom:5px;">“You’re not good at this.”</li>
+  <li style="margin-bottom:5px;">“No, not like that.”</li>
+  <li style="margin-bottom:5px;">“You always do that.”</li>
+  <li style="margin-bottom:5px;">“You’re the worst at this.”</li>
+  <li style="margin-bottom:5px;">“That’s easy.”</li>
+  <li style="margin-bottom:5px;">“You should know this.”</li>
+</ul>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Prohibited language:</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Attacks identity</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Creates shame</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Triggers anxiety</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Reduces effort</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Encourages withdrawal</p>
+<p style="margin:0 0 10px;line-height:1.85;">Violation of Language Code results in reassessment.</p>`},    {h:`Correction Without Damage`,b:`<div class="doc-section-divider"></div>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Correction Without Damage</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">When a child misses:</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Instead of:</p>
+<p style="margin:0 0 10px;line-height:1.85;">“That’s wrong.”</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Use:</p>
+<p style="margin:0 0 10px;line-height:1.85;">“That one went left. What did you notice?”</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Instead of:</p>
+<p style="margin:0 0 10px;line-height:1.85;">“You’re doing it wrong.”</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Use:</p>
+<p style="margin:0 0 10px;line-height:1.85;">“Let’s try a different way.”</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Correction should:</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Describe outcome (neutral)</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Encourage reflection</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Guide adjustment</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Reinforce effort</p>
+<p style="margin:0 0 10px;line-height:1.85;">Language must be neutral, not emotional.</p>`},    {h:`Handling Frustration in Real Time`,b:`<div class="doc-section-divider"></div>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Handling Frustration in Real Time</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Frustration signs:</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Equipment drop</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Crossing arms</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Silence</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">“This is stupid.”</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Withdrawal</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Aggressive swing</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Coach response must:</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">1️⃣ Lower tone</p>
+<p style="font-weight:700;margin:16px 0 6px;color:var(--green-dark);font-size:15px;">2️⃣ Reduce task difficulty</p>
+<p style="font-weight:700;margin:16px 0 6px;color:var(--green-dark);font-size:15px;">3️⃣ Use effort-based praise</p>
+<p style="font-weight:700;margin:16px 0 6px;color:var(--green-dark);font-size:15px;">4️⃣ Normalize struggle</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Example:</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Child says:</p>
+<p style="margin:0 0 10px;line-height:1.85;">“I’m bad at this.”</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Coach:</p>
+<p style="margin:0 0 10px;line-height:1.85;">“You’re learning this. That’s different. Let’s make it easier and try again.”</p>`},    {h:`Effort vs Outcome Praise`,b:`<div class="doc-section-divider"></div>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Effort vs Outcome Praise</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Outcome Praise:</p>
+<p style="margin:0 0 10px;line-height:1.85;">“Great shot!”</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Effort Praise:</p>
+<p style="margin:0 0 10px;line-height:1.85;">“You adjusted your stance — that helped.”</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Effort praise builds:</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Process focus</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Resilience</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Self-awareness</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Outcome praise builds:</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Performance dependency</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Fear of failure</p>
+<p style="margin:0 0 10px;line-height:1.85;">Balance is critical.</p>`},    {h:`Public vs Private Correction`,b:`<div class="doc-section-divider"></div>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Public vs Private Correction</p>
+<p style="margin:0 0 10px;line-height:1.85;">Never publicly shame.</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">If correction needed:</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Lower voice</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Step aside</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Keep tone calm</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Avoid dramatic gestures</p>
+<p style="margin:0 0 10px;line-height:1.85;">Children are highly peer-sensitive in 6–9 stage.</p>
+<p style="margin:0 0 10px;line-height:1.85;">Public embarrassment can reduce long-term participation.</p>`},    {h:`The 3-Step Language Reset Rule`,b:`<div class="doc-section-divider"></div>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">The 3-Step Language Reset Rule</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">If a coach accidentally uses harsh language:</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">1️⃣ Rephrase immediately</p>
+<p style="font-weight:700;margin:16px 0 6px;color:var(--green-dark);font-size:15px;">2️⃣ Model growth correction</p>
+<p style="font-weight:700;margin:16px 0 6px;color:var(--green-dark);font-size:15px;">3️⃣ Reinforce confidence</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Example:</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Coach says:</p>
+<p style="margin:0 0 10px;line-height:1.85;">“No, that’s wrong.”</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Immediately follows with:</p>
+<p style="margin:0 0 10px;line-height:1.85;">“Let me rephrase — that one went left. Let’s adjust together.”</p>
+<p style="margin:0 0 10px;line-height:1.85;">Accountability protects culture.</p>`},    {h:`Parent Interaction Language`,b:`<div class="doc-section-divider"></div>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Parent Interaction Language</p>
+<p style="margin:0 0 10px;line-height:1.85;">Coaches must model growth mindset to parents.</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Instead of:</p>
+<p style="margin:0 0 10px;line-height:1.85;">“He struggles with distance.”</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Say:</p>
+<p style="margin:0 0 10px;line-height:1.85;">“He’s building distance control and improving weekly.”</p>
+<p style="margin:0 0 10px;line-height:1.85;">Never label a child in front of parent.</p>`},    {h:`Building Inner Voice Strength`,b:`<div class="doc-section-divider"></div>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Building Inner Voice Strength</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Children should leave sessions thinking:</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">“I can improve.”</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">“Mistakes are normal.”</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">“I’m getting better.”</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">“I can try again.”</p>
+<p style="margin:0 0 10px;line-height:1.85;">That internal narrative lasts longer than any swing lesson.</p>
+<h3 style="color:var(--green-dark);border-bottom:2px solid var(--green-light);padding-bottom:8px;margin:24px 0 12px;font-size:16px;">COACH PRACTICAL APPLICATION</h3>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Exercise 1 – Frustration Role Play</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Coach must respond to:</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Scenario A:</p>
+<p style="margin:0 0 10px;line-height:1.85;">Child misses 5 shots and says:</p>
+<p style="margin:0 0 10px;line-height:1.85;">“I’m terrible.”</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Scenario B:</p>
+<p style="margin:0 0 10px;line-height:1.85;">Child loses competition and refuses to continue.</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Scenario C:</p>
+<p style="margin:0 0 10px;line-height:1.85;">Child compares self negatively to peer.</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Evaluator measures:</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Tone control</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Growth language</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Task adjustment</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Emotional regulation</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Exercise 2 – Language Swap Drill</p>
+<p style="margin:0 0 10px;line-height:1.85;">Coach is given 10 negative phrases.</p>
+<p style="margin:0 0 10px;line-height:1.85;">Must convert into growth language equivalents.</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Example:</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">“Why can’t you focus?”</p>
+<p style="margin:0 0 10px;line-height:1.85;">→ “Let’s reset and try again.”</p>
+<h3 style="color:var(--green-dark);border-bottom:2px solid var(--green-light);padding-bottom:8px;margin:24px 0 12px;font-size:16px;">CERTIFICATION ASSESSMENT</h3>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Written (30%)</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Possible questions:</p>
+<p style="margin:0 0 10px;line-height:1.85;">Define growth mindset.</p>
+<p style="margin:0 0 10px;line-height:1.85;">List 3 prohibited phrases.</p>
+<p style="margin:0 0 10px;line-height:1.85;">Explain why outcome-only praise is risky.</p>
+<p style="margin:0 0 10px;line-height:1.85;">Describe the 3-step language reset rule.</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Scenario-Based (30%)</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Case:</p>
+<p style="margin:0 0 10px;line-height:1.85;">Child says, “I quit.”</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Coach must:</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Apply growth mindset language</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Adjust task</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Re-engage within 60 seconds</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Live Evaluation (40%)</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Coach must:</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Run 10-minute segment</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Maintain approved language</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Avoid prohibited phrases</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Demonstrate effort-based praise</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Respond to frustration properly</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Automatic reassessment if:</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Shaming language used</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Identity-based criticism</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Repeated harsh tone</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Public embarrassment behavior</p>
+<h3 style="color:var(--green-dark);border-bottom:2px solid var(--green-light);padding-bottom:8px;margin:24px 0 12px;font-size:16px;">PASS REQUIREMENT</h3>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Minimum 85%</p>
+<p style="margin:0 0 10px;line-height:1.85;">Language violations below safety threshold result in mandatory retraining.</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Final Reinforcement</p>
+<p style="margin:0 0 10px;line-height:1.85;">Children will forget drills.</p>
+<p style="margin:0 0 10px;line-height:1.85;">They will forget scores.</p>
+<p style="margin:0 0 10px;line-height:1.85;">They will not forget how you made them feel.</p>
+<p style="margin:0 0 10px;line-height:1.85;">Your language becomes their internal coach.</p>
+<p style="margin:0 0 10px;line-height:1.85;">EduGolfKids coaches build confidence before performance.</p>
+<p style="margin:0 0 10px;line-height:1.85;">Growth mindset is not optional — it is cultural law.</p>
+<p style="margin:0 0 10px;line-height:1.85;">##</p>`},  ]},{  id:"L1_M7",  title:"Module 7 \u2014 60-Minute Session Architecture",  icon:"\ud83c\udfd7\ufe0f",  sections:[    {h:`Module 7 — 60-Minute Session Architecture`,b:`<p style="margin:0 0 10px;line-height:1.85;">MODULE 7</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">60-Minute Session Architecture (Integrated Model)</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Certification Study Manual – Coach Level 1</p>
+<h3 style="color:var(--green-dark);border-bottom:2px solid var(--green-light);padding-bottom:8px;margin:24px 0 12px;font-size:16px;">MODULE PURPOSE</h3>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">This module ensures that every EduGolfKids coach can:</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Deliver a structurally consistent 60-minute session</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Integrate ALL prior modules into every lesson</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Apply development, motor learning, LTAD, growth mindset, and safety principles simultaneously</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Maintain rhythm, flow, and energy</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Protect brand integrity through structure</p>
+<h3 style="color:var(--green-dark);border-bottom:2px solid var(--green-light);padding-bottom:8px;margin:24px 0 12px;font-size:16px;">Core Principle:</h3>
+<p style="margin:0 0 10px;line-height:1.85;">Structure creates rhythm.</p>
+<p style="margin:0 0 10px;line-height:1.85;">Rhythm creates learning.</p>
+<p style="margin:0 0 10px;line-height:1.85;">Learning requires integration.</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Every session must apply:</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Module 2 – Child Development</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Module 3 – Motor Learning &amp; Constraints</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Module 4 – LTAD</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Module 5 – 21st Century Learning</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Module 7 – Growth Mindset Language Code</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Safety &amp; spacing standards</p>
+<p style="margin:0 0 10px;line-height:1.85;">Architecture is where theory becomes practice.</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">THE NON-NEGOTIABLE TIME FRAME</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Every session must follow:</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">0–10: Warm-Up Game</p>
+<p style="margin:0 0 10px;line-height:1.85;">10–30: Skill Block</p>
+<p style="margin:0 0 10px;line-height:1.85;">30–50: Game Reinforcement</p>
+<p style="margin:0 0 10px;line-height:1.85;">50–60: Wrap-Up &amp; Reset</p>
+<p style="margin:0 0 10px;line-height:1.85;">Deviation requires HQ approval.</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">INTEGRATED SESSION BREAKDOWN</p>
+<p style="margin:0 0 10px;line-height:1.85;">Below shows exactly where each training module is practiced inside the session.</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">0–10 Minutes</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">WARM-UP GAME</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Primary Goal:</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Movement activation + emotional engagement</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Modules Applied Here:</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Module 2 – Child Development</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Short instructions (1-step for 4–6)</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Immediate participation</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">No long explanations</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Movement-based learning</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Module 3 – Motor Learning</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">No blocked repetition</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Target-based activity</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Environmental constraints guide behavior</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Module 4 – LTAD</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Focus on coordination and balance</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Not technical swing correction</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Module 5 – 21st Century Learning</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Collaboration games</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Communication prompts</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Quick reflection moments</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Module 7 – Growth Mindset</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Effort-based praise from first minute</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Normalize mistakes immediately</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Safety Standards</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Spacing established</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Retrieval protocol reinforced</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Foam balls only</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Warm-up sets:</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Energy tone</p>
+<p style="margin:0 0 10px;line-height:1.85;">Language tone</p>
+<p style="margin:0 0 10px;line-height:1.85;">Behavior expectation</p>
+<p style="margin:0 0 10px;line-height:1.85;">Safety expectation</p>
+<p style="margin:0 0 10px;line-height:1.85;">If Warm-Up is weak, entire session declines.</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">10–30 Minutes</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">SKILL BLOCK</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Primary Goal:</p>
+<p style="margin:0 0 10px;line-height:1.85;">Introduce or refine skill through constraint variation.</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Modules Applied Here:</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Module 3 – Motor Learning (Primary Focus)</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">3–4 mini constraint challenges (4–6 min each)</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">External focus cues</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Environmental manipulation</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">No technical lecture</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Module 2 – Child Development</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Age-appropriate instruction length</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Frustration monitoring</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Task difficulty adjusted immediately</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Module 4 – LTAD</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Development over aesthetics</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">No adult swing reconstruction</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Movement quality prioritized</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Module 5 – 21st Century Learning</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Guided discovery questions</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Critical thinking prompts</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Peer feedback allowed</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Module 7 – Growth Mindset</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Effort reinforcement</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Language code compliance</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">No identity-based correction</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Safety</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">6-foot spacing maintained</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Controlled swing zones</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Immediate reset commands</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">This is where coaches prove:</p>
+<p style="margin:0 0 10px;line-height:1.85;">They understand learning — not just drills.</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">30–50 Minutes</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">GAME REINFORCEMENT</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Primary Goal:</p>
+<p style="margin:0 0 10px;line-height:1.85;">Transfer skill into contextual play.</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Modules Applied Here:</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Module 3 – Motor Learning</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Variable scoring</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Decision-making pressure</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Time-based challenges</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">No blocked repetition</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Module 5 – 21st Century Learning</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Collaboration</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Competition with respect</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Reflection in action</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Tactical decision-making</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Module 2 – Child Development</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Challenge calibrated to age</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Emotional regulation monitored</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Frustration redirected constructively</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Module 4 – LTAD</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">No overcorrection mid-game</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Allow natural movement adaptation</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Avoid performance obsession</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Module 7 – Growth Mindset</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Reframe mistakes</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Normalize competitive loss</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Praise effort, not just winners</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Safety</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Clear rotation structure</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Retrieval protocol enforced</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Energy controlled</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Game Reinforcement is where:</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Retention strengthens</p>
+<p style="margin:0 0 10px;line-height:1.85;">Confidence grows</p>
+<p style="margin:0 0 10px;line-height:1.85;">Autonomy develops</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">50–60 Minutes</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">WRAP-UP &amp; RESET</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Primary Goal:</p>
+<p style="margin:0 0 10px;line-height:1.85;">Consolidate learning + emotional closure.</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Modules Applied Here:</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Module 5 – Reflection &amp; Metacognition</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">“What did you notice?”</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">“What helped you improve?”</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Encourage child explanation</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Module 7 – Growth Mindset</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Effort-based praise</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Reinforce improvement</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Avoid outcome-only praise</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Module 2 – Emotional Regulation</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Calm tone</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Structured closure</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Positive ending</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Safety Standards</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Clubs down before retrieval</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Equipment stacked</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Clear dismissal protocol</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Children must leave:</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Confident</p>
+<p style="margin:0 0 10px;line-height:1.85;">Regulated</p>
+<p style="margin:0 0 10px;line-height:1.85;">Successful</p>
+<p style="margin:0 0 10px;line-height:1.85;">Motivated</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">FULL INTEGRATION MAP</p>
+<p style="margin:0 0 10px;line-height:1.85;">| Segment | M2 Dev | M3 Motor | M4 LTAD | M5 Learning | M7 Language | Safety |</p>
+<p style="margin:0 0 10px;line-height:1.85;">| --- | --- | --- | --- | --- | --- | --- |</p>
+<p style="margin:0 0 10px;line-height:1.85;">| Warm-Up | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ |</p>
+<p style="margin:0 0 10px;line-height:1.85;">| Skill Block | ✓ | ✓✓✓ | ✓ | ✓ | ✓ | ✓ |</p>
+<p style="margin:0 0 10px;line-height:1.85;">| Game Reinforcement | ✓ | ✓✓ | ✓ | ✓✓ | ✓ | ✓ |</p>
+<p style="margin:0 0 10px;line-height:1.85;">| Wrap-Up | ✓ | — | ✓ | ✓✓ | ✓✓ | ✓ |</p>
+<p style="margin:0 0 10px;line-height:1.85;">Every session must include all modules.</p>
+<p style="margin:0 0 10px;line-height:1.85;">If a coach delivers a technically correct drill but violates language code → failure.</p>
+<p style="margin:0 0 10px;line-height:1.85;">If coach manages growth mindset but ignores spacing → failure.</p>
+<p style="margin:0 0 10px;line-height:1.85;">If coach teaches skill but ignores development stage → failure.</p>
+<p style="margin:0 0 10px;line-height:1.85;">Integration is mandatory.</p>
+<h3 style="color:var(--green-dark);border-bottom:2px solid var(--green-light);padding-bottom:8px;margin:24px 0 12px;font-size:16px;">COACH PRACTICAL APPLICATION</h3>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Exercise – Integrated Session Design</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Coach must submit a 60-minute plan that clearly shows:</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Where motor learning principles are applied</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Where developmental adjustments occur</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Where growth mindset language is used</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Where LTAD protection is maintained</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Where 21st-century skills are included</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Where safety standards are reinforced</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Session plan must annotate:</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">“M2 Applied Here”</p>
+<p style="margin:0 0 10px;line-height:1.85;">“M3 Applied Here”</p>
+<p style="margin:0 0 10px;line-height:1.85;">“M7 Language Here”</p>
+<p style="margin:0 0 10px;line-height:1.85;">No generic plans accepted.</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">LIVE DEMONSTRATION STANDARD</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Coach must:</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Maintain 60-minute timing discipline</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Demonstrate at least:</p>
+<h4 style="color:var(--green-dark);margin:18px 0 8px;font-size:15px;font-weight:700;">2 guided discovery questions</h4>
+<h4 style="color:var(--green-dark);margin:18px 0 8px;font-size:15px;font-weight:700;">1 constraint modification</h4>
+<h4 style="color:var(--green-dark);margin:18px 0 8px;font-size:15px;font-weight:700;">3 effort-based language statements</h4>
+<h4 style="color:var(--green-dark);margin:18px 0 8px;font-size:15px;font-weight:700;">1 reflection question</h4>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Maintain spacing entire session</p>
+<p style="margin:0 0 10px;line-height:1.85;">Failure in any integration category = reassessment.</p>
+<h3 style="color:var(--green-dark);border-bottom:2px solid var(--green-light);padding-bottom:8px;margin:24px 0 12px;font-size:16px;">CERTIFICATION ASSESSMENT</h3>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Written (30%)</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Coach must:</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">List time structure without notes:</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">0–10 Warm-Up</p>
+<p style="margin:0 0 10px;line-height:1.85;">10–30 Skill Block</p>
+<p style="margin:0 0 10px;line-height:1.85;">30–50 Game Reinforcement</p>
+<p style="margin:0 0 10px;line-height:1.85;">50–60 Wrap-Up &amp; Reset</p>
+<p style="margin:0 0 10px;line-height:1.85;">AND identify which modules are applied in each segment.</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Scenario-Based (30%)</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Scenario:</p>
+<p style="margin:0 0 10px;line-height:1.85;">Coach delivers strong drills but gives harsh language.</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Candidate must:</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Identify module violation</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Redesign language</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Maintain structure</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Live Demonstration (40%)</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Coach must show:</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Integrated execution across all modules</p>
+<p style="margin:0 0 10px;line-height:1.85;">Not isolated competence.</p>
+<h3 style="color:var(--green-dark);border-bottom:2px solid var(--green-light);padding-bottom:8px;margin:24px 0 12px;font-size:16px;">PASS REQUIREMENT</h3>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Minimum 85%</p>
+<p style="margin:0 0 10px;line-height:1.85;">Architecture mastery + integration mastery required.</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Final Reinforcement</p>
+<p style="margin:0 0 10px;line-height:1.85;">A great drill is not enough.</p>
+<p style="margin:0 0 10px;line-height:1.85;">A positive tone is not enough.</p>
+<p style="margin:0 0 10px;line-height:1.85;">A safe setup is not enough.</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Only integration creates:</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Safety</p>
+<p style="margin:0 0 10px;line-height:1.85;">Retention</p>
+<p style="margin:0 0 10px;line-height:1.85;">Confidence</p>
+<p style="margin:0 0 10px;line-height:1.85;">Progression</p>
+<p style="margin:0 0 10px;line-height:1.85;">Brand consistency</p>
+<p style="margin:0 0 10px;line-height:1.85;">EduGolfKids is not a collection of modules.</p>
+<p style="margin:0 0 10px;line-height:1.85;">It is a unified system delivered every session.</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><em></em></p>`},  ]},{  id:"L1_M8",  title:"Module 8 \u2014 Parent &amp; School Communication",  icon:"\ud83e\udd1d",  sections:[    {h:`The Two Audiences: Schools and Parents`,b:`<div class="doc-section-divider"></div>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">The Two Audiences: Schools and Parents</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>EduGolfKids coaches operate within two distinct adult relationships simultaneously:</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>1. The School Relationship</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Schools are institutional partners. They grant access to their students, facilities, and scheduling.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Every coach represents EduGolfKids as a professional vendor within a school environment.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Schools expect:</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>Punctuality and professionalism</strong></li>
+  <li style="margin-bottom:5px;"><strong>Minimal disruption to school operations</strong></li>
+  <li style="margin-bottom:5px;"><strong>Clear communication and advance notice of any changes</strong></li>
+  <li style="margin-bottom:5px;"><strong>Compliance with all school policies and protocols</strong></li>
+  <li style="margin-bottom:5px;"><strong>Visible safeguarding standards</strong></li>
+</ul>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>2. The Parent Relationship</strong></p>
+<p style="margin:0 0 10px;line-height:1.85;"><strong>Parents are the customers and the advocates. Their satisfaction drives enrollment, retention, and referrals.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Parents expect:</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>To understand what their child is learning</strong></li>
+  <li style="margin-bottom:5px;"><strong>To feel their child is safe and valued</strong></li>
+  <li style="margin-bottom:5px;"><strong>To receive honest, positive progress communication</strong></li>
+  <li style="margin-bottom:5px;"><strong>To be heard when they have concerns</strong></li>
+  <li style="margin-bottom:5px;"><strong>To trust the program with their child</strong></li>
+</ul>`},    {h:`School Communication Standards`,b:`<div class="doc-section-divider"></div>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">School Communication Standards</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Pre-Program Requirements</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Before the first session at any school, coaches must:</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>Introduce themselves formally to the school coordinator or principal</strong></li>
+  <li style="margin-bottom:5px;"><strong>Review site-specific protocols (check-in procedures, emergency contacts, parking)</strong></li>
+  <li style="margin-bottom:5px;"><strong>Confirm lesson location, access routes, and equipment storage</strong></li>
+  <li style="margin-bottom:5px;"><strong>Confirm student pickup and drop-off procedures</strong></li>
+  <li style="margin-bottom:5px;"><strong>Obtain emergency contact information for the site</strong></li>
+</ul>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>During the Program</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Coaches must:</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>Sign in at the front office upon every arrival — no exceptions</strong></li>
+  <li style="margin-bottom:5px;"><strong>Notify school staff immediately of any incident, injury, or behavioral concern</strong></li>
+  <li style="margin-bottom:5px;"><strong>Avoid scheduling conversations during active lesson time</strong></li>
+  <li style="margin-bottom:5px;"><strong>Respond to school communication within 24 hours</strong></li>
+  <li style="margin-bottom:5px;"><strong>Never speak negatively about the school, its staff, or its policies to parents</strong></li>
+</ul>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Communication Tone with School Staff</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Always:</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>Be respectful, brief, and solution-focused</strong></li>
+  <li style="margin-bottom:5px;"><strong>Thank staff for their support and cooperation</strong></li>
+  <li style="margin-bottom:5px;"><strong>Confirm any changes to schedule or location in writing</strong></li>
+</ul>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Never:</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>Go around the school coordinator to speak directly with a teacher about a concern</strong></li>
+  <li style="margin-bottom:5px;"><strong>Make verbal agreements that bypass the official program structure</strong></li>
+  <li style="margin-bottom:5px;"><strong>Discuss student behavioral issues in hallways or public spaces</strong></li>
+</ul>`},    {h:`Parent Communication: Program Launch`,b:`<div class="doc-section-divider"></div>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Parent Communication: Program Launch</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Before the first session, parents must receive:</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>Program overview (what EduGolfKids is, what children will learn)</strong></li>
+  <li style="margin-bottom:5px;"><strong>Session schedule (day, time, location, duration)</strong></li>
+  <li style="margin-bottom:5px;"><strong>Drop-off and pick-up instructions</strong></li>
+  <li style="margin-bottom:5px;"><strong>What to bring (appropriate footwear, water bottle)</strong></li>
+  <li style="margin-bottom:5px;"><strong>Coach name and contact method (via approved EduGolfKids channel only)</strong></li>
+  <li style="margin-bottom:5px;"><strong>Safeguarding and photo/video consent confirmation</strong></li>
+</ul>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Welcome Communication Language Example:</strong></p>
+<p style="margin:0 0 10px;line-height:1.85;"><strong>"Welcome to EduGolfKids! Your child is about to begin a structured developmental program that builds movement skills, confidence, and critical thinking through golf. Our certified coaches follow an evidence-based curriculum designed specifically for ages 4-10. Sessions are 60 minutes and follow a consistent structure every week. If you have any questions, please reach out through [approved channel]."</strong></p>`},    {h:`Progress Communication Standards`,b:`<div class="doc-section-divider"></div>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Progress Communication Standards</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Parents want to know their child is progressing.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Coaches must provide regular, positive, developmentally framed updates.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>What to Communicate:</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>What skill or concept the group is working on this week</strong></li>
+  <li style="margin-bottom:5px;"><strong>Specific positive observations about the child's engagement or effort</strong></li>
+  <li style="margin-bottom:5px;"><strong>How the child can practice or explore at home (optional reinforcement)</strong></li>
+</ul>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>What NOT to Communicate:</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>Comparisons to other children</strong></li>
+  <li style="margin-bottom:5px;"><strong>Negative ability assessments ("He struggles with...")</strong></li>
+  <li style="margin-bottom:5px;"><strong>Predictions about future performance</strong></li>
+  <li style="margin-bottom:5px;"><strong>Technical critiques framed as problems</strong></li>
+</ul>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Growth Language for Parent Feedback:</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Instead of: "She is behind the group in putting control."</strong></p>
+<p style="margin:0 0 10px;line-height:1.85;"><strong>Say: "She is developing her putting feel and is showing good focus. We are working on a great constraint challenge that will accelerate this."</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Instead of: "He has trouble listening."</strong></p>
+<p style="margin:0 0 10px;line-height:1.85;"><strong>Say: "He brings lots of energy — we channel that well. He is responding really well to the game-based activities."</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Language must be honest, positive, and development-framed at all times.</strong></p>`},    {h:`Handling Difficult Parent Conversations`,b:`<div class="doc-section-divider"></div>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Handling Difficult Parent Conversations</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>EduGolfKids coaches will inevitably encounter parents with concerns, complaints, or disagreements.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>How you handle these moments defines your professionalism and protects the program.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>The 4-Step Response Protocol:</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>1. Listen First</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Allow the parent to fully express their concern without interruption.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Do not become defensive. Do not justify immediately.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>2. Acknowledge</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>"I understand your concern and I appreciate you bringing this to me."</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Acknowledgment is not agreement. It is professional respect.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>3. Clarify and Explain</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Once the parent has been heard, explain the EduGolfKids approach clearly.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Use developmental reasoning, not personal opinion.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Example: Parent says: "You're not teaching proper golf technique — my son needs to fix his swing."</strong></p>
+<p style="margin:0 0 10px;line-height:1.85;"><strong>Coach response: "That's a great point to raise. Our Level 1 program is specifically designed around Long-Term Athlete Development science. At this age, technical swing reconstruction actually reduces long-term potential. We focus on movement literacy and confidence now, which gives children the best foundation for technique development in later stages. We follow the same framework used by leading youth sport organizations."</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>4. Escalate When Appropriate</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>If the parent remains unsatisfied or the issue is beyond your authority:</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>Do not argue or escalate emotionally</strong></li>
+  <li style="margin-bottom:5px;"><strong>Acknowledge their concern again</strong></li>
+  <li style="margin-bottom:5px;"><strong>Advise that you will connect them with the EduGolfKids program manager</strong></li>
+  <li style="margin-bottom:5px;"><strong>Never make promises you cannot keep</strong></li>
+</ul>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Situations Requiring Immediate Escalation to HQ:</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>Allegations of misconduct</strong></li>
+  <li style="margin-bottom:5px;"><strong>Demands for refunds or program exits</strong></li>
+  <li style="margin-bottom:5px;"><strong>Threats or aggressive behavior</strong></li>
+  <li style="margin-bottom:5px;"><strong>Safeguarding concerns about another adult</strong></li>
+</ul>`},    {h:`Social Media and Digital Communication Policy`,b:`<div class="doc-section-divider"></div>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Social Media and Digital Communication Policy</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Coaches must:</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>Use only approved EduGolfKids communication channels for parent contact</strong></li>
+  <li style="margin-bottom:5px;"><strong>Never connect with parents or students on personal social media accounts</strong></li>
+  <li style="margin-bottom:5px;"><strong>Never share photos or videos of children without verified parental consent</strong></li>
+  <li style="margin-bottom:5px;"><strong>Never discuss student progress or behavior in group chat formats</strong></li>
+  <li style="margin-bottom:5px;"><strong>Direct all digital communication through the official EduGolfKids system</strong></li>
+</ul>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Violations of digital communication policy are grounds for immediate certification suspension.</strong></p>
+<h3 style="color:var(--green-dark);border-bottom:2px solid var(--green-light);padding-bottom:8px;margin:24px 0 12px;font-size:16px;">COACH PRACTICAL APPLICATION</h3>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Exercise 1 — Difficult Parent Scenario Role Play</strong></p>
+<p style="margin:0 0 10px;line-height:1.85;"><strong>Scenario A: A parent approaches after a session and says: "My daughter cried on the way home. She said you ignored her today."</strong></p>
+<p style="margin:0 0 10px;line-height:1.85;"><strong>Coach must: Listen, acknowledge, investigate, explain, and respond professionally without being defensive.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Scenario B: A parent asks why their child has not been given individual feedback on their swing.</strong></p>
+<p style="margin:0 0 10px;line-height:1.85;"><strong>Coach must: Explain the group developmental model and LTAD reasoning in accessible, non-jargon language.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Exercise 2 — Parent Welcome Communication Draft</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Coach must write a pre-program welcome message to parents that:</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>Explains the EduGolfKids philosophy in simple language</strong></li>
+  <li style="margin-bottom:5px;"><strong>Sets expectations for the session format</strong></li>
+  <li style="margin-bottom:5px;"><strong>Uses growth mindset framing throughout</strong></li>
+  <li style="margin-bottom:5px;"><strong>Is warm, professional, and brand-consistent</strong></li>
+</ul>
+<h3 style="color:var(--green-dark);border-bottom:2px solid var(--green-light);padding-bottom:8px;margin:24px 0 12px;font-size:16px;">CERTIFICATION ASSESSMENT</h3>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Written (30%)</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>List 3 things parents must be informed of before the first session.</strong></li>
+  <li style="margin-bottom:5px;"><strong>Describe the 4-step difficult parent response protocol.</strong></li>
+  <li style="margin-bottom:5px;"><strong>Rewrite a negative parent feedback statement using growth language.</strong></li>
+</ul>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Scenario-Based (30%)</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Coach is given a challenging parent interaction scenario and must demonstrate appropriate response.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Live Demonstration (40%)</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Coach participates in a live role play parent interaction covering:</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>Welcome communication delivery</strong></li>
+  <li style="margin-bottom:5px;"><strong>Handling a concern professionally</strong></li>
+  <li style="margin-bottom:5px;"><strong>Escalation decision-making</strong></li>
+</ul>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Automatic reassessment if:</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>Coach becomes defensive or argumentative</strong></li>
+  <li style="margin-bottom:5px;"><strong>Negative child labeling used</strong></li>
+  <li style="margin-bottom:5px;"><strong>Unapproved digital communication methods referenced</strong></li>
+</ul>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>MINIMUM PASS: 85%</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Final Reinforcement</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Parents do not just enroll their child in a program.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>They place their trust in a coach.</strong></p>
+<p style="margin:0 0 10px;line-height:1.85;"><strong>Every communication you have — before, during, and after sessions — either builds or erodes that trust.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Professional communication is non-negotiable.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>It is part of your certification.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><em></em></p>`},  ]},{  id:"L1_M9",  title:"Module 9 \u2014 Group Management",  icon:"\ud83d\udc65",  sections:[    {h:`Why Group Management Matters`,b:`<div class="doc-section-divider"></div>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Why Group Management Matters</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>In a school-based program, coaches are not just instructors — they are temporary classroom managers.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Children arrive from classrooms with existing energy levels, social dynamics, and behavioral patterns.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Without strong group management:</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>Safety protocols break down</strong></li>
+  <li style="margin-bottom:5px;"><strong>Engagement collapses</strong></li>
+  <li style="margin-bottom:5px;"><strong>Individual children dominate or disengage</strong></li>
+  <li style="margin-bottom:5px;"><strong>Learning stops</strong></li>
+  <li style="margin-bottom:5px;"><strong>Incidents increase</strong></li>
+</ul>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Strong group management creates:</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>Predictable, safe learning environments</strong></li>
+  <li style="margin-bottom:5px;"><strong>High participation rates</strong></li>
+  <li style="margin-bottom:5px;"><strong>Reduced behavioral disruption</strong></li>
+  <li style="margin-bottom:5px;"><strong>Consistent skill development</strong></li>
+  <li style="margin-bottom:5px;"><strong>Positive session culture</strong></li>
+</ul>`},    {h:`Establishing Authority Through Structure`,b:`<div class="doc-section-divider"></div>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Establishing Authority Through Structure</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Authority is not established through volume or dominance.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>It is established through consistency, clarity, and calm confidence.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>The Three Foundations of Coach Authority:</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>1. Predictable Routine</strong></p>
+<p style="margin:0 0 10px;line-height:1.85;"><strong>Children respond to predictability. When they know what to expect, anxiety drops and compliance increases.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Every session must start, transition, and end in exactly the same way.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Opening Routine (First 90 Seconds):</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>Children arrive and stand behind designated line or cones</strong></li>
+  <li style="margin-bottom:5px;"><strong>Coach greets group by name — builds connection and takes visual attendance</strong></li>
+  <li style="margin-bottom:5px;"><strong>Coach states session theme in one sentence using child language</strong></li>
+  <li style="margin-bottom:5px;"><strong>Coach reviews one safety rule (rotate the rule weekly)</strong></li>
+  <li style="margin-bottom:5px;"><strong>Warm-up game is introduced immediately — no waiting</strong></li>
+</ul>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>2. Clear Signals and Commands</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>EduGolfKids coaches must establish and consistently use standard verbal commands.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Required Standard Commands:</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>"FREEZE" — All movement stops immediately. Clubs on ground.</strong></li>
+  <li style="margin-bottom:5px;"><strong>"RESET" — Return to starting position. No club in hand.</strong></li>
+  <li style="margin-bottom:5px;"><strong>"RETRIEVE" — Walk (do not run) to collect balls. Clubs down first.</strong></li>
+  <li style="margin-bottom:5px;"><strong>"ROTATE" — Move to next station. Follow direction indicated.</strong></li>
+  <li style="margin-bottom:5px;"><strong>"EYES ON ME" — Stop, look at coach, listening position.</strong></li>
+</ul>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Commands must be practiced in the first session of every new group.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Never assume children from different schools have been trained on the same commands.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>3. Consistent Consequences</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Children must understand that rules apply equally to everyone, every time.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Inconsistent enforcement is the fastest way to lose group control.</strong></p>`},    {h:`The Behavior Management Ladder`,b:`<div class="doc-section-divider"></div>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">The Behavior Management Ladder</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>EduGolfKids uses a 5-step escalation model. Always begin at Step 1.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Step 1: Environmental Adjustment</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Before addressing behavior directly, adjust the environment.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Many disruptive behaviors are caused by:</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>Too much wait time</strong></li>
+  <li style="margin-bottom:5px;"><strong>Task that is too hard or too easy</strong></li>
+  <li style="margin-bottom:5px;"><strong>Poor spacing creating crowding</strong></li>
+  <li style="margin-bottom:5px;"><strong>Overstimulation from too many instructions</strong></li>
+</ul>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Fix the environment first. Most disruption disappears.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Step 2: Proximity and Non-Verbal Cue</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Move physically closer to the disruptive child.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Use eye contact and a calm nod or gesture.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Do not call out the child publicly.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Many children self-correct with proximity alone.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Step 3: Private Verbal Redirect</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Crouch to the child's level. Speak quietly — not in front of the group.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>"Hey, I need you to [specific behavior]. You can do that — let's keep going."</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Describe the desired behavior, not the problem behavior.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Step 4: Choice and Consequence</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>If the behavior continues after Steps 1-3:</strong></p>
+<p style="margin:0 0 10px;line-height:1.85;"><strong>"I need you to [behavior]. If you continue, you will take a 2-minute break from the activity. It's your choice."</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>This maintains dignity and gives the child agency.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Step 5: Removal and Documentation</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>If behavior continues or poses a safety risk:</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>Remove child to a supervised seated area — never unsupervised</strong></li>
+  <li style="margin-bottom:5px;"><strong>Notify school staff immediately</strong></li>
+  <li style="margin-bottom:5px;"><strong>Document the incident within 24 hours per incident reporting protocol</strong></li>
+  <li style="margin-bottom:5px;"><strong>Contact parent via approved channel after the session</strong></li>
+</ul>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Physical restraint is NEVER permitted under any circumstance.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>If a child poses immediate physical danger, activate the school Emergency Action Plan immediately.</strong></p>`},    {h:`Managing Common Group Scenarios`,b:`<div class="doc-section-divider"></div>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Managing Common Group Scenarios</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Scenario 1: Children arrive chaotic and over-energized</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Solution: Do NOT try to calm with instructions. Channel the energy.</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>Begin the warm-up game immediately</strong></li>
+  <li style="margin-bottom:5px;"><strong>Use a high-energy, structured activity with clear roles</strong></li>
+  <li style="margin-bottom:5px;"><strong>Establish commands within the first 3 minutes of the game</strong></li>
+  <li style="margin-bottom:5px;"><strong>Energy will regulate naturally within 5-7 minutes of structured movement</strong></li>
+</ul>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Scenario 2: One child dominates, others disengage</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Solution: Structural fix — not behavioral correction.</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>Redesign activity to remove single-winner format</strong></li>
+  <li style="margin-bottom:5px;"><strong>Assign specific roles to quieter children (scorekeeper, cone placer)</strong></li>
+  <li style="margin-bottom:5px;"><strong>Use team formats that spread involvement</strong></li>
+  <li style="margin-bottom:5px;"><strong>Privately acknowledge the dominant child's energy positively and redirect: "I need your leadership skills to help the team."</strong></li>
+</ul>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Scenario 3: Child refuses to participate</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Do not force participation. Forcing increases resistance.</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>Acknowledge without pressure: "That's okay — you can watch for now."</strong></li>
+  <li style="margin-bottom:5px;"><strong>Reduce task difficulty and re-invite in 2-3 minutes</strong></li>
+  <li style="margin-bottom:5px;"><strong>Use a peer invitation: "Can you show [child] how it works?"</strong></li>
+  <li style="margin-bottom:5px;"><strong>If persistent refusal, check for frustration, fatigue, or emotional distress</strong></li>
+</ul>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Scenario 4: Physical altercation or aggressive behavior between children</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>Immediately use FREEZE command for entire group</strong></li>
+  <li style="margin-bottom:5px;"><strong>Position yourself between the children — do not touch unless safety requires</strong></li>
+  <li style="margin-bottom:5px;"><strong>Redirect the group to a safe task</strong></li>
+  <li style="margin-bottom:5px;"><strong>Separate involved children to supervised areas</strong></li>
+  <li style="margin-bottom:5px;"><strong>Notify school staff immediately</strong></li>
+  <li style="margin-bottom:5px;"><strong>Document within 24 hours</strong></li>
+</ul>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Scenario 5: A child becomes emotionally distressed or cries</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>Lower your voice and physically crouch to child's level</strong></li>
+  <li style="margin-bottom:5px;"><strong>Do not rush the child or create time pressure</strong></li>
+  <li style="margin-bottom:5px;"><strong>"It's okay to feel frustrated. Take a moment."</strong></li>
+  <li style="margin-bottom:5px;"><strong>Do not call attention from the group</strong></li>
+  <li style="margin-bottom:5px;"><strong>Allow child to re-enter when ready — never pressure re-entry</strong></li>
+  <li style="margin-bottom:5px;"><strong>If distress is prolonged or concerning, notify school staff</strong></li>
+</ul>`},    {h:`Transitions: The Highest Risk Moments`,b:`<div class="doc-section-divider"></div>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Transitions: The Highest Risk Moments</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Behavioral problems most commonly occur during transitions:</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>Moving between warm-up and skill block</strong></li>
+  <li style="margin-bottom:5px;"><strong>Rotating between stations</strong></li>
+  <li style="margin-bottom:5px;"><strong>Ball retrieval</strong></li>
+  <li style="margin-bottom:5px;"><strong>Moving from session area to return to classroom</strong></li>
+</ul>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Transition Protocol:</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>Use FREEZE command before every transition</strong></li>
+  <li style="margin-bottom:5px;"><strong>Give one clear instruction for the transition: "In 10 seconds, we are rotating to the red cones."</strong></li>
+  <li style="margin-bottom:5px;"><strong>Count down out loud: "10... 5... 3... 2... 1... ROTATE."</strong></li>
+  <li style="margin-bottom:5px;"><strong>Walk — never allow running during transitions</strong></li>
+  <li style="margin-bottom:5px;"><strong>Verify all children have arrived at new station before resuming</strong></li>
+</ul>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Sloppy transitions cost 5-10 minutes of session time and elevate injury risk significantly.</strong></p>`},    {h:`Attention Management Techniques`,b:`<div class="doc-section-divider"></div>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Attention Management Techniques</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>EduGolfKids coaches must maintain group attention without relying on shouting.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Proven Techniques:</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Call and Response</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Train the group in a call-and-response signal in the first session.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Example: Coach calls "Golf time!" — children respond "Focus time!"</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Use consistently. Children learn rapidly and enjoy the ritual.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Countdown Method</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>"I need everyone ready in 5... 4... 3... 2... 1."</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Spoken calmly — never as a threat. Works consistently across all age groups.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Whisper Technique</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>When the group is loud, lower your voice rather than raise it.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Children instinctively quiet to hear. Effective and models emotional regulation.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>The Pause</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Stop all instruction. Stand still. Make eye contact. Wait.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Silence draws attention faster than volume.</strong></p>`},    {h:`Bathroom and Water Break Protocol`,b:`<div class="doc-section-divider"></div>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Bathroom and Water Break Protocol</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>These are high-vulnerability moments for supervision lapses.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Water Breaks:</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>Scheduled — not on demand during skill activities</strong></li>
+  <li style="margin-bottom:5px;"><strong>Entire group breaks together</strong></li>
+  <li style="margin-bottom:5px;"><strong>Coach remains in active supervision position</strong></li>
+  <li style="margin-bottom:5px;"><strong>No club handling during water break</strong></li>
+</ul>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Bathroom Requests:</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>Child must request directly to coach</strong></li>
+  <li style="margin-bottom:5px;"><strong>Coach must notify school staff — a child never walks to the bathroom alone</strong></li>
+  <li style="margin-bottom:5px;"><strong>A school staff member or teacher escorts the child</strong></li>
+  <li style="margin-bottom:5px;"><strong>Coach never escorts a child to the bathroom alone</strong></li>
+  <li style="margin-bottom:5px;"><strong>If school staff unavailable, session is paused and EAP protocol consulted</strong></li>
+</ul>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Zero-Unsupervised-Child Standard applies to bathroom and water break situations.</strong></p>
+<h3 style="color:var(--green-dark);border-bottom:2px solid var(--green-light);padding-bottom:8px;margin:24px 0 12px;font-size:16px;">COACH PRACTICAL APPLICATION</h3>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Exercise 1 — Command Establishment Drill</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Coach must successfully train a simulated group on all 5 standard commands within 5 minutes.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Evaluator measures: Clarity of command, group compliance rate, calm authority tone.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Exercise 2 — Behavior Scenario Response</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Coach is given 3 behavioral scenarios and must demonstrate the correct ladder step response for each.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Exercise 3 — Transition Management</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Coach must execute a full station rotation with a simulated group of 8 children.</strong></p>
+<p style="margin:0 0 10px;line-height:1.85;"><strong>Evaluator measures: Use of FREEZE, count-down, walking only, full group accountability before resuming.</strong></p>
+<h3 style="color:var(--green-dark);border-bottom:2px solid var(--green-light);padding-bottom:8px;margin:24px 0 12px;font-size:16px;">CERTIFICATION ASSESSMENT</h3>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Written (30%)</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>List the 5 standard EduGolfKids commands and when each is used.</strong></li>
+  <li style="margin-bottom:5px;"><strong>Describe the 5-step Behavior Management Ladder.</strong></li>
+  <li style="margin-bottom:5px;"><strong>Explain why transitions are high-risk moments.</strong></li>
+</ul>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Scenario-Based (30%)</strong></p>
+<p style="margin:0 0 10px;line-height:1.85;"><strong>Coach is given a written group management scenario and must identify the correct ladder step and response.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Live Demonstration (40%)</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Coach must manage a simulated group of 8 through a 15-minute session segment, demonstrating:</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>Command establishment</strong></li>
+  <li style="margin-bottom:5px;"><strong>At least one behavior redirect using the ladder</strong></li>
+  <li style="margin-bottom:5px;"><strong>Full transition protocol</strong></li>
+  <li style="margin-bottom:5px;"><strong>Consistent calm authority tone</strong></li>
+</ul>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Automatic reassessment if:</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>Shouting or aggressive tone used</strong></li>
+  <li style="margin-bottom:5px;"><strong>Child left unsupervised during transition or bathroom request</strong></li>
+  <li style="margin-bottom:5px;"><strong>Physical contact used as behavioral control</strong></li>
+  <li style="margin-bottom:5px;"><strong>Public shaming or humiliation</strong></li>
+</ul>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>MINIMUM PASS: 85%</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Final Reinforcement</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>The best coaches are not the loudest coaches.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>They are the most consistent, the most calm, and the most structured.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>When children know what to expect, they behave accordingly.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Build the environment. Train the commands. Hold the structure.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Group management is not control — it is engineering conditions for learning.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><em></em></p>`},  ]},{  id:"L1_M10",  title:"Module 10 \u2014 Medical, Special Needs &amp; Inclusion",  icon:"\u2764\ufe0f",  sections:[    {h:`Legal Framework (United States)`,b:`<div class="doc-section-divider"></div>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Legal Framework (United States)</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>EduGolfKids programs operating within school environments are subject to federal law.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Coaches must understand the following frameworks:</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Americans with Disabilities Act (ADA)</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Requires reasonable accommodations for children with disabilities.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Coaches may not exclude a child solely on the basis of a disability.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Reasonable modifications to tasks, equipment, and session structure are required.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Section 504 (Rehabilitation Act)</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Children in schools with a 504 Plan have documented accommodations.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Coaches must request and review any 504 Plan relevant to a participating child.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Coaches do not write 504 Plans — but they must honor them.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Title IX (Education Amendments Act)</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Prohibits discrimination based on sex in any education program receiving federal funding.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>All EduGolfKids sessions must be equally accessible regardless of gender.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>IDEA (Individuals with Disabilities Education Act)</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Some children in your sessions may have an IEP (Individualized Education Program).</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Coaches are not IEP implementers but must be aware of documented behavioral and learning supports.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Consult with school staff before the program begins if IEP-enrolled children are participating.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>When in doubt about legal obligations, contact EduGolfKids HQ before the program launches.</strong></p>`},    {h:`Pre-Program Medical & Needs Screening`,b:`<div class="doc-section-divider"></div>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Pre-Program Medical &amp; Needs Screening</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Before the first session, coaches must review registration information for:</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>Documented medical conditions (asthma, epilepsy, diabetes, heart conditions, severe allergies)</strong></li>
+  <li style="margin-bottom:5px;"><strong>Physical limitations or mobility considerations</strong></li>
+  <li style="margin-bottom:5px;"><strong>Behavioral diagnoses (ADHD, autism spectrum, anxiety disorders)</strong></li>
+  <li style="margin-bottom:5px;"><strong>Sensory processing sensitivities</strong></li>
+  <li style="margin-bottom:5px;"><strong>IEP or 504 Plan status</strong></li>
+</ul>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>If a child has a documented medical condition:</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>Verify emergency medication location and administration protocol with school nurse</strong></li>
+  <li style="margin-bottom:5px;"><strong>Know the child's specific triggers and warning signs</strong></li>
+  <li style="margin-bottom:5px;"><strong>Know the response procedure if a medical event occurs</strong></li>
+  <li style="margin-bottom:5px;"><strong>Ensure this information is in the coach's EAP card</strong></li>
+</ul>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Coaches do not diagnose or assess medical conditions.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Coaches prepare and respond — they do not diagnose.</strong></p>`},    {h:`Common Medical Situations and Response Protocol`,b:`<div class="doc-section-divider"></div>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Common Medical Situations and Response Protocol</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Asthma Attack</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Signs: Wheezing, shortness of breath, chest tightness, coughing, inability to speak full sentences.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Response:</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>Stop activity immediately. Sit child in upright position.</strong></li>
+  <li style="margin-bottom:5px;"><strong>Retrieve child's inhaler if prescribed — coach does NOT administer unless trained</strong></li>
+  <li style="margin-bottom:5px;"><strong>Call school nurse immediately</strong></li>
+  <li style="margin-bottom:5px;"><strong>If symptoms worsen or child cannot breathe — call 911</strong></li>
+  <li style="margin-bottom:5px;"><strong>Stay with child. Document incident.</strong></li>
+</ul>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Diabetic Emergency (Hypoglycemia — Low Blood Sugar)</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Signs: Dizziness, shaking, confusion, pale skin, sudden fatigue, sweating.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Response:</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>Stop activity immediately</strong></li>
+  <li style="margin-bottom:5px;"><strong>If child is conscious — provide glucose source per school nurse guidance</strong></li>
+  <li style="margin-bottom:5px;"><strong>Call school nurse immediately</strong></li>
+  <li style="margin-bottom:5px;"><strong>Do not leave child unattended</strong></li>
+  <li style="margin-bottom:5px;"><strong>If unconscious or unresponsive — call 911 immediately</strong></li>
+</ul>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Seizure</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Signs: Uncontrolled shaking, loss of consciousness, staring episode, confusion.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Response:</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>Protect child from injury — clear area, do not restrain</strong></li>
+  <li style="margin-bottom:5px;"><strong>Do NOT put anything in the child's mouth</strong></li>
+  <li style="margin-bottom:5px;"><strong>Call 911 and school nurse simultaneously</strong></li>
+  <li style="margin-bottom:5px;"><strong>Time the seizure — report duration to medical personnel</strong></li>
+  <li style="margin-bottom:5px;"><strong>Place in recovery position after shaking stops if trained to do so</strong></li>
+  <li style="margin-bottom:5px;"><strong>Stay with child. Never leave.</strong></li>
+</ul>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Allergic Reaction / Anaphylaxis</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Signs: Hives, swelling (lips, throat, face), difficulty breathing, vomiting.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Response:</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>Call 911 immediately for any respiratory symptoms</strong></li>
+  <li style="margin-bottom:5px;"><strong>Locate EpiPen if prescribed — school nurse administers</strong></li>
+  <li style="margin-bottom:5px;"><strong>Do not give food or liquid</strong></li>
+  <li style="margin-bottom:5px;"><strong>Keep child calm and seated upright</strong></li>
+</ul>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Head Injury</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Signs: Any direct impact to head during session — regardless of apparent severity.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Response:</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>Stop activity immediately for the affected child</strong></li>
+  <li style="margin-bottom:5px;"><strong>Do NOT allow child to return to activity that day — zero-tolerance concussion protocol</strong></li>
+  <li style="margin-bottom:5px;"><strong>Notify school nurse</strong></li>
+  <li style="margin-bottom:5px;"><strong>Contact parent same day</strong></li>
+  <li style="margin-bottom:5px;"><strong>Document incident within 24 hours</strong></li>
+  <li style="margin-bottom:5px;"><strong>Medical clearance required before return to EduGolfKids sessions</strong></li>
+</ul>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Heat-Related Illness (Outdoor Sessions)</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Signs: Heavy sweating, dizziness, nausea, cool pale skin, weakness.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Response:</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>Move child to shade or cool area immediately</strong></li>
+  <li style="margin-bottom:5px;"><strong>Provide water — small, frequent sips</strong></li>
+  <li style="margin-bottom:5px;"><strong>Call nurse if symptoms persist beyond 5 minutes</strong></li>
+  <li style="margin-bottom:5px;"><strong>Modify or end outdoor session if heat index exceeds safe threshold</strong></li>
+</ul>`},    {h:`Coaching Children with ADHD`,b:`<div class="doc-section-divider"></div>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Coaching Children with ADHD</p>
+<p style="margin:0 0 10px;line-height:1.85;"><strong>ADHD (Attention Deficit Hyperactivity Disorder) is the most commonly encountered neurodevelopmental condition in youth sport settings.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>What to expect:</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>Difficulty sustaining attention beyond 5-8 minutes on one task</strong></li>
+  <li style="margin-bottom:5px;"><strong>Impulsive movement and verbal outbursts</strong></li>
+  <li style="margin-bottom:5px;"><strong>Difficulty waiting for turns</strong></li>
+  <li style="margin-bottom:5px;"><strong>High physical energy and restlessness</strong></li>
+  <li style="margin-bottom:5px;"><strong>Emotional dysregulation — frustration escalates faster</strong></li>
+</ul>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>What EduGolfKids structure already does well for ADHD:</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>Short task rotations every 4-5 minutes — ideal for attention management</strong></li>
+  <li style="margin-bottom:5px;"><strong>High movement content — channels hyperactive energy</strong></li>
+  <li style="margin-bottom:5px;"><strong>Clear commands and predictable structure — reduces anxiety</strong></li>
+  <li style="margin-bottom:5px;"><strong>Game-based learning — sustains engagement longer than instruction</strong></li>
+</ul>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Additional coaching adjustments for ADHD:</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>Position the child close to the coach at the start of each segment</strong></li>
+  <li style="margin-bottom:5px;"><strong>Give instructions one step at a time — not multi-part</strong></li>
+  <li style="margin-bottom:5px;"><strong>Use the child's name before giving them a specific instruction</strong></li>
+  <li style="margin-bottom:5px;"><strong>Privately warn the child before transitions: "In 2 minutes we are moving. You're going to do great."</strong></li>
+  <li style="margin-bottom:5px;"><strong>Acknowledge even small compliance immediately: "Great — clubs down. Thank you."</strong></li>
+  <li style="margin-bottom:5px;"><strong>Do not single out or reprimand publicly</strong></li>
+</ul>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>ADHD behavior is neurological — not defiance. Coach response must reflect this understanding.</strong></p>`},    {h:`Coaching Children on the Autism Spectrum`,b:`<div class="doc-section-divider"></div>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Coaching Children on the Autism Spectrum</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Autism Spectrum Disorder (ASD) presents differently in every child.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Coaches should not make assumptions based on label alone.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Consult with parents and school staff before the program begins.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Common considerations:</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>Sensitivity to loud sounds, unexpected touch, or sudden changes</strong></li>
+  <li style="margin-bottom:5px;"><strong>Strong preference for routine and predictability</strong></li>
+  <li style="margin-bottom:5px;"><strong>Difficulty with abstract language or idioms</strong></li>
+  <li style="margin-bottom:5px;"><strong>May need additional processing time before responding</strong></li>
+  <li style="margin-bottom:5px;"><strong>May have specific sensory sensitivities to equipment, surfaces, or noise</strong></li>
+</ul>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Coaching adjustments:</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>Pre-inform the child of the session structure at the start: "Here is what we will do today."</strong></li>
+  <li style="margin-bottom:5px;"><strong>Avoid sudden changes to routine — announce early if a change is coming</strong></li>
+  <li style="margin-bottom:5px;"><strong>Use literal, concrete language — avoid analogies that may confuse</strong></li>
+  <li style="margin-bottom:5px;"><strong>Allow additional processing time after instructions — do not rush response</strong></li>
+  <li style="margin-bottom:5px;"><strong>Reduce sensory triggers where possible (quieter tone, visual cues, consistent equipment)</strong></li>
+  <li style="margin-bottom:5px;"><strong>Never force physical contact — follow the child's lead completely</strong></li>
+</ul>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Many children on the spectrum thrive in structured, movement-based environments.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>EduGolfKids sessions — with their predictable architecture — are naturally well-suited.</strong></p>`},    {h:`Coaching Children with Physical Limitations`,b:`<div class="doc-section-divider"></div>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Coaching Children with Physical Limitations</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>EduGolfKids is committed to meaningful participation for all children.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>The Constraints-Led Approach makes EduGolfKids naturally adaptable.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Modification Principles:</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>1. Modify the task, not the child.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Never draw attention to a child's limitation. Adjust the activity structure silently and naturally.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>2. Use equipment modification.</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>Shorter club for limited mobility</strong></li>
+  <li style="margin-bottom:5px;"><strong>Larger target for reduced coordination</strong></li>
+  <li style="margin-bottom:5px;"><strong>Tee height adjustment for balance challenges</strong></li>
+  <li style="margin-bottom:5px;"><strong>Seated hitting station if standing is difficult</strong></li>
+</ul>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>3. Modify the scoring system.</strong></p>
+<p style="margin:0 0 10px;line-height:1.85;"><strong>Create scoring systems where all participation produces positive outcomes regardless of physical output.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>4. Never exclude.</strong></p>
+<p style="margin:0 0 10px;line-height:1.85;"><strong>If an activity cannot be safely modified for a child's limitation, find a meaningful adjacent role — scorekeeper, target placer, team captain.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Full exclusion from any activity is a last resort and must be documented.</strong></p>`},    {h:`Anxiety and Emotional Sensitivity`,b:`<div class="doc-section-divider"></div>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Anxiety and Emotional Sensitivity</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Many children experience performance anxiety, social anxiety, or generalized worry.</strong></p>
+<p style="margin:0 0 10px;line-height:1.85;"><strong>Youth sport environments can trigger anxiety in children who fear failure, judgment, or public mistakes.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Signs of anxiety in session:</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>Reluctance or refusal to participate</strong></li>
+  <li style="margin-bottom:5px;"><strong>Physical complaints (stomach aches, headaches) at the start of session</strong></li>
+  <li style="margin-bottom:5px;"><strong>Clingy behavior or need for reassurance</strong></li>
+  <li style="margin-bottom:5px;"><strong>Crying before or during activities</strong></li>
+  <li style="margin-bottom:5px;"><strong>Extreme fear of making mistakes</strong></li>
+</ul>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>EduGolfKids coaching approach already addresses anxiety through:</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>Psychological safety as a core principle (Module 1)</strong></li>
+  <li style="margin-bottom:5px;"><strong>Growth mindset language (Module 6)</strong></li>
+  <li style="margin-bottom:5px;"><strong>Non-punitive, non-comparative structure</strong></li>
+</ul>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Additional adjustments for anxious children:</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>Allow observation before participation — never force entry into activity</strong></li>
+  <li style="margin-bottom:5px;"><strong>Reduce stakes of first attempts: "This is just a practice round — no score."</strong></li>
+  <li style="margin-bottom:5px;"><strong>Celebrate first participation privately before publicly</strong></li>
+  <li style="margin-bottom:5px;"><strong>Check in one-on-one during transition moments: "How's it going? You're doing well."</strong></li>
+</ul>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>If anxiety appears severe, persistent, or escalating, notify the parent and school counselor.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Do not attempt to diagnose or treat anxiety. Coach, observe, communicate.</strong></p>`},    {h:`Communicating with Parents about Special Needs`,b:`<div class="doc-section-divider"></div>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);">Communicating with Parents about Special Needs</p>
+<p style="margin:0 0 10px;line-height:1.85;"><strong>Parents of children with special needs often have heightened concerns about how their child will be treated.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>First contact with these parents is critical.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Before the program:</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>Request a brief conversation with the parent to understand the child's specific needs, triggers, and successful strategies</strong></li>
+  <li style="margin-bottom:5px;"><strong>Ask: "What helps your child feel comfortable and successful in a new activity?"</strong></li>
+  <li style="margin-bottom:5px;"><strong>Ask: "Is there anything I should know to make this experience great for them?"</strong></li>
+</ul>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>During the program:</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>Provide more frequent brief updates: "Just wanted to let you know — today was a great session for [child]."</strong></li>
+  <li style="margin-bottom:5px;"><strong>Frame all communication in developmental language</strong></li>
+  <li style="margin-bottom:5px;"><strong>If a challenging situation occurs, inform the parent the same day</strong></li>
+</ul>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Never:</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>Communicate diagnosis or behavioral observations in written group communication</strong></li>
+  <li style="margin-bottom:5px;"><strong>Share a child's special needs status with other parents or children</strong></li>
+  <li style="margin-bottom:5px;"><strong>Use a child's diagnosis as an explanation in front of peers</strong></li>
+</ul>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Confidentiality of special needs information is an absolute standard.</strong></p>
+<h3 style="color:var(--green-dark);border-bottom:2px solid var(--green-light);padding-bottom:8px;margin:24px 0 12px;font-size:16px;">COACH PRACTICAL APPLICATION</h3>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Exercise 1 — Medical Response Drill</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Coach is given a medical scenario (asthma attack during outdoor session).</strong></p>
+<p style="margin:0 0 10px;line-height:1.85;"><strong>Must demonstrate: correct immediate response, group management during incident, documentation awareness.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Exercise 2 — Inclusion Design Challenge</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Coach is given a standard EduGolfKids drill and must redesign it to be fully inclusive for:</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>A child with ADHD</strong></li>
+  <li style="margin-bottom:5px;"><strong>A child with a mobility limitation</strong></li>
+  <li style="margin-bottom:5px;"><strong>A child with high anxiety</strong></li>
+</ul>
+<p style="margin:0 0 10px;line-height:1.85;"><strong>Evaluator measures: Inclusion without exclusion, task integrity maintained, no child singled out negatively.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Exercise 3 — Parent Communication Scenario</strong></p>
+<p style="margin:0 0 10px;line-height:1.85;"><strong>Coach must draft a communication to the parent of a child with ASD following the first session, using growth language and appropriate confidentiality standards.</strong></p>
+<h3 style="color:var(--green-dark);border-bottom:2px solid var(--green-light);padding-bottom:8px;margin:24px 0 12px;font-size:16px;">CERTIFICATION ASSESSMENT</h3>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Written (30%)</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>Describe the correct response to a seizure in a session setting.</strong></li>
+  <li style="margin-bottom:5px;"><strong>List 3 coaching adjustments for a child with ADHD.</strong></li>
+  <li style="margin-bottom:5px;"><strong>Explain the modification principle "modify the task, not the child."</strong></li>
+  <li style="margin-bottom:5px;"><strong>What is the difference between ADA accommodation and IEP implementation?</strong></li>
+</ul>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Scenario-Based (30%)</strong></p>
+<p style="margin:0 0 10px;line-height:1.85;"><strong>Coach is given an inclusion design scenario and must demonstrate appropriate adjustments across physical, cognitive, and emotional needs.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Live Demonstration (40%)</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Coach must run a 10-minute inclusive session segment designed for a mixed-needs group, demonstrating:</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>Proactive inclusion design</strong></li>
+  <li style="margin-bottom:5px;"><strong>Growth mindset language</strong></li>
+  <li style="margin-bottom:5px;"><strong>At least one visible accommodation without singling out the child</strong></li>
+  <li style="margin-bottom:5px;"><strong>Correct response to a prompted simulated medical moment</strong></li>
+</ul>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Automatic reassessment if:</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;"><strong>Child with special needs excluded from any activity without documented justification</strong></li>
+  <li style="margin-bottom:5px;"><strong>Medical response protocol violated</strong></li>
+  <li style="margin-bottom:5px;"><strong>Confidential needs information referenced publicly</strong></li>
+  <li style="margin-bottom:5px;"><strong>Discriminatory language or behavior observed</strong></li>
+</ul>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>MINIMUM PASS: 85%</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Final Reinforcement</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Inclusion is not charity. It is standard.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Every child in your session deserves full access to the EduGolfKids experience.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>The Constraints-Led Approach gives you the tools.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>The Language Code gives you the voice.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Your preparation gives you the confidence.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>There is no child who cannot participate in a well-designed EduGolfKids session.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Design the environment. Know your children. Coach every one of them.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><em></em></p>`},  ]},{  id:"L1_M11",  title:"Module 11 \u2014 Field Safety",  icon:"\u26c8\ufe0f",  sections:[    {h:`Module 11 — Field Safety`,b:`<p style="margin:0 0 10px;line-height:1.85;">MODULE 11<em></em></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>OPERATIONAL FIELD SAFETY — WEATHER, ENVIRONMENT &amp; EMERGENCY RESPONSE</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Certification Study Manual — Coach Level 1</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>MODULE PURPOSE</strong></p>
+<p style="margin:0 0 10px;line-height:1.85;">This module trains coaches to:</p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;">Identify and respond to weather hazards — specifically lightning, extreme heat, wind, and rain — before and during sessions</li>
+  <li style="margin-bottom:5px;">Execute the EduGolfKids Weather Decision Framework correctly every time</li>
+  <li style="margin-bottom:5px;">Understand the 30/30 Lightning Safety Rule and apply it without hesitation</li>
+  <li style="margin-bottom:5px;">Manage safe and calm evacuation of children from a field or outdoor environment</li>
+  <li style="margin-bottom:5px;">Respond to a first aid incident during a session, including seizure, anaphylaxis, and suspected concussion</li>
+  <li style="margin-bottom:5px;">Complete all post-incident documentation requirements within the required timeframe</li>
+</ul>
+<p style="margin:0 0 10px;line-height:1.85;"><strong>⚠  SAFETY IS NOT OPTIONAL. A coach who ignores a weather warning is liable. A coach who panics creates danger. This module trains you to be calm, decisive, and correct every time.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>SECTION 1 — THE WEATHER DECISION FRAMEWORK</strong></p>
+<p style="margin:0 0 10px;line-height:1.85;"><strong>Every EduGolfKids coach must check the weather before every outdoor session. This is not optional — it is a non-negotiable pre-session duty.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Pre-Session Weather Check — Required Steps:</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;">Check the weather forecast minimum 2 hours before session start</li>
+  <li style="margin-bottom:5px;">Use a reliable app — Weather.com, Weather Underground, or your local national weather service</li>
+  <li style="margin-bottom:5px;">Check specifically for: lightning risk, wind speed, temperature, and precipitation</li>
+  <li style="margin-bottom:5px;">If thunderstorms are forecast within a 4-hour window of your session — begin contingency planning immediately</li>
+</ul>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>RULE: When in doubt, move indoors or postpone. Never wait for lightning to appear before acting.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>The Three-Option Decision Matrix:</strong></p>
+<p style="margin:0 0 10px;line-height:1.85;">When weather conditions are uncertain or deteriorating, apply the following in order:</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>OPTION 1 — PROCEED OUTDOORS</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;">Sky is clear or partly cloudy</li>
+  <li style="margin-bottom:5px;">No thunderstorm forecast within 4 hours</li>
+  <li style="margin-bottom:5px;">Wind is manageable — equipment and children are not at risk</li>
+  <li style="margin-bottom:5px;">Temperature is within safe operating range (see Section 2)</li>
+</ul>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>OPTION 2 — MOVE INDOORS</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;">Thunderstorms forecast within 4 hours</li>
+  <li style="margin-bottom:5px;">Wind speed makes equipment unsafe or children uncomfortable</li>
+  <li style="margin-bottom:5px;">Light rain that makes outdoor delivery impractical</li>
+  <li style="margin-bottom:5px;">Extreme heat — indoor air-conditioned environment preferred</li>
+</ul>
+<p style="margin:0 0 10px;line-height:1.85;">→ Proceed with a modified indoor session using foam balls and shortened distances</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>OPTION 3 — POSTPONE / CANCEL</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;">Active thunderstorm in the area</li>
+  <li style="margin-bottom:5px;">School has closed or restricted outdoor access due to weather</li>
+  <li style="margin-bottom:5px;">Extreme weather event — tornado warning, flash flood, severe storm watch</li>
+  <li style="margin-bottom:5px;">Indoor space is unavailable and conditions make any delivery unsafe</li>
+</ul>
+<p style="margin:0 0 10px;line-height:1.85;">→ Immediately notify school contact and parents via agreed communication channel</p>
+<p style="margin:0 0 10px;line-height:1.85;">→ Reschedule within the same billing month where possible</p>
+<p style="margin:0 0 10px;line-height:1.85;"><strong>⚠  A cancelled session without rescheduling represents lost revenue and a broken commitment to schools. Always reschedule — do not simply cancel.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>SECTION 2 — LIGHTNING SAFETY: THE 30/30 RULE</strong></p>
+<p style="margin:0 0 10px;line-height:1.85;"><strong>Lightning is the single most serious weather hazard for outdoor golf sessions. Children holding metal clubs are at elevated risk.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>The 30/30 Rule — Memorise This:</strong></p>
+<p style="margin:0 0 10px;line-height:1.85;"><strong>30 SECONDS: If the time between a lightning flash and thunder is 30 seconds or less — evacuate immediately. The storm is within 6 miles.</strong></p>
+<p style="margin:0 0 10px;line-height:1.85;"><strong>30 MINUTES: Do not resume outdoor activity until 30 minutes after the last lightning flash or thunder. Not 10 minutes. Not 20. 30 full minutes.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Lightning Evacuation Protocol — Step by Step:</strong></p>
+<p style="margin:0 0 10px;line-height:1.85;">As soon as you observe lightning or hear thunder within 30 seconds:</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>STEP 1 — CALL IT</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;">Blow your whistle three times — the EduGolfKids universal stop signal</li>
+  <li style="margin-bottom:5px;">Use a calm, firm voice: "Everyone stop. Clubs on the ground. Come to me now."</li>
+  <li style="margin-bottom:5px;">Do not run. Walk briskly and calmly. Your tone controls the group's reaction.</li>
+</ul>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>STEP 2 — GROUND ALL EQUIPMENT</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;">All clubs must be placed flat on the ground immediately</li>
+  <li style="margin-bottom:5px;">No child carries a club during evacuation — ever</li>
+  <li style="margin-bottom:5px;">Do not carry clubs yourself — leave them on the field</li>
+</ul>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>STEP 3 — MOVE TO SHELTER</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;">Direct children to the nearest substantial building — school building preferred</li>
+  <li style="margin-bottom:5px;">A hard-topped vehicle is an acceptable secondary shelter</li>
+  <li style="margin-bottom:5px;">Do NOT shelter under trees, near fences, near flagpoles, or in open structures</li>
+  <li style="margin-bottom:5px;">Do NOT shelter in dugouts, covered bleachers, or bus stops — these are not safe</li>
+</ul>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>STEP 4 — ACCOUNT FOR ALL CHILDREN</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;">Once inside — count every child against your session register</li>
+  <li style="margin-bottom:5px;">No child is unaccounted for. If someone is missing — notify school staff immediately.</li>
+</ul>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>STEP 5 — NOTIFY</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;">Notify the school contact that the session has been suspended due to lightning</li>
+  <li style="margin-bottom:5px;">Contact parents if children need to wait for extended pickup</li>
+</ul>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>STEP 6 — WAIT THE FULL 30 MINUTES</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;">Start timing from the last flash or thunder observed</li>
+  <li style="margin-bottom:5px;">If lightning or thunder occurs again during the wait — reset the 30-minute clock</li>
+  <li style="margin-bottom:5px;">If 30 minutes expires and the session cannot be resumed — reschedule</li>
+</ul>
+<p style="margin:0 0 10px;line-height:1.85;"><strong>⚠  NEVER resume a session early because "it looks clear." The 30-minute rule exists because lightning can strike from a storm that appears to have passed. Follow it exactly.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>SECTION 3 — EXTREME HEAT AND SUN SAFETY</strong></p>
+<p style="margin:0 0 10px;line-height:1.85;">Children are significantly more vulnerable to heat illness than adults. Their bodies generate more heat proportionally and cool down less efficiently.</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Heat Safety Thresholds:</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;">Below 80°F / 27°C with low humidity — normal session, standard hydration reminders</li>
+  <li style="margin-bottom:5px;">80–90°F / 27–32°C — mandatory water break every 15 minutes, shade access required</li>
+  <li style="margin-bottom:5px;">Above 90°F / 32°C OR heat index above 95°F / 35°C — consider moving indoors or postponing</li>
+  <li style="margin-bottom:5px;">Above 100°F / 38°C — session must be postponed or moved fully indoors</li>
+</ul>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Heat Safety Non-Negotiables:</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;">Always carry a minimum of one litre of water per child for outdoor sessions</li>
+  <li style="margin-bottom:5px;">Water breaks are scheduled — not optional, not "when children ask"</li>
+  <li style="margin-bottom:5px;">Identify shaded areas at every venue during your first site visit</li>
+  <li style="margin-bottom:5px;">Watch for signs of heat exhaustion: pale skin, heavy sweating, weakness, nausea, dizziness</li>
+</ul>
+<p style="margin:0 0 10px;line-height:1.85;"><strong>⚠  Heat stroke is a medical emergency. If a child stops sweating but is hot, confused, or unresponsive — call emergency services immediately and move the child to shade or cool environment.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>SECTION 4 — WIND AND RAIN SAFETY</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Wind:</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;">Wind above 25mph / 40km/h: assess whether equipment can be safely controlled</li>
+  <li style="margin-bottom:5px;">Foam balls and light equipment become projectiles in high wind — adjust to putting or indoor alternatives</li>
+  <li style="margin-bottom:5px;">Children must not swing clubs in high wind conditions — risk of loss of control</li>
+  <li style="margin-bottom:5px;">If pop-up shelters or cones are being displaced — conditions are too windy for safe outdoor delivery</li>
+</ul>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Rain:</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;">Light drizzle: session may proceed if children are appropriately dressed and surface is safe</li>
+  <li style="margin-bottom:5px;">Moderate to heavy rain: move indoors — wet equipment, wet surfaces, and low visibility are all hazards</li>
+  <li style="margin-bottom:5px;">Wet grass or hard surfaces: slipping risk is significantly elevated — do not proceed outdoors</li>
+  <li style="margin-bottom:5px;">Standing water on surface: session must move indoors or be postponed</li>
+</ul>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>SECTION 5 — FIRST AID RESPONSE DURING SESSIONS</strong></p>
+<p style="margin:0 0 10px;line-height:1.85;">Every EduGolfKids coach must hold a current First Aid certification before leading sessions independently. This section covers the most likely scenarios in a school golf environment.</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Scenario 1 — Struck by Golf Club:</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;">Stop the session immediately — one whistle blast</li>
+  <li style="margin-bottom:5px;">Move all other children away from the area calmly</li>
+  <li style="margin-bottom:5px;">Assess the injury — do not move the child if head, neck, or back injury is suspected</li>
+  <li style="margin-bottom:5px;">Call for school nurse or medical staff immediately</li>
+  <li style="margin-bottom:5px;">Do not apply pressure to head wounds without training — cover gently</li>
+  <li style="margin-bottom:5px;">Contact parent within 15 minutes of incident</li>
+  <li style="margin-bottom:5px;">Complete incident report within 24 hours</li>
+</ul>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Scenario 2 — Suspected Concussion:</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;">Any blow to the head — the child does NOT return to the session</li>
+  <li style="margin-bottom:5px;">Seat the child in a shaded, calm area with adult supervision</li>
+  <li style="margin-bottom:5px;">Watch for: headache, confusion, dizziness, nausea, sensitivity to light</li>
+  <li style="margin-bottom:5px;">Notify school nurse immediately</li>
+  <li style="margin-bottom:5px;">Notify parent — child must be collected and assessed by a medical professional before returning</li>
+</ul>`},    {h:`Module 11 — Field Safety (continued)`,b:`<p style="margin:0 0 10px;line-height:1.85;"><strong>RULE: If in doubt, sit them out. A child with a suspected concussion never returns to the session that day under any circumstance.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Scenario 3 — Anaphylaxis / Allergic Reaction:</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;">Check your pre-session register for any child with a known allergy and EpiPen</li>
+  <li style="margin-bottom:5px;">Signs: hives, swelling of face or throat, difficulty breathing, pale skin, loss of consciousness</li>
+  <li style="margin-bottom:5px;">Call emergency services immediately — do not wait</li>
+  <li style="margin-bottom:5px;">Administer EpiPen if the child has one and you are trained — or locate school nurse immediately</li>
+  <li style="margin-bottom:5px;">Stay with child until medical assistance arrives</li>
+</ul>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Scenario 4 — Seizure:</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;">Do not restrain the child — clear the space around them</li>
+  <li style="margin-bottom:5px;">Time the seizure</li>
+  <li style="margin-bottom:5px;">Place something soft under their head — nothing in the mouth</li>
+  <li style="margin-bottom:5px;">After the seizure — place child in recovery position</li>
+  <li style="margin-bottom:5px;">Call emergency services if seizure lasts more than 5 minutes or child does not regain consciousness quickly</li>
+  <li style="margin-bottom:5px;">Notify school nurse and parent immediately</li>
+</ul>
+<p style="margin:0 0 10px;line-height:1.85;"><strong>⚠  You are not a medical professional. Your job is to keep the child safe, call for help immediately, and stay calm. Do not attempt treatment beyond your training level.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>SECTION 6 — INCIDENT DOCUMENTATION</strong></p>
+<p style="margin:0 0 10px;line-height:1.85;">Every incident — however minor — must be documented. This protects the child, the school, and you.</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>EduGolfKids Incident Report — Required Fields:</strong></p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;">Date, time, and location of incident</li>
+  <li style="margin-bottom:5px;">Child's full name and age</li>
+  <li style="margin-bottom:5px;">Nature of incident — describe exactly what happened</li>
+  <li style="margin-bottom:5px;">Witnesses present — names and roles</li>
+  <li style="margin-bottom:5px;">Action taken — exactly what you did, in sequence</li>
+  <li style="margin-bottom:5px;">Medical attention sought — yes/no, by whom</li>
+  <li style="margin-bottom:5px;">Parent notified — time and method of contact</li>
+  <li style="margin-bottom:5px;">Coach signature and date</li>
+</ul>
+<p style="margin:0 0 10px;line-height:1.85;"><strong>DEADLINE: All incident reports must be submitted to EduGolfKids HQ and the school contact within 24 hours of the incident. No exceptions.</strong></p>
+<p style="margin:0 0 10px;line-height:1.85;">Incident reports are submitted via the EduGolfKids operating system (Airtable). If the system is unavailable, email the report to HQ immediately and log it in the system as soon as possible.</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>SECTION 7 — PRE-SESSION SAFETY CHECKLIST</strong></p>
+<p style="margin:0 0 10px;line-height:1.85;">Before every outdoor session, complete the following:</p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;">☐  Weather checked — forecast reviewed for next 4 hours</li>
+  <li style="margin-bottom:5px;">☐  Lightning risk assessed — 30/30 rule understood and ready to apply</li>
+  <li style="margin-bottom:5px;">☐  Indoor backup space confirmed with school if weather is uncertain</li>
+  <li style="margin-bottom:5px;">☐  Emergency Action Plan (EAP) reviewed for this venue</li>
+  <li style="margin-bottom:5px;">☐  AED location identified</li>
+  <li style="margin-bottom:5px;">☐  School nurse or medical contact identified</li>
+  <li style="margin-bottom:5px;">☐  Session register complete — all children accounted for</li>
+  <li style="margin-bottom:5px;">☐  Medical alerts reviewed — allergies, conditions, EpiPens confirmed</li>
+  <li style="margin-bottom:5px;">☐  Equipment hitting zones set up — spacing verified</li>
+  <li style="margin-bottom:5px;">☐  Children briefed on FREEZE and RETRIEVE commands before session starts</li>
+</ul>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>⚠  Do not begin a session without completing this checklist. Preparation is protection.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>CERTIFICATION ASSESSMENT — MODULE 11</strong></p>
+<p style="margin:0 0 10px;line-height:1.85;">Written Assessment (minimum pass: 85%):</p>
+<p style="margin:0 0 10px;line-height:1.85;"><strong>1.  </strong>A thunderstorm is forecast for 3 hours after your session starts. What do you do before the session begins?</p>
+<p style="margin:0 0 10px;line-height:1.85;"><strong>2.  </strong>You are mid-session when you see lightning. You count to 20 before hearing thunder. What do you do, in exact sequence?</p>
+<p style="margin:0 0 10px;line-height:1.85;"><strong>3.  </strong>A child has been struck on the head by another child's club during a session. Describe your exact response.</p>
+<p style="margin:0 0 10px;line-height:1.85;"><strong>4.  </strong>The temperature at session time is 93°F. No indoor space is available. What is your decision and why?</p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>5.  </strong>What is the 30/30 Rule and why does the second "30" matter?</p>
+<p style="margin:0 0 10px;line-height:1.85;"><strong>6.  </strong>A child appears confused, is sweating heavily, and says they feel sick during an outdoor session in summer. What do you do?</p>
+<p style="margin:0 0 10px;line-height:1.85;">Practical Assessment:</p>
+<ul style="margin:6px 0 12px 22px;line-height:1.85;">
+  <li style="margin-bottom:5px;">Coach must demonstrate a full lightning evacuation drill with a simulated group, from first whistle to full shelter, including equipment grounding and headcount.</li>
+  <li style="margin-bottom:5px;">Coach must complete a blank incident report for a provided scenario to a satisfactory standard.</li>
+</ul>
+<p style="margin:0 0 10px;line-height:1.85;"><strong>⚠  AUTOMATIC FAIL: Any coach who demonstrates uncertainty about the lightning evacuation protocol or who cannot complete the pre-session safety checklist correctly will not pass this module and must resit.</strong></p>
+<p style="font-weight:700;margin:12px 0 6px;color:var(--green-dark);"><strong>Safety is not a module. It is a mindset.</strong></p>
+<p style="margin:0 0 10px;line-height:1.85;"><em>Every child in your session is someone's entire world. Protect them like it.</em></p>`},  ]},],
 
 L2:[
 {id:'L2_M1',title:'Module 1 — Putting',icon:'⛳',sections:[
@@ -865,14 +3661,15 @@ async function kcNext() {
 function startLevelAssessment(level) {
   const qs = QUIZ_QUESTIONS[level];
   if (!qs) return;
-  const shuffled = shuffleArray([...qs]).slice(0, Math.min(20, qs.length)).map(q => {
+  const count = Math.min(20, qs.length);
+  const shuffled = shuffleArray([...qs]).slice(0, count).map(q => {
     const combined = q.o.map((opt,i)=>({ opt, correct: i===q.c }));
     const shuffledOpts = shuffleArray(combined);
     return { q:q.q, options:shuffledOpts.map(x=>x.opt), correct:shuffledOpts.findIndex(x=>x.correct) };
   });
   quizState = { level, questions:shuffled, currentQ:0, answers:[], answered:false };
   safeSet('quiz-title', CERT_LEVELS[level]?.fullLabel || 'Assessment');
-  safeSet('quiz-subtitle', `${shuffled.length} questions · 85% required to pass · Questions and answers are randomized`);
+  safeSet('quiz-subtitle', `${shuffled.length} questions · 85% required to pass · Questions 0026 answers randomized on every attempt`);
   document.getElementById('quiz-container').style.display = 'block';
   document.getElementById('quiz-results').style.display = 'none';
   renderQuizQuestion();
