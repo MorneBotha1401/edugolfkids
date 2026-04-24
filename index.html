@@ -3457,7 +3457,7 @@ function initApp() {
   updateDashboardStats();
   renderSchoolPipeline();
   // Compliance: update banner on licensee dashboard after login
-  if (state.role === 'licensee' || state.role === 'tdp') {
+  if (state.role === 'licensee') {
     setTimeout(() => renderMyCompliance(), 100);
   }
 }
@@ -3625,6 +3625,194 @@ function updateDashboardStats() {
 
   // Refresh BI alerts whenever stats update
   if (typeof renderBIAlerts === 'function') renderBIAlerts();
+
+  // Bug 3 — Render territory health on HQ dashboard
+  renderTerritoryHealth();
+
+  // Bug 4/6 — Render compliance alerts on HQ dashboard
+  renderHQComplianceAlerts();
+
+  // Bug 8 — Render revenue trend chart
+  renderRevenueTrend();
+}
+
+function viewTerritoryDetail(territoryId) {
+  // Full territory file view — Session 3 (Bug #7)
+  // For now navigate to territories page
+  showPage('page-territories');
+}
+
+function renderTerritoryHealth() {
+  const territories = state.data.territories || [];
+  const licensees = state.data.licensees || [];
+  const schools = state.data.schools || [];
+  const compliance = state.data.compliance_records || [];
+  const container = document.getElementById('territory-health-list');
+  if (!container) return;
+
+  if (territories.length === 0) {
+    container.innerHTML = `<div class="empty-state">
+      <div class="empty-icon">🗺️</div>
+      <h3>No territories yet</h3>
+      <p>Add your first territory to get started</p>
+      <button class="btn btn-primary btn-sm" onclick="openModal('modal-add-territory')">Add Territory</button>
+    </div>`;
+    return;
+  }
+
+  const rows = territories.map(t => {
+    const tLicensees = licensees.filter(l => l.territory_id === t.id);
+    const tSchools = schools.filter(s => tLicensees.some(l => l.id === s.licensee_id));
+    const tStudents = (state.data.students || []).filter(st => tLicensees.some(l => l.id === st.licensee_id));
+
+    // Compliance score for this territory
+    const tCompliance = compliance.filter(c => tLicensees.some(l => l.id === c.licensee_id));
+    const hasIssues = tLicensees.some(l => {
+      const lDocs = tCompliance.filter(c => c.licensee_id === l.id);
+      return lDocs.length < 9;
+    });
+
+    const statusColor = t.status === 'active' ? 'var(--success)' : 'var(--amber)';
+    const complianceTag = hasIssues
+      ? `<span class="badge badge-red" style="font-size:11px;">⚠️ Compliance</span>`
+      : `<span class="badge badge-green" style="font-size:11px;">✅ Compliant</span>`;
+
+    return `<div style="display:flex; align-items:center; justify-content:space-between; padding:12px 0; border-bottom:1px solid var(--gray-100);" onclick="viewTerritoryDetail('${t.id}')" style="cursor:pointer;">
+      <div style="display:flex; align-items:center; gap:12px;">
+        <div style="width:8px; height:8px; border-radius:50%; background:${statusColor}; flex-shrink:0;"></div>
+        <div>
+          <div style="font-weight:600; font-size:14px;">${t.name}</div>
+          <div style="font-size:12px; color:var(--gray-400);">${tLicensees.length} licensee · ${tSchools.length} schools · ${tStudents.length} students</div>
+        </div>
+      </div>
+      <div style="display:flex; align-items:center; gap:8px;">
+        ${complianceTag}
+        <span style="color:var(--gray-400); font-size:18px;">›</span>
+      </div>
+    </div>`;
+  }).join('');
+
+  container.innerHTML = `<div style="padding:0 4px;">${rows}</div>`;
+}
+
+function renderHQComplianceAlerts() {
+  const licensees = state.data.licensees || [];
+  const compliance = state.data.compliance_records || [];
+  const container = document.getElementById('compliance-alerts-list');
+  const badge = document.getElementById('compliance-alert-count');
+  if (!container) return;
+
+  // Build alert list — any licensee missing any required doc
+  const REQUIRED_DOCS = ['license_agreement','business_registration','ein_confirmation','w9_form','gl_insurance','sam_insurance','safeguarding_cert','id_verification','background_check'];
+  const alerts = [];
+
+  for (const l of licensees) {
+    const lDocs = compliance.filter(c => c.licensee_id === l.id).map(c => c.doc_id);
+    const missing = REQUIRED_DOCS.filter(d => !lDocs.includes(d));
+    const hasSAM = lDocs.includes('sam_insurance');
+    const isSAMRestricted = !hasSAM;
+    const name = `${l.first_name} ${l.last_name}`;
+
+    if (isSAMRestricted) {
+      alerts.push({ name, missing: ['SAM Insurance'], severity: 'critical', email: l.email, phone: l.phone, id: l.id });
+    } else if (missing.length > 0) {
+      alerts.push({ name, missing, severity: missing.length >= 3 ? 'high' : 'medium', email: l.email, phone: l.phone, id: l.id });
+    }
+  }
+
+  // Update badge
+  if (badge) {
+    badge.textContent = `${alerts.length} issue${alerts.length !== 1 ? 's' : ''}`;
+    badge.className = alerts.length === 0 ? 'badge badge-green' : alerts.some(a => a.severity === 'critical') ? 'badge badge-red' : 'badge badge-amber';
+  }
+  safeSet('stat-alerts', alerts.length);
+
+  if (alerts.length === 0) {
+    container.innerHTML = `<div class="empty-state" style="padding:24px 0;">
+      <div class="empty-icon">✅</div>
+      <h3>All clear</h3>
+      <p>No compliance issues across the network</p>
+    </div>`;
+    return;
+  }
+
+  const items = alerts.map(a => {
+    const severityColor = a.severity === 'critical' ? 'var(--red)' : a.severity === 'high' ? 'var(--amber)' : 'var(--blue)';
+    const severityIcon = a.severity === 'critical' ? '⛔' : a.severity === 'high' ? '⚠️' : 'ℹ️';
+    const missingList = a.missing.map(m => m.replace(/_/g,' ').replace(/\b\w/g, c => c.toUpperCase())).join(', ');
+    return `<div style="display:flex; align-items:center; justify-content:space-between; padding:12px; margin-bottom:8px; background:var(--gray-100); border-radius:8px; border-left:3px solid ${severityColor};">
+      <div style="flex:1;">
+        <div style="font-weight:600; font-size:13px;">${severityIcon} ${a.name}</div>
+        <div style="font-size:12px; color:var(--gray-400); margin-top:2px;">Missing: ${missingList}</div>
+      </div>
+      <div style="display:flex; gap:6px; flex-shrink:0;">
+        <a href="mailto:${a.email || ''}" class="btn btn-sm btn-outline" style="font-size:11px; padding:4px 8px;" title="Email ${a.name}">✉️ Email</a>
+        ${a.phone ? `<a href="tel:${a.phone}" class="btn btn-sm btn-outline" style="font-size:11px; padding:4px 8px;" title="Call ${a.name}">📞 Call</a>` : ''}
+        <button class="btn btn-sm btn-primary" style="font-size:11px; padding:4px 8px;" onclick="viewLicenseeCompliance('${a.id}')">View →</button>
+      </div>
+    </div>`;
+  }).join('');
+
+  container.innerHTML = items;
+}
+
+function renderRevenueTrend() {
+  const container = document.getElementById('revenue-trend-chart');
+  if (!container) return;
+
+  const licensees = state.data.licensees || [];
+  const invoices = state.data.invoices || [];
+  const activeLicensees = licensees.filter(l => l.status === 'active').length;
+
+  // Build 6-month projection based on current licensee count + actual paid invoices
+  const months = [];
+  const now = new Date();
+  for (let i = 5; i >= 0; i--) {
+    const d = new Date(now.getFullYear(), now.getMonth() - i, 1);
+    const label = d.toLocaleString('default', { month: 'short', year: '2-digit' });
+    const monthStr = d.toISOString().slice(0, 7);
+
+    // Count paid invoices for this month
+    const paid = invoices.filter(inv =>
+      inv.status === 'paid' && inv.paid_date && inv.paid_date.startsWith(monthStr)
+    );
+    const collected = paid.reduce((sum, inv) => sum + (inv.amount || 0), 0);
+
+    // Projected = current active licensees × $500 (for current + future months)
+    const isCurrentOrFuture = i <= 0;
+    const projected = activeLicensees * 500;
+
+    months.push({ label, collected, projected: isCurrentOrFuture ? projected : 0, monthStr });
+  }
+
+  const maxVal = Math.max(...months.map(m => Math.max(m.collected, m.projected)), 500);
+
+  const bars = months.map(m => {
+    const collectedH = Math.round((m.collected / maxVal) * 120);
+    const projectedH = Math.round((m.projected / maxVal) * 120);
+    const isCurrentMonth = m.monthStr === now.toISOString().slice(0, 7);
+
+    return `<div style="display:flex; flex-direction:column; align-items:center; gap:4px; flex:1;">
+      <div style="display:flex; align-items:flex-end; gap:2px; height:130px;">
+        ${m.collected > 0 ? `<div style="width:16px; height:${collectedH}px; background:var(--green); border-radius:3px 3px 0 0;" title="Collected: $${m.collected.toLocaleString()}"></div>` : '<div style="width:16px;"></div>'}
+        ${m.projected > 0 ? `<div style="width:16px; height:${projectedH}px; background:${isCurrentMonth ? 'var(--gold)' : 'var(--gray-200)'}; border-radius:3px 3px 0 0; opacity:0.7;" title="Projected: $${m.projected.toLocaleString()}"></div>` : '<div style="width:16px;"></div>'}
+      </div>
+      <div style="font-size:10px; color:var(--gray-400); text-align:center;">${m.label}</div>
+      ${m.collected > 0 ? `<div style="font-size:10px; font-weight:600; color:var(--green);">$${(m.collected/1000).toFixed(1)}k</div>` : (m.projected > 0 ? `<div style="font-size:10px; color:var(--gray-400);">$${(m.projected/1000).toFixed(1)}k</div>` : '')}
+    </div>`;
+  }).join('');
+
+  container.innerHTML = `
+    <div style="padding:16px 8px 0;">
+      <div style="display:flex; align-items:flex-end; gap:4px; margin-bottom:12px; justify-content:space-around;">
+        ${bars}
+      </div>
+      <div style="display:flex; gap:16px; padding-top:8px; border-top:1px solid var(--gray-100); font-size:11px; color:var(--gray-400);">
+        <span><span style="display:inline-block;width:10px;height:10px;background:var(--green);border-radius:2px;margin-right:4px;"></span>Collected</span>
+        <span><span style="display:inline-block;width:10px;height:10px;background:var(--gold);border-radius:2px;margin-right:4px;opacity:0.7;"></span>Projected (current month)</span>
+        <span style="margin-left:auto;"><strong>${activeLicensees}</strong> active licensee${activeLicensees !== 1 ? 's' : ''} × $500 = <strong>$${(activeLicensees * 500).toLocaleString()}/mo</strong></span>
+      </div>
+    </div>`;
 }
 
 function renderTerritoriesTable() {
