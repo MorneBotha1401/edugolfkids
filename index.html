@@ -2170,8 +2170,7 @@
           <div class="tab" onclick="switchTab(this,'tab-mkt-parent')">Parent Marketing</div>
           <div class="tab" onclick="switchTab(this,'tab-mkt-comms')">Parent Comms</div>
           <div class="tab" onclick="switchTab(this,'tab-mkt-brand')">Brand Assets</div>
-          <div class="tab" onclick="switchTab(this,'tab-mkt-ops')">Operations</div>
-          <div class="tab" onclick="switchTab(this,'tab-mkt-accounting')">Accounting Tools</div>
+
         </div>
         <div id="tab-mkt-school">
           <div class="grid-3">
@@ -2383,7 +2382,7 @@
           </div>
         </div>
 
-        <div id="tab-mkt-ops" style="display:none;">
+        <div id="tab-mkt-ops" style="display:none !important;">
           <div class="grid-3">
             <div class="card">
               <div style="font-size:32px; margin-bottom:12px;">📋</div>
@@ -2409,7 +2408,7 @@
           </div>
         </div>
 
-        <div id="tab-mkt-accounting" style="display:none;">
+        <div id="tab-mkt-accounting" style="display:none !important;">
           <div class="alert alert-blue">💡 Your platform's built-in accounting module handles invoicing, payroll and P&L automatically. The templates below are for offline reference or for sharing with an external accountant.</div>
           <div class="grid-3">
             <div class="card">
@@ -3409,6 +3408,18 @@
   </div>
 </div>
 
+<!-- Territory Detail Modal (Bug #7) -->
+<div class="modal-overlay" id="modal-territory-detail">
+  <div class="modal" style="max-width:640px;">
+    <button class="modal-close" onclick="closeModal('modal-territory-detail')">✕</button>
+    <div id="territory-detail-body">Loading...</div>
+    <div class="modal-footer">
+      <button class="btn btn-outline" onclick="closeModal('modal-territory-detail')">Close</button>
+      <button class="btn btn-primary" onclick="closeModal('modal-territory-detail'); showPage('page-territories');">View All Territories</button>
+    </div>
+  </div>
+</div>
+
 <script>
 // ══════════════════════════════════════════
 //  PLATFORM STATE
@@ -3720,7 +3731,7 @@ function showPage(pageId) {
   if (pageId === 'page-coach-portal') renderCoachPortal();
   if (pageId === 'page-coach-education') renderCertPage();
   if (pageId === 'page-hq-dashboard') { updateDashboardStats(); renderActivityFeed(); }
-  if (pageId === 'page-attendance') { renderAllClassesForAttendance(); setTodayBadge(); }
+  if (pageId === 'page-attendance') { renderAllClassesForAttendance(); setTodayBadge(); renderAttendanceByRole(); }
   if (pageId === 'page-registration-form') populateRegFormSchools();
   if (pageId === 'page-valuation') calculateValuation();
   if (pageId === 'page-hq-accounting') { populateInvoiceLicenseeDropdown(); renderInvoiceTable(); updateHQAccountingStats(); }
@@ -3818,10 +3829,73 @@ function updateDashboardStats() {
   renderRevenueTrend();
 }
 
-function viewTerritoryDetail(territoryId) {
-  // Full territory file view — Session 3 (Bug #7)
-  // For now navigate to territories page
-  showPage('page-territories');
+function openTerritoryDetail(territoryId) {
+  const territories = state.data.territories || [];
+  const licensees   = state.data.licensees   || [];
+  const schools     = state.data.schools     || [];
+  const coaches     = state.data.coaches     || [];
+
+  const t = territories.find(x => x.id === territoryId);
+  if (!t) return;
+
+  const tLicensees = licensees.filter(l => l.territory_id === t.id);
+  const tSchools   = schools.filter(s => tLicensees.some(l => l.id === s.licensee_id));
+  const tCoaches   = coaches.filter(c => tLicensees.some(l => l.id === c.licensee_id));
+  const tStudents  = (state.data.students || []).filter(st => tLicensees.some(l => l.id === st.licensee_id));
+
+  const statusBadge = t.status === 'active'
+    ? `<span class="badge badge-green">Active</span>`
+    : `<span class="badge badge-gray">${t.status || 'Pending'}</span>`;
+
+  const licenseesHtml = tLicensees.length === 0
+    ? `<p style="color:var(--gray-400);font-size:13px;">No licensee assigned yet.</p>`
+    : tLicensees.map(l => `
+        <div style="display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:1px solid var(--gray-100);">
+          <div>
+            <strong>${l.name}</strong><br>
+            <small style="color:var(--gray-400);">${l.email || ''} · ${l.phone || ''}</small>
+          </div>
+          <span class="badge ${l.status === 'active' ? 'badge-green' : 'badge-gray'}">${l.status || 'pending'}</span>
+        </div>`).join('');
+
+  const el = document.getElementById('territory-detail-body');
+  if (el) el.innerHTML = `
+    <div style="display:flex;align-items:center;gap:12px;margin-bottom:20px;">
+      <div>
+        <h2 style="font-family:var(--font-display);color:var(--green-dark);margin:0;">${t.name}</h2>
+        <p style="color:var(--gray-400);margin:4px 0 0;">${t.region || ''}, ${t.state || ''}</p>
+      </div>
+      ${statusBadge}
+    </div>
+    <div class="grid-2" style="margin-bottom:20px;">
+      <div class="stat-card">
+        <div class="stat-icon">🏫</div>
+        <div class="stat-value">${tSchools.length}</div>
+        <div class="stat-label">Active Schools</div>
+        <div class="stat-sub">of ${t.max_schools || 20} max</div>
+      </div>
+      <div class="stat-card green">
+        <div class="stat-icon">👧</div>
+        <div class="stat-value">${tStudents.length}</div>
+        <div class="stat-label">Enrolled Students</div>
+        <div class="stat-sub">${tCoaches.length} coaches deployed</div>
+      </div>
+    </div>
+    <div class="card" style="margin-bottom:16px;">
+      <div class="card-header"><h3>📍 Territory Details</h3></div>
+      <table style="width:100%;font-size:14px;border-collapse:collapse;">
+        <tr><td style="padding:8px 0;color:var(--gray-400);width:140px;">Boundaries</td><td><strong>${t.boundaries || '—'}</strong></td></tr>
+        <tr><td style="padding:8px 0;color:var(--gray-400);">Type</td><td><strong>${t.type || 'Standard License'}</strong></td></tr>
+        <tr><td style="padding:8px 0;color:var(--gray-400);">Created</td><td><strong>${t.created || '—'}</strong></td></tr>
+        <tr><td style="padding:8px 0;color:var(--gray-400);">Max Schools</td><td><strong>${t.max_schools || 20}</strong></td></tr>
+      </table>
+    </div>
+    <div class="card">
+      <div class="card-header"><h3>🤝 Licensee${tLicensees.length !== 1 ? 's' : ''}</h3><span class="badge badge-green">${tLicensees.length} assigned</span></div>
+      ${licenseesHtml}
+    </div>`;
+
+  openModal('modal-territory-detail');
 }
 
 // ══════════════════════════════════════════
@@ -4167,7 +4241,7 @@ function renderTerritoriesTable() {
     const statusBadge = t.status === 'active'
       ? `<span class="badge badge-green">Active</span>`
       : `<span class="badge badge-gray">${t.status}</span>`;
-    return `<tr>
+    return `<tr style="cursor:pointer;" onclick="openTerritoryDetail('${t.id}')" title="Click to view territory details">
       <td><strong>${t.name}</strong><br><small style="color:var(--gray-400)">${t.region || ''}, ${t.state || ''}</small></td>
       <td>${statusBadge}</td>
       <td>${tLicensees.length} / 1</td>
@@ -5075,6 +5149,169 @@ Give practical, specific, data-driven advice. Be encouraging but honest. Referen
 }
 
 // ══════════════════════════════════════════
+//  BUG #5 — HQ ACTIVITY FEED + AI ADVISOR
+// ══════════════════════════════════════════
+function renderActivityFeed() {
+  const container = document.getElementById('recent-activity-list');
+  if (!container) return;
+
+  const territories  = state.data.territories  || [];
+  const licensees    = state.data.licensees    || [];
+  const schools      = state.data.schools      || [];
+  const students     = state.data.students     || [];
+  const classes      = state.data.classes      || [];
+  const invoices     = state.data.invoices     || [];
+  const coaches      = state.data.coaches      || [];
+
+  const events = [];
+
+  // Territory creations
+  territories.forEach(t => {
+    if (t.created) events.push({ date: t.created, icon: '🗺️', color: 'badge-green',
+      text: `Territory <strong>${t.name}</strong> created`, category: 'Territory' });
+  });
+
+  // Licensee joins
+  licensees.forEach(l => {
+    if (l.joined) events.push({ date: l.joined, icon: '🤝', color: 'badge-blue',
+      text: `Licensee <strong>${l.name}</strong> joined`, category: 'Licensee' });
+  });
+
+  // Schools signed
+  schools.forEach(s => {
+    if (s.pipeline_stage === 'signed' && s.signed_date)
+      events.push({ date: s.signed_date, icon: '🏫', color: 'badge-gold',
+        text: `School <strong>${s.name}</strong> signed`, category: 'School' });
+  });
+
+  // Student enrolments
+  students.forEach(st => {
+    if (st.enrolled) events.push({ date: st.enrolled, icon: '👧', color: 'badge-green',
+      text: `Student <strong>${st.name}</strong> enrolled`, category: 'Student' });
+  });
+
+  // Invoices raised
+  invoices.forEach(inv => {
+    if (inv.date) events.push({ date: inv.date, icon: '💰', color: inv.status === 'paid' ? 'badge-green' : 'badge-amber',
+      text: `Invoice <strong>${inv.invoice_number || ''}</strong> — ${inv.status || 'raised'}`, category: 'Finance' });
+  });
+
+  // Attendance submissions
+  classes.forEach(cls => {
+    (cls.attendance_log || []).forEach(log => {
+      if (log.date) events.push({ date: log.date, icon: '📋', color: 'badge-blue',
+        text: `Attendance submitted for <strong>${cls.name}</strong>`, category: 'Attendance' });
+    });
+  });
+
+  // Sort newest first
+  events.sort((a, b) => (b.date || '').localeCompare(a.date || ''));
+  const recent = events.slice(0, 40);
+
+  if (recent.length === 0) {
+    container.innerHTML = `<div class="empty-state" style="padding:24px 0;">
+      <div class="empty-icon">📋</div>
+      <h3>No activity yet</h3>
+      <p>Platform activity will appear here as licensees and coaches use the system</p>
+    </div>`;
+    return;
+  }
+
+  container.innerHTML = recent.map(e => `
+    <div style="display:flex;align-items:flex-start;gap:12px;padding:10px 0;border-bottom:1px solid var(--gray-100);">
+      <div style="font-size:20px;flex-shrink:0;">${e.icon}</div>
+      <div style="flex:1;min-width:0;">
+        <div style="font-size:14px;">${e.text}</div>
+        <div style="font-size:12px;color:var(--gray-400);margin-top:2px;">${e.date}</div>
+      </div>
+      <span class="badge ${e.color}" style="flex-shrink:0;font-size:11px;">${e.category}</span>
+    </div>`).join('');
+}
+
+const hqChatHistory = [];
+
+async function sendHQAdvisorMessage() {
+  const input = document.getElementById('hq-chat-input');
+  const messages = document.getElementById('hq-chat-messages');
+  if (!input || !messages) return;
+  const userMsg = input.value.trim();
+  if (!userMsg) return;
+
+  // Add user bubble
+  messages.innerHTML += `<div class="chat-msg user"><div class="bubble">${userMsg}</div></div>`;
+  input.value = '';
+
+  // Loading bubble
+  const loadingId = 'hq-loading-' + Date.now();
+  messages.innerHTML += `<div class="chat-msg ai" id="${loadingId}"><div class="bubble" style="color:var(--gray-400);">Thinking…</div></div>`;
+  messages.scrollTop = messages.scrollHeight;
+
+  // Build network snapshot for context
+  const territories = state.data.territories || [];
+  const licensees   = state.data.licensees   || [];
+  const schools     = state.data.schools     || [];
+  const students    = state.data.students    || [];
+  const coaches     = state.data.coaches     || [];
+  const invoices    = state.data.invoices    || [];
+
+  const networkSnapshot = {
+    territories:      territories.length,
+    active_territories: territories.filter(t => t.status === 'active').length,
+    licensees:        licensees.length,
+    active_licensees: licensees.filter(l => l.status === 'active').length,
+    total_schools:    schools.length,
+    signed_schools:   schools.filter(s => s.pipeline_stage === 'signed').length,
+    total_students:   students.length,
+    total_coaches:    coaches.length,
+    total_classes:    (state.data.classes || []).length,
+    mrr_estimate:     licensees.filter(l => l.status === 'active').length * 500,
+    pending_invoices: invoices.filter(i => i.status !== 'paid').length,
+  };
+
+  hqChatHistory.push({ role: 'user', content: userMsg });
+
+  try {
+    const response = await fetch('https://api.anthropic.com/v1/messages', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        model: ANTHROPIC_MODEL,
+        max_tokens: 1000,
+        system: `You are the EduGolfKids HQ Advisor — an expert business intelligence assistant for EduGolfKids HQ. You have full visibility across the entire franchise network.
+
+EduGolfKids is a children's golf education franchise (ages 4-10) operating in US schools. Key business facts:
+- Standard lesson fee: $20 per student per session
+- Monthly license fee: $500 per licensee to HQ
+- Coach pay: $20 minimum, +$5/student over 4
+- Max 20 schools per territory, max 7 students per class
+- Terms are 10 lessons each
+- HQ net from each active licensee: ~$350/month
+
+Current network snapshot: ${JSON.stringify(networkSnapshot, null, 2)}
+
+Provide direct, data-driven, executive-level guidance. Be concise and actionable. Reference the actual numbers when relevant.`,
+        messages: hqChatHistory
+      })
+    });
+
+    const data = await response.json();
+    const reply = data.content?.[0]?.text || 'Unable to generate a response. Please try again.';
+    hqChatHistory.push({ role: 'assistant', content: reply });
+
+    document.getElementById(loadingId).outerHTML = `
+      <div class="chat-msg ai">
+        <div class="bubble">${reply.replace(/\n/g,'<br>')}</div>
+      </div>`;
+  } catch(e) {
+    document.getElementById(loadingId).outerHTML = `
+      <div class="chat-msg ai">
+        <div class="bubble" style="color:var(--red);">Connection error. Please try again.</div>
+      </div>`;
+  }
+  messages.scrollTop = messages.scrollHeight;
+}
+
+// ══════════════════════════════════════════
 //  MODAL MANAGEMENT
 // ══════════════════════════════════════════
 function populateInvoiceLicenseeDropdown() {
@@ -5972,6 +6209,98 @@ function renderAllClassesForAttendance() {
         <button class="btn btn-primary btn-sm">Take Attendance →</button>
       </div>`;
   }).join('');
+}
+
+// ══════════════════════════════════════════
+//  BUG #26 — ATTENDANCE ROLE OWNERSHIP
+// ══════════════════════════════════════════
+function renderAttendanceByRole() {
+  const licView  = document.getElementById('att-licensee-view');
+  const coachView = document.getElementById('att-coach-view');
+  if (!licView || !coachView) return;
+
+  if (state.role === 'licensee') {
+    licView.style.display  = '';
+    coachView.style.display = 'none';
+    safeSet('att-page-title', 'Session Attendance Log');
+    safeSet('att-page-sub',   'Review submitted sessions and override pending ones');
+    renderLicenseeAttendanceView();
+  } else {
+    // coach (and HQ/TDP who may also need to take attendance)
+    licView.style.display  = 'none';
+    coachView.style.display = '';
+    safeSet('att-page-title', 'Take Attendance');
+    safeSet('att-page-sub',   'Mark attendance, log performance notes and calculate coach pay');
+  }
+}
+
+function renderLicenseeAttendanceView() {
+  const classes  = state.data.classes  || [];
+  const students = state.data.students || [];
+  const today    = new Date().toISOString().split('T')[0];
+
+  // — Submitted sessions (classes that have at least one attendance_log entry today)
+  const submittedEl = document.getElementById('att-submitted-list');
+  const submitted   = classes.filter(c => c.attendance_log && c.attendance_log.length > 0);
+
+  if (submitted.length === 0) {
+    if (submittedEl) submittedEl.innerHTML = `<div class="empty-state"><div class="empty-icon">📋</div><h3>No sessions submitted yet</h3><p>Coaches submit attendance after each class. It will appear here.</p></div>`;
+  } else {
+    if (submittedEl) submittedEl.innerHTML = submitted.map(c => {
+      const lastLog = c.attendance_log[c.attendance_log.length - 1];
+      const presentCount = lastLog.attendance ? Object.values(lastLog.attendance).filter(v => v === 'present').length : 0;
+      const totalStudents = students.filter(s => s.class_id === c.id).length;
+      return `<div class="class-slot" style="cursor:default;">
+        <div class="time-badge">${c.start_time || '—'}</div>
+        <div class="class-info">
+          <div class="class-name">${c.name}</div>
+          <div class="class-meta">${c.day} · Lesson ${lastLog.lesson || '—'} · ${lastLog.date || '—'}</div>
+        </div>
+        <div class="enrollment-badge">${presentCount}/${totalStudents} present</div>
+        <span class="badge badge-green">✅ Submitted</span>
+      </div>`;
+    }).join('');
+  }
+
+  // — Pending sessions (active classes with NO attendance_log, or last log is old)
+  const pendingEl = document.getElementById('att-pending-list');
+  const pending   = classes.filter(c => !c.attendance_log || c.attendance_log.length === 0);
+
+  if (pending.length === 0) {
+    if (pendingEl) pendingEl.innerHTML = `<div class="empty-state"><div class="empty-icon">✅</div><h3>All sessions up to date</h3><p>No pending attendance to review</p></div>`;
+  } else {
+    if (pendingEl) pendingEl.innerHTML = pending.map(c => {
+      const totalStudents = students.filter(s => s.class_id === c.id).length;
+      return `<div class="class-slot">
+        <div class="time-badge">${c.start_time || '—'}</div>
+        <div class="class-info">
+          <div class="class-name">${c.name}</div>
+          <div class="class-meta">${c.day} · ${totalStudents} students enrolled</div>
+        </div>
+        <span class="badge badge-amber">⏳ Pending</span>
+        <button class="btn btn-sm btn-outline" onclick="licenseeOverrideAttendance('${c.id}')">Override →</button>
+      </div>`;
+    }).join('');
+  }
+}
+
+function licenseeOverrideAttendance(classId) {
+  // Switch to the coach attendance view temporarily for this class (override mode)
+  const licView   = document.getElementById('att-licensee-view');
+  const coachView = document.getElementById('att-coach-view');
+  if (licView)   licView.style.display   = 'none';
+  if (coachView) coachView.style.display = '';
+  // Add override banner
+  const existingBanner = document.getElementById('att-override-banner');
+  if (!existingBanner) {
+    const banner = document.createElement('div');
+    banner.id = 'att-override-banner';
+    banner.className = 'alert alert-amber';
+    banner.style.marginBottom = '16px';
+    banner.innerHTML = `⚠️ <strong>Override Mode</strong> — You are submitting attendance on behalf of the coach. <button class="btn btn-sm btn-outline" style="margin-left:12px;" onclick="renderAttendanceByRole()">← Back to Log</button>`;
+    coachView.insertBefore(banner, coachView.firstChild);
+  }
+  openAttendanceSession(classId);
 }
 
 // Set today badge
