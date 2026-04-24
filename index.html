@@ -2505,105 +2505,50 @@
       </div>
 
       <!-- ══ COACH EDUCATION ══ -->
+      <!-- ══ EDUCATION HUB ══ -->
       <div id="page-coach-education" class="page">
-        <div class="page-header">
-          <h1>My Certifications</h1>
-          <p>Complete certifications to unlock full coaching access</p>
-        </div>
-
-        <!-- Cert status cards -->
-        <div class="stats-grid" style="margin-bottom:24px;">
-          <div class="stat-card" id="cert-card-l1">
-            <div class="stat-icon">🎓</div>
-            <div class="stat-value" id="cert-status-l1">Not Started</div>
-            <div class="stat-label">Level 1 — Foundations</div>
-            <div class="stat-sub" id="cert-sub-l1">Required to coach</div>
-          </div>
-          <div class="stat-card" id="cert-card-l2">
-            <div class="stat-icon">🏅</div>
-            <div class="stat-value" id="cert-status-l2">Locked</div>
-            <div class="stat-label">Level 2 — Golf Skills</div>
-            <div class="stat-sub" id="cert-sub-l2">Complete Level 1 first</div>
-          </div>
-          <div class="stat-card" id="cert-card-l3">
-            <div class="stat-icon">🏆</div>
-            <div class="stat-value" id="cert-status-l3">Locked</div>
-            <div class="stat-label">Level 3 — Advanced</div>
-            <div class="stat-sub" id="cert-sub-l3">Complete Level 2 first</div>
-          </div>
-          <div class="stat-card" id="cert-card-refresher">
-            <div class="stat-icon">🔄</div>
-            <div class="stat-value" id="cert-status-refresher">Not Due</div>
-            <div class="stat-label">Annual Refresher</div>
-            <div class="stat-sub" id="cert-sub-refresher">Due annually</div>
-          </div>
-        </div>
-
-        <div class="grid-2">
-          <!-- Certification actions -->
-          <div class="card">
-            <div class="card-header"><h3>Certification Programme</h3></div>
-            <div id="cert-action-list"></div>
-          </div>
-
-          <!-- Lesson Plans Library -->
-          <div class="card">
-            <div class="card-header"><h3>Lesson Plans Library</h3></div>
-            <div class="alert alert-blue" id="lesson-plans-locked-msg" style="display:none;">🔒 Complete Level 1 certification to access lesson plans.</div>
-            <div id="lesson-plans-grid" style="display:grid; grid-template-columns: 1fr 1fr; gap:8px; margin-top:4px;">
-              <button class="btn btn-outline btn-sm" onclick="openLessonPlans(4)">Age 4 Plans</button>
-              <button class="btn btn-outline btn-sm" onclick="openLessonPlans(5)">Age 5 Plans</button>
-              <button class="btn btn-outline btn-sm" onclick="openLessonPlans(6)">Age 6 Plans</button>
-              <button class="btn btn-outline btn-sm" onclick="openLessonPlans(7)">Age 7 Plans</button>
-              <button class="btn btn-outline btn-sm" onclick="openLessonPlans(8)">Age 8 Plans</button>
-              <button class="btn btn-outline btn-sm" onclick="openLessonPlans(9)">Age 9 Plans</button>
-              <button class="btn btn-outline btn-sm" onclick="openLessonPlans(10)">Age 10 Plans</button>
-              <button class="btn btn-gold btn-sm" onclick="openLessonPlans('games')">🎮 Fun Games Library</button>
-            </div>
-          </div>
-        </div>
-
-        <!-- Certificates earned -->
-        <div class="card" id="cert-history-card" style="display:none;">
-          <div class="card-header"><h3>My Certificates</h3></div>
-          <div id="cert-history-list"></div>
+        <div id="edu-hub-view">
+          <!-- rendered by renderEducationHub() -->
         </div>
       </div>
 
-      <!-- ══ QUIZ PAGE ══ -->
-      <div id="page-quiz" class="page">
-        <div class="page-header">
-          <h1 id="quiz-title">Certification Quiz</h1>
-          <p id="quiz-subtitle">Answer all questions. 85% required to pass.</p>
+      <!-- ══ MODULE READER ══ -->
+      <div id="page-module-reader" class="page">
+        <div id="module-reader-content">
+          <!-- rendered by openModuleReader() -->
         </div>
-        <div class="card" id="quiz-container">
-          <div id="quiz-progress-bar-wrap" style="height:6px; background:var(--gray-200); border-radius:3px; margin-bottom:24px;">
-            <div id="quiz-progress-bar" style="height:100%; background:var(--green); border-radius:3px; transition:width 0.3s; width:0%;"></div>
-          </div>
-          <div id="quiz-question-counter" style="font-size:13px; color:var(--gray-400); margin-bottom:20px;"></div>
-          <div id="quiz-question-text" style="font-size:18px; font-weight:600; color:var(--green-dark); margin-bottom:24px; line-height:1.5;"></div>
-          <div id="quiz-options" style="display:flex; flex-direction:column; gap:10px;"></div>
-          <div id="quiz-feedback" style="display:none; margin-top:20px;"></div>
-          <div style="display:flex; justify-content:flex-end; margin-top:28px;">
-            <button class="btn btn-primary" id="quiz-next-btn" onclick="quizNext()" style="display:none;">Next Question →</button>
-          </div>
-        </div>
+      </div>
 
-        <!-- Results panel -->
-        <div class="card" id="quiz-results" style="display:none;">
-          <div id="quiz-results-content" style="text-align:center; padding:20px;"></div>
+      <!-- ══ KNOWLEDGE CHECK ══ -->
+      <div id="page-knowledge-check" class="page">
+        <div id="knowledge-check-content">
+          <!-- rendered by openKnowledgeCheck() -->
+        </div>
+      </div>
+
+      <!-- ══ LEVEL ASSESSMENT ══ -->
+      <div id="page-level-assessment" class="page">
+        <div id="level-assessment-content">
+          <!-- rendered by openLevelAssessment() -->
+        </div>
+      </div>
+
+      <!-- ══ LESSON PLANS ══ -->
+      <div id="page-lesson-plans" class="page">
+        <div id="lesson-plans-content">
+          <!-- rendered by openLessonPlansPage() -->
         </div>
       </div>
 
       <!-- ══ CERTIFICATE VIEW ══ -->
       <div id="page-certificate" class="page">
         <div class="page-header">
-          <h1>Certificate</h1>
+          <h1>Certificate of Completion</h1>
           <p>Your EduGolfKids certification</p>
         </div>
         <div style="text-align:center; margin-bottom:20px;">
           <button class="btn btn-primary" onclick="printCertificate()">🖨️ Print Certificate</button>
-          <button class="btn btn-outline" onclick="showPage('page-coach-education')" style="margin-left:12px;">← Back to My Certifications</button>
+          <button class="btn btn-outline" onclick="showPage('page-coach-education')" style="margin-left:12px;">← Back to Education Hub</button>
         </div>
         <div id="certificate-display" style="max-width:800px; margin:0 auto; background:white; border:3px solid var(--gold); border-radius:16px; padding:48px; text-align:center; box-shadow:var(--shadow-lg);"></div>
       </div>
@@ -3729,7 +3674,6 @@ function showPage(pageId) {
   if (pageId === 'page-scheduling') renderSchedulingPage();
   if (pageId === 'page-tdp') renderTDPPage();
   if (pageId === 'page-coach-portal') renderCoachPortal();
-  if (pageId === 'page-coach-education') renderCertPage();
   if (pageId === 'page-hq-dashboard') { updateDashboardStats(); renderActivityFeed(); }
   if (pageId === 'page-attendance') { renderAllClassesForAttendance(); setTodayBadge(); renderAttendanceByRole(); }
   if (pageId === 'page-registration-form') populateRegFormSchools();
@@ -3742,8 +3686,8 @@ function showPage(pageId) {
   if (pageId === 'page-compliance') { renderComplianceCentre(); updateComplianceStats(); }
   if (pageId === 'page-my-compliance') { renderMyCompliance(); }
   if (pageId === 'page-licensee-dashboard') { renderBIAlerts(); }
+  if (pageId === 'page-coach-education') { renderEducationHub(); }
   if (pageId === 'page-education') { renderHQEducationStats(); }
-  if (pageId === 'page-coach-education') { renderCertPage(); }
   if (pageId === 'page-marketing') { renderMarketingPortal(); }
 }
 
@@ -6558,7 +6502,8 @@ function emailBrand(content) {
       EduGolfKids LLC · Mooresville, North Carolina<br>
       <a href="mailto:hq@edugolfkids.com" style="color:#1B5C2A;">hq@edugolfkids.com</a>
     </div>
-  </div></body></html>`;
+  </div><script src="egk-education.js"></script>
+</body></html>`;
 }
 
 function emailH2(text) { return `<h2 style="color:#1B5C2A;font-family:Georgia,serif;margin-bottom:8px;">${text}</h2>`; }
@@ -8433,403 +8378,10 @@ async function saveComplianceDoc() {
   }
 }
 
+
 // ══════════════════════════════════════════
-//  CERTIFICATION ENGINE
+//  EDUCATION HUB — loaded from egk-education.js
 // ══════════════════════════════════════════
-
-const CERT_LEVELS = {
-  L1: { id: 'L1', label: 'Level 1 — Foundations', fullLabel: 'Level 1 Coach Certification — Foundations', passPct: 85, prereq: null, color: '#1B5C2A' },
-  L2: { id: 'L2', label: 'Level 2 — Golf Skills', fullLabel: 'Level 2 Coach Certification — Golf Skills', passPct: 85, prereq: 'L1', color: '#2980B9' },
-  L3: { id: 'L3', label: 'Level 3 — Advanced Coaching', fullLabel: 'Level 3 Coach Certification — Advanced Coaching', passPct: 85, prereq: 'L2', color: '#C9A84C' },
-  REFRESH: { id: 'REFRESH', label: 'Annual Refresher', fullLabel: 'Annual Certification Refresher', passPct: 85, prereq: 'L1', color: '#8B5CF6' },
-};
-
-const QUIZ_QUESTIONS = {
-  L1: [
-    { q: 'What does LTAD stand for in EduGolfKids coaching?', options: ['Long-Term Athlete Development', 'Licensed Teaching And Delivery', 'Learner Training Assessment Design', 'Long-Term Activity Delivery'], correct: 0 },
-    { q: 'What is the maximum number of students per class in an EduGolfKids session?', options: ['5', '6', '7', '10'], correct: 2 },
-    { q: 'According to the EduGolfKids language code, which phrase should a coach AVOID?', options: ['"Great effort!"', '"You\'re almost there!"', '"Don\'t do it like that"', '"Try it this way"'], correct: 2 },
-    { q: 'How long is a standard EduGolfKids lesson?', options: ['30 minutes', '45 minutes', '60 minutes', '90 minutes'], correct: 2 },
-    { q: 'Which LTAD stage applies to children aged 4–6?', options: ['FUNdamentals', 'Active Start', 'Learning to Train', 'Training to Train'], correct: 1 },
-    { q: 'What is the recommended coach-to-student ratio in EduGolfKids?', options: ['1:5', '1:7', '1:10', '1:3'], correct: 1 },
-    { q: 'When a child aged 4–6 makes an error, the coach should:', options: ['Immediately correct the technique', 'Give the child time and positive reinforcement', 'Ask another student to demonstrate', 'Stop the drill'], correct: 1 },
-    { q: 'Which of the following is a core principle of the EduGolfKids coaching philosophy?', options: ['Competition first', 'Fun and participation first', 'Technique mastery before fun', 'Silent observation'], correct: 1 },
-    { q: 'What should a coach do at the START of every 60-minute session?', options: ['Immediately begin skill drills', 'Run a warm-up activity', 'Assign students to groups', 'Review last week\'s scores'], correct: 1 },
-    { q: 'The EduGolfKids safeguarding policy requires that a coach:', options: ['Is never alone with a single child', 'Can take photos without consent', 'May transport students in personal vehicles', 'May share student contact details'], correct: 0 },
-    { q: 'What is the purpose of the EduGolfKids Skills Passport?', options: ['To track coach pay', 'To record each child\'s lesson and skill progression', 'To log school agreement dates', 'To track equipment inventory'], correct: 1 },
-    { q: 'Annual certification renewal is required every:', options: ['6 months', '1 year', '2 years', '3 years'], correct: 1 },
-    { q: 'Which is a valid emergency first response when a child is injured?', options: ['Continue the session with remaining students', 'Assess the child, contact a parent, and report to the licensee', 'Wait for the injury to resolve before reporting', 'Ask the child if they want to keep playing'], correct: 1 },
-    { q: 'Cool-down activities at the end of a session should:', options: ['Be skipped to save time', 'Be high intensity', 'Bring heart rate down and reinforce positive feelings', 'Include competitive scoring'], correct: 2 },
-    { q: 'The LTAD FUNdamentals stage (ages 6–9) focuses primarily on:', options: ['Technical golf swing mechanics', 'Fun, movement literacy, and golf fundamentals', 'Tournament preparation', 'Club selection and distance'], correct: 1 },
-  ],
-  L2: [
-    { q: 'In the EduGolfKids putting progression, what is the FIRST skill introduced?', options: ['Distance control', 'Reading greens', 'Grip and stance', 'Uphill putts'], correct: 2 },
-    { q: 'When teaching the chipping motion to a 7-year-old, the coach should prioritise:', options: ['Wrist action and follow-through length', 'Club selection between chip and pitch', 'A simple, consistent brushing motion', 'Launch angle and spin'], correct: 2 },
-    { q: 'The EduGolfKids Skills Passport Level 1 badge is earned when a child:', options: ['Completes 5 sessions', 'Demonstrates basic grip, stance, and putting stroke', 'Scores under 100', 'Attends 2 consecutive terms'], correct: 1 },
-    { q: 'Which drill is most appropriate for introducing the full swing to ages 8–10?', options: ['Ball flight analysis', 'Feet-together balance drill', 'Driver distance competition', 'On-course play'], correct: 1 },
-    { q: 'A child aged 9 is struggling with consistent contact. The best coaching response is:', options: ['Reduce the ball size', 'Simplify — use a larger target and shorter club', 'Increase session intensity', 'Move the child to a younger group'], correct: 1 },
-    { q: 'The pitch shot differs from the chip shot primarily in:', options: ['Club used', 'Amount of air time vs roll', 'Whether a tee is used', 'Grip pressure'], correct: 1 },
-    { q: '"Task constraint" in skill development coaching means:', options: ['Limiting the number of students', 'Modifying equipment, rules, or environment to guide movement', 'Constraining the coach from speaking', 'Limiting session time'], correct: 1 },
-    { q: 'When a student demonstrates a skills badge activity, the coach should:', options: ['Award the badge automatically', 'Observe, provide feedback, and confirm criteria are met', 'Ask parents to verify', 'Record it but not tell the student'], correct: 1 },
-    { q: 'The MOST important safety consideration during golf sessions is:', options: ['Club distance from other students', 'Shoe type worn', 'Whether students are left or right handed', 'Time of day'], correct: 0 },
-    { q: 'The "Fun Games Library" in EduGolfKids is designed to:', options: ['Replace structured skill practice', 'Reinforce skills through game-based activities', 'Reward students who finish early', 'Provide competition outcomes'], correct: 1 },
-  ],
-  L3: [
-    { q: 'A licensee\'s coach cost benchmark in EduGolfKids is a maximum of:', options: ['25% of gross revenue', '35% of gross revenue', '50% of gross revenue', '45% of gross revenue'], correct: 1 },
-    { q: 'What must be uploaded before a school can be marked Active?', options: ['Parent registration forms', 'Signed school agreement', 'Coach assignment', 'First invoice'], correct: 1 },
-    { q: 'Which compliance document has zero grace period on expiry?', options: ['General Liability Insurance', 'Business Registration', 'Sexual Abuse & Molestation Endorsement', 'W-9 Form'], correct: 2 },
-    { q: 'The EduGolfKids territory structure allows a maximum of how many schools per territory?', options: ['10', '15', '20', '25'], correct: 2 },
-    { q: 'A licensee\'s estimated business valuation is primarily based on:', options: ['Number of students enrolled', 'Annual net profit × a multiple', 'Total school agreements signed', 'Monthly gross revenue'], correct: 1 },
-    { q: 'When a child misses a lesson, what should happen?', options: ['The invoice is reduced', 'A makeup lesson is offered within the term', 'The lesson is forfeited automatically', 'The parent is contacted but no makeup offered'], correct: 1 },
-    { q: 'Coach pay for a session with 6 students is calculated as:', options: ['$20 flat', '$5 × 6 = $30', '$20 minimum only', '$6 × $5 + $20'], correct: 1 },
-    { q: 'The EduGolfKids net margin target for a healthy territory is:', options: ['25–35%', '35–45%', '45–55%', '55–65%'], correct: 2 },
-    { q: 'A Territory Development Partner (TDP) earns per active licensee per month:', options: ['$100', '$150', '$200', '$250'], correct: 1 },
-    { q: 'Which action is RESTRICTED when a territory falls below 70% compliance?', options: ['Accessing the compliance folder', 'Uploading documents', 'Adding new schools or students', 'Viewing accounting history'], correct: 2 },
-  ],
-  REFRESH: [
-    { q: 'How often must EduGolfKids coaches complete the annual refresher?', options: ['Every 6 months', 'Once per year', 'Every 2 years', 'Only when Level changes'], correct: 1 },
-    { q: 'The safeguarding document that has ZERO grace period is:', options: ['Background check renewal', 'SAM insurance endorsement', 'Annual refresher certificate', 'CPR certification'], correct: 1 },
-    { q: 'Which LTAD stage applies to children aged 6–9?', options: ['Active Start', 'FUNdamentals', 'Learning to Train', 'Training to Train'], correct: 1 },
-    { q: 'Maximum class size per coach in EduGolfKids:', options: ['5', '6', '7', '8'], correct: 2 },
-    { q: 'According to EduGolfKids coaching language code, praise should focus on:', options: ['Natural talent', 'Effort and process', 'Results and scores', 'Comparison with peers'], correct: 1 },
-    { q: 'A coach who suspects a child is being abused should:', options: ['Speak to the child\'s parent immediately', 'Ignore it unless certain', 'Report to the licensee and follow the safeguarding procedure', 'Discuss it with other coaches'], correct: 2 },
-    { q: 'The 60-minute session structure ends with:', options: ['Free play time', 'A cool-down and positive reinforcement activity', 'Skills badge assessment', 'Parent debrief'], correct: 1 },
-    { q: 'Photo and media consent for students must be:', options: ['Assumed from enrollment', 'Obtained in writing from parents', 'Obtained verbally before each session', 'Not required for group photos'], correct: 1 },
-  ],
-};
-
-let certState = { records: {}, sha: null, usersData: { users: [] } };
-let quizState = { level: null, questions: [], currentQ: 0, answers: [], answered: false };
-
-async function loadCertData() {
-  try {
-    const result = await githubGet('data/users/users.json');
-    const users = result.data.users || [];
-    const userId = getCertUserId();
-    const userRec = users.find(u => u.id === userId) || {};
-    certState.records = userRec.certifications || {};
-    certState.sha = result.sha;
-    certState.usersData = result.data;
-  } catch(e) {
-    certState.records = {};
-    certState.usersData = { users: [] };
-  }
-}
-
-async function saveCertRecord(level, score, passed) {
-  try {
-    const userId = getCertUserId();
-    let usersData = certState.usersData || { users: [] };
-    let users = usersData.users || [];
-    let userRec = users.find(u => u.id === userId);
-    if (!userRec) {
-      userRec = { id: userId, name: state.user?.name, role: state.role, certifications: {} };
-      users.push(userRec);
-    }
-    if (!userRec.certifications) userRec.certifications = {};
-    const today = new Date().toISOString().split('T')[0];
-    const expiry = new Date(); expiry.setFullYear(expiry.getFullYear() + 1);
-    userRec.certifications[level] = { passed, score, date: today, expiry: expiry.toISOString().split('T')[0], name: state.user?.name };
-    certState.records = userRec.certifications;
-    usersData.users = users;
-    certState.usersData = usersData;
-    await githubPut('data/users/users.json', usersData, certState.sha, `Cert ${level} — ${state.user?.name}`);
-    // Email cert confirmation if passed
-    if (passed && state.user?.email) {
-      emailCertPassed(state.user.name || 'Coach', state.user.email, level, score);
-    }
-  } catch(e) { console.warn('Could not save cert:', e.message); }
-}
-
-function getCertUserId() {
-  return (state.user?.name || 'unknown').toLowerCase().replace(/\s+/g, '_') + '_' + (state.role || 'user');
-}
-
-function hasPassed(level) { const r = certState.records[level]; return r && r.passed; }
-function isExpired(level) { const r = certState.records[level]; return r?.expiry && new Date(r.expiry) < new Date(); }
-
-function renderCertPage() {
-  // TDP gets TDP Orientation Guide only — not L1/L2/L3/Refresh
-  if (state.role === 'tdp') {
-    renderTDPCertPage();
-    return;
-  }
-
-  const levels = ['L1', 'L2', 'L3', 'REFRESH'];
-  const statusMap = {};
-  for (const lvl of levels) {
-    const rec = certState.records[lvl];
-    const passed = rec && rec.passed;
-    const expired = passed && isExpired(lvl);
-    const def = CERT_LEVELS[lvl];
-    const prereqMet = !def.prereq || hasPassed(def.prereq);
-    let statusText, statusSub, cardClass;
-    if (passed && !expired) { statusText = '✅ Certified'; statusSub = `Expires ${rec.expiry}`; cardClass = 'green'; }
-    else if (expired) { statusText = '⚠️ Expired'; statusSub = `Expired ${rec.expiry}`; cardClass = 'red'; }
-    else if (!prereqMet) { statusText = '🔒 Locked'; statusSub = `Complete ${def.prereq} first`; cardClass = ''; }
-    else { statusText = 'Not Started'; statusSub = 'Click Start to begin'; cardClass = ''; }
-    statusMap[lvl] = { statusText, statusSub, cardClass, passed, expired, prereqMet, rec };
-    safeSet(`cert-status-${lvl.toLowerCase()}`, statusText);
-    safeSet(`cert-sub-${lvl.toLowerCase()}`, statusSub);
-    const card = document.getElementById(`cert-card-${lvl.toLowerCase()}`);
-    if (card) card.className = 'stat-card' + (cardClass ? ` ${cardClass}` : '');
-  }
-  const actionList = document.getElementById('cert-action-list');
-  if (actionList) {
-    let html = '';
-    for (const lvl of ['L1', 'L2', 'L3', 'REFRESH']) {
-      const { passed, expired, prereqMet, rec } = statusMap[lvl];
-      const def = CERT_LEVELS[lvl];
-      const canStart = prereqMet && (!passed || expired);
-      const qs = QUIZ_QUESTIONS[lvl];
-      html += `
-        <div class="checklist-item ${passed && !expired ? 'complete' : 'missing'}" style="padding:16px 0;">
-          <span class="check-icon">${passed && !expired ? '✅' : expired ? '⚠️' : prereqMet ? '⭕' : '🔒'}</span>
-          <div style="flex:1;">
-            <strong>${def.fullLabel}</strong>
-            <br><small style="color:var(--gray-400);">${qs.length} questions · 85% to pass${rec?.date ? ` · Completed ${rec.date}` : ''}</small>
-          </div>
-          <div style="display:flex; gap:8px; flex-shrink:0;">
-            ${passed && !expired ? `<button class="btn btn-sm btn-outline" onclick="viewCertificate('${lvl}')">View Cert</button>` : ''}
-            ${canStart ? `<button class="btn btn-sm btn-primary" onclick="startQuiz('${lvl}')">${expired ? 'Renew' : 'Start'}</button>` : ''}
-            ${!prereqMet ? `<span style="font-size:12px;color:var(--gray-400);">Locked</span>` : ''}
-          </div>
-        </div>`;
-    }
-    actionList.innerHTML = html;
-  }
-  const passed = Object.entries(certState.records).filter(([, r]) => r.passed);
-  const histCard = document.getElementById('cert-history-card');
-  const histList = document.getElementById('cert-history-list');
-  if (histCard && histList) {
-    if (passed.length > 0) {
-      histCard.style.display = 'block';
-      histList.innerHTML = `<table class="data-table">
-        <thead><tr><th>Certification</th><th>Score</th><th>Date Earned</th><th>Expiry</th><th></th></tr></thead>
-        <tbody>${passed.map(([lvl, rec]) => `
-          <tr>
-            <td><strong>${CERT_LEVELS[lvl]?.fullLabel || lvl}</strong></td>
-            <td>${rec.score}%</td><td>${rec.date}</td>
-            <td>${isExpired(lvl) ? `<span class="badge badge-red">Expired</span>` : rec.expiry}</td>
-            <td><button class="btn btn-sm btn-outline" onclick="viewCertificate('${lvl}')">View</button></td>
-          </tr>`).join('')}
-        </tbody></table>`;
-    } else { histCard.style.display = 'none'; }
-  }
-}
-
-function renderTDPCertPage() {
-  // TDP gets a single TDP Orientation Guide card instead of L1/L2/L3
-  const page = document.getElementById('page-coach-education');
-  if (!page) return;
-
-  page.innerHTML = `
-    <div class="page-header">
-      <h1>My Training</h1>
-      <p>Territory Development Partner orientation and resources</p>
-    </div>
-
-    <div class="stats-grid" style="margin-bottom:24px;">
-      <div class="stat-card">
-        <div class="stat-icon">📖</div>
-        <div class="stat-value" id="tdp-cert-status">Not Started</div>
-        <div class="stat-label">TDP Orientation</div>
-        <div class="stat-sub">Click to begin</div>
-      </div>
-    </div>
-
-    <div class="grid-2">
-      <div class="card">
-        <div class="card-header"><h3>TDP Orientation Programme</h3></div>
-        <div style="padding:16px 0;">
-          <div class="checklist-item missing" style="padding:16px 0; border-bottom:1px solid var(--gray-100);">
-            <span class="check-icon">📋</span>
-            <div style="flex:1;">
-              <strong>TDP Orientation Guide</strong>
-              <br><small style="color:var(--gray-400);">Roles, responsibilities, commission structure, compliance requirements and support systems</small>
-            </div>
-            <a href="#" class="btn btn-sm btn-primary" onclick="alert('TDP Orientation Guide — coming soon. Please contact HQ for your orientation materials.')">Download</a>
-          </div>
-          <div class="checklist-item missing" style="padding:16px 0; border-bottom:1px solid var(--gray-100);">
-            <span class="check-icon">💼</span>
-            <div style="flex:1;">
-              <strong>Licensee Recruitment Playbook</strong>
-              <br><small style="color:var(--gray-400);">Step-by-step guide to finding, pitching and closing licensee partners in your territory</small>
-            </div>
-            <a href="#" class="btn btn-sm btn-primary" onclick="alert('Recruitment Playbook — coming soon. Contact HQ.')">Download</a>
-          </div>
-          <div class="checklist-item missing" style="padding:16px 0;">
-            <span class="check-icon">📊</span>
-            <div style="flex:1;">
-              <strong>Territory Management Handbook</strong>
-              <br><small style="color:var(--gray-400);">How to manage and grow a network of licensees — performance tracking, escalation, support</small>
-            </div>
-            <a href="#" class="btn btn-sm btn-primary" onclick="alert('Territory Handbook — coming soon. Contact HQ.')">Download</a>
-          </div>
-        </div>
-        <div class="alert alert-blue" style="margin-top:8px;">ℹ️ Full TDP orientation content is delivered by HQ. Contact your HQ representative to schedule your orientation session.</div>
-      </div>
-
-      <div class="card">
-        <div class="card-header"><h3>Quick Reference</h3></div>
-        <div style="padding:16px 0;">
-          <div style="padding:12px; background:var(--gray-50); border-radius:8px; margin-bottom:12px;">
-            <strong style="font-size:13px;">Commission Structure</strong>
-            <div style="font-size:13px; color:var(--gray-400); margin-top:4px;">$150/month per active licensee in your territory. Paid monthly by HQ on the 15th.</div>
-          </div>
-          <div style="padding:12px; background:var(--gray-50); border-radius:8px; margin-bottom:12px;">
-            <strong style="font-size:13px;">Your Compliance Requirements</strong>
-            <div style="font-size:13px; color:var(--gray-400); margin-top:4px;">Signed TDP Agreement, W-9, EIN Confirmation, Government ID. See My Compliance.</div>
-          </div>
-          <div style="padding:12px; background:var(--gray-50); border-radius:8px;">
-            <strong style="font-size:13px;">Territory Scope</strong>
-            <div style="font-size:13px; color:var(--gray-400); margin-top:4px;">Up to 20 licensees, exclusive territory. HQ may assign or reassign territory per the TDP Agreement.</div>
-          </div>
-        </div>
-      </div>
-    </div>`;
-}
-
-function startQuiz(level) {
-  const qs = QUIZ_QUESTIONS[level];
-  if (!qs) return;
-  const shuffled = [...qs].sort(() => Math.random() - 0.5).slice(0, Math.min(10, qs.length));
-  quizState = { level, questions: shuffled, currentQ: 0, answers: [], answered: false };
-  safeSet('quiz-title', CERT_LEVELS[level]?.fullLabel || 'Quiz');
-  safeSet('quiz-subtitle', `${shuffled.length} questions · 85% required to pass`);
-  document.getElementById('quiz-container').style.display = 'block';
-  document.getElementById('quiz-results').style.display = 'none';
-  renderQuizQuestion();
-  showPage('page-quiz');
-}
-
-function renderQuizQuestion() {
-  const { questions, currentQ } = quizState;
-  const q = questions[currentQ];
-  const total = questions.length;
-  document.getElementById('quiz-progress-bar').style.width = Math.round((currentQ / total) * 100) + '%';
-  safeSet('quiz-question-counter', `Question ${currentQ + 1} of ${total}`);
-  safeSet('quiz-question-text', q.q);
-  document.getElementById('quiz-options').innerHTML = q.options.map((opt, i) => `
-    <button class="btn btn-outline" id="quiz-opt-${i}"
-      style="text-align:left;padding:14px 18px;font-size:14px;justify-content:flex-start;"
-      onclick="quizAnswer(${i})">${String.fromCharCode(65+i)}. ${opt}</button>`).join('');
-  document.getElementById('quiz-feedback').style.display = 'none';
-  document.getElementById('quiz-next-btn').style.display = 'none';
-  quizState.answered = false;
-}
-
-function quizAnswer(optionIndex) {
-  if (quizState.answered) return;
-  quizState.answered = true;
-  const q = quizState.questions[quizState.currentQ];
-  const correct = optionIndex === q.correct;
-  quizState.answers.push({ selected: optionIndex, correct });
-  for (let i = 0; i < q.options.length; i++) {
-    const btn = document.getElementById(`quiz-opt-${i}`);
-    if (!btn) continue;
-    btn.disabled = true;
-    if (i === q.correct) { btn.style.background='var(--success)'; btn.style.color='white'; btn.style.borderColor='var(--success)'; }
-    else if (i === optionIndex && !correct) { btn.style.background='var(--red)'; btn.style.color='white'; btn.style.borderColor='var(--red)'; }
-  }
-  const fb = document.getElementById('quiz-feedback');
-  fb.style.display = 'block';
-  fb.className = `alert ${correct ? 'alert-green' : 'alert-red'}`;
-  fb.innerHTML = correct ? '✅ Correct!' : `❌ Incorrect. The correct answer is: <strong>${q.options[q.correct]}</strong>`;
-  const nextBtn = document.getElementById('quiz-next-btn');
-  nextBtn.style.display = 'inline-flex';
-  nextBtn.textContent = quizState.currentQ >= quizState.questions.length - 1 ? 'See Results →' : 'Next Question →';
-}
-
-async function quizNext() {
-  if (quizState.currentQ >= quizState.questions.length - 1) {
-    await finishQuiz();
-  } else {
-    quizState.currentQ++;
-    renderQuizQuestion();
-  }
-}
-
-async function finishQuiz() {
-  const { level, questions, answers } = quizState;
-  const correct = answers.filter(a => a.correct).length;
-  const total = questions.length;
-  const pct = Math.round((correct / total) * 100);
-  const passed = pct >= 85;
-  const def = CERT_LEVELS[level];
-  document.getElementById('quiz-progress-bar').style.width = '100%';
-  document.getElementById('quiz-container').style.display = 'none';
-  document.getElementById('quiz-results').style.display = 'block';
-  await saveCertRecord(level, pct, passed);
-  const color = passed ? 'var(--success)' : 'var(--red)';
-  document.getElementById('quiz-results-content').innerHTML = `
-    <div style="font-size:64px;margin-bottom:16px;">${passed ? '🎉' : '😔'}</div>
-    <h2 style="font-family:var(--font-display);font-size:28px;color:${color};margin-bottom:8px;">${passed ? 'Congratulations! You Passed!' : 'Not Quite — Try Again'}</h2>
-    <div style="font-size:48px;font-weight:700;color:${color};margin:16px 0;">${pct}%</div>
-    <div style="color:var(--gray-400);margin-bottom:8px;">${correct} correct out of ${total} questions</div>
-    <div style="color:var(--gray-400);margin-bottom:32px;">Pass mark: 85%</div>
-    ${passed ? `
-      <div style="background:var(--gray-100);border-radius:12px;padding:20px;margin-bottom:24px;">
-        <div style="font-weight:600;margin-bottom:4px;">✅ ${def.fullLabel}</div>
-        <div style="font-size:13px;color:var(--gray-400);">Certificate valid for 12 months</div>
-      </div>
-      <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
-        <button class="btn btn-primary" onclick="viewCertificate('${level}')">🏆 View My Certificate</button>
-        <button class="btn btn-outline" onclick="showPage('page-coach-education')">← Back to Certifications</button>
-      </div>` : `
-      <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
-        <button class="btn btn-primary" onclick="startQuiz('${level}')">Try Again</button>
-        <button class="btn btn-outline" onclick="showPage('page-coach-education')">← Back</button>
-      </div>`}`;
-}
-
-function viewCertificate(level) {
-  const rec = certState.records[level];
-  if (!rec || !rec.passed) { alert('Complete the quiz first.'); return; }
-  const def = CERT_LEVELS[level];
-  const name = rec.name || state.user?.name || 'Coach';
-  const certId = `EGK-${level}-${(rec.date||'').replace(/-/g,'')}-${Math.random().toString(36).substr(2,6).toUpperCase()}`;
-  document.getElementById('certificate-display').innerHTML = `
-    <div style="border:2px solid var(--gold);border-radius:12px;padding:40px;position:relative;">
-      <div style="text-align:center;margin-bottom:32px;">
-        <div style="font-size:48px;margin-bottom:12px;">⛳</div>
-        <div style="font-family:var(--font-display);font-size:13px;letter-spacing:0.15em;text-transform:uppercase;color:var(--gold);margin-bottom:8px;">EduGolfKids</div>
-        <div style="font-size:12px;color:var(--gray-400);letter-spacing:0.1em;text-transform:uppercase;">Certificate of Achievement</div>
-      </div>
-      <div style="text-align:center;margin-bottom:32px;">
-        <div style="font-size:14px;color:var(--gray-400);margin-bottom:8px;">This certifies that</div>
-        <div style="font-family:var(--font-display);font-size:36px;color:var(--green-dark);margin-bottom:8px;">${name}</div>
-        <div style="font-size:14px;color:var(--gray-400);margin-bottom:16px;">has successfully completed</div>
-        <div style="font-family:var(--font-display);font-size:22px;color:${def.color};padding:12px 24px;border:2px solid ${def.color};border-radius:8px;display:inline-block;">${def.fullLabel}</div>
-      </div>
-      <div style="display:flex;justify-content:space-around;margin-bottom:32px;text-align:center;">
-        <div><div style="font-size:13px;color:var(--gray-400);">Score</div><div style="font-size:24px;font-weight:700;color:var(--green-dark);">${rec.score}%</div></div>
-        <div><div style="font-size:13px;color:var(--gray-400);">Date Issued</div><div style="font-size:18px;font-weight:600;color:var(--green-dark);">${rec.date}</div></div>
-        <div><div style="font-size:13px;color:var(--gray-400);">Valid Until</div><div style="font-size:18px;font-weight:600;color:var(--green-dark);">${rec.expiry}</div></div>
-      </div>
-      <div style="border-top:2px solid var(--gold);padding-top:24px;display:flex;justify-content:space-between;align-items:center;">
-        <div><div style="font-family:var(--font-display);font-size:16px;color:var(--green-dark);">EduGolfKids LLC</div><div style="font-size:11px;color:var(--gray-400);letter-spacing:0.05em;">MOORESVILLE, NORTH CAROLINA</div></div>
-        <div style="text-align:right;"><div style="font-size:11px;color:var(--gray-400);">Certificate ID</div><div style="font-size:12px;font-family:monospace;color:var(--gray-600);">${certId}</div></div>
-      </div>
-    </div>`;
-  showPage('page-certificate');
-}
-
-function printCertificate() {
-  const certHtml = document.getElementById('certificate-display').innerHTML;
-  const win = window.open('', '_blank');
-  win.document.write(`<html><head><title>EduGolfKids Certificate</title>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=DM+Sans:wght@400;600&display=swap" rel="stylesheet">
-    <style>body{margin:40px;font-family:'DM Sans',sans-serif;}@media print{body{margin:20px;}}</style>
-    </head><body>${certHtml}</body></html>`);
-  win.document.close();
-  setTimeout(() => win.print(), 600);
-}
-
-function renderHQEducationStats() {
-  const coaches = state.data.coaches || [];
-  safeSet('cert-network-count', coaches.length);
-}
 
 // ══════════════════════════════════════════
 //  STARTUP
@@ -8845,5 +8397,6 @@ window.addEventListener('DOMContentLoaded', () => {
   }
 });
 </script>
+<script src="egk-education.js"></script>
 </body>
 </html>
