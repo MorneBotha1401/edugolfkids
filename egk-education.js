@@ -66,9 +66,7 @@ M0:[{
   title:"Compliance &amp; Safeguarding",
   icon:"\ud83d\udee1\ufe0f",
   sections:[
-    {h:`Compliance &amp; Safeguarding`,b:`<p class="doc-bold-label">Foundational Compliance &amp; Safeguarding Certification</p>
-<p class="doc-bold-label">(Pre-Course Mandatory Requirement – Revised Operational Version)</p>
-<h4 class="doc-subheading">1. Duty of Care Framework</h4>
+    {h:`Compliance &amp; Safeguarding`,b:`<h4 class="doc-subheading">1. Duty of Care Framework</h4>
 <p class="doc-p"><strong>EduGolfKids operates under an elevated duty-of-care standard within school environments.</strong></p>
 <p class="doc-p"><strong>All coaches act:</strong></p>
 <ul class="doc-list"><li>In loco parentis during sessions(“In the place of a parent.”)</li><li>As mandatory reporters where required by state law</li><li>In compliance with district safeguarding policies</li></ul>
@@ -213,7 +211,6 @@ M0:[{
 <p class="doc-p"><strong>This applies:</strong></p>
 <ul class="doc-list"><li>Before session</li><li>During session</li><li>After session</li><li>During transitions</li><li>During bathroom breaks</li><li>During late pickups</li></ul>
 <p class="doc-p"><strong>At no point may a child be left without adult supervision.</strong></p>
-<p class="doc-bold-label">Coach Acknowledgment</p>
 <p class="doc-p"><strong>“I acknowledge and agree to comply with all EduGolfKids safeguarding, safety, operational, and legal standards as a condition of certification and school assignment.”</strong></p>
 <h4 class="doc-subheading">16. Model 0 Certification Requirement</h4>
 <p class="doc-p"><strong>Before entering Module 1 Certification, coaches must:</strong></p>

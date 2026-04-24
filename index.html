@@ -3016,7 +3016,9 @@
                 <span class="badge badge-blue" id="att-lesson-badge">Lesson 1</span>
               </div>
               <div id="att-lesson-summary" style="margin-bottom:16px;">
-                <div class="alert alert-blue">Lesson plan content will display here once curriculum is populated by HQ.</div>
+                <div style="background:var(--gray-100);border-radius:8px;padding:16px;">
+                  <div style="font-size:13px;color:var(--gray-400);">Open a class to see the lesson guidance for this session.</div>
+                </div>
               </div>
               <hr class="divider">
               <h4 style="font-size:14px;color:var(--green-dark);margin-bottom:12px;">⚠️ Makeup Required</h4>
@@ -6141,10 +6143,21 @@ function openAttendanceSession(classId) {
   
   const lessonNum = getCurrentLesson(cls);
   document.getElementById('att-lesson-badge').textContent = `Lesson ${lessonNum}`;
+
+  // Build lesson guidance based on lesson number and age group
+  const age = cls.age_group || '?';
+  const lessonFocus = getLessonFocus(lessonNum, age);
   document.getElementById('att-lesson-summary').innerHTML = `
     <div style="background:var(--gray-100);border-radius:8px;padding:16px;">
-      <div style="font-weight:700;color:var(--green-dark);margin-bottom:6px;">Lesson ${lessonNum} — Age ${cls.age_group} Track</div>
-      <div style="font-size:13px;color:var(--gray-400);">Lesson plan content loads from the curriculum library. HQ populates lesson details in the Education module.</div>
+      <div style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:8px;">
+        <div>
+          <div style="font-weight:700;color:var(--green-dark);margin-bottom:4px;">Lesson ${lessonNum} — Age ${age} Track</div>
+          <div style="font-size:13px;color:var(--gray-600);line-height:1.6;">${lessonFocus}</div>
+        </div>
+        <button class="btn btn-outline btn-sm" onclick="showPage('page-coach-education');renderEducationHub()" style="flex-shrink:0;">
+          📚 View Lesson Plans
+        </button>
+      </div>
     </div>`;
 
   renderAttendanceStudents(cls);
@@ -6162,6 +6175,50 @@ function getCurrentLesson(cls) {
   const now = new Date();
   const weeks = Math.floor((now - start) / (7 * 24 * 60 * 60 * 1000)) + 1;
   return Math.min(Math.max(weeks, 1), 10);
+}
+
+function getLessonFocus(lessonNum, ageGroup) {
+  // Lesson arc: 10 lessons per term, progressing through the skill sequence
+  const age = parseInt(ageGroup) || 0;
+  const isEarly = age <= 6;   // Active Start stage
+  const isMid   = age <= 9;   // FUNdamentals stage
+
+  const arc = isEarly ? [
+    'Free movement exploration — foam balls, no instruction, celebrate any contact.',
+    'Balance &amp; coordination games — gate runs, cone weaves, target rolling.',
+    'Putting Stage 1 — ball near hole, free exploration, no technique correction.',
+    'Putting Stage 2 — extend distance, introduce scoring, keep it playful.',
+    'Warm-up games focus — elevate heart rate, activate coordination, maximum movement.',
+    'Chipping introduction — 7-iron only, no instruction, explore the motion.',
+    'Skill consolidation — combine putting &amp; chipping in a simple course game.',
+    'Group games &amp; competition — team scoring, cooperative challenges.',
+    'Skill Passport prep — embed assessment criteria in final game activities.',
+    'Term wrap-up — Skills Passport assessment, Player of the Week, celebration.',
+  ] : isMid ? [
+    'Free exploration &amp; warm-up games — re-establish movement vocabulary.',
+    'Putting Stage 2–3 — gate drills, distance zones, competitive scoring.',
+    'Chipping — club discovery (7-iron vs wedge), air gate constraint.',
+    'Pitching introduction — distance zones 15–30 ft, no technique instruction.',
+    'Full swing exploration — feet-together balance drill, foam balls only.',
+    'Integrated game — putting + chipping course, decision-making under pressure.',
+    'Skill refinement — identify one constraint per child based on observation.',
+    'Competitive challenges — target scoring, team games, peer motivation.',
+    'Skill Passport prep — embed assessment in final game activities.',
+    'Term wrap-up — Skills Passport assessment, Player of the Week, celebration.',
+  ] : [
+    'System review — reconnect with EduGolfKids philosophy &amp; session architecture.',
+    'Putting mastery — multiple targets, varied distances, competitive pressure.',
+    'Chipping mastery — air gate, landing zones, club selection decision-making.',
+    'Pitching + putting course — full integration, score tracking.',
+    'Full swing development — 7-iron consistency, distance control drills.',
+    'Rules &amp; etiquette integration — introduce rules contextually during play.',
+    'Video analysis session — CoachNow observation, one self-discovery question.',
+    'Skills Passport coaching — feedback to each student on their progress.',
+    'Skill Passport prep — final practice before end-of-term assessment.',
+    'Term wrap-up — Skills Passport assessment, Player of the Week, celebration.',
+  ];
+
+  return arc[Math.min(lessonNum - 1, arc.length - 1)] || 'Session delivery — follow the 60-minute structure: Warm-Up · Skill Block · Game Reinforcement · Wrap-Up.';
 }
 
 function getSchoolName(schoolId) {
@@ -6503,10 +6560,25 @@ function closeAttendanceSession() {
 function renderAllClassesForAttendance() {
   const list = document.getElementById('all-classes-attendance-list');
   if (!list) return;
-  const classes = state.data.classes || [];
-  
+
+  const allClasses = state.data.classes || [];
+
+  // Coaches only see their own assigned classes
+  let classes = allClasses;
+  if (state.role === 'coach') {
+    const coaches = state.data.coaches || [];
+    const myCoach = coaches.find(c =>
+      c.name?.toLowerCase() === state.user?.name?.toLowerCase() ||
+      c.id === state.user?.id ||
+      c.user_id === state.user?.id
+    );
+    classes = myCoach ? allClasses.filter(c => c.coach_id === myCoach.id) : [];
+  }
+
   if (classes.length === 0) {
-    list.innerHTML = '<div class="empty-state"><div class="empty-icon">📅</div><h3>No classes created yet</h3><p>Create classes in the Scheduling module first</p></div>';
+    list.innerHTML = state.role === 'coach'
+      ? '<div class="empty-state"><div class="empty-icon">📅</div><h3>No classes assigned to you yet</h3><p>Your licensee will assign classes once you are onboarded.</p></div>'
+      : '<div class="empty-state"><div class="empty-icon">📅</div><h3>No classes created yet</h3><p>Create classes in the Scheduling module first</p></div>';
     return;
   }
 
@@ -6515,13 +6587,13 @@ function renderAllClassesForAttendance() {
     const students = (state.data.students || []).filter(s => s.class_id === cls.id);
     const lessonNum = getCurrentLesson(cls);
     return `
-      <div class="class-slot" onclick="openAttendanceSession('\${cls.id}')">
-        <div class="time-badge">\${cls.start_time || '—'}</div>
+      <div class="class-slot" onclick="openAttendanceSession('${cls.id}')">
+        <div class="time-badge">${cls.start_time || '—'}</div>
         <div class="class-info">
-          <div class="class-name">\${cls.name}</div>
-          <div class="class-meta">\${cls.day} · \${school} · Age \${cls.age_group} · Lesson \${lessonNum}/10</div>
+          <div class="class-name">${cls.name}</div>
+          <div class="class-meta">${cls.day} · ${school} · Age ${cls.age_group} · Lesson ${lessonNum}/10</div>
         </div>
-        <div class="enrollment-badge">\${students.length}/\${cls.max_students || 7}</div>
+        <div class="enrollment-badge">${students.length}/${cls.max_students || 7}</div>
         <button class="btn btn-primary btn-sm">Take Attendance →</button>
       </div>`;
   }).join('');
