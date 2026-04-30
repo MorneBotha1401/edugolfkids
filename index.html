@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>EduGolfKids Platform</title>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 <style>
   :root {
     --green: #1B5C2A;
@@ -935,9 +936,51 @@
   @media (max-width: 768px) {
     .app-layout { grid-template-columns: 1fr; }
     .sidebar { display: none; }
-    .main-content { padding: 20px; }
+    .main-content { padding: 16px; }
     .stats-grid { grid-template-columns: 1fr 1fr; }
     .grid-2, .grid-3 { grid-template-columns: 1fr; }
+
+    /* Login */
+    .login-card { width: calc(100vw - 32px); padding: 32px 20px; }
+
+    /* Page header */
+    .page-header { padding: 20px 0 12px; }
+    .page-header h1 { font-size: 20px; }
+
+    /* Tabs scroll horizontally */
+    .tab-nav { overflow-x: auto; white-space: nowrap; -webkit-overflow-scrolling: touch; padding-bottom: 2px; }
+    .tab-btn { font-size: 13px; padding: 8px 14px; }
+
+    /* Form rows stack */
+    .form-row, .form-row.three { grid-template-columns: 1fr; }
+
+    /* Quiz options full-width */
+    #quiz-options { display: flex; flex-direction: column; gap: 8px; }
+    #quiz-options .btn { width: 100%; justify-content: flex-start; }
+    #quiz-next-btn { width: 100%; margin-top: 8px; }
+
+    /* Certificate page buttons stack */
+    #page-certificate > div:nth-child(2) { display: flex; flex-direction: column; gap: 10px; align-items: stretch; padding: 0 16px; }
+    #page-certificate > div:nth-child(2) .btn { margin: 0 !important; width: 100%; }
+    #certificate-display { padding: 24px 16px !important; }
+
+    /* Education level cards */
+    .edu-level-card { padding: 16px 14px; }
+
+    /* Modals full-width */
+    .modal, .modal-lg, .modal-xl { width: calc(100vw - 24px) !important; max-width: none !important; padding: 24px 16px; margin: 12px; }
+
+    /* Result buttons stack */
+    #quiz-results-content div[style*="display:flex"] { flex-direction: column !important; align-items: stretch !important; gap: 10px !important; }
+    #quiz-results-content .btn { width: 100%; }
+    #quiz-results-content a.btn { text-align: center; }
+  }
+
+  @media (max-width: 480px) {
+    .stats-grid { grid-template-columns: 1fr; }
+    .page-header h1 { font-size: 18px; }
+    .main-content { padding: 12px; }
+    .login-card { padding: 28px 16px; }
   }
 
   /* ── FORM ROW ── */
@@ -2968,6 +3011,7 @@
         </div>
         <div style="text-align:center; margin-bottom:20px;">
           <button class="btn btn-primary" onclick="printCertificate()">🖨️ Print Certificate</button>
+          <button class="btn btn-primary" onclick="downloadCertificatePDF(window._lastCertLevel||'M0')" style="margin-left:12px;background:var(--gold);color:var(--green-dark);">⬇ Download PDF</button>
           <button class="btn btn-outline" onclick="showPage('page-coach-education')" style="margin-left:12px;">← Back to Education Hub</button>
         </div>
         <div id="certificate-display" style="max-width:800px; margin:0 auto; background:white; border:3px solid var(--gold); border-radius:16px; padding:48px; text-align:center; box-shadow:var(--shadow-lg);"></div>

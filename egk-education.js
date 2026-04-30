@@ -31,7 +31,14 @@ async function loadCertData() {
 async function saveCertRecord(level, pct, passed) {
   const today   = new Date().toISOString().split('T')[0];
   const expiry  = new Date(); expiry.setFullYear(expiry.getFullYear()+1);
-  certState.records[level] = { passed, score:pct, date:today, expiry:expiry.toISOString().split('T')[0], name:state.user?.name||'Coach' };
+  const prev    = certState.records[level] || {};
+  const attemptCount = (prev.attemptCount || 0) + 1;
+  certState.records[level] = {
+    passed, score:pct, date:today, name:state.user?.name||'Coach',
+    expiry:      passed ? expiry.toISOString().split('T')[0] : (prev.expiry || null),
+    attemptCount,
+    failDate:    passed ? null : new Date().toISOString(),
+  };
   let usersData = certState.usersData || { users:[] };
   let users     = usersData.users || [];
   let idx       = users.findIndex(u=>u.id===state.user?.id);
@@ -5673,6 +5680,21 @@ async function kcNext() {
 
 // ── Level Assessment (formal quiz) ───────────────────────────────────────────
 function startLevelAssessment(level) {
+  const rec = certState.records[level] || {};
+  if (!rec.passed) {
+    if (rec.failDate) {
+      const hoursLeft = 24 - (Date.now() - new Date(rec.failDate).getTime()) / 3600000;
+      if (hoursLeft > 0) {
+        const h = Math.ceil(hoursLeft);
+        alert('Please wait ' + h + ' more hour' + (h !== 1 ? 's' : '') + ' before retrying this assessment.\n\nUse this time to re-read the modules — the questions are reshuffled each attempt.');
+        return;
+      }
+    }
+    if ((rec.attemptCount || 0) >= 3) {
+      alert('You have used all 3 attempts for this assessment.\n\nPlease contact EduGolfKids HQ to unlock another attempt:\nmorne.marilize@gmail.com');
+      return;
+    }
+  }
   const qs = QUIZ_QUESTIONS[level];
   if (!qs) return;
   const count = Math.min(CERT_LEVELS[level]?.qCount || 20, qs.length);
@@ -5776,16 +5798,19 @@ async function finishQuiz() {
       <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
         <button class="btn btn-primary" onclick="viewCertificate('${level}')">🏆 View My Certificate</button>
         ${nextLvlDef ? `<button class="btn btn-primary" style="background:var(--green-dark);" onclick="showPage('page-coach-education');renderEducationHub();setTimeout(()=>openEduLevel('${nextLvl}'),80)">Start ${nextLvlDef.label} →</button>` : ''}
+        <a class="btn btn-outline" href="mailto:morne.marilize@gmail.com?subject=${encodeURIComponent('EGK Assessment Passed - '+def.fullLabel)}&body=${encodeURIComponent('Name: '+(state.user?.name||'')+'\nLevel: '+def.fullLabel+'\nScore: '+pct+'% (PASSED)\nDate: '+new Date().toISOString().split('T')[0])}" style="text-decoration:none;">📧 Email HQ</a>
         <button class="btn btn-outline" onclick="showPage('page-coach-education');renderEducationHub()">← Back to Hub</button>
       </div>` : `
       <p style="color:var(--gray-400);margin-bottom:20px;">Questions and answers will be reshuffled on your next attempt.</p>
       <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
         <button class="btn btn-primary" onclick="startLevelAssessment('${level}')">Try Again (Reshuffled)</button>
+        <a class="btn btn-outline" href="mailto:morne.marilize@gmail.com?subject=${encodeURIComponent('EGK Assessment Result - '+def.fullLabel)}&body=${encodeURIComponent('Name: '+(state.user?.name||'')+'\nLevel: '+def.fullLabel+'\nScore: '+pct+'% (not yet passed)\nAttempts so far: '+(certState.records[level]?.attemptCount||1)+'\nDate: '+new Date().toISOString().split('T')[0])}" style="text-decoration:none;">📧 Email HQ</a>
         <button class="btn btn-outline" onclick="showPage('page-coach-education');renderEducationHub()">← Back</button>
       </div>`}`;
 }
 
 function viewCertificate(level) {
+  window._lastCertLevel = level;
   const rec = certState.records[level];
   if (!rec || !rec.passed) { alert('Complete the assessment first.'); return; }
   const def = CERT_LEVELS[level];
@@ -5826,6 +5851,60 @@ function printCertificate() {
     </head><body>${certHtml}</body></html>`);
   win.document.close();
   setTimeout(()=>win.print(),600);
+}
+
+function downloadCertificatePDF(level) {
+  if (!window.jspdf) { alert('PDF library not loaded. Please refresh the page and try again.'); return; }
+  const rec = certState.records[level];
+  if (!rec || !rec.passed) { alert('Complete the assessment first.'); return; }
+  const def  = CERT_LEVELS[level];
+  const name = rec.name || state.user?.name || 'Coach';
+  const certId = 'EGK-' + level + '-' + (rec.date || '').replace(/-/g, '');
+  window._lastCertLevel = level;
+  const { jsPDF } = window.jspdf;
+  const doc = new jsPDF({ orientation: 'landscape', unit: 'mm', format: 'a4' });
+  const W = 297, H = 210;
+  // Cream background
+  doc.setFillColor(248, 246, 241); doc.rect(0, 0, W, H, 'F');
+  // Double gold border
+  doc.setDrawColor(201, 168, 76); doc.setLineWidth(3); doc.rect(10, 10, W - 20, H - 20);
+  doc.setLineWidth(0.8); doc.rect(14, 14, W - 28, H - 28);
+  // Brand header
+  doc.setFont('helvetica', 'bold'); doc.setFontSize(11); doc.setTextColor(201, 168, 76);
+  doc.text('EDUGOLFKIDS', W / 2, 32, { align: 'center', charSpace: 3 });
+  doc.setFont('helvetica', 'normal'); doc.setFontSize(9); doc.setTextColor(90, 90, 74);
+  doc.text('CERTIFICATE OF ACHIEVEMENT', W / 2, 40, { align: 'center', charSpace: 2 });
+  doc.setDrawColor(201, 168, 76); doc.setLineWidth(0.5); doc.line(60, 46, W - 60, 46);
+  // Body
+  doc.setFont('helvetica', 'italic'); doc.setFontSize(12); doc.setTextColor(90, 90, 74);
+  doc.text('This certifies that', W / 2, 60, { align: 'center' });
+  doc.setFont('helvetica', 'bold'); doc.setFontSize(30); doc.setTextColor(18, 64, 28);
+  doc.text(name, W / 2, 78, { align: 'center' });
+  doc.setFont('helvetica', 'italic'); doc.setFontSize(12); doc.setTextColor(90, 90, 74);
+  doc.text('has successfully completed', W / 2, 90, { align: 'center' });
+  doc.setFont('helvetica', 'bold'); doc.setFontSize(16); doc.setTextColor(27, 92, 42);
+  doc.text(def.fullLabel, W / 2, 104, { align: 'center' });
+  // Divider + stats
+  doc.setDrawColor(201, 168, 76); doc.setLineWidth(0.5); doc.line(40, 114, W - 40, 114);
+  const c1 = 70, c2 = W / 2, c3 = W - 70;
+  doc.setFont('helvetica', 'normal'); doc.setFontSize(9); doc.setTextColor(90, 90, 74);
+  doc.text('Score', c1, 124, { align: 'center' });
+  doc.text('Date Issued', c2, 124, { align: 'center' });
+  doc.text('Valid Until', c3, 124, { align: 'center' });
+  doc.setFont('helvetica', 'bold'); doc.setFontSize(18); doc.setTextColor(18, 64, 28);
+  doc.text(rec.score + '%', c1, 136, { align: 'center' });
+  doc.setFontSize(14);
+  doc.text(rec.date || '', c2, 136, { align: 'center' });
+  doc.text(rec.expiry || '', c3, 136, { align: 'center' });
+  // Footer
+  doc.setDrawColor(201, 168, 76); doc.setLineWidth(0.5); doc.line(20, 148, W - 20, 148);
+  doc.setFont('helvetica', 'bold'); doc.setFontSize(11); doc.setTextColor(18, 64, 28);
+  doc.text('EduGolfKids LLC', 28, 158);
+  doc.setFont('helvetica', 'normal'); doc.setFontSize(8); doc.setTextColor(90, 90, 74);
+  doc.text('MOORESVILLE, NORTH CAROLINA', 28, 165);
+  doc.text('Certificate ID: ' + certId, W - 28, 158, { align: 'right' });
+  doc.text('edugolfkids.com', W - 28, 165, { align: 'right' });
+  doc.save('EGK-Certificate-' + level + '-' + name.replace(/\s+/g, '-') + '.pdf');
 }
 
 // ── HQ Education Stats ───────────────────────────────────────────────────────
