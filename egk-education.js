@@ -5278,7 +5278,7 @@ function renderEducationHub() {
     <div class="card" style="margin-bottom:16px;border:2px solid ${activeDef.color};">
       <div style="font-size:11px;color:var(--gray-400);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:6px;">Currently Working On</div>
       <div style="font-weight:700;font-size:17px;color:var(--green-dark);margin-bottom:10px;">${activeDef.fullLabel}</div>
-      <div style="display:flex;gap:20px;font-size:13px;color:var(--gray-400);margin-bottom:10px;flex-wrap:wrap;">
+      <div id="edu-focus-progress" style="display:flex;gap:20px;font-size:13px;color:var(--gray-400);margin-bottom:10px;flex-wrap:wrap;">
         <span>📖 ${activeRead}/${activeMods.length} modules read</span>
         <span>✏️ ${activeKC}/${activeMods.length} practice done</span>
       </div>
@@ -5742,6 +5742,15 @@ async function kcNext() {
     // KC complete
     certState.records[`kc_${kcState.moduleId}`] = { done:true, date:new Date().toISOString().split('T')[0] };
     await saveCertStateRecords();
+    // Refresh focus card stats in-place
+    const _fp = document.getElementById('edu-focus-progress');
+    if (_fp) {
+      const _kcLvl   = eduState.level;
+      const _kcMods  = EDU_MODULES[_kcLvl] || [];
+      const _kRead   = _kcMods.filter(m => certState.records[`read_${m.id}`]).length;
+      const _kKC     = _kcMods.filter(m => certState.records[`kc_${m.id}`]).length;
+      _fp.innerHTML  = `<span>📖 ${_kRead}/${_kcMods.length} modules read</span><span>✏️ ${_kKC}/${_kcMods.length} practice done</span>`;
+    }
     // Show completion screen
     const correctCount = kcState.answers.filter(a=>a.correct).length;
     const kcLvl      = eduState.level;

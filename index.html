@@ -3902,6 +3902,19 @@ async function githubGet(path) {
   return { data: JSON.parse(content), sha: json.sha };
 }
 
+function showToast(message, type, duration) {
+  type = type || 'info'; duration = duration || 3500;
+  const existing = document.getElementById('egk-toast');
+  if (existing) existing.remove();
+  const colors = { info:'#1B5C2A', warn:'#C9A84C', error:'#C0392B' };
+  const toast = document.createElement('div');
+  toast.id = 'egk-toast';
+  toast.style.cssText = 'position:fixed;bottom:28px;left:50%;transform:translateX(-50%);background:' + (colors[type]||colors.info) + ';color:white;padding:13px 22px;border-radius:10px;font-size:14px;font-weight:600;z-index:99999;box-shadow:0 4px 20px rgba(0,0,0,0.25);max-width:90vw;text-align:center;pointer-events:none;';
+  toast.textContent = message;
+  document.body.appendChild(toast);
+  setTimeout(function(){ toast.remove(); }, duration);
+}
+
 async function githubPut(path, data, sha, message) {
   const content = btoa(unescape(encodeURIComponent(JSON.stringify(data, null, 2))));
   const body = { message, content };
@@ -3915,8 +3928,18 @@ async function githubPut(path, data, sha, message) {
     },
     body: JSON.stringify(body)
   });
-  if (!res.ok) throw new Error(`GitHub PUT failed: ${res.status}`);
-  return await res.json();
+  if (!res.ok) {
+    if (res.status === 409) showToast(
+      '⚠️ Save conflict — another session changed this data. Reload to sync before retrying.',
+      'warn', 6000);
+    throw new Error(`GitHub PUT failed: ${res.status}`);
+  }
+  const json = await res.json();
+  if (json?.content?.sha) {
+    // Return sha so callers can update their cached value
+    json._sha = json.content.sha;
+  }
+  return json;
 }
 
 async function verifyGitHubToken(token) {
@@ -3971,6 +3994,7 @@ async function handleLogin() {
   await loadComplianceData();
   await loadCertData();
   updateAndSaveStreak();
+  resetActivityTimer();
   initApp();
 }
 
@@ -4046,6 +4070,35 @@ function updateGitHubStatus(connected) {
 // ══════════════════════════════════════════
 //  APP INIT
 // ══════════════════════════════════════════
+// ── Session timeout ─────────────────────────────────────────────────────────
+const SESSION_TIMEOUT_MS = 8 * 60 * 60 * 1000;
+const SESSION_WARN_MS    = SESSION_TIMEOUT_MS - 30 * 60 * 1000;
+let _warnedThisSession = false;
+
+function resetActivityTimer() {
+  if (!state.user) return;
+  localStorage.setItem('egk_last_activity', Date.now());
+  _warnedThisSession = false;
+}
+
+function checkSessionTimeout() {
+  if (!state.user) return;
+  const last = parseInt(localStorage.getItem('egk_last_activity') || '0');
+  if (!last) return;
+  const idle = Date.now() - last;
+  if (idle >= SESSION_TIMEOUT_MS) {
+    showToast('Session expired — signing you out now.', 'warn', 4000);
+    setTimeout(handleLogout, 2500);
+  } else if (idle >= SESSION_WARN_MS && !_warnedThisSession) {
+    _warnedThisSession = true;
+    showToast('Your session expires in 30 minutes due to inactivity.', 'info', 6000);
+  }
+}
+
+document.addEventListener('click',   resetActivityTimer, { passive: true });
+document.addEventListener('keydown', resetActivityTimer, { passive: true });
+setInterval(checkSessionTimeout, 60_000);
+
 function initApp() {
   document.getElementById('login-screen').style.display = 'none';
   document.getElementById('app').style.display = 'block';
@@ -6595,6 +6648,8 @@ async function submitAttendance() {
     absent_count: Object.values(attendanceData).filter(d => !d.present).length,
     coach_pay: coachPay,
     session_revenue: presentCount * 20,
+    students_present: presentCount,
+    coach_id: state.user?.id,
     submitted_by: state.user.name,
     submitted_at: new Date().toISOString()
   };
@@ -6616,6 +6671,7 @@ async function submitAttendance() {
       sha,
       `Attendance: \${currentAttendanceClass.name} — \${today}`
     );
+    state.data.sessions = sessions;
 
     // Update student lesson progress
     await updateStudentProgress(sessionRecord);
