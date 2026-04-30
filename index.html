@@ -4684,56 +4684,159 @@ function renderRevenueTrend() {
   if (!container) return;
 
   const licensees = state.data.licensees || [];
-  const invoices = state.data.invoices || [];
-  const activeLicensees = licensees.filter(l => l.status === 'active').length;
+  const invoices   = state.data.invoices   || [];
+  const now        = new Date();
+  const thisMonth  = now.toISOString().slice(0, 7);
 
-  // Build 6-month projection based on current licensee count + actual paid invoices
+  // ── Build 12-month rolling dataset ──────────────────────────────────────────
   const months = [];
-  const now = new Date();
-  for (let i = 5; i >= 0; i--) {
-    const d = new Date(now.getFullYear(), now.getMonth() - i, 1);
-    const label = d.toLocaleString('default', { month: 'short', year: '2-digit' });
-    const monthStr = d.toISOString().slice(0, 7);
+  for (let i = 11; i >= 0; i--) {
+    const d        = new Date(now.getFullYear(), now.getMonth() - i, 1);
+    const label    = d.toLocaleString('default', { month: 'short', year: '2-digit' });
+    const monthStr = `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}`;
+    const isCurrent = monthStr === thisMonth;
 
-    // Count paid invoices for this month
-    const paid = invoices.filter(inv =>
-      inv.status === 'paid' && inv.paid_date && inv.paid_date.startsWith(monthStr)
-    );
-    const collected = paid.reduce((sum, inv) => sum + (inv.amount || 0), 0);
+    const monthInvoices = invoices.filter(inv => {
+      const dt = inv.invoice_date || inv.created || '';
+      return dt.startsWith(monthStr);
+    });
 
-    // Projected = current active licensees × $500 (for current + future months)
-    const isCurrentOrFuture = i <= 0;
-    const projected = activeLicensees * 500;
+    const billed    = monthInvoices.reduce((s, inv) => s + (inv.amount || 0), 0);
+    const collected = monthInvoices
+      .filter(inv => inv.status === 'paid')
+      .reduce((s, inv) => s + (inv.amount || 0), 0);
+    const outstanding = billed - collected;
 
-    months.push({ label, collected, projected: isCurrentOrFuture ? projected : 0, monthStr });
+    // For the current month with no invoices yet, project from active licensees
+    const activeMRR = licensees
+      .filter(l => l.status === 'active')
+      .reduce((s, l) => s + (l.monthly_fee || 500), 0);
+    const projBilled = (isCurrent && billed === 0) ? activeMRR : billed;
+
+    months.push({ label, monthStr, billed: projBilled, collected, outstanding: Math.max(0, projBilled - collected), isCurrent });
   }
 
-  const maxVal = Math.max(...months.map(m => Math.max(m.collected, m.projected)), 500);
+  // ── Summary stats ────────────────────────────────────────────────────────────
+  const ytdStart  = `${now.getFullYear()}-01`;
+  const ytdBilled = months.filter(m => m.monthStr >= ytdStart).reduce((s, m) => s + m.billed, 0);
+  const ytdColl   = months.filter(m => m.monthStr >= ytdStart).reduce((s, m) => s + m.collected, 0);
+  const ytdRate   = ytdBilled > 0 ? Math.round((ytdColl / ytdBilled) * 100) : 0;
+  const totalOut  = months.reduce((s, m) => s + m.outstanding, 0);
+  const activeLic = licensees.filter(l => l.status === 'active').length;
+  const mrr       = licensees.filter(l => l.status === 'active').reduce((s, l) => s + (l.monthly_fee || 500), 0);
 
-  const bars = months.map(m => {
-    const collectedH = Math.round((m.collected / maxVal) * 120);
-    const projectedH = Math.round((m.projected / maxVal) * 120);
-    const isCurrentMonth = m.monthStr === now.toISOString().slice(0, 7);
+  // ── SVG chart ────────────────────────────────────────────────────────────────
+  const W = 700, H = 200, PAD_L = 52, PAD_B = 32, PAD_T = 12, PAD_R = 12;
+  const chartW = W - PAD_L - PAD_R;
+  const chartH = H - PAD_B - PAD_T;
+  const maxVal = Math.max(...months.map(m => m.billed), mrr, 500);
+  const gridVals = [0, 0.25, 0.5, 0.75, 1].map(r => Math.round(maxVal * r));
 
-    return `<div style="display:flex; flex-direction:column; align-items:center; gap:4px; flex:1;">
-      <div style="display:flex; align-items:flex-end; gap:2px; height:130px;">
-        ${m.collected > 0 ? `<div style="width:16px; height:${collectedH}px; background:var(--green); border-radius:3px 3px 0 0;" title="Collected: $${m.collected.toLocaleString()}"></div>` : '<div style="width:16px;"></div>'}
-        ${m.projected > 0 ? `<div style="width:16px; height:${projectedH}px; background:${isCurrentMonth ? 'var(--gold)' : 'var(--gray-200)'}; border-radius:3px 3px 0 0; opacity:0.7;" title="Projected: $${m.projected.toLocaleString()}"></div>` : '<div style="width:16px;"></div>'}
-      </div>
-      <div style="font-size:10px; color:var(--gray-400); text-align:center;">${m.label}</div>
-      ${m.collected > 0 ? `<div style="font-size:10px; font-weight:600; color:var(--green);">$${(m.collected/1000).toFixed(1)}k</div>` : (m.projected > 0 ? `<div style="font-size:10px; color:var(--gray-400);">$${(m.projected/1000).toFixed(1)}k</div>` : '')}
-    </div>`;
-  }).join('');
+  const barGroup = chartW / months.length;
+  const bW = Math.max(6, Math.floor(barGroup * 0.35));
+
+  const yPos = v => PAD_T + chartH - Math.round((v / maxVal) * chartH);
+  const xPos = i => PAD_L + i * barGroup + barGroup / 2;
+
+  let svgBars = '';
+  let svgLabels = '';
+  let linePoints = '';
+
+  months.forEach((m, i) => {
+    const x = xPos(i);
+    // Billed bar (background — light green outline)
+    if (m.billed > 0) {
+      const bH = Math.round((m.billed / maxVal) * chartH);
+      const by = yPos(m.billed);
+      svgBars += `<rect x="${x - bW - 1}" y="${by}" width="${bW}" height="${bH}" rx="2"
+        fill="${m.isCurrent ? '#C9A84C22' : '#1B5C2A18'}" stroke="${m.isCurrent ? '#C9A84C' : '#1B5C2A'}"
+        stroke-width="1.5" stroke-dasharray="${m.isCurrent ? '4,2' : 'none'}">
+        <title>Invoiced ${m.label}: $${m.billed.toLocaleString()}</title></rect>`;
+    }
+    // Collected bar (solid)
+    if (m.collected > 0) {
+      const cH = Math.round((m.collected / maxVal) * chartH);
+      const cy = yPos(m.collected);
+      svgBars += `<rect x="${x + 1}" y="${cy}" width="${bW}" height="${cH}" rx="2" fill="#1B5C2A">
+        <title>Collected ${m.label}: $${m.collected.toLocaleString()}</title></rect>`;
+    }
+    // Month label
+    const highlight = m.isCurrent ? 'font-weight:700;fill:#C9A84C' : 'fill:#9A9A8A';
+    svgLabels += `<text x="${x}" y="${H - 6}" text-anchor="middle" style="font-size:9px;${highlight}">${m.label}</text>`;
+    // Line for collection rate (use collected if both exist)
+    if (m.billed > 0) {
+      const ly = yPos(m.collected);
+      linePoints += `${x},${ly} `;
+    }
+  });
+
+  // Gridlines + Y labels
+  let gridLines = '';
+  gridVals.forEach(v => {
+    const y = yPos(v);
+    const label = v >= 1000 ? `$${(v/1000).toFixed(v % 1000 === 0 ? 0 : 1)}k` : `$${v}`;
+    gridLines += `<line x1="${PAD_L}" y1="${y}" x2="${W - PAD_R}" y2="${y}"
+      stroke="#E8E8E0" stroke-width="${v === 0 ? 1.5 : 0.75}"/>
+      <text x="${PAD_L - 5}" y="${y + 3}" text-anchor="end" style="font-size:9px;fill:#9A9A8A">${label}</text>`;
+  });
+
+  // Trend polyline (dots only — avoids misleading interpolation)
+  let dots = '';
+  months.forEach((m, i) => {
+    if (m.billed > 0) {
+      const x = xPos(i);
+      const y = yPos(m.collected);
+      dots += `<circle cx="${x}" cy="${y}" r="3" fill="white" stroke="#1B5C2A" stroke-width="1.5"/>`;
+    }
+  });
+
+  const rateColor = ytdRate >= 90 ? '#1B5C2A' : ytdRate >= 70 ? '#C9A84C' : '#C0392B';
 
   container.innerHTML = `
-    <div style="padding:16px 8px 0;">
-      <div style="display:flex; align-items:flex-end; gap:4px; margin-bottom:12px; justify-content:space-around;">
-        ${bars}
+    <div style="padding:0 8px 16px;">
+      <!-- Summary pills -->
+      <div style="display:flex;gap:12px;flex-wrap:wrap;margin-bottom:16px;">
+        <div style="flex:1;min-width:130px;background:var(--green-50,#F0F7F2);border-radius:10px;padding:12px 16px;">
+          <div style="font-size:11px;color:var(--gray-400);text-transform:uppercase;letter-spacing:.05em;margin-bottom:4px;">YTD Collected</div>
+          <div style="font-size:22px;font-weight:700;color:#1B5C2A;font-family:var(--font-display);">$${ytdColl.toLocaleString()}</div>
+        </div>
+        <div style="flex:1;min-width:130px;background:#FFF8EC;border-radius:10px;padding:12px 16px;">
+          <div style="font-size:11px;color:var(--gray-400);text-transform:uppercase;letter-spacing:.05em;margin-bottom:4px;">Outstanding</div>
+          <div style="font-size:22px;font-weight:700;color:${totalOut > 0 ? '#C9A84C' : '#1B5C2A'};font-family:var(--font-display);">$${totalOut.toLocaleString()}</div>
+        </div>
+        <div style="flex:1;min-width:130px;background:#F8F6F1;border-radius:10px;padding:12px 16px;">
+          <div style="font-size:11px;color:var(--gray-400);text-transform:uppercase;letter-spacing:.05em;margin-bottom:4px;">Collection Rate</div>
+          <div style="font-size:22px;font-weight:700;color:${rateColor};font-family:var(--font-display);">${ytdRate}%</div>
+        </div>
+        <div style="flex:1;min-width:130px;background:#F8F6F1;border-radius:10px;padding:12px 16px;">
+          <div style="font-size:11px;color:var(--gray-400);text-transform:uppercase;letter-spacing:.05em;margin-bottom:4px;">MRR Target</div>
+          <div style="font-size:22px;font-weight:700;color:#12401C;font-family:var(--font-display);">$${mrr.toLocaleString()}</div>
+          <div style="font-size:10px;color:var(--gray-400);margin-top:2px;">${activeLic} active licensee${activeLic !== 1 ? 's' : ''}</div>
+        </div>
       </div>
-      <div style="display:flex; gap:16px; padding-top:8px; border-top:1px solid var(--gray-100); font-size:11px; color:var(--gray-400);">
-        <span><span style="display:inline-block;width:10px;height:10px;background:var(--green);border-radius:2px;margin-right:4px;"></span>Collected</span>
-        <span><span style="display:inline-block;width:10px;height:10px;background:var(--gold);border-radius:2px;margin-right:4px;opacity:0.7;"></span>Projected (current month)</span>
-        <span style="margin-left:auto;"><strong>${activeLicensees}</strong> active licensee${activeLicensees !== 1 ? 's' : ''} × $500 = <strong>$${(activeLicensees * 500).toLocaleString()}/mo</strong></span>
+      <!-- SVG Chart -->
+      <div style="overflow-x:auto;">
+        <svg viewBox="0 0 ${W} ${H}" width="100%" style="min-width:420px;display:block;">
+          ${gridLines}
+          ${svgBars}
+          ${dots}
+          ${svgLabels}
+        </svg>
+      </div>
+      <!-- Legend -->
+      <div style="display:flex;gap:16px;margin-top:8px;font-size:11px;color:var(--gray-400);">
+        <span style="display:flex;align-items:center;gap:5px;">
+          <svg width="14" height="14"><rect x="1" y="1" width="12" height="12" rx="2" fill="#1B5C2A18" stroke="#1B5C2A" stroke-width="1.5"/></svg>Invoiced
+        </span>
+        <span style="display:flex;align-items:center;gap:5px;">
+          <svg width="14" height="14"><rect x="1" y="1" width="12" height="12" rx="2" fill="#1B5C2A"/></svg>Collected
+        </span>
+        <span style="display:flex;align-items:center;gap:5px;">
+          <svg width="14" height="14"><rect x="1" y="1" width="12" height="12" rx="2" fill="#C9A84C22" stroke="#C9A84C" stroke-width="1.5" stroke-dasharray="4,2"/></svg>Current month (projected)
+        </span>
+        <span style="display:flex;align-items:center;gap:5px;">
+          <svg width="14" height="14"><circle cx="7" cy="7" r="5" fill="white" stroke="#1B5C2A" stroke-width="1.5"/></svg>Collected amount
+        </span>
       </div>
     </div>`;
 }
@@ -5160,7 +5263,7 @@ function updateHQAccountingStats() {
   const licensees = state.data.licensees || [];
   const activeLicensees = licensees.filter(l => l.status === 'active').length;
 
-  const mrr = activeLicensees * 500;
+  const mrr = licensees.filter(l => l.status === 'active').reduce((s, l) => s + (l.monthly_fee || 500), 0);
   const tdpPayouts = activeLicensees * 150;
   const hqNet = mrr - tdpPayouts;
 
@@ -5177,7 +5280,7 @@ function updateHQAccountingStats() {
     .reduce((s, i) => s + i.amount, 0);
 
   safeSet('hq-mrr', '$' + mrr.toLocaleString());
-  safeSet('hq-mrr-sub', `$500 × ${activeLicensees} licensee${activeLicensees !== 1 ? 's' : ''}`);
+  safeSet('hq-mrr-sub', `${activeLicensees} active licensee${activeLicensees !== 1 ? 's' : ''}`);
   safeSet('hq-net-monthly', '$' + hqNet.toLocaleString());
   safeSet('hq-outstanding', '$' + outstanding.toLocaleString());
   safeSet('hq-overdue-count', `${overdue.length} overdue invoice${overdue.length !== 1 ? 's' : ''}`);
