@@ -1855,7 +1855,8 @@
           <div style="display:flex; gap:12px; margin-bottom:20px; align-items:center; flex-wrap:wrap;">
             <button class="btn btn-primary" onclick="openModal('modal-raise-invoice')">➕ Raise Invoice</button>
             <button class="btn btn-outline" onclick="hqGenerateMonthlyInvoices()">📅 Generate Monthly Invoices</button>
-            <div style="margin-left:auto; display:flex; gap:8px;">
+            <div style="margin-left:auto; display:flex; gap:8px; align-items:center; flex-wrap:wrap;">
+              <input id="invoice-search" type="search" placeholder="Search invoices…" oninput="renderInvoiceTable()" style="padding:7px 12px;border:2px solid var(--gray-200);border-radius:8px;font-size:13px;font-family:var(--font-body);min-width:160px;">
               <select id="invoice-filter-status" onchange="renderInvoiceTable()" style="padding:8px 12px; border:2px solid var(--gray-200); border-radius:8px; font-family:var(--font-body); font-size:13px; background:white;">
                 <option value="all">All Invoices</option>
                 <option value="draft">Draft</option>
@@ -2136,13 +2137,13 @@
             <div class="stat-card red"><div class="stat-icon">🔴</div><div class="stat-value" id="rpt-not-started">—</div><div class="stat-label">Not Started</div></div>
           </div>
           <div class="card">
-            <div class="card-header" style="display:flex;justify-content:space-between;align-items:center;">
+            <div class="card-header" style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;">
               <h3>Individual Progress Report</h3>
-              <span style="font-size:12px;color:var(--gray-400);">Last activity derived from cert records</span>
+              <input id="rpt-activity-search" type="search" placeholder="Search by name, role…" oninput="filterTable('rpt-activity-search','rpt-activity-table')" style="padding:7px 12px;border:2px solid var(--gray-200);border-radius:8px;font-size:13px;font-family:var(--font-body);min-width:200px;">
             </div>
             <table class="data-table">
               <thead><tr><th>Name</th><th>Role</th><th>Progress</th><th>Status</th><th>Last Activity</th><th>Actions</th></tr></thead>
-              <tbody id="rpt-activity-table"><tr><td colspan="5" style="color:var(--gray-400);text-align:center;">Loading...</td></tr></tbody>
+              <tbody id="rpt-activity-table"><tr><td colspan="6" style="color:var(--gray-400);text-align:center;">Loading...</td></tr></tbody>
             </table>
           </div>
         </div>
@@ -2389,9 +2390,12 @@
           <button class="btn btn-gold" onclick="openRegistrationForm()">🔗 Open Enrollment Form</button>
         </div>
         <div class="card">
-          <div class="card-header">
+          <div class="card-header" style="flex-wrap:wrap;gap:8px;">
             <h3>All Students</h3>
-            <span class="badge badge-green" id="student-count-badge">0 enrolled</span>
+            <div style="display:flex;align-items:center;gap:8px;margin-left:auto;">
+              <input id="student-search" type="search" placeholder="Search students…" oninput="filterTable('student-search','students-table-body')" style="padding:7px 12px;border:2px solid var(--gray-200);border-radius:8px;font-size:13px;font-family:var(--font-body);min-width:180px;">
+              <span class="badge badge-green" id="student-count-badge">0 enrolled</span>
+            </div>
           </div>
           <div id="students-table">
             <div class="empty-state">
@@ -2959,6 +2963,7 @@
             <p>Your licensee will assign you to classes. Check back soon.</p>
           </div>
         </div>
+        <div id="coach-students" style="margin-top:24px;"></div>
       </div>
 
       <!-- ══ COACH EDUCATION ══ -->
@@ -3902,6 +3907,15 @@ async function githubGet(path) {
   return { data: JSON.parse(content), sha: json.sha };
 }
 
+function filterTable(inputId, tbodyId) {
+  const q = (document.getElementById(inputId)?.value || '').toLowerCase();
+  const tbody = document.getElementById(tbodyId);
+  if (!tbody) return;
+  Array.from(tbody.querySelectorAll('tr')).forEach(tr => {
+    tr.style.display = q && !tr.textContent.toLowerCase().includes(q) ? 'none' : '';
+  });
+}
+
 function showToast(message, type, duration) {
   type = type || 'info'; duration = duration || 3500;
   const existing = document.getElementById('egk-toast');
@@ -4234,7 +4248,7 @@ function showPage(pageId) {
   if (pageId === 'page-hq-dashboard') { updateDashboardStats(); renderActivityFeed(); }
   if (pageId === 'page-attendance') { renderAllClassesForAttendance(); setTodayBadge(); renderAttendanceByRole(); }
   if (pageId === 'page-registration-form') populateRegFormSchools();
-  if (pageId === 'page-valuation') calculateValuation();
+  if (pageId === 'page-valuation') { prefillValuationFromData(); calculateValuation(); }
   if (pageId === 'page-hq-accounting') { populateInvoiceLicenseeDropdown(); renderInvoiceTable(); updateHQAccountingStats(); }
   if (pageId === 'page-licensee-accounting') {
     if (state.role === 'tdp') { renderTDPAccountingView(); }
@@ -5054,6 +5068,7 @@ function renderInvoiceTable() {
   if (!container) return;
 
   const filterStatus = document.getElementById('invoice-filter-status')?.value || 'all';
+  const filterQ = (document.getElementById('invoice-search')?.value || '').toLowerCase();
   let invoices = getInvoices();
 
   if (filterStatus !== 'all') {
@@ -5062,6 +5077,17 @@ function renderInvoiceTable() {
       if (filterStatus === 'overdue') return info.label.startsWith('Overdue');
       if (filterStatus === 'sent')    return info.label === 'Sent';
       return inv.status === filterStatus;
+    });
+  }
+
+  if (filterQ) {
+    invoices = invoices.filter(inv => {
+      const lic = (state.data.licensees || []).find(l => l.id === inv.licensee_id);
+      const licName = `${lic?.first_name || ''} ${lic?.last_name || ''} ${lic?.business_name || ''}`.toLowerCase();
+      return (inv.invoice_number || '').toLowerCase().includes(filterQ) ||
+             licName.includes(filterQ) ||
+             (inv.type_label || '').toLowerCase().includes(filterQ) ||
+             (inv.notes || '').toLowerCase().includes(filterQ);
     });
   }
 
@@ -5278,7 +5304,7 @@ async function hqGenerateMonthlyInvoices() {
       licensee_id: lic.id,
       invoice_type: 'monthly',
       type_label: 'Monthly License Fee',
-      amount: 500,
+      amount: lic.monthly_fee || 500,
       invoice_date: invoiceDate,
       due_date: dueDate,
       notes: `Monthly license fee — ${monthLabel}`,
@@ -5541,6 +5567,44 @@ function openLessonPlans(age) {
 // ══════════════════════════════════════════
 //  BUSINESS VALUATION CALCULATOR
 // ══════════════════════════════════════════
+function prefillValuationFromData() {
+  const sessions  = state.data.sessions  || [];
+  const schools   = state.data.schools   || [];
+  const licensees = state.data.licensees || [];
+  const now = new Date();
+
+  const monthSessions = sessions.filter(s => {
+    const d = new Date(s.session_date || s.date || '');
+    return d.getMonth() === now.getMonth() && d.getFullYear() === now.getFullYear();
+  });
+
+  const monthRevenue  = monthSessions.reduce((t, s) => t + (s.session_revenue || 0), 0);
+  const monthCoach    = monthSessions.reduce((t, s) => t + (s.coach_pay || 0), 0);
+  const signedSchools = schools.filter(s => s.pipeline_stage === 'signed').length;
+
+  const myLic = licensees.find(l =>
+    l.id === state.user?.id || l.user_id === state.user?.id ||
+    `${l.first_name} ${l.last_name}`.toLowerCase() === (state.user?.name || '').toLowerCase()
+  );
+  const licenseFee = myLic?.monthly_fee || 500;
+
+  const startDate = myLic?.start_date ? new Date(myLic.start_date) : null;
+  const monthsOp  = startDate
+    ? Math.max(1, Math.round((now - startDate) / (30.44 * 24 * 3600 * 1000)))
+    : null;
+
+  const setIfEmpty = (id, val) => {
+    const el = document.getElementById(id);
+    if (el && (!el.value || el.value === '0')) el.value = val;
+  };
+
+  if (monthRevenue > 0) setIfEmpty('val-revenue', monthRevenue);
+  if (monthCoach   > 0) setIfEmpty('val-coach',   monthCoach);
+  setIfEmpty('val-license', licenseFee);
+  if (signedSchools > 0) setIfEmpty('val-schools', signedSchools);
+  if (monthsOp)          setIfEmpty('val-months',  monthsOp);
+}
+
 function calculateValuation() {
   const revenue = parseFloat(document.getElementById('val-revenue')?.value) || 0;
   const coachCost = parseFloat(document.getElementById('val-coach')?.value) || 0;
@@ -8198,7 +8262,7 @@ function renderStudentsTable() {
   }).join('');
   container.innerHTML = `<table class="data-table">
     <thead><tr><th>Name</th><th>Age</th><th>School</th><th>Parent</th><th>Email</th><th>Status</th></tr></thead>
-    <tbody>${rows}</tbody>
+    <tbody id="students-table-body">${rows}</tbody>
   </table>`;
 }
 
@@ -8395,6 +8459,8 @@ function renderCoachPortal() {
 
   if (classes.length === 0) {
     container.innerHTML = `<div class="empty-state"><div class="empty-icon">📅</div><h3>No classes assigned yet</h3><p>Your licensee will assign classes to you once you are onboarded.</p></div>`;
+    const sc = document.getElementById('coach-students');
+    if (sc) sc.innerHTML = '';
     return;
   }
 
@@ -8418,6 +8484,38 @@ function renderCoachPortal() {
     html += `</div>`;
   }
   container.innerHTML = html || `<div class="empty-state"><div class="empty-icon">📅</div><h3>No classes scheduled this week</h3></div>`;
+
+  // ── My Students (read-only) ──────────────────────────────────────────────────
+  const allStudents = state.data.students || [];
+  const sc = document.getElementById('coach-students');
+  if (!sc) return;
+
+  const classIds = new Set(classes.map(c => c.id));
+  const myStudents = allStudents.filter(s => classIds.has(s.class_id));
+
+  if (myStudents.length === 0) {
+    sc.innerHTML = '';
+    return;
+  }
+
+  let sHtml = `<h2 style="margin-bottom:14px;">My Students</h2>
+    <table class="data-table">
+      <thead><tr><th>Name</th><th>Age</th><th>Class</th><th>School</th><th>Parent</th><th>Status</th></tr></thead>
+      <tbody>`;
+  for (const s of myStudents) {
+    const cls = classes.find(c => c.id === s.class_id);
+    const statusCol = s.status === 'active' ? 'var(--success)' : 'var(--amber)';
+    sHtml += `<tr>
+      <td><strong>${s.first_name || ''} ${s.last_name || ''}</strong></td>
+      <td>${s.age || '—'}</td>
+      <td>${cls ? cls.name : '—'}</td>
+      <td>${s.school_name || '—'}</td>
+      <td style="font-size:12px;">${s.parent_name || '—'}</td>
+      <td><span class="badge" style="background:${statusCol}20;color:${statusCol};">${s.status || 'active'}</span></td>
+    </tr>`;
+  }
+  sHtml += `</tbody></table>`;
+  sc.innerHTML = sHtml;
 }
 
 // ══════════════════════════════════════════
