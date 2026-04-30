@@ -4199,6 +4199,7 @@ const NAV_CONFIG = {
       { icon: '🏠', label: 'Home', page: 'page-coach-home' },
       { icon: '📅', label: 'My Schedule', page: 'page-coach-portal' },
       { icon: '📋', label: 'Take Attendance', page: 'page-attendance' },
+      { icon: '📚', label: 'Lesson Plans', page: 'page-lesson-plans' },
       { icon: '🎓', label: 'Education Hub', page: 'page-coach-education' },
     ]},
   ],
@@ -4245,6 +4246,7 @@ function showPage(pageId) {
   if (pageId === 'page-tdp') renderTDPPage();
   if (pageId === 'page-coach-home') renderCoachHome();
   if (pageId === 'page-coach-portal') renderCoachPortal();
+  if (pageId === 'page-lesson-plans') renderLessonPlans();
   if (pageId === 'page-hq-dashboard') { updateDashboardStats(); renderActivityFeed(); }
   if (pageId === 'page-attendance') { renderAllClassesForAttendance(); setTodayBadge(); renderAttendanceByRole(); }
   if (pageId === 'page-registration-form') populateRegFormSchools();
@@ -6522,7 +6524,7 @@ function openAttendanceSession(classId) {
           <div style="font-weight:700;color:var(--green-dark);margin-bottom:4px;">Lesson ${lessonNum} — Age ${age} Track</div>
           <div style="font-size:13px;color:var(--gray-600);line-height:1.6;">${lessonFocus}</div>
         </div>
-        <button class="btn btn-outline btn-sm" onclick="showPage('page-coach-education');renderEducationHub()" style="flex-shrink:0;">
+        <button class="btn btn-outline btn-sm" onclick="_lpLesson=null;showPage('page-lesson-plans')" style="flex-shrink:0;">
           📚 View Lesson Plans
         </button>
       </div>
@@ -8619,6 +8621,128 @@ function renderCoachPortal() {
   }
   sHtml += `</tbody></table>`;
   sc.innerHTML = sHtml;
+}
+
+
+// ══════════════════════════════════════════
+//  LESSON PLAN TEMPLATES (post-L1 unlock)
+// ══════════════════════════════════════════
+let _lpGroup = '4-5';
+let _lpLesson = null;
+
+function renderLessonPlans() {
+  const page = document.getElementById('lesson-plans-content');
+  if (!page) return;
+
+  const l1Passed = typeof hasPassed === 'function' && hasPassed('L1');
+
+  if (!l1Passed) {
+    page.innerHTML = `
+      <div class="page-header"><h1>Lesson Plan Templates</h1><p>Age-appropriate session plans for every class</p></div>
+      <div style="max-width:520px;margin:48px auto;text-align:center;">
+        <div style="font-size:56px;margin-bottom:20px;">🔒</div>
+        <h2 style="color:var(--green-dark);margin-bottom:12px;">Unlocks after Level 1 Certification</h2>
+        <p style="color:var(--gray-500);margin-bottom:24px;">Complete your Level 1 — Foundations certification to access 40 fully-detailed session templates across all age groups.</p>
+        <button class="btn btn-primary" onclick="showPage('page-coach-education');renderEducationHub()">Go to Education Hub →</button>
+      </div>`;
+    return;
+  }
+
+  if (_lpLesson !== null) {
+    renderLessonDetail(); return;
+  }
+
+  const groups = typeof LESSON_TEMPLATES !== 'undefined' ? LESSON_TEMPLATES : {};
+  const grp    = groups[_lpGroup] || {};
+  const lessons = grp.lessons || [];
+
+  const tabs = Object.entries(groups).map(([k, g]) => {
+    const active = k === _lpGroup;
+    return `<button class="btn ${active ? 'btn-primary' : 'btn-outline'} btn-sm"
+      style="font-size:12px;" onclick="_lpGroup='${k}';renderLessonPlans()">
+      <span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:${g.color};margin-right:5px;"></span>
+      ${g.label}</button>`;
+  }).join('');
+
+  const cards = lessons.map(l => `
+    <div class="card" style="cursor:pointer;transition:box-shadow .15s;" onmouseenter="this.style.boxShadow='0 4px 16px rgba(27,92,42,.15)'" onmouseleave="this.style.boxShadow=''"
+      onclick="_lpLesson=${l.n - 1};renderLessonPlans()">
+      <div style="display:flex;align-items:center;gap:12px;">
+        <div style="width:40px;height:40px;border-radius:50%;background:${grp.color}20;display:flex;align-items:center;justify-content:center;font-weight:700;color:${grp.color};flex-shrink:0;">${l.n}</div>
+        <div style="flex:1;">
+          <div style="font-weight:700;color:var(--green-dark);margin-bottom:2px;">${l.title}</div>
+          <div style="font-size:12px;color:var(--gray-400);">${l.focus}</div>
+        </div>
+        <div style="font-size:18px;color:var(--gray-300);">›</div>
+      </div>
+    </div>`).join('');
+
+  page.innerHTML = `
+    <div class="page-header">
+      <h1>Lesson Plan Templates</h1>
+      <p>${grp.label} · ${grp.ltad} · 10 Lessons</p>
+    </div>
+    <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:20px;">${tabs}</div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:12px;">${cards}</div>`;
+}
+
+function renderLessonDetail() {
+  const page   = document.getElementById('lesson-plans-content');
+  if (!page) return;
+  const groups = typeof LESSON_TEMPLATES !== 'undefined' ? LESSON_TEMPLATES : {};
+  const grp    = groups[_lpGroup] || {};
+  const l      = (grp.lessons || [])[_lpLesson];
+  if (!l) { _lpLesson = null; renderLessonPlans(); return; }
+
+  const seg = (icon, label, mins, name, body) => `
+    <div style="border-left:3px solid ${grp.color};padding:14px 16px;background:var(--gray-50,#F8F6F1);border-radius:0 8px 8px 0;margin-bottom:12px;">
+      <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px;">
+        <span style="font-size:18px;">${icon}</span>
+        <span style="font-weight:700;color:var(--green-dark);">${label}</span>
+        <span class="badge badge-gray" style="font-size:10px;margin-left:auto;">${mins} min</span>
+      </div>
+      <div style="font-weight:600;font-size:13px;color:var(--gray-600);margin-bottom:4px;">${name}</div>
+      <div style="font-size:13px;color:var(--gray-500);line-height:1.6;">${body}</div>
+    </div>`;
+
+  const skBody = `${l.sk.drill}
+    ${l.sk.constraint ? `<div style="margin-top:8px;padding:8px 12px;background:var(--gold)18;border-radius:6px;"><strong>🔺 Constraint:</strong> ${l.sk.constraint}</div>` : ''}
+    ${l.sk.note ? `<div style="margin-top:6px;padding:8px 12px;background:#1B5C2A12;border-radius:6px;font-size:12px;"><strong>💡 Coach note:</strong> ${l.sk.note}</div>` : ''}`;
+
+  const gmBody = `${l.gm.rules}
+    ${l.gm.constraint ? `<div style="margin-top:8px;padding:8px 12px;background:var(--gold)18;border-radius:6px;"><strong>🔺 Level up:</strong> ${l.gm.constraint}</div>` : ''}`;
+
+  page.innerHTML = `
+    <div style="display:flex;align-items:center;gap:12px;margin-bottom:20px;flex-wrap:wrap;">
+      <button class="btn btn-outline btn-sm" onclick="_lpLesson=null;renderLessonPlans()">← All Lessons</button>
+      <div>
+        <div style="font-size:11px;color:var(--gray-400);text-transform:uppercase;letter-spacing:.06em;">${grp.label} · Lesson ${l.n}</div>
+        <h1 style="margin:2px 0;font-size:22px;color:var(--green-dark);">${l.title}</h1>
+        <div style="font-size:13px;color:var(--gray-500);">Focus: ${l.focus}</div>
+      </div>
+      <div style="margin-left:auto;display:flex;gap:8px;">
+        ${_lpLesson > 0 ? `<button class="btn btn-outline btn-sm" onclick="_lpLesson=${_lpLesson - 1};renderLessonPlans()">← Prev</button>` : ''}
+        ${_lpLesson < (grp.lessons.length - 1) ? `<button class="btn btn-outline btn-sm" onclick="_lpLesson=${_lpLesson + 1};renderLessonPlans()">Next →</button>` : ''}
+      </div>
+    </div>
+
+    <div class="grid-2" style="gap:16px;">
+      <div>
+        ${seg('⚡', 'Warm-Up', 10, l.wu.name, l.wu.desc)}
+        ${seg('🏌️', 'Skill Block', 20, l.sk.name, skBody)}
+      </div>
+      <div>
+        ${seg('🎯', 'Game Reinforcement', 20, l.gm.name, gmBody)}
+        ${seg('💬', 'Wrap-Up & Reset', 10, 'Reflection', `<strong>Question:</strong> "${l.wu2.q}"<br><div style="margin-top:6px;padding:8px 12px;background:#1B5C2A12;border-radius:6px;font-size:12px;"><strong>✅ Success criteria:</strong> ${l.wu2.success}</div>`)}
+      </div>
+    </div>
+
+    <div style="margin-top:16px;padding:12px 16px;background:var(--gray-100);border-radius:8px;display:flex;gap:16px;flex-wrap:wrap;font-size:12px;color:var(--gray-500);">
+      <span>⏱ Total: <strong>60 minutes</strong></span>
+      <span>👥 Group: <strong>${grp.label}</strong></span>
+      <span>📚 LTAD Stage: <strong>${grp.ltad}</strong></span>
+      <span style="margin-left:auto;"><button class="btn btn-sm btn-outline" onclick="window.print()">🖨 Print Plan</button></span>
+    </div>`;
 }
 
 // ══════════════════════════════════════════
