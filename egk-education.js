@@ -5775,6 +5775,20 @@ async function kcNext() {
   }
 }
 
+// ── Quiz progress persistence ────────────────────────────────────────────────
+function _quizKey(level) {
+  return 'egk_quiz_' + (state.user?.id || 'anon') + '_' + level;
+}
+function saveQuizProgress() {
+  try { localStorage.setItem(_quizKey(quizState.level), JSON.stringify(quizState)); } catch(e) {}
+}
+function loadQuizProgress(level) {
+  try { const d = localStorage.getItem(_quizKey(level)); return d ? JSON.parse(d) : null; } catch(e) { return null; }
+}
+function clearQuizProgress(level) {
+  try { localStorage.removeItem(_quizKey(level)); } catch(e) {}
+}
+
 // ── Level Assessment (formal quiz) ───────────────────────────────────────────
 function startLevelAssessment(level) {
   const rec = certState.records[level] || {};
@@ -5792,6 +5806,29 @@ function startLevelAssessment(level) {
       return;
     }
   }
+  // Check for a saved in-progress attempt
+  const savedProgress = loadQuizProgress(level);
+  if (savedProgress && savedProgress.answers?.length > 0 && savedProgress.currentQ > 0) {
+    const q = savedProgress.currentQ + 1;
+    const total = savedProgress.questions.length;
+    const resume = confirm(
+      'You have an in-progress ' + (CERT_LEVELS[level]?.label || level) + ' assessment.\n' +
+      'Question ' + q + ' of ' + total + ' — ' + savedProgress.answers.length + ' answer' + (savedProgress.answers.length !== 1 ? 's' : '') + ' recorded.\n\n' +
+      'OK = Continue where you left off\nCancel = Start a fresh attempt (questions will reshuffle)'
+    );
+    if (resume) {
+      quizState = savedProgress;
+      safeSet('quiz-title', CERT_LEVELS[level]?.fullLabel || 'Assessment');
+      safeSet('quiz-subtitle', total + ' questions · 85% required to pass · Questions and answers randomized on every attempt');
+      document.getElementById('quiz-container').style.display = 'block';
+      document.getElementById('quiz-results').style.display = 'none';
+      renderQuizQuestion();
+      showPage('page-quiz');
+      return;
+    }
+    clearQuizProgress(level);
+  }
+
   const qs = QUIZ_QUESTIONS[level];
   if (!qs) return;
   const count = Math.min(CERT_LEVELS[level]?.qCount || 20, qs.length);
@@ -5852,11 +5889,13 @@ async function quizNext() {
     await finishQuiz();
   } else {
     quizState.currentQ++;
+    saveQuizProgress();
     renderQuizQuestion();
   }
 }
 
 async function finishQuiz() {
+  clearQuizProgress(quizState.level);
   const { level, questions, answers } = quizState;
   const correct = answers.filter(a=>a.correct).length;
   const total = questions.length;
