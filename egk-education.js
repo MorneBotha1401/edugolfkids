@@ -8,6 +8,9 @@ const CERT_LEVELS = {
   L2:      { id:'L2',      label:'Level 2 — Golf Skills',       fullLabel:'Level 2 Coach Certification — Golf Skills',          passPct:85, qCount:20, prereq:'L1', color:'#2980B9', forRoles:['coach','licensee'] },
   L3:      { id:'L3',      label:'Level 3 — Business Ops',      fullLabel:'Level 3 Licensee Certification — Business Operations',passPct:85, qCount:20, prereq:'L2', color:'#C9A84C', forRoles:['licensee'] },
   REFRESH: { id:'REFRESH', label:'Annual Refresher',            fullLabel:'Annual Certification Refresher',                     passPct:85, qCount:10, prereq:'L1', color:'#8B5CF6', forRoles:['coach','licensee'] },
+  TDP_O:   { id:'TDP_O',   label:'TDP Orientation',             fullLabel:'TDP Orientation Certification',                      passPct:85, qCount:10, prereq:null,   color:'#1B5C2A', forRoles:['tdp'] },
+  TDP_L:   { id:'TDP_L',   label:'TDP Leadership',              fullLabel:'TDP Leadership Certification',                       passPct:85, qCount:15, prereq:'TDP_O', color:'#C9A84C', forRoles:['tdp'] },
+  TDP_C:   { id:'TDP_C',   label:'TDP Compliance Mastery',      fullLabel:'TDP Compliance Mastery Certification',               passPct:85, qCount:15, prereq:'TDP_L', color:'#2980B9', forRoles:['tdp'] },
 };
 
 // ── Email Notifications (via GitHub Actions + Resend) ────────────────────────
@@ -4925,6 +4928,107 @@ L3:[
 }
 ],
 REFRESH:[],
+
+TDP_O:[{
+  id:"TDP_O",
+  title:"TDP Orientation",
+  icon:"🤝",
+  sections:[
+    {h:"The EduGolfKids Business Model",b:`<h4 class="doc-subheading">1. What EduGolfKids Is</h4>
+<p class="doc-p"><strong>EduGolfKids is a structured, school-based junior golf education platform delivered by certified coaches through licensed territory operators.</strong></p>
+<ul class="doc-list"><li>HQ designs the curriculum, certifies coaches, and maintains brand standards</li><li>Licensees operate territories, recruit schools, manage coaches, and collect student revenue</li><li>TDPs recruit and develop licensees within defined geographic regions</li></ul>
+<h4 class="doc-subheading">2. The Revenue Model</h4>
+<p class="doc-p"><strong>Revenue flows at three levels:</strong></p>
+<ul class="doc-list"><li><strong>Student Revenue:</strong> Licensees charge parents $20 per student per session (7-student cap per class)</li><li><strong>License Fee:</strong> Licensees pay HQ $500/month regardless of student count</li><li><strong>TDP Commission:</strong> TDPs earn $150/month per active licensee in their territory</li></ul>
+<h4 class="doc-subheading">3. The TDP Role</h4>
+<p class="doc-p"><strong>A Territory Development Partner (TDP) is the regional growth engine of EduGolfKids.</strong></p>
+<ul class="doc-list"><li>Recruit, vet, and onboard licensees within their assigned region</li><li>Support licensees through the first 90 days of operation</li><li>Monitor licensee compliance and performance monthly</li><li>Represent EduGolfKids brand values in all territory interactions</li></ul>
+<p class="doc-p"><strong>TDPs do not manage coaches or deliver sessions — those responsibilities belong to the licensee.</strong></p>
+<h4 class="doc-subheading">4. Territory Boundaries</h4>
+<ul class="doc-list"><li>Each TDP is assigned a defined geographic territory — typically 2–4 counties or a metro region</li><li>TDPs may not recruit licensees outside their assigned territory without HQ approval</li><li>Territory overlap with other TDPs is not permitted</li></ul>
+<h4 class="doc-subheading">5. HQ Relationship</h4>
+<ul class="doc-list"><li>TDPs report monthly to their HQ Regional Manager</li><li>Monthly report must include: active licensee count, pipeline count, compliance status, any escalations</li><li>HQ retains final authority over licensee approvals, terminations, and territory disputes</li></ul>`},
+    {h:"Commission Structure & Performance Standards",b:`<h4 class="doc-subheading">1. Commission Calculation</h4>
+<p class="doc-p"><strong>Commission = Active Licensees × $150/month</strong></p>
+<p class="doc-p">A licensee is "active" when:</p>
+<ul class="doc-list"><li>License agreement is signed and first fee paid</li><li>At least one school contract is active</li><li>No suspension or remediation holds are in place</li></ul>
+<h4 class="doc-subheading">2. Commission Payment Timeline</h4>
+<ul class="doc-list"><li>Paid by the 15th of the following month</li><li>Requires submission of monthly TDP report by the 5th</li><li>Disputed commissions must be raised within 30 days</li></ul>
+<h4 class="doc-subheading">3. Performance Expectations</h4>
+<p class="doc-p"><strong>Year 1 targets:</strong></p>
+<ul class="doc-list"><li>Minimum 3 active licensees by month 6</li><li>Minimum 5 active licensees by month 12</li><li>All licensees compliant with monthly reporting</li><li>Zero unresolved compliance escalations older than 30 days</li></ul>
+<h4 class="doc-subheading">4. Performance Review</h4>
+<ul class="doc-list"><li>Quarterly performance reviews with HQ Regional Manager</li><li>Failure to meet Year 1 minimums triggers a Performance Improvement Plan (PIP)</li><li>Two consecutive quarters below minimum may result in territory reassignment</li></ul>
+<h4 class="doc-subheading">5. Intellectual Property</h4>
+<ul class="doc-list"><li>All EduGolfKids materials, curriculum, and systems remain HQ property</li><li>TDPs may not create derivative materials without written HQ approval</li><li>TDP branding must always use the EduGolfKids name and logo in accordance with brand guidelines</li></ul>`},
+  ]
+}],
+TDP_L:[{
+  id:"TDP_L",
+  title:"TDP Leadership",
+  icon:"📋",
+  sections:[
+    {h:"Licensee Recruitment & Onboarding",b:`<h4 class="doc-subheading">1. Ideal Licensee Profile</h4>
+<p class="doc-p"><strong>EduGolfKids licensees must meet the following minimum profile:</strong></p>
+<ul class="doc-list"><li>Passion for youth sport and education</li><li>Basic business management capability (does not need to be an experienced entrepreneur)</li><li>Access to startup capital ($3,000–$8,000 for equipment, insurance, and launch costs)</li><li>Network or access to local school administrators</li><li>Ability to pass background screening requirements</li></ul>
+<h4 class="doc-subheading">2. Disqualifying Factors</h4>
+<ul class="doc-list"><li>Criminal record involving children or fraud</li><li>Failed background screening</li><li>Active bankruptcy or insolvency proceedings</li><li>Prior EduGolfKids licensee termination for cause</li></ul>
+<h4 class="doc-subheading">3. The Recruitment Process</h4>
+<p class="doc-p"><strong>6-step recruitment funnel:</strong></p>
+<ul class="doc-list"><li><strong>Step 1 — Discovery:</strong> Initial 30-min conversation to present the opportunity</li><li><strong>Step 2 — Interest Form:</strong> Candidate completes the EGK Licensee Interest Form</li><li><strong>Step 3 — HQ Review:</strong> TDP submits form to HQ; HQ approval required before proceeding</li><li><strong>Step 4 — Due Diligence:</strong> Background check, reference check, financial review</li><li><strong>Step 5 — Agreement:</strong> License Agreement signed, first fee paid</li><li><strong>Step 6 — Onboarding:</strong> 90-day structured launch programme begins</li></ul>
+<h4 class="doc-subheading">4. TDP Authority Limits</h4>
+<p class="doc-p"><strong>TDPs CANNOT:</strong></p>
+<ul class="doc-list"><li>Sign licensees without HQ approval</li><li>Negotiate license fee discounts</li><li>Offer verbal commitments on behalf of HQ</li><li>Access a licensee's financial data directly</li></ul>
+<h4 class="doc-subheading">5. The 90-Day Onboarding Programme</h4>
+<ul class="doc-list"><li><strong>Week 1–2:</strong> Certification path begins (M0, L1); equipment ordered; legal reviewed</li><li><strong>Week 3–4:</strong> First school meetings facilitated by TDP; insurance confirmed</li><li><strong>Month 2:</strong> First class launched; TDP attends first session as observer</li><li><strong>Month 3:</strong> Second school added; TDP conducts first monthly review</li><li>TDP submits 90-day onboarding report to HQ at close of month 3</li></ul>`},
+    {h:"Licensee Performance Monitoring",b:`<h4 class="doc-subheading">1. Monthly TDP Review Standards</h4>
+<p class="doc-p"><strong>Every licensee in the TDP's territory must be reviewed monthly against:</strong></p>
+<ul class="doc-list"><li>Active school count and attendance trends</li><li>Coach certification status (all coaches current)</li><li>Invoice payment record (no overdue HQ invoices)</li><li>Session submission record (all sessions logged within 48 hours)</li><li>Incident report record (all incidents reported within 24 hours)</li></ul>
+<h4 class="doc-subheading">2. Performance Tiers</h4>
+<ul class="doc-list"><li><strong>Green (Compliant):</strong> All standards met. Monthly check-in sufficient.</li><li><strong>Amber (At Risk):</strong> One or more standards missed. Documented support call required within 7 days.</li><li><strong>Red (Non-Compliant):</strong> Two or more standards missed or one serious breach. HQ escalation required within 24 hours.</li></ul>
+<h4 class="doc-subheading">3. Support Calls (Amber Status)</h4>
+<p class="doc-p">TDP must conduct a documented support call covering:</p>
+<ul class="doc-list"><li>Root cause of the missed standard</li><li>Agreed action plan with specific deadlines</li><li>TDP follow-up date confirmed</li></ul>
+<h4 class="doc-subheading">4. Escalation Procedure (Red Status)</h4>
+<ul class="doc-list"><li>TDP notifies HQ within 24 hours of Red classification</li><li>HQ and TDP jointly conduct a Remediation Call with the licensee within 5 business days</li><li>A formal Remediation Plan is issued — licensee has 30 days to return to Green</li><li>Failure to reach Green within 30 days may result in suspension or termination by HQ</li></ul>
+<h4 class="doc-subheading">5. Growth Conversations</h4>
+<ul class="doc-list"><li>TDPs should conduct quarterly growth conversations with each Green licensee</li><li>Topics: additional school targets, coach development, referral opportunities</li><li>Document outcomes in the HQ platform</li></ul>`},
+  ]
+}],
+TDP_C:[{
+  id:"TDP_C",
+  title:"TDP Compliance Mastery",
+  icon:"🛡️",
+  sections:[
+    {h:"Compliance Standards & Monitoring",b:`<h4 class="doc-subheading">1. What TDP Compliance Covers</h4>
+<p class="doc-p"><strong>TDPs are responsible for monitoring compliance across three dimensions:</strong></p>
+<ul class="doc-list"><li><strong>Operational:</strong> Sessions logged, attendance submitted, incident reports filed on time</li><li><strong>Financial:</strong> HQ invoices paid, coach payroll processed, revenue records accurate</li><li><strong>Safety:</strong> Coach certifications current, insurance valid, safeguarding standards maintained</li></ul>
+<h4 class="doc-subheading">2. Non-Negotiable Standards</h4>
+<p class="doc-p"><strong>The following have zero grace periods — immediate HQ escalation required:</strong></p>
+<ul class="doc-list"><li>Expired Sexual Abuse and Molestation (SAM) insurance endorsement</li><li>Coach operating without current M0 certification</li><li>Safeguarding breach of any kind</li><li>Failure to report a child safety incident within 24 hours</li></ul>
+<h4 class="doc-subheading">3. Annual Renewal Cycle</h4>
+<p class="doc-p"><strong>Every licensee must complete the following annually:</strong></p>
+<ul class="doc-list"><li>License Agreement renewal (signed 30 days before expiry)</li><li>Insurance renewal (GL + SAM; certificates sent to HQ before expiry)</li><li>Coach recertification (REFRESH assessment for all coaches due in the renewal month)</li><li>Annual compliance audit (TDP-led; report submitted to HQ within 14 days)</li></ul>
+<h4 class="doc-subheading">4. TDP-Led Audit Procedure</h4>
+<p class="doc-p"><strong>Annual audit checklist (conducted by TDP, documented in platform):</strong></p>
+<ul class="doc-list"><li>Verify all coach certification records — no expired certs</li><li>Confirm insurance certificates are current (GL and SAM)</li><li>Review 3 months of session logs — confirm 100% submission within 48-hour window</li><li>Review incident report log — confirm all incidents reported within 24 hours</li><li>Confirm licensee has completed their own annual REFRESH certification</li><li>Review payroll records — coach payments documented for all sessions in last 3 months</li></ul>
+<h4 class="doc-subheading">5. Remediation Standards</h4>
+<p class="doc-p"><strong>When a compliance gap is identified during audit:</strong></p>
+<ul class="doc-list"><li>Minor gaps (first occurrence, non-safety): Document, issue written guidance, set 14-day correction deadline</li><li>Repeat minor gaps: Escalate to HQ, issue formal Compliance Warning</li><li>Major gaps (safety, financial, or repeat): Immediate HQ escalation. Sessions may be suspended pending resolution.</li></ul>`},
+    {h:"Reporting Standards & TDP Obligations",b:`<h4 class="doc-subheading">1. Monthly TDP Report to HQ</h4>
+<p class="doc-p"><strong>Required by the 5th of each month, covering the previous month:</strong></p>
+<ul class="doc-list"><li>Active licensee count with status summary (Green/Amber/Red)</li><li>Pipeline summary (candidates in recruitment process)</li><li>Open compliance issues and escalation status</li><li>Commission reconciliation — confirm active licensee count</li><li>Any significant licensee risk factors</li></ul>
+<h4 class="doc-subheading">2. Incident Escalation Timeline</h4>
+<ul class="doc-list"><li><strong>Safeguarding incident:</strong> TDP notified by licensee → TDP notifies HQ within 2 hours</li><li><strong>Serious injury:</strong> TDP notified → TDP notifies HQ within 4 hours</li><li><strong>Compliance breach:</strong> TDP notifies HQ within 24 hours</li><li><strong>Financial dispute:</strong> TDP notifies HQ within 3 business days</li></ul>
+<h4 class="doc-subheading">3. Confidentiality Obligations</h4>
+<ul class="doc-list"><li>TDPs may not share licensee financial information with third parties</li><li>Child and family data encountered during compliance activities must be treated as strictly confidential</li><li>Recruitment candidate information must not be shared between candidates</li></ul>
+<h4 class="doc-subheading">4. TDP Self-Compliance</h4>
+<p class="doc-p"><strong>TDPs must maintain their own compliance:</strong></p>
+<ul class="doc-list"><li>All three TDP certifications current (TDP_O, TDP_L, TDP_C)</li><li>Monthly reports submitted on time</li><li>Background screening current (renewed every 3 years)</li><li>No active HQ warnings or PIPs</li></ul>
+<h4 class="doc-subheading">5. Consequences of TDP Non-Compliance</h4>
+<ul class="doc-list"><li>Missed monthly report: $150 commission held until report submitted</li><li>Recurring missed reports (2+): Performance Improvement Plan issued</li><li>Safeguarding breach by TDP: Immediate suspension pending HQ investigation</li><li>Fraudulent reporting: Immediate termination</li></ul>`},
+  ]
+}],
 };
 
 // ══════════════════════════════════════════
@@ -5123,7 +5227,32 @@ L3_M8:[
 {q:'A coach at one of the licensee\'s schools discloses a child\'s special needs diagnosis to other parents during pickup. What must the licensee do?',o:['Monitor the situation — if no complaint is received, no formal action is required','Immediately address the breach: special needs information is absolutely confidential. Inform HQ, conduct a documented coaching session with the coach, implement communication re-training before the coach returns.','Wait for a parent complaint before taking formal action','Issue a verbal warning and remind the coach of confidentiality at the next team meeting'],c:1,e:'Confidentiality of special needs information is an absolute standard. A breach must be treated seriously regardless of whether a complaint arises. HQ notification, documented coaching, and re-training are required before the coach returns to sessions.'},
 {q:'What does the quarterly coach observation checklist cover?',o:['Financial performance — class fill rates and invoice compliance','Session architecture compliance, safety and spacing standards, Language Code compliance, engagement management, and Skills Passport tracking','Marketing effectiveness — parent satisfaction and referral rates','Administrative compliance — session logging, incident reporting, and attendance records'],c:1,e:'Quarterly observation: session architecture compliance, safety/spacing standards, Language Code compliance, engagement management (all children active, no long lines), Skills Passport tracking.'},
 {q:'What are the 4 steps in the licensee incident management sequence?',o:['Gather information → notify HQ → notify school → notify parents','Coach notifies licensee within 1 hour → licensee notifies HQ within 24 hours → official incident report submitted → follow up with school principal within 24 hours','Notify parents first → notify HQ within 48 hours → submit incident report → debrief coach','Notify school principal first → notify HQ within 24 hours → notify parents → submit incident report'],c:1,e:'Incident management: (1) Coach notifies licensee within 1 hour. (2) Licensee notifies HQ within 24 hours. (3) Official incident report submitted. (4) Follow up with school principal within 24 hours.'}
+
+TDP_O:[
+{q:'What is the monthly commission a TDP earns per active licensee?',o:['$100','$150','$200','$250'],c:1,e:'TDPs earn $150 per active licensee per month. A licensee is "active" when the agreement is signed, first fee paid, at least one school contract is active, and no suspension holds exist.'},
+{q:'A TDP identifies a promising candidate. What must happen before proceeding past the Discovery call?',o:['The TDP may sign the candidate immediately if confident','The candidate must complete the Interest Form and HQ must approve before proceeding','The TDP may provisionally offer a verbal commitment pending paperwork','The TDP may begin the background check independently'],c:1,e:'HQ approval is required at Step 3 of the recruitment funnel before any further steps. TDPs cannot sign or make verbal commitments on behalf of HQ.'},
+{q:'At what point in the 90-day onboarding does the TDP attend the licensee\'s first session as an observer?',o:['Week 1 — to establish expectations early','Month 2 — when the first class launches','Month 3 — when the second school is added','End of Day 90 — as part of the onboarding sign-off'],c:1,e:'The TDP attends the licensee\'s first session as an observer in Month 2. This is part of the structured onboarding programme.'},
+{q:'TDP commission requires the monthly report to be submitted by:',o:['The last day of the month','The 5th of the following month','The 15th of the following month','Any time before the commission is disputed'],c:1,e:'Commission is paid by the 15th of the following month, but requires the TDP monthly report submitted by the 5th.'},
+{q:'A candidate asks the TDP if the $500 license fee can be reduced. The TDP should:',o:['Offer a 50% reduction to secure the candidate','Explain that HQ sets all fees and the TDP has no authority to negotiate discounts','Ask HQ if an exception can be made before responding','Offer informal support instead of a fee discount'],c:1,e:'TDPs cannot negotiate license fee discounts. All fee structures are set by HQ.'},
+{q:'Which would immediately disqualify a licensee candidate?',o:['No prior business ownership experience','Startup capital of $3,500','A prior EduGolfKids licensee termination for cause','A network limited to 2 school contacts'],c:2,e:'A prior EduGolfKids licensee termination for cause is an absolute disqualifying factor.'},
 ],
+TDP_L:[
+{q:'A licensee misses the session submission deadline for 2 weeks. What must the TDP do?',o:['Green — one missed deadline is acceptable','Amber — conduct a documented support call within 7 days','Red — escalate to HQ within 24 hours','Red — suspend the licensee\'s sessions immediately'],c:1,e:'Missing one compliance standard = Amber. TDP must conduct a documented support call within 7 days covering root cause, action plan, and follow-up date.'},
+{q:'A licensee has two coaches with expired M0 certifications AND an overdue HQ invoice. What status applies?',o:['Amber — two issues but no immediate safety risk','Green — minor administrative gaps','Red — two or more standards missed; HQ must be notified within 24 hours','Amber — address each issue over the next 30 days'],c:2,e:'Two or more missed standards = Red. HQ must be notified within 24 hours. A joint HQ-TDP Remediation Call must occur within 5 business days.'},
+{q:'A Red-status licensee is issued a Remediation Plan. Their deadline to return to Green is:',o:['14 days','21 days','30 days','60 days'],c:2,e:'Licensees have 30 days under a formal Remediation Plan to return to Green. Failure may result in suspension or termination.'},
+{q:'Growth conversations with Green licensees should cover:',o:['Compliance gaps from the previous quarter','Additional school targets, coach development, and referral opportunities','Session pricing strategy and parent satisfaction','HQ branding requirements'],c:1,e:'Growth conversations focus on forward-looking development: additional schools, coach development, referral opportunities.'},
+{q:'A background check returns a minor driving offense from 8 years ago. The TDP should:',o:['Immediately disqualify the candidate','Submit to HQ for a determination — it is not the TDP\'s decision','Advise the candidate to disclose it and proceed','Proceed — only child-related offenses are relevant'],c:1,e:'Background check outcomes are reviewed by HQ, not the TDP. Submit findings to HQ and await their determination.'},
+{q:'Which is included in the monthly licensee review?',o:['A spot-check by attending a session unannounced','Active school count, coach cert status, invoice record, session submissions, and incident reports','A financial review of the licensee\'s bank statements','A parent satisfaction survey'],c:1,e:'Monthly review covers: active school count/attendance, coach cert status, invoice payment record, session submission record, and incident report record.'},
+],
+TDP_C:[
+{q:'A licensee\'s SAM insurance expires tomorrow. Renewal is in progress. What must the TDP do?',o:['Allow sessions — renewal is in progress','Immediately notify HQ and halt sessions — zero grace period applies','Issue a 7-day extension informally','Allow 48 hours for renewal to process'],c:1,e:'SAM endorsement has zero grace period. Sessions must halt immediately upon expiry.'},
+{q:'When a safeguarding breach is identified, the TDP must notify HQ within:',o:['24 hours','2 hours','4 hours','48 hours'],c:1,e:'A safeguarding breach requires TDP notification to HQ within 2 hours — the most urgent escalation timeline.'},
+{q:'During an annual audit, a licensee cannot produce 6 weeks of session logs. This is classified as:',o:['Minor gap — set a 14-day correction deadline','Major gap — immediate HQ escalation; sessions may be suspended','Amber — conduct a support call within 7 days','Green with conditions — accept the explanation and document'],c:1,e:'Missing 6 weeks of session logs is a major gap. Immediate HQ escalation is required.'},
+{q:'The annual TDP-led audit report must be submitted to HQ within:',o:['7 days','14 days','30 days','By end of the calendar year'],c:1,e:'Annual audit reports must be submitted to HQ within 14 days of the audit.'},
+{q:'The TDP\'s commission is held when:',o:['A licensee misses their monthly report','The TDP fails to submit their own report by the 5th','A licensee\'s SAM expires','The TDP has an open Amber licensee with no action plan'],c:1,e:'The TDP\'s commission requires the TDP to submit their own monthly report by the 5th.'},
+{q:'Which TDP self-compliance obligation is renewed every 3 years?',o:['TDP_C certification','Monthly report history','Background screening','HQ contract renewal'],c:2,e:'TDP background screening must be renewed every 3 years.'},
+],
+];
 };
 
 // ══════════════════════════════════════════
@@ -5226,7 +5355,54 @@ REFRESH:[
 {q:'Minimum lateral spacing between children during a hitting session is:',o:['3 feet','4 feet','5 feet','6 feet'],c:3},
 {q:'When a child has any blow to the head during a session, the coach must:',o:['Monitor the child for 5 minutes — if no symptoms, they may return','Apply the zero-tolerance concussion protocol: child does NOT return that day, notify nurse, contact parent, require medical clearance before return','Ask the child if they want to continue','Contact the parent and leave the decision to them'],c:1},
 {q:'Children may only retrieve balls when:',o:['They have finished their 5 attempts','The coach gives the RETRIEVE or RESET command','The warm-up game has ended','The Game Reinforcement segment begins'],c:1},
+
+TDP_O:[
+{q:'What is the monthly commission a TDP earns per active licensee?',o:['$100','$150','$200','$500'],c:1},
+{q:'Which immediately disqualifies a licensee candidate?',o:['Less than 2 years business experience','Startup capital under $5,000','A prior EduGolfKids licensee termination for cause','No existing school contacts'],c:2},
+{q:'A TDP may sign a licensee candidate without HQ approval:',o:['If the TDP has known the candidate for more than 12 months','Never — HQ approval is required before proceeding','If the background check is clear','If the territory has fewer than 3 active licensees'],c:1},
+{q:'TDP commission payment requires the TDP report submitted by:',o:['The last day of the previous month','The 5th of the following month','The 15th of the following month','Any time before the quarter closes'],c:1},
+{q:'During the 90-day onboarding, when does the TDP attend the licensee\'s first session?',o:['Week 1','Week 4','Month 2','Month 3'],c:2},
+{q:'Which is NOT within TDP authority?',o:['Facilitating the licensee\'s first school meeting','Submitting the Interest Form to HQ','Negotiating a license fee discount','Observing the licensee\'s first session'],c:2},
+{q:'The minimum Year 1 performance target for a TDP is:',o:['5 active licensees by month 6','3 active licensees by month 6 and 5 by month 12','2 active licensees by month 3 and 4 by month 6','10 active licensees by year end'],c:1},
+{q:'TDPs may recruit outside their assigned territory:',o:['At any time if an opportunity exists','Only with HQ written approval','Only if the adjacent territory has fewer than 3 licensees','Never under any circumstances'],c:1},
+{q:'The monthly HQ license fee paid by each licensee is:',o:['$150','$350','$500','$750'],c:2},
+{q:'What does the TDP submit to HQ at the close of month 3 of onboarding?',o:['The licensee\'s first P&L statement','A 90-day onboarding completion report','The licensee\'s background check results','The school contract for the first school'],c:1},
 ],
+TDP_L:[
+{q:'How many missed compliance standards places a licensee in Red status?',o:['One serious breach OR one missed standard repeated in two consecutive months','Two or more standards missed, OR one serious breach','Three or more minor gaps across 90 days','Any missed payment to HQ'],c:1},
+{q:'When a licensee is Red, HQ must be notified within:',o:['5 business days','24 hours','48 hours','The next monthly report'],c:1},
+{q:'A Remediation Plan gives the licensee how long to return to Green?',o:['14 days','21 days','30 days','60 days'],c:2},
+{q:'Which is NOT included in the monthly licensee review?',o:['Active school count','Coach certification status','A review of the licensee\'s bank statements','Invoice payment record'],c:2},
+{q:'When should a TDP conduct a quarterly growth conversation?',o:['Only with Amber and Red licensees','Only with Green licensees','With all licensees regardless of status','Only after the licensee\'s first year'],c:1},
+{q:'A TDP-led Remediation Call after Red classification must occur within:',o:['24 hours','5 business days','30 days','The next monthly review'],c:1},
+{q:'The Amber support call documentation must cover:',o:['The licensee\'s financial outlook and revenue targets','Root cause, agreed action plan with deadlines, and TDP follow-up date','Coaching observations from the previous month','School pipeline and expansion targets'],c:1},
+{q:'Which is a valid reason for Amber status?',o:['Student count not growing in 2 months','One compliance standard missed','The licensee\'s top coach left','The licensee missed a TDP development call'],c:1},
+{q:'The TDP\'s role during a licensee\'s first school meeting is:',o:['To lead the meeting and introduce the licensee','To facilitate — the licensee should present independently','To observe without speaking','To prepare the presentation but not attend'],c:1},
+{q:'Which background check outcome definitively disqualifies a licensee?',o:['A driving offense from 4 years ago','Bankruptcy concluded 2 years ago','A criminal record involving a child','A prior employment dispute'],c:2},
+{q:'Monthly review must include which insurance compliance check?',o:['Coach certification records only','General Liability current AND SAM endorsement current','General Liability only','Licensee self-certifies insurance compliance'],c:1},
+{q:'A licensee wants to expand to 5 schools. What must they complete first?',o:['Notify HQ via the monthly report','3 compliant schools operating at Green for at least 2 months','Complete L3 Business Operations certification','Obtain the TDP\'s written approval'],c:1},
+{q:'When must a TDP escalate a licensee from Amber to Red?',o:['Automatically after 2 consecutive Amber months','When two or more standards are missed or one serious breach occurs','After the licensee misses 3 consecutive support calls','When student count drops below 10 per week'],c:1},
+{q:'A licensee\'s coach allowed a student to use equipment outside a designated zone. This is:',o:['Green — minor coaching lapse','Amber — document and set correction deadline','A non-negotiable safety breach — HQ escalation required','TDP discretionary — TDP decides severity'],c:2},
+{q:'A Remediation Plan is issued when:',o:['A licensee misses one monthly submission','Two or more standards are missed simultaneously, or one serious breach occurs','Three or more Green months are followed by a single Amber month','The licensee\'s student count falls below 15 for two consecutive months'],c:1},
+],
+TDP_C:[
+{q:'Which has zero grace period, requiring immediate session halt and HQ notification?',o:['Two coaches with sessions logged 3 days late','An expired SAM insurance endorsement','A licensee who missed one monthly report','A coach who has not yet completed L2'],c:1},
+{q:'The TDP-led annual audit report must be submitted to HQ within:',o:['7 days','14 days','30 days','By end of the financial year'],c:1},
+{q:'When a safeguarding breach is identified, the TDP must notify HQ within:',o:['24 hours','2 hours','4 hours','48 hours'],c:1},
+{q:'A TDP\'s own commission is held when:',o:['A licensee misses their monthly report','The TDP fails to submit their own monthly report by the 5th','A licensee\'s SAM insurance expires','The TDP has an open Amber licensee with no action plan'],c:1},
+{q:'During an annual audit, what must be verified for all coaches?',o:['Coach birth certificates and ID documents','Coach certification records — no expired certifications','Coach session delivery quality via video review','Coach payment records for the past 12 months'],c:1},
+{q:'A minor compliance gap in a first occurrence has a correction deadline of:',o:['7 days','14 days','30 days','Immediate correction required'],c:1},
+{q:'A TDP background screening must be renewed every:',o:['1 year','2 years','3 years','5 years'],c:2},
+{q:'A repeat minor compliance gap (second occurrence) must be:',o:['Documented and continue monitoring','Escalated to HQ with a formal Compliance Warning','Reported to the licensee\'s school contacts','Recommended for a PIP immediately'],c:1},
+{q:'What triggers an immediate TDP Performance Improvement Plan?',o:['One missed monthly report','Two or more consecutive quarters below minimum targets','Any licensee reaching Red status','A coach certification expiry in the territory'],c:1},
+{q:'A licensee cannot produce 6 weeks of session logs during the annual audit. This is:',o:['Minor — set a 14-day correction deadline','Major — immediate HQ escalation; sessions may be suspended','Amber — conduct a support call within 7 days','Green with conditions — accept the explanation'],c:1},
+{q:'The TDP\'s monthly report must cover:',o:['Active school count only','Active licensee status (Green/Amber/Red), pipeline summary, open compliance issues, and commission reconciliation','Commission reconciliation only','Pipeline summary and revenue data'],c:1},
+{q:'A serious injury at a licensee\'s school means the TDP must notify HQ within:',o:['1 hour','2 hours','4 hours','24 hours'],c:2},
+{q:'The correct consequence for fraudulent TDP reporting is:',o:['Commission held for the month','A formal Compliance Warning','Immediate termination of the TDP agreement','A Performance Improvement Plan'],c:2},
+{q:'Which certifications must the TDP keep current to remain self-compliant?',o:['TDP_O only','TDP_O and TDP_L only','All three: TDP_O, TDP_L, and TDP_C','TDP_L and TDP_C only'],c:2},
+{q:'A licensee\'s GL insurance is current but SAM endorsement expires in 3 days. The TDP should:',o:['Monitor the situation — GL is the primary policy','Alert the licensee and ensure renewal is confirmed before expiry — then halt sessions immediately if not renewed','Issue a 7-day informal extension','Allow sessions until HQ issues a formal direction'],c:1},
+],
+];
 };
 
 // ══════════════════════════════════════════
@@ -5235,6 +5411,7 @@ REFRESH:[
 
 function getModulesForRole() {
   const role = state.role;
+  if (role === 'tdp') return ['TDP_O','TDP_L','TDP_C'];
   const levels = role === 'licensee' ? ['M0','L1','L2','L3'] : ['M0','L1','L2'];
   if (hasPassed('L1')) levels.push('REFRESH');
   return levels;
@@ -6082,7 +6259,7 @@ function renderHQEducationStats() {
     const compliant    = trainees.filter(u => {
       const certs = u.certifications || {};
       const levels = Object.keys(CERT_LEVELS).filter(k => k !== 'REFRESH');
-      const applicable = levels.filter(k => CERT_LEVELS[k].forRoles.includes(u.role));
+      const applicable = levels.filter(k => CERT_LEVELS[k]?.forRoles?.includes(u.role));
       if (!applicable.length) return false;
       return applicable.every(k => {
         const r = certs[k];
@@ -6362,7 +6539,7 @@ function hqManageTrainee(userId) {
   if (!u) return;
   const certs = u.certifications || {};
   const role = u.role || 'coach';
-  const levels = role === 'licensee' ? ['M0','L1','L2','L3','REFRESH'] : ['M0','L1','L2','REFRESH'];
+  const levels = role === 'tdp' ? ['TDP_O','TDP_L','TDP_C'] : role === 'licensee' ? ['M0','L1','L2','L3','REFRESH'] : ['M0','L1','L2','REFRESH'];
   const rows = levels.map(lvl => {
     const def = CERT_LEVELS[lvl]; if (!def) return '';
     const rec = certs[lvl] || {};
@@ -6400,18 +6577,9 @@ async function hqResetAttempts(userId, level) {
   } catch(e) { alert('Error: ' + e.message); }
 }
 
-// ── TDP cert page (unchanged) ────────────────────────────────────────────────
+// ── TDP cert page ────────────────────────────────────────────────────────────
 function renderTDPCertPage() {
-  const page = document.getElementById('page-coach-education');
-  if (!page) return;
-  page.innerHTML = `
-    <div class="page-header"><h1>My Training</h1><p>Territory Development Partner orientation and resources</p></div>
-    <div class="card"><div class="card-header"><h3>TDP Orientation Programme</h3></div>
-    <div class="checklist-item missing" style="padding:16px 0;">
-      <span class="check-icon">📋</span>
-      <div style="flex:1;"><strong>TDP Orientation Guide</strong><br><small style="color:var(--gray-400);">Roles, responsibilities, commission structure, compliance requirements and support systems</small></div>
-      <button class="btn btn-sm btn-primary" onclick="alert('TDP Orientation Guide — contact HQ for access.')">View Guide</button>
-    </div></div>`;
+  loadCertData().then(() => renderEducationHub());
 }
 
 // ── Utility ──────────────────────────────────────────────────────────────────
