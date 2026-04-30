@@ -10,6 +10,47 @@ const CERT_LEVELS = {
   REFRESH: { id:'REFRESH', label:'Annual Refresher',            fullLabel:'Annual Certification Refresher',                     passPct:85, qCount:10, prereq:'L1', color:'#8B5CF6', forRoles:['coach','licensee'] },
 };
 
+// ── Resend Email ─────────────────────────────────────────────────────────────
+const RESEND_KEY = 're_H3Vzbsgx_NC2VxTYDhExKWUWfi1HaKgi4';
+const HQ_EMAIL   = 'morne.marilize@gmail.com';
+const FROM_EMAIL = 'EduGolfKids <noreply@edugolfkids.com>';
+
+async function sendEGKEmail(to, subject, html) {
+  try {
+    const res = await fetch('https://api.resend.com/emails', {
+      method: 'POST',
+      headers: { 'Authorization': 'Bearer ' + RESEND_KEY, 'Content-Type': 'application/json' },
+      body: JSON.stringify({ from: FROM_EMAIL, to: Array.isArray(to) ? to : [to], subject, html }),
+    });
+    if (!res.ok) { const err = await res.json(); console.warn('[EGK Email]', err?.message || err); }
+  } catch (e) { console.warn('[EGK Email] send failed:', e); }
+}
+
+function egkEmailBase(bodyContent) {
+  return `<!DOCTYPE html><html><head><meta charset="UTF-8"><style>
+    body{font-family:'Helvetica Neue',Arial,sans-serif;background:#F8F6F1;margin:0;padding:0;}
+    .wrap{max-width:600px;margin:40px auto;background:white;border-radius:12px;overflow:hidden;box-shadow:0 4px 20px rgba(27,92,42,0.12);}
+    .hdr{background:#12401C;padding:28px 36px;text-align:center;}
+    .hdr-logo{color:#C9A84C;font-size:13px;letter-spacing:3px;text-transform:uppercase;font-weight:700;}
+    .body{padding:36px;}
+    .body h2{color:#12401C;font-size:22px;margin:0 0 16px;font-family:Georgia,serif;}
+    .body p{color:#5A5A4A;font-size:15px;line-height:1.6;margin:0 0 12px;}
+    .score-box{background:#F0F7F2;border:2px solid #1B5C2A;border-radius:10px;padding:20px;text-align:center;margin:20px 0;}
+    .score-big{font-size:44px;font-weight:700;color:#12401C;}
+    .score-label{color:#5A5A4A;font-size:13px;margin-top:6px;}
+    .fail-box{background:#FEF2F2;border:2px solid #C0392B;border-radius:10px;padding:20px;text-align:center;margin:20px 0;}
+    .fail-big{font-size:44px;font-weight:700;color:#C0392B;}
+    .info-box{background:#FFF8EC;border:2px solid #C9A84C;border-radius:10px;padding:20px;margin:20px 0;}
+    .tag{display:inline-block;background:#E8F5EC;color:#12401C;border:1px solid #1B5C2A;border-radius:6px;padding:4px 14px;font-size:13px;font-weight:600;}
+    .btn-link{display:inline-block;background:#1B5C2A;color:white;text-decoration:none;padding:13px 28px;border-radius:8px;font-weight:600;font-size:14px;margin-top:20px;}
+    .ftr{background:#F8F6F1;padding:20px 36px;text-align:center;font-size:12px;color:#9A9A8A;border-top:1px solid #E8E8E0;}
+  </style></head><body><div class="wrap">
+    <div class="hdr"><div class="hdr-logo">⛳ EduGolfKids</div></div>
+    <div class="body">${bodyContent}</div>
+    <div class="ftr">EduGolfKids LLC &middot; Mooresville, North Carolina &middot; edugolfkids.com</div>
+  </div></body></html>`;
+}
+
 // ── State ────────────────────────────────────────────────────────────────────
 let certState = { records:{}, sha:null, usersData:{ users:[] } };
 let quizState = { level:null, questions:[], currentQ:0, answers:[], answered:false };
@@ -44,8 +85,55 @@ async function saveCertRecord(level, pct, passed) {
   let idx       = users.findIndex(u=>u.id===state.user?.id);
   if (idx===-1) { users.push({ id:state.user?.id, name:state.user?.name, certifications:{} }); idx=users.length-1; }
   users[idx].certifications = certState.records;
+  if (state.user?.email) users[idx].email = state.user.email;
   usersData.users = users;
   try { await githubPut('data/users/users.json', usersData, certState.sha, `Cert ${level} — ${state.user?.name}`); } catch(e) { console.warn('cert save failed',e); }
+  const _eName = state.user?.name || 'Coach';
+  const _eDef  = CERT_LEVELS[level];
+  const _eDate = new Date().toISOString().split('T')[0];
+  const _eExp  = certState.records[level]?.expiry || '';
+  const _eAtt  = certState.records[level]?.attemptCount || 1;
+  if (passed) {
+    const coachBody = egkEmailBase(`
+      <h2>&#127942; Congratulations, ${_eName}!</h2>
+      <p>You have successfully passed the <span class="tag">${_eDef.fullLabel}</span> assessment.</p>
+      <div class="score-box">
+        <div class="score-big">${pct}%</div>
+        <div class="score-label">Pass score &middot; Certificate valid until ${_eExp}</div>
+      </div>
+      <p>Log in to download your PDF certificate and start your next level.</p>
+      <a class="btn-link" href="https://mornebotha1401.github.io/edugolfkids/">Open My Dashboard &rarr;</a>`);
+    const hqBody = egkEmailBase(`
+      <h2>Assessment Passed</h2>
+      <p><strong>${_eName}</strong> has passed <span class="tag">${_eDef.label}</span>.</p>
+      <div class="score-box">
+        <div class="score-big">${pct}%</div>
+        <div class="score-label">Date: ${_eDate} &middot; Certificate valid until ${_eExp}</div>
+      </div>`);
+    if (state.user?.email) await sendEGKEmail(state.user.email, 'You passed — ' + _eDef.label + ' | EduGolfKids', coachBody);
+    await sendEGKEmail(HQ_EMAIL, '[EGK] ' + _eName + ' passed ' + _eDef.label + ' (' + pct + '%)', hqBody);
+  } else {
+    const coachBody = egkEmailBase(`
+      <h2>Assessment Result — ${_eDef.label}</h2>
+      <p>Hi ${_eName}, here is your result for the <span class="tag">${_eDef.fullLabel}</span> assessment.</p>
+      <div class="fail-box">
+        <div class="fail-big">${pct}%</div>
+        <div class="score-label">85% required to pass &middot; Attempt ${_eAtt} of 3</div>
+      </div>
+      <div class="info-box">
+        <p style="margin:0;font-size:14px;">&#8987; You can retry after a 24-hour cooling-off period.<br>Re-read the module content — questions reshuffle on every attempt.</p>
+      </div>
+      <a class="btn-link" href="https://mornebotha1401.github.io/edugolfkids/">Back to Study Materials &rarr;</a>`);
+    const hqBody = egkEmailBase(`
+      <h2>Assessment Attempt</h2>
+      <p><strong>${_eName}</strong> attempted <span class="tag">${_eDef.label}</span> and did not pass.</p>
+      <div class="fail-box">
+        <div class="fail-big">${pct}%</div>
+        <div class="score-label">Attempt ${_eAtt} of 3 &middot; Date: ${_eDate}</div>
+      </div>`);
+    if (state.user?.email) await sendEGKEmail(state.user.email, 'Assessment result — ' + _eDef.label + ' | EduGolfKids', coachBody);
+    await sendEGKEmail(HQ_EMAIL, '[EGK] ' + _eName + ' attempted ' + _eDef.label + ' (' + pct + '%)', hqBody);
+  }
 }
 
 function hasPassed(level)  { const r=certState.records[level]; return r&&r.passed; }
@@ -59,8 +147,17 @@ async function saveM0Ack() {
   let idx   = users.findIndex(u=>u.id===state.user?.id);
   if (idx===-1) { users.push({ id:state.user?.id, name:state.user?.name, certifications:{} }); idx=users.length-1; }
   users[idx].certifications = certState.records;
+  if (state.user?.email) users[idx].email = state.user.email;
   usersData.users = users;
   try { await githubPut('data/users/users.json', usersData, certState.sha, `M0 Ack — ${state.user?.name}`); } catch(e) { console.warn('ack save failed',e); }
+  const _mName = state.user?.name || 'Coach';
+  const _mDate = new Date().toISOString().split('T')[0];
+  await sendEGKEmail(HQ_EMAIL, '[EGK] ' + _mName + ' acknowledged M0 Compliance', egkEmailBase(`
+    <h2>M0 Compliance Acknowledged</h2>
+    <p><strong>${_mName}</strong> has read and acknowledged the M0 Compliance &amp; Safeguarding module.</p>
+    <div class="info-box">
+      <p style="margin:0;font-size:14px;">Date: ${_mDate}<br>They are now cleared to complete the M0 Knowledge Check and Assessment.</p>
+    </div>`));
 }
 
 // ══════════════════════════════════════════
@@ -5798,15 +5895,28 @@ async function finishQuiz() {
       <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
         <button class="btn btn-primary" onclick="viewCertificate('${level}')">🏆 View My Certificate</button>
         ${nextLvlDef ? `<button class="btn btn-primary" style="background:var(--green-dark);" onclick="showPage('page-coach-education');renderEducationHub();setTimeout(()=>openEduLevel('${nextLvl}'),80)">Start ${nextLvlDef.label} →</button>` : ''}
-        <a class="btn btn-outline" href="mailto:morne.marilize@gmail.com?subject=${encodeURIComponent('EGK Assessment Passed - '+def.fullLabel)}&body=${encodeURIComponent('Name: '+(state.user?.name||'')+'\nLevel: '+def.fullLabel+'\nScore: '+pct+'% (PASSED)\nDate: '+new Date().toISOString().split('T')[0])}" style="text-decoration:none;">📧 Email HQ</a>
+        <button class="btn btn-outline" onclick="egkResendResult('${level}',${pct},true)">📧 Resend to HQ</button>
         <button class="btn btn-outline" onclick="showPage('page-coach-education');renderEducationHub()">← Back to Hub</button>
       </div>` : `
       <p style="color:var(--gray-400);margin-bottom:20px;">Questions and answers will be reshuffled on your next attempt.</p>
       <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
         <button class="btn btn-primary" onclick="startLevelAssessment('${level}')">Try Again (Reshuffled)</button>
-        <a class="btn btn-outline" href="mailto:morne.marilize@gmail.com?subject=${encodeURIComponent('EGK Assessment Result - '+def.fullLabel)}&body=${encodeURIComponent('Name: '+(state.user?.name||'')+'\nLevel: '+def.fullLabel+'\nScore: '+pct+'% (not yet passed)\nAttempts so far: '+(certState.records[level]?.attemptCount||1)+'\nDate: '+new Date().toISOString().split('T')[0])}" style="text-decoration:none;">📧 Email HQ</a>
+        <button class="btn btn-outline" onclick="egkResendResult('${level}',${pct},false)">📧 Resend to HQ</button>
         <button class="btn btn-outline" onclick="showPage('page-coach-education');renderEducationHub()">← Back</button>
       </div>`}`;
+}
+
+function egkResendResult(level, pct, passed) {
+  const def  = CERT_LEVELS[level];
+  const name = state.user?.name || 'Coach';
+  const date = new Date().toISOString().split('T')[0];
+  const att  = certState.records[level]?.attemptCount || 1;
+  const subj = '[EGK] Result resend — ' + name + ' ' + def.label + ' (' + pct + '%)';
+  const body = passed
+    ? egkEmailBase(`<h2>Result Resent — ${def.label}</h2><p><strong>${name}</strong> requested a resend of their pass confirmation.</p><div class="score-box"><div class="score-big">${pct}%</div><div class="score-label">PASSED &middot; Date: ${date}</div></div>`)
+    : egkEmailBase(`<h2>Result Resent — ${def.label}</h2><p><strong>${name}</strong> requested a resend of their attempt result.</p><div class="fail-box"><div class="fail-big">${pct}%</div><div class="score-label">Attempt ${att} of 3 &middot; Date: ${date}</div></div>`);
+  const btn = event?.target;
+  sendEGKEmail(HQ_EMAIL, subj, body).then(() => { if (btn) { btn.textContent = '✓ Sent'; btn.disabled = true; } });
 }
 
 function viewCertificate(level) {

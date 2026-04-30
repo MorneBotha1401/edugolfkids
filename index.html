@@ -1558,6 +1558,11 @@
     </div>
 
     <div class="form-group">
+      <label>Your Email <span style="font-size:11px;color:#9A9A8A;">(for certificate delivery)</span></label>
+      <input type="email" id="login-email" placeholder="e.g. jane@example.com" />
+    </div>
+
+    <div class="form-group">
       <label>Role</label>
       <select id="login-role">
         <option value="">Select your role...</option>
@@ -3929,12 +3934,13 @@ async function handleLogin() {
     return;
   }
 
+  const email  = (document.getElementById('login-email')?.value || '').trim();
   const userId = name.trim().toLowerCase().replace(/[^a-z0-9]/g, '_');
-  state.user = { id: userId, name, role };
+  state.user = { id: userId, name, role, email };
   state.role = role;
   state.githubToken = token;
 
-  localStorage.setItem('egk_user', JSON.stringify({ id: userId, name, role }));
+  localStorage.setItem('egk_user', JSON.stringify({ id: userId, name, role, email }));
   localStorage.setItem('egk_token', token);
 
   await loadPlatformData();
