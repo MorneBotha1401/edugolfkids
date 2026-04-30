@@ -3,11 +3,11 @@
 // ══════════════════════════════════════════
 
 const CERT_LEVELS = {
-  M0:      { id:'M0',      label:'Model 0 — Compliance',       fullLabel:'Model 0: Foundational Compliance & Safeguarding', passPct:85, prereq:null, color:'#DC2626', forRoles:['coach','licensee'] },
-  L1:      { id:'L1',      label:'Level 1 — Foundations',      fullLabel:'Level 1 Coach Certification — Foundations',         passPct:85, prereq:'M0', color:'#1B5C2A', forRoles:['coach','licensee'] },
-  L2:      { id:'L2',      label:'Level 2 — Golf Skills',       fullLabel:'Level 2 Coach Certification — Golf Skills',          passPct:85, prereq:'L1', color:'#2980B9', forRoles:['coach','licensee'] },
-  L3:      { id:'L3',      label:'Level 3 — Business Ops',      fullLabel:'Level 3 Licensee Certification — Business Operations',passPct:85, prereq:'L2', color:'#C9A84C', forRoles:['licensee'] },
-  REFRESH: { id:'REFRESH', label:'Annual Refresher',            fullLabel:'Annual Certification Refresher',                     passPct:85, prereq:'L1', color:'#8B5CF6', forRoles:['coach','licensee'] },
+  M0:      { id:'M0',      label:'Model 0 — Compliance',       fullLabel:'Model 0: Foundational Compliance & Safeguarding', passPct:85, qCount:15, prereq:null, color:'#DC2626', forRoles:['coach','licensee'] },
+  L1:      { id:'L1',      label:'Level 1 — Foundations',      fullLabel:'Level 1 Coach Certification — Foundations',         passPct:85, qCount:20, prereq:'M0', color:'#1B5C2A', forRoles:['coach','licensee'] },
+  L2:      { id:'L2',      label:'Level 2 — Golf Skills',       fullLabel:'Level 2 Coach Certification — Golf Skills',          passPct:85, qCount:20, prereq:'L1', color:'#2980B9', forRoles:['coach','licensee'] },
+  L3:      { id:'L3',      label:'Level 3 — Business Ops',      fullLabel:'Level 3 Licensee Certification — Business Operations',passPct:85, qCount:20, prereq:'L2', color:'#C9A84C', forRoles:['licensee'] },
+  REFRESH: { id:'REFRESH', label:'Annual Refresher',            fullLabel:'Annual Certification Refresher',                     passPct:85, qCount:10, prereq:'L1', color:'#8B5CF6', forRoles:['coach','licensee'] },
 };
 
 // ── State ────────────────────────────────────────────────────────────────────
@@ -4820,7 +4820,7 @@ L3:[
   ]
 }
 ],
-
+REFRESH:[],
 };
 
 // ══════════════════════════════════════════
@@ -4871,8 +4871,8 @@ L1_M5:[
 {q:'A coach finishes a putting game and wants to embed critical thinking before moving on. Which prompt BEST achieves this?',o:['"Good job everyone — let\'s line up for the chipping station"','"What adjustment did you make that helped you get closer to the target?"','"Remember to keep your head still on the next drill"','"Who scored the most points? Great work"'],c:1,e:'Critical thinking in golf sessions is developed through reflective questions asking children to analyze their own performance. "What adjustment did you make that helped?" is a metacognitive prompt aligned with 21st-century learning.'},
 {q:'A coach observes that children are not adjusting their approach between attempts. Which prompt BEST develops metacognition?',o:['"Remember — same setup, same result. You need to change something."','"What are you going to try differently on this next attempt, and why?"','"Watch how [name] is doing it — try to copy that approach"','"You have 10 attempts left. See if you can score higher"'],c:1,e:'"What are you going to try differently on this next attempt, and why?" is a metacognitive prompt requiring children to think about their own thinking process before acting — developing self-regulation and reflective practice.'},
 
-{q:'A coach finishes a putting game and wants to embed critical thinking. Which prompt BEST achieves this?',o:['Good job everyone let\'s line up for chipping','What adjustment did you make that helped you get closer to the target?','Remember to keep your head still on the next drill','Who scored the most points?'],c:1,e:'Critical thinking is developed through reflective questions that ask children to analyze their own performance and identify what changed.'},
-{q:'Which statement BEST describes the EduGolfKids coach role according to Module 5?',o:['Authority figure who gives instructions and corrects constantly','Learning facilitator, environment designer, question asker, confidence builder — more questions than commands','Junior golf professional who simplifies adult technique for young learners','Activity supervisor who keeps children safe and engaged'],c:1,e:'EduGolfKids coaches are guided learning architects. Target communication ratio: more questions than commands.'}
+{q:'Which statement BEST describes the modern EduGolfKids coach role according to 21st Century Learning principles?',o:['Authority figure who gives instructions, controls session flow, and corrects performance','Learning facilitator, environment designer, question asker, and confidence builder — the coach asks more questions than they give commands','Junior golf professional who simplifies adult technique for young learners','Activity supervisor who keeps children safe and engaged during structured drills'],c:1,e:'The 21st Century EduGolfKids coach role is a learning facilitator, not an authority figure. The goal is to engineer learning environments that produce autonomy, critical thinking, and self-correction — not coach-dependency.'},
+{q:'A 9-year-old finishes a distance challenge and says nothing about what they noticed. The BEST wrap-up prompt is:',o:['"Great session — you all worked hard today"','"What did you change between your first attempt and your best one today?"','"Remember to keep your eye on the ball next session"','"Who improved the most? Give yourselves a hand"'],c:1,e:'Metacognitive wrap-up prompts ask children to reflect on what changed — not what happened. "What did you change?" activates self-awareness and consolidates learning beyond the session.'}
 ],
 L1_M6:[
 {q:'A coach says to a 7-year-old in front of the group: "You always rush — you never take your time." Under the EduGolfKids Language Code, this statement:',o:['Is acceptable because it is factually accurate','Violates the Language Code — it uses identity-based criticism ("always," "never") that creates shame and triggers anxiety','Is acceptable if said in a gentle tone','Is acceptable in the 6–9 age group who can handle more direct feedback'],c:1,e:'"You always..." and "you never..." are prohibited language patterns — they attack identity rather than describe behavior. The Language Code requires neutral outcome description and effort-based guidance.'},
@@ -4883,15 +4883,15 @@ L1_M7:[
 {q:'A coach delivers an excellent and safe Skill Block but uses multiple prohibited phrases including "No, not like that" during the session. How should this session be evaluated?',o:['As a pass — the technical and safety execution was correct','As a fail — integration is mandatory, and Language Code violation is a failure criterion regardless of technical correctness','As requiring a partial reassessment on language only','As a conditional pass pending a follow-up observation'],c:1,e:'Module 7 states: "If a coach delivers a technically correct drill but violates language code → failure." Integration is mandatory — all modules must be applied simultaneously.'},
 {q:'According to the Full Integration Map, which session segment applies the MOST motor learning principles (M3)?',o:['Warm-Up','Skill Block','Game Reinforcement','Wrap-Up'],c:1,e:'The Full Integration Map shows the Skill Block as the highest concentration of motor learning application — multiple constraint challenges, external focus cues, variable practice, and guided discovery are primarily deployed here.'},
 
-{q:'A coach delivers a safe Skill Block but uses prohibited language throughout. How should this session be evaluated?',o:['Pass — the technical and safety execution was correct','Fail — integration is mandatory. Language Code violation is a failure criterion regardless of technical correctness.','Conditional pass pending follow-up observation','Partial reassessment on language only'],c:1,e:'Module 7: if a coach delivers a technically correct drill but violates the Language Code → failure. Integration is mandatory — all modules must be applied simultaneously.'},
-{q:'Which session segment has the HIGHEST concentration of Motor Learning (M3) application?',o:['Warm-Up','Skill Block','Game Reinforcement','Wrap-Up'],c:1,e:'The Full Integration Map shows the Skill Block as the highest concentration of motor learning — constraint challenges, external focus cues, variable practice, and guided discovery are primarily deployed here.'}
+{q:'A coach skips the Wrap-Up segment to allow 10 extra minutes of Game Reinforcement. What is the consequence of this deviation?',o:['Positive — more game time deepens skill transfer and engagement','The Wrap-Up is non-negotiable. Skipping it eliminates the reflection and emotional closure that consolidate learning. Deviations require HQ approval.','Neutral — the Wrap-Up can be absorbed into Game Reinforcement without impact','Negative only for younger groups (4–6) — older children do not require the Wrap-Up'],c:1,e:'The 60-minute structure is non-negotiable. The Wrap-Up provides the reflection, effort-based praise, and emotional closure that consolidate learning from the session. Deviation requires HQ approval.'},
+{q:'A coach\'s Skill Block runs 4 x 4-minute constraint challenges and the Game Reinforcement runs 20 minutes of one scoring game. Which integration principle needs attention?',o:['M4 LTAD — the LTAD stage is not referenced in Game Reinforcement','M3 Motor Learning — Game Reinforcement should include variable scoring, decision pressure, and time-based challenges — not one continuous blocked game format','M6 Language Code — insufficient effort-based praise in the game segment','M8 Communication — parent feedback not integrated'],c:1,e:'Game Reinforcement must include variable conditions — different scoring rules, time pressure, decision-making challenges. A single blocked scoring game does not produce the same retention as variable contextual practice.'}
 ],
 L1_M8:[
 {q:'A parent messages the coach on their personal Instagram asking for a progress update. The correct response is:',o:['Respond with a brief positive update since the intent is harmless','Do not respond via personal social media — direct the parent to contact through the approved EduGolfKids communication channel','Block the parent to avoid further personal contact','Respond but advise the parent to use official channels in future'],c:1,e:'Coaches must use only approved EduGolfKids communication channels for parent contact. Personal social media connections with parents are explicitly prohibited.'},
 {q:'A coach wants to send parents a mid-term progress update about a 7-year-old struggling with distance control in putting. Which message is MOST aligned with EduGolfKids communication standards?',o:['"James is having difficulty reaching target distances in putting and needs significant improvement."','"James is building his distance control in putting — he\'s showing great focus and we\'re working through a great challenge that will accelerate this in the final sessions."','"James is below average compared to his peer group in putting distance."','"James enjoys putting but unfortunately cannot reach the target distances we need him to."'],c:1,e:'Parent communication must use growth language: describe progress positively, reference specific program activity, avoid negative ability assessments, never compare to peers.'},
 
-{q:'A parent messages the coach on personal Instagram asking for a progress update. The correct response is:',o:['Respond with a brief positive update since the intent is harmless','Do not respond via personal social media — direct the parent to contact through the approved EduGolfKids communication channel','Block the parent to avoid further contact','Respond but advise the parent to use official channels in future'],c:1,e:'Coaches must use only approved EduGolfKids communication channels for parent contact. Personal social media connections with parents are explicitly prohibited.'},
-{q:'A coach wants to share a mid-term update about a 7-year-old struggling with putting distance. Which message BEST aligns with EduGolfKids communication standards?',o:['James is having difficulty reaching target distances and needs significant improvement','James is building his distance control in putting and showing great focus — we are working through a challenge that will accelerate this','James is below average compared to his peer group in putting distance','James enjoys putting but cannot reach the target distances we need'],c:1,e:'Parent communication must use growth language: describe progress positively, reference specific program activity, avoid negative ability assessments, never compare to peers.'}
+{q:'A school coordinator contacts the coach directly about a scheduling change. The correct response is:',o:['Address the issue immediately and confirm the change with the coordinator','Listen respectfully, acknowledge the concern, and escalate to the licensee — all schedule changes must be confirmed in writing by the licensee','Agree to the change verbally to maintain the school relationship','Refer the coordinator to contact EduGolfKids HQ directly'],c:1,e:'School communication protocol: coaches respond respectfully to concerns but escalate scheduling or agreement changes to the licensee. Verbal-only school agreements are not permitted — all changes must be confirmed in writing.'},
+{q:'A parent attempts to discuss their child\'s progress with the coach during an active session. The correct response is:',o:['Pause the session briefly to address the parent\'s concern with a quick update','Acknowledge the parent warmly and arrange a brief conversation after the session: "I\'d love to share an update — let\'s connect right after we finish"','Signal to school staff to redirect the parent','Continue coaching and ignore the parent — no communication during sessions is permitted'],c:1,e:'Parent conversations must not interrupt active sessions — child supervision and safety are the priority. Acknowledge warmly and arrange a brief post-session debrief. Never discuss child progress during the session.'}
 ],
 L1_M9:[
 {q:'A coach has just started with a new school group of 8 children aged 6–9. Before beginning any activity, what is the FIRST thing the coach must do?',o:['Run an energetic warm-up game to establish the session tone','Teach the group the 5 standard commands: FREEZE, RESET, RETRIEVE, ROTATE, EYES ON ME','Conduct a skills assessment to determine the children\'s starting level','Introduce themselves and explain the full EduGolfKids program structure'],c:1,e:'The 5 standard commands are the safety foundation for every session. They must be taught to every new group before activity begins. Never assume children from different schools know the same commands.'},
@@ -4922,7 +4922,7 @@ L2_M2:[
 
 {q:'During Stage 2 Club Discovery for ages 6–9, what does the coach do?',o:['Explain loft differences before the child tries the clubs','Give both clubs with no instruction: "Try both and tell me what you notice"','Assign the wedge for short chips and the 7-iron for longer chips','Wait until the child asks about club selection'],c:1,e:'Club selection thinking emerges through exploration, not lecture. Give both clubs, no instruction. After exploration use guided discovery.'},
 {q:'A child\'s chip shots have no trajectory — the ball runs along the ground. The correct constraint response is:',o:['Instruct the child to open the club face and take more loft','Introduce an air gate — two cones 12 inches high. Ball must fly through to score.','Tell the child to position the ball further forward in their stance','Switch to a higher-lofted club and instruct the child to use it'],c:1,e:'No trajectory CLA: introduce the air gate. The gate creates a loft requirement without any technical explanation.'},
-{q:'What is the primary reason EduGolfKids teaches chipping as an extension of putting?',o:['It reduces the number of grip changes needed','Motor learning research shows skill transfer is maximized when new movements anchor to existing neural patterns — children learn chipping 40% faster','It allows children to use the same club for both skills','It is consistent with LTAD stage requirements'],c:1,e:'Motor learning (Wulf 2013): skill transfer maximized when new movements build on existing neural patterns. The chipping-putting connection leverages the already-established pendulum motion.'}
+{q:'A 7-year-old consistently scoops the ball (flips wrists at impact) when chipping. The MOST effective constraint response is:',o:['Instruct the child: "Don\'t scoop. Shaft lean. Hands forward at impact."','Raise the landing target (a box or shelf) — aiming upward naturally discourages the scooping instinct without any verbal instruction','Switch to a shorter club which produces a more controlled downward arc','Have the child chip without a ball until the correct motion is established'],c:1,e:'Scooping CLA: raise the target. When the child aims at an elevated target, the body naturally suppresses the scooping instinct to produce a more penetrating trajectory. The constraint creates the correction without technical instruction.'}
 ],
 L2_M3:[
 {q:'Which constraint is MOST effective for helping a 9-year-old develop pitching distance awareness WITHOUT direct instruction about swing length?',o:['Instruct the child: "Bigger swing = more distance"','Distance zones: landing targets at 15, 20, 25, 30 feet — child selects zone, executes, self-scores. Distance awareness emerges through exploration','Use different clubs at each distance to vary the trajectory','Time-pressure rounds: child must pitch to all zones within 60 seconds'],c:1,e:'Variable distance constraint: landing zones at progressive distances require the child\'s nervous system to self-regulate swing length for each target. The relationship between swing size and distance is discovered through exploration.'},
@@ -4974,7 +4974,7 @@ L3_M1:[
 L3_M2:[
 {q:'A coaching candidate has a professional golf background but says "I find it hard to follow a strict curriculum — I prefer to adapt sessions using my experience." How should the licensee evaluate this candidate?',o:['Highly positively — adaptability is a key coaching quality','As a significant red flag — resistance to following the EduGolfKids system is a non-negotiable disqualifier regardless of golf ability','Conditionally — offer the role pending a probationary period','Positively — their golf expertise will benefit the program even if their style differs'],c:1,e:'"Resistance to following a structured program" is explicitly listed as a red flag — do not hire regardless of golf ability. The EduGolfKids system depends on curriculum compliance.'},
 
-{q:'A candidate says \'I prefer to adapt sessions rather than follow a fixed curriculum.\' How should the licensee evaluate this?',o:['Highly positively — adaptability is critical','As a red flag — resistance to following the EduGolfKids system is a non-negotiable disqualifier regardless of golf ability','As a conditional pass — offer a 3-month probationary period','As manageable — the candidate will adapt once they see how effective the system is'],c:1,e:'Resistance to following a structured program is explicitly listed as a red flag — do not hire regardless of golf ability.'},
+{q:'A licensee is reviewing candidates. Candidate A is a former PE teacher with no golf background. Candidate B is a scratch golfer with no experience working with children. Who should the licensee prioritize?',o:['Candidate B — golf ability is the primary requirement for a golf coaching role','Candidate A — child-focus, structured environment experience, and coachability outweigh golf ability in the EduGolfKids model','Neither — both need to be eliminated from consideration','Both — golf ability and child-focus are equally weighted criteria'],c:1,e:'EduGolfKids hiring model: child-focus, reliability, energy, and coachability come first. Golf knowledge is the last thing assessed. "A patient former teacher with a 20 handicap outperforms an impatient scratch golfer every time."'},
 {q:'What is the MOST predictive screening tool when hiring coaches?',o:['A structured 30-minute competency-based interview','Watching the candidate interact with children for 10 minutes — you will know within 5 minutes whether they have the instinct for this role','A written test on child development principles','A reference check from previous employers'],c:1,e:'The single most predictive tool: watch them interact with children for 10 minutes. Natural warmth with children cannot be trained. Everything else can.'},
 {q:'What is the correct onboarding sequence for a newly hired coach?',o:['Background check → certification → shadowing → independent sessions','Background check → offer → L1 certification (within 4 weeks) → shadow 2 sessions → co-deliver 2 sessions → first independent session with licensee present','Certification → background check → shadowing → supervised sessions','Offer → background check → independent sessions while completing certification'],c:1,e:'Correct sequence: background check (non-negotiable before any offer) → offer → L1 certification within 4 weeks → shadow 2 sessions → co-deliver 2 sessions → first independent session with licensee present.'}
 ],
@@ -4989,15 +4989,15 @@ L3_M4:[
 {q:'A school charges a 10% revenue share as a condition of partnership. The licensee has 7 enrolled children paying $20/session. What is the correct adjusted price per child?',o:['$20 — absorb the school fee as a cost of doing business','$22 — add the 10% directly to the base price ($20 + $2 = $22)','$20.50 — split the cost equally between the licensee and parents','$21 — a conservative adjustment to maintain competitiveness'],c:1,e:'Revenue share: $20 × 10% = $2 per child per session. Adjusted price = $22. Never absorb school fees into margin — this erodes profitability rapidly at scale.'},
 {q:'In Month 3, a licensee has 1 class of 5 children (not full at 7) at their only school. A new school approaches them about starting a program. What should the licensee do?',o:['Start the new school immediately — more schools means more revenue','Fill the existing class to 7 before prioritizing the new school — a partially filled class of 5 vs 7 costs $40 per session in lost revenue','Accept the new school but keep the existing class size as is','Negotiate a trial with the new school while working on filling the existing class simultaneously'],c:1,e:'Fill-first growth model: the existing class of 5 vs full 7 costs $40 per session in lost revenue. Filling existing schools before expanding is the fundamental discipline.'},
 
-{q:'A school charges a 15% revenue share. What is the correct adjusted price per child?',o:['$20 — absorb the school fee to stay competitive','$23 — add the 15% on top of the base price ($20 + $3 = $23)','$21.50 — split the cost equally','$22 — a conservative adjustment'],c:1,e:'Revenue share: $20 × 15% = $3 per child per session. Adjusted price = $23. Never absorb school fees into margin.'},
-{q:'A class has 5 children instead of the maximum 7. How does this affect monthly revenue?',o:['No impact — coach costs are the same regardless','$40 per session in lost revenue (2 children × $20) = $160/month lost per class','$20 per session in lost revenue','No revenue impact as long as the coach is paid per session'],c:1,e:'5 vs 7 = 2 missing × $20 = $40/session lost. At 4 sessions/month = $160/month per class. Partially filled classes destroy margin.'},
+{q:'A licensee operates 4 classes across 2 schools with only 5 children in each class (maximum is 7). What is the monthly revenue impact compared to full capacity?',o:['$0 — revenue expectations are set per school, not per maximum capacity','$640/month in lost revenue (4 classes × 2 missing children × $20 × 4 sessions)','$160/month in lost revenue — the gap is small and acceptable','$320/month in lost revenue across all 4 classes'],c:1,e:'4 classes × 2 missing × $20 × 4 sessions = $640/month in lost revenue. Filling existing classes to 7 before expanding is the highest-leverage revenue action available.'},
+{q:'A licensee\'s revenue is $3,000 this month. Coach costs are $1,050 and overhead is $500. What is the net profit margin and does it meet the EduGolfKids benchmark?',o:['48.3% — within the healthy 45–55% benchmark','38.3% — below the benchmark; coach costs must be reduced','65% — above the benchmark; pricing may be set too high','48.3% — below the benchmark; additional school revenue is required'],c:0,e:'Net profit = $3,000 − $1,050 − $500 = $1,450. Margin = $1,450/$3,000 = 48.3%. This falls within the healthy 45–55% benchmark.'},
 {q:'What are the three healthy benchmark percentages for a well-run operation?',o:['Coach costs max 20%, overhead max 10%, net profit min 70%','Coach costs max 30–35%, overhead max 15–20%, net profit target 45–55%','Coach costs max 40%, overhead max 25%, net profit target 35%','Coach costs max 50%, overhead max 20%, net profit target 30%'],c:1,e:'Healthy benchmarks: coach costs max 30–35%, overhead max 15–20%, net profit target 45–55%.'}
 ],
 L3_M5:[
 {q:'A coach calls in sick 90 minutes before a session at the licensee\'s busiest school (21 enrolled children across 3 classes). What is the licensee\'s immediate priority?',o:['Cancel the session and notify parents as quickly as possible','Contact the cover coach immediately — a cover coach must always be on call. If no cover, the licensee delivers the session personally','Contact the school to inform them of the cancellation and reschedule','Ask another active coach to split the 3 classes between 2 coaches'],c:1,e:'"Never rely on a single point of coach failure at a school. Always have a backup." A cover coach must always be on call. If unavailable, the licensee delivers the session — the school relationship and 4-lessons-per-month revenue protection both depend on it.'},
 
 {q:'What are the 5 elements of the Coach Management Framework?',o:['Recruitment, onboarding, training, assessment, termination','Clear role expectations, session confirmation protocol, post-session logging, quarterly observation, monthly team meeting','Background checks, certification, shadowing, supervision, performance review','School assignment, delivery, parent communication, incident reporting, annual review'],c:1,e:'The 5 elements: (1) Clear Role Expectations, (2) Session Confirmation Protocol, (3) Post-Session Logging, (4) Quarterly Observation, (5) Monthly Team Meeting.'},
-{q:'A coach calls in sick 2 hours before a session. What is the immediate action?',o:['Cancel the session and notify parents','Activate the cover coach immediately — always on call for every school. If unavailable, the licensee delivers the session personally.','Split the class between remaining coaches even if it exceeds 1:7 ratio','Contact the school to inform them and reschedule for next week'],c:1,e:'"Never rely on a single point of coach failure at a school. Always have a backup." If no cover, the licensee delivers the session.'},
+{q:'A principal calls the licensee to report that a coach arrived 20 minutes late and children were left waiting. What must the licensee do?',o:['Apologize and remind the coach of the 15-minute arrival requirement at the next team meeting','Contact the coach immediately, address professionally that same day, notify the school within 24 hours with a written action plan, and observe the coach\'s next session','Log the incident and address it at the next monthly team meeting','Terminate the coach immediately — punctuality is non-negotiable'],c:1,e:'Lateness at a school damages the relationship and risks program termination. Address same day, communicate professionally with the principal, provide a written action plan, and increase monitoring.'},
 {q:'What is the correct Skills Passport completion rate target?',o:['80% — some children are absent at assessment time','90% — accounting for illness and scheduling conflicts','100% — every enrolled child receives a Passport entry at the end of every term. No exceptions.','70% — the minimum acceptable standard'],c:2,e:'100% completion is mandatory. A coach below 100% has a gap that must be addressed immediately.'}
 ],
 L3_M6:[
@@ -5016,7 +5016,7 @@ L3_M8:[
 {q:'A serious incident occurs at one of the licensee\'s schools (a child taken to hospital). The coach calls the licensee. What is the licensee\'s mandatory reporting timeline to HQ?',o:['Within 24 hours via the official incident report channel','Within 48 hours — to allow time to gather full information first','Within 1 week — once the child\'s condition is confirmed','There is no mandatory timeline — report when all information is available'],c:0,e:'Incident management: coach notifies licensee within 1 hour. Licensee notifies HQ within 24 hours via the official incident report channel. This is non-negotiable.'},
 {q:'A licensee\'s Sexual Abuse and Molestation (SAM) insurance endorsement expires next week. General Liability insurance is current for another 8 months. What sessions may the licensee run?',o:['All sessions — General Liability coverage is current and is the primary requirement','No sessions may be delivered once the SAM endorsement expires — it has zero grace period on expiry','Sessions at schools without children under 10 may continue','Sessions may continue for 30 days with a grace period during renewal'],c:1,e:'SAM endorsement has zero grace period on expiry. An expired SAM endorsement means no sessions — period. Both GL and SAM must be current.'},
 
-{q:'A licensee\'s SAM insurance expires in 3 days. GL is current for 10 months. What must happen?',o:['Sessions may continue under GL alone until SAM renewal is processed','No sessions may be delivered — SAM has zero grace period on expiry. Renew before any further sessions.','Sessions may continue for 30 days during renewal','Notify all schools and obtain written agreement to continue'],c:1,e:'SAM endorsement has zero grace period on expiry. An expired SAM means no sessions — period. Both GL and SAM must be current.'},
+{q:'A coach at one of the licensee\'s schools discloses a child\'s special needs diagnosis to other parents during pickup. What must the licensee do?',o:['Monitor the situation — if no complaint is received, no formal action is required','Immediately address the breach: special needs information is absolutely confidential. Inform HQ, conduct a documented coaching session with the coach, implement communication re-training before the coach returns.','Wait for a parent complaint before taking formal action','Issue a verbal warning and remind the coach of confidentiality at the next team meeting'],c:1,e:'Confidentiality of special needs information is an absolute standard. A breach must be treated seriously regardless of whether a complaint arises. HQ notification, documented coaching, and re-training are required before the coach returns to sessions.'},
 {q:'What does the quarterly coach observation checklist cover?',o:['Financial performance — class fill rates and invoice compliance','Session architecture compliance, safety and spacing standards, Language Code compliance, engagement management, and Skills Passport tracking','Marketing effectiveness — parent satisfaction and referral rates','Administrative compliance — session logging, incident reporting, and attendance records'],c:1,e:'Quarterly observation: session architecture compliance, safety/spacing standards, Language Code compliance, engagement management (all children active, no long lines), Skills Passport tracking.'},
 {q:'What are the 4 steps in the licensee incident management sequence?',o:['Gather information → notify HQ → notify school → notify parents','Coach notifies licensee within 1 hour → licensee notifies HQ within 24 hours → official incident report submitted → follow up with school principal within 24 hours','Notify parents first → notify HQ within 48 hours → submit incident report → debrief coach','Notify school principal first → notify HQ within 24 hours → notify parents → submit incident report'],c:1,e:'Incident management: (1) Coach notifies licensee within 1 hour. (2) Licensee notifies HQ within 24 hours. (3) Official incident report submitted. (4) Follow up with school principal within 24 hours.'}
 ],
@@ -5082,6 +5082,10 @@ L2:[
 {q:'When is club selection discovery introduced for chipping?',o:['Ages 4–6 from Stage 1 — club selection is fundamental to chipping','Ages 6–9 only — Stage 2, after precision landing and air gate challenges are established. Give both clubs, no instruction: "Try both and tell me what you notice."','All ages, from the very first chipping session','Only when a child has reached Skills Passport Level 2'],c:1},
 {q:'What is the minimum lateral spacing for full swing sessions?',o:['6 feet (same as putting)','8 feet','10 feet (more than the 6-foot putting standard due to greater swing arc and force)','12 feet'],c:2},
 {q:'A coach is assessing putting for the Skills Passport. A child is close to but does not quite meet the criteria. The correct assessment is:',o:['Partially met — record as in-progress','Not yet met — criteria are specific and observable. A child either meets the standard or has not yet met it. No half-marks.','Met — the child was close enough and showed clear effort','Defer assessment for 2 more sessions to give the child a better opportunity'],c:1},
+{q:'A coach wants to teach a 7-year-old putting distance control without any verbal instruction about swing length. The MOST effective constraint is:',o:['Instruct the child: "Smaller swing means the ball goes closer. Bigger swing means farther."','Place a pool noodle behind the child as a backstroke limiter — noodle close = short putt, noodle farther back = longer putt. The child physically discovers the distance relationship.','Have the child practice only from the same 5-foot distance until control is consistent','Switch to a longer putter to generate more distance stability'],c:1},
+{q:'A coach is running a session with 4-year-olds and wants to introduce pitching. What is the correct response?',o:['Allow pitching using foam balls only — safety is the primary concern','Pitching is for ages 6–9 only. It requires simultaneous hip rotation, weight transfer, and arm swing that demand FUNdamentals stage neurological readiness. Introduce only putting and chipping at this stage.','Allow a simplified half-swing pitching motion for children who show strong coordination','Allow pitching as long as the backswing does not exceed shoulder height'],c:1},
+{q:'Why does EduGolfKids introduce the full swing LAST in the skill progression?',o:['The full swing requires the most space, so schools need additional time to set up the environment','By the time full swing is introduced, children already have pendulum rhythm (putting), downward strike (chipping), and weight transfer with rotation (pitching) — the full swing is an extension of existing skills, not a new one','The full swing is the most technically complex and requires the most warm-up preparation','Full swing clubs are the most expensive so their use is rationed throughout the program'],c:1},
+{q:'In Stage 2 of the pitching progression, children must call their target before each attempt. What is the PRIMARY developmental purpose?',o:['To create a consistent scoring system the coach can track across the group','Pre-commitment builds intentional practice — the child must plan before acting, developing focus, self-accountability, and cognitive engagement with the task','To slow down impulsive movement and reduce the physical injury risk during pitching','To help coaches assess whether children understand the distance zone system'],c:1},
 ],
 L3:[
 {q:'Which school type should EduGolfKids licensees approach FIRST when building their territory?',o:['Public elementary schools — largest enrollment and biggest market opportunity','Private and independent schools — faster decision-making, parents seek enrichment, parents have disposable income for the program','Charter schools — more autonomy and faster decisions than public schools','After-school operators — fastest to start programs'],c:1},
@@ -5128,6 +5132,7 @@ REFRESH:[
 function getModulesForRole() {
   const role = state.role;
   const levels = role === 'licensee' ? ['M0','L1','L2','L3'] : ['M0','L1','L2'];
+  if (hasPassed('L1')) levels.push('REFRESH');
   return levels;
 }
 
@@ -5621,7 +5626,7 @@ async function kcNext() {
 function startLevelAssessment(level) {
   const qs = QUIZ_QUESTIONS[level];
   if (!qs) return;
-  const count = Math.min(20, qs.length);
+  const count = Math.min(CERT_LEVELS[level]?.qCount || 20, qs.length);
   const shuffled = shuffleArray([...qs]).slice(0, count).map(q => {
     const combined = q.o.map((opt,i)=>({ opt, correct: i===q.c }));
     const shuffledOpts = shuffleArray(combined);
@@ -5762,8 +5767,84 @@ function printCertificate() {
 
 // ── HQ Education Stats ───────────────────────────────────────────────────────
 function renderHQEducationStats() {
-  const coaches = state.data.coaches || [];
-  safeSet('cert-network-count', coaches.length);
+  loadCertData().then(() => {
+    const allUsers = certState.usersData?.users || [];
+    const trainees = allUsers.filter(u => u.role === 'coach' || u.role === 'licensee');
+    const today = new Date();
+
+    const certifiedL1  = trainees.filter(u => u.certifications?.L1?.passed).length;
+    const overdue      = trainees.filter(u => {
+      const certs = u.certifications || {};
+      return Object.entries(certs).some(([k,r]) =>
+        CERT_LEVELS[k] && r.passed && r.expiry && new Date(r.expiry) < today
+      );
+    }).length;
+    const compliant    = trainees.filter(u => {
+      const certs = u.certifications || {};
+      const levels = Object.keys(CERT_LEVELS).filter(k => k !== 'REFRESH');
+      const applicable = levels.filter(k => CERT_LEVELS[k].forRoles.includes(u.role));
+      if (!applicable.length) return false;
+      return applicable.every(k => {
+        const r = certs[k];
+        return r?.passed && (!r.expiry || new Date(r.expiry) >= today);
+      });
+    }).length;
+    const compliancePct = trainees.length ? Math.round((compliant / trainees.length) * 100) : 0;
+
+    safeSet('cert-network-count', certifiedL1);
+    safeSet('cert-overdue-count', overdue);
+    safeSet('cert-compliance-pct', compliancePct + '%');
+
+    const tableRows = trainees.map(u => {
+      const certs = u.certifications || {};
+      const levels = u.role === 'licensee'
+        ? ['M0','L1','L2','L3','REFRESH']
+        : ['M0','L1','L2','REFRESH'];
+      const badges = levels.map(k => {
+        const r = certs[k];
+        if (!r?.passed) return `<span class="badge badge-gray">${k}</span>`;
+        const expired = r.expiry && new Date(r.expiry) < today;
+        return expired
+          ? `<span class="badge badge-red">${k} exp</span>`
+          : `<span class="badge badge-green">${k}</span>`;
+      }).join(' ');
+      const nextExpiry = levels.map(k => certs[k]?.expiry).filter(Boolean).sort()[0];
+      return `<tr>
+        <td><strong>${u.name || u.id}</strong></td>
+        <td><span class="badge badge-gray">${u.role}</span></td>
+        <td>${badges}</td>
+        <td style="font-size:12px;color:var(--gray-400);">${nextExpiry || '—'}</td>
+      </tr>`;
+    }).join('') || '<tr><td colspan="4" style="color:var(--gray-400);text-align:center;">No coaches or licensees found in users.json</td></tr>';
+
+    const tableEl = document.getElementById('cert-network-table');
+    if (tableEl) tableEl.innerHTML = tableRows;
+
+    const refreshRows = trainees.filter(u => {
+      const certs = u.certifications || {};
+      return Object.entries(certs).some(([k,r]) =>
+        CERT_LEVELS[k] && r.passed && r.expiry &&
+        (new Date(r.expiry) - today) / (1000 * 60 * 60 * 24) <= 60
+      );
+    }).map(u => {
+      const certs = u.certifications || {};
+      const soonExpiry = Object.entries(certs)
+        .filter(([k,r]) => CERT_LEVELS[k] && r.passed && r.expiry)
+        .sort(([,a],[,b]) => new Date(a.expiry) - new Date(b.expiry))[0];
+      const days = soonExpiry
+        ? Math.ceil((new Date(soonExpiry[1].expiry) - today) / (1000*60*60*24))
+        : null;
+      return `<tr>
+        <td><strong>${u.name || u.id}</strong></td>
+        <td><span class="badge badge-gray">${u.role}</span></td>
+        <td><span class="badge ${days < 0 ? 'badge-red' : 'badge-amber'}">${days < 0 ? 'Expired' : days + ' days'}</span></td>
+        <td style="font-size:12px;">${soonExpiry?.[1].expiry || '—'}</td>
+      </tr>`;
+    }).join('') || '<tr><td colspan="4" style="color:var(--gray-400);text-align:center;">No upcoming expirations — all certifications current</td></tr>';
+
+    const refreshTableEl = document.getElementById('cert-refresher-table');
+    if (refreshTableEl) refreshTableEl.innerHTML = refreshRows;
+  });
 }
 
 // ── TDP cert page (unchanged) ────────────────────────────────────────────────

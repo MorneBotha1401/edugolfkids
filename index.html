@@ -1995,19 +1995,26 @@
           <div class="stats-grid">
             <div class="stat-card green">
               <div class="stat-icon">🎓</div>
-              <div class="stat-value" id="cert-network-count">0</div>
-              <div class="stat-label">Certified Coaches</div>
+              <div class="stat-value" id="cert-network-count">—</div>
+              <div class="stat-label">L1+ Certified</div>
             </div>
             <div class="stat-card red">
               <div class="stat-icon">⚠️</div>
-              <div class="stat-value">0</div>
+              <div class="stat-value" id="cert-overdue-count">—</div>
               <div class="stat-label">Overdue Refreshers</div>
             </div>
             <div class="stat-card">
-              <div class="stat-icon">📚</div>
-              <div class="stat-value">0%</div>
+              <div class="stat-icon">✅</div>
+              <div class="stat-value" id="cert-compliance-pct">—</div>
               <div class="stat-label">Network Compliance Rate</div>
             </div>
+          </div>
+          <div class="card" style="margin-top:16px;">
+            <div class="card-header"><h3>Coach &amp; Licensee Certification Status</h3></div>
+            <table class="data-table">
+              <thead><tr><th>Name</th><th>Role</th><th>Certifications</th><th>Next Expiry</th></tr></thead>
+              <tbody id="cert-network-table"><tr><td colspan="4" style="color:var(--gray-400);text-align:center;">Loading...</td></tr></tbody>
+            </table>
           </div>
         </div>
         <div id="tab-curriculum" style="display:none;">
@@ -2064,7 +2071,14 @@
           </div>
         </div>
         <div id="tab-refresher" style="display:none;">
-          <div class="alert alert-blue">Annual refresher courses are automatically assigned to all coaches and licensees 60 days before their certification expiry date.</div>
+          <div class="alert alert-blue">Annual refresher assessments are available to all coaches and licensees once their Level 1 certification is on record. Certifications expire 12 months from issue date. Coaches within 60 days of expiry are shown below.</div>
+          <div class="card" style="margin-top:16px;">
+            <div class="card-header"><h3>Upcoming &amp; Overdue Refreshers</h3></div>
+            <table class="data-table">
+              <thead><tr><th>Name</th><th>Role</th><th>Status</th><th>Expiry Date</th></tr></thead>
+              <tbody id="cert-refresher-table"><tr><td colspan="4" style="color:var(--gray-400);text-align:center;">Loading...</td></tr></tbody>
+            </table>
+          </div>
         </div>
       </div>
 
