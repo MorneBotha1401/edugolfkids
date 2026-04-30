@@ -5683,7 +5683,7 @@ function startLevelAssessment(level) {
   });
   quizState = { level, questions:shuffled, currentQ:0, answers:[], answered:false };
   safeSet('quiz-title', CERT_LEVELS[level]?.fullLabel || 'Assessment');
-  safeSet('quiz-subtitle', `${shuffled.length} questions · 85% required to pass · Questions 0026 answers randomized on every attempt`);
+  safeSet('quiz-subtitle', `${shuffled.length} questions · 85% required to pass · Questions and answers randomized on every attempt`);
   document.getElementById('quiz-container').style.display = 'block';
   document.getElementById('quiz-results').style.display = 'none';
   renderQuizQuestion();

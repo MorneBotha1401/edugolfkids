@@ -3885,11 +3885,12 @@ async function handleLogin() {
     return;
   }
 
-  state.user = { name, role };
+  const userId = name.trim().toLowerCase().replace(/[^a-z0-9]/g, '_');
+  state.user = { id: userId, name, role };
   state.role = role;
   state.githubToken = token;
 
-  localStorage.setItem('egk_user', JSON.stringify({ name, role }));
+  localStorage.setItem('egk_user', JSON.stringify({ id: userId, name, role }));
   localStorage.setItem('egk_token', token);
 
   await loadPlatformData();
@@ -3912,6 +3913,9 @@ async function checkExistingSession() {
   const token = localStorage.getItem('egk_token');
   if (saved && token) {
     state.user = JSON.parse(saved);
+    if (!state.user.id && state.user.name) {
+      state.user.id = state.user.name.trim().toLowerCase().replace(/[^a-z0-9]/g, '_');
+    }
     state.role = state.user.role;
     state.githubToken = token;
     const valid = await verifyGitHubToken(token);
