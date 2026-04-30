@@ -170,7 +170,7 @@ M0:[{
   title:"Compliance &amp; Safeguarding",
   icon:"\ud83d\udee1\ufe0f",
   sections:[
-    {h:`Compliance &amp; Safeguarding`,b:`<h4 class="doc-subheading">1. Duty of Care Framework</h4>
+    {h:`Compliance &amp; Safeguarding`,b:`<div style="background:linear-gradient(135deg,#12401C,#1B5C2A);border-radius:12px;padding:20px;margin:0 0 24px;"><div style="font-size:11px;color:rgba(255,255,255,0.7);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:12px;">&#127909; Module Introduction</div><div style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:8px;background:#000;"><iframe src="https://www.youtube-nocookie.com/embed/REPLACE_M0_VIDEO_ID" title="M0 Compliance &amp; Safeguarding Introduction" style="position:absolute;top:0;left:0;width:100%;height:100%;border:0;" allow="accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture" allowfullscreen loading="lazy"></iframe></div><p style="color:rgba(255,255,255,0.6);font-size:12px;margin:10px 0 0;font-style:italic;">Watch this before working through the reading below. Replace REPLACE_M0_VIDEO_ID with your YouTube video ID.</p></div><h4 class="doc-subheading">1. Duty of Care Framework</h4>
 <p class="doc-p"><strong>EduGolfKids operates under an elevated duty-of-care standard within school environments.</strong></p>
 <p class="doc-p"><strong>All coaches act:</strong></p>
 <ul class="doc-list"><li>In loco parentis during sessions(“In the place of a parent.”)</li><li>As mandatory reporters where required by state law</li><li>In compliance with district safeguarding policies</li></ul>
@@ -337,7 +337,7 @@ L1:[
   title:"Module 1 \u2014 EduGolfKids System Standards",
   icon:"\ud83d\udccb",
   sections:[
-    {h:`Non-Negotiable 60-Minute Session Architecture`,b:`<div class="doc-section-rule"></div>
+    {h:`Non-Negotiable 60-Minute Session Architecture`,b:`<div style="background:linear-gradient(135deg,#12401C,#1B5C2A);border-radius:12px;padding:20px;margin:0 0 24px;"><div style="font-size:11px;color:rgba(255,255,255,0.7);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:12px;">&#127909; Module Introduction</div><div style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:8px;background:#000;"><iframe src="https://www.youtube-nocookie.com/embed/REPLACE_L1_VIDEO_ID" title="L1 Foundations Introduction" style="position:absolute;top:0;left:0;width:100%;height:100%;border:0;" allow="accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture" allowfullscreen loading="lazy"></iframe></div><p style="color:rgba(255,255,255,0.6);font-size:12px;margin:10px 0 0;font-style:italic;">Watch this before working through the reading below. Replace REPLACE_L1_VIDEO_ID with your YouTube video ID.</p></div><div class="doc-section-rule"></div>
 <p class="doc-bold-label">Non-Negotiable 60-Minute Session Architecture</p>
 <p class="doc-bold-label">Policy: Mandatory Structure</p>
 <p class="doc-p"><strong>All sessions MUST follow:</strong></p>
@@ -6135,7 +6135,160 @@ function renderHQEducationStats() {
 
     const refreshTableEl = document.getElementById('cert-refresher-table');
     if (refreshTableEl) refreshTableEl.innerHTML = refreshRows;
+    renderHQActivityReport();
   });
+}
+
+// ── Coach Home Dashboard ─────────────────────────────────────────────────────
+function renderCoachHome() {
+  const page = document.getElementById('page-coach-home');
+  if (!page) return;
+  loadCertData().then(() => {
+    const name    = state.user?.name || 'Coach';
+    const today   = new Date();
+    const todayStr = today.toLocaleDateString('en-US',{weekday:'long',month:'long',day:'numeric',year:'numeric'});
+    const levels  = getModulesForRole();
+    const records = certState.records || {};
+
+    // Highest passed + next level
+    let highestPassed = null, nextLevel = null;
+    for (const lvl of levels) {
+      if (records[lvl]?.passed) highestPassed = lvl;
+      else if (!nextLevel) nextLevel = lvl;
+    }
+
+    // Stats
+    const passedCount = levels.filter(l => records[l]?.passed).length;
+    const modsRead    = Object.keys(records).filter(k => k.startsWith('read_')).length;
+
+    // Expiry alert
+    let expiryHtml = '';
+    const expiring = Object.entries(records).filter(([k,r]) => CERT_LEVELS[k] && r.passed && r.expiry && (new Date(r.expiry)-today)/(864e5) <= 60);
+    if (expiring.length) {
+      const [k, r] = expiring.sort(([,a],[,b])=>new Date(a.expiry)-new Date(b.expiry))[0];
+      const days = Math.ceil((new Date(r.expiry)-today)/864e5);
+      expiryHtml = `<div class="alert alert-red" style="margin-bottom:20px;">⚠️ <strong>${CERT_LEVELS[k].label}</strong> ${days<=0?'has expired':'expires in '+days+' days'}. <a href="#" onclick="showPage('page-coach-education');renderEducationHub()">Renew now →</a></div>`;
+    }
+
+    // Next action card
+    let actionHtml = '';
+    if (nextLevel) {
+      const def = CERT_LEVELS[nextLevel];
+      const isRead   = !!records[`read_${nextLevel}`];
+      const isKCDone = !!records[`kc_${nextLevel}`]?.done;
+      const hasFailed = records[nextLevel] && !records[nextLevel].passed;
+      const attUsed   = records[nextLevel]?.attemptCount || 0;
+      const bg = isKCDone ? 'linear-gradient(135deg,#1a3a6b,#2980B9)' : 'linear-gradient(135deg,var(--green-dark),var(--green))';
+      let step, detail, btnLabel, btnAction;
+      if (!isRead) {
+        step='Step 1 of 3 — Read the Module'; detail=`Open ${def.label} and work through the reading material.`; btnLabel='Start Reading →'; btnAction=`showPage('page-coach-education');renderEducationHub();setTimeout(()=>openEduLevel('${nextLevel}'),80)`;
+      } else if (!isKCDone) {
+        step='Step 2 of 3 — Knowledge Check'; detail='You've read the content. Complete the Knowledge Check before your formal assessment.'; btnLabel='Take Knowledge Check →'; btnAction=`showPage('page-coach-education');renderEducationHub();setTimeout(()=>openEduLevel('${nextLevel}'),80)`;
+      } else {
+        step='Step 3 of 3 — Formal Assessment'; detail=`${def.qCount} questions · 85% to pass · ${attUsed > 0 ? 'Attempt '+(attUsed+1)+' of 3' : 'First attempt — good luck!'}`; btnLabel='Start Assessment →'; btnAction=`startLevelAssessment('${nextLevel}')`;
+      }
+      actionHtml = `<div style="background:${bg};border-radius:16px;padding:28px;color:white;margin-bottom:24px;">
+        <div style="font-size:11px;letter-spacing:0.12em;text-transform:uppercase;opacity:0.75;margin-bottom:6px;">${def.label} · ${step}</div>
+        <div style="font-size:22px;font-weight:700;margin-bottom:8px;">${!isRead?'Start '+def.label:!isKCDone?'Complete Knowledge Check':'Ready to be Assessed'}</div>
+        <div style="font-size:14px;opacity:0.85;margin-bottom:20px;">${detail}</div>
+        <button class="btn" style="background:var(--gold);color:var(--green-dark);font-weight:700;padding:12px 24px;" onclick="${btnAction}">${btnLabel}</button>
+      </div>`;
+    } else {
+      actionHtml = `<div style="background:linear-gradient(135deg,#8B5006,var(--gold));border-radius:16px;padding:28px;color:white;margin-bottom:24px;">
+        <div style="font-size:11px;letter-spacing:0.12em;text-transform:uppercase;opacity:0.75;margin-bottom:6px;">Pathway Complete</div>
+        <div style="font-size:22px;font-weight:700;margin-bottom:8px;">All Levels Certified 🏆</div>
+        <div style="font-size:14px;opacity:0.85;margin-bottom:20px;">Excellent work — you have completed the full EduGolfKids certification pathway.</div>
+        <button class="btn" style="background:white;color:var(--green-dark);font-weight:700;padding:12px 24px;" onclick="showPage('page-coach-education');renderEducationHub()">View Education Hub →</button>
+      </div>`;
+    }
+
+    // Level progress strip
+    const strip = levels.map(lvl => {
+      const def = CERT_LEVELS[lvl];
+      const p = records[lvl]?.passed;
+      const cur = lvl === nextLevel;
+      return `<div style="text-align:center;flex:1;">
+        <div style="width:40px;height:40px;border-radius:50%;background:${p?def.color:cur?'var(--gray-200)':'var(--gray-100)'};border:3px solid ${p?def.color:cur?'var(--gray-400)':'var(--gray-200)'};display:flex;align-items:center;justify-content:center;font-size:16px;margin:0 auto 5px;color:${p?'white':cur?'var(--gray-600)':'var(--gray-400)'};">${p?'✓':cur?'→':'○'}</div>
+        <div style="font-size:10px;font-weight:600;color:${p?def.color:cur?'var(--gray-600)':'var(--gray-400)'};">${lvl}</div>
+      </div>`;
+    }).join('<div style="flex:0 0 12px;height:2px;background:var(--gray-200);align-self:center;margin-bottom:21px;"></div>');
+
+    page.innerHTML = `
+      <div class="page-header"><h1>Welcome back, ${name.split(' ')[0]}</h1><p>${todayStr}</p></div>
+      ${expiryHtml}
+      ${actionHtml}
+      <div class="grid-2" style="gap:16px;margin-bottom:24px;">
+        <div style="display:grid;gap:12px;">
+          <div class="stat-card green"><div class="stat-icon">🎓</div><div class="stat-value">${passedCount} <span style="font-size:16px;font-weight:400;color:var(--gray-400);">/ ${levels.length}</span></div><div class="stat-label">Levels Certified</div></div>
+          <div class="stat-card"><div class="stat-icon">📖</div><div class="stat-value">${modsRead}</div><div class="stat-label">Modules Read</div></div>
+        </div>
+        <div class="card" style="padding:20px;">
+          <div style="font-size:11px;color:var(--gray-400);text-transform:uppercase;letter-spacing:0.05em;margin-bottom:16px;">Certification Pathway</div>
+          <div style="display:flex;align-items:center;">${strip}</div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-header"><h3>📢 HQ Announcement</h3></div>
+        <div class="alert alert-blue" style="margin:0;">Welcome to the EduGolfKids Learning Platform. Complete your certification pathway to lead sessions independently. Contact HQ at morne.marilize@gmail.com for support.</div>
+      </div>`;
+  });
+}
+
+// ── HQ Activity Report ────────────────────────────────────────────────────────
+function renderHQActivityReport() {
+  const allUsers = certState.usersData?.users || [];
+  const trainees = allUsers.filter(u => u.role === 'coach' || u.role === 'licensee');
+  const today    = new Date();
+
+  let compliant = 0, inProgress = 0, notStarted = 0;
+
+  const rows = trainees.map(u => {
+    const certs   = u.certifications || {};
+    const role    = u.role || 'coach';
+    const levels  = role === 'licensee' ? ['M0','L1','L2','L3'] : ['M0','L1','L2'];
+    const passed  = levels.filter(k => certs[k]?.passed);
+    const pct     = levels.length ? Math.round((passed.length / levels.length) * 100) : 0;
+
+    // Derive last activity from most recent cert date
+    const dates = Object.values(certs).map(r => r.date || r.expiry || null).filter(Boolean).sort().reverse();
+    const lastActivity = dates[0] || '—';
+    const daysSince = lastActivity !== '—' ? Math.floor((today - new Date(lastActivity)) / 864e5) : null;
+    const lastActivityLabel = lastActivity === '—' ? 'No activity' : (daysSince === 0 ? 'Today' : daysSince === 1 ? 'Yesterday' : daysSince + ' days ago');
+
+    // Status
+    let status, statusColor;
+    const hasExpired = Object.entries(certs).some(([k,r]) => CERT_LEVELS[k] && r.passed && r.expiry && new Date(r.expiry) < today);
+    if (hasExpired) {
+      status = 'Overdue'; statusColor = 'var(--red)'; inProgress++;
+    } else if (pct === 100) {
+      status = 'Compliant'; statusColor = 'var(--success)'; compliant++;
+    } else if (pct === 0) {
+      status = 'Not Started'; statusColor = 'var(--gray-400)'; notStarted++;
+    } else {
+      status = 'In Progress'; statusColor = 'var(--amber)'; inProgress++;
+    }
+
+    const bar = `<div style="display:flex;align-items:center;gap:8px;">
+      <div style="flex:1;background:var(--gray-100);border-radius:4px;height:8px;overflow:hidden;">
+        <div style="width:${pct}%;background:var(--green);height:100%;border-radius:4px;"></div>
+      </div>
+      <span style="font-size:12px;color:var(--gray-600);white-space:nowrap;">${passed.length}/${levels.length}</span>
+    </div>`;
+
+    return `<tr>
+      <td><strong>${u.name || u.id}</strong>${u.email ? `<br><span style="font-size:11px;color:var(--gray-400);">${u.email}</span>` : ''}</td>
+      <td><span class="badge badge-gray">${role}</span></td>
+      <td style="min-width:140px;">${bar}</td>
+      <td><span class="badge" style="background:${statusColor}20;color:${statusColor};border:1px solid ${statusColor}40;">${status}</span></td>
+      <td style="font-size:12px;color:var(--gray-400);">${lastActivityLabel}</td>
+    </tr>`;
+  }).join('') || '<tr><td colspan="5" style="color:var(--gray-400);text-align:center;">No coaches or licensees found</td></tr>';
+
+  safeSet('rpt-compliant',   compliant);
+  safeSet('rpt-in-progress', inProgress);
+  safeSet('rpt-not-started', notStarted);
+  const el = document.getElementById('rpt-activity-table');
+  if (el) el.innerHTML = rows;
 }
 
 // ── TDP cert page (unchanged) ────────────────────────────────────────────────

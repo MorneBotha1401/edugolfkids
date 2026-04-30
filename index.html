@@ -2038,6 +2038,7 @@
           <div class="tab active" onclick="switchTab(this,'tab-cert-network')">Network Certifications</div>
           <div class="tab" onclick="switchTab(this,'tab-curriculum')">Curriculum Library</div>
           <div class="tab" onclick="switchTab(this,'tab-refresher')">Annual Refresher</div>
+          <div class="tab" onclick="switchTab(this,'tab-activity-report')">Activity Report</div>
         </div>
         <div id="tab-cert-network">
           <div class="stats-grid">
@@ -2125,6 +2126,23 @@
             <table class="data-table">
               <thead><tr><th>Name</th><th>Role</th><th>Status</th><th>Expiry Date</th></tr></thead>
               <tbody id="cert-refresher-table"><tr><td colspan="4" style="color:var(--gray-400);text-align:center;">Loading...</td></tr></tbody>
+            </table>
+          </div>
+        </div>
+        <div id="tab-activity-report" style="display:none;">
+          <div class="stats-grid" style="margin-bottom:16px;">
+            <div class="stat-card green"><div class="stat-icon">✅</div><div class="stat-value" id="rpt-compliant">—</div><div class="stat-label">Fully Compliant</div></div>
+            <div class="stat-card"><div class="stat-icon">📖</div><div class="stat-value" id="rpt-in-progress">—</div><div class="stat-label">In Progress</div></div>
+            <div class="stat-card red"><div class="stat-icon">🔴</div><div class="stat-value" id="rpt-not-started">—</div><div class="stat-label">Not Started</div></div>
+          </div>
+          <div class="card">
+            <div class="card-header" style="display:flex;justify-content:space-between;align-items:center;">
+              <h3>Individual Progress Report</h3>
+              <span style="font-size:12px;color:var(--gray-400);">Last activity derived from cert records</span>
+            </div>
+            <table class="data-table">
+              <thead><tr><th>Name</th><th>Role</th><th>Progress</th><th>Status</th><th>Last Activity</th></tr></thead>
+              <tbody id="rpt-activity-table"><tr><td colspan="5" style="color:var(--gray-400);text-align:center;">Loading...</td></tr></tbody>
             </table>
           </div>
         </div>
@@ -2921,6 +2939,11 @@
       </div>
 
       <!-- ══ COACH PORTAL ══ -->
+      <!-- ══ COACH HOME DASHBOARD ══ -->
+      <div id="page-coach-home" class="page">
+        <!-- Rendered dynamically by renderCoachHome() -->
+      </div>
+
       <div id="page-coach-portal" class="page">
         <div class="page-header">
           <h1>My Schedule</h1>
@@ -4093,6 +4116,7 @@ const NAV_CONFIG = {
     ]},
     { section: 'Compliance & Growth', items: [
       { icon: '🛡️', label: 'My Compliance', page: 'page-my-compliance' },
+      { icon: '🏠', label: 'Cert Dashboard', page: 'page-coach-home' },
       { icon: '🎓', label: 'Education Hub', page: 'page-coach-education' },
       { icon: '📢', label: 'Marketing Portal', page: 'page-marketing' },
     ]},
@@ -4103,6 +4127,7 @@ const NAV_CONFIG = {
   ],
   coach: [
     { section: 'My Work', items: [
+      { icon: '🏠', label: 'Home', page: 'page-coach-home' },
       { icon: '📅', label: 'My Schedule', page: 'page-coach-portal' },
       { icon: '📋', label: 'Take Attendance', page: 'page-attendance' },
       { icon: '🎓', label: 'Education Hub', page: 'page-coach-education' },
@@ -4133,7 +4158,7 @@ function buildSidebar() {
 function renderDefaultPage() {
   setTodayBadge();
   renderAllClassesForAttendance();
-  const defaults = { hq: 'page-hq-dashboard', tdp: 'page-licensee-dashboard', licensee: 'page-licensee-dashboard', coach: 'page-coach-portal' };
+  const defaults = { hq: 'page-hq-dashboard', tdp: 'page-licensee-dashboard', licensee: 'page-licensee-dashboard', coach: 'page-coach-home' };
   showPage(defaults[state.role] || 'page-hq-dashboard');
 }
 
@@ -4149,6 +4174,7 @@ function showPage(pageId) {
   if (pageId === 'page-students') renderStudentsTable();
   if (pageId === 'page-scheduling') renderSchedulingPage();
   if (pageId === 'page-tdp') renderTDPPage();
+  if (pageId === 'page-coach-home') renderCoachHome();
   if (pageId === 'page-coach-portal') renderCoachPortal();
   if (pageId === 'page-hq-dashboard') { updateDashboardStats(); renderActivityFeed(); }
   if (pageId === 'page-attendance') { renderAllClassesForAttendance(); setTodayBadge(); renderAttendanceByRole(); }
