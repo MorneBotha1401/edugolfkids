@@ -6344,14 +6344,60 @@ function renderHQActivityReport() {
       <td style="min-width:140px;">${bar}</td>
       <td><span class="badge" style="background:${statusColor}20;color:${statusColor};border:1px solid ${statusColor}40;">${status}</span></td>
       <td style="font-size:12px;color:var(--gray-400);">${lastActivityLabel}</td>
+      <td><button class="btn btn-sm btn-outline" onclick="hqManageTrainee('${u.id}')">Manage →</button></td>
     </tr>`;
-  }).join('') || '<tr><td colspan="5" style="color:var(--gray-400);text-align:center;">No coaches or licensees found</td></tr>';
+  }).join('') || '<tr><td colspan="6" style="color:var(--gray-400);text-align:center;">No coaches or licensees found</td></tr>';
 
   safeSet('rpt-compliant',   compliant);
   safeSet('rpt-in-progress', inProgress);
   safeSet('rpt-not-started', notStarted);
   const el = document.getElementById('rpt-activity-table');
   if (el) el.innerHTML = rows;
+}
+
+// ── HQ trainee management ────────────────────────────────────────────────────
+function hqManageTrainee(userId) {
+  const allUsers = certState.usersData?.users || [];
+  const u = allUsers.find(u => u.id === userId);
+  if (!u) return;
+  const certs = u.certifications || {};
+  const role = u.role || 'coach';
+  const levels = role === 'licensee' ? ['M0','L1','L2','L3','REFRESH'] : ['M0','L1','L2','REFRESH'];
+  const rows = levels.map(lvl => {
+    const def = CERT_LEVELS[lvl]; if (!def) return '';
+    const rec = certs[lvl] || {};
+    const att = rec.attemptCount || 0;
+    const result = rec.passed ? '<span style="color:var(--success);">✅ Passed</span>' : att > 0 ? '<span style="color:var(--red);">❌ Not passed</span>' : '<span style="color:var(--gray-400);">—</span>';
+    const score  = rec.score != null ? rec.score + '%' : '—';
+    const reset  = (att > 0 || rec.failDate) ? `<button class="btn btn-sm btn-outline" onclick="hqResetAttempts('${userId}','${lvl}')">Reset attempts</button>` : '—';
+    return `<tr><td>${def.label}</td><td>${result}</td><td>${score}</td><td>${att}/3</td><td>${reset}</td></tr>`;
+  }).join('');
+  showInfoModal(
+    `Manage: ${u.name || userId}`,
+    `<p style="color:var(--gray-400);font-size:13px;margin-bottom:12px;">Use Reset to clear attempt history and allow a fresh start on any level.</p>
+     <table class="data-table">
+       <thead><tr><th>Level</th><th>Result</th><th>Score</th><th>Attempts</th><th>Action</th></tr></thead>
+       <tbody>${rows}</tbody>
+     </table>`
+  );
+}
+
+async function hqResetAttempts(userId, level) {
+  const allUsers = certState.usersData?.users || [];
+  const u = allUsers.find(u => u.id === userId);
+  if (!u || !confirm(`Reset ${level} attempts for ${u.name || userId}? They will get 3 fresh attempts.`)) return;
+  if (!u.certifications) u.certifications = {};
+  const rec = u.certifications[level];
+  if (rec) { rec.attemptCount = 0; rec.failDate = null; rec.passed = false; rec.attempts = []; }
+  else { u.certifications[level] = { attemptCount:0, failDate:null, passed:false, attempts:[] }; }
+  certState.usersData.users = allUsers;
+  try {
+    await githubPut('data/users/users.json', certState.usersData, certState.sha, `HQ reset ${level} — ${u.name || userId}`);
+    alert(`✅ ${level} attempts reset for ${u.name || userId}. They can now attempt the assessment again.`);
+    const m = document.getElementById('modal-info-generic');
+    if (m) m.style.display = 'none';
+    renderHQActivityReport();
+  } catch(e) { alert('Error: ' + e.message); }
 }
 
 // ── TDP cert page (unchanged) ────────────────────────────────────────────────

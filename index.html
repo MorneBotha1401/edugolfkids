@@ -2141,7 +2141,7 @@
               <span style="font-size:12px;color:var(--gray-400);">Last activity derived from cert records</span>
             </div>
             <table class="data-table">
-              <thead><tr><th>Name</th><th>Role</th><th>Progress</th><th>Status</th><th>Last Activity</th></tr></thead>
+              <thead><tr><th>Name</th><th>Role</th><th>Progress</th><th>Status</th><th>Last Activity</th><th>Actions</th></tr></thead>
               <tbody id="rpt-activity-table"><tr><td colspan="5" style="color:var(--gray-400);text-align:center;">Loading...</td></tr></tbody>
             </table>
           </div>
@@ -4299,8 +4299,13 @@ function updateDashboardStats() {
   if (state.role === 'tdp') {
     if (licGrid) licGrid.style.display = 'none';
     if (tdpGrid) tdpGrid.style.display = '';
-    // TDP stats — licensees in the same territory as this TDP
-    const myLicensees = licensees; // All licensees (TDP sees their territory)
+    // TDP stats — only licensees linked to this TDP
+    const myTdpId = state.user?.id;
+    const myTdpName = (state.user?.name || '').toLowerCase();
+    const myLicensees = licensees.filter(l =>
+      l.tdp_id === myTdpId || l.tdp_ref === myTdpId ||
+      (l.tdp_name && l.tdp_name.toLowerCase() === myTdpName)
+    );
     const activeLic = myLicensees.filter(l => l.status === 'active').length;
     const tdpSchools = schools.filter(s => myLicensees.some(l => l.id === s.licensee_id)).length;
     const tdpStudents = students.filter(st => myLicensees.some(l => l.id === st.licensee_id)).length;
@@ -8282,7 +8287,47 @@ function renderTDPBIAlerts(container) {
   container.innerHTML = alerts.map(a => `<div class="alert ${colorMap[a.type] || 'alert-blue'}">${a.icon} ${a.msg}</div>`).join('');
 }
 
+function renderMyLicenseesAsTDP() {
+  const licensees = state.data.licensees || [];
+  const schools   = state.data.schools   || [];
+  const students  = state.data.students  || [];
+  const myId   = state.user?.id;
+  const myName = (state.user?.name || '').toLowerCase();
+  const myLics = licensees.filter(l =>
+    l.tdp_id === myId || l.tdp_ref === myId ||
+    (l.tdp_name && l.tdp_name.toLowerCase() === myName)
+  );
+  const container = document.getElementById('tdp-list');
+  if (!container) return;
+  safeSet('tdp-count', myLics.length);
+  if (myLics.length === 0) {
+    container.innerHTML = `<div class="empty-state"><div class="empty-icon">👥</div>
+      <h3>No licensees in your territory yet</h3>
+      <p>Use the Licensee Pipeline to track and onboard new licensees.</p></div>`;
+    return;
+  }
+  const rows = myLics.map(l => {
+    const lSchools  = schools.filter(s => s.licensee_id === l.id).length;
+    const lStudents = students.filter(s => s.licensee_id === l.id).length;
+    const sc = l.status === 'active' ? 'var(--success)' : 'var(--amber)';
+    return `<tr>
+      <td><strong>${l.first_name||''} ${l.last_name||''}</strong><br>
+        <span style="font-size:11px;color:var(--gray-400);">${l.email||''}</span></td>
+      <td>${l.territory_name||l.location||'—'}</td>
+      <td>${lSchools}</td>
+      <td>${lStudents}</td>
+      <td><span class="badge" style="background:${sc}20;color:${sc};">${l.status||'active'}</span></td>
+      <td><button class="btn btn-sm btn-outline" onclick="openLicenseeDetail('${l.id}')">View →</button></td>
+    </tr>`;
+  }).join('');
+  container.innerHTML = `<table class="data-table">
+    <thead><tr><th>Licensee</th><th>Territory</th><th>Schools</th><th>Students</th><th>Status</th><th></th></tr></thead>
+    <tbody>${rows}</tbody>
+  </table>`;
+}
+
 function renderTDPPage() {
+  if (state.role === 'tdp') { renderMyLicenseesAsTDP(); return; }
   const licensees = state.data.licensees || [];
   const tdps = licensees.filter(l => l.is_tdp);
   safeSet('tdp-count', tdps.length);
