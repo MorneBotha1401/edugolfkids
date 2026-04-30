@@ -3970,6 +3970,7 @@ async function handleLogin() {
   await loadAccountingData();
   await loadComplianceData();
   await loadCertData();
+  updateAndSaveStreak();
   initApp();
 }
 
@@ -3997,6 +3998,7 @@ async function checkExistingSession() {
       await loadAccountingData();
       await loadComplianceData();
       await loadCertData();
+      updateAndSaveStreak();
       initApp();
     }
   }

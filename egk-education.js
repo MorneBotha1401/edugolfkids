@@ -10,20 +10,18 @@ const CERT_LEVELS = {
   REFRESH: { id:'REFRESH', label:'Annual Refresher',            fullLabel:'Annual Certification Refresher',                     passPct:85, qCount:10, prereq:'L1', color:'#8B5CF6', forRoles:['coach','licensee'] },
 };
 
-// ── Resend Email ─────────────────────────────────────────────────────────────
-const RESEND_KEY = 're_H3Vzbsgx_NC2VxTYDhExKWUWfi1HaKgi4';
-const HQ_EMAIL   = 'morne.marilize@gmail.com';
-const FROM_EMAIL = 'EduGolfKids <noreply@edugolfkids.com>';
+// ── Email Notifications (via GitHub Actions + Resend) ────────────────────────
+const HQ_EMAIL = 'morne.marilize@gmail.com';
 
-async function sendEGKEmail(to, subject, html) {
+async function triggerEmailWorkflow(payload) {
   try {
-    const res = await fetch('https://api.resend.com/emails', {
+    const res = await fetch('https://api.github.com/repos/MorneBotha1401/edugolfkids/dispatches', {
       method: 'POST',
-      headers: { 'Authorization': 'Bearer ' + RESEND_KEY, 'Content-Type': 'application/json' },
-      body: JSON.stringify({ from: FROM_EMAIL, to: Array.isArray(to) ? to : [to], subject, html }),
+      headers: { 'Authorization': 'Bearer ' + state.githubToken, 'Accept': 'application/vnd.github.v3+json', 'Content-Type': 'application/json' },
+      body: JSON.stringify({ event_type: 'cert-email', client_payload: payload }),
     });
-    if (!res.ok) { const err = await res.json(); console.warn('[EGK Email]', err?.message || err); }
-  } catch (e) { console.warn('[EGK Email] send failed:', e); }
+    if (!res.ok) console.warn('[EGK Email] dispatch failed:', res.status);
+  } catch (e) { console.warn('[EGK Email] dispatch error:', e); }
 }
 
 function egkEmailBase(bodyContent) {
@@ -74,11 +72,13 @@ async function saveCertRecord(level, pct, passed) {
   const expiry  = new Date(); expiry.setFullYear(expiry.getFullYear()+1);
   const prev    = certState.records[level] || {};
   const attemptCount = (prev.attemptCount || 0) + 1;
+  const prevAttempts = prev.attempts || [];
   certState.records[level] = {
     passed, score:pct, date:today, name:state.user?.name||'Coach',
     expiry:      passed ? expiry.toISOString().split('T')[0] : (prev.expiry || null),
     attemptCount,
     failDate:    passed ? null : new Date().toISOString(),
+    attempts:    [...prevAttempts, { score: pct, passed, date: today }],
   };
   let usersData = certState.usersData || { users:[] };
   let users     = usersData.users || [];
@@ -110,8 +110,8 @@ async function saveCertRecord(level, pct, passed) {
         <div class="score-big">${pct}%</div>
         <div class="score-label">Date: ${_eDate} &middot; Certificate valid until ${_eExp}</div>
       </div>`);
-    if (state.user?.email) await sendEGKEmail(state.user.email, 'You passed — ' + _eDef.label + ' | EduGolfKids', coachBody);
-    await sendEGKEmail(HQ_EMAIL, '[EGK] ' + _eName + ' passed ' + _eDef.label + ' (' + pct + '%)', hqBody);
+    if (state.user?.email) triggerEmailWorkflow({ to: state.user.email, subject: 'You passed — ' + _eDef.label + ' | EduGolfKids', html: coachBody });
+    triggerEmailWorkflow({ to: HQ_EMAIL, subject: '[EGK] ' + _eName + ' passed ' + _eDef.label + ' (' + pct + '%)', html: hqBody });
   } else {
     const coachBody = egkEmailBase(`
       <h2>Assessment Result — ${_eDef.label}</h2>
@@ -131,8 +131,8 @@ async function saveCertRecord(level, pct, passed) {
         <div class="fail-big">${pct}%</div>
         <div class="score-label">Attempt ${_eAtt} of 3 &middot; Date: ${_eDate}</div>
       </div>`);
-    if (state.user?.email) await sendEGKEmail(state.user.email, 'Assessment result — ' + _eDef.label + ' | EduGolfKids', coachBody);
-    await sendEGKEmail(HQ_EMAIL, '[EGK] ' + _eName + ' attempted ' + _eDef.label + ' (' + pct + '%)', hqBody);
+    if (state.user?.email) triggerEmailWorkflow({ to: state.user.email, subject: 'Assessment result — ' + _eDef.label + ' | EduGolfKids', html: coachBody });
+    triggerEmailWorkflow({ to: HQ_EMAIL, subject: '[EGK] ' + _eName + ' attempted ' + _eDef.label + ' (' + pct + '%)', html: hqBody });
   }
 }
 
@@ -152,12 +152,12 @@ async function saveM0Ack() {
   try { await githubPut('data/users/users.json', usersData, certState.sha, `M0 Ack — ${state.user?.name}`); } catch(e) { console.warn('ack save failed',e); }
   const _mName = state.user?.name || 'Coach';
   const _mDate = new Date().toISOString().split('T')[0];
-  await sendEGKEmail(HQ_EMAIL, '[EGK] ' + _mName + ' acknowledged M0 Compliance', egkEmailBase(`
+  triggerEmailWorkflow({ to: HQ_EMAIL, subject: '[EGK] ' + _mName + ' acknowledged M0 Compliance', html: egkEmailBase(`
     <h2>M0 Compliance Acknowledged</h2>
     <p><strong>${_mName}</strong> has read and acknowledged the M0 Compliance &amp; Safeguarding module.</p>
     <div class="info-box">
       <p style="margin:0;font-size:14px;">Date: ${_mDate}<br>They are now cleared to complete the M0 Knowledge Check and Assessment.</p>
-    </div>`));
+    </div>`) });
 }
 
 // ══════════════════════════════════════════
@@ -5955,7 +5955,7 @@ function egkResendResult(level, pct, passed) {
     ? egkEmailBase(`<h2>Result Resent — ${def.label}</h2><p><strong>${name}</strong> requested a resend of their pass confirmation.</p><div class="score-box"><div class="score-big">${pct}%</div><div class="score-label">PASSED &middot; Date: ${date}</div></div>`)
     : egkEmailBase(`<h2>Result Resent — ${def.label}</h2><p><strong>${name}</strong> requested a resend of their attempt result.</p><div class="fail-box"><div class="fail-big">${pct}%</div><div class="score-label">Attempt ${att} of 3 &middot; Date: ${date}</div></div>`);
   const btn = event?.target;
-  sendEGKEmail(HQ_EMAIL, subj, body).then(() => { if (btn) { btn.textContent = '✓ Sent'; btn.disabled = true; } });
+  triggerEmailWorkflow({ to: HQ_EMAIL, subject: subj, html: body }).then(() => { if (btn) { btn.textContent = '✓ Sent'; btn.disabled = true; } });
 }
 
 function viewCertificate(level) {
@@ -6140,6 +6140,28 @@ function renderHQEducationStats() {
 }
 
 // ── Coach Home Dashboard ─────────────────────────────────────────────────────
+function updateAndSaveStreak() {
+  const userId = state.user?.id;
+  if (!userId) return;
+  const key   = 'egk_streak_' + userId;
+  const today = new Date().toISOString().split('T')[0];
+  let stored;
+  try { stored = JSON.parse(localStorage.getItem(key) || 'null'); } catch { stored = null; }
+  let streak = 1;
+  if (stored?.lastDate) {
+    const last = new Date(stored.lastDate);
+    const diff = Math.round((new Date(today) - last) / 864e5);
+    if      (diff === 0) { streak = stored.streak || 1; }
+    else if (diff === 1) { streak = (stored.streak || 0) + 1; }
+    else                 { streak = 1; }
+  }
+  try { localStorage.setItem(key, JSON.stringify({ streak, lastDate: today })); } catch {}
+  state.streak = streak;
+  const _users = certState.usersData?.users || [];
+  const _idx   = _users.findIndex(u => u.id === userId);
+  if (_idx !== -1) { _users[_idx].streak = streak; _users[_idx].lastLogin = today; }
+}
+
 function renderCoachHome() {
   const page = document.getElementById('page-coach-home');
   if (!page) return;
@@ -6160,6 +6182,7 @@ function renderCoachHome() {
     // Stats
     const passedCount = levels.filter(l => records[l]?.passed).length;
     const modsRead    = Object.keys(records).filter(k => k.startsWith('read_')).length;
+    const streak      = state.streak || (() => { try { return JSON.parse(localStorage.getItem('egk_streak_'+(state.user?.id||''))||'{}').streak||0; } catch { return 0; } })();
 
     // Expiry alert
     let expiryHtml = '';
@@ -6221,12 +6244,39 @@ function renderCoachHome() {
         <div style="display:grid;gap:12px;">
           <div class="stat-card green"><div class="stat-icon">🎓</div><div class="stat-value">${passedCount} <span style="font-size:16px;font-weight:400;color:var(--gray-400);">/ ${levels.length}</span></div><div class="stat-label">Levels Certified</div></div>
           <div class="stat-card"><div class="stat-icon">📖</div><div class="stat-value">${modsRead}</div><div class="stat-label">Modules Read</div></div>
+          <div class="stat-card" style="border-left:4px solid #F97316;"><div class="stat-icon">🔥</div><div class="stat-value">${streak}</div><div class="stat-label">Day Streak</div></div>
         </div>
         <div class="card" style="padding:20px;">
           <div style="font-size:11px;color:var(--gray-400);text-transform:uppercase;letter-spacing:0.05em;margin-bottom:16px;">Certification Pathway</div>
           <div style="display:flex;align-items:center;">${strip}</div>
         </div>
       </div>
+      ${(() => {
+        const histRows = levels.flatMap(l => {
+          const def = CERT_LEVELS[l];
+          return (records[l]?.attempts || []).slice().reverse().map(a => `<tr>
+            <td style="padding:8px 12px;">${def.label}</td>
+            <td style="padding:8px 12px;font-weight:700;color:${a.passed?'var(--green-dark)':' var(--red)'};">${a.score}%</td>
+            <td style="padding:8px 12px;"><span style="color:${a.passed?'var(--green-dark)':'var(--red)'};">${a.passed?'Passed':'Not passed'}</span></td>
+            <td style="padding:8px 12px;color:var(--gray-400);">${a.date}</td>
+          </tr>`);
+        });
+        if (!histRows.length) return '';
+        return `<div class="card" style="margin-bottom:24px;">
+          <div class="card-header"><h3>📊 Attempt History</h3></div>
+          <div style="overflow-x:auto;">
+            <table style="width:100%;border-collapse:collapse;font-size:14px;">
+              <thead><tr style="border-bottom:2px solid var(--border);">
+                <th style="padding:8px 12px;text-align:left;color:var(--gray-400);font-weight:600;">Level</th>
+                <th style="padding:8px 12px;text-align:left;color:var(--gray-400);font-weight:600;">Score</th>
+                <th style="padding:8px 12px;text-align:left;color:var(--gray-400);font-weight:600;">Result</th>
+                <th style="padding:8px 12px;text-align:left;color:var(--gray-400);font-weight:600;">Date</th>
+              </tr></thead>
+              <tbody>${histRows.join('')}</tbody>
+            </table>
+          </div>
+        </div>`;
+      })()}
       <div class="card">
         <div class="card-header"><h3>📢 HQ Announcement</h3></div>
         <div class="alert alert-blue" style="margin:0;">Welcome to the EduGolfKids Learning Platform. Complete your certification pathway to lead sessions independently. Contact HQ at morne.marilize@gmail.com for support.</div>
