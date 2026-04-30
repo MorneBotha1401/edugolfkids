@@ -5145,38 +5145,74 @@ function renderEducationHub() {
   const page = document.getElementById('page-coach-education');
   if (!page) return;
 
-  const role = state.role;
   const levels = getModulesForRole();
 
-  // Build progress overview
-  let overallModules = 0, overallDone = 0;
-  levels.forEach(lvl => {
-    const mods = EDU_MODULES[lvl] || [];
-    mods.forEach(m => {
-      overallModules++;
-      if (certState.records[`read_${m.id}`]) overallDone++;
-    });
-  });
-  const pct = overallModules ? Math.round((overallDone/overallModules)*100) : 0;
+  // Determine the current active level (first unlocked, not yet passed)
+  const activeLevel = levels.find(lvl => !hasPassed(lvl) && (!CERT_LEVELS[lvl].prereq || hasPassed(CERT_LEVELS[lvl].prereq)));
+  const activeDef   = activeLevel ? CERT_LEVELS[activeLevel] : null;
+  const activeMods  = activeLevel ? (EDU_MODULES[activeLevel] || []) : [];
+  const activeRead  = activeMods.filter(m => certState.records[`read_${m.id}`]).length;
+  const activeKC    = activeMods.filter(m => certState.records[`kc_${m.id}`]).length;
+  const activePct   = activeMods.length ? Math.round((activeRead / activeMods.length) * 100) : 0;
+
+  // Has the user started anything at all?
+  const hasStarted  = levels.some(lvl =>
+    hasPassed(lvl) || (EDU_MODULES[lvl]||[]).some(m => certState.records[`read_${m.id}`])
+  );
+
+  // Welcome card — first-time only
+  const welcomeCard = !hasStarted ? `
+    <div class="card" style="margin-bottom:16px;background:linear-gradient(135deg,var(--green-dark),#2a7a42);color:white;border:none;">
+      <div style="font-size:28px;margin-bottom:8px;">👋</div>
+      <h3 style="color:white;margin:0 0 8px;font-family:var(--font-display);">Welcome to your certification path</h3>
+      <p style="color:rgba(255,255,255,0.85);margin:0 0 16px;font-size:14px;line-height:1.6;">You have 3 certification levels. Start with <strong>Model 0 — Compliance</strong>. Each level has study modules, ungraded practice checks, and a final graded assessment. Most coaches complete M0 in under 45 minutes.</p>
+      <button class="btn" style="background:white;color:var(--green-dark);font-weight:700;border:none;" onclick="openEduLevel('M0')">Begin Model 0 →</button>
+    </div>` : '';
+
+  // Focus card — current level in progress
+  const focusCard = (activeDef && hasStarted) ? `
+    <div class="card" style="margin-bottom:16px;border:2px solid ${activeDef.color};">
+      <div style="font-size:11px;color:var(--gray-400);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:6px;">Currently Working On</div>
+      <div style="font-weight:700;font-size:17px;color:var(--green-dark);margin-bottom:10px;">${activeDef.fullLabel}</div>
+      <div style="display:flex;gap:20px;font-size:13px;color:var(--gray-400);margin-bottom:10px;flex-wrap:wrap;">
+        <span>📖 ${activeRead}/${activeMods.length} modules read</span>
+        <span>✏️ ${activeKC}/${activeMods.length} practice done</span>
+      </div>
+      <div style="height:8px;background:var(--gray-200);border-radius:4px;overflow:hidden;margin-bottom:14px;">
+        <div style="height:100%;width:${activePct}%;background:${activeDef.color};border-radius:4px;transition:width 0.5s;"></div>
+      </div>
+      <button class="btn btn-primary btn-sm" style="background:${activeDef.color};border-color:${activeDef.color};" onclick="openEduLevel('${activeLevel}')">Continue ${activeDef.label} →</button>
+    </div>` : '';
 
   const levelCards = levels.map(lvl => {
-    const def = CERT_LEVELS[lvl];
-    const passed = hasPassed(lvl);
-    const expired = isExpired(lvl);
+    const def      = CERT_LEVELS[lvl];
+    const passed   = hasPassed(lvl);
+    const expired  = isExpired(lvl);
     const prereqMet = !def.prereq || hasPassed(def.prereq);
-    const mods = EDU_MODULES[lvl] || [];
+    const mods     = EDU_MODULES[lvl] || [];
     const modsRead = mods.filter(m => certState.records[`read_${m.id}`]).length;
-    const modPct = mods.length ? Math.round((modsRead/mods.length)*100) : 0;
+    const modPct   = mods.length ? Math.round((modsRead / mods.length) * 100) : 0;
+
+    // Locked levels get a clearly distinct treatment
+    if (!prereqMet) {
+      return `<div class="edu-level-card locked" style="border-left:4px solid var(--gray-300);background:var(--gray-50);cursor:default;opacity:1;">
+        <div style="display:flex;align-items:center;gap:14px;">
+          <div style="width:48px;height:48px;background:var(--gray-100);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0;opacity:0.4;">🔒</div>
+          <div style="flex:1;min-width:0;">
+            <div style="font-weight:600;font-size:15px;color:var(--gray-400);">${def.fullLabel}</div>
+            <div style="font-size:12px;color:var(--gray-400);margin-top:4px;">Complete <strong style="color:var(--gray-500);">${CERT_LEVELS[def.prereq]?.label}</strong> first to unlock</div>
+          </div>
+          <div style="font-size:18px;opacity:0.25;">🔒</div>
+        </div>
+      </div>`;
+    }
 
     let statusBadge;
-    if (passed && !expired)  statusBadge = `<span class="badge badge-green">🏆 Certified</span>`;
-    else if (expired)         statusBadge = `<span class="badge badge-red">⚠️ Expired</span>`;
-    else if (!prereqMet)      statusBadge = `<span style="font-size:12px;color:var(--gray-400);">🔒 Locked</span>`;
-    else                      statusBadge = `<span style="font-size:12px;color:var(--gold-dark);font-weight:600;">In Progress</span>`;
+    if (passed && !expired) statusBadge = `<span class="badge badge-green">🏆 Certified</span>`;
+    else if (expired)        statusBadge = `<span class="badge badge-red">⚠️ Expired</span>`;
+    else                     statusBadge = `<span style="font-size:12px;color:var(--gold-dark);font-weight:600;">In Progress</span>`;
 
-    return `<div class="edu-level-card${prereqMet?'':' locked'}"
-      style="border-left:4px solid ${def.color};"
-      onclick="${prereqMet?`openEduLevel('${lvl}')`:''}" >
+    return `<div class="edu-level-card" style="border-left:4px solid ${def.color};" onclick="openEduLevel('${lvl}')">
       <div style="display:flex;align-items:center;gap:14px;">
         <div style="width:48px;height:48px;background:${def.color}18;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:22px;flex-shrink:0;">${passed&&!expired?'🏆':'📚'}</div>
         <div style="flex:1;min-width:0;">
@@ -5185,11 +5221,11 @@ function renderEducationHub() {
         </div>
         <div style="display:flex;flex-direction:column;align-items:flex-end;gap:6px;flex-shrink:0;">
           ${statusBadge}
-          ${prereqMet&&!passed?`<button class="btn btn-sm btn-primary" onclick="event.stopPropagation();openEduLevel('${lvl}')">Continue →</button>`:''}
+          ${!passed?`<button class="btn btn-sm btn-primary" onclick="event.stopPropagation();openEduLevel('${lvl}')">Continue →</button>`:''}
           ${passed&&!expired?`<button class="btn btn-sm btn-outline" onclick="event.stopPropagation();viewCertificate('${lvl}')">View Cert</button>`:''}
         </div>
       </div>
-      ${prereqMet && !passed && mods.length ? `
+      ${!passed && mods.length ? `
       <div class="edu-level-progress-bar">
         <div class="edu-level-progress-fill" style="width:${modPct}%;"></div>
       </div>` : ''}
@@ -5200,30 +5236,15 @@ function renderEducationHub() {
     <div class="page-header"><h1>Education Hub</h1><p>Your professional certification pathway</p></div>
     <div class="tabs">
       <div class="tab active" onclick="switchTab(this,'edu-tab-progress')">My Progress</div>
-      <div class="tab" id="edu-tab-module-btn" onclick="switchTab(this,'edu-tab-module')" style="display:none;">Current Module</div>
       <div class="tab" onclick="switchTab(this,'edu-tab-certs')">My Certificates</div>
       <div class="tab" onclick="switchTab(this,'edu-tab-lessons')">Lesson Plans</div>
     </div>
 
     <div id="edu-tab-progress">
-      <div class="card" style="margin-bottom:16px;">
-        <div style="display:flex;align-items:center;gap:16px;flex-wrap:wrap;">
-          <div style="flex:1;min-width:200px;">
-            <div style="font-size:13px;color:var(--gray-400);margin-bottom:4px;">Overall Progress</div>
-            <div style="height:10px;background:var(--gray-200);border-radius:5px;"><div style="height:100%;width:${pct}%;background:var(--green);border-radius:5px;transition:width 0.5s;"></div></div>
-            <div style="font-size:13px;margin-top:4px;">${overallDone} of ${overallModules} modules read</div>
-          </div>
-          <div style="text-align:center;padding:12px 24px;background:var(--gray-100);border-radius:8px;">
-            <div style="font-size:32px;font-weight:700;color:var(--green-dark);">${pct}%</div>
-            <div style="font-size:12px;color:var(--gray-400);">Complete</div>
-          </div>
-        </div>
-      </div>
-      <div style="display:flex;flex-direction:column;gap:12px;">${levelCards}</div>
-    </div>
-
-    <div id="edu-tab-module" style="display:none;">
-      <div id="edu-module-reader"></div>
+      ${welcomeCard}
+      ${focusCard}
+      <div id="edu-level-list" style="display:flex;flex-direction:column;gap:12px;">${levelCards}</div>
+      <div id="edu-module-reader" style="display:none;"></div>
     </div>
 
     <div id="edu-tab-certs" style="display:none;">
@@ -5274,14 +5295,11 @@ function openEduLevel(lvl) {
   eduState.moduleId = (nextUnread || mods[0])?.id || null;
   eduState.sectionIdx = 0;
 
-  const btn = document.getElementById('edu-tab-module-btn');
-  if (btn) btn.style.display = '';
-
-  // Switch to module tab and render
-  const tabs = document.querySelectorAll('#page-coach-education .tab');
-  const contents = ['edu-tab-progress','edu-tab-module','edu-tab-certs','edu-tab-lessons'];
-  tabs.forEach((t,i)=>{ t.classList.toggle('active', i===1); });
-  contents.forEach((id,i)=>{ const el=document.getElementById(id); if(el) el.style.display = i===1?'':'none'; });
+  const levelList = document.getElementById('edu-level-list');
+  const reader    = document.getElementById('edu-module-reader');
+  if (levelList) levelList.style.display = 'none';
+  if (reader)    reader.style.display    = '';
+  window.scrollTo({ top:0, behavior:'smooth' });
 
   renderModuleList(lvl);
 }
@@ -5306,12 +5324,13 @@ function renderModuleList(lvl) {
     const badges = read
       ? `<span class="edu-badge-read">Read ✓</span>${kcComplete ? '<span class="edu-badge-read" style="margin-left:4px;">Practice ✓</span>' : '<span class="edu-badge-practice" style="margin-left:4px;">Practice →</span>'}`
       : `<span class="edu-badge-pending">Not started</span>`;
+    const readTime = estimateReadTime(m);
     return `<div class="edu-module-card${clickable?'':' locked'}"
       onclick="${clickable ? `openModuleReader('${lvl}','${m.id}')` : ''}">
       <div class="edu-module-icon">${m.icon}</div>
       <div class="edu-module-info">
         <div class="edu-module-title">${m.title}</div>
-        <div class="edu-module-meta">${m.sections.length} sections</div>
+        <div class="edu-module-meta">${m.sections.length} sections · ~${readTime}</div>
       </div>
       <div class="edu-status-badges">${badges}</div>
     </div>`;
@@ -5319,7 +5338,7 @@ function renderModuleList(lvl) {
 
   reader.innerHTML = `
     <div style="display:flex;align-items:center;gap:12px;margin-bottom:20px;flex-wrap:wrap;">
-      <button class="btn btn-outline btn-sm" onclick="renderEducationHub();switchTab(document.querySelector('#page-coach-education .tab'),'edu-tab-progress')">← All Levels</button>
+      <button class="btn btn-outline btn-sm" onclick="renderEducationHub()">← All Levels</button>
       <div style="flex:1;">
         <h2 style="margin:0;font-family:var(--font-display);color:var(--green-dark);">${def.fullLabel}</h2>
         <div style="font-size:13px;color:var(--gray-400);margin-top:2px;">${modsRead} of ${mods.length} modules read</div>
@@ -5363,10 +5382,13 @@ function renderModuleReader() {
   const total       = sections.length;
   const sec         = sections[sectionIdx];
   const isLast      = sectionIdx === total - 1;
-  const alreadyRead = !!certState.records[`read_${moduleId}`];
-  const kcDone      = !!certState.records[`kc_${moduleId}`];
-  const hasKC       = !!(KNOWLEDGE_CHECKS[moduleId]?.length);
-  const pct         = Math.round(((sectionIdx + 1) / total) * 100);
+  const alreadyRead  = !!certState.records[`read_${moduleId}`];
+  const kcDone       = !!certState.records[`kc_${moduleId}`];
+  const hasKC        = !!(KNOWLEDGE_CHECKS[moduleId]?.length);
+  const pct          = Math.round(((sectionIdx + 1) / total) * 100);
+  const allLevelRead = mods.every(m => certState.records[`read_${m.id}`]);
+  const allLevelKC   = mods.every(m => certState.records[`kc_${m.id}`]);
+  const levelPassed  = hasPassed(level);
 
   const reader = document.getElementById('edu-module-reader');
   if (!reader) return;
@@ -5414,16 +5436,15 @@ function renderModuleReader() {
         ← Previous
       </button>
       ${isLast ? `
-        <button class="btn btn-primary" id="mark-read-btn"
-          onclick="markModuleRead('${moduleId}')"
-          ${alreadyRead?'style="background:var(--green-dark);"':''}
-          style="min-width:220px;">
-          ${alreadyRead?'✅ Read — Practice Again':'✅ Mark as Read & Start Practice'}
-        </button>` : `
+        ${!alreadyRead
+          ? `<button class="btn btn-primary" id="mark-read-btn" onclick="markModuleRead('${moduleId}')" style="min-width:220px;">✅ Mark as Read</button>`
+          : `<span style="font-size:13px;color:var(--green-dark);font-weight:600;display:inline-flex;align-items:center;gap:6px;padding:8px 16px;background:#e8f5ec;border-radius:8px;">✅ Module read</span>`}
+      ` : `
         <button class="btn btn-primary" onclick="navModuleSection(1)" style="min-width:160px;">
           Next Section →
         </button>`}
     </div>
+    ${isLast && !alreadyRead ? `<div style="margin-top:8px;font-size:12px;color:var(--gray-400);text-align:center;">Read through all sections, then mark as read to unlock the Knowledge Check.</div>` : ''}
 
     <!-- Knowledge check (unlocks after read) -->
     ${alreadyRead && hasKC ? `
@@ -5431,16 +5452,24 @@ function renderModuleReader() {
       <div style="display:flex;align-items:center;gap:10px;margin-bottom:8px;">
         <div style="font-size:24px;">✏️</div>
         <div>
-          <div style="font-weight:700;font-size:15px;color:var(--green-dark);">Knowledge Check</div>
-          <div style="font-size:13px;color:var(--gray-400);">Ungraded practice · Questions &amp; answers shuffle every attempt</div>
+          <div style="font-weight:700;font-size:15px;color:var(--green-dark);">Knowledge Check <span style="font-size:11px;color:var(--gray-400);font-weight:400;">(ungraded practice)</span></div>
+          <div style="font-size:13px;color:var(--gray-400);">Questions &amp; answers shuffle every attempt</div>
         </div>
       </div>
       ${kcDone
-        ? `<div class="alert alert-green" style="margin-top:12px;">✅ Knowledge Check complete for this module!</div>
+        ? `<div class="alert alert-green" style="margin-top:12px;">✅ Practice complete for this module!</div>
            <button class="btn btn-outline btn-sm" style="margin-top:8px;" onclick="startKnowledgeCheck('${moduleId}')">Retry (reshuffled)</button>`
-        : `<button class="btn btn-primary" style="margin-top:12px;width:100%;" onclick="startKnowledgeCheck('${moduleId}')">Start Knowledge Check →</button>`
+        : `<button class="btn btn-primary" style="margin-top:12px;width:100%;" onclick="startKnowledgeCheck('${moduleId}')">Start Knowledge Check →</button>
+           <div style="margin-top:8px;font-size:12px;color:var(--gray-400);text-align:center;">Ungraded — any score is fine.</div>`
       }
-    </div>` : ''}`;
+    </div>
+    ${kcDone && allLevelRead && allLevelKC && !levelPassed ? `
+    <div style="margin-top:20px;padding:24px;background:linear-gradient(135deg,#f0f7f2,#e8f5ec);border-radius:12px;border:2px solid var(--green);text-align:center;">
+      <div style="font-size:32px;margin-bottom:8px;">🎓</div>
+      <div style="font-weight:700;font-size:17px;color:var(--green-dark);margin-bottom:6px;">Ready for your graded assessment!</div>
+      <div style="font-size:13px;color:var(--gray-400);margin-bottom:16px;">All modules read and practice complete. Pass the <strong>${CERT_LEVELS[level]?.label}</strong> Assessment at 85% to earn your certificate.</div>
+      <button class="btn btn-primary" style="width:100%;padding:14px;" onclick="startLevelAssessment('${level}')">🎓 Take ${CERT_LEVELS[level]?.label} Assessment →</button>
+    </div>` : ''}` : ''}`;
 
   // M0 acknowledgment checkbox state
   if (moduleId === 'M0' && isLast) {
@@ -5448,6 +5477,12 @@ function renderModuleReader() {
     if (ackBox) ackBox.checked = !!certState.records['M0_ACK'];
     checkM0Ack();
   }
+}
+
+function estimateReadTime(mod) {
+  const raw = mod.sections.map(s => (s.b||'') + ' ' + (s.h||'')).join(' ');
+  const words = raw.replace(/<[^>]+>/g,' ').split(/\s+/).filter(Boolean).length;
+  return Math.max(3, Math.round(words / 180)) + ' min';
 }
 
 function navModuleSection(dir) {
@@ -5458,12 +5493,14 @@ function navModuleSection(dir) {
   if (next >= 0 && next < mod.sections.length) {
     eduState.sectionIdx = next;
     renderModuleReader();
+    window.scrollTo({ top:0, behavior:'smooth' });
   }
 }
 
 function jumpModuleSection(idx) {
   eduState.sectionIdx = idx;
   renderModuleReader();
+  window.scrollTo({ top:0, behavior:'smooth' });
 }
 
 function checkM0Ack() {
@@ -5603,16 +5640,28 @@ async function kcNext() {
     await saveCertStateRecords();
     // Show completion screen
     const correctCount = kcState.answers.filter(a=>a.correct).length;
+    const kcLvl      = eduState.level;
+    const kcLvlMods  = EDU_MODULES[kcLvl] || [];
+    const kcAllRead  = kcLvlMods.every(m => certState.records[`read_${m.id}`]);
+    const kcAllKC    = kcLvlMods.every(m => certState.records[`kc_${m.id}`]);
+    const kcPassed   = hasPassed(kcLvl);
+    const showAssessmentCTA = kcAllRead && kcAllKC && !kcPassed;
     const reader = document.getElementById('edu-module-reader');
     if (reader) reader.innerHTML = `
-      <div style="text-align:center;padding:40px 0;">
-        <div style="font-size:48px;margin-bottom:12px;">🎉</div>
-        <h2 style="color:var(--green-dark);">Knowledge Check Complete!</h2>
+      <div style="text-align:center;padding:40px 20px;">
+        <div style="font-size:48px;margin-bottom:12px;">✅</div>
+        <h2 style="color:var(--green-dark);">Practice Complete!</h2>
         <div style="font-size:32px;font-weight:700;color:var(--green);margin:12px 0;">${correctCount}/${kcState.questions.length}</div>
-        <p style="color:var(--gray-400);">This is practice — any score is fine. The important thing is you reviewed the material.</p>
+        <p style="color:var(--gray-400);max-width:360px;margin:0 auto;">This is ungraded practice — any score is fine.</p>
+        ${showAssessmentCTA ? `
+        <div style="margin:24px auto;max-width:420px;padding:20px;background:linear-gradient(135deg,#f0f7f2,#e8f5ec);border-radius:12px;border:2px solid var(--green);">
+          <div style="font-weight:700;color:var(--green-dark);margin-bottom:6px;">🎓 All modules done!</div>
+          <div style="font-size:13px;color:var(--gray-400);margin-bottom:14px;">Now take the graded <strong>${CERT_LEVELS[kcLvl]?.label}</strong> Assessment (85% to pass) to earn your certificate.</div>
+          <button class="btn btn-primary" style="width:100%;" onclick="startLevelAssessment('${kcLvl}')">Take ${CERT_LEVELS[kcLvl]?.label} Assessment →</button>
+        </div>` : ''}
         <div style="display:flex;gap:12px;justify-content:center;margin-top:20px;flex-wrap:wrap;">
-          <button class="btn btn-primary" onclick="renderModuleList('${eduState.level}')">← Back to Modules</button>
-          <button class="btn btn-outline" onclick="startKnowledgeCheck('${kcState.moduleId}')">Retry (Shuffled)</button>
+          <button class="btn btn-outline" onclick="renderModuleList('${eduState.level}')">← Back to Modules</button>
+          <button class="btn btn-outline btn-sm" onclick="startKnowledgeCheck('${kcState.moduleId}')">Retry (Shuffled)</button>
         </div>
       </div>`;
   } else {
@@ -5695,6 +5744,10 @@ async function finishQuiz() {
   const pct = Math.round((correct/total)*100);
   const passed = pct >= 85;
   const def = CERT_LEVELS[level];
+  const allLevelsArr = getModulesForRole ? getModulesForRole() : ['M0','L1','L2'];
+  const curLvlIdx  = allLevelsArr.indexOf(level);
+  const nextLvl    = passed && curLvlIdx >= 0 && curLvlIdx < allLevelsArr.length - 1 ? allLevelsArr[curLvlIdx + 1] : null;
+  const nextLvlDef = nextLvl ? CERT_LEVELS[nextLvl] : null;
   document.getElementById('quiz-progress-bar').style.width = '100%';
   document.getElementById('quiz-container').style.display = 'none';
   document.getElementById('quiz-results').style.display = 'block';
@@ -5707,13 +5760,23 @@ async function finishQuiz() {
     <div style="color:var(--gray-400);margin-bottom:8px;">${correct} correct out of ${total} questions</div>
     <div style="color:var(--gray-400);margin-bottom:32px;">Pass mark: 85%</div>
     ${passed ? `
-      <div style="background:var(--gray-100);border-radius:12px;padding:20px;margin-bottom:24px;">
+      <div style="background:var(--gray-100);border-radius:12px;padding:20px;margin-bottom:20px;">
         <div style="font-weight:600;margin-bottom:4px;">✅ ${def.fullLabel}</div>
         <div style="font-size:13px;color:var(--gray-400);">Certificate valid for 12 months</div>
       </div>
+      ${nextLvlDef ? `
+      <div style="background:linear-gradient(135deg,#f0f7f2,#e8f5ec);border:2px solid var(--green);border-radius:12px;padding:18px;margin-bottom:20px;">
+        <div style="font-weight:700;color:var(--green-dark);margin-bottom:4px;">🔓 ${nextLvlDef.fullLabel} is now unlocked!</div>
+        <div style="font-size:13px;color:var(--gray-400);">Your next certification level is ready to begin.</div>
+      </div>` : `
+      <div style="background:linear-gradient(135deg,#f0f7f2,#e8f5ec);border:2px solid var(--green);border-radius:12px;padding:18px;margin-bottom:20px;">
+        <div style="font-weight:700;color:var(--green-dark);margin-bottom:4px;">🏆 Full certification pathway complete!</div>
+        <div style="font-size:13px;color:var(--gray-400);">You have completed all available certification levels.</div>
+      </div>`}
       <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
         <button class="btn btn-primary" onclick="viewCertificate('${level}')">🏆 View My Certificate</button>
-        <button class="btn btn-outline" onclick="showPage('page-coach-education');renderEducationHub()">← Back to Education Hub</button>
+        ${nextLvlDef ? `<button class="btn btn-primary" style="background:var(--green-dark);" onclick="showPage('page-coach-education');renderEducationHub();setTimeout(()=>openEduLevel('${nextLvl}'),80)">Start ${nextLvlDef.label} →</button>` : ''}
+        <button class="btn btn-outline" onclick="showPage('page-coach-education');renderEducationHub()">← Back to Hub</button>
       </div>` : `
       <p style="color:var(--gray-400);margin-bottom:20px;">Questions and answers will be reshuffled on your next attempt.</p>
       <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
