@@ -6149,7 +6149,7 @@ function renderHQEducationStats() {
 }
 
 // ── Coach Home Dashboard ─────────────────────────────────────────────────────
-function updateAndSaveStreak() {
+async function updateAndSaveStreak() {
   const userId = state.user?.id;
   if (!userId) return;
   const key   = 'egk_streak_' + userId;
@@ -6157,10 +6157,11 @@ function updateAndSaveStreak() {
   let stored;
   try { stored = JSON.parse(localStorage.getItem(key) || 'null'); } catch { stored = null; }
   let streak = 1;
+  let changed = true;
   if (stored?.lastDate) {
     const last = new Date(stored.lastDate);
     const diff = Math.round((new Date(today) - last) / 864e5);
-    if      (diff === 0) { streak = stored.streak || 1; }
+    if      (diff === 0) { streak = stored.streak || 1; changed = false; }
     else if (diff === 1) { streak = (stored.streak || 0) + 1; }
     else                 { streak = 1; }
   }
@@ -6169,6 +6170,9 @@ function updateAndSaveStreak() {
   const _users = certState.usersData?.users || [];
   const _idx   = _users.findIndex(u => u.id === userId);
   if (_idx !== -1) { _users[_idx].streak = streak; _users[_idx].lastLogin = today; }
+  if (changed) {
+    try { await saveCertStateRecords(); } catch(e) { console.warn('streak save failed', e); }
+  }
 }
 
 function renderCoachHome() {

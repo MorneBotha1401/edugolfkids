@@ -4937,6 +4937,19 @@ async function saveStudent() {
   const email = document.getElementById('student-email').value.trim();
   if (!first || !last || !dob) { alert('Please fill in required fields.'); return; }
 
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (email && !emailRegex.test(email)) { alert('Please enter a valid email address for the parent.'); return; }
+
+  const classId = document.getElementById('student-class').value;
+  if (classId) {
+    const cls = (state.data.classes || []).find(c => c.id === classId);
+    const currentCount = (state.data.students || []).filter(s => s.class_id === classId && s.status === 'enrolled').length;
+    if (cls && currentCount >= (cls.max_students || 7)) {
+      alert(`This class is full (${currentCount}/${cls.max_students || 7} students). Please choose a different class.`);
+      return;
+    }
+  }
+
   const age = calculateAge(dob);
   const student = {
     id: 'stu_' + Date.now(),
