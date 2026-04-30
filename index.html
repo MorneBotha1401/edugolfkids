@@ -5974,7 +5974,7 @@ function updateLicAccountingStats() {
         const d = new Date(s.session_date);
         const now = new Date();
         return d.getMonth() === now.getMonth() && d.getFullYear() === now.getFullYear();
-      }).reduce((sum, s) => sum + calcCoachPay(s.students_present || 0), 0)
+      }).reduce((sum, s) => sum + calcCoachPay(s.students_present || s.present_count || 0), 0)
     : Math.round(grossRev * 0.25);
 
   const licenseFee = 500;
@@ -6205,10 +6205,10 @@ function licCalculatePayroll() {
   // Group by coach
   const coachTotals = {};
   for (const session of monthSessions) {
-    const coachId = session.coach_id || 'unassigned';
+    const coachId = session.coach_id || coaches.find(c => c.name === session.submitted_by)?.id || 'unassigned';
     const coach = coaches.find(c => c.id === coachId);
-    const coachName = coach ? coach.name : 'Unassigned';
-    const students = parseInt(session.students_present || session.students || 0);
+    const coachName = coach ? coach.name : (session.submitted_by || 'Unassigned');
+    const students = parseInt(session.students_present || session.present_count || session.students || 0);
     const pay = calcCoachPay(students);
 
     if (!coachTotals[coachId]) {
@@ -8923,7 +8923,7 @@ function renderMyCompliance() {
 }
 
 function renderTDPCompliance() {
-  const tdpId = state.user?.licensee_id || 'current_tdp';
+  const tdpId = state.user?.id || 'tdp_unknown';
   const record = getComplianceRecord(tdpId);
   const docs = record.documents || {};
 
