@@ -1750,6 +1750,10 @@
             <h3>All Territories</h3>
             <span class="badge badge-green" id="territory-count-badge">0 territories</span>
           </div>
+          <div style="padding:12px 0 4px;">
+            <input type="text" id="territory-search" placeholder="Search territories..." oninput="renderTerritoriesTable()"
+              style="width:100%;max-width:340px;padding:8px 12px;border:2px solid var(--gray-200);border-radius:8px;font-family:var(--font-body);font-size:13px;"/>
+          </div>
           <div id="territories-table-container">
             <div class="empty-state">
               <div class="empty-icon">🗺️</div>
@@ -1758,6 +1762,61 @@
               <button class="btn btn-primary btn-sm" onclick="openModal('modal-add-territory')">Add First Territory</button>
             </div>
           </div>
+        </div>
+      </div>
+
+      <!-- ══ HQ LICENSEES ══ -->
+      <div id="page-licensees" class="page">
+        <div class="page-header">
+          <h1>All Licensees</h1>
+          <p>Browse and manage every licensee across all territories</p>
+        </div>
+        <div style="display:flex;gap:12px;margin-bottom:16px;flex-wrap:wrap;align-items:center;">
+          <input type="text" id="licensee-search" placeholder="Search by name, email, territory..."
+            oninput="renderHQLicensees()"
+            style="flex:1;min-width:220px;max-width:360px;padding:8px 12px;border:2px solid var(--gray-200);border-radius:8px;font-family:var(--font-body);font-size:13px;"/>
+          <select id="licensee-status-filter" onchange="renderHQLicensees()"
+            style="padding:8px 12px;border:2px solid var(--gray-200);border-radius:8px;font-family:var(--font-body);font-size:13px;background:white;">
+            <option value="all">All statuses</option>
+            <option value="active">Active</option>
+            <option value="pending">Pending</option>
+            <option value="inactive">Inactive</option>
+          </select>
+          <button class="btn btn-primary" onclick="openModal('modal-add-licensee')">🤝 Add Licensee</button>
+        </div>
+        <div class="card">
+          <div class="card-header">
+            <h3>Licensee Directory</h3>
+            <span class="badge badge-green" id="licensee-count-badge">0 licensees</span>
+          </div>
+          <div id="licensees-table-container"></div>
+        </div>
+      </div>
+
+      <!-- ══ HQ COACHES ══ -->
+      <div id="page-hq-coaches" class="page">
+        <div class="page-header">
+          <h1>All Coaches</h1>
+          <p>Browse every coach across the network</p>
+        </div>
+        <div style="display:flex;gap:12px;margin-bottom:16px;flex-wrap:wrap;align-items:center;">
+          <input type="text" id="coach-search-hq" placeholder="Search by name, email, school..."
+            oninput="renderHQCoaches()"
+            style="flex:1;min-width:220px;max-width:360px;padding:8px 12px;border:2px solid var(--gray-200);border-radius:8px;font-family:var(--font-body);font-size:13px;"/>
+          <select id="coach-status-filter-hq" onchange="renderHQCoaches()"
+            style="padding:8px 12px;border:2px solid var(--gray-200);border-radius:8px;font-family:var(--font-body);font-size:13px;background:white;">
+            <option value="all">All statuses</option>
+            <option value="active">Active</option>
+            <option value="pending">Pending</option>
+            <option value="inactive">Inactive</option>
+          </select>
+        </div>
+        <div class="card">
+          <div class="card-header">
+            <h3>Coach Directory</h3>
+            <span class="badge badge-green" id="hq-coach-count-badge">0 coaches</span>
+          </div>
+          <div id="hq-coaches-table-container"></div>
         </div>
       </div>
 
@@ -4150,6 +4209,8 @@ const NAV_CONFIG = {
     ]},
     { section: 'Network Management', items: [
       { icon: '🗺️', label: 'Territories', page: 'page-territories' },
+      { icon: '🤝', label: 'Licensees', page: 'page-licensees' },
+      { icon: '🧑‍🏫', label: 'Coaches', page: 'page-hq-coaches' },
       { icon: '🤝', label: 'TDP Management', page: 'page-tdp' },
     ]},
     { section: 'Finance', items: [
@@ -4246,6 +4307,8 @@ function showPage(pageId) {
   if (nav) nav.classList.add('active');
   if (pageId === 'page-school-crm') renderSchoolPipeline();
   if (pageId === 'page-territories') renderTerritoriesTable();
+  if (pageId === 'page-licensees') renderHQLicensees();
+  if (pageId === 'page-hq-coaches') renderHQCoaches();
   if (pageId === 'page-students') renderStudentsTable();
   if (pageId === 'page-scheduling') renderSchedulingPage();
   if (pageId === 'page-tdp') renderTDPPage();
@@ -4848,21 +4911,157 @@ function renderRevenueTrend() {
     </div>`;
 }
 
+function renderHQLicensees() {
+  const allLicensees = state.data.licensees || [];
+  const territories  = state.data.territories || [];
+  const coaches      = state.data.coaches || [];
+  const schools      = state.data.schools || [];
+  const container    = document.getElementById('licensees-table-container');
+  if (!container) return;
+
+  const q      = (document.getElementById('licensee-search')?.value || '').toLowerCase().trim();
+  const status = document.getElementById('licensee-status-filter')?.value || 'all';
+
+  let list = allLicensees;
+  if (status !== 'all') list = list.filter(l => (l.status || 'active') === status);
+  if (q) list = list.filter(l =>
+    (l.first_name || '').toLowerCase().includes(q) ||
+    (l.last_name  || '').toLowerCase().includes(q) ||
+    (l.email      || '').toLowerCase().includes(q) ||
+    (l.phone      || '').toLowerCase().includes(q) ||
+    (l.territory_name || '').toLowerCase().includes(q) ||
+    ((territories.find(t => t.id === l.territory_id) || {}).name || '').toLowerCase().includes(q)
+  );
+
+  safeSet('licensee-count-badge', q || status !== 'all'
+    ? `${list.length} / ${allLicensees.length} licensees`
+    : `${allLicensees.length} licensees`);
+
+  if (allLicensees.length === 0) {
+    container.innerHTML = `<div class="empty-state"><div class="empty-icon">🤝</div><h3>No licensees yet</h3><p>Add your first licensee from the Territories page.</p></div>`;
+    return;
+  }
+  if (list.length === 0) {
+    container.innerHTML = `<div style="padding:32px;text-align:center;color:var(--gray-400);">No licensees match the current filter.</div>`;
+    return;
+  }
+
+  const rows = list.map(l => {
+    const terr = territories.find(t => t.id === l.territory_id);
+    const lCoaches = coaches.filter(c => c.licensee_id === l.id);
+    const lSchools  = schools.filter(s => s.licensee_id === l.id);
+    const sc = (l.status || 'active') === 'active' ? 'var(--success)' : 'var(--amber)';
+    const { overall } = typeof calcComplianceScore === 'function'
+      ? calcComplianceScore(l.id) : { overall: 0 };
+    const compCol = overall >= 85 ? 'var(--success)' : overall >= 70 ? 'var(--amber)' : 'var(--red)';
+    return `<tr style="cursor:pointer;" onclick="openLicenseeDetail('${l.id}')">
+      <td><strong>${l.first_name || ''} ${l.last_name || ''}</strong><br><small style="color:var(--gray-400)">${l.email || ''}</small></td>
+      <td>${terr ? terr.name : (l.territory_name || '—')}</td>
+      <td><span class="badge" style="background:${sc}20;color:${sc};">${l.status || 'active'}</span></td>
+      <td>${lSchools.length}</td>
+      <td>${lCoaches.length}</td>
+      <td><strong style="color:${compCol};">${overall}%</strong></td>
+      <td>${l.phone || '—'}</td>
+    </tr>`;
+  }).join('');
+
+  container.innerHTML = `<table class="data-table">
+    <thead><tr>
+      <th>Licensee</th><th>Territory</th><th>Status</th>
+      <th>Schools</th><th>Coaches</th><th>Compliance</th><th>Phone</th>
+    </tr></thead>
+    <tbody>${rows}</tbody>
+  </table>`;
+}
+
+function renderHQCoaches() {
+  const allCoaches  = state.data.coaches || [];
+  const licensees   = state.data.licensees || [];
+  const schools     = state.data.schools || [];
+  const classes     = state.data.classes || [];
+  const container   = document.getElementById('hq-coaches-table-container');
+  if (!container) return;
+
+  const q      = (document.getElementById('coach-search-hq')?.value || '').toLowerCase().trim();
+  const status = document.getElementById('coach-status-filter-hq')?.value || 'all';
+
+  let list = allCoaches;
+  if (status !== 'all') list = list.filter(c => (c.status || 'active') === status);
+  if (q) list = list.filter(c =>
+    (c.first_name || '').toLowerCase().includes(q) ||
+    (c.last_name  || '').toLowerCase().includes(q) ||
+    (c.email      || '').toLowerCase().includes(q) ||
+    (c.phone      || '').toLowerCase().includes(q) ||
+    ((licensees.find(l => l.id === c.licensee_id) || {}).first_name || '').toLowerCase().includes(q) ||
+    ((schools.find(s => s.id === c.school_id) || {}).name || '').toLowerCase().includes(q)
+  );
+
+  safeSet('hq-coach-count-badge', q || status !== 'all'
+    ? `${list.length} / ${allCoaches.length} coaches`
+    : `${allCoaches.length} coaches`);
+
+  if (allCoaches.length === 0) {
+    container.innerHTML = `<div class="empty-state"><div class="empty-icon">🧑‍🏫</div><h3>No coaches yet</h3><p>Coaches are added by licensees.</p></div>`;
+    return;
+  }
+  if (list.length === 0) {
+    container.innerHTML = `<div style="padding:32px;text-align:center;color:var(--gray-400);">No coaches match the current filter.</div>`;
+    return;
+  }
+
+  const rows = list.map(c => {
+    const lic    = licensees.find(l => l.id === c.licensee_id);
+    const school = schools.find(s => s.id === c.school_id);
+    const cClasses = classes.filter(cl => cl.coach_id === c.id);
+    const sc = (c.status || 'active') === 'active' ? 'var(--success)' : 'var(--amber)';
+    return `<tr>
+      <td><strong>${c.first_name || ''} ${c.last_name || ''}</strong><br><small style="color:var(--gray-400)">${c.email || ''}</small></td>
+      <td>${lic ? `${lic.first_name || ''} ${lic.last_name || ''}` : '—'}</td>
+      <td>${school ? school.name : '—'}</td>
+      <td><span class="badge" style="background:${sc}20;color:${sc};">${c.status || 'active'}</span></td>
+      <td>${cClasses.length} class${cClasses.length !== 1 ? 'es' : ''}</td>
+      <td>${c.phone || '—'}</td>
+    </tr>`;
+  }).join('');
+
+  container.innerHTML = `<table class="data-table">
+    <thead><tr>
+      <th>Coach</th><th>Licensee</th><th>School</th><th>Status</th><th>Classes</th><th>Phone</th>
+    </tr></thead>
+    <tbody>${rows}</tbody>
+  </table>`;
+}
+
 function renderTerritoriesTable() {
-  const territories = state.data.territories || [];
+  const allTerritories = state.data.territories || [];
   const licensees = state.data.licensees || [];
   const container = document.getElementById('territories-table-container');
   if (!container) return;
 
-  safeSet('territory-count-badge', `${territories.length} territories`);
+  const q = (document.getElementById('territory-search')?.value || '').toLowerCase().trim();
+  const territories = q
+    ? allTerritories.filter(t =>
+        (t.name || '').toLowerCase().includes(q) ||
+        (t.region || '').toLowerCase().includes(q) ||
+        (t.state || '').toLowerCase().includes(q) ||
+        (t.boundaries || '').toLowerCase().includes(q))
+    : allTerritories;
 
-  if (territories.length === 0) {
+  safeSet('territory-count-badge', q
+    ? `${territories.length} / ${allTerritories.length} territories`
+    : `${allTerritories.length} territories`);
+
+  if (allTerritories.length === 0) {
     container.innerHTML = `<div class="empty-state">
       <div class="empty-icon">🗺️</div>
       <h3>No territories yet</h3>
       <p>Create your first territory to begin onboarding licensees</p>
       <button class="btn btn-primary btn-sm" onclick="openModal('modal-add-territory')">Add First Territory</button>
     </div>`;
+    return;
+  }
+  if (territories.length === 0) {
+    container.innerHTML = `<div style="padding:32px;text-align:center;color:var(--gray-400);">No territories match "<strong>${q}</strong>"</div>`;
     return;
   }
 
@@ -9233,6 +9432,7 @@ function updateComplianceStats() {
   let fullyCompliant = 0, actionRequired = 0, restricted = 0, samMissing = 0, expiringSoon = 0;
   let totalScore = 0;
 
+  const expiringItems = COMPLIANCE_SCHEMA.filter(i => i.expiry_date);
   for (const lic of licensees) {
     const { overall, status, samCritical } = calcComplianceScore(lic.id);
     totalScore += overall;
@@ -9244,7 +9444,7 @@ function updateComplianceStats() {
     // Check expiring soon
     const record = getComplianceRecord(lic.id);
     const docs = record.documents || {};
-    for (const item of COMPLIANCE_SCHEMA.filter(i => i.expiry_date)) {
+    for (const item of expiringItems) {
       const doc = docs[item.id] || {};
       if (calcItemStatus(item, doc) === 'expiring_soon') expiringSoon++;
     }
