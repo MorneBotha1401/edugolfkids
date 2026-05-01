@@ -5285,16 +5285,18 @@ async function saveTerritory() {
   state.data.territories.push(territory);
 
   try {
-    await githubPut('data/territories/territories.json',
+    const _tResult = await githubPut('data/territories/territories.json',
       { territories: state.data.territories },
       state.data.territories_sha,
       `Add territory: ${name}`
     );
+    if (_tResult?.content?.sha) state.data.territories_sha = _tResult.content.sha;
     closeModal('modal-add-territory');
     updateDashboardStats();
     renderTerritoriesTable();
     alert(`✅ Territory "${name}" created successfully!`);
   } catch(e) {
+    state.data.territories.pop(); // rollback
     alert('Error saving to GitHub: ' + e.message);
   }
 }
@@ -5322,15 +5324,17 @@ async function saveLicensee() {
   state.data.licensees.push(licensee);
 
   try {
-    await githubPut('data/licensees/licensees.json',
+    const _lResult = await githubPut('data/licensees/licensees.json',
       { licensees: state.data.licensees },
       state.data.licensees_sha,
       `Onboard licensee: ${licensee.name}`
     );
+    if (_lResult?.content?.sha) state.data.licensees_sha = _lResult.content.sha;
     closeModal('modal-add-licensee');
     updateDashboardStats();
     alert(`✅ Licensee "${licensee.name}" onboarded successfully!`);
   } catch(e) {
+    state.data.licensees.pop(); // rollback
     alert('Error saving to GitHub: ' + e.message);
   }
 }
@@ -5369,6 +5373,7 @@ async function saveSchool() {
     updateDashboardStats();
     alert(`✅ "${name}" claimed to your territory!`);
   } catch(e) {
+    state.data.schools.pop(); // rollback
     alert('Error saving to GitHub: ' + e.message);
   }
 }
@@ -5466,6 +5471,7 @@ async function saveClass() {
     closeModal('modal-create-class');
     alert(`✅ Class "${name}" created! ${day}s at ${time}.`);
   } catch(e) {
+    state.data.classes.pop(); // rollback
     alert('Error saving to GitHub: ' + e.message);
   }
 }
@@ -5696,17 +5702,19 @@ async function raiseInvoice() {
   state.data.invoices.push(invoice);
 
   try {
-    await githubPut(
+    const _invResult = await githubPut(
       'data/accounting/accounting.json',
-      { invoices: state.data.invoices, payouts: state.data.payouts || [], payments: state.data.payments || [] },
+      { invoices: state.data.invoices, payouts: state.data.payouts || [], payments: state.data.payments || [], lic_invoices: state.data.lic_invoices || [] },
       state.data.accounting_sha,
       `Raise invoice ${invoiceNumber} — $${amount.toLocaleString()}`
     );
+    if (_invResult?.content?.sha) state.data.accounting_sha = _invResult.content.sha;
     closeModal('modal-raise-invoice');
     renderInvoiceTable();
     updateHQAccountingStats();
     alert(`✅ Invoice ${invoiceNumber} raised for $${amount.toLocaleString()}`);
   } catch(e) {
+    state.data.invoices.pop(); // rollback
     alert('Error saving invoice: ' + e.message);
   }
 }
@@ -5741,19 +5749,22 @@ async function hqGenerateMonthlyInvoices() {
     });
   }
 
-  state.data.invoices = [...(state.data.invoices || []), ...newInvoices];
+  const _prevInvoices = state.data.invoices ? [...state.data.invoices] : [];
+  state.data.invoices = [..._prevInvoices, ...newInvoices];
 
   try {
-    await githubPut(
+    const _genResult = await githubPut(
       'data/accounting/accounting.json',
-      { invoices: state.data.invoices, payouts: state.data.payouts || [], payments: state.data.payments || [] },
+      { invoices: state.data.invoices, payouts: state.data.payouts || [], payments: state.data.payments || [], lic_invoices: state.data.lic_invoices || [] },
       state.data.accounting_sha,
       `Generate monthly invoices — ${monthLabel} — ${newInvoices.length} invoices`
     );
+    if (_genResult?.content?.sha) state.data.accounting_sha = _genResult.content.sha;
     renderInvoiceTable();
     updateHQAccountingStats();
     alert(`✅ ${newInvoices.length} monthly invoice${newInvoices.length > 1 ? 's' : ''} generated for ${monthLabel}.`);
   } catch(e) {
+    state.data.invoices = _prevInvoices; // rollback
     alert('Error generating invoices: ' + e.message);
   }
 }
@@ -5793,18 +5804,22 @@ async function confirmMarkPaid() {
   state.data.invoices[idx].paid_method = paidMethod;
   state.data.invoices[idx].paid_reference = paidRef;
 
+  const _paidSnapshot = { status: 'sent', paid_date: null, paid_method: null, paid_reference: null };
   try {
-    await githubPut(
+    const _paidResult = await githubPut(
       'data/accounting/accounting.json',
-      { invoices: state.data.invoices, payouts: state.data.payouts || [], payments: state.data.payments || [] },
+      { invoices: state.data.invoices, payouts: state.data.payouts || [], payments: state.data.payments || [], lic_invoices: state.data.lic_invoices || [] },
       state.data.accounting_sha,
       `Mark paid: ${state.data.invoices[idx].invoice_number}`
     );
+    if (_paidResult?.content?.sha) state.data.accounting_sha = _paidResult.content.sha;
     closeModal('modal-mark-paid');
     renderInvoiceTable();
     updateHQAccountingStats();
     alert(`✅ Invoice marked as paid.`);
   } catch(e) {
+    // Rollback the paid status
+    Object.assign(state.data.invoices[idx], _paidSnapshot);
     alert('Error updating invoice: ' + e.message);
   }
 }
