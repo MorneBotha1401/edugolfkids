@@ -1550,40 +1550,57 @@
       <p>Business Platform</p>
     </div>
 
-    <div class="login-error" id="login-error">Invalid credentials. Please check your GitHub token and try again.</div>
-
-    <div class="form-group">
-      <label>Your Name</label>
-      <input type="text" id="login-name" placeholder="e.g. Jane Smith" />
+    <!-- ── MAGIC LINK (default for licensees & coaches) ── -->
+    <div id="login-magic">
+      <h2 style="font-size:22px;margin-bottom:6px;">Welcome back</h2>
+      <p style="color:#9A9A8A;font-size:13px;margin-bottom:20px;">Enter your email to receive a secure one-time login link.</p>
+      <div class="form-group">
+        <label>Email Address</label>
+        <input type="email" id="magic-email" placeholder="your@email.com" autocomplete="email" />
+      </div>
+      <button class="btn btn-primary" onclick="requestMagicLink()" id="magic-btn" style="width:100%;">Send Login Link</button>
+      <div id="magic-sent" style="display:none;background:#E8F5EF;border-radius:8px;padding:14px;text-align:center;margin-top:16px;">
+        <p style="color:#1B5C2A;font-weight:700;margin:0;">📧 Check your email!</p>
+        <p style="color:#555;font-size:13px;margin:4px 0 0;">A login link has been sent. It expires in 15 minutes.</p>
+      </div>
+      <div style="margin-top:28px;text-align:center;border-top:1px solid #eee;padding-top:16px;">
+        <a href="#" onclick="toggleAdminLogin(event)" style="font-size:12px;color:#9A9A8A;text-decoration:none;">HQ Admin Access (GitHub Token) →</a>
+      </div>
     </div>
 
-    <div class="form-group">
-      <label>Your Email <span style="font-size:11px;color:#9A9A8A;">(for certificate delivery)</span></label>
-      <input type="email" id="login-email" placeholder="e.g. jane@example.com" />
-    </div>
-
-    <div class="form-group">
-      <label>Role</label>
-      <select id="login-role">
-        <option value="">Select your role...</option>
-        <option value="hq">HQ / Owner</option>
-        <option value="tdp">Territory Development Partner</option>
-        <option value="licensee">Licensee / Territory Holder</option>
-        <option value="coach">Coach</option>
-      </select>
-    </div>
-
-    <div class="form-group">
-      <label>GitHub Personal Access Token</label>
-      <input type="password" id="login-token" placeholder="ghp_xxxxxxxxxxxxxxxxxxxx" />
-    </div>
-
-    <button class="btn btn-primary" onclick="handleLogin()" id="login-btn">
-      Access Platform
-    </button>
-
-    <div class="login-hint">
-      <p>Your token is stored locally on this device only.<br>It is never sent to any third party.</p>
+    <!-- ── ADMIN TOKEN LOGIN (HQ only, hidden by default) ── -->
+    <div id="login-admin" style="display:none;">
+      <div style="display:flex;align-items:center;gap:10px;margin-bottom:18px;">
+        <a href="#" onclick="toggleAdminLogin(event)" style="font-size:13px;color:#9A9A8A;text-decoration:none;">← Back</a>
+        <h2 style="font-size:20px;margin:0;">HQ Admin Login</h2>
+      </div>
+      <div class="login-error" id="login-error" style="display:none;">Invalid credentials. Please check your token.</div>
+      <div class="form-group">
+        <label>Your Name</label>
+        <input type="text" id="login-name" placeholder="e.g. Jane Smith" />
+      </div>
+      <div class="form-group">
+        <label>Your Email</label>
+        <input type="email" id="login-email" placeholder="e.g. jane@example.com" />
+      </div>
+      <div class="form-group">
+        <label>Role</label>
+        <select id="login-role">
+          <option value="">Select your role...</option>
+          <option value="hq">HQ / Owner</option>
+          <option value="tdp">Territory Development Partner</option>
+          <option value="licensee">Licensee / Territory Holder</option>
+          <option value="coach">Coach</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>GitHub Personal Access Token</label>
+        <input type="password" id="login-token" placeholder="ghp_xxxxxxxxxxxxxxxxxxxx" />
+      </div>
+      <button class="btn btn-primary" onclick="handleLogin()" id="login-btn" style="width:100%;">Access Platform</button>
+      <div class="login-hint" style="margin-top:12px;">
+        <p>Your token is stored locally on this device only. Never sent to any third party.</p>
+      </div>
     </div>
   </div>
 </div>
@@ -1817,6 +1834,24 @@
             <span class="badge badge-green" id="hq-coach-count-badge">0 coaches</span>
           </div>
           <div id="hq-coaches-table-container"></div>
+        </div>
+      </div>
+
+      <!-- ══ LICENSEE MY COACHES ══ -->
+      <div id="page-my-coaches" class="page">
+        <div class="page-header">
+          <h1>My Coaches</h1>
+          <p>Manage your coaching team — each coach receives an invite to log in independently.</p>
+        </div>
+        <div style="display:flex;gap:12px;margin-bottom:16px;">
+          <button class="btn btn-primary" onclick="openModal('modal-add-coach')">➕ Add Coach & Send Invite</button>
+        </div>
+        <div class="card">
+          <div class="card-header">
+            <h3>Coach Team</h3>
+            <span class="badge badge-green" id="my-coach-count">0 coaches</span>
+          </div>
+          <div id="my-coaches-list"></div>
         </div>
       </div>
 
@@ -2214,6 +2249,7 @@
           <h1>My Business Dashboard</h1>
           <p id="licensee-territory-name">Territory Overview</p>
           <button class="btn btn-sm btn-outline" onclick="openEmailSettings()" style="margin-top:8px;">⚙️ Email Settings</button>
+          <button class="btn btn-sm btn-outline" onclick="openModal('modal-shared-token')" style="margin-top:8px;">🔑 Platform Token Setup</button>
         </div>
 
         <div id="licensee-compliance-banner" style="display:none;">
@@ -3488,6 +3524,60 @@
   </div>
 </div>
 
+<!-- Add Coach Modal -->
+<div class="modal-overlay" id="modal-add-coach">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal('modal-add-coach')">✕</button>
+    <h2>Add New Coach</h2>
+    <div class="alert alert-blue">📧 An invite email will be sent automatically so the coach can log in.</div>
+    <div class="form-row">
+      <div class="form-group">
+        <label>First Name</label>
+        <input type="text" id="coach-first" placeholder="First name" />
+      </div>
+      <div class="form-group">
+        <label>Last Name</label>
+        <input type="text" id="coach-last" placeholder="Last name" />
+      </div>
+    </div>
+    <div class="form-group">
+      <label>Email Address</label>
+      <input type="email" id="coach-email" placeholder="coach@example.com" />
+    </div>
+    <div class="form-group">
+      <label>Phone</label>
+      <input type="tel" id="coach-phone" placeholder="+1 555 000 0000" />
+    </div>
+    <div class="form-group">
+      <label>Assign to School</label>
+      <select id="coach-school-select">
+        <option value="">Select school...</option>
+      </select>
+    </div>
+    <div class="modal-footer">
+      <button class="btn btn-outline" onclick="closeModal('modal-add-coach')">Cancel</button>
+      <button class="btn btn-primary" onclick="saveCoach()">Add Coach & Send Invite</button>
+    </div>
+  </div>
+</div>
+
+<!-- Shared Token Setup Modal (HQ only) -->
+<div class="modal-overlay" id="modal-shared-token">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal('modal-shared-token')">✕</button>
+    <h2>⚙️ Shared Platform Token</h2>
+    <div class="alert alert-blue">This token allows licensees and coaches to log in via invite links without needing their own GitHub account. Create a GitHub Personal Access Token with <strong>Contents: Read & Write</strong> on this repo only.</div>
+    <div class="form-group">
+      <label>GitHub Personal Access Token (shared)</label>
+      <input type="password" id="shared-token-input" placeholder="ghp_xxxxxxxxxxxxxxxxxxxx" />
+    </div>
+    <div class="modal-footer">
+      <button class="btn btn-outline" onclick="closeModal('modal-shared-token')">Cancel</button>
+      <button class="btn btn-primary" onclick="saveSharedToken()">Save Token</button>
+    </div>
+  </div>
+</div>
+
 <!-- Add School Modal (CRM) -->
 <div class="modal-overlay" id="modal-add-school">
   <div class="modal">
@@ -3930,6 +4020,10 @@
 const GITHUB_OWNER = 'MorneBotha1401';
 const GITHUB_REPO = 'edugolfkids';
 const API_BASE = `https://api.github.com/repos/${GITHUB_OWNER}/${GITHUB_REPO}/contents`;
+const RAW_BASE  = `https://raw.githubusercontent.com/${GITHUB_OWNER}/${GITHUB_REPO}/main`;
+function getAppBaseUrl() {
+  return window.location.origin + window.location.pathname.replace(/index\.html$/, '').replace(/\/$/, '');
+}
 const ANTHROPIC_MODEL = 'claude-sonnet-4-20250514';
 
 let state = {
@@ -4051,6 +4145,304 @@ async function verifyGitHubToken(token) {
 // ══════════════════════════════════════════
 //  AUTH
 // ══════════════════════════════════════════
+// ══════════════════════════════════════════
+//  AUTH — INVITE & MAGIC LINK SYSTEM
+// ══════════════════════════════════════════
+
+function generateToken(length) {
+  const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+  const arr = new Uint8Array(length || 48);
+  crypto.getRandomValues(arr);
+  return Array.from(arr, b => chars[b % chars.length]).join('');
+}
+
+function toggleAdminLogin(e) {
+  if (e) e.preventDefault();
+  const magic = document.getElementById('login-magic');
+  const admin = document.getElementById('login-admin');
+  if (magic.style.display === 'none') {
+    magic.style.display = ''; admin.style.display = 'none';
+  } else {
+    magic.style.display = 'none'; admin.style.display = '';
+  }
+}
+
+async function getSharedToken() {
+  // 1. Already in memory
+  if (state.githubToken) return state.githubToken;
+  // 2. LocalStorage cache
+  const cached = localStorage.getItem('egk_shared_token');
+  if (cached) { state.githubToken = cached; return cached; }
+  // 3. Fetch from public raw URL (no auth needed for public repo)
+  try {
+    const r = await fetch(`${RAW_BASE}/data/config/config.json`);
+    if (r.ok) {
+      const cfg = await r.json();
+      if (cfg.shared_token) {
+        localStorage.setItem('egk_shared_token', cfg.shared_token);
+        state.githubToken = cfg.shared_token;
+        return cfg.shared_token;
+      }
+    }
+  } catch(e) {}
+  return null;
+}
+
+async function bootstrapApp() {
+  // Pre-fetch shared token so invite/magic processing has it available
+  await getSharedToken();
+
+  // Check URL params first
+  const params = new URLSearchParams(window.location.search);
+  const inviteToken = params.get('invite');
+  const magicToken  = params.get('magic');
+
+  if (inviteToken) { await processInviteToken(inviteToken); return; }
+  if (magicToken)  { await processMagicToken(magicToken);   return; }
+
+  // Fall back to existing session check
+  await checkExistingSession();
+}
+
+async function processInviteToken(token) {
+  const screen = document.getElementById('login-screen');
+  const card   = screen?.querySelector('.login-card');
+  if (card) card.innerHTML = '<div style="padding:40px;text-align:center;"><p style="font-size:16px;color:#555;">Verifying your invite…</p></div>';
+  screen.style.display = 'flex';
+
+  try {
+    const sharedToken = await getSharedToken();
+    if (!sharedToken) throw new Error('Platform not yet configured. Contact HQ.');
+    state.githubToken = sharedToken;
+
+    const r = await githubGet('data/invites/invites.json');
+    const invites = r.data.invites || [];
+    const invite  = invites.find(i => i.token === token && !i.used);
+
+    if (!invite)                              throw new Error('Invite not found or already used.');
+    if (new Date(invite.expires) < new Date()) throw new Error('This invite link has expired. Ask HQ or your licensee to resend.');
+
+    // Mark invite used
+    invite.used = true;
+    invite.used_at = new Date().toISOString();
+    await githubPut('data/invites/invites.json', { invites }, r.sha, `Invite accepted: ${invite.email}`);
+
+    // Create/update user record and start session
+    const user = await upsertUserRecord(invite);
+    await startSession(user, sharedToken);
+
+    // Clean URL
+    window.history.replaceState({}, '', window.location.pathname);
+    showToast(`Welcome, ${user.name}! You're now logged in.`, 'info', 5000);
+  } catch(e) {
+    if (card) card.innerHTML = `
+      <div style="padding:40px;text-align:center;">
+        <div style="font-size:48px;margin-bottom:16px;">⚠️</div>
+        <h2 style="color:#C0392B;margin-bottom:8px;">Invalid Invite</h2>
+        <p style="color:#555;margin-bottom:20px;">${e.message}</p>
+        <button class="btn btn-outline" onclick="location.reload()">Back to Login</button>
+      </div>`;
+  }
+}
+
+async function processMagicToken(token) {
+  const screen = document.getElementById('login-screen');
+  const card   = screen?.querySelector('.login-card');
+  if (card) card.innerHTML = '<div style="padding:40px;text-align:center;"><p style="font-size:16px;color:#555;">Signing you in…</p></div>';
+  screen.style.display = 'flex';
+
+  try {
+    const sharedToken = await getSharedToken();
+    if (!sharedToken) throw new Error('Platform not configured.');
+    state.githubToken = sharedToken;
+
+    const r = await githubGet('data/magic_links/links.json');
+    const links = r.data.links || [];
+    const link  = links.find(l => l.token === token && !l.used);
+
+    if (!link)                              throw new Error('Login link not found or already used.');
+    if (new Date(link.expires) < new Date()) throw new Error('This login link has expired. Request a new one.');
+
+    // Mark used
+    link.used = true;
+    link.used_at = new Date().toISOString();
+    await githubPut('data/magic_links/links.json', { links }, r.sha, `Magic link used: ${link.email}`);
+
+    // Load user record
+    const usersR = await githubGet('data/users/users.json');
+    const users  = usersR.data.users || [];
+    const user   = users.find(u => u.id === link.user_id);
+    if (!user) throw new Error('User account not found.');
+
+    // Update last_login
+    user.last_login = new Date().toISOString();
+    await githubPut('data/users/users.json', { users }, usersR.sha, `Login: ${user.email}`);
+
+    await startSession(user, sharedToken);
+    window.history.replaceState({}, '', window.location.pathname);
+    showToast(`Welcome back, ${user.name}!`, 'info', 4000);
+  } catch(e) {
+    if (card) card.innerHTML = `
+      <div style="padding:40px;text-align:center;">
+        <div style="font-size:48px;margin-bottom:16px;">⚠️</div>
+        <h2 style="color:#C0392B;margin-bottom:8px;">Login Failed</h2>
+        <p style="color:#555;margin-bottom:20px;">${e.message}</p>
+        <button class="btn btn-outline" onclick="location.reload()">Back to Login</button>
+      </div>`;
+  }
+}
+
+async function startSession(user, token) {
+  state.user = {
+    id: user.id,
+    name: user.name,
+    role: user.role,
+    email: user.email,
+    licensee_id: user.licensee_id || null,
+    coach_id: user.coach_id || null,
+    territory_id: user.territory_id || null
+  };
+  state.role = user.role;
+  state.githubToken = token;
+  localStorage.setItem('egk_user', JSON.stringify(state.user));
+  localStorage.setItem('egk_token', token);
+
+  await loadPlatformData();
+  await loadAccountingData();
+  await loadComplianceData();
+  await loadCertData();
+  updateAndSaveStreak();
+  resetActivityTimer();
+  initApp();
+}
+
+async function requestMagicLink() {
+  const email = (document.getElementById('magic-email')?.value || '').trim();
+  if (!email) { showToast('Please enter your email address.', 'warn'); return; }
+
+  const btn = document.getElementById('magic-btn');
+  btn.disabled = true; btn.textContent = 'Sending…';
+
+  try {
+    const sharedToken = await getSharedToken();
+    if (!sharedToken) {
+      showToast('Platform not yet configured. Contact HQ.', 'warn', 6000);
+      btn.disabled = false; btn.textContent = 'Send Login Link';
+      return;
+    }
+    state.githubToken = sharedToken;
+
+    // Look up user
+    let users = [], usersSha = null;
+    try { const r = await githubGet('data/users/users.json'); users = r.data.users || []; usersSha = r.sha; } catch(e) {}
+
+    const user = users.find(u => u.email.toLowerCase() === email.toLowerCase());
+    // Always show success (security — don't reveal if email exists)
+    document.getElementById('magic-sent').style.display = 'block';
+    btn.style.display = 'none';
+
+    if (!user) return; // silently done — no user found but we don't say so
+
+    // Create magic link token
+    const token = generateToken(48);
+    const expires = new Date(Date.now() + 15 * 60 * 1000).toISOString();
+
+    let links = [], linksSha = null;
+    try { const r = await githubGet('data/magic_links/links.json'); links = r.data.links || []; linksSha = r.sha; } catch(e) {}
+
+    // Prune expired/used links then add new one
+    links = links.filter(l => !l.used && new Date(l.expires) > new Date());
+    links.push({ token, user_id: user.id, email: user.email, created: new Date().toISOString(), expires, used: false, used_at: null });
+    await githubPut('data/magic_links/links.json', { links }, linksSha, `Magic link: ${email}`);
+
+    // Send email
+    const loginUrl = `${getAppBaseUrl()}?magic=${token}`;
+    await sendEmail(email, 'Your EduGolfKids login link',
+      `<div style="font-family:sans-serif;max-width:520px;margin:0 auto;padding:32px;">
+        <h2 style="color:#1B5C2A;">⛳ EduGolfKids Login</h2>
+        <p>Hi ${user.name},</p>
+        <p>Click the button below to sign in. This link expires in 15 minutes and can only be used once.</p>
+        <p style="margin:28px 0;">
+          <a href="${loginUrl}" style="background:#1B5C2A;color:white;padding:14px 28px;border-radius:8px;text-decoration:none;font-weight:bold;font-size:16px;">Sign In to EduGolfKids →</a>
+        </p>
+        <p style="font-size:12px;color:#999;">If you didn't request this, ignore this email. Your account is safe.</p>
+      </div>`);
+  } catch(e) {
+    btn.disabled = false; btn.textContent = 'Send Login Link';
+    showToast('Error sending link: ' + e.message, 'error');
+  }
+}
+
+async function upsertUserRecord({ email, name, role, licensee_id, territory_id, coach_id }) {
+  let users = [], sha = null;
+  try { const r = await githubGet('data/users/users.json'); users = r.data.users || []; sha = r.sha; } catch(e) {}
+
+  let user = users.find(u => u.email.toLowerCase() === email.toLowerCase());
+  if (!user) {
+    user = { id: 'usr_' + Date.now(), name, email, role,
+             licensee_id: licensee_id || null,
+             territory_id: territory_id || null,
+             coach_id: coach_id || null,
+             created: new Date().toISOString(), last_login: new Date().toISOString() };
+    users.push(user);
+  } else {
+    user.last_login = new Date().toISOString();
+    if (licensee_id) user.licensee_id = licensee_id;
+    if (coach_id)    user.coach_id    = coach_id;
+  }
+  await githubPut('data/users/users.json', { users }, sha, `User account: ${email}`);
+  return user;
+}
+
+async function createAndSendInvite({ email, name, role, licensee_id, territory_id, coach_id }) {
+  const token = generateToken(48);
+  const invite = {
+    id: 'inv_' + Date.now(), token, email, name, role,
+    licensee_id: licensee_id || null,
+    territory_id: territory_id || null,
+    coach_id: coach_id || null,
+    created_by: state.user?.id,
+    created: new Date().toISOString(),
+    expires: new Date(Date.now() + 7 * 24 * 3600 * 1000).toISOString(),
+    used: false, used_at: null
+  };
+
+  let invites = [], sha = null;
+  try { const r = await githubGet('data/invites/invites.json'); invites = r.data.invites || []; sha = r.sha; } catch(e) {}
+  invites.push(invite);
+  const result = await githubPut('data/invites/invites.json', { invites }, sha, `Invite: ${email}`);
+
+  // Send invite email
+  const inviteUrl = `${getAppBaseUrl()}?invite=${token}`;
+  const roleLabel = role === 'coach' ? 'Coach' : role === 'licensee' ? 'Licensee' : 'Partner';
+  await sendEmail(email, `You're invited to EduGolfKids — ${roleLabel} Portal`,
+    `<div style="font-family:sans-serif;max-width:520px;margin:0 auto;padding:32px;">
+      <h2 style="color:#1B5C2A;">⛳ Welcome to EduGolfKids, ${name}!</h2>
+      <p>You've been set up as a <strong>${roleLabel}</strong> on the EduGolfKids platform.</p>
+      <p>Click below to access your portal for the first time:</p>
+      <p style="margin:28px 0;">
+        <a href="${inviteUrl}" style="background:#1B5C2A;color:white;padding:14px 28px;border-radius:8px;text-decoration:none;font-weight:bold;font-size:16px;">Access My Portal →</a>
+      </p>
+      <p style="font-size:13px;color:#666;">This invite link expires in 7 days. After that, use the email login on the main page.</p>
+      <p style="font-size:12px;color:#999;">If you weren't expecting this, please contact your EduGolfKids administrator.</p>
+    </div>`);
+
+  return invite;
+}
+
+async function saveSharedToken() {
+  const token = document.getElementById('shared-token-input')?.value.trim();
+  if (!token) { alert('Please enter a token.'); return; }
+  try {
+    let sha = null;
+    try { const r = await githubGet('data/config/config.json'); sha = r.sha; } catch(e) {}
+    await githubPut('data/config/config.json', { shared_token: token, updated: new Date().toISOString() }, sha, 'Update shared access token');
+    localStorage.setItem('egk_shared_token', token);
+    alert('✅ Shared token saved. Licensees and coaches can now log in via invite link.');
+    closeModal('modal-shared-token');
+  } catch(e) { alert('Error saving: ' + e.message); }
+}
+
 async function handleLogin() {
   const name = document.getElementById('login-name').value.trim();
   const role = document.getElementById('login-role').value;
@@ -4113,6 +4505,7 @@ async function checkExistingSession() {
     }
     state.role = state.user.role;
     state.githubToken = token;
+    // For non-HQ users, token is the shared token — verify lightly
     const valid = await verifyGitHubToken(token);
     if (valid) {
       await loadPlatformData();
@@ -4135,9 +4528,11 @@ async function loadCertData() {
 
 function getCurrentLicenseeId() {
   if (!state.role || !state.user) return null;
+  // Prefer explicit licensee_id on the user object (set when logging in via invite)
+  if (state.user.licensee_id) return state.user.licensee_id;
   if (state.role === 'licensee') return state.user.id;
   if (state.role === 'hq' || state.role === 'tdp') return null;
-  // Coach: look up their record to find licensee_id
+  // Coach fallback: look up their coach record
   const coach = (state.data.coaches || []).find(c => c.id === state.user.id);
   return coach?.licensee_id || null;
 }
@@ -4366,6 +4761,7 @@ const NAV_CONFIG = {
     ]},
     { section: 'Compliance & Growth', items: [
       { icon: '🛡️', label: 'My Compliance', page: 'page-my-compliance' },
+      { icon: '🏌️', label: 'My Coaches', page: 'page-my-coaches' },
       { icon: '🏠', label: 'Cert Dashboard', page: 'page-coach-home' },
       { icon: '🎓', label: 'Education Hub', page: 'page-coach-education' },
       { icon: '📢', label: 'Marketing Portal', page: 'page-marketing' },
@@ -4424,6 +4820,7 @@ function showPage(pageId) {
   if (pageId === 'page-territories') renderTerritoriesTable();
   if (pageId === 'page-licensees') renderHQLicensees();
   if (pageId === 'page-hq-coaches') renderHQCoaches();
+  if (pageId === 'page-my-coaches') renderMyCoaches();
   if (pageId === 'page-students') renderStudentsTable();
   if (pageId === 'page-scheduling') renderSchedulingPage();
   if (pageId === 'page-tdp') renderTDPPage();
@@ -5332,11 +5729,100 @@ async function saveLicensee() {
     if (_lResult?.content?.sha) state.data.licensees_sha = _lResult.content.sha;
     closeModal('modal-add-licensee');
     updateDashboardStats();
-    alert(`✅ Licensee "${licensee.name}" onboarded successfully!`);
+    // Send invite email (non-blocking — show success first)
+    createAndSendInvite({
+      email: licensee.email, name: licensee.name, role: 'licensee',
+      licensee_id: licensee.id, territory_id: licensee.territory_id
+    }).then(() => showToast(`📧 Invite sent to ${licensee.email}`, 'info', 5000))
+      .catch(e  => showToast(`Saved, but invite email failed: ${e.message}`, 'warn', 8000));
+    alert(`✅ Licensee "${licensee.name}" onboarded! An invite link is being sent to ${licensee.email}.`);
   } catch(e) {
     state.data.licensees.pop(); // rollback
     alert('Error saving to GitHub: ' + e.message);
   }
+}
+
+async function saveCoach() {
+  if (state.role !== 'licensee' && state.role !== 'hq') {
+    alert('Only licensees can add coaches.'); return;
+  }
+  const first = document.getElementById('coach-first')?.value.trim();
+  const last  = document.getElementById('coach-last')?.value.trim();
+  const email = document.getElementById('coach-email')?.value.trim();
+  const phone = document.getElementById('coach-phone')?.value.trim();
+  const schoolId = document.getElementById('coach-school-select')?.value;
+
+  if (!first || !last || !email) { alert('Please fill in name and email.'); return; }
+
+  const licId = getCurrentLicenseeId() || state.user.id;
+  const coach = {
+    id: 'cch_' + Date.now(),
+    first_name: first, last_name: last,
+    name: `${first} ${last}`,
+    email, phone: phone || '',
+    licensee_id: licId,
+    school_id: schoolId || '',
+    status: 'pending',
+    created: new Date().toISOString().split('T')[0]
+  };
+
+  state.data.coaches = state.data.coaches || [];
+  state.data.coaches.push(coach);
+
+  try {
+    const r = await githubPut('data/coaches/coaches.json',
+      { coaches: state.data.coaches }, state.data.coaches_sha,
+      `Add coach: ${coach.name}`);
+    if (r?.content?.sha) state.data.coaches_sha = r.content.sha;
+
+    closeModal('modal-add-coach');
+    if (typeof renderMyCoaches === 'function') renderMyCoaches();
+    if (typeof renderHQCoaches  === 'function') renderHQCoaches();
+    updateDashboardStats();
+
+    createAndSendInvite({
+      email: coach.email, name: coach.name, role: 'coach',
+      licensee_id: licId, coach_id: coach.id
+    }).then(() => showToast(`📧 Invite sent to ${coach.email}`, 'info', 5000))
+      .catch(e  => showToast(`Saved, but invite email failed: ${e.message}`, 'warn', 8000));
+
+    alert(`✅ Coach ${coach.name} added! An invite link is being sent to ${coach.email}.`);
+  } catch(e) {
+    state.data.coaches.pop();
+    alert('Error saving coach: ' + e.message);
+  }
+}
+
+function renderMyCoaches() {
+  const container = document.getElementById('my-coaches-list');
+  if (!container) return;
+  const licId   = getCurrentLicenseeId() || state.user.id;
+  const coaches  = (state.data.coaches || []).filter(c => c.licensee_id === licId);
+  const schools  = state.data.schools || [];
+
+  safeSet('my-coach-count', `${coaches.length} coach${coaches.length !== 1 ? 'es' : ''}`);
+
+  if (coaches.length === 0) {
+    container.innerHTML = `<div class="empty-state"><div class="empty-icon">🏌️</div><h3>No coaches yet</h3><p>Add your first coach and they'll receive an invite email.</p></div>`;
+    return;
+  }
+
+  const rows = coaches.map(c => {
+    const school = schools.find(s => s.id === c.school_id);
+    const sc = c.status === 'active' ? 'var(--success)' : c.status === 'pending' ? 'var(--amber)' : 'var(--gray-400)';
+    return `<tr>
+      <td><strong>${c.first_name || ''} ${c.last_name || ''}</strong><br><small style="color:var(--gray-400)">${c.email || ''}</small></td>
+      <td>${school ? school.name : '—'}</td>
+      <td><span class="badge" style="background:${sc}20;color:${sc};">${c.status || 'pending'}</span></td>
+      <td>${c.phone || '—'}</td>
+      <td>${c.created || '—'}</td>
+    </tr>`;
+  }).join('');
+
+  container.innerHTML = `<table class="data-table">
+    <thead><tr><th>Coach</th><th>School</th><th>Status</th><th>Phone</th><th>Added</th></tr></thead>
+    <tbody>${rows}</tbody>
+  </table>`;
 }
 
 async function saveSchool() {
@@ -6357,6 +6843,15 @@ function openModal(id) {
     const du = document.getElementById('lic-inv-due');
     if (d && !d.value) d.value = today;
     if (du && !du.value) du.value = due;
+  }
+  if (id === 'modal-add-coach') {
+    const licId = getCurrentLicenseeId() || state.user.id;
+    const mySchools = (state.data.schools || []).filter(s => s.licensee_id === licId || !s.licensee_id);
+    const sel = document.getElementById('coach-school-select');
+    if (sel) {
+      sel.innerHTML = '<option value="">Select school...</option>' +
+        mySchools.map(s => `<option value="${s.id}">${s.name}</option>`).join('');
+    }
   }
   if (id === 'modal-add-licensee') {
     // Populate territory dropdown
@@ -9937,7 +10432,7 @@ async function saveComplianceDoc() {
 //  STARTUP
 // ══════════════════════════════════════════
 window.addEventListener('DOMContentLoaded', () => {
-  checkExistingSession();
+  bootstrapApp();
   // Set default invoice due date
   const dueDate = document.getElementById('invoice-due');
   if (dueDate) {
