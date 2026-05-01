@@ -4602,7 +4602,7 @@ function renderTerritoryHealth() {
       ? `<span class="badge badge-red" style="font-size:11px;">⚠️ Compliance</span>`
       : `<span class="badge badge-green" style="font-size:11px;">✅ Compliant</span>`;
 
-    return `<div style="display:flex; align-items:center; justify-content:space-between; padding:12px 0; border-bottom:1px solid var(--gray-100);" onclick="viewTerritoryDetail('${t.id}')" style="cursor:pointer;">
+    return `<div style="display:flex; align-items:center; justify-content:space-between; padding:12px 0; border-bottom:1px solid var(--gray-100);" onclick="openTerritoryDetail('${t.id}')" style="cursor:pointer;">
       <div style="display:flex; align-items:center; gap:12px;">
         <div style="width:8px; height:8px; border-radius:50%; background:${statusColor}; flex-shrink:0;"></div>
         <div>
@@ -8453,6 +8453,45 @@ function renderTDPBIAlerts(container) {
   container.innerHTML = alerts.map(a => `<div class="alert ${colorMap[a.type] || 'alert-blue'}">${a.icon} ${a.msg}</div>`).join('');
 }
 
+function openLicenseeDetail(licId) {
+  const licensees = state.data.licensees || [];
+  const schools   = state.data.schools   || [];
+  const students  = state.data.students  || [];
+  const l = licensees.find(x => x.id === licId);
+  if (!l) return;
+  const lSchools  = schools.filter(s => s.licensee_id === l.id);
+  const lStudents = students.filter(s => s.licensee_id === l.id);
+  const sc = l.status === 'active' ? 'var(--success)' : 'var(--amber)';
+  const { overall, status } = typeof calcComplianceScore === 'function'
+    ? calcComplianceScore(licId) : { overall: 0, status: 'unknown' };
+  const compColour = overall >= 85 ? 'var(--success)' : overall >= 70 ? 'var(--amber)' : 'var(--red)';
+  showInfoModal(
+    `Licensee: ${l.first_name || ''} ${l.last_name || ''}`,
+    `<div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:16px;">
+       <div class="card" style="text-align:center;padding:12px;">
+         <div style="font-size:24px;font-weight:700;color:var(--green-dark);">${lSchools.length}</div>
+         <div style="font-size:12px;color:var(--gray-400);">Schools</div>
+       </div>
+       <div class="card" style="text-align:center;padding:12px;">
+         <div style="font-size:24px;font-weight:700;color:var(--green-dark);">${lStudents.length}</div>
+         <div style="font-size:12px;color:var(--gray-400);">Students</div>
+       </div>
+     </div>
+     <table class="data-table" style="margin-bottom:12px;">
+       <tbody>
+         <tr><td><strong>Territory</strong></td><td>${l.territory_name || l.location || '—'}</td></tr>
+         <tr><td><strong>Email</strong></td><td>${l.email || '—'}</td></tr>
+         <tr><td><strong>Phone</strong></td><td>${l.phone || '—'}</td></tr>
+         <tr><td><strong>Status</strong></td><td><span class="badge" style="background:${sc}20;color:${sc};">${l.status || 'active'}</span></td></tr>
+         <tr><td><strong>Monthly Fee</strong></td><td>$${l.monthly_fee || 500}</td></tr>
+         <tr><td><strong>Compliance</strong></td><td><strong style="color:${compColour};">${overall}%</strong></td></tr>
+       </tbody>
+     </table>
+     ${lSchools.length ? `<p style="font-size:13px;color:var(--gray-500);font-weight:600;margin-bottom:6px;">Schools</p>
+       <ul style="font-size:13px;color:var(--gray-600);margin:0;padding-left:18px;">${lSchools.map(s=>`<li>${s.name||s.id}</li>`).join('')}</ul>` : ''}`
+  );
+}
+
 function renderMyLicenseesAsTDP() {
   const licensees = state.data.licensees || [];
   const schools   = state.data.schools   || [];
@@ -8652,11 +8691,12 @@ async function markLessonComplete(classId, lessonNum) {
   cls.lesson_progress.push(lessonNum);
   cls.lesson_progress.sort((a, b) => a - b);
   try {
-    await githubPut('data/classes/classes.json',
+    const result = await githubPut('data/classes/classes.json',
       { classes: state.data.classes },
       state.data.classes_sha,
       `Coach completed lesson ${lessonNum} — ${cls.name || classId}`
     );
+    if (result?.content?.sha) state.data.classes_sha = result.content.sha;
     showToast('✅ Lesson ' + lessonNum + ' marked complete!');
     renderLessonPlans();
   } catch(e) {
