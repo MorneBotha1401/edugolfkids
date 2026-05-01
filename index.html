@@ -4045,6 +4045,11 @@ async function checkExistingSession() {
 // ══════════════════════════════════════════
 //  DATA LOADING
 // ══════════════════════════════════════════
+async function loadCertData() {
+  // Cert data is embedded in egk-education.js (KNOWLEDGE_CHECKS, QUIZ_QUESTIONS).
+  // No separate JSON file — stub here to allow future remote cert records.
+}
+
 async function loadPlatformData() {
   const files = [
     { key: 'territories', path: 'data/territories/territories.json', field: 'territories' },
@@ -6022,6 +6027,22 @@ function openModal(id) {
     const du = document.getElementById('lic-inv-due');
     if (d && !d.value) d.value = today;
     if (du && !du.value) du.value = due;
+  }
+  if (id === 'modal-add-licensee') {
+    // Populate territory dropdown
+    const terrSel = document.getElementById('lic-territory');
+    if (terrSel) {
+      const territories = (state.data.territories || []).filter(t => t.status !== 'inactive');
+      terrSel.innerHTML = '<option value="">Select territory...</option>' +
+        territories.map(t => `<option value="${t.id}">${t.name}</option>`).join('');
+    }
+    // Populate TDP referral dropdown
+    const tdpSel = document.getElementById('lic-tdp-ref');
+    if (tdpSel) {
+      const tdps = (state.data.licensees || []).filter(l => l.role === 'tdp' || l.type === 'tdp');
+      tdpSel.innerHTML = '<option value="">No TDP referral</option>' +
+        tdps.map(t => `<option value="${t.id}">${t.first_name || ''} ${t.last_name || ''} (TDP)</option>`).join('');
+    }
   }
   if (id === 'modal-raise-invoice') {
     populateInvoiceLicenseeDropdown();
