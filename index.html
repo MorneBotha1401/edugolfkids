@@ -3944,9 +3944,12 @@ let state = {
     classes: [],
     students: [],
     coaches: [],
+    sessions: [],
     invoices: [],
     lic_invoices: [],
-    compliance: []
+    compliance: [],
+    class_session_sha: {},
+    licensee_student_sha: {}
   }
 };
 
@@ -3962,6 +3965,18 @@ async function githubGet(path) {
   });
   if (!res.ok) throw new Error(`GitHub GET failed: ${res.status}`);
   const json = await res.json();
+  if (!json.content) {
+    // File >1 MB — Contents API cannot return it inline; use the Git Blobs API.
+    if (!json.sha) throw new Error(`GitHub GET: no content and no sha for ${path}`);
+    const blobRes = await fetch(
+      `https://api.github.com/repos/${GITHUB_OWNER}/${GITHUB_REPO}/git/blobs/${json.sha}`,
+      { headers: { 'Authorization': `token ${state.githubToken}`, 'Accept': 'application/vnd.github.v3+json' } }
+    );
+    if (!blobRes.ok) throw new Error(`GitHub Blob GET failed: ${blobRes.status} for ${path}`);
+    const blob = await blobRes.json();
+    const content = atob(blob.content.replace(/\n/g,''));
+    return { data: JSON.parse(content), sha: json.sha };
+  }
   const content = atob(json.content.replace(/\n/g,''));
   return { data: JSON.parse(content), sha: json.sha };
 }
@@ -3988,7 +4003,8 @@ function showToast(message, type, duration) {
   setTimeout(function(){ toast.remove(); }, duration);
 }
 
-async function githubPut(path, data, sha, message) {
+async function githubPut(path, data, sha, message, _retries) {
+  if (_retries === undefined) _retries = 3;
   const content = btoa(unescape(encodeURIComponent(JSON.stringify(data, null, 2))));
   const body = { message, content };
   if (sha) body.sha = sha;
@@ -4002,16 +4018,24 @@ async function githubPut(path, data, sha, message) {
     body: JSON.stringify(body)
   });
   if (!res.ok) {
+    if (res.status === 409 && _retries > 0) {
+      // Re-fetch to get the current SHA then retry automatically.
+      try {
+        const fresh = await githubGet(path);
+        await new Promise(r => setTimeout(r, 300 * (4 - _retries)));
+        return githubPut(path, data, fresh.sha, message, _retries - 1);
+      } catch(e2) {
+        showToast('⚠️ Save conflict — please reload and try again.', 'warn', 6000);
+        throw new Error(`GitHub PUT 409 — retries exhausted for ${path}`);
+      }
+    }
     if (res.status === 409) showToast(
       '⚠️ Save conflict — another session changed this data. Reload to sync before retrying.',
       'warn', 6000);
     throw new Error(`GitHub PUT failed: ${res.status}`);
   }
   const json = await res.json();
-  if (json?.content?.sha) {
-    // Return sha so callers can update their cached value
-    json._sha = json.content.sha;
-  }
+  if (json?.content?.sha) json._sha = json.content.sha;
   return json;
 }
 
@@ -4074,7 +4098,7 @@ async function handleLogin() {
 function handleLogout() {
   localStorage.removeItem('egk_user');
   localStorage.removeItem('egk_token');
-  state = { user: null, role: null, githubToken: null, data: { territories:[], licensees:[], schools:[], classes:[], students:[], coaches:[], invoices:[], lic_invoices:[], compliance:[] } };
+  state = { user: null, role: null, githubToken: null, data: { territories:[], licensees:[], schools:[], classes:[], students:[], coaches:[], sessions:[], invoices:[], lic_invoices:[], compliance:[], class_session_sha:{}, licensee_student_sha:{} } };
   document.getElementById('app').style.display = 'none';
   document.getElementById('login-screen').style.display = 'flex';
 }
@@ -4109,27 +4133,118 @@ async function loadCertData() {
   // No separate JSON file — stub here to allow future remote cert records.
 }
 
-async function loadPlatformData() {
-  const files = [
-    { key: 'territories', path: 'data/territories/territories.json', field: 'territories' },
-    { key: 'licensees', path: 'data/licensees/licensees.json', field: 'licensees' },
-    { key: 'schools', path: 'data/schools/schools.json', field: 'schools' },
-    { key: 'classes', path: 'data/classes/classes.json', field: 'classes' },
-    { key: 'students', path: 'data/students/students.json', field: 'students' },
-    { key: 'coaches', path: 'data/coaches/coaches.json', field: 'coaches' },
-    { key: 'sessions', path: 'data/sessions/sessions.json', field: 'sessions' },
-  ];
+function getCurrentLicenseeId() {
+  if (!state.role || !state.user) return null;
+  if (state.role === 'licensee') return state.user.id;
+  if (state.role === 'hq' || state.role === 'tdp') return null;
+  // Coach: look up their record to find licensee_id
+  const coach = (state.data.coaches || []).find(c => c.id === state.user.id);
+  return coach?.licensee_id || null;
+}
 
-  for (const f of files) {
+function getLicenseeIdForClass(classId) {
+  const cls = (state.data.classes || []).find(c => c.id === classId);
+  if (!cls) return getCurrentLicenseeId();
+  const coach = (state.data.coaches || []).find(c => c.id === cls.coach_id);
+  return coach?.licensee_id || getCurrentLicenseeId();
+}
+
+async function saveStudentsForLicensee(licId, message) {
+  if (!licId) {
+    // Legacy fallback: no licensee_id known, save to monolithic file
+    const r = await githubPut('data/students/students.json',
+      { students: state.data.students },
+      state.data.students_sha,
+      message
+    );
+    if (r?.content?.sha) state.data.students_sha = r.content.sha;
+    return r;
+  }
+  const licStudents = (state.data.students || []).filter(s => s.licensee_id === licId);
+  if (!state.data.licensee_student_sha) state.data.licensee_student_sha = {};
+  const sha = state.data.licensee_student_sha[licId];
+  const r = await githubPut(
+    `data/licensees/${licId}/students.json`,
+    { students: licStudents },
+    sha,
+    message
+  );
+  if (r?.content?.sha) state.data.licensee_student_sha[licId] = r.content.sha;
+  return r;
+}
+
+async function loadPlatformData() {
+  if (!state.data.class_session_sha) state.data.class_session_sha = {};
+  if (!state.data.licensee_student_sha) state.data.licensee_student_sha = {};
+
+  // Phase 1: core files — load in parallel (all roles need these)
+  const coreFiles = [
+    { key: 'territories', path: 'data/territories/territories.json', field: 'territories' },
+    { key: 'licensees',   path: 'data/licensees/licensees.json',     field: 'licensees'   },
+    { key: 'schools',     path: 'data/schools/schools.json',          field: 'schools'     },
+    { key: 'classes',     path: 'data/classes/classes.json',          field: 'classes'     },
+    { key: 'coaches',     path: 'data/coaches/coaches.json',          field: 'coaches'     },
+  ];
+  await Promise.all(coreFiles.map(async f => {
     try {
       const result = await githubGet(f.path);
       state.data[f.key] = result.data[f.field] || [];
       state.data[f.key + '_sha'] = result.sha;
-    } catch (e) {
+    } catch(e) {
       console.warn(`Could not load ${f.path}:`, e.message);
       state.data[f.key] = [];
     }
+  }));
+
+  // Phase 2: students — sharded per licensee
+  // Sessions are loaded on-demand per class in submitAttendance (never at startup).
+  if (state.role === 'hq' || state.role === 'tdp') {
+    // Load every licensee's student file in parallel, merge into flat array
+    const licensees = state.data.licensees || [];
+    if (licensees.length > 0) {
+      const chunks = await Promise.all(licensees.map(async l => {
+        try {
+          const r = await githubGet(`data/licensees/${l.id}/students.json`);
+          state.data.licensee_student_sha[l.id] = r.sha;
+          return r.data.students || [];
+        } catch(e) { return []; }
+      }));
+      const merged = chunks.flat();
+      if (merged.length > 0) {
+        state.data.students = merged;
+      } else {
+        // No sharded files yet — fall back to legacy monolithic file
+        try {
+          const r = await githubGet('data/students/students.json');
+          state.data.students = r.data.students || [];
+          state.data.students_sha = r.sha;
+        } catch(e) { state.data.students = []; }
+      }
+    } else {
+      state.data.students = [];
+    }
+  } else {
+    // Licensee or coach — load only their own students file
+    const licId = getCurrentLicenseeId();
+    if (licId) {
+      try {
+        const r = await githubGet(`data/licensees/${licId}/students.json`);
+        state.data.students = r.data.students || [];
+        state.data.licensee_student_sha[licId] = r.sha;
+      } catch(e) {
+        // Fall back to legacy monolithic file, filter to this licensee
+        try {
+          const r = await githubGet('data/students/students.json');
+          state.data.students = (r.data.students || []).filter(
+            s => !s.licensee_id || s.licensee_id === licId);
+          state.data.students_sha = r.sha;
+        } catch(e2) { state.data.students = []; }
+      }
+    } else {
+      state.data.students = [];
+    }
   }
+
   updateGitHubStatus(true);
 }
 
@@ -5243,11 +5358,12 @@ async function saveSchool() {
   state.data.schools.push(school);
 
   try {
-    await githubPut('data/schools/schools.json',
+    const _schResult = await githubPut('data/schools/schools.json',
       { schools: state.data.schools },
       state.data.schools_sha,
       `Claim school: ${name}`
     );
+    if (_schResult?.content?.sha) state.data.schools_sha = _schResult.content.sha;
     closeModal('modal-add-school');
     renderSchoolPipeline();
     updateDashboardStats();
@@ -5279,16 +5395,19 @@ async function saveStudent() {
   }
 
   const age = calculateAge(dob);
+  const _stuClassId = document.getElementById('student-class').value;
+  const _stuLicId = getLicenseeIdForClass(_stuClassId) || getCurrentLicenseeId();
   const student = {
     id: 'stu_' + Date.now(),
     first_name: first, last_name: last,
     full_name: `${first} ${last}`,
     dob, age,
     age_track: age,
+    licensee_id: _stuLicId,
     parent_name: parent,
     parent_email: email,
     parent_phone: document.getElementById('student-phone').value,
-    class_id: document.getElementById('student-class').value,
+    class_id: _stuClassId,
     medical_notes: document.getElementById('student-medical').value,
     status: 'enrolled',
     enrolled_date: new Date().toISOString().split('T')[0],
@@ -5298,11 +5417,7 @@ async function saveStudent() {
   state.data.students.push(student);
 
   try {
-    await githubPut('data/students/students.json',
-      { students: state.data.students },
-      state.data.students_sha,
-      `Enroll student: ${student.full_name}`
-    );
+    await saveStudentsForLicensee(_stuLicId, `Enroll student: ${student.full_name}`);
     closeModal('modal-add-student');
     updateDashboardStats();
     // Send welcome email to parent
@@ -5342,11 +5457,12 @@ async function saveClass() {
   state.data.classes.push(cls);
 
   try {
-    await githubPut('data/classes/classes.json',
+    const _clsResult = await githubPut('data/classes/classes.json',
       { classes: state.data.classes },
       state.data.classes_sha,
       `Create class: ${name}`
     );
+    if (_clsResult?.content?.sha) state.data.classes_sha = _clsResult.content.sha;
     closeModal('modal-create-class');
     alert(`✅ Class "${name}" created! ${day}s at ${time}.`);
   } catch(e) {
@@ -7058,23 +7174,27 @@ async function submitAttendance() {
     submitted_at: new Date().toISOString()
   };
 
-  // Load existing sessions
+  // Load & save sessions per class — each class has its own file.
   try {
+    const _classId  = currentAttendanceClass.id;
+    const _sessPath = `data/classes/${_classId}/sessions.json`;
+    if (!state.data.class_session_sha) state.data.class_session_sha = {};
     let sessions = [];
-    let sha = null;
+    let sha = state.data.class_session_sha[_classId] || null;
     try {
-      const result = await githubGet('data/sessions/sessions.json');
+      const result = await githubGet(_sessPath);
       sessions = result.data.sessions || [];
       sha = result.sha;
-    } catch(e) { /* first session */ }
+    } catch(e) { /* first session for this class */ }
 
     sessions.push(sessionRecord);
 
-    await githubPut('data/sessions/sessions.json',
+    const _sessResult = await githubPut(_sessPath,
       { sessions },
       sha,
-      `Attendance: \${currentAttendanceClass.name} — \${today}`
+      `Attendance: ${currentAttendanceClass.name} — ${today}`
     );
+    if (_sessResult?.content?.sha) state.data.class_session_sha[_classId] = _sessResult.content.sha;
     state.data.sessions = sessions;
 
     // Update student lesson progress
@@ -7129,12 +7249,9 @@ async function updateStudentProgress(sessionRecord) {
 
   if (updated) {
     try {
-      await githubPut('data/students/students.json',
-        { students },
-        state.data.students_sha,
-        `Update lesson progress: \${sessionRecord.class_id}`
-      );
       state.data.students = students;
+      const _progLicId = getLicenseeIdForClass(sessionRecord.class_id);
+      await saveStudentsForLicensee(_progLicId, `Update lesson progress: ${sessionRecord.class_id}`);
     } catch(e) { console.warn('Could not update student progress:', e); }
   }
 }
@@ -7391,15 +7508,13 @@ async function submitRegistrationForm() {
     lesson_progress: {}
   };
 
+  const _rfLicId = getLicenseeIdForClass(classId);
+  student.licensee_id = _rfLicId;
+
   try {
     state.data.students = state.data.students || [];
     state.data.students.push(student);
-    
-    await githubPut('data/students/students.json',
-      { students: state.data.students },
-      state.data.students_sha,
-      `New enrollment via form: \${student.full_name}`
-    );
+    await saveStudentsForLicensee(_rfLicId, `New enrollment via form: \${student.full_name}`);
 
     document.getElementById('reg-form-container').style.display = 'none';
     document.getElementById('reg-form-success').style.display = 'block';
