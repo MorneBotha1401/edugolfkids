@@ -4437,14 +4437,43 @@ async function createAndSendInvite({ email, name, role, licensee_id, territory_i
 async function saveSharedToken() {
   const token = document.getElementById('shared-token-input')?.value.trim();
   if (!token) { alert('Please enter a token.'); return; }
+
+  // Save to localStorage immediately — works right away on this browser
+  localStorage.setItem('egk_shared_token', token);
+
+  // Save to GitHub so other devices (licensees/coaches) can fetch it automatically.
+  // Use raw fetch to avoid the retry loop — get SHA first, then PUT.
   try {
     let sha = null;
-    try { const r = await githubGet('data/config/config.json'); sha = r.sha; } catch(e) {}
-    await githubPut('data/config/config.json', { shared_token: token, updated: new Date().toISOString() }, sha, 'Update shared access token');
-    localStorage.setItem('egk_shared_token', token);
-    alert('✅ Shared token saved. Licensees and coaches can now log in via invite link.');
-    closeModal('modal-shared-token');
-  } catch(e) { alert('Error saving: ' + e.message); }
+    const checkRes = await fetch(`${API_BASE}/data/config/config.json`, {
+      headers: { 'Authorization': `token ${state.githubToken}`, 'Accept': 'application/vnd.github.v3+json' }
+    });
+    if (checkRes.ok) {
+      const j = await checkRes.json();
+      sha = j.sha || null;
+    }
+
+    const payload = JSON.stringify({ shared_token: token, updated: new Date().toISOString() }, null, 2);
+    const content = btoa(unescape(encodeURIComponent(payload)));
+    const body = { message: 'Update shared access token', content };
+    if (sha) body.sha = sha;
+
+    const putRes = await fetch(`${API_BASE}/data/config/config.json`, {
+      method: 'PUT',
+      headers: { 'Authorization': `token ${state.githubToken}`, 'Accept': 'application/vnd.github.v3+json', 'Content-Type': 'application/json' },
+      body: JSON.stringify(body)
+    });
+
+    if (putRes.ok) {
+      alert('✅ Shared token saved to GitHub. Invite links will work on any device.');
+    } else {
+      alert('✅ Token saved locally (GitHub backup failed — invite links still work on this browser).');
+    }
+  } catch(e) {
+    alert('✅ Token saved locally. Invite links will work on this browser.');
+  }
+
+  closeModal('modal-shared-token');
 }
 
 async function handleLogin() {
