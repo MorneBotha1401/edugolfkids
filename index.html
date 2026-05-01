@@ -6524,7 +6524,7 @@ function openAttendanceSession(classId) {
           <div style="font-weight:700;color:var(--green-dark);margin-bottom:4px;">Lesson ${lessonNum} — Age ${age} Track</div>
           <div style="font-size:13px;color:var(--gray-600);line-height:1.6;">${lessonFocus}</div>
         </div>
-        <button class="btn btn-outline btn-sm" onclick="_lpLesson=null;showPage('page-lesson-plans')" style="flex-shrink:0;">
+        <button class="btn btn-outline btn-sm" onclick="_lpClass='${cls.id}';_lpQuarter=Math.floor(Math.max(0,(${(cls.lesson_progress||[]).length}))/10)+1||1;_lpLesson=null;showPage('page-lesson-plans')" style="flex-shrink:0;">
           📚 View Lesson Plans
         </button>
       </div>
@@ -6540,11 +6540,8 @@ function openAttendanceSession(classId) {
 }
 
 function getCurrentLesson(cls) {
-  if (!cls.term_start) return 1;
-  const start = new Date(cls.term_start);
-  const now = new Date();
-  const weeks = Math.floor((now - start) / (7 * 24 * 60 * 60 * 1000)) + 1;
-  return Math.min(Math.max(weeks, 1), 10);
+  const done = (cls.lesson_progress || []).length;
+  return Math.min(done + 1, 40);
 }
 
 function getLessonFocus(lessonNum, ageGroup) {
@@ -8627,8 +8624,46 @@ function renderCoachPortal() {
 // ══════════════════════════════════════════
 //  LESSON PLAN TEMPLATES (post-L1 unlock)
 // ══════════════════════════════════════════
-let _lpGroup = '4-5';
-let _lpLesson = null;
+let _lpClass   = null;   // selected class id
+let _lpQuarter = 1;       // 1-4
+let _lpLesson  = null;    // 0-based lesson index or null
+
+function getLessonGroupKey(ag) {
+  const s = String(ag || '').toLowerCase().trim();
+  if (s === '4-5' || s === '4' || s === '5') return '4-5';
+  if (s === '6-7' || s === '6' || s === '7') return '6-7';
+  if (s === '8-9' || s === '8' || s === '9') return '8-9';
+  const n = parseInt(s);
+  if (n >= 10) return '10+';
+  if (n >= 8)  return '8-9';
+  if (n >= 6)  return '6-7';
+  return '4-5';
+}
+
+async function markLessonComplete(classId, lessonNum) {
+  const classes = state.data?.classes || [];
+  const cls = classes.find(c => c.id === classId);
+  if (!cls) return;
+  if (!cls.lesson_progress) cls.lesson_progress = [];
+  if (cls.lesson_progress.includes(lessonNum)) {
+    showToast('Lesson ' + lessonNum + ' already marked complete.');
+    return;
+  }
+  cls.lesson_progress.push(lessonNum);
+  cls.lesson_progress.sort((a, b) => a - b);
+  try {
+    await githubPut('data/classes/classes.json',
+      { classes: state.data.classes },
+      state.data.classes_sha,
+      `Coach completed lesson ${lessonNum} — ${cls.name || classId}`
+    );
+    showToast('✅ Lesson ' + lessonNum + ' marked complete!');
+    renderLessonPlans();
+  } catch(e) {
+    showToast('Error saving: ' + e.message);
+    cls.lesson_progress = cls.lesson_progress.filter(n => n !== lessonNum);
+  }
+}
 
 function renderLessonPlans() {
   const page = document.getElementById('lesson-plans-content');
@@ -8642,56 +8677,132 @@ function renderLessonPlans() {
       <div style="max-width:520px;margin:48px auto;text-align:center;">
         <div style="font-size:56px;margin-bottom:20px;">🔒</div>
         <h2 style="color:var(--green-dark);margin-bottom:12px;">Unlocks after Level 1 Certification</h2>
-        <p style="color:var(--gray-500);margin-bottom:24px;">Complete your Level 1 — Foundations certification to access 40 fully-detailed session templates across all age groups.</p>
+        <p style="color:var(--gray-500);margin-bottom:24px;">Complete your Level 1 Foundations certification to access 40 fully-detailed session templates across all age groups.</p>
         <button class="btn btn-primary" onclick="showPage('page-coach-education');renderEducationHub()">Go to Education Hub →</button>
       </div>`;
     return;
   }
 
-  if (_lpLesson !== null) {
-    renderLessonDetail(); return;
+  if (_lpLesson !== null) { renderLessonDetail(); return; }
+
+  const myCoach = (state.data?.coaches || []).find(c =>
+    c.id === state.user?.id || c.user_id === state.user?.id ||
+    (c.name || '').toLowerCase() === (state.user?.name || '').toLowerCase()
+  );
+  const myClasses = (state.data?.classes || []).filter(c =>
+    c.status !== 'inactive' && (myCoach ? c.coach_id === myCoach.id : true)
+  );
+
+  // ── Class selector ─────────────────────────────────────────────────────────
+  if (!_lpClass || !myClasses.find(c => c.id === _lpClass)) {
+    if (myClasses.length === 1) {
+      _lpClass = myClasses[0].id;
+    } else {
+      const cards = myClasses.length === 0
+        ? '<p style="color:var(--gray-400);">No active classes found.</p>'
+        : myClasses.map(c => {
+            const done = (c.lesson_progress || []).length;
+            const grpKey = getLessonGroupKey(c.age_group);
+            const grp = (typeof LESSON_TEMPLATES !== 'undefined' ? LESSON_TEMPLATES : {})[grpKey] || {};
+            return `<div class="card" style="cursor:pointer;" onclick="_lpClass='${c.id}';_lpQuarter=Math.floor(Math.max(0,(${done}))/10)+1||1;renderLessonPlans()">
+              <div style="display:flex;align-items:center;gap:12px;">
+                <div style="width:44px;height:44px;border-radius:50%;background:${grp.color||'#1B5C2A'}20;display:flex;align-items:center;justify-content:center;font-size:20px;">📚</div>
+                <div style="flex:1;">
+                  <div style="font-weight:700;color:var(--green-dark);">${c.name || 'Class'}</div>
+                  <div style="font-size:12px;color:var(--gray-400);">${c.day || ''} · Ages ${c.age_group || '?'} · ${grp.label || ''}</div>
+                  <div style="margin-top:6px;background:var(--gray-100);border-radius:4px;height:6px;overflow:hidden;">
+                    <div style="background:var(--green-dark);height:6px;width:${Math.round(done/40*100)}%;border-radius:4px;"></div>
+                  </div>
+                  <div style="font-size:11px;color:var(--gray-400);margin-top:3px;">${done}/40 lessons complete</div>
+                </div>
+                <div style="font-size:18px;color:var(--gray-300);">›</div>
+              </div>
+            </div>`;
+          }).join('');
+      page.innerHTML = `
+        <div class="page-header"><h1>Lesson Plan Templates</h1><p>Select a class to view and track progress</p></div>
+        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:12px;">${cards}</div>`;
+      return;
+    }
   }
 
-  const groups = typeof LESSON_TEMPLATES !== 'undefined' ? LESSON_TEMPLATES : {};
-  const grp    = groups[_lpGroup] || {};
-  const lessons = grp.lessons || [];
+  const cls = myClasses.find(c => c.id === _lpClass);
+  if (!cls) { _lpClass = null; renderLessonPlans(); return; }
 
-  const tabs = Object.entries(groups).map(([k, g]) => {
-    const active = k === _lpGroup;
+  const done   = cls.lesson_progress || [];
+  const grpKey = getLessonGroupKey(cls.age_group);
+  const groups = typeof LESSON_TEMPLATES !== 'undefined' ? LESSON_TEMPLATES : {};
+  const grp    = groups[grpKey] || {};
+  const allLessons = grp.lessons || [];
+
+  const currentLesson = done.length + 1;
+  const q = Math.min(Math.max(_lpQuarter, 1), 4);
+  const qStart = (q - 1) * 10 + 1;
+  const qEnd   = q * 10;
+  const qLessons = allLessons.filter(l => l.n >= qStart && l.n <= qEnd);
+
+  const qLabels = ['Q1: Foundation', 'Q2: Development', 'Q3: Integration', 'Q4: Performance'];
+  const qTabs = [1,2,3,4].map(n => {
+    const qDone = done.filter(d => d >= (n-1)*10+1 && d <= n*10).length;
+    const active = n === q;
     return `<button class="btn ${active ? 'btn-primary' : 'btn-outline'} btn-sm"
-      style="font-size:12px;" onclick="_lpGroup='${k}';renderLessonPlans()">
-      <span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:${g.color};margin-right:5px;"></span>
-      ${g.label}</button>`;
+      style="font-size:12px;" onclick="_lpQuarter=${n};renderLessonPlans()">
+      ${qLabels[n-1]} <span style="font-size:10px;opacity:.7;">${qDone}/10</span></button>`;
   }).join('');
 
-  const cards = lessons.map(l => `
-    <div class="card" style="cursor:pointer;transition:box-shadow .15s;" onmouseenter="this.style.boxShadow='0 4px 16px rgba(27,92,42,.15)'" onmouseleave="this.style.boxShadow=''"
-      onclick="_lpLesson=${l.n - 1};renderLessonPlans()">
+  const cards = qLessons.map(l => {
+    const isDone    = done.includes(l.n);
+    const isCurrent = l.n === currentLesson;
+    const border    = isDone ? '2px solid var(--success)' : isCurrent ? '2px solid var(--gold,#C9A84C)' : '1px solid var(--gray-200)';
+    const badge     = isDone
+      ? '<span style="color:var(--success);font-size:16px;">✓</span>'
+      : isCurrent
+        ? '<span style="font-size:10px;background:var(--gold,#C9A84C);color:#fff;padding:2px 6px;border-radius:8px;">NEXT</span>'
+        : `<span style="font-size:12px;color:var(--gray-300);">›</span>`;
+    return `<div class="card" style="cursor:pointer;border:${border};"
+      onclick="_lpLesson=${l.n - 1};_lpQuarter=${q};renderLessonPlans()">
       <div style="display:flex;align-items:center;gap:12px;">
-        <div style="width:40px;height:40px;border-radius:50%;background:${grp.color}20;display:flex;align-items:center;justify-content:center;font-weight:700;color:${grp.color};flex-shrink:0;">${l.n}</div>
+        <div style="width:36px;height:36px;border-radius:50%;background:${isDone ? 'var(--success)' : grp.color||'#1B5C2A'}20;
+          display:flex;align-items:center;justify-content:center;font-weight:700;
+          color:${isDone ? 'var(--success)' : grp.color||'#1B5C2A'};flex-shrink:0;">${l.n}</div>
         <div style="flex:1;">
           <div style="font-weight:700;color:var(--green-dark);margin-bottom:2px;">${l.title}</div>
           <div style="font-size:12px;color:var(--gray-400);">${l.focus}</div>
         </div>
-        <div style="font-size:18px;color:var(--gray-300);">›</div>
+        ${badge}
       </div>
-    </div>`).join('');
+    </div>`;
+  }).join('');
 
+  const pct = Math.round(done.length / 40 * 100);
   page.innerHTML = `
-    <div class="page-header">
-      <h1>Lesson Plan Templates</h1>
-      <p>${grp.label} · ${grp.ltad} · 10 Lessons</p>
+    <div style="display:flex;align-items:center;gap:12px;margin-bottom:16px;flex-wrap:wrap;">
+      <button class="btn btn-outline btn-sm" onclick="_lpClass=null;renderLessonPlans()">← Classes</button>
+      <div style="flex:1;">
+        <h1 style="margin:0;font-size:22px;color:var(--green-dark);">${cls.name || 'Class'}</h1>
+        <div style="font-size:13px;color:var(--gray-500);">Ages ${cls.age_group} · ${grp.label || ''} · ${grp.ltad || ''}</div>
+      </div>
+      <div style="text-align:right;">
+        <div style="font-weight:700;color:var(--green-dark);">${done.length}/40</div>
+        <div style="font-size:11px;color:var(--gray-400);">lessons complete</div>
+      </div>
     </div>
-    <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:20px;">${tabs}</div>
+    <div style="background:var(--gray-100);border-radius:6px;height:8px;margin-bottom:16px;overflow:hidden;">
+      <div style="background:var(--green-dark);height:8px;width:${pct}%;border-radius:6px;"></div>
+    </div>
+    <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:20px;">${qTabs}</div>
     <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:12px;">${cards}</div>`;
 }
 
 function renderLessonDetail() {
   const page   = document.getElementById('lesson-plans-content');
   if (!page) return;
-  const groups = typeof LESSON_TEMPLATES !== 'undefined' ? LESSON_TEMPLATES : {};
-  const grp    = groups[_lpGroup] || {};
-  const l      = (grp.lessons || [])[_lpLesson];
+  const groups  = typeof LESSON_TEMPLATES !== 'undefined' ? LESSON_TEMPLATES : {};
+  const cls_obj = _lpClass ? (state.data?.classes || []).find(c => c.id === _lpClass) : null;
+  const cls_prog = cls_obj ? (cls_obj.lesson_progress || []) : null;
+  const grpKey  = cls_obj ? getLessonGroupKey(cls_obj.age_group) : '4-5';
+  const grp    = groups[grpKey] || {};
+  const l = (grp.lessons || [])[_lpLesson];
   if (!l) { _lpLesson = null; renderLessonPlans(); return; }
 
   const seg = (icon, label, mins, name, body) => `
@@ -8741,7 +8852,14 @@ function renderLessonDetail() {
       <span>⏱ Total: <strong>60 minutes</strong></span>
       <span>👥 Group: <strong>${grp.label}</strong></span>
       <span>📚 LTAD Stage: <strong>${grp.ltad}</strong></span>
-      <span style="margin-left:auto;"><button class="btn btn-sm btn-outline" onclick="window.print()">🖨 Print Plan</button></span>
+      <span style="margin-left:auto;display:flex;gap:8px;">
+        ${_lpClass && !(cls_prog && cls_prog.includes(l.n))
+          ? `<button class="btn btn-sm btn-primary" onclick="markLessonComplete('${_lpClass}',${l.n})">✓ Mark Complete</button>`
+          : _lpClass && cls_prog && cls_prog.includes(l.n)
+            ? '<span style="color:var(--success);font-weight:600;">✅ Completed</span>'
+            : ''}
+        <button class="btn btn-sm btn-outline" onclick="window.print()">🖨 Print Plan</button>
+      </span>
     </div>`;
 }
 
