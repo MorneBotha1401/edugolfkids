@@ -32,10 +32,27 @@
         "kc_M0": {
           "done": true,
           "date": "2026-04-30"
+        },
+        "M0": {
+          "passed": true,
+          "score": 87,
+          "date": "2026-05-01",
+          "name": "Morne Botha",
+          "expiry": "2027-05-01",
+          "attemptCount": 1,
+          "failDate": null,
+          "attempts": [
+            {
+              "score": 87,
+              "passed": true,
+              "date": "2026-05-01"
+            }
+          ]
         }
       },
       "streak": 1,
-      "lastLogin": "2026-05-01"
+      "lastLogin": "2026-05-01",
+      "email": "morne.marilize@gmail.com"
     }
   ]
 }
